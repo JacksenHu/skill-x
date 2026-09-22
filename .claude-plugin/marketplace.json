@@ -1,0 +1,20 @@
+{
+  "name": "skillhub",
+  "owner": {
+    "name": "skillhub-authors"
+  },
+  "metadata": {
+    "description": "Security research and reverse engineering skills for all agents (Agent Skills open spec).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "skillhub-core",
+      "source": "./",
+      "description": "Core skill pack: verification hygiene, reverse engineering, pentest methodology.",
+      "skills": [
+        "./skills/verification-run-hygiene"
+      ]
+    }
+  ]
+}

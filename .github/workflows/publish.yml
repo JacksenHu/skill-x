@@ -1,0 +1,23 @@
+name: publish
+
+on:
+  push:
+    branches: [main]
+
+# TODO(M3 阶段完善):
+# 1. 扫描 skills/*/SKILL.md frontmatter -> 生成橱窗站数据(仅元数据,绝不含自研 skill 正文)
+# 2. 生成/刷新 external.json(外部套件收录缓存;每日重抓 + 死链探活)
+# 3. 构建橱窗静态站 -> 部署 EdgeOne Pages
+# 4. 打包 marketplace.zip 并附加到 Release
+# 红线:全部鉴权方案,不生成公开 .well-known;橱窗产物里不得出现自研 SKILL.md 正文。
+
+jobs:
+  validate-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Gate - validate skills before any publish step
+        run: python scripts/validate.py

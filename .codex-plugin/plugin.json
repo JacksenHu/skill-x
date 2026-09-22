@@ -1,0 +1,6 @@
+{
+  "name": "skillhub",
+  "version": "0.1.0",
+  "description": "Security research and reverse engineering skills for all agents (Agent Skills open spec).",
+  "skills": "./skills/"
+}

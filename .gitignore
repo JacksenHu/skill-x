@@ -1,0 +1,18 @@
+# OS
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Env / secrets
+.env
+*.local
+
+# Build output (CI 生成物)
+dist/
+.well-known/
