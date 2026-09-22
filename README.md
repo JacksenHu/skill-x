@@ -4,7 +4,7 @@
 
 - **私有分发**:本仓库为私有仓库,授权用户通过 `GITHUB_TOKEN` 安装
 - **全 Agent 兼容**:skill 只使用规范基础字段,可被 Claude Code、Codex、Cursor、Copilot 等 80+ agent 加载
-- **橱窗站**:技能介绍与外部套件收录已上线 EdgeOne Pages(多页+搜索;链接为临时预览,最新地址见部署记录)
+- **橱窗站**:技能介绍与外部套件收录,多页+搜索 → **https://3f3301ac5aa14f998efefa8913125d01.sg.agentos-app.run**(长期固定链接;内容更新后重新发布即刷新,链接不变)
 - **社区收录**:已收录 2 个外部套件共 34 个 skill(见 `external.json`,收录管线见 [接入 SOP](docs/onboarding-pipeline.md))
 
 ## 安装(授权用户)
