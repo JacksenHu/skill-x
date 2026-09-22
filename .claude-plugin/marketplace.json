@@ -11,9 +11,13 @@
     {
       "name": "skillhub-core",
       "source": "./",
-      "description": "Core skill pack: verification hygiene, reverse engineering, pentest methodology.",
+      "description": "Core skill pack: verification hygiene, malware analysis, memory forensics, reverse engineering, pentest methodology.",
       "skills": [
-        "./skills/verification-run-hygiene"
+        "./skills/verification-run-hygiene",
+        "./skills/malware-analysis",
+        "./skills/memory-forensics",
+        "./skills/binary-reverse-engineering",
+        "./skills/pentest-methodology"
       ]
     }
   ]

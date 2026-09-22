@@ -37,6 +37,10 @@ scripts/                 # 仓库工具(校验等)
 | 技能 | 简介 |
 |---|---|
 | [verification-run-hygiene](skills/verification-run-hygiene/SKILL.md) | 跑验证/回归时保住结果可信度的操作纪律:真回归与假红的判别、18 条硬纪律 |
+| [malware-analysis](skills/malware-analysis/SKILL.md) | 恶意样本分析:脱壳、配置提取、C2 协议解码、IOC/YARA/Sigma 产出 |
+| [memory-forensics](skills/memory-forensics/SKILL.md) | 跨平台内存取证:指针链、签名扫描、结构重建、安全补丁与回滚 |
+| [binary-reverse-engineering](skills/binary-reverse-engineering/SKILL.md) | 深度逆向:PE/ELF/Mach-O/固件/.NET/IL2CPP、脱壳、协议重建 |
+| [pentest-methodology](skills/pentest-methodology/SKILL.md) | 证据驱动渗透:Web/API/OAuth/云原生/AD、请求矩阵、越权契约、复测标准 |
 
 ## 参与贡献
 
