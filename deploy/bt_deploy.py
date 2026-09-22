@@ -35,7 +35,7 @@ def make_token():
     return t, hashlib.md5((t + sk_md5).encode()).hexdigest()
 
 
-def call(module, action, files=None, **params):
+def call(module, action, files=None, _timeout=60, **params):
     """POST form 到 /{module}?action={action};files 用于 multipart 上传。"""
     t, tok = make_token()
     base = {"request_time": t, "request_token": tok}
@@ -56,7 +56,7 @@ def call(module, action, files=None, **params):
         req = urllib.request.Request(url, data=b"".join(parts), headers={
             "User-Agent": "skill-x-deploy/1.0",
             "Content-Type": f"multipart/form-data; boundary={boundary}"})
-    with urllib.request.urlopen(req, timeout=60) as r:
+    with urllib.request.urlopen(req, timeout=_timeout) as r:
         raw = r.read().decode("utf-8", "replace")
     try:
         return json.loads(raw)
@@ -98,20 +98,39 @@ def cmd_upload(tar_path):
 
 
 def cmd_ssl():
-    r = call("site", "GetSiteId", siteName=SITE_DOMAIN)
-    print("GetSiteId ->", json.dumps(r, ensure_ascii=False)[:200])
-    site_id = r.get("siteId") or r.get("id")
+    # 腾讯云专享版无 GetSiteId;从 data/getData 取站点 id
+    r = call("data", "getData", table="sites", limit="100")
+    site_id = None
+    for s in (r.get("data") or []):
+        if s.get("name") == SITE_DOMAIN:
+            site_id = s.get("id")
+            break
     if not site_id:
-        print("[!] 未取到站点 ID,中止")
+        print("[!] 站点不存在,先跑 addsite")
         return 1
+    print(f"[+] 站点 id = {site_id}")
     domains = json.dumps([SITE_DOMAIN])
     r1 = call("acme", "apply_cert_api", id=str(site_id), domains=domains,
-              auth_type="http", auth_to=SITE_PATH, auto_wildcard="0", ca="letsencrypt")
+              auth_type="http", auth_to=SITE_PATH, auto_wildcard="0", ca="letsencrypt",
+              _timeout=180)
     print("apply_cert_api ->", json.dumps(r1, ensure_ascii=False)[:400])
-    r2 = call("site", "SetSSLConf", siteName=SITE_DOMAIN)
-    print("SetSSLConf ->", json.dumps(r2, ensure_ascii=False)[:300])
-    r3 = call("site", "HttpToHttps", siteName=SITE_DOMAIN)
-    print("HttpToHttps ->", json.dumps(r3, ensure_ascii=False)[:300])
+    # 申请可能超时但订单已生成;查订单拿 index(取目标域名 valid/pending 的最新一条)
+    idx = None
+    try:
+        orders = call("acme", "get_order_list")
+        for o in (orders if isinstance(orders, list) else []):
+            if SITE_DOMAIN in (o.get("domains") or []):
+                idx = o.get("index")
+        print(f"[+] 订单 index = {idx}")
+    except Exception as e:  # noqa: BLE001
+        print(f"[-] 查订单失败: {e}")
+    if idx:
+        r2 = call("acme", "SetCertToSite", index=idx, siteName=SITE_DOMAIN)
+        print("SetCertToSite ->", json.dumps(r2, ensure_ascii=False)[:200])
+    r3 = call("site", "SetSSLConf", siteName=SITE_DOMAIN)
+    print("SetSSLConf ->", json.dumps(r3, ensure_ascii=False)[:200])
+    r4 = call("site", "HttpToHttps", siteName=SITE_DOMAIN)
+    print("HttpToHttps ->", json.dumps(r4, ensure_ascii=False)[:200])
     return 0
 
 
