@@ -54,6 +54,12 @@ external.json            # 社区收录套件登记(命名空间/许可证/审�
 
 收录均通过四坑检查(命名空间/许可证/供应链/死链),明细见 `external.json`。
 
+## 兼容性
+
+- **实测通过**:CodeBuddy(skills CLI 安装/卸载/环境还原全链路,2026-09-22)
+- **官方兼容**:遵循 Agent Skills 开放规范,frontmatter 仅用规范基础字段(name/description/license/compatibility/metadata),未使用 `allowed-tools`/`context: fork`/Hooks 等兼容性受限特性;经 vercel-labs/skills CLI 可安装到其官方目录映射覆盖的 80+ agent(Claude Code、Codex、Cursor、Copilot、Gemini CLI、OpenCode 等)
+- **网络说明**:github.com 主站受限的网络请用 SSH 形式安装,见 [授权与安装管理](docs/access-management.md)
+
 ## 参与贡献
 
 见 [CONTRIBUTING.md](CONTRIBUTING.md) 与 [《SKILL.md 编写规范》](docs/skill-authoring-guide.md)。
