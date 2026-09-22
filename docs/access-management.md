@@ -25,13 +25,27 @@ GITHUB_TOKEN=<你的PAT> npx skills add JacksenHu/skill-x --skill <name>
 $env:GITHUB_TOKEN="<你的PAT>"; npx skills add JacksenHu/skill-x --skill <name>
 ```
 
-### 方式 3:SSH(已配 SSH key 的用户)
+### 方式 3:SSH(已配 SSH key 的用户;主站受限网络下推荐)
 
 ```bash
 npx skills add git@github.com:JacksenHu/skill-x.git --skill <name>
 ```
 
 skills CLI 凭据回退顺序:git 凭据 → gh → SSH;显式 `GITHUB_TOKEN`/`GH_TOKEN` 环境变量优先。
+
+## 网络环境说明(https clone 失败时)
+
+症状:`npx skills add JacksenHu/skill-x` 报 `schannel: server closed abruptly` 或长时间卡在 Cloning。
+
+原因:CLI 的 `owner/repo` 简写走 `https://github.com` 克隆;在 github.com 主站被拦截/代理白名单缺失的网络下必败(实测于 2026-09-22)。**SSH 通道不受影响。**
+
+对策(任选):
+1. 直接用 SSH 形式(方式 3),无需任何配置;
+2. 或配置 git 全局重写,让所有 https GitHub 访问自动改走 SSH(对本机所有工具生效):
+   ```bash
+   git config --global url."git@github.com:".insteadOf "https://github.com/"
+   ```
+3. 能正常访问 github.com 主站的网络,方式 1/2 均可。
 
 ### 指定目标 agent
 
