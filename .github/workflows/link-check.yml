@@ -1,0 +1,24 @@
+name: link-check
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # 每日 02:00 UTC 探活
+  workflow_dispatch:
+
+jobs:
+  upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Probe upstream URLs
+        run: python scripts/link_check.py
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: link-check-report.json
+          retention-days: 30

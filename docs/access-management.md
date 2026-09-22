@@ -1,0 +1,60 @@
+# 授权与安装管理
+
+Skill X 仓库为**私有**。本文件说明授权发放方式与被授权者的安装方法。
+
+## 对被授权者:三种安装方式(任选其一)
+
+### 方式 1:gh CLI(推荐,零配置)
+
+```bash
+gh auth login                       # 一次性,浏览器授权
+GITHUB_TOKEN=$(gh auth token) npx skills add JacksenHu/skill-x --list
+GITHUB_TOKEN=$(gh auth token) npx skills add JacksenHu/skill-x --skill <name>
+```
+
+### 方式 2:细粒度 PAT
+
+申请一个 Fine-grained Personal Access Token:
+- GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens
+- Repository access:**Only select repositories → skill-x**
+- Permissions:**Contents: Read-only**(安装只需要读)
+
+```bash
+GITHUB_TOKEN=<你的PAT> npx skills add JacksenHu/skill-x --skill <name>
+# Windows PowerShell:
+$env:GITHUB_TOKEN="<你的PAT>"; npx skills add JacksenHu/skill-x --skill <name>
+```
+
+### 方式 3:SSH(已配 SSH key 的用户)
+
+```bash
+npx skills add git@github.com:JacksenHu/skill-x.git --skill <name>
+```
+
+skills CLI 凭据回退顺序:git 凭据 → gh → SSH;显式 `GITHUB_TOKEN`/`GH_TOKEN` 环境变量优先。
+
+### 指定目标 agent
+
+```bash
+# 列出后安装到指定 agent(如 codebuddy / claude-code / cursor / codex)
+npx skills add JacksenHu/skill-x --skill <name> -a <agent> -g -y
+```
+
+## 对维护者:授权发放
+
+### 加协作者(适合固定成员,可读可推送可选)
+
+```bash
+gh api repos/JacksenHu/skill-x/collaborators/<github-username> -X PUT -f permission=pull
+```
+
+### 建议
+
+- 临时用户发 PAT(方式 2),可随时吊销,最小权限 Contents:read
+- 固定维护成员加 Collaborator(permission=pull 只读 / push 可写)
+- 定期 `gh api repos/JacksenHu/skill-x/collaborators` 审查名单
+
+## 红线
+
+- 橱窗站(EdgeOne)只展示自研 skill 的元数据;SKILL.md 正文只存在于本私有仓库,不得复制到任何公开位置
+- PAT 不出现在文档、截图、聊天记录中
