@@ -96,6 +96,16 @@ table.api{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0}
 table.api th,table.api td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left;vertical-align:top}
 table.api th{background:#f9fafb}
 code.inl{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+.hero{margin:-24px -24px 20px}
+.suite h3 a{color:inherit;text-decoration:none}
+.mmap img{max-width:100%;display:block;margin:0 auto}
+.hint-warn{font-size:13px;color:#92400e;margin-top:14px}
+.hint-ok{font-size:13px;color:#166534;margin-top:14px}
+.hint-dim{font-size:13px;color:#9ca3af;margin-top:10px}
+.api-h3{font-size:14px;margin-top:16px}
+.grid-mt{margin-top:14px}
+.h2-sm{font-size:16px}
+.kv a{color:#0ea5e9}
 footer{text-align:center;font-size:12px;color:#9ca3af;padding:24px}
 """
 
@@ -141,6 +151,9 @@ APP_JS = """
         body: JSON.stringify({skill: skill, action: 'copy'})}).catch(()=>{});
     });
   };
+  document.querySelectorAll('.copy-btn').forEach(b=>b.addEventListener('click', ()=>{
+    window.sxCopy(b, b.dataset.copy || '', b.dataset.skill || '');
+  }));
 
   fetch('/api/stats').then(r=>r.ok?r.json():null).then(d=>{
     if (!d || !d.counts) return;
@@ -297,12 +310,12 @@ def render_index(own, suites):
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
         items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
-  <h3><a href="suites/{ns_slug(ns)}.html" style="color:inherit;text-decoration:none">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} skills · {esc(lic_badge)} · <a href="{esc(suite["upstream"])}">上游</a></span></h3>
+  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} skills · {esc(lic_badge)} · <a href="{esc(suite["upstream"])}">上游</a></span></h3>
   <div class="grid">{items}</div>
 </section>''')
 
     inner = f'''
-<div class="hero" style="margin:-24px -24px 20px">
+<div class="hero">
   <h1>Skill X</h1>
   <p><span data-zh="面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。" data-en="Security research and reverse-engineering skills for all agents. Own skills via authorized private distribution; community skills install from upstream.">面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。</span></p>
   <div class="stats">
@@ -335,10 +348,10 @@ def render_own_detail(s):
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(s.get("license") or "MIT")}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(s["name"])}">—</span></dd>
   </dl>
-  <div class="mmap"><img src="/mindmaps/{esc(s["name"])}.svg" alt="思维导图" style="max-width:100%"></div>
-  <p style="font-size:13px;color:#92400e;margin-top:14px" data-zh="获得授权的协作者可安装:" data-en="Authorized collaborators can install:">获得授权的协作者可安装:</p>
+  <div class="mmap"><img src="/mindmaps/{esc(s["name"])}.svg" alt="思维导图"></div>
+  <p class="hint-warn" data-zh="获得授权的协作者可安装:" data-en="Authorized collaborators can install:">获得授权的协作者可安装:</p>
   <div class="cmd">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
-  <button class="chip on" onclick="sxCopy(this, 'GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}', '{esc(s["name"])}')" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
+  <button class="chip on copy-btn" data-copy="GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}" data-skill="{esc(s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
 </div>'''
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
 
@@ -359,11 +372,11 @@ def render_ext_detail(suite, s):
     <dt data-zh="上游文件" data-en="Upstream">上游文件</dt><dd>{esc(s["path"])}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(ns + "/" + s["name"])}">—</span></dd>
   </dl>
-  <div class="mmap"><a href="/suites/{ns_slug(ns)}.html"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图" style="max-width:100%"></a></div>
-  <p style="font-size:13px;color:#166534;margin-top:14px" data-zh="一条命令安装(指向上游仓库):" data-en="Install with one command (from upstream):">一条命令安装(指向上游仓库):</p>
+  <div class="mmap"><a href="/suites/{ns_slug(ns)}.html"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图"></a></div>
+  <p class="hint-ok" data-zh="一条命令安装(指向上游仓库):" data-en="Install with one command (from upstream):">一条命令安装(指向上游仓库):</p>
   <div class="cmd">{esc(install)}</div>
-  <button class="chip on" onclick="sxCopy(this, '{esc(install)}', '{esc(ns + "/" + s["name"])}')" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
-  <p style="font-size:12px;color:#9ca3af;margin-top:10px" data-zh="下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。" data-en="Download stats count downloads/copies via this site only.">下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。</p>
+  <button class="chip on copy-btn" data-copy="{esc(install)}" data-skill="{esc(ns + "/" + s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
+  <p class="hint-dim" data-zh="下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。" data-en="Download stats count downloads/copies via this site only.">下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。</p>
 </div>'''
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
 
@@ -384,8 +397,8 @@ def render_suites_index(suites):
 </div>''')
     inner = f'''
 <h2 data-zh="套件中心" data-en="Suite Center">套件中心</h2>
-<p style="font-size:13px;color:#6b7280" data-zh="每个套件是一组可整体添加的技能集合。点击套件查看思维导图与内含技能。" data-en="A suite is a bundle of skills installable together. Click to view mind map and contents.">每个套件是一组可整体添加的技能集合。点击套件查看思维导图与内含技能。</p>
-<div class="grid" style="margin-top:14px">{"".join(cards)}</div>
+<p class="hint-dim" data-zh="每个套件是一组可整体添加的技能集合。点击套件查看思维导图与内含技能。" data-en="A suite is a bundle of skills installable together. Click to view mind map and contents.">每个套件是一组可整体添加的技能集合。点击套件查看思维导图与内含技能。</p>
+<div class="grid grid-mt">{"".join(cards)}</div>
 <div class="notice" data-zh="想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查后收录。" data-en="Want your suite listed? Submit a link per the onboarding SOP.">想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查后收录。</div>'''
     return page_shell("套件中心", "Suites", "suites", inner)
 
@@ -400,12 +413,12 @@ def render_suite_detail(suite):
     <dt>skill <span data-zh="数" data-en="count">数</span></dt><dd>{len(suite["skills"])}</dd>
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(lic if lic != "UNKNOWN" else "未确认(仅链接收录)")}</dd>
     <dt data-zh="收录日期" data-en="Ingested">收录日期</dt><dd>{esc(suite.get("ingestedAt", ""))}</dd>
-    <dt data-zh="上游" data-en="Upstream">上游</dt><dd><a href="{esc(suite["upstream"])}" style="color:#0ea5e9">{esc(suite["upstream"])}</a></dd>
+    <dt data-zh="上游" data-en="Upstream">上游</dt><dd><a href="{esc(suite["upstream"])}">{esc(suite["upstream"])}</a></dd>
   </dl>
-  <div class="mmap"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图" style="max-width:100%"></div>
-  <p style="font-size:13px;color:#166534;margin-top:14px" data-zh="整套件安装:" data-en="Install whole suite:">整套件安装:</p>
+  <div class="mmap"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图"></div>
+  <p class="hint-ok" data-zh="整套件安装:" data-en="Install whole suite:">整套件安装:</p>
   <div class="cmd">npx skills add {esc(ns)} --skill '*'</div>
-  <button class="chip on" onclick="sxCopy(this, &quot;npx skills add {esc(ns)} --skill '*'&quot;, '{esc(ns)}')" data-zh="复制套件安装命令" data-en="Copy suite install command">复制套件安装命令</button>
+  <button class="chip on copy-btn" data-copy="npx skills add {esc(ns)} --skill '*'" data-skill="{esc(ns)}" data-zh="复制套件安装命令" data-en="Copy suite install command">复制套件安装命令</button>
 </div>
 <h2 data-zh="套件内技能" data-en="Skills in suite">套件内技能</h2>
 {chips_html()}
@@ -426,14 +439,14 @@ def render_api(own, suites):
             rows += (f"<tr><td><code class='inl'>{esc(e['script'])}</code></td>"
                      f"<td>{esc(e['summary'])}</td><td>{args_html}</td></tr>")
         tool_sections.append(
-            f"<h3 style='font-size:14px;margin-top:16px'>{esc(s.get('name-zh', s['name']))} "
+            f"<h3 class='api-h3'>{esc(s.get('name-zh', s['name']))} "
             f"<span class='en-name'>{esc(s['name'])}</span></h3>"
             f"<table class='api'><tr><th data-zh='脚本' data-en='Script'>脚本</th>"
             f"<th data-zh='功能' data-en='Function'>功能</th>"
             f"<th data-zh='参数' data-en='Args'>参数</th></tr>{rows}</table>")
     inner = f'''
 <h2 data-zh="API 文档" data-en="API Docs">API 文档</h2>
-<h2 style="font-size:16px" data-zh="平台接口(统计数据)" data-en="Platform API (stats)">平台接口(统计数据)</h2>
+<h2 class="h2-sm" data-zh="平台接口(统计数据)" data-en="Platform API (stats)">平台接口(统计数据)</h2>
 <table class="api">
 <tr><th data-zh="接口" data-en="Endpoint">接口</th><th data-zh="方法" data-en="Method">方法</th><th data-zh="说明" data-en="Description">说明</th></tr>
 <tr><td><code class="inl">/api/download</code></td><td>POST</td><td data-zh="记录一次下载/复制。Body: {{"skill":"&lt;name&gt;","action":"copy"}}" data-en="Record a download/copy. Body: skill + action">记录一次下载/复制。Body: <code class="inl">{{"skill":"&lt;name&gt;","action":"copy"}}</code></td></tr>
@@ -442,9 +455,9 @@ def render_api(own, suites):
 <tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/版本),供第三方页面调用" data-en="Full skill data (names, bilingual descriptions, categories, versions)">全量技能数据(名称/双语简介/分类/版本),供第三方页面调用</td></tr>
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用(P3 上线)" data-en="Mind map SVGs, CORS-enabled (P3)">思维导图 SVG,已开 CORS,可外部引用(P3 上线)</td></tr>
 </table>
-<h2 style="font-size:16px" data-zh="自研技能自带工具(scripts/,参数自动提取)" data-en="Bundled tools (scripts/, auto-extracted)">自研技能自带工具(scripts/,参数自动提取)</h2>
+<h2 class="h2-sm" data-zh="自研技能自带工具(scripts/,参数自动提取)" data-en="Bundled tools (scripts/, auto-extracted)">自研技能自带工具(scripts/,参数自动提取)</h2>
 {"".join(tool_sections)}
-<p style="font-size:13px;color:#9ca3af" data-zh="参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。" data-en="Parameters are auto-extracted from argparse definitions via AST at build time. Tools run locally after skill installation.">参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。</p>'''
+<p class="hint-dim" data-zh="参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。" data-en="Parameters are auto-extracted from argparse definitions via AST at build time. Tools run locally after skill installation.">参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。</p>'''
     return page_shell("API 文档", "API Docs", "api", inner)
 
 
