@@ -7,6 +7,9 @@ metadata:
   author: skillhub
   version: "1.0.0"
   user-invocable: "false"
+  name-zh: 验证运行卫生
+  description-zh: 跑验证与回归时保住结果可信度的操作纪律:区分真回归与假红、18 条从真实事故换来的硬规则,适用于测试集体变红、临时文件清理、守卫拦截等场景。
+  category: engineering-hygiene
 ---
 
 # 验证运行卫生（Verification Run Hygiene）

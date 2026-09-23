@@ -6,6 +6,9 @@ compatibility: Scripts require Python 3 (standard library only).
 metadata:
   author: skillhub
   version: "1.0.0"
+  name-zh: 内存取证分析
+  description-zh: 跨平台进程内存与转储分析:模块映射、指针链、签名扫描、结构重建、内存 diff 与可回滚补丁工具。
+  category: forensics
 ---
 
 # Memory Forensics

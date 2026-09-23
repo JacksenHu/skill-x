@@ -1,0 +1,41 @@
+{
+  "_comment": "收录条目的中文增补表:name-zh/description-zh/category,按 namespace+skill 名索引。ingest.py 重跑不覆盖本文件;新增收录时由维护者补充对应条目。",
+  "addyosmani/agent-skills": {
+    "api-and-interface-design": {"name-zh": "API 与接口设计", "description-zh": "设计清晰一致的 API 契约:资源建模、错误码、分页与版本演进。", "category": "dev-workflow"},
+    "browser-testing-with-devtools": {"name-zh": "DevTools 浏览器测试", "description-zh": "用浏览器开发者工具做前端调试、网络分析与自动化测试。", "category": "dev-workflow"},
+    "ci-cd-and-automation": {"name-zh": "CI/CD 与自动化", "description-zh": "持续集成与交付流水线设计,构建、测试、部署的工程自动化。", "category": "dev-workflow"},
+    "code-review-and-quality": {"name-zh": "代码审查与质量", "description-zh": "合并前系统审查:正确性、安全性、可维护性与风格一致性。", "category": "dev-workflow"},
+    "code-simplification": {"name-zh": "代码简化", "description-zh": "在不改变行为的前提下简化结构、删除冗余、提升可读性。", "category": "dev-workflow"},
+    "constraint-driven-development": {"name-zh": "约束驱动开发", "description-zh": "以约束条件为中心组织设计决策与实现路径。", "category": "dev-workflow"},
+    "context-engineering": {"name-zh": "上下文工程", "description-zh": "为 Agent 任务设计、压缩与管理上下文,提升输出稳定性。", "category": "dev-workflow"},
+    "debugging-and-error-recovery": {"name-zh": "调试与错误恢复", "description-zh": "稳定复现、缩小范围、定位根因、补防回归测试的完整调试流程。", "category": "dev-workflow"},
+    "deprecation-and-migration": {"name-zh": "废弃与迁移", "description-zh": "API 废弃策略、迁移窗口设计与平滑过渡方案。", "category": "dev-workflow"},
+    "documentation-and-adrs": {"name-zh": "文档与架构决策记录", "description-zh": "技术文档体系与 ADR(架构决策记录)的编写规范。", "category": "dev-workflow"},
+    "doubt-driven-development": {"name-zh": "质疑驱动开发", "description-zh": "用系统性质疑验证假设,在动手前暴露方案盲区。", "category": "dev-workflow"},
+    "frontend-ui-engineering": {"name-zh": "前端 UI 工程", "description-zh": "前端界面工程化:组件设计、状态管理与交互质量。", "category": "web-frontend"},
+    "git-workflow-and-versioning": {"name-zh": "Git 工作流与版本管理", "description-zh": "分支策略、提交规范、语义化版本与发布节奏。", "category": "dev-workflow"},
+    "idea-refine": {"name-zh": "创意提炼", "description-zh": "把模糊想法结构化,提炼成可评估、可执行的方案。", "category": "dev-workflow"},
+    "incremental-implementation": {"name-zh": "增量式实现", "description-zh": "小步快跑:每一片都可验证、可回滚的实现策略。", "category": "dev-workflow"},
+    "interview-me": {"name-zh": "需求访谈", "description-zh": "通过结构化追问澄清真实需求与验收标准。", "category": "dev-workflow"},
+    "observability-and-instrumentation": {"name-zh": "可观测性与埋点", "description-zh": "日志、指标、分布式追踪的埋点设计与落地。", "category": "dev-workflow"},
+    "performance-optimization": {"name-zh": "性能优化", "description-zh": "定位真实瓶颈,用基准数据验证优化收益。", "category": "dev-workflow"},
+    "planning-and-task-breakdown": {"name-zh": "规划与任务分解", "description-zh": "把复杂工作拆解为有序、可执行、可验收的任务。", "category": "dev-workflow"},
+    "security-and-hardening": {"name-zh": "安全与加固", "description-zh": "开发全流程的安全实践:输入校验、认证授权与依赖加固。", "category": "dev-workflow"},
+    "shipping-and-launch": {"name-zh": "交付与发布", "description-zh": "发布准备清单、上线流程与发布后的验证动作。", "category": "dev-workflow"},
+    "source-driven-development": {"name-zh": "源码驱动开发", "description-zh": "以真实源码证据而非假设驱动开发决策。", "category": "dev-workflow"},
+    "spec-driven-development": {"name-zh": "规格驱动开发", "description-zh": "先写清规格与验收标准,再开始编码。", "category": "dev-workflow"},
+    "test-driven-development": {"name-zh": "测试驱动开发", "description-zh": "红-绿-重构循环:先写失败测试,再实现到通过。", "category": "dev-workflow"},
+    "using-agent-skills": {"name-zh": "Skill 使用元技能", "description-zh": "Agent 技能的路由器:按任务发现与选择正确的 Skill。", "category": "dev-workflow"}
+  },
+  "vercel-labs/agent-skills": {
+    "vercel-composition-patterns": {"name-zh": "Vercel 组合模式", "description-zh": "Vercel/Next.js 的组件与服务端组合最佳实践。", "category": "web-frontend"},
+    "deploy-to-vercel": {"name-zh": "部署到 Vercel", "description-zh": "Vercel 部署流程、环境配置与发布策略。", "category": "dev-workflow"},
+    "vercel-react-best-practices": {"name-zh": "React 最佳实践", "description-zh": "React 开发规范:RSC、数据获取与渲染优化。", "category": "web-frontend"},
+    "vercel-react-native-skills": {"name-zh": "React Native 技能", "description-zh": "React Native 应用开发实践与常见模式。", "category": "web-frontend"},
+    "vercel-react-view-transitions": {"name-zh": "React 视图过渡", "description-zh": "用 View Transitions 实现流畅的页面与元素过渡动效。", "category": "web-frontend"},
+    "vercel-cli-with-tokens": {"name-zh": "Vercel CLI 与令牌", "description-zh": "Vercel CLI 的令牌认证与自动化操作。", "category": "dev-workflow"},
+    "vercel-optimize": {"name-zh": "Vercel 性能优化", "description-zh": "Next.js/Vercel 应用的性能诊断、信号采集与优化验证。", "category": "dev-workflow"},
+    "web-design-guidelines": {"name-zh": "Web 设计指南", "description-zh": "网页设计规范:排版、色彩、布局与可访问性。", "category": "web-frontend"},
+    "writing-guidelines": {"name-zh": "写作指南", "description-zh": "技术写作规范:清晰、简洁、面向读者的表达。", "category": "dev-workflow"}
+  }
+}

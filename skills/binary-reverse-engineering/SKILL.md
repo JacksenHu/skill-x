@@ -6,6 +6,9 @@ compatibility: Scripts require Python 3 (standard library only). Analysis toolin
 metadata:
   author: skillhub
   version: "1.0.0"
+  name-zh: 二进制逆向工程
+  description-zh: 面向 PE/ELF/Mach-O/固件/.NET/IL2CPP 的深度逆向:脱壳、算法还原、结构与协议重建、补丁与验证。
+  category: reverse-engineering
 ---
 
 # Binary Reverse Engineering
