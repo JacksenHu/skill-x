@@ -1,0 +1,39 @@
+root: addyosmani/agent-skills 套件
+children:
+  - label: 路由元技能
+    children:
+      - label: using-agent-skills
+  - label: 规划与设计
+    children:
+      - label: spec-driven-development
+      - label: planning-and-task-breakdown
+      - label: idea-refine
+      - label: interview-me
+      - label: constraint-driven-development
+  - label: 实现策略
+    children:
+      - label: incremental-implementation
+      - label: test-driven-development
+      - label: source-driven-development
+      - label: doubt-driven-development
+      - label: context-engineering
+  - label: 质量保障
+    children:
+      - label: code-review-and-quality
+      - label: debugging-and-error-recovery
+      - label: security-and-hardening
+      - label: performance-optimization
+      - label: observability-and-instrumentation
+      - label: code-simplification
+  - label: 交付运维
+    children:
+      - label: ci-cd-and-automation
+      - label: git-workflow-and-versioning
+      - label: shipping-and-launch
+      - label: deprecation-and-migration
+      - label: documentation-and-adrs
+  - label: 专项
+    children:
+      - label: api-and-interface-design
+      - label: frontend-ui-engineering
+      - label: browser-testing-with-devtools

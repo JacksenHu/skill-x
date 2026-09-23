@@ -18,6 +18,10 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from svg_map import parse_map, render_svg  # noqa: E402
+import apidocs  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 EXTERNAL = ROOT / "external.json"
@@ -331,7 +335,7 @@ def render_own_detail(s):
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(s.get("license") or "MIT")}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(s["name"])}">—</span></dd>
   </dl>
-  <div class="mmap" data-mmap="own-{esc(s["name"])}"><span style="color:#9ca3af;font-size:13px" data-zh="思维导图(P3 上线)" data-en="Mind map (coming in P3)">思维导图(P3 上线)</span></div>
+  <div class="mmap"><img src="/mindmaps/{esc(s["name"])}.svg" alt="思维导图" style="max-width:100%"></div>
   <p style="font-size:13px;color:#92400e;margin-top:14px" data-zh="获得授权的协作者可安装:" data-en="Authorized collaborators can install:">获得授权的协作者可安装:</p>
   <div class="cmd">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
   <button class="chip on" onclick="sxCopy(this, 'GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}', '{esc(s["name"])}')" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
@@ -355,7 +359,7 @@ def render_ext_detail(suite, s):
     <dt data-zh="上游文件" data-en="Upstream">上游文件</dt><dd>{esc(s["path"])}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(ns + "/" + s["name"])}">—</span></dd>
   </dl>
-  <div class="mmap" data-mmap="ext-{esc(ns_slug(ns))}--{esc(s["name"])}"><span style="color:#9ca3af;font-size:13px" data-zh="思维导图(P3 上线)" data-en="Mind map (coming in P3)">思维导图(P3 上线)</span></div>
+  <div class="mmap"><a href="/suites/{ns_slug(ns)}.html"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图" style="max-width:100%"></a></div>
   <p style="font-size:13px;color:#166534;margin-top:14px" data-zh="一条命令安装(指向上游仓库):" data-en="Install with one command (from upstream):">一条命令安装(指向上游仓库):</p>
   <div class="cmd">{esc(install)}</div>
   <button class="chip on" onclick="sxCopy(this, '{esc(install)}', '{esc(ns + "/" + s["name"])}')" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
@@ -398,7 +402,7 @@ def render_suite_detail(suite):
     <dt data-zh="收录日期" data-en="Ingested">收录日期</dt><dd>{esc(suite.get("ingestedAt", ""))}</dd>
     <dt data-zh="上游" data-en="Upstream">上游</dt><dd><a href="{esc(suite["upstream"])}" style="color:#0ea5e9">{esc(suite["upstream"])}</a></dd>
   </dl>
-  <div class="mmap" data-mmap="suite-{esc(ns_slug(ns))}"><span style="color:#9ca3af;font-size:13px" data-zh="套件思维导图(P3 上线)" data-en="Suite mind map (coming in P3)">套件思维导图(P3 上线)</span></div>
+  <div class="mmap"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图" style="max-width:100%"></div>
   <p style="font-size:13px;color:#166534;margin-top:14px" data-zh="整套件安装:" data-en="Install whole suite:">整套件安装:</p>
   <div class="cmd">npx skills add {esc(ns)} --skill '*'</div>
   <button class="chip on" onclick="sxCopy(this, &quot;npx skills add {esc(ns)} --skill '*'&quot;, '{esc(ns)}')" data-zh="复制套件安装命令" data-en="Copy suite install command">复制套件安装命令</button>
@@ -410,10 +414,23 @@ def render_suite_detail(suite):
 
 
 def render_api(own, suites):
-    rows = "".join(
-        f"<tr><td><code class='inl'>{esc(s['name'])}</code></td><td><code class='inl'>scripts/</code></td>"
-        f"<td><span data-zh='{esc(s.get('description-zh','')[:80])}' data-en='{esc(s['description'][:80])}'>{esc(s.get('description-zh','')[:80])}</span></td></tr>"
-        for s in own)
+    docs = apidocs.collect()
+    tool_sections = []
+    for s in own:
+        entries = docs.get(s["name"], [])
+        if not entries:
+            continue
+        rows = ""
+        for e in entries:
+            args_html = "<br>".join(f"<code class='inl'>{esc(f)}</code> {esc(h)}" for f, h in e["args"]) or "—"
+            rows += (f"<tr><td><code class='inl'>{esc(e['script'])}</code></td>"
+                     f"<td>{esc(e['summary'])}</td><td>{args_html}</td></tr>")
+        tool_sections.append(
+            f"<h3 style='font-size:14px;margin-top:16px'>{esc(s.get('name-zh', s['name']))} "
+            f"<span class='en-name'>{esc(s['name'])}</span></h3>"
+            f"<table class='api'><tr><th data-zh='脚本' data-en='Script'>脚本</th>"
+            f"<th data-zh='功能' data-en='Function'>功能</th>"
+            f"<th data-zh='参数' data-en='Args'>参数</th></tr>{rows}</table>")
     inner = f'''
 <h2 data-zh="API 文档" data-en="API Docs">API 文档</h2>
 <h2 style="font-size:16px" data-zh="平台接口(统计数据)" data-en="Platform API (stats)">平台接口(统计数据)</h2>
@@ -425,12 +442,9 @@ def render_api(own, suites):
 <tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/版本),供第三方页面调用" data-en="Full skill data (names, bilingual descriptions, categories, versions)">全量技能数据(名称/双语简介/分类/版本),供第三方页面调用</td></tr>
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用(P3 上线)" data-en="Mind map SVGs, CORS-enabled (P3)">思维导图 SVG,已开 CORS,可外部引用(P3 上线)</td></tr>
 </table>
-<h2 style="font-size:16px" data-zh="自研技能自带工具(scripts/)" data-en="Bundled tools (scripts/)">自研技能自带工具(scripts/)</h2>
-<table class="api">
-<tr><th>Skill</th><th data-zh="工具目录" data-en="Dir">工具目录</th><th data-zh="说明" data-en="Description">说明</th></tr>
-{rows}
-</table>
-<p style="font-size:13px;color:#9ca3af" data-zh="各工具的详细参数由构建器从 argparse 定义自动提取(P3 补全)。授权用户安装技能后即可在本地运行这些工具。" data-en="Detailed parameters are auto-extracted from argparse definitions (P3). Tools run locally after skill installation.">各工具的详细参数由构建器从 argparse 定义自动提取(P3 补全)。授权用户安装技能后即可在本地运行这些工具。</p>'''
+<h2 style="font-size:16px" data-zh="自研技能自带工具(scripts/,参数自动提取)" data-en="Bundled tools (scripts/, auto-extracted)">自研技能自带工具(scripts/,参数自动提取)</h2>
+{"".join(tool_sections)}
+<p style="font-size:13px;color:#9ca3af" data-zh="参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。" data-en="Parameters are auto-extracted from argparse definitions via AST at build time. Tools run locally after skill installation.">参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。</p>'''
     return page_shell("API 文档", "API Docs", "api", inner)
 
 
@@ -489,6 +503,28 @@ def main():
         p.write_text(text, encoding="utf-8")
         written += 1
 
+    mind_dir = Path(__file__).resolve().parent / "mindmaps"
+    svg_src = (Path(__file__).resolve().parent / "svg_map.py").read_text(encoding="utf-8")
+    mmap_count = 0
+    if mind_dir.is_dir():
+        for y in sorted(mind_dir.glob("*.yaml")):
+            try:
+                svg_text = render_svg(parse_map(y.read_text(encoding="utf-8")), y.stem)
+            except Exception as e:  # noqa: BLE001
+                print(f"[-] 导图渲染失败 {y.name}: {e}(降级:该图不上线)")
+                continue
+            rel = f"mindmaps/{y.stem}.svg"
+            key = sha(TEMPLATE_VERSION + rel + y.read_text(encoding="utf-8") + svg_src)
+            new_manifest[rel] = key
+            p = DIST / rel
+            if old_manifest.get(rel) == key and p.is_file():
+                skipped += 1
+            else:
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_text(svg_text, encoding="utf-8")
+                written += 1
+            mmap_count += 1
+
     assets = DIST / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     for name, content in [("style.css", CSS), ("app.js", APP_JS)]:
@@ -511,7 +547,7 @@ def main():
     }
     (DIST / "site-data.json").write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding="utf-8")
     MANIFEST.write_text(json.dumps(new_manifest, indent=1), encoding="utf-8")
-    print(f"[+] 产物 {len(pages)} 页 + 2 assets -> {DIST}(写入 {written},跳过 {skipped};自研 {len(own)},套件 {len(suites)})")
+    print(f"[+] 产物 {len(pages)} 页 + 2 assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped};自研 {len(own)},套件 {len(suites)})")
     return 0
 
 

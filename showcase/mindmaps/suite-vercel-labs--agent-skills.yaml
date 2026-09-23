@@ -1,0 +1,19 @@
+root: vercel-labs/agent-skills 套件
+children:
+  - label: 平台操作
+    children:
+      - label: deploy-to-vercel
+      - label: vercel-cli-with-tokens
+  - label: 前端开发
+    children:
+      - label: vercel-react-best-practices
+      - label: vercel-composition-patterns
+      - label: vercel-react-view-transitions
+      - label: vercel-react-native-skills
+  - label: 性能优化
+    children:
+      - label: vercel-optimize
+  - label: 规范指南
+    children:
+      - label: web-design-guidelines
+      - label: writing-guidelines

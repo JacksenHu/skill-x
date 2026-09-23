@@ -1,0 +1,34 @@
+root: 二进制逆向工程
+children:
+  - label: 目标格式
+    children:
+      - label: PE / ELF / Mach-O
+      - label: 固件与驱动
+      - label: APK / DEX
+      - label: .NET / Go / Rust
+      - label: IL2CPP / Unreal
+  - label: 工作流
+    children:
+      - label: triage 建档
+      - label: 静态反编译
+      - label: 动态调试验证
+      - label: 算法还原
+      - label: 原样本回归测试
+  - label: 对抗技术
+    children:
+      - label: 脱壳
+      - label: 反调试绕过
+      - label: 控制流还原
+      - label: 虚拟机保护分析
+  - label: 工具链
+    children:
+      - label: IDA / Ghidra
+      - label: Frida / r2pipe
+      - label: angr / Z3 / Unicorn
+      - label: triage_binary.py
+  - label: 产出
+    children:
+      - label: 函数与结构映射
+      - label: 协议/格式重建
+      - label: 自动化脚本
+      - label: 验证报告

@@ -1,0 +1,26 @@
+root: 验证运行卫生
+children:
+  - label: 核心问题
+    children:
+      - label: 真回归 vs 假红
+      - label: 验证环境污染
+      - label: 误判导致误修
+  - label: 硬纪律
+    children:
+      - label: 验证期间禁写
+      - label: 破坏面自收
+      - label: 先量后改
+      - label: 复现才算机理
+      - label: 按签名分诊
+  - label: 判别流程
+    children:
+      - label: 冻结写入
+      - label: 基线差集
+      - label: 逐条单跑
+      - label: 共享资源排查
+  - label: 适用场景
+    children:
+      - label: 测试集体变红
+      - label: 临时文件清理
+      - label: 守卫拦截排查
+      - label: 回归可归档

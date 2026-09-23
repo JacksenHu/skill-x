@@ -1,0 +1,30 @@
+root: 内存取证分析
+children:
+  - label: 核心能力
+    children:
+      - label: 模块映射与定位
+      - label: 指针链解析
+      - label: AOB 签名扫描
+      - label: 结构体重建
+      - label: 内存 diff 比对
+  - label: 平台覆盖
+    children:
+      - label: Windows(RPM/WPM)
+      - label: Linux/Android
+      - label: Unity IL2CPP
+      - label: 崩溃转储
+  - label: 工具
+    children:
+      - label: aob_scan.py
+      - label: dump_strings.py
+  - label: 工程原则
+    children:
+      - label: 签名优于绝对地址
+      - label: 补丁先备份可回滚
+      - label: 证据来源分级
+  - label: 适用场景
+    children:
+      - label: 运行时数据定位
+      - label: 外挂研究
+      - label: 取证分析
+      - label: 崩溃排查
