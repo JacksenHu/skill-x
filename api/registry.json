@@ -1,0 +1,52 @@
+{
+  "suites": [
+    {
+      "namespace": "addyosmani/agent-skills",
+      "upstream": "https://github.com/addyosmani/agent-skills",
+      "branch": "main",
+      "skills": [
+        "api-and-interface-design",
+        "browser-testing-with-devtools",
+        "ci-cd-and-automation",
+        "code-review-and-quality",
+        "code-simplification",
+        "constraint-driven-development",
+        "context-engineering",
+        "debugging-and-error-recovery",
+        "deprecation-and-migration",
+        "documentation-and-adrs",
+        "doubt-driven-development",
+        "frontend-ui-engineering",
+        "git-workflow-and-versioning",
+        "idea-refine",
+        "incremental-implementation",
+        "interview-me",
+        "observability-and-instrumentation",
+        "performance-optimization",
+        "planning-and-task-breakdown",
+        "security-and-hardening",
+        "shipping-and-launch",
+        "source-driven-development",
+        "spec-driven-development",
+        "test-driven-development",
+        "using-agent-skills"
+      ]
+    },
+    {
+      "namespace": "vercel-labs/agent-skills",
+      "upstream": "https://github.com/vercel-labs/agent-skills",
+      "branch": "main",
+      "skills": [
+        "vercel-composition-patterns",
+        "deploy-to-vercel",
+        "vercel-react-best-practices",
+        "vercel-react-native-skills",
+        "vercel-react-view-transitions",
+        "vercel-cli-with-tokens",
+        "vercel-optimize",
+        "web-design-guidelines",
+        "writing-guidelines"
+      ]
+    }
+  ]
+}
