@@ -335,8 +335,26 @@ def render_index(own, suites):
     return page_shell("Skill X — Agent Skills 注册中心", "Skill X", "skills", inner)
 
 
-def render_own_detail(s):
+def render_own_detail(s, tool_entries=None):
     cat_label = CATEGORIES.get(s.get("category", ""), "")
+    tools_html = ""
+    if tool_entries:
+        rows = ""
+        for e in tool_entries:
+            args_html = "<br>".join(f"<code class='inl'>{esc(f)}</code> {esc(h)}" for f, h in e["args"]) or "—"
+            rows += (f"<tr><td><code class='inl'>{esc(e['script'])}</code></td>"
+                     f"<td>{esc(e['summary'])}</td><td>{args_html}</td></tr>")
+        tools_html = (f"<h2 data-zh='自带工具(随技能安装)' data-en='Bundled tools (installed with the skill)'>自带工具(随技能安装)</h2>"
+                      f"<table class='api'><tr><th data-zh='脚本' data-en='Script'>脚本</th>"
+                      f"<th data-zh='功能' data-en='Function'>功能</th>"
+                      f"<th data-zh='参数' data-en='Args'>参数</th></tr>{rows}</table>"
+                      f"<p class='hint-dim' data-zh='纯标准库零依赖,安装技能后由 agent 在本地调用;参数从 argparse 定义自动提取。' "
+                      f"data-en='Zero-dependency stdlib tools, invoked locally by the agent after install; args auto-extracted from argparse.'>"
+                      f"纯标准库零依赖,安装技能后由 agent 在本地调用;参数从 argparse 定义自动提取。</p>")
+    else:
+        tools_html = (f"<h2 data-zh='自带工具' data-en='Bundled tools'>自带工具</h2>"
+                      f"<p class='hint-dim' data-zh='本技能为方法论/纪律型,无附带脚本。' data-en='Methodology-only skill; no bundled scripts.'>"
+                      f"本技能为方法论/纪律型,无附带脚本。</p>")
     inner = f'''<div class="detail">
   <div class="card-head"><h1>{esc(s.get("name-zh", s["name"]))}</h1><span class="badge auth">安装需授权</span></div>
   <div class="en-name">{esc(s["name"])}</div>
@@ -352,7 +370,8 @@ def render_own_detail(s):
   <p class="hint-warn" data-zh="获得授权的协作者可安装:" data-en="Authorized collaborators can install:">获得授权的协作者可安装:</p>
   <div class="cmd">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
   <button class="chip on copy-btn" data-copy="GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}" data-skill="{esc(s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
-</div>'''
+</div>
+{tools_html}'''
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
 
 
@@ -427,37 +446,22 @@ def render_suite_detail(suite):
 
 
 def render_api(own, suites):
-    docs = apidocs.collect()
-    tool_sections = []
-    for s in own:
-        entries = docs.get(s["name"], [])
-        if not entries:
-            continue
-        rows = ""
-        for e in entries:
-            args_html = "<br>".join(f"<code class='inl'>{esc(f)}</code> {esc(h)}" for f, h in e["args"]) or "—"
-            rows += (f"<tr><td><code class='inl'>{esc(e['script'])}</code></td>"
-                     f"<td>{esc(e['summary'])}</td><td>{args_html}</td></tr>")
-        tool_sections.append(
-            f"<h3 class='api-h3'>{esc(s.get('name-zh', s['name']))} "
-            f"<span class='en-name'>{esc(s['name'])}</span></h3>"
-            f"<table class='api'><tr><th data-zh='脚本' data-en='Script'>脚本</th>"
-            f"<th data-zh='功能' data-en='Function'>功能</th>"
-            f"<th data-zh='参数' data-en='Args'>参数</th></tr>{rows}</table>")
     inner = f'''
 <h2 data-zh="API 文档" data-en="API Docs">API 文档</h2>
-<h2 class="h2-sm" data-zh="平台接口(统计数据)" data-en="Platform API (stats)">平台接口(统计数据)</h2>
+<p class="hint-dim" data-zh="本页仅收录本站对外提供的网络接口;各技能自带的命令行工具(随技能安装、由 agent 本地调用)见对应技能详情页。" data-en="This page lists network APIs only. Bundled CLI tools (installed with each skill, invoked locally by the agent) are documented on each skill page.">本页仅收录本站对外提供的网络接口;各技能自带的命令行工具(随技能安装、由 agent 本地调用)见对应技能详情页。</p>
 <table class="api">
 <tr><th data-zh="接口" data-en="Endpoint">接口</th><th data-zh="方法" data-en="Method">方法</th><th data-zh="说明" data-en="Description">说明</th></tr>
 <tr><td><code class="inl">/api/download</code></td><td>POST</td><td data-zh="记录一次下载/复制。Body: {{"skill":"&lt;name&gt;","action":"copy"}}" data-en="Record a download/copy. Body: skill + action">记录一次下载/复制。Body: <code class="inl">{{"skill":"&lt;name&gt;","action":"copy"}}</code></td></tr>
 <tr><td><code class="inl">/api/stats</code></td><td>GET</td><td data-zh="返回全部下载计数 JSON" data-en="Returns all download counters as JSON">返回全部下载计数 JSON</td></tr>
+<tr><td><code class="inl">/api/health</code></td><td>GET</td><td data-zh="后端存活检查" data-en="Backend health check">后端存活检查</td></tr>
 <tr><td><code class="inl">/dl/&lt;ns&gt;/&lt;skill&gt;.tar.gz</code></td><td>GET</td><td data-zh="经本站代理下载收录技能(计数生效);白名单内套件可用" data-en="Proxied download of listed skills (counted); whitelist only">经本站代理下载收录技能(计数生效);白名单内套件可用</td></tr>
 <tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/版本),供第三方页面调用" data-en="Full skill data (names, bilingual descriptions, categories, versions)">全量技能数据(名称/双语简介/分类/版本),供第三方页面调用</td></tr>
-<tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用(P3 上线)" data-en="Mind map SVGs, CORS-enabled (P3)">思维导图 SVG,已开 CORS,可外部引用(P3 上线)</td></tr>
+<tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
 </table>
-<h2 class="h2-sm" data-zh="自研技能自带工具(scripts/,参数自动提取)" data-en="Bundled tools (scripts/, auto-extracted)">自研技能自带工具(scripts/,参数自动提取)</h2>
-{"".join(tool_sections)}
-<p class="hint-dim" data-zh="参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。" data-en="Parameters are auto-extracted from argparse definitions via AST at build time. Tools run locally after skill installation.">参数由构建器从 argparse 定义经 AST 自动提取,随脚本更新。授权用户安装技能后即可在本地运行这些工具。</p>'''
+<h2 class="h2-sm" data-zh="使用示例" data-en="Examples">使用示例</h2>
+<div class="cmd">curl -s https://skillx.yueliai.top/api/stats</div>
+<div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"skill":"malware-analysis","action":"copy"}}' https://skillx.yueliai.top/api/download</div>
+<div class="cmd">curl -sO https://skillx.yueliai.top/dl/addyosmani/agent-skills/test-driven-development.tar.gz</div>'''
     return page_shell("API 文档", "API Docs", "api", inner)
 
 
@@ -483,8 +487,9 @@ def main():
     suites, _ = collect_external()
 
     pages = {"index.html": render_index(own, suites)}
+    tool_docs = apidocs.collect()
     for s in own:
-        pages[s["page"]] = render_own_detail(s)
+        pages[s["page"]] = render_own_detail(s, tool_docs.get(s["name"], []))
     pages["suites/index.html"] = render_suites_index(suites)
     for suite in suites:
         ns = suite["namespace"]
