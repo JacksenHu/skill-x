@@ -50,6 +50,16 @@ def main():
     print("UnZip ->", r3.get("msg"))
     r4 = call("files", "DeleteFile", path=tmp_tar)
     print("清理临时包 ->", r4.get("msg"))
+    if "--api" in sys.argv:
+        api_dir = ROOT / "api"
+        for fname in ("server.py", "registry.json"):
+            src = api_dir / fname
+            if src.is_file():
+                ra = call("files", "UploadFile", path="/www/wwwroot/skillx-api",
+                          files={"zunfile": (fname, src.read_bytes())})
+                print(f"后端 {fname} ->", ra.get("msg"))
+        print("[+] 后端已更新(server.py 内含热重载,约 30 秒内自动生效)")
+
     if r1.get("status") and r3.get("status"):
         if "--reload" in sys.argv:
             r5 = call("system", "ServiceAdmin", name="nginx", type="reload")

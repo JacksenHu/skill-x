@@ -12,7 +12,7 @@
  "skills/ext-addyosmani--agent-skills--security-and-hardening.html": "877a150253cdf1e7",
  "skills/ext-addyosmani--agent-skills--using-agent-skills.html": "853e0551289a7808",
  "recommend.html": "c9c28c5d91961308",
- "api.html": "ca06ec2f85644f6c",
+ "api.html": "6a20098b078458ee",
  "about.html": "78cde8c0aa49c082",
  "mindmaps/binary-reverse-engineering.svg": "4a61a7341c0ca044",
  "mindmaps/malware-analysis.svg": "e93e5dc42c2b5610",
@@ -22,5 +22,5 @@
  "mindmaps/suite-vercel-labs--agent-skills.svg": "bc6b3c78b0f73262",
  "mindmaps/verification-run-hygiene.svg": "85f8a0a0bf68d971",
  "assets/style.css": "236b68baddbc7548",
- "assets/app.js": "93ef0bae97e4c63e"
+ "assets/app.js": "b103255b237e4d55"
 }

@@ -16,9 +16,12 @@
 """
 import io
 import json
+import os
 import re
 import sqlite3
+import sys
 import tarfile
+import threading
 import time
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -29,11 +32,74 @@ BASE = Path(__file__).resolve().parent
 DB = BASE / "stats.db"
 CACHE = BASE / "cache"
 REGISTRY = json.loads((BASE / "registry.json").read_text(encoding="utf-8"))
+SITE_DATA = Path(os.environ.get("SITE_DATA", "/www/wwwroot/skillx.yueliai.top/site-data.json"))
 RATE_LIMIT = 60  # 次/分钟/IP
 UA = {"User-Agent": "skill-x-api/1.0"}
 _rate = {}
 
+VERSION = "2026-09-24.1"
+
 VALID_KEY = re.compile(r"^[\w./-]{1,120}$")
+
+CAT_KW = {
+    "reverse-engineering": ["逆向", "反编译", "脱壳", "汇编", "ida", "ghidra", "radare", "补丁", "patch", "还原", "破解", "二进制", "固件", "elf", "pe", "exe", "dll", "apk", "so", "安卓", "混淆"],
+    "pentest": ["渗透", "漏洞", "越权", "idor", "注入", "sql", "xss", "ssrf", "扫描", "红队", "靶场", "接口", "api", "鉴权", "认证", "oauth", "jwt", "csrf", "上传", "命令执行"],
+    "malware": ["样本", "恶意", "病毒", "木马", "后门", "勒索", "c2", "ioc", "yara", "加壳", "免杀", "远控"],
+    "forensics": ["内存", "转储", "dump", "进程", "指针", "偏移", "aob", "特征码", "基址", "崩溃"],
+    "engineering-hygiene": ["测试", "回归", "验证", "质量", "审查", "纪律", "假红", "污染"],
+    "dev-workflow": ["开发", "流程", "工程", "ci", "部署", "调试"],
+}
+
+
+def tokenize(s: str):
+    low = (s or "").lower()
+    toks = set(w for w in re.findall(r"[a-z0-9][a-z0-9_.-]+", low) if len(w) >= 2)
+    zh = re.sub(r"[^\u4e00-\u9fa5]", "", s or "")
+    toks.update(zh[i:i + 2] for i in range(len(zh) - 1))
+    return toks
+
+
+def recommend(query: str, top: int = 6):
+    if not SITE_DATA.is_file():
+        return None
+    data = json.loads(SITE_DATA.read_text(encoding="utf-8"))
+    toks = tokenize(query)
+    low = (query or "").lower()
+    cat_boost = {}
+    for cat, kws in CAT_KW.items():
+        n = sum(1 for k in kws if k in low)
+        if n:
+            cat_boost[cat] = n * 6
+    scored = []
+    for sk in data.get("skills", []):
+        score, why = 0, set()
+        nm = f"{sk.get('name','')} {sk.get('name-zh','')}".lower()
+        desc = f"{sk.get('description','')} {sk.get('description-zh','')}".lower()
+        for t in toks:
+            if t in nm:
+                score += 10
+                why.add(t)
+            elif t in desc:
+                score += 3
+                why.add(t)
+        c = sk.get("category", "")
+        if cat_boost.get(c):
+            score += cat_boost[c]
+            why.add(c)
+        if score > 0:
+            scored.append({"skill": sk, "score": score, "why": sorted(why)[:6]})
+    scored.sort(key=lambda x: -x["score"])
+    out = []
+    for item in scored[:top]:
+        sk = item["skill"]
+        out.append({
+            "name": sk.get("name"), "name-zh": sk.get("name-zh"), "kind": sk.get("kind"),
+            "description": sk.get("description"), "description-zh": sk.get("description-zh"),
+            "category": sk.get("category"), "suite": sk.get("suite"), "page": sk.get("page"),
+            "install": sk.get("install"), "score": item["score"], "matched": item["why"],
+        })
+    return out
+
 
 
 def db():
@@ -147,11 +213,19 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urlparse(self.path).path
         if path == "/api/health":
-            return self._json({"ok": True})
+            return self._json({"ok": True, "version": VERSION})
         if not self._guarded():
             return
         if path == "/api/stats":
             return self._json({"counts": all_counts()})
+        if path == "/api/recommend":
+            q = urllib.parse.parse_qs(urlparse(self.path).query).get("q", [""])[0]
+            if not q.strip():
+                return self._json({"error": "missing query param q"}, 400)
+            res = recommend(q)
+            if res is None:
+                return self._json({"error": "site data unavailable"}, 503)
+            return self._json({"query": q, "results": res})
         m = re.fullmatch(r"/dl/([\w.-]+/[\w.-]+)/([\w.-]+)\.tar\.gz", path)
         if m:
             return self._dl(m.group(1), m.group(2))
@@ -159,7 +233,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
-        if path != "/api/download":
+        if path not in ("/api/download", "/api/recommend"):
             return self._json({"error": "not found"}, 404)
         if not self._guarded():
             return
@@ -170,6 +244,14 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length) or b"{}")
         except Exception:
             return self._json({"error": "bad json"}, 400)
+        if path == "/api/recommend":
+            q = str(body.get("query", "")).strip()
+            if not q:
+                return self._json({"error": "missing query"}, 400)
+            res = recommend(q)
+            if res is None:
+                return self._json({"error": "site data unavailable"}, 503)
+            return self._json({"query": q, "results": res})
         skill = str(body.get("skill", "")).strip()
         if not skill or not VALID_KEY.match(skill):
             return self._json({"error": "bad skill"}, 400)
@@ -200,9 +282,27 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
 
+def watch_reload():
+    """源码 mtime 变化时自动重启(部署新版本后无需手动重启进程)。"""
+    src = Path(__file__).resolve()
+    try:
+        mtime = src.stat().st_mtime
+    except OSError:
+        return
+    while True:
+        time.sleep(30)
+        try:
+            if src.stat().st_mtime != mtime:
+                print("source changed, reloading…", flush=True)
+                os.execv(sys.executable, [sys.executable, str(src)] + sys.argv[1:])
+        except OSError:
+            continue
+
+
 def main():
+    threading.Thread(target=watch_reload, daemon=True).start()
     srv = ThreadingHTTPServer(("127.0.0.1", 8787), Handler)
-    print("skill-x api listening on 127.0.0.1:8787")
+    print("skill-x api listening on 127.0.0.1:8787", flush=True)
     srv.serve_forever()
 
 

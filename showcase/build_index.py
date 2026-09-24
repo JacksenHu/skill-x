@@ -190,9 +190,9 @@ APP_JS = """
     });
   }).catch(()=>{});
 
-  /* ---- 技能推荐 ---- */
+  /* ---- 技能推荐(优先后端 API,失败降级本地匹配) ---- */
   const CAT_KW = {
-    'reverse-engineering': ['逆向','反编译','脱壳','汇编','ida','ghidra','radare','补丁','patch','还原','破解','二进制','固件','elf','pe','exe','dll','apk','so','安卓','脱壳','混淆'],
+    'reverse-engineering': ['逆向','反编译','脱壳','汇编','ida','ghidra','radare','补丁','patch','还原','破解','二进制','固件','elf','pe','exe','dll','apk','so','安卓','混淆'],
     'pentest': ['渗透','漏洞','越权','idor','注入','sql','xss','ssrf','扫描','红队','靶场','接口','api','鉴权','认证','oauth','jwt','csrf','上传','命令执行'],
     'malware': ['样本','恶意','病毒','木马','后门','勒索','c2','ioc','yara','加壳','免杀','远控'],
     'forensics': ['内存','转储','dump','进程','指针','偏移','aob','特征码','基址','崩溃'],
@@ -202,10 +202,54 @@ APP_JS = """
   function tokenize(s){
     const low = (s||'').toLowerCase();
     const out = new Set();
-    (low.match(/[a-z0-9][a-z0-9_.-]{1,}/g)||[]).forEach(w=>{ if(w.length>=2) out.add(w); });
+    (low.match(/[a-z0-9][a-z0-9_.-]+/g)||[]).forEach(w=>{ if(w.length>=2) out.add(w); });
     const zh = (s||'').replace(/[^\u4e00-\u9fa5]/g,'');
     for (let i=0;i<zh.length-1;i++) out.add(zh.slice(i,i+2));
     return [...out];
+  }
+  function renderRecs(list){
+    const box = document.getElementById('rec-results');
+    const empty = document.getElementById('rec-empty');
+    if (!box) return;
+    if (!list || !list.length){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
+    empty?.classList.add('hidden');
+    box.innerHTML = list.map(function(r){
+      const kind = r.kind === 'own' ? '<span class="badge auth">自研·需授权</span>' : '<span class="badge ext">社区精选</span>';
+      const cmd = r.install || '';
+      const why = (r.matched || []).join(' · ');
+      return '<div class="card"><div class="card-head"><h3><a href="'+r.page+'">'+((r['name-zh'])||r.name)+'</a></h3>'+kind+'</div>'+
+        '<div class="en-name">'+r.name+'</div>'+
+        '<p>'+((r['description-zh'])||r.description||'')+'</p>'+
+        '<div class="meta"><span class="badge cat">'+(r.category||'')+'</span><span class="dl">匹配: '+why+'</span></div>'+
+        '<div class="cmd">'+cmd+'</div>'+
+        '<button class="chip on copy-btn" data-copy="'+cmd.replace(/"/g,'&quot;')+'" data-skill="'+r.name+'">复制安装命令</button></div>';
+    }).join('');
+    box.querySelectorAll('.copy-btn').forEach(function(b){
+      b.addEventListener('click', function(){ window.sxCopy(b, b.dataset.copy || '', b.dataset.skill || ''); });
+    });
+  }
+  function localRecommend(raw, data){
+    const toks = tokenize(raw);
+    const low = raw.toLowerCase();
+    const catBoost = {};
+    Object.keys(CAT_KW).forEach(function(cat){
+      let n = 0; CAT_KW[cat].forEach(function(k){ if (low.indexOf(k) >= 0) n++; });
+      if (n) catBoost[cat] = n * 6;
+    });
+    const scored = [];
+    (data.skills || []).forEach(function(sk){
+      let score = 0; const why = new Set();
+      const nm = (sk.name + ' ' + (sk['name-zh']||'')).toLowerCase();
+      const desc = ((sk.description||'') + ' ' + (sk['description-zh']||'')).toLowerCase();
+      toks.forEach(function(t){
+        if (nm.indexOf(t) >= 0){ score += 10; why.add(t); }
+        else if (desc.indexOf(t) >= 0){ score += 3; why.add(t); }
+      });
+      if (catBoost[sk.category]){ score += catBoost[sk.category]; why.add(sk.category); }
+      if (score > 0){ sk.score = score; sk.matched = [...why].slice(0,6); scored.push(sk); }
+    });
+    scored.sort(function(a,b){ return b.score - a.score; });
+    return scored.slice(0,6);
   }
   window.sxRecommend = function(){
     const raw = (document.getElementById('idea')?.value || '').trim();
@@ -213,49 +257,18 @@ APP_JS = """
     const empty = document.getElementById('rec-empty');
     if (!box) return;
     if (!raw){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
-    fetch('/site-data.json').then(r=>r.json()).then(data=>{
-      const skills = data.skills || [];
-      const toks = tokenize(raw);
-      const low = raw.toLowerCase();
-      const catBoost = {};
-      Object.entries(CAT_KW).forEach(([cat, kws])=>{
-        let n = 0; kws.forEach(k=>{ if (low.includes(k)) n++; });
-        if (n) catBoost[cat] = n * 6;
+    box.innerHTML = '<div class="empty">…</div>';
+    fetch('/api/recommend', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({query: raw})})
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+      .then(function(d){ renderRecs(d.results || []); })
+      .catch(function(){
+        fetch('/site-data.json').then(function(r){ return r.json(); })
+          .then(function(data){ renderRecs(localRecommend(raw, data)); })
+          .catch(function(){ box.innerHTML=''; empty?.classList.remove('hidden'); });
       });
-      const scored = [];
-      skills.forEach(sk=>{
-        let score = 0; const why = new Set();
-        const nm = (sk.name + ' ' + (sk['name-zh']||'')).toLowerCase();
-        const desc = ((sk.description||'') + ' ' + (sk['description-zh']||'')).toLowerCase();
-        toks.forEach(t=>{
-          if (nm.includes(t)){ score += 10; why.add(t); }
-          else if (desc.includes(t)){ score += 3; why.add(t); }
-        });
-        if (catBoost[sk.category]) { score += catBoost[sk.category]; why.add(sk.category); }
-        if (score > 0) scored.push({sk, score, why:[...why].slice(0,6)});
-      });
-      scored.sort((a,b)=>b.score-a.score);
-      const top = scored.slice(0,6);
-      if (!top.length){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
-      empty?.classList.add('hidden');
-      box.innerHTML = top.map(({sk,why})=>{
-        const kind = sk.kind === 'own' ? '<span class="badge auth">自研·需授权</span>' : '<span class="badge ext">社区精选</span>';
-        const cmd = sk.install || '';
-        return '<div class="card"><div class="card-head"><h3><a href="'+sk.page+'">'+
-          (sk['name-zh']||sk.name)+'</a></h3>'+kind+'</div>'+
-          '<div class="en-name">'+sk.name+'</div>'+
-          '<p>'+(sk['description-zh']||sk.description||'')+'</p>'+
-          '<div class="meta"><span class="badge cat">'+(sk.category||'')+'</span><span class="dl">匹配: '+why.join(' · ')+'</span></div>'+
-          '<div class="cmd">'+cmd+'</div>'+
-          '<button class="chip on copy-btn" data-copy="'+cmd.replace(/"/g,'&quot;')+'" data-skill="'+sk.name+'">复制安装命令</button></div>';
-      }).join('');
-      box.querySelectorAll('.copy-btn').forEach(b=>b.addEventListener('click', ()=>{
-        window.sxCopy(b, b.dataset.copy || '', b.dataset.skill || '');
-      }));
-    }).catch(()=>{ empty?.classList.remove('hidden'); });
   };
-  document.getElementById('find-btn')?.addEventListener('click', ()=>window.sxRecommend());
-  document.getElementById('idea')?.addEventListener('keydown', e=>{ if(e.key==='Enter' && (e.ctrlKey||e.metaKey)) window.sxRecommend(); });
+  document.getElementById('find-btn')?.addEventListener('click', function(){ window.sxRecommend(); });
+  document.getElementById('idea')?.addEventListener('keydown', function(e){ if(e.key==='Enter' && (e.ctrlKey||e.metaKey)) window.sxRecommend(); });
   setLang(cur());
 })();
 """
@@ -685,12 +698,18 @@ def render_api(own, suites):
 <tr><td><code class="inl">/api/stats</code></td><td>GET</td><td data-zh="返回全部下载计数 JSON" data-en="Returns all download counters as JSON">返回全部下载计数 JSON</td></tr>
 <tr><td><code class="inl">/api/health</code></td><td>GET</td><td data-zh="后端存活检查" data-en="Backend health check">后端存活检查</td></tr>
 <tr><td><code class="inl">/dl/&lt;ns&gt;/&lt;skill&gt;.tar.gz</code></td><td>GET</td><td data-zh="经本站代理下载收录技能(计数生效);白名单内套件可用" data-en="Proxied download of listed skills (counted); whitelist only">经本站代理下载收录技能(计数生效);白名单内套件可用</td></tr>
-<tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/版本),供第三方页面调用" data-en="Full skill data (names, bilingual descriptions, categories, versions)">全量技能数据(名称/双语简介/分类/版本),供第三方页面调用</td></tr>
+<tr><td><code class="inl">/api/recommend</code></td><td>GET / POST</td><td data-zh="技能推荐:传入自然语言任务描述,返回适用技能排序(含匹配理由/安装命令)。GET 用 ?q=描述;POST 用 {{&quot;query&quot;:&quot;描述&quot;}}" data-en="Skill recommendation: pass a natural-language task; returns ranked skills with match reasons and install commands.">技能推荐:传入自然语言任务描述,返回适用技能排序(含匹配理由/安装命令)。GET 用 <code class="inl">?q=描述</code>;POST 用 <code class="inl">{{"query":"描述"}}</code></td></tr>
+<tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/安装命令/页面路径)" data-en="Full skill data (names, bilingual descriptions, categories, install commands, page paths)">全量技能数据(名称/双语简介/分类/安装命令/页面路径)</td></tr>
+<tr><td><code class="inl">/tools.json</code></td><td>GET</td><td data-zh="自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)" data-en="Bundled tools inventory (scripts, functions, argparse params)">自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)</td></tr>
+<tr><td><code class="inl">/audit-report.json</code></td><td>GET</td><td data-zh="安全审计报告(各技能等级/评分/检查项明细,机器可读)" data-en="Security audit report (grades, scores, check details)">安全审计报告(各技能等级/评分/检查项明细,机器可读)</td></tr>
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
 </table>
 <h2 class="h2-sm" data-zh="使用示例" data-en="Examples">使用示例</h2>
 <div class="cmd">curl -s https://skillx.yueliai.top/api/stats</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"skill":"malware-analysis","action":"copy"}}' https://skillx.yueliai.top/api/download</div>
+<div class="cmd">curl -s "https://skillx.yueliai.top/api/recommend?q=想给安卓apk脱壳"</div>
+<div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"query":"测试集体变红怎么排查"}}' https://skillx.yueliai.top/api/recommend</div>
+<div class="cmd">curl -s https://skillx.yueliai.top/audit-report.json</div>
 <div class="cmd">curl -sO https://skillx.yueliai.top/dl/addyosmani/agent-skills/test-driven-development.tar.gz</div>'''
     return page_shell("API 文档", "API Docs", "api", inner)
 
@@ -845,6 +864,16 @@ def main():
                    for s in suites],
     }
     (DIST / "site-data.json").write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # 机器可读数据接口:工具清单 + 审计报告(供外部程序调用,nginx 静态提供)
+    tools_data = {"generatedAt": time.strftime("%Y-%m-%d"), "version": TEMPLATE_VERSION, "tools": {
+        name: [{"script": e["script"], "summary": e["summary"], "summary-zh": e.get("summary-zh"),
+                "args": [{"flags": f, "help": h} for f, h in e["args"]]} for e in entries]
+        for name, entries in tool_docs.items()}}
+    (DIST / "tools.json").write_text(json.dumps(tools_data, ensure_ascii=False, indent=2), encoding="utf-8")
+    if AUDIT_PATH.is_file():
+        (DIST / "audit-report.json").write_text(AUDIT_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+
     MANIFEST.write_text(json.dumps(new_manifest, indent=1), encoding="utf-8")
     print(f"[+] 产物 {len(pages)} 页 + 2 assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};自研 {len(own)},套件 {len(suites)})")
     return 0
