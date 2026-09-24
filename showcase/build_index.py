@@ -16,6 +16,8 @@ import html
 import json
 import re
 import sys
+import time
+import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -26,6 +28,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 EXTERNAL = ROOT / "external.json"
 I18N_EXT = Path(__file__).resolve().parent / "i18n-ext.json"
+CURATION = Path(__file__).resolve().parent / "curation.json"
+STAR_CACHE = Path(__file__).resolve().parent / ".upstream-cache.json"
 DIST = Path(__file__).resolve().parent / "dist"
 MANIFEST = Path(__file__).resolve().parent / ".build-manifest.json"
 TEMPLATE_VERSION = "3.0"
@@ -58,6 +62,9 @@ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;backgroun
 .search{margin:0 auto 6px;max-width:640px}
 .search input{width:100%;padding:12px 16px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .search input:focus{outline:2px solid #0ea5e9}
+.search-wide{max-width:720px}
+.search textarea{width:100%;padding:12px 16px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;resize:vertical;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.search textarea:focus{outline:2px solid #0ea5e9}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
 .chip{font-size:12px;padding:4px 12px;border:1px solid #d1d5db;border-radius:99px;background:#fff;cursor:pointer;color:#4b5563}
 .chip.on{background:#0ea5e9;border-color:#0ea5e9;color:#fff}
@@ -182,6 +189,73 @@ APP_JS = """
       e.textContent = (v === undefined) ? '0' : String(v);
     });
   }).catch(()=>{});
+
+  /* ---- 技能推荐 ---- */
+  const CAT_KW = {
+    'reverse-engineering': ['逆向','反编译','脱壳','汇编','ida','ghidra','radare','补丁','patch','还原','破解','二进制','固件','elf','pe','exe','dll','apk','so','安卓','脱壳','混淆'],
+    'pentest': ['渗透','漏洞','越权','idor','注入','sql','xss','ssrf','扫描','红队','靶场','接口','api','鉴权','认证','oauth','jwt','csrf','上传','命令执行'],
+    'malware': ['样本','恶意','病毒','木马','后门','勒索','c2','ioc','yara','加壳','免杀','远控'],
+    'forensics': ['内存','转储','dump','进程','指针','偏移','aob','特征码','基址','崩溃'],
+    'engineering-hygiene': ['测试','回归','验证','质量','审查','纪律','假红','污染'],
+    'dev-workflow': ['开发','流程','工程','ci','部署','调试']
+  };
+  function tokenize(s){
+    const low = (s||'').toLowerCase();
+    const out = new Set();
+    (low.match(/[a-z0-9][a-z0-9_.-]{1,}/g)||[]).forEach(w=>{ if(w.length>=2) out.add(w); });
+    const zh = (s||'').replace(/[^\u4e00-\u9fa5]/g,'');
+    for (let i=0;i<zh.length-1;i++) out.add(zh.slice(i,i+2));
+    return [...out];
+  }
+  window.sxRecommend = function(){
+    const raw = (document.getElementById('idea')?.value || '').trim();
+    const box = document.getElementById('rec-results');
+    const empty = document.getElementById('rec-empty');
+    if (!box) return;
+    if (!raw){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
+    fetch('/site-data.json').then(r=>r.json()).then(data=>{
+      const skills = data.skills || [];
+      const toks = tokenize(raw);
+      const low = raw.toLowerCase();
+      const catBoost = {};
+      Object.entries(CAT_KW).forEach(([cat, kws])=>{
+        let n = 0; kws.forEach(k=>{ if (low.includes(k)) n++; });
+        if (n) catBoost[cat] = n * 6;
+      });
+      const scored = [];
+      skills.forEach(sk=>{
+        let score = 0; const why = new Set();
+        const nm = (sk.name + ' ' + (sk['name-zh']||'')).toLowerCase();
+        const desc = ((sk.description||'') + ' ' + (sk['description-zh']||'')).toLowerCase();
+        toks.forEach(t=>{
+          if (nm.includes(t)){ score += 10; why.add(t); }
+          else if (desc.includes(t)){ score += 3; why.add(t); }
+        });
+        if (catBoost[sk.category]) { score += catBoost[sk.category]; why.add(sk.category); }
+        if (score > 0) scored.push({sk, score, why:[...why].slice(0,6)});
+      });
+      scored.sort((a,b)=>b.score-a.score);
+      const top = scored.slice(0,6);
+      if (!top.length){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
+      empty?.classList.add('hidden');
+      box.innerHTML = top.map(({sk,why})=>{
+        const kind = sk.kind === 'own' ? '<span class="badge auth">自研·需授权</span>' : '<span class="badge ext">社区精选</span>';
+        const cmd = sk.install || '';
+        return '<div class="card"><div class="card-head"><h3><a href="'+sk.page+'">'+
+          (sk['name-zh']||sk.name)+'</a></h3>'+kind+'</div>'+
+          '<div class="en-name">'+sk.name+'</div>'+
+          '<p>'+(sk['description-zh']||sk.description||'')+'</p>'+
+          '<div class="meta"><span class="badge cat">'+(sk.category||'')+'</span><span class="dl">匹配: '+why.join(' · ')+'</span></div>'+
+          '<div class="cmd">'+cmd+'</div>'+
+          '<button class="chip on copy-btn" data-copy="'+cmd.replace(/"/g,'&quot;')+'" data-skill="'+sk.name+'">复制安装命令</button></div>';
+      }).join('');
+      box.querySelectorAll('.copy-btn').forEach(b=>b.addEventListener('click', ()=>{
+        window.sxCopy(b, b.dataset.copy || '', b.dataset.skill || '');
+      }));
+    }).catch(()=>{ empty?.classList.remove('hidden'); });
+  };
+  document.getElementById('find-btn')?.addEventListener('click', ()=>window.sxRecommend());
+  document.getElementById('idea')?.addEventListener('keydown', e=>{ if(e.key==='Enter' && (e.ctrlKey||e.metaKey)) window.sxRecommend(); });
   setLang(cur());
 })();
 """
@@ -245,12 +319,62 @@ def collect_own_skills():
     return skills, bodies
 
 
+def load_curation():
+    if CURATION.is_file():
+        try:
+            return json.loads(CURATION.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            pass
+    return {"include": {}, "excluded": {}}
+
+
+def fetch_upstream_stats(namespaces):
+    """拉取上游仓库 Star/Fork(24h 缓存)。失败不阻断构建。"""
+    if STAR_CACHE.is_file():
+        try:
+            cache = json.loads(STAR_CACHE.read_text(encoding="utf-8"))
+            if time.time() - cache.get("_ts", 0) < 86400 and cache.get("repos"):
+                return cache["repos"]
+        except json.JSONDecodeError:
+            pass
+    repos = {}
+    for ns in namespaces:
+        try:
+            req = urllib.request.Request(
+                f"https://api.github.com/repos/{ns}",
+                headers={"User-Agent": "skill-x-build", "Accept": "application/vnd.github+json"})
+            with urllib.request.urlopen(req, timeout=15) as r:
+                d = json.loads(r.read().decode("utf-8", "replace"))
+            repos[ns] = {"stars": d.get("stargazers_count"), "forks": d.get("forks_count"),
+                         "pushed": (d.get("pushed_at") or "")[:10]}
+        except Exception as e:  # noqa: BLE001
+            repos[ns] = {"stars": None, "forks": None, "error": str(e)[:80]}
+    try:
+        STAR_CACHE.write_text(json.dumps({"_ts": time.time(), "repos": repos}, indent=1), encoding="utf-8")
+    except OSError:
+        pass
+    return repos
+
+
 def collect_external():
     i18n = json.loads(I18N_EXT.read_text(encoding="utf-8")) if I18N_EXT.is_file() else {}
+    curation = load_curation()
     if not EXTERNAL.is_file():
         return [], i18n
     doc = json.loads(EXTERNAL.read_text(encoding="utf-8"))
     suites = [s for s in doc.get("suites", []) if s.get("verified", {}).get("execReview") == "passed"]
+    kept = []
+    for suite in suites:
+        ns = suite["namespace"]
+        allow = curation.get("include", {}).get(ns)
+        total = len(suite["skills"])
+        if allow is not None:
+            suite["skills"] = [x for x in suite["skills"] if x["name"] in allow]
+        if not suite["skills"]:
+            continue  # 无符合方向技能的套件整体不展示
+        suite["totalSkills"] = total
+        kept.append(suite)
+    suites = kept
     for suite in suites:
         table = i18n.get(suite["namespace"], {})
         for s in suite["skills"]:
@@ -280,6 +404,7 @@ def nav(active="skills"):
     return f'''<div class="topnav">
   <a class="brand" href="/">Skill X</a>
   <a href="/"{cls("skills")} data-zh="技能" data-en="Skills">技能</a>
+  <a href="/recommend.html"{cls("recommend")} data-zh="技能推荐" data-en="Finder">技能推荐</a>
   <a href="/suites/"{cls("suites")} data-zh="套件" data-en="Suites">套件</a>
   <a href="/api.html"{cls("api")} data-zh="API 文档" data-en="API Docs">API 文档</a>
   <a href="/about.html"{cls("about")} data-zh="关于" data-en="About">关于</a>
@@ -303,7 +428,7 @@ def page_shell(title, title_en, active, inner):
 
 def card(s, kind, page):
     cat_label = CATEGORIES.get(s.get("category", ""), s.get("category", ""))
-    badge = '<span class="badge auth">安装需授权</span>' if kind == "own" else '<span class="badge ext">社区收录</span>'
+    badge = '<span class="badge auth">安装需授权</span>' if kind == "own" else '<span class="badge ext">社区精选</span>'
     search = f'{s["name"]} {s.get("name-zh","")} {s["description"]} {s.get("description-zh","")}'.lower()
     return f'''<div class="card" data-search="{esc(search)}" data-category="{esc(s.get("category",""))}">
   <div class="card-head"><h3><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></h3>{badge}</div>
@@ -340,7 +465,7 @@ def render_index(own, suites):
   <p><span data-zh="面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。" data-en="Security research and reverse-engineering skills for all agents. Own skills via authorized private distribution; community skills install from upstream.">面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。</span></p>
   <div class="stats">
     <span><b>{len(own)}</b><span data-zh="自研技能" data-en="Own skills">自研技能</span></span>
-    <span><b>{total_ext}</b><span data-zh="社区收录" data-en="Community">社区收录</span></span>
+    <span><b>{total_ext}</b><span data-zh="社区精选" data-en="Curated">社区精选</span></span>
     <span><b>{len(suites)}</b><span data-zh="收录套件" data-en="Suites">收录套件</span></span>
   </div>
 </div>
@@ -350,7 +475,7 @@ def render_index(own, suites):
 <h2 data-zh="自研技能" data-en="Own Skills">自研技能</h2>
 <div class="grid">{own_cards}</div>
 <div class="notice"><span data-zh="自研技能经私有仓库授权分发。获得授权的协作者:" data-en="Own skills are distributed via a private repo. Authorized collaborators:">自研技能经私有仓库授权分发。获得授权的协作者:</span><code class="inl">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill &lt;name&gt;</code></div>
-<h2 data-zh="社区收录" data-en="Community">社区收录</h2>
+<h2 data-zh="社区精选" data-en="Curated">社区收录</h2>
 {"".join(suite_sections) if suite_sections else "<p>暂无收录</p>"}'''
     return page_shell("Skill X — Agent Skills 注册中心", "Skill X", "skills", inner)
 
@@ -469,7 +594,7 @@ def render_ext_detail(suite, s, audit_entry=None, audit_at=""):
     lic_text = lic if lic != "UNKNOWN" else "未确认(仅链接收录)"
     install = f"npx skills add {ns} --skill {s['name']}"
     inner = f'''<div class="detail">
-  <div class="card-head"><h1>{esc(s.get("name-zh", s["name"]))}</h1><span class="badge ext">社区收录</span></div>
+  <div class="card-head"><h1>{esc(s.get("name-zh", s["name"]))}</h1><span class="badge ext">社区精选</span></div>
   <div class="en-name">{esc(s["name"])}</div>
   <p class="desc"><span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"])}">{esc(s.get("description-zh",""))}</span></p>
   <dl class="kv">
@@ -497,38 +622,54 @@ def render_suites_index(suites):
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
         alive = suite.get("upstreamStatus", {}).get("alive", True)
         status = "🟢 在线" if alive else "🔴 失联"
+        st = suite.get("stats") or {}
+        stars = st.get("stars")
+        star_txt = f"⭐ {stars:,}" if isinstance(stars, int) else "⭐ —"
+        forks = st.get("forks")
+        fork_txt = f"🍴 {forks:,}" if isinstance(forks, int) else ""
+        total = suite.get("totalSkills", len(suite["skills"]))
+        picked = len(suite["skills"])
+        pick_txt = f"{picked} / {total}" if total != picked else str(picked)
         search = f"{ns} {lic} 套件 suite".lower()
         cards.append(f'''<div class="card" data-search="{esc(search)}" data-category="">
   <div class="card-head"><h3><a href="{ns_slug(ns)}.html">{esc(ns)}</a></h3><span class="badge ext">套件</span></div>
-  <div class="meta"><span>{len(suite["skills"])} skills · {esc(lic_badge)} · {status}</span></div>
-  <div class="meta"><span data-zh="收录于 " data-en="Ingested ">收录于 </span>{esc(suite.get("ingestedAt",""))} · <a href="{esc(suite["upstream"])}" class="dl">上游 ↗</a></div>
+  <div class="meta"><span><span data-zh="精选 " data-en="Curated ">精选 </span>{pick_txt} skills · {esc(lic_badge)} · {status}</span><span class="dl" data-stat="{esc(ns)}">—</span></div>
+  <div class="meta"><span>{star_txt} {fork_txt} · <a href="{esc(suite["upstream"])}" class="dl">上游 ↗</a></span></div>
 </div>''')
     inner = f'''
 <h2 data-zh="套件中心" data-en="Suite Center">套件中心</h2>
-<p class="hint-dim" data-zh="每个套件是一组可整体添加的技能集合。点击套件查看思维导图与内含技能。" data-en="A suite is a bundle of skills installable together. Click to view mind map and contents.">每个套件是一组可整体添加的技能集合。点击套件查看思维导图与内含技能。</p>
+<p class="hint-dim" data-zh="精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从上游套件中筛选出的符合方向技能数,完整套件可从上游获取。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。" data-en="Curation: only skills aligned with security research / reverse engineering / engineering hygiene are listed. Full suites are available upstream.">精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从上游套件中筛选出的符合方向技能数,完整套件可从上游获取。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。</p>
 <div class="grid grid-mt">{"".join(cards)}</div>
-<div class="notice" data-zh="想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查后收录。" data-en="Want your suite listed? Submit a link per the onboarding SOP.">想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查后收录。</div>'''
+<div class="notice" data-zh="想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查与方向筛选后收录。" data-en="Want your suite listed? Submit a link per the onboarding SOP.">想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查与方向筛选后收录。</div>'''
     return page_shell("套件中心", "Suites", "suites", inner)
 
 
 def render_suite_detail(suite):
     ns = suite["namespace"]
     lic = suite["license"]["spdx"]
+    st = suite.get("stats") or {}
+    stars = st.get("stars")
+    forks = st.get("forks")
+    total = suite.get("totalSkills", len(suite["skills"]))
+    picked = len(suite["skills"])
     cards = "\n".join(card(s, "ext", f"../skills/ext-{ns_slug(ns)}--{s['name']}.html") for s in suite["skills"])
     inner = f'''<div class="detail">
   <h1>{esc(ns)}</h1>
   <dl class="kv">
-    <dt>skill <span data-zh="数" data-en="count">数</span></dt><dd>{len(suite["skills"])}</dd>
+    <dt data-zh="精选技能" data-en="Curated">精选技能</dt><dd>{picked} / {total}<span data-zh="(从上游套件按方向筛选)" data-en=" (curated by scope)">(从上游套件按方向筛选)</span></dd>
+    <dt data-zh="上游热度" data-en="Upstream">上游热度</dt><dd>⭐ {stars:,} · 🍴 {forks:,}</dd>
+    <dt data-zh="本站下载" data-en="Site downloads">本站下载</dt><dd><span class="dl" data-stat="{esc(ns)}">—</span></dd>
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(lic if lic != "UNKNOWN" else "未确认(仅链接收录)")}</dd>
     <dt data-zh="收录日期" data-en="Ingested">收录日期</dt><dd>{esc(suite.get("ingestedAt", ""))}</dd>
     <dt data-zh="上游" data-en="Upstream">上游</dt><dd><a href="{esc(suite["upstream"])}">{esc(suite["upstream"])}</a></dd>
   </dl>
   <div class="mmap"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图"></div>
-  <p class="hint-ok" data-zh="整套件安装:" data-en="Install whole suite:">整套件安装:</p>
+  <p class="hint-ok" data-zh="整套件安装(含全部上游技能):" data-en="Install whole suite (all upstream skills):">整套件安装(含全部上游技能):</p>
   <div class="cmd">npx skills add {esc(ns)} --skill '*'</div>
   <button class="chip on copy-btn" data-copy="npx skills add {esc(ns)} --skill '*'" data-skill="{esc(ns)}" data-zh="复制套件安装命令" data-en="Copy suite install command">复制套件安装命令</button>
+  <p class="hint-dim" data-zh="注:上游套件共 {total} 个技能,本站按方向精选 {picked} 个展示;整套安装仍会包含上游全部技能。" data-en="Note: upstream ships {total} skills; {picked} are curated here; installing the suite still includes all upstream skills.">注:上游套件共 {total} 个技能,本站按方向精选 {picked} 个展示;整套安装仍会包含上游全部技能。</p>
 </div>
-<h2 data-zh="套件内技能" data-en="Skills in suite">套件内技能</h2>
+<h2 data-zh="精选技能" data-en="Curated skills">精选技能</h2>
 {chips_html()}
 <div class="grid">{cards}</div>'''
     return page_shell(ns, ns, "suites", inner)
@@ -554,6 +695,22 @@ def render_api(own, suites):
     return page_shell("API 文档", "API Docs", "api", inner)
 
 
+def render_recommend():
+    inner = '''
+<div class="hero">
+  <h1 data-zh="技能推荐" data-en="Skill Finder">技能推荐</h1>
+  <p data-zh="描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。" data-en="Describe what you want to do; we find matching skills. Natural language supported.">描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。</p>
+</div>
+<div class="search search-wide">
+  <textarea id="idea" rows="3" data-zh="描述你的任务或想法…(Ctrl+Enter 查找)" data-en="Describe your task… (Ctrl+Enter to search)" data-attr="placeholder" placeholder="描述你的任务或想法…(Ctrl+Enter 查找)"></textarea>
+  <div class="grid-mt"><button class="chip on" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button></div>
+</div>
+<div id="rec-results" class="grid grid-mt"></div>
+<div id="rec-empty" class="empty hidden" data-zh="没有匹配到技能,试着换个说法或输入更具体的任务。" data-en="No matching skills. Try different wording.">没有匹配到技能,试着换个说法或输入更具体的任务。</div>
+<p class="hint-dim" data-zh="匹配方式:对输入做中英文分词,与技能名称、简介、分类交叉打分后排序;结果附命中理由。技能安装后由 agent 自动调用。" data-en="Matching: tokenized against skill names, descriptions and categories; results include match reasons.">匹配方式:对输入做中英文分词,与技能名称、简介、分类交叉打分后排序;结果附命中理由。技能安装后由 agent 自动调用。</p>'''
+    return page_shell("技能推荐", "Skill Finder", "recommend", inner)
+
+
 def render_about(own, suites):
     total_ext = sum(len(s["skills"]) for s in suites)
     inner = f'''
@@ -574,6 +731,9 @@ def render_about(own, suites):
 def main():
     own, bodies = collect_own_skills()
     suites, _ = collect_external()
+    stats = fetch_upstream_stats([s["namespace"] for s in suites])
+    for s in suites:
+        s["stats"] = stats.get(s["namespace"], {})
 
     pages = {"index.html": render_index(own, suites)}
     tool_docs = apidocs.collect()
@@ -589,6 +749,7 @@ def main():
         for s in suite["skills"]:
             pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(
                 suite, s, (audit.get("suites") or {}).get(ns), audit_at)
+    pages["recommend.html"] = render_recommend()
     pages["api.html"] = render_api(own, suites)
     pages["about.html"] = render_about(own, suites)
 
@@ -648,17 +809,44 @@ def main():
             p.write_text(content, encoding="utf-8")
             written += 1
 
+    # 清理过时产物(已下架技能/套件/导图的残留文件,避免旧页面仍可访问)
+    valid = set(new_manifest.keys())
+    removed = 0
+    for f in sorted(DIST.rglob("*")):
+        if not f.is_file() or f.is_symlink():
+            continue
+        rel = str(f.relative_to(DIST)).replace("\\", "/")
+        if rel.endswith((".html", ".svg")) and rel not in valid:
+            f.unlink()
+            removed += 1
+            print(f"[-] 清理过时产物: {rel}")
+
     site_data = {
         "categories": CATEGORIES,
         "own": [{k: s[k] for k in ("name", "name-zh", "description", "description-zh", "category", "version", "license", "page")} for s in own],
+        "skills": (
+            [{"name": s["name"], "name-zh": s.get("name-zh", s["name"]),
+              "description": s["description"], "description-zh": s.get("description-zh", ""),
+              "category": s.get("category", ""), "kind": "own",
+              "page": "/" + s["page"], "install": f"GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {s['name']}"}
+             for s in own]
+            + [{"name": x["name"], "name-zh": x.get("name-zh", x["name"]),
+                "description": x["description"], "description-zh": x.get("description-zh", ""),
+                "category": x.get("category", ""), "kind": "ext", "suite": st["namespace"],
+                "page": f"/skills/ext-{ns_slug(st['namespace'])}--{x['name']}.html",
+                "install": f"npx skills add {st['namespace']} --skill {x['name']}"}
+               for st in suites for x in st["skills"]]
+        ),
         "suites": [{"namespace": s["namespace"], "upstream": s["upstream"], "license": s["license"]["spdx"],
+                    "total": s.get("totalSkills", len(s["skills"])),
+                    "stats": s.get("stats", {}),
                     "skills": [{"name": x["name"], "name-zh": x.get("name-zh"), "description": x["description"],
                                 "description-zh": x.get("description-zh"), "category": x.get("category")} for x in s["skills"]]}
                    for s in suites],
     }
     (DIST / "site-data.json").write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding="utf-8")
     MANIFEST.write_text(json.dumps(new_manifest, indent=1), encoding="utf-8")
-    print(f"[+] 产物 {len(pages)} 页 + 2 assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped};自研 {len(own)},套件 {len(suites)})")
+    print(f"[+] 产物 {len(pages)} 页 + 2 assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};自研 {len(own)},套件 {len(suites)})")
     return 0
 
 

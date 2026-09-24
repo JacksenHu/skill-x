@@ -1,0 +1,49 @@
+{
+  "_comment": "收录筛选(2026-09-24 老胡指示):只保留符合 Skill X 方向(安全研究/逆向工程/工程纪律)的技能。include = 白名单;excluded 记录排除原因便于复审;include 为空的套件整体不展示。可逆:调整本文件后重建即可。",
+  "criteria": [
+    "安全研究:逆向工程 / 渗透测试 / 样本分析 / 内存取证",
+    "工程纪律:验证卫生 / 证据规范 / 代码与交付质量",
+    "攻击面与防御研究"
+  ],
+  "include": {
+    "addyosmani/agent-skills": [
+      "security-and-hardening",
+      "code-review-and-quality",
+      "debugging-and-error-recovery",
+      "using-agent-skills"
+    ],
+    "vercel-labs/agent-skills": []
+  },
+  "excluded": {
+    "addyosmani/agent-skills": {
+      "context-engineering": "通用 Agent 上下文工程,非安全方向",
+      "api-and-interface-design": "通用 API 设计",
+      "browser-testing-with-devtools": "前端测试",
+      "ci-cd-and-automation": "通用 DevOps",
+      "code-simplification": "通用重构",
+      "constraint-driven-development": "通用开发方法论",
+      "deprecation-and-migration": "通用工程管理",
+      "documentation-and-adrs": "文档规范",
+      "doubt-driven-development": "通用开发方法论",
+      "frontend-ui-engineering": "前端工程",
+      "git-workflow-and-versioning": "通用 Git 流程",
+      "idea-refine": "创意管理",
+      "incremental-implementation": "通用开发方法论",
+      "interview-me": "需求访谈",
+      "observability-and-instrumentation": "通用可观测性",
+      "performance-optimization": "通用性能工程",
+      "planning-and-task-breakdown": "项目管理",
+      "shipping-and-launch": "发布流程",
+      "source-driven-development": "通用开发方法论",
+      "spec-driven-development": "通用开发方法论",
+      "test-driven-development": "通用开发实践"
+    },
+    "vercel-labs/agent-skills": {
+      "_all": "整套件为 Vercel/React 前端与部署方向,与安全研究/逆向工程无关,整体退出展示"
+    }
+  },
+  "notes": [
+    "using-agent-skills 为套件路由元技能,保留以便理解套件结构",
+    "排除不等于质量否定,仅为方向不符;完整套件可从上游仓库获取"
+  ]
+}
