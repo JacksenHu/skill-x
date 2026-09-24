@@ -36,20 +36,27 @@ def main():
     print(f"[+] 打包 {TAR.name}({TAR.stat().st_size // 1024} KB)")
 
     data = TAR.read_bytes()
-    r1 = call("files", "UploadFile", path=SITE_PATH, files={"zunfile": (TAR.name, data)})
+    tmp_tar = f"/www/wwwroot/{TAR.name}"
+    # 1) 先把压缩包传到站点父目录(删站后压缩包仍在,可重试)
+    r1 = call("files", "UploadFile", path="/www/wwwroot", files={"zunfile": (TAR.name, data)})
     print("UploadFile ->", r1.get("msg"))
-    r2 = call("files", "UnZip", sfile=f"{SITE_PATH}/{TAR.name}", dfile=SITE_PATH + "/",
+    # 2) 清空站点目录再重建(纯净部署,杜绝已下架产物残留:tar 覆盖不删旧文件)
+    call("files", "DeleteDir", path=SITE_PATH)
+    r2 = call("files", "CreateDir", path=SITE_PATH)
+    print("站点目录重建 ->", r2.get("msg"))
+    # 3) 解压到站点目录
+    r3 = call("files", "UnZip", sfile=tmp_tar, dfile=SITE_PATH + "/",
               type="tar.gz", coding="UTF-8", password="")
-    print("UnZip ->", r2.get("msg"))
-    r3 = call("files", "DeleteFile", path=f"{SITE_PATH}/{TAR.name}")
-    print("清理 ->", r3.get("msg"))
-    if r1.get("status") and r2.get("status"):
+    print("UnZip ->", r3.get("msg"))
+    r4 = call("files", "DeleteFile", path=tmp_tar)
+    print("清理临时包 ->", r4.get("msg"))
+    if r1.get("status") and r3.get("status"):
         if "--reload" in sys.argv:
-            r4 = call("system", "ServiceAdmin", name="nginx", type="reload")
-            print("nginx reload ->", r4.get("msg"))
-        print("[+] 部署完成 -> https://skillx.yueliai.top")
+            r5 = call("system", "ServiceAdmin", name="nginx", type="reload")
+            print("nginx reload ->", r5.get("msg"))
+        print("[+] 部署完成(纯净重放)-> https://skillx.yueliai.top")
         return 0
-    print("[!] 部署失败")
+    print("[!] 部署失败:压缩包保留在", tmp_tar, "可手动重试解压")
     return 1
 
 
