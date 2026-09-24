@@ -5,10 +5,12 @@
   { "skill-name": [ {"script": "scripts/xxx.py", "args": [("--flag", "help 文本"), ...]}, ... ] }
 """
 import ast
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
+I18N_TOOLS = Path(__file__).resolve().parent / "i18n-tools.json"
 
 
 def extract_args(py_path: Path):
@@ -48,7 +50,8 @@ def extract_docstring(py_path: Path) -> str:
 
 
 def collect():
-    """全部自研 skill 的脚本参数文档。"""
+    """全部自研 skill 的脚本参数文档(含中文摘要增补)。"""
+    i18n = json.loads(I18N_TOOLS.read_text(encoding="utf-8")) if I18N_TOOLS.is_file() else {}
     docs = {}
     for skill_dir in sorted(SKILLS_DIR.iterdir()):
         scripts_dir = skill_dir / "scripts"
@@ -56,9 +59,12 @@ def collect():
             continue
         entries = []
         for py in sorted(scripts_dir.glob("*.py")):
+            summary = extract_docstring(py)
+            key = f"{skill_dir.name}/scripts/{py.name}"
             entries.append({
                 "script": f"scripts/{py.name}",
-                "summary": extract_docstring(py),
+                "summary": summary,
+                "summary-zh": i18n.get(key, summary),
                 "args": extract_args(py),
             })
         if entries:

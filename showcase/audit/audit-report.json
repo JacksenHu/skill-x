@@ -1,0 +1,397 @@
+{
+  "generatedAt": "2026-09-24",
+  "skills": {
+    "binary-reverse-engineering": {
+      "grade": "A-",
+      "score": 92,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "low",
+          "pass": true,
+          "detail": "1 个可执行文件:scripts\\triage_binary.py"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "7 个文件, 10 KB"
+        }
+      ],
+      "scannedFiles": 7,
+      "scannedBytes": 10495
+    },
+    "malware-analysis": {
+      "grade": "A-",
+      "score": 92,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "low",
+          "pass": true,
+          "detail": "1 个可执行文件:scripts\\static_triage.py"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "6 个文件, 17 KB"
+        }
+      ],
+      "scannedFiles": 6,
+      "scannedBytes": 18282
+    },
+    "memory-forensics": {
+      "grade": "A-",
+      "score": 92,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "low",
+          "pass": true,
+          "detail": "2 个可执行文件:scripts\\aob_scan.py, scripts\\dump_strings.py"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "6 个文件, 7 KB"
+        }
+      ],
+      "scannedFiles": 6,
+      "scannedBytes": 7902
+    },
+    "pentest-methodology": {
+      "grade": "A-",
+      "score": 92,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "low",
+          "pass": true,
+          "detail": "5 个可执行文件:scripts\\http_recon.py, scripts\\js_routes.py, scripts\\jwt_inspect.py, scripts\\openapi_inventory.py, scripts\\request_matrix.py"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "low",
+          "pass": true,
+          "detail": "网络模块 ssl/urllib(工具功能所需: HTTP 抓取/请求), 无硬编码外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "low",
+          "pass": true,
+          "detail": "可选依赖(try/except 降级): yaml"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "14 个文件, 18 KB"
+        }
+      ],
+      "scannedFiles": 14,
+      "scannedBytes": 18526
+    },
+    "verification-run-hygiene": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "2 个文件, 20 KB"
+        }
+      ],
+      "scannedFiles": 2,
+      "scannedBytes": 20862
+    }
+  },
+  "suites": {
+    "addyosmani/agent-skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "addyosmani/agent-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": true,
+          "detail": "42 个可执行文件,审查结论: passed (维护者 jacksen @ 2026-09-22)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    },
+    "vercel-labs/agent-skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "vercel-labs/agent-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "low",
+          "pass": false,
+          "detail": "UNKNOWN | 无 LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": true,
+          "detail": "166 个可执行文件,审查结论: passed (维护者 jacksen @ 2026-09-22)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    }
+  }
+}

@@ -106,6 +106,26 @@ code.inl{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-family:ui-mon
 .grid-mt{margin-top:14px}
 .h2-sm{font-size:16px}
 .kv a{color:#0ea5e9}
+details.audit{background:#fff;border:1px solid #e5e7eb;border-radius:10px;margin-top:18px;overflow:hidden}
+details.audit>summary{cursor:pointer;padding:14px 18px;display:flex;align-items:center;gap:10px;list-style:none;font-size:14px}
+details.audit>summary::-webkit-details-marker{display:none}
+details.audit>summary::before{content:'▸';color:#9ca3af;font-size:13px}
+details.audit[open]>summary::before{content:'▾'}
+.grade{font-weight:700;font-size:14px;padding:2px 10px;border-radius:6px;font-family:ui-monospace,Consolas,monospace}
+.grade-A{background:#dcfce7;color:#166534}
+.grade-A-{background:#ecfccb;color:#3f6212}
+.grade-B{background:#fef9c3;color:#854d0e}
+.grade-C{background:#ffedd5;color:#9a3412}
+.grade-D{background:#fee2e2;color:#991b1b}
+.audit-meta{font-size:12px;color:#9ca3af;margin-left:auto}
+.audit-body{padding:0 18px 16px}
+.lvl{font-size:11px;padding:1px 7px;border-radius:99px;white-space:nowrap}
+.lvl-info{background:#f3f4f6;color:#6b7280}
+.lvl-low{background:#ecfccb;color:#3f6212}
+.lvl-medium{background:#fef9c3;color:#854d0e}
+.lvl-high{background:#ffedd5;color:#9a3412}
+.lvl-critical{background:#fee2e2;color:#991b1b}
+.audit-detail{font-size:12px;color:#4b5563;word-break:break-word;max-width:420px}
 footer{text-align:center;font-size:12px;color:#9ca3af;padding:24px}
 """
 
@@ -335,15 +355,82 @@ def render_index(own, suites):
     return page_shell("Skill X — Agent Skills 注册中心", "Skill X", "skills", inner)
 
 
-def render_own_detail(s, tool_entries=None):
+AUDIT_PATH = Path(__file__).resolve().parent / "audit" / "audit-report.json"
+LVL_LABEL = {"low": "低", "medium": "中", "high": "高", "critical": "严重"}
+AUDIT_EN = {
+    "可执行文件面": "Executable surface",
+    "危险调用(subprocess/eval/exec/rmtree)": "Dangerous calls",
+    "网络外联": "Network egress",
+    "凭证读取": "Credential access",
+    "SKILL.md 指令注入模式": "Instruction-injection patterns",
+    "混淆特征(长 base64/hex)": "Obfuscation markers",
+    "第三方依赖": "Third-party deps",
+    "文件清单与体积": "File inventory",
+    "命名空间": "Namespace",
+    "许可证核验": "License verification",
+    "可执行面审查": "Executable review",
+    "上游存活": "Upstream availability",
+}
+
+
+def load_audit():
+    if AUDIT_PATH.is_file():
+        try:
+            return json.loads(AUDIT_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+
+def render_audit_block(entry, generated_at=""):
+    if not entry:
+        return ('<details class="audit"><summary><span class="grade grade-B">—</span>'
+                '<span data-zh="安全审计" data-en="Security Audit">安全审计</span>'
+                '<span class="audit-meta" data-zh="暂无审计数据" data-en="no data yet">暂无审计数据</span></summary></details>')
+    grade = entry.get("grade", "?")
+    score = entry.get("score", 0)
+    checks = entry.get("checks", [])
+    is_ingest = entry.get("source") == "ingestion-review"
+    src_zh = "收录审查记录(四坑检查)" if is_ingest else "本仓库静态扫描(AST 级)"
+    src_en = "Ingestion review record" if is_ingest else "Repository static scan (AST-level)"
+    rows = ""
+    for c in checks:
+        lvl = c.get("level", "info")
+        label_zh = "通过" if lvl == "info" else LVL_LABEL.get(lvl, lvl)
+        label_en = "Pass" if lvl == "info" else lvl
+        name_zh = c.get("name", "")
+        name_en = AUDIT_EN.get(name_zh, name_zh)
+        rows += (f"<tr><td><span data-zh=\"{esc(name_zh)}\" data-en=\"{esc(name_en)}\">{esc(name_zh)}</span></td>"
+                 f"<td><span class='lvl lvl-{esc(lvl)}'>"
+                 f"<span data-zh=\"{esc(label_zh)}\" data-en=\"{esc(label_en)}\">{esc(label_zh)}</span></span></td>"
+                 f"<td class='audit-detail'>{esc(c.get('detail', ''))}</td></tr>")
+    return f'''<details class="audit">
+  <summary>
+    <span class="grade grade-{esc(grade)}">{esc(grade)}</span>
+    <span data-zh="安全审计(点击展开明细)" data-en="Security audit (click to expand)">安全审计(点击展开明细)</span>
+    <span class="audit-meta">{score}/100 · {len(checks)} <span data-zh="项检查" data-en="checks">项检查</span> · {esc(generated_at)}</span>
+  </summary>
+  <div class="audit-body">
+    <table class="api">
+      <tr><th data-zh="检查项" data-en="Check">检查项</th><th data-zh="结果" data-en="Result">结果</th><th data-zh="明细" data-en="Detail">明细</th></tr>
+      {rows}
+    </table>
+    <p class="hint-dim"><span data-zh="审计方式:{src_zh};自动生成,随每次构建刷新。" data-en="Method: {src_en}; auto-generated on every build.">审计方式:{src_zh};自动生成,随每次构建刷新。</span></p>
+  </div>
+</details>'''
+
+
+def render_own_detail(s, tool_entries=None, audit_entry=None, audit_at=""):
     cat_label = CATEGORIES.get(s.get("category", ""), "")
     tools_html = ""
     if tool_entries:
         rows = ""
         for e in tool_entries:
             args_html = "<br>".join(f"<code class='inl'>{esc(f)}</code> {esc(h)}" for f, h in e["args"]) or "—"
+            zh = e.get("summary-zh") or e["summary"]
             rows += (f"<tr><td><code class='inl'>{esc(e['script'])}</code></td>"
-                     f"<td>{esc(e['summary'])}</td><td>{args_html}</td></tr>")
+                     f"<td><span data-zh=\"{esc(zh)}\" data-en=\"{esc(e['summary'])}\">{esc(zh)}</span></td>"
+                     f"<td>{args_html}</td></tr>")
         tools_html = (f"<h2 data-zh='自带工具(随技能安装)' data-en='Bundled tools (installed with the skill)'>自带工具(随技能安装)</h2>"
                       f"<table class='api'><tr><th data-zh='脚本' data-en='Script'>脚本</th>"
                       f"<th data-zh='功能' data-en='Function'>功能</th>"
@@ -371,11 +458,12 @@ def render_own_detail(s, tool_entries=None):
   <div class="cmd">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
   <button class="chip on copy-btn" data-copy="GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}" data-skill="{esc(s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
 </div>
-{tools_html}'''
+{tools_html}
+{render_audit_block(audit_entry, audit_at)}'''
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
 
 
-def render_ext_detail(suite, s):
+def render_ext_detail(suite, s, audit_entry=None, audit_at=""):
     ns = suite["namespace"]
     lic = suite["license"]["spdx"]
     lic_text = lic if lic != "UNKNOWN" else "未确认(仅链接收录)"
@@ -396,7 +484,8 @@ def render_ext_detail(suite, s):
   <div class="cmd">{esc(install)}</div>
   <button class="chip on copy-btn" data-copy="{esc(install)}" data-skill="{esc(ns + "/" + s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
   <p class="hint-dim" data-zh="下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。" data-en="Download stats count downloads/copies via this site only.">下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。</p>
-</div>'''
+</div>
+{render_audit_block(audit_entry, audit_at)}'''
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
 
 
@@ -488,14 +577,18 @@ def main():
 
     pages = {"index.html": render_index(own, suites)}
     tool_docs = apidocs.collect()
+    audit = load_audit()
+    audit_at = audit.get("generatedAt", "")
     for s in own:
-        pages[s["page"]] = render_own_detail(s, tool_docs.get(s["name"], []))
+        pages[s["page"]] = render_own_detail(s, tool_docs.get(s["name"], []),
+                                            (audit.get("skills") or {}).get(s["name"]), audit_at)
     pages["suites/index.html"] = render_suites_index(suites)
     for suite in suites:
         ns = suite["namespace"]
         pages[f"suites/{ns_slug(ns)}.html"] = render_suite_detail(suite)
         for s in suite["skills"]:
-            pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(suite, s)
+            pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(
+                suite, s, (audit.get("suites") or {}).get(ns), audit_at)
     pages["api.html"] = render_api(own, suites)
     pages["about.html"] = render_about(own, suites)
 

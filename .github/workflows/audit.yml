@@ -1,0 +1,32 @@
+name: audit
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 每日 03:00 UTC 刷新审计报告
+  workflow_dispatch:
+  push:
+    paths:
+      - "skills/**"
+      - "scripts/audit_skill.py"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run static audit
+        run: python scripts/audit_skill.py
+      - name: Commit refreshed report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add showcase/audit/audit-report.json
+          git diff --cached --quiet || git commit -m "chore: refresh skill audit report"
+          git push || echo "nothing to push"
+      - name: Drift check
+        run: python scripts/audit_skill.py --check

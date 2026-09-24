@@ -1,0 +1,12 @@
+{
+  "_comment": "技能自带工具的中文功能摘要(英文摘要由 apidocs.py 从脚本 docstring 自动提取),键 = <skill>/<script 相对路径>",
+  "binary-reverse-engineering/scripts/triage_binary.py": "二进制快速建档:哈希、magic 类型、熵值分布与字符串提取",
+  "malware-analysis/scripts/static_triage.py": "样本静态 triage:哈希、格式识别、熵、导入表、字符串与加壳提示",
+  "memory-forensics/scripts/aob_scan.py": "AOB 特征码扫描,支持通配符(如 48 8B ?? ?? 89)",
+  "memory-forensics/scripts/dump_strings.py": "内存转储字符串提取(ASCII / UTF-16LE,带文件偏移)",
+  "pentest-methodology/scripts/http_recon.py": "HTTP/TLS/响应头/正文快照,输出结构化 JSON",
+  "pentest-methodology/scripts/js_routes.py": "从本地 JS bundle 提取路由、URL 与 API 端点",
+  "pentest-methodology/scripts/jwt_inspect.py": "JWT 头部与声明解码(不做签名验证)",
+  "pentest-methodology/scripts/openapi_inventory.py": "OpenAPI 清单化:操作、参数、安全定义与响应",
+  "pentest-methodology/scripts/request_matrix.py": "按 JSON 用例文件执行确定性 HTTP 请求矩阵"
+}
