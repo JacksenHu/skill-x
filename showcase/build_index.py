@@ -46,95 +46,181 @@ CATEGORIES = {
 }
 
 CSS = """
+:root{
+  --ink:#14171C; --ink2:#5B626C; --ink3:#8A9099;
+  --paper:#F7F8F9; --sheet:#FFFFFF; --rule:#DEE1E6;
+  --signal:#2A5BD7; --marker:#E8B31C; --alert:#C0392B; --ok:#1F7A5C;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"JetBrains Mono","Cascadia Code",Consolas,monospace;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;background:#f6f7f9;color:#1a1d24;line-height:1.6}
-.topnav{position:sticky;top:0;z-index:10;background:#1a1d24;color:#fff;display:flex;align-items:center;gap:4px;padding:0 24px;height:52px}
-.topnav .brand{font-weight:700;letter-spacing:1px;margin-right:24px;text-decoration:none;color:#fff}
-.topnav a.nav{color:#c9d1d9;text-decoration:none;padding:6px 12px;border-radius:6px;font-size:14px}
-.topnav a.nav:hover,.topnav a.nav.active{color:#fff;background:#2d3748}
-.lang-btn{margin-left:auto;background:#2d3748;color:#7dd3fc;border:1px solid #3d4a5c;border-radius:99px;padding:4px 14px;font-size:13px;cursor:pointer}
-.hero{background:linear-gradient(135deg,#1a1d24,#2d3748);color:#fff;padding:40px 24px 34px}
-.hero h1{font-size:30px;letter-spacing:1px}
-.hero p{margin-top:8px;opacity:.75;max-width:760px;font-size:14px}
-.stats{margin-top:14px;display:flex;gap:22px;font-size:13px}
-.stats b{font-size:19px;display:block;color:#7dd3fc}
-.wrap{max-width:1080px;margin:0 auto;padding:24px 24px 64px}
-.search{margin:0 auto 6px;max-width:640px}
-.search input{width:100%;padding:12px 16px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.search input:focus{outline:2px solid #0ea5e9}
-.search-wide{max-width:720px}
-.search textarea{width:100%;padding:12px 16px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;resize:vertical;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.search textarea:focus{outline:2px solid #0ea5e9}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
-.chip{font-size:12px;padding:4px 12px;border:1px solid #d1d5db;border-radius:99px;background:#fff;cursor:pointer;color:#4b5563}
-.chip.on{background:#0ea5e9;border-color:#0ea5e9;color:#fff}
-h2{margin:24px 0 14px;font-size:19px;border-left:4px solid #0ea5e9;padding-left:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.card h3,.card h4{font-size:15px}
-.card h3 a,.card h4 a{color:#1a1d24;text-decoration:none}
-.card h3 a:hover,.card h4 a:hover{color:#0ea5e9}
-.card .en-name{font-size:12px;color:#9ca3af;font-family:ui-monospace,Consolas,monospace;margin-top:2px}
-.card p{font-size:13px;color:#4b5563;margin-top:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.badge{font-size:11px;padding:2px 8px;border-radius:99px;white-space:nowrap}
-.badge.auth{background:#fef3c7;color:#92400e}
-.badge.ext{background:#dcfce7;color:#166534}
-.badge.cat{background:#ede9fe;color:#5b21b6}
-.meta{margin-top:10px;font-size:12px;color:#9ca3af;display:flex;justify-content:space-between;align-items:center}
-.dl{color:#0ea5e9;font-size:12px}
-.suite{margin-bottom:26px}
-.suite h3{font-size:16px;font-family:ui-monospace,Consolas,monospace;margin-bottom:12px}
-.suite-meta{font-size:12px;color:#9ca3af}
-.suite-meta a{color:#0ea5e9;text-decoration:none}
-.notice{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;font-size:13px;color:#92400e;margin-top:14px}
-.detail{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:28px 32px;margin-top:18px}
-.detail h1{font-size:22px}
-.detail .en-name{font-size:14px;color:#9ca3af;font-family:ui-monospace,Consolas,monospace;margin-top:4px}
-.detail .desc{margin:16px 0;color:#374151;font-size:15px;white-space:pre-wrap}
-.kv{display:grid;grid-template-columns:110px 1fr;gap:8px;font-size:13px;margin:18px 0;padding:14px;background:#f9fafb;border-radius:8px}
-.kv dt{color:#9ca3af}.kv dd{font-family:ui-monospace,Consolas,monospace;word-break:break-all}
-.cmd{background:#1a1d24;color:#7dd3fc;padding:14px 16px;border-radius:8px;font-family:ui-monospace,Consolas,monospace;font-size:13px;overflow-x:auto;margin:10px 0;user-select:all}
-.back{font-size:13px;color:#0ea5e9;text-decoration:none}
-.hidden{display:none!important}
-.empty{color:#9ca3af;font-size:14px;padding:20px;text-align:center}
-.mmap{background:#fff;border:1px solid #e5e7eb;border-radius:10px;margin-top:16px;padding:12px;text-align:center}
-table.api{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0}
-table.api th,table.api td{border:1px solid #e5e7eb;padding:8px 10px;text-align:left;vertical-align:top}
-table.api th{background:#f9fafb}
-code.inl{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-family:ui-monospace,Consolas,monospace;font-size:12px}
-.hero{margin:-24px -24px 20px}
-.suite h3 a{color:inherit;text-decoration:none}
-.mmap img{max-width:100%;display:block;margin:0 auto}
-.hint-warn{font-size:13px;color:#92400e;margin-top:14px}
-.hint-ok{font-size:13px;color:#166534;margin-top:14px}
-.hint-dim{font-size:13px;color:#9ca3af;margin-top:10px}
-.api-h3{font-size:14px;margin-top:16px}
-.grid-mt{margin-top:14px}
-.h2-sm{font-size:16px}
-.kv a{color:#0ea5e9}
-details.audit{background:#fff;border:1px solid #e5e7eb;border-radius:10px;margin-top:18px;overflow:hidden}
-details.audit>summary{cursor:pointer;padding:14px 18px;display:flex;align-items:center;gap:10px;list-style:none;font-size:14px}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:var(--signal);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+/* 顶栏:取证索引式,底部细线,品牌等宽 */
+.topnav{position:sticky;top:0;z-index:20;background:var(--sheet);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:2px;padding:0 20px;height:54px}
+.topnav .brand{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.02em;margin-right:20px;color:var(--ink)}
+.topnav a.nav{color:var(--ink2);padding:15px 12px;font-size:14px;border-bottom:2px solid transparent}
+.topnav a.nav:hover{color:var(--ink);text-decoration:none}
+.topnav a.nav.active{color:var(--ink);border-bottom-color:var(--signal);font-weight:600}
+.lang-btn{margin-left:auto;font-family:var(--mono);font-size:12px;background:none;border:1px solid var(--rule);border-radius:2px;padding:5px 10px;color:var(--ink2);cursor:pointer}
+.lang-btn:hover{border-color:var(--ink3);color:var(--ink)}
+
+.wrap{max-width:1000px;margin:0 auto;padding:26px 20px 64px}
+h1{font-size:28px;line-height:1.25;letter-spacing:-.01em;font-weight:700}
+h2{font-size:17px;font-weight:700;margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.h2-sm{font-size:15px;margin-top:24px}
+p{max-width:74ch}
+
+/* 首页:索引式标题 + 推荐入口为主角 */
+.hero{padding:30px 0 24px;border-bottom:1px solid var(--rule);margin-bottom:8px}
+.hero h1{font-size:32px}
+.hero .lede{font-size:15px;color:var(--ink2);margin-top:10px;max-width:70ch}
+.hero .stats{display:flex;gap:28px;margin-top:20px}
+.hero .stats b{font-family:var(--mono);font-size:22px;font-weight:600;display:block;line-height:1.2}
+.hero .stats span{font-size:13px;color:var(--ink3)}
+
+/* 推荐器:主入口 */
+.finder{margin:22px 0 6px}
+.finder textarea{width:100%;padding:14px 16px;border:1px solid var(--rule);border-radius:2px;font:14px/1.6 var(--sans);resize:vertical;background:var(--sheet);min-height:76px}
+.finder textarea:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(42,91,215,.12)}
+.finder .act{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:inherit;font-size:14px;padding:9px 18px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:2px;cursor:pointer}
+.btn:hover{background:#000}
+.btn.ghost{background:var(--sheet);color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--ink3)}
+
+/* 搜索 + 分类筛选 */
+.search{margin:0 0 4px;max-width:640px}
+.search input{width:100%;padding:11px 14px;border:1px solid var(--rule);border-radius:2px;font:14px var(--sans);background:var(--sheet)}
+.search input:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(42,91,215,.12)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 2px}
+.chip{font-size:12.5px;padding:6px 12px;border:1px solid var(--rule);border-radius:2px;background:var(--sheet);cursor:pointer;color:var(--ink2)}
+.chip:hover{border-color:var(--ink3)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* 技能清单:行式(取证清单版式),非圆角卡片堆 */
+.list{display:block}
+.list>.row{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:14px 4px;border-bottom:1px solid var(--rule);align-items:start}
+.list>.row:hover{background:rgba(42,91,215,.035)}
+.row .name{font-size:15.5px;font-weight:600}
+.row .name a{color:var(--ink)}
+.row .id{font-family:var(--mono);font-size:12px;color:var(--ink3);margin-top:2px;word-break:break-all}
+.row .desc{font-size:13.5px;color:var(--ink2);margin-top:6px;grid-column:1/-1}
+.row .facts{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink3);grid-column:1/-1;margin-top:2px;flex-wrap:wrap}
+.tag{font-family:var(--mono);font-size:11px;padding:2px 7px;border:1px solid var(--rule);border-radius:2px;color:var(--ink2);white-space:nowrap}
+.tag.kind-own{border-color:var(--marker);color:#7A5E00}
+.tag.kind-ext{border-color:var(--rule);color:var(--ink2)}
+.count{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+
+/* 兼容旧 grid 容器:整段作为清单 */
+.grid{display:block}
+.grid.grid-mt{margin-top:14px}
+
+/* 详情页 */
+.detail{background:var(--sheet);border:1px solid var(--rule);border-radius:2px;padding:26px 28px;margin-top:16px}
+.detail h1{font-size:24px}
+.detail .en-name{font-family:var(--mono);font-size:13px;color:var(--ink3);margin-top:6px}
+.detail .desc{margin:16px 0;color:var(--ink);font-size:15px;white-space:pre-wrap}
+.kv{display:grid;grid-template-columns:132px 1fr;gap:10px 16px;font-size:13.5px;margin:20px 0;padding:16px;background:var(--paper);border:1px solid var(--rule);border-radius:2px}
+.kv dt{color:var(--ink3)}
+.kv dd{font-family:var(--mono);word-break:break-all}
+.kv a{color:var(--signal)}
+
+/* 命令:等宽、可复制、仅墨黑底(不用终端绿) */
+.cmd{background:var(--ink);color:#F2F4F7;padding:13px 15px;border-radius:2px;font:13px/1.5 var(--mono);overflow-x:auto;margin:12px 0;white-space:pre;user-select:all}
+
+/* 安全审计:折叠块 */
+details.audit{background:var(--sheet);border:1px solid var(--rule);border-radius:2px;margin-top:18px}
+details.audit>summary{cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-size:14px;list-style:none;border-left:3px solid transparent}
 details.audit>summary::-webkit-details-marker{display:none}
-details.audit>summary::before{content:'▸';color:#9ca3af;font-size:13px}
-details.audit[open]>summary::before{content:'▾'}
-.grade{font-weight:700;font-size:14px;padding:2px 10px;border-radius:6px;font-family:ui-monospace,Consolas,monospace}
-.grade-A{background:#dcfce7;color:#166534}
-.grade-A-{background:#ecfccb;color:#3f6212}
-.grade-B{background:#fef9c3;color:#854d0e}
-.grade-C{background:#ffedd5;color:#9a3412}
-.grade-D{background:#fee2e2;color:#991b1b}
-.audit-meta{font-size:12px;color:#9ca3af;margin-left:auto}
-.audit-body{padding:0 18px 16px}
-.lvl{font-size:11px;padding:1px 7px;border-radius:99px;white-space:nowrap}
-.lvl-info{background:#f3f4f6;color:#6b7280}
-.lvl-low{background:#ecfccb;color:#3f6212}
-.lvl-medium{background:#fef9c3;color:#854d0e}
-.lvl-high{background:#ffedd5;color:#9a3412}
-.lvl-critical{background:#fee2e2;color:#991b1b}
-.audit-detail{font-size:12px;color:#4b5563;word-break:break-word;max-width:420px}
-footer{text-align:center;font-size:12px;color:#9ca3af;padding:24px}
+details.audit[open]>summary{border-left-color:var(--marker);border-bottom:1px solid var(--rule)}
+.grade{font-family:var(--mono);font-weight:700;font-size:14px;padding:2px 9px;border-radius:2px}
+.grade-A{background:#E6F4EE;color:#1F7A5C}
+.grade-A-{background:#F2F6E8;color:#5C7A1F}
+.grade-B{background:#FBF3DC;color:#8A6410}
+.grade-C{background:#FBE9E0;color:#A54818}
+.grade-D{background:#FAE4E1;color:#A12A1C}
+.audit-meta{font-size:12px;color:var(--ink3);margin-left:auto;font-family:var(--mono)}
+.audit-body{padding:4px 16px 16px}
+.lvl{font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:2px;white-space:nowrap}
+.lvl-info{background:#EEF0F3;color:#5B626C}
+.lvl-low{background:#F2F6E8;color:#5C7A1F}
+.lvl-medium{background:#FBF3DC;color:#8A6410}
+.lvl-high{background:#FBE9E0;color:#A54818}
+.lvl-critical{background:#FAE4E1;color:#A12A1C}
+.audit-detail{font-size:12.5px;color:var(--ink2);word-break:break-word;max-width:420px}
+
+/* 表格:参数/审计明细 */
+table.api{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;background:var(--sheet)}
+table.api th,table.api td{border:1px solid var(--rule);padding:9px 11px;text-align:left;vertical-align:top}
+table.api th{background:var(--paper);font-weight:600}
+
+/* 导图 */
+.mmap{background:var(--sheet);border:1px solid var(--rule);border-radius:2px;margin-top:16px;padding:12px;text-align:center}
+.mmap img{max-width:100%;height:auto;display:block;margin:0 auto}
+
+/* 套件区 */
+.suite{margin-bottom:28px}
+.suite h3{font-family:var(--mono);font-size:15px;font-weight:600;margin-bottom:10px}
+.suite-meta{font-family:var(--sans);font-size:12.5px;color:var(--ink3);font-weight:400}
+.suite-meta a{color:var(--signal)}
+.notice{background:#FCFAF0;border:1px solid var(--marker);border-radius:2px;padding:13px 16px;font-size:13px;color:#6B5200;margin-top:14px}
+.hint-warn{font-size:13px;color:#8A6410;margin-top:14px}
+.hint-ok{font-size:13px;color:var(--ok);margin-top:14px}
+.hint-dim{font-size:13px;color:var(--ink3);margin-top:10px;max-width:74ch}
+.empty{color:var(--ink3);font-size:14px;padding:26px 4px}
+.hidden{display:none!important}
+code.inl{font-family:var(--mono);font-size:12px;background:#EEF0F3;padding:1px 5px;border-radius:2px}
+footer{text-align:left;font-size:12.5px;color:var(--ink3);padding:24px 20px 40px;border-top:1px solid var(--rule);margin-top:40px}
+footer a{color:var(--signal)}
+
+/* 一次性入场:清单逐行浮现(像索引扫描),仅首屏前若干行 */
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.list>.row{animation:rise .4s cubic-bezier(.2,.7,.3,1) backwards}
+.list>.row:nth-child(1){animation-delay:.03s}
+.list>.row:nth-child(2){animation-delay:.07s}
+.list>.row:nth-child(3){animation-delay:.11s}
+.list>.row:nth-child(4){animation-delay:.15s}
+.list>.row:nth-child(5){animation-delay:.19s}
+.list>.row:nth-child(6){animation-delay:.23s}
+.list>.row:nth-child(7){animation-delay:.27s}
+.list>.row:nth-child(8){animation-delay:.31s}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+/* 移动端 */
+@media (max-width:760px){
+  body{font-size:15.5px}
+  .topnav{height:auto;padding:8px 12px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .topnav::-webkit-scrollbar{display:none}
+  .topnav .brand{margin-right:14px;font-size:14px}
+  .topnav a.nav{padding:8px 10px;font-size:13.5px;white-space:nowrap}
+  .lang-btn{padding:5px 9px;font-size:12px}
+  .wrap{padding:18px 14px 48px}
+  h1{font-size:24px}
+  .hero{padding:22px 0 18px}
+  .hero h1{font-size:26px}
+  .hero .stats{gap:20px}
+  .hero .stats b{font-size:19px}
+  .list>.row{grid-template-columns:1fr;gap:4px;padding:13px 2px}
+  .count{align-self:start}
+  .detail{padding:18px 16px}
+  .kv{grid-template-columns:1fr;gap:4px}
+  .cmd{font-size:12px;padding:11px 12px}
+  table.api{display:block;overflow-x:auto;white-space:nowrap}
+  .audit-detail{max-width:none;white-space:normal}
+  .mmap{padding:8px}
+  .btn{padding:11px 16px}
+  footer{padding:20px 14px 32px}
+}
 """
+
 
 APP_JS = """
 (function(){
@@ -434,20 +520,24 @@ def page_shell(title, title_en, active, inner):
 </head><body>
 {nav(active)}
 <div class="wrap">{inner}</div>
-<footer><a class="back" href="/">← <span data-zh="返回首页" data-en="Home">返回首页</span></a> · Skill X · Agent Skills 开放规范</footer>
+<footer><a class="back" href="/">← <span data-zh="返回首页" data-en="Home">返回首页</span></a> · Skill X,Agent Skills 开放规范</footer>
 <script src="/assets/app.js"></script>
 </body></html>'''
 
 
-def card(s, kind, page):
+def card(s, kind, page, stat_key):
     cat_label = CATEGORIES.get(s.get("category", ""), s.get("category", ""))
-    badge = '<span class="badge auth">安装需授权</span>' if kind == "own" else '<span class="badge ext">社区精选</span>'
+    if kind == "own":
+        tag_cls, tag_text = "tag kind-own", "自研"
+    else:
+        tag_cls, tag_text = "tag kind-ext", "收录"
     search = f'{s["name"]} {s.get("name-zh","")} {s["description"]} {s.get("description-zh","")}'.lower()
-    return f'''<div class="card" data-search="{esc(search)}" data-category="{esc(s.get("category",""))}">
-  <div class="card-head"><h3><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></h3>{badge}</div>
-  <div class="en-name">{esc(s["name"])}</div>
-  <p><span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span></p>
-  <div class="meta"><span class="badge cat">{esc(cat_label)}</span><span>v{esc(s.get("version") or "1.0.0")}</span></div>
+    return f'''<div class="row" data-search="{esc(search)}" data-category="{esc(s.get("category",""))}">
+  <div class="name"><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></div>
+  <div class="count" data-stat="{esc(stat_key)}">—</div>
+  <div class="id">{esc(s["name"])}</div>
+  <p class="desc"><span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span></p>
+  <div class="facts"><span class="{tag_cls}">{tag_text}</span><span class="tag">{esc(cat_label)}</span></div>
 </div>'''
 
 
@@ -460,22 +550,22 @@ def chips_html():
 
 def render_index(own, suites):
     total_ext = sum(len(s["skills"]) for s in suites)
-    own_cards = "\n".join(card(s, "own", s["page"]) for s in own)
+    own_cards = "\n".join(card(s, "own", s["page"], s["name"]) for s in own)
     suite_sections = []
     for suite in suites:
         ns = suite["namespace"]
         lic = suite["license"]["spdx"]
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
-        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html") for s in suite["skills"])
+        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
-  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} skills · {esc(lic_badge)} · <a href="{esc(suite["upstream"])}">上游</a></span></h3>
-  <div class="grid">{items}</div>
+  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} <a href="{esc(suite["upstream"])}">上游仓库</a></span></h3>
+  <div class="list">{items}</div>
 </section>''')
 
     inner = f'''
 <div class="hero">
   <h1>Skill X</h1>
-  <p><span data-zh="面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。" data-en="Security research and reverse-engineering skills for all agents. Own skills via authorized private distribution; community skills install from upstream.">面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。</span></p>
+  <p class="lede"><span data-zh="面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。" data-en="Security research and reverse-engineering skills for all agents. Own skills via authorized private distribution; community skills install from upstream.">面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。</span></p>
   <div class="stats">
     <span><b>{len(own)}</b><span data-zh="自研技能" data-en="Own skills">自研技能</span></span>
     <span><b>{total_ext}</b><span data-zh="社区精选" data-en="Curated">社区精选</span></span>
@@ -486,7 +576,7 @@ def render_index(own, suites):
 {chips_html()}
 <div id="empty" class="empty hidden" data-zh="没有匹配的技能" data-en="No matching skills">没有匹配的技能</div>
 <h2 data-zh="自研技能" data-en="Own Skills">自研技能</h2>
-<div class="grid">{own_cards}</div>
+<div class="list">{own_cards}</div>
 <div class="notice"><span data-zh="自研技能经私有仓库授权分发。获得授权的协作者:" data-en="Own skills are distributed via a private repo. Authorized collaborators:">自研技能经私有仓库授权分发。获得授权的协作者:</span><code class="inl">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill &lt;name&gt;</code></div>
 <h2 data-zh="社区精选" data-en="Curated">社区收录</h2>
 {"".join(suite_sections) if suite_sections else "<p>暂无收录</p>"}'''
@@ -646,8 +736,7 @@ def render_suites_index(suites):
         search = f"{ns} {lic} 套件 suite".lower()
         cards.append(f'''<div class="card" data-search="{esc(search)}" data-category="">
   <div class="card-head"><h3><a href="{ns_slug(ns)}.html">{esc(ns)}</a></h3><span class="badge ext">套件</span></div>
-  <div class="meta"><span><span data-zh="精选 " data-en="Curated ">精选 </span>{pick_txt} skills · {esc(lic_badge)} · {status}</span><span class="dl" data-stat="{esc(ns)}">—</span></div>
-  <div class="meta"><span>{star_txt} {fork_txt} · <a href="{esc(suite["upstream"])}" class="dl">上游 ↗</a></span></div>
+  <div class="facts"><span class="tag kind-ext">{pick_txt} 个技能</span><span class="tag">{esc(lic_badge)}</span><span class="tag">{status}</span><span class="tag">{star_txt}</span><span class="tag">{fork_txt}</span><a href="{esc(suite["upstream"])}">上游仓库</a></div>
 </div>''')
     inner = f'''
 <h2 data-zh="套件中心" data-en="Suite Center">套件中心</h2>
@@ -665,7 +754,7 @@ def render_suite_detail(suite):
     forks = st.get("forks")
     total = suite.get("totalSkills", len(suite["skills"]))
     picked = len(suite["skills"])
-    cards = "\n".join(card(s, "ext", f"../skills/ext-{ns_slug(ns)}--{s['name']}.html") for s in suite["skills"])
+    cards = "\n".join(card(s, "ext", f"../skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
     inner = f'''<div class="detail">
   <h1>{esc(ns)}</h1>
   <dl class="kv">
@@ -684,7 +773,7 @@ def render_suite_detail(suite):
 </div>
 <h2 data-zh="精选技能" data-en="Curated skills">精选技能</h2>
 {chips_html()}
-<div class="grid">{cards}</div>'''
+<div class="list">{cards}</div>'''
     return page_shell(ns, ns, "suites", inner)
 
 
@@ -718,11 +807,11 @@ def render_recommend():
     inner = '''
 <div class="hero">
   <h1 data-zh="技能推荐" data-en="Skill Finder">技能推荐</h1>
-  <p data-zh="描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。" data-en="Describe what you want to do; we find matching skills. Natural language supported.">描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。</p>
+  <p class="lede" data-zh="描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。" data-en="Describe what you want to do; we find matching skills. Natural language supported.">描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。</p>
 </div>
-<div class="search search-wide">
+<div class="finder">
   <textarea id="idea" rows="3" data-zh="描述你的任务或想法…(Ctrl+Enter 查找)" data-en="Describe your task… (Ctrl+Enter to search)" data-attr="placeholder" placeholder="描述你的任务或想法…(Ctrl+Enter 查找)"></textarea>
-  <div class="grid-mt"><button class="chip on" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button></div>
+  <div class="act"><button class="btn" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button></div>
 </div>
 <div id="rec-results" class="grid grid-mt"></div>
 <div id="rec-empty" class="empty hidden" data-zh="没有匹配到技能,试着换个说法或输入更具体的任务。" data-en="No matching skills. Try different wording.">没有匹配到技能,试着换个说法或输入更具体的任务。</div>
