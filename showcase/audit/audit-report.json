@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-09-25",
   "skills": {
     "binary-reverse-engineering": {
       "grade": "A-",
@@ -10,7 +10,7 @@
           "name": "可执行文件面",
           "level": "low",
           "pass": true,
-          "detail": "1 个可执行文件:scripts\\triage_binary.py"
+          "detail": "1 个可执行文件:scripts/triage_binary.py"
         },
         {
           "id": "dangerous-calls",
@@ -63,7 +63,7 @@
         }
       ],
       "scannedFiles": 7,
-      "scannedBytes": 10495
+      "scannedBytes": 10329
     },
     "malware-analysis": {
       "grade": "A-",
@@ -74,7 +74,7 @@
           "name": "可执行文件面",
           "level": "low",
           "pass": true,
-          "detail": "1 个可执行文件:scripts\\static_triage.py"
+          "detail": "1 个可执行文件:scripts/static_triage.py"
         },
         {
           "id": "dangerous-calls",
@@ -127,7 +127,7 @@
         }
       ],
       "scannedFiles": 6,
-      "scannedBytes": 18282
+      "scannedBytes": 17746
     },
     "memory-forensics": {
       "grade": "A-",
@@ -138,7 +138,7 @@
           "name": "可执行文件面",
           "level": "low",
           "pass": true,
-          "detail": "2 个可执行文件:scripts\\aob_scan.py, scripts\\dump_strings.py"
+          "detail": "2 个可执行文件:scripts/aob_scan.py, scripts/dump_strings.py"
         },
         {
           "id": "dangerous-calls",
@@ -191,7 +191,7 @@
         }
       ],
       "scannedFiles": 6,
-      "scannedBytes": 7902
+      "scannedBytes": 7798
     },
     "pentest-methodology": {
       "grade": "A-",
@@ -202,7 +202,7 @@
           "name": "可执行文件面",
           "level": "low",
           "pass": true,
-          "detail": "5 个可执行文件:scripts\\http_recon.py, scripts\\js_routes.py, scripts\\jwt_inspect.py, scripts\\openapi_inventory.py, scripts\\request_matrix.py"
+          "detail": "5 个可执行文件:scripts/http_recon.py, scripts/js_routes.py, scripts/jwt_inspect.py, scripts/openapi_inventory.py, scripts/request_matrix.py"
         },
         {
           "id": "dangerous-calls",
@@ -251,11 +251,11 @@
           "name": "文件清单与体积",
           "level": "info",
           "pass": true,
-          "detail": "14 个文件, 18 KB"
+          "detail": "14 个文件, 17 KB"
         }
       ],
       "scannedFiles": 14,
-      "scannedBytes": 18526
+      "scannedBytes": 18293
     },
     "verification-run-hygiene": {
       "grade": "A",
