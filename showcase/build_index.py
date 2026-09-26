@@ -47,179 +47,223 @@ CATEGORIES = {
 
 CSS = """
 :root{
-  --ink:#14171C; --ink2:#5B626C; --ink3:#8A9099;
-  --paper:#F7F8F9; --sheet:#FFFFFF; --rule:#DEE1E6;
-  --signal:#2A5BD7; --marker:#E8B31C; --alert:#C0392B; --ok:#1F7A5C;
+  --bg:#0A0D11; --surface:#141A21; --surface2:#1A222C; --line:#232C38; --line2:#33404F;
+  --text:#E6EAF0; --text2:#98A5B5; --text3:#6A7686;
+  --accent:#FF6B2C; --accent2:#FF9351; --signal:#4A9EFF;
+  --ok:#3DD68C; --warn:#FFB020; --danger:#FF4D4F;
+  --c-reverse-engineering:#FF6B2C; --c-pentest:#FF4D4F; --c-malware:#A855F7; --c-forensics:#17E1C5;
+  --c-engineering-hygiene:#4A9EFF; --c-dev-workflow:#8B98A9; --c-web-frontend:#3DD68C; --c-data:#FFB020;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   --mono:ui-monospace,SFMono-Regular,"JetBrains Mono","Cascadia Code",Consolas,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--signal);text-decoration:none}
 a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+::selection{background:var(--accent);color:#fff}
 
-/* 顶栏:取证索引式,底部细线,品牌等宽 */
-.topnav{position:sticky;top:0;z-index:20;background:var(--sheet);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:2px;padding:0 20px;height:54px}
-.topnav .brand{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.02em;margin-right:20px;color:var(--ink)}
-.topnav a.nav{color:var(--ink2);padding:15px 12px;font-size:14px;border-bottom:2px solid transparent}
-.topnav a.nav:hover{color:var(--ink);text-decoration:none}
-.topnav a.nav.active{color:var(--ink);border-bottom-color:var(--signal);font-weight:600}
-.lang-btn{margin-left:auto;font-family:var(--mono);font-size:12px;background:none;border:1px solid var(--rule);border-radius:2px;padding:5px 10px;color:var(--ink2);cursor:pointer}
-.lang-btn:hover{border-color:var(--ink3);color:var(--ink)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 70px}
+h1{font-size:28px;line-height:1.2;letter-spacing:-.02em;font-weight:700}
+h2{font-size:16px;font-weight:700;margin:38px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px}
+h2 .n{font-family:var(--mono);font-size:11px;color:var(--text3);font-weight:400}
+.h2-sm{font-size:14px;margin-top:22px;border:0;padding:0}
+p{max-width:76ch}
 
-.wrap{max-width:1000px;margin:0 auto;padding:26px 20px 64px}
-h1{font-size:28px;line-height:1.25;letter-spacing:-.01em;font-weight:700}
-h2{font-size:17px;font-weight:700;margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
-.h2-sm{font-size:15px;margin-top:24px}
-p{max-width:74ch}
+/* 顶栏 */
+.topnav{position:sticky;top:0;z-index:40;background:rgba(10,13,17,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:2px;padding:0 20px;height:52px}
+.topnav .brand{font-family:var(--mono);font-weight:700;font-size:14px;margin-right:18px;color:var(--text);letter-spacing:.01em;display:flex;align-items:center;gap:7px}
+.topnav .brand i{width:7px;height:7px;background:var(--accent);display:inline-block;border-radius:1px;box-shadow:0 0 8px var(--accent)}
+.topnav a.nav{color:var(--text2);padding:16px 11px;font-size:13.5px;border-bottom:2px solid transparent}
+.topnav a.nav:hover{color:var(--text);text-decoration:none}
+.topnav a.nav.active{color:var(--text);border-bottom-color:var(--accent)}
+.lang-btn{margin-left:auto;font-family:var(--mono);font-size:11.5px;background:none;border:1px solid var(--line2);border-radius:2px;padding:4px 9px;color:var(--text2);cursor:pointer}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
 
-/* 首页:索引式标题 + 推荐入口为主角 */
-.hero{padding:30px 0 24px;border-bottom:1px solid var(--rule);margin-bottom:8px}
-.hero h1{font-size:32px}
-.hero .lede{font-size:15px;color:var(--ink2);margin-top:10px;max-width:70ch}
-.hero .stats{display:flex;gap:28px;margin-top:20px}
-.hero .stats b{font-family:var(--mono);font-size:22px;font-weight:600;display:block;line-height:1.2}
-.hero .stats span{font-size:13px;color:var(--ink3)}
+/* Hero:网格底 + 扫描光带 + 顶部推荐入口 */
+.hero{position:relative;border-bottom:1px solid var(--line);padding:44px 0 34px;margin-bottom:6px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 92%);pointer-events:none}
+.hero:after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.85;animation:scanline 7s linear infinite}
+@keyframes scanline{0%{transform:translateY(0);opacity:0}8%{opacity:.9}92%{opacity:.9}100%{transform:translateY(320px);opacity:0}}
+.hero>*{position:relative}
+.hero .eyebrow{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.06em}
+.hero h1{font-size:44px;margin-top:12px;max-width:22ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:15.5px;color:var(--text2);margin-top:14px;max-width:60ch}
+.hero .stats{display:flex;gap:34px;margin-top:26px}
+.hero .stats b{font-family:var(--mono);font-size:30px;font-weight:600;display:block;line-height:1;color:var(--text)}
+.hero .stats b.accent{color:var(--accent)}
+.hero .stats span{font-size:12px;color:var(--text3)}
 
-/* 推荐器:主入口 */
-.finder{margin:22px 0 6px}
-.finder textarea{width:100%;padding:14px 16px;border:1px solid var(--rule);border-radius:2px;font:14px/1.6 var(--sans);resize:vertical;background:var(--sheet);min-height:76px}
-.finder textarea:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(42,91,215,.12)}
-.finder .act{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
-.btn{font:inherit;font-size:14px;padding:9px 18px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:2px;cursor:pointer}
-.btn:hover{background:#000}
-.btn.ghost{background:var(--sheet);color:var(--ink);border-color:var(--rule)}
-.btn.ghost:hover{border-color:var(--ink3)}
+/* 推荐搜索框(首页顶部主角) */
+.finder{margin-top:26px;max-width:640px;position:relative}
+.finder textarea{width:100%;padding:15px 17px;background:var(--surface);border:1px solid var(--line2);border-radius:3px;font:14.5px/1.6 var(--sans);color:var(--text);resize:vertical;min-height:82px;transition:border-color .2s,box-shadow .2s}
+.finder textarea::placeholder{color:var(--text3)}
+.finder textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,107,44,.16)}
+.finder .act{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-size:14px;padding:9px 20px;border:1px solid var(--accent);background:var(--accent);color:#160A04;border-radius:3px;cursor:pointer;font-weight:600;transition:filter .15s,transform .12s}
+.btn:hover{filter:brightness(1.12)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--text2);border-color:var(--line2);font-weight:400}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.finder .hint{font-size:12px;color:var(--text3)}
+
+/* 推荐结果 */
+.recs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:16px}
+.rec{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--cat,var(--accent));border-radius:3px;padding:14px 16px;animation:pop .34s cubic-bezier(.2,.7,.3,1) backwards}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+.rec .t{font-size:15px;font-weight:600}
+.rec .t a{color:var(--text)}
+.rec .id{font-family:var(--mono);font-size:11.5px;color:var(--text3);margin-top:3px;word-break:break-all}
+.rec .d{font-size:13px;color:var(--text2);margin-top:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rec .why{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:9px}
 
 /* 搜索 + 分类筛选 */
-.search{margin:0 0 4px;max-width:640px}
-.search input{width:100%;padding:11px 14px;border:1px solid var(--rule);border-radius:2px;font:14px var(--sans);background:var(--sheet)}
-.search input:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px rgba(42,91,215,.12)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 2px}
-.chip{font-size:12.5px;padding:6px 12px;border:1px solid var(--rule);border-radius:2px;background:var(--sheet);cursor:pointer;color:var(--ink2)}
-.chip:hover{border-color:var(--ink3)}
-.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.search{margin:0 0 4px;max-width:560px}
+.search input{width:100%;padding:11px 14px;background:var(--surface);border:1px solid var(--line2);border-radius:3px;font:14px var(--sans);color:var(--text)}
+.search input::placeholder{color:var(--text3)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,107,44,.16)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 4px}
+.chip{font-size:12.5px;padding:6px 13px;border:1px solid var(--line2);border-radius:2px;background:var(--surface);cursor:pointer;color:var(--text2);transition:all .16s}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#160A04;font-weight:600}
 
-/* 技能清单:行式(取证清单版式),非圆角卡片堆 */
-.list{display:block}
-.list>.row{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:14px 4px;border-bottom:1px solid var(--rule);align-items:start}
-.list>.row:hover{background:rgba(42,91,215,.035)}
-.row .name{font-size:15.5px;font-weight:600}
-.row .name a{color:var(--ink)}
-.row .id{font-family:var(--mono);font-size:12px;color:var(--ink3);margin-top:2px;word-break:break-all}
-.row .desc{font-size:13.5px;color:var(--ink2);margin-top:6px;grid-column:1/-1}
-.row .facts{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink3);grid-column:1/-1;margin-top:2px;flex-wrap:wrap}
-.tag{font-family:var(--mono);font-size:11px;padding:2px 7px;border:1px solid var(--rule);border-radius:2px;color:var(--ink2);white-space:nowrap}
-.tag.kind-own{border-color:var(--marker);color:#7A5E00}
-.tag.kind-ext{border-color:var(--rule);color:var(--ink2)}
-.count{font-family:var(--mono);font-size:12px;color:var(--ink3);white-space:nowrap}
+/* 技能卡片网格(自研) */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;margin-top:4px}
+.grid.grid-mt{margin-top:16px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:16px 17px 15px;overflow:hidden;transition:border-color .18s,background .18s,transform .18s;animation:pop .4s cubic-bezier(.2,.7,.3,1) backwards}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--cat,var(--accent));transition:width .18s}
+.card:hover{border-color:var(--line2);background:var(--surface2);transform:translateY(-2px)}
+.card:hover:before{width:4px}
+.card h3{font-size:16px}
+.card h3 a{color:var(--text)}
+.card .en-name{font-family:var(--mono);font-size:11.5px;color:var(--text3);margin-top:3px;word-break:break-all}
+.card p{font-size:13px;color:var(--text2);margin-top:9px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .meta{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
 
-/* 兼容旧 grid 容器:整段作为清单 */
-.grid{display:block}
-.grid.grid-mt{margin-top:14px}
+/* 收录清单行(信息密度) */
+.list{display:block;margin-top:4px}
+.list>.row{display:grid;grid-template-columns:1fr auto;gap:5px 16px;padding:13px 4px;border-bottom:1px solid var(--line);animation:pop .38s cubic-bezier(.2,.7,.3,1) backwards;transition:background .16s;padding-left:10px;border-left:2px solid transparent}
+.list>.row:hover{background:var(--surface);border-left-color:var(--cat,var(--accent))}
+.row .name{font-size:15px;font-weight:600}
+.row .name a{color:var(--text)}
+.row .id{font-family:var(--mono);font-size:11.5px;color:var(--text3);margin-top:2px;word-break:break-all}
+.row .desc{font-size:13px;color:var(--text2);margin-top:6px;grid-column:1/-1}
+.row .facts{display:flex;align-items:center;gap:8px;grid-column:1/-1;flex-wrap:wrap}
+
+/* 标签:分类色编码 */
+.cat-reverse-engineering{--cat:var(--c-reverse-engineering)}
+.cat-pentest{--cat:var(--c-pentest)}
+.cat-malware{--cat:var(--c-malware)}
+.cat-forensics{--cat:var(--c-forensics)}
+.cat-engineering-hygiene{--cat:var(--c-engineering-hygiene)}
+.cat-dev-workflow{--cat:var(--c-dev-workflow)}
+.cat-web-frontend{--cat:var(--c-web-frontend)}
+.cat-data{--cat:var(--c-data)}
+.tag{font-family:var(--mono);font-size:10.5px;padding:2px 7px;border:1px solid var(--line2);border-radius:2px;color:var(--text2);white-space:nowrap}
+.tag.cat{border-color:var(--cat,var(--line2));color:var(--cat,var(--text2))}
+.tag.kind-own{border-color:var(--accent);color:var(--accent)}
+.tag.kind-ext{border-color:var(--line2);color:var(--text2)}
+.count{font-family:var(--mono);font-size:12px;color:var(--text3);white-space:nowrap}
+.count.hit{color:var(--accent)}
 
 /* 详情页 */
-.detail{background:var(--sheet);border:1px solid var(--rule);border-radius:2px;padding:26px 28px;margin-top:16px}
-.detail h1{font-size:24px}
-.detail .en-name{font-family:var(--mono);font-size:13px;color:var(--ink3);margin-top:6px}
-.detail .desc{margin:16px 0;color:var(--ink);font-size:15px;white-space:pre-wrap}
-.kv{display:grid;grid-template-columns:132px 1fr;gap:10px 16px;font-size:13.5px;margin:20px 0;padding:16px;background:var(--paper);border:1px solid var(--rule);border-radius:2px}
-.kv dt{color:var(--ink3)}
-.kv dd{font-family:var(--mono);word-break:break-all}
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px 28px;margin-top:16px}
+.detail h1{font-size:26px}
+.detail .en-name{font-family:var(--mono);font-size:13px;color:var(--text3);margin-top:6px}
+.detail .desc{margin:16px 0;color:var(--text);font-size:15px;white-space:pre-wrap}
+.kv{display:grid;grid-template-columns:140px 1fr;gap:10px 16px;font-size:13.5px;margin:20px 0;padding:16px;background:var(--bg);border:1px solid var(--line);border-radius:3px}
+.kv dt{color:var(--text3)}
+.kv dd{font-family:var(--mono);word-break:break-all;color:var(--text)}
 .kv a{color:var(--signal)}
 
-/* 命令:等宽、可复制、仅墨黑底(不用终端绿) */
-.cmd{background:var(--ink);color:#F2F4F7;padding:13px 15px;border-radius:2px;font:13px/1.5 var(--mono);overflow-x:auto;margin:12px 0;white-space:pre;user-select:all}
+/* 命令块 */
+.cmd{position:relative;background:#05070A;border:1px solid var(--line);border-left:3px solid var(--accent);padding:13px 15px;border-radius:3px;font:13px/1.5 var(--mono);color:#E6EAF0;overflow-x:auto;margin:12px 0;white-space:pre;user-select:all}
+.cmd:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,107,44,.05),transparent 60%);pointer-events:none}
 
-/* 安全审计:折叠块 */
-details.audit{background:var(--sheet);border:1px solid var(--rule);border-radius:2px;margin-top:18px}
-details.audit>summary{cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-size:14px;list-style:none;border-left:3px solid transparent}
+/* 审计折叠 */
+details.audit{background:var(--surface);border:1px solid var(--line);border-radius:3px;margin-top:18px}
+details.audit>summary{cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-size:14px;list-style:none;border-left:3px solid transparent;transition:border-color .18s,background .18s}
 details.audit>summary::-webkit-details-marker{display:none}
-details.audit[open]>summary{border-left-color:var(--marker);border-bottom:1px solid var(--rule)}
-.grade{font-family:var(--mono);font-weight:700;font-size:14px;padding:2px 9px;border-radius:2px}
-.grade-A{background:#E6F4EE;color:#1F7A5C}
-.grade-A-{background:#F2F6E8;color:#5C7A1F}
-.grade-B{background:#FBF3DC;color:#8A6410}
-.grade-C{background:#FBE9E0;color:#A54818}
-.grade-D{background:#FAE4E1;color:#A12A1C}
-.audit-meta{font-size:12px;color:var(--ink3);margin-left:auto;font-family:var(--mono)}
+details.audit>summary:hover{background:var(--surface2)}
+details.audit[open]>summary{border-left-color:var(--accent);border-bottom:1px solid var(--line)}
+.grade{font-family:var(--mono);font-weight:700;font-size:13px;padding:2px 9px;border-radius:2px}
+.grade-A{background:rgba(61,214,140,.14);color:var(--ok)}
+.grade-A-{background:rgba(157,214,60,.14);color:#A5D63C}
+.grade-B{background:rgba(255,176,32,.14);color:var(--warn)}
+.grade-C{background:rgba(255,107,44,.14);color:var(--accent)}
+.grade-D{background:rgba(255,77,79,.14);color:var(--danger)}
+.audit-meta{font-size:11.5px;color:var(--text3);margin-left:auto;font-family:var(--mono)}
 .audit-body{padding:4px 16px 16px}
-.lvl{font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:2px;white-space:nowrap}
-.lvl-info{background:#EEF0F3;color:#5B626C}
-.lvl-low{background:#F2F6E8;color:#5C7A1F}
-.lvl-medium{background:#FBF3DC;color:#8A6410}
-.lvl-high{background:#FBE9E0;color:#A54818}
-.lvl-critical{background:#FAE4E1;color:#A12A1C}
-.audit-detail{font-size:12.5px;color:var(--ink2);word-break:break-word;max-width:420px}
+.lvl{font-family:var(--mono);font-size:10.5px;padding:1px 7px;border-radius:2px;white-space:nowrap}
+.lvl-info{background:rgba(152,165,181,.12);color:var(--text2)}
+.lvl-low{background:rgba(157,214,60,.14);color:#A5D63C}
+.lvl-medium{background:rgba(255,176,32,.14);color:var(--warn)}
+.lvl-high{background:rgba(255,107,44,.14);color:var(--accent)}
+.lvl-critical{background:rgba(255,77,79,.14);color:var(--danger)}
+.audit-detail{font-size:12.5px;color:var(--text2);word-break:break-word;max-width:420px}
 
-/* 表格:参数/审计明细 */
-table.api{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;background:var(--sheet)}
-table.api th,table.api td{border:1px solid var(--rule);padding:9px 11px;text-align:left;vertical-align:top}
-table.api th{background:var(--paper);font-weight:600}
+table.api{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;background:var(--surface)}
+table.api th,table.api td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+table.api th{background:var(--bg);font-weight:600;color:var(--text2)}
+code.inl{font-family:var(--mono);font-size:12px;background:var(--surface2);padding:1px 5px;border-radius:2px;color:var(--text)}
 
-/* 导图 */
-.mmap{background:var(--sheet);border:1px solid var(--rule);border-radius:2px;margin-top:16px;padding:12px;text-align:center}
-.mmap img{max-width:100%;height:auto;display:block;margin:0 auto}
+/* 思维导图:内联 SVG,连线描画 + 节点悬停 */
+.mmap{background:var(--surface);border:1px solid var(--line);border-radius:3px;margin-top:16px;padding:14px;overflow-x:auto}
+.mmap svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.mmap svg .bg{fill:transparent}
+.mmap svg rect{fill:var(--surface2);stroke:var(--line2);transition:fill .18s,stroke .18s}
+.mmap svg rect.root{fill:rgba(255,107,44,.12);stroke:var(--accent)}
+.mmap svg text{fill:var(--text);font-size:13px}
+.mmap svg path{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.1s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.mmap svg g.node:hover rect{fill:var(--accent);stroke:var(--accent)}
+.mmap svg g.node:hover text{fill:#160A04}
 
-/* 套件区 */
-.suite{margin-bottom:28px}
-.suite h3{font-family:var(--mono);font-size:15px;font-weight:600;margin-bottom:10px}
-.suite-meta{font-family:var(--sans);font-size:12.5px;color:var(--ink3);font-weight:400}
+.suite{margin-bottom:30px}
+.suite h3{font-family:var(--mono);font-size:15px;font-weight:600;margin-bottom:10px;color:var(--text)}
+.suite-meta{font-family:var(--sans);font-size:12.5px;color:var(--text3);font-weight:400}
 .suite-meta a{color:var(--signal)}
-.notice{background:#FCFAF0;border:1px solid var(--marker);border-radius:2px;padding:13px 16px;font-size:13px;color:#6B5200;margin-top:14px}
-.hint-warn{font-size:13px;color:#8A6410;margin-top:14px}
+.notice{background:rgba(255,107,44,.08);border:1px solid rgba(255,107,44,.35);border-radius:3px;padding:13px 16px;font-size:13px;color:var(--accent2);margin-top:14px}
+.hint-warn{font-size:13px;color:var(--accent2);margin-top:14px}
 .hint-ok{font-size:13px;color:var(--ok);margin-top:14px}
-.hint-dim{font-size:13px;color:var(--ink3);margin-top:10px;max-width:74ch}
-.empty{color:var(--ink3);font-size:14px;padding:26px 4px}
+.hint-dim{font-size:13px;color:var(--text3);margin-top:10px;max-width:76ch}
+.empty{color:var(--text3);font-size:14px;padding:26px 4px}
 .hidden{display:none!important}
-code.inl{font-family:var(--mono);font-size:12px;background:#EEF0F3;padding:1px 5px;border-radius:2px}
-footer{text-align:left;font-size:12.5px;color:var(--ink3);padding:24px 20px 40px;border-top:1px solid var(--rule);margin-top:40px}
+footer{text-align:left;font-size:12.5px;color:var(--text3);padding:22px 20px 40px;border-top:1px solid var(--line);margin-top:44px}
 footer a{color:var(--signal)}
 
-/* 一次性入场:清单逐行浮现(像索引扫描),仅首屏前若干行 */
-@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.list>.row{animation:rise .4s cubic-bezier(.2,.7,.3,1) backwards}
-.list>.row:nth-child(1){animation-delay:.03s}
-.list>.row:nth-child(2){animation-delay:.07s}
-.list>.row:nth-child(3){animation-delay:.11s}
-.list>.row:nth-child(4){animation-delay:.15s}
-.list>.row:nth-child(5){animation-delay:.19s}
-.list>.row:nth-child(6){animation-delay:.23s}
-.list>.row:nth-child(7){animation-delay:.27s}
-.list>.row:nth-child(8){animation-delay:.31s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mmap svg path{stroke-dashoffset:0}}
 
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-}
-
-/* 移动端 */
 @media (max-width:760px){
   body{font-size:15.5px}
-  .topnav{height:auto;padding:8px 12px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .topnav{height:auto;padding:7px 12px;overflow-x:auto;scrollbar-width:none}
   .topnav::-webkit-scrollbar{display:none}
-  .topnav .brand{margin-right:14px;font-size:14px}
-  .topnav a.nav{padding:8px 10px;font-size:13.5px;white-space:nowrap}
-  .lang-btn{padding:5px 9px;font-size:12px}
-  .wrap{padding:18px 14px 48px}
-  h1{font-size:24px}
-  .hero{padding:22px 0 18px}
-  .hero h1{font-size:26px}
-  .hero .stats{gap:20px}
-  .hero .stats b{font-size:19px}
-  .list>.row{grid-template-columns:1fr;gap:4px;padding:13px 2px}
-  .count{align-self:start}
+  .topnav .brand{margin-right:12px;font-size:13px}
+  .topnav a.nav{padding:8px 9px;font-size:13px;white-space:nowrap}
+  .wrap{padding:0 14px 48px}
+  .hero{padding:28px 0 24px}
+  .hero h1{font-size:31px}
+  .hero .lede{font-size:14.5px}
+  .hero .stats{gap:22px;margin-top:20px}
+  .hero .stats b{font-size:24px}
+  .finder textarea{min-height:70px;font-size:14px}
+  .grid{grid-template-columns:1fr}
+  .recs{grid-template-columns:1fr}
+  .list>.row{grid-template-columns:1fr;gap:4px;padding-left:8px}
   .detail{padding:18px 16px}
   .kv{grid-template-columns:1fr;gap:4px}
   .cmd{font-size:12px;padding:11px 12px}
   table.api{display:block;overflow-x:auto;white-space:nowrap}
   .audit-detail{max-width:none;white-space:normal}
   .mmap{padding:8px}
-  .btn{padding:11px 16px}
-  footer{padding:20px 14px 32px}
+  .btn{padding:11px 16px;width:100%;text-align:center}
+  .finder .act .btn{width:auto}
+  footer{padding:18px 14px 32px}
 }
 """
+
 
 
 APP_JS = """
@@ -355,6 +399,41 @@ APP_JS = """
   };
   document.getElementById('find-btn')?.addEventListener('click', function(){ window.sxRecommend(); });
   document.getElementById('idea')?.addEventListener('keydown', function(e){ if(e.key==='Enter' && (e.ctrlKey||e.metaKey)) window.sxRecommend(); });
+  /* 数字递增(进入视口时触发一次,尊重 reduced-motion) */
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el){
+    const target = parseInt(el.dataset.count || '0', 10) || 0;
+    if (reduceMotion){ el.textContent = String(target); return; }
+    const dur = 900, t0 = performance.now();
+    function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const counters = document.querySelectorAll('.counter');
+  if (counters.length && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ countUp(e.target); io.unobserve(e.target); } });
+    }, {threshold:.4});
+    counters.forEach(function(c){ io.observe(c); });
+  } else { counters.forEach(countUp); }
+
+  /* 输入即推荐(防抖 400ms,少于 4 字不触发) */
+  let recTimer = null;
+  const ideaEl = document.getElementById('idea');
+  if (ideaEl){
+    ideaEl.addEventListener('input', function(){
+      if (recTimer) clearTimeout(recTimer);
+      const v = ideaEl.value.trim();
+      if (v.length < 4){
+        if (!v){ const box = document.getElementById('rec-results'); if (box) box.innerHTML = ''; }
+        return;
+      }
+      recTimer = setTimeout(function(){ window.sxRecommend(); }, 400);
+    });
+  }
   setLang(cur());
 })();
 """
@@ -525,19 +604,26 @@ def page_shell(title, title_en, active, inner):
 </body></html>'''
 
 
-def card(s, kind, page, stat_key):
-    cat_label = CATEGORIES.get(s.get("category", ""), s.get("category", ""))
-    if kind == "own":
-        tag_cls, tag_text = "tag kind-own", "自研"
-    else:
-        tag_cls, tag_text = "tag kind-ext", "收录"
+def card(s, kind, page, stat_key, variant="card"):
+    cat = s.get("category", "")
+    cat_label = CATEGORIES.get(cat, cat)
+    kind_cls = "kind-own" if kind == "own" else "kind-ext"
+    kind_text = "自研" if kind == "own" else "收录"
     search = f'{s["name"]} {s.get("name-zh","")} {s["description"]} {s.get("description-zh","")}'.lower()
-    return f'''<div class="row" data-search="{esc(search)}" data-category="{esc(s.get("category",""))}">
+    desc_html = f'<span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span>'
+    if variant == "row":
+        return f'''<div class="row cat-{esc(cat)}" data-search="{esc(search)}" data-category="{esc(cat)}">
   <div class="name"><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></div>
   <div class="count" data-stat="{esc(stat_key)}">—</div>
   <div class="id">{esc(s["name"])}</div>
-  <p class="desc"><span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span></p>
-  <div class="facts"><span class="{tag_cls}">{tag_text}</span><span class="tag">{esc(cat_label)}</span></div>
+  <p class="desc">{desc_html}</p>
+  <div class="facts"><span class="tag {kind_cls}">{kind_text}</span><span class="tag cat">{esc(cat_label)}</span></div>
+</div>'''
+    return f'''<div class="card cat-{esc(cat)}" data-search="{esc(search)}" data-category="{esc(cat)}">
+  <h3><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></h3>
+  <div class="en-name">{esc(s["name"])}</div>
+  <p>{desc_html}</p>
+  <div class="meta"><span class="tag cat">{esc(cat_label)}</span><span class="tag {kind_cls}">{kind_text}</span><span class="count" data-stat="{esc(stat_key)}">—</span></div>
 </div>'''
 
 
@@ -550,13 +636,13 @@ def chips_html():
 
 def render_index(own, suites):
     total_ext = sum(len(s["skills"]) for s in suites)
-    own_cards = "\n".join(card(s, "own", s["page"], s["name"]) for s in own)
+    own_cards = "\n".join(card(s, "own", s["page"], s["name"], "card") for s in own)
     suite_sections = []
     for suite in suites:
         ns = suite["namespace"]
         lic = suite["license"]["spdx"]
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
-        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
+        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}", "row") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
   <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} <a href="{esc(suite["upstream"])}">上游仓库</a></span></h3>
   <div class="list">{items}</div>
@@ -564,23 +650,33 @@ def render_index(own, suites):
 
     inner = f'''
 <div class="hero">
-  <h1>Skill X</h1>
-  <p class="lede"><span data-zh="面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。" data-en="Security research and reverse-engineering skills for all agents. Own skills via authorized private distribution; community skills install from upstream.">面向所有 Agent 的安全研究与逆向工程技能注册中心。自研技能经私有渠道授权分发;社区收录技能可一键指向上游安装。</span></p>
+  <div class="eyebrow">security research skills for AI agents</div>
+  <h1>给 AI Agent 的安全研究技能库</h1>
+  <p class="lede">逆向、渗透、样本分析、内存取证。自研技能经授权分发,社区精选技能一键指向上游;每个技能都带安全审计、结构导图与可直接调用的工具。</p>
   <div class="stats">
-    <span><b>{len(own)}</b><span data-zh="自研技能" data-en="Own skills">自研技能</span></span>
-    <span><b>{total_ext}</b><span data-zh="社区精选" data-en="Curated">社区精选</span></span>
-    <span><b>{len(suites)}</b><span data-zh="收录套件" data-en="Suites">收录套件</span></span>
+    <span><b class="counter" data-count="{len(own)}">0</b><span>自研技能</span></span>
+    <span><b class="counter" data-count="{total_ext}">0</b><span>社区精选</span></span>
+    <span><b class="counter" data-count="{len(suites)}">0</b><span>收录套件</span></span>
   </div>
+  <div class="finder">
+    <textarea id="idea" rows="2" data-zh="描述你要做的事…例如:分析一个可疑的 exe / 排查网站越权 / 内存里找配置偏移" data-en="Describe your task… e.g. analyze a suspicious exe / test IDOR / find offsets in memory" data-attr="placeholder" placeholder="描述你要做的事…例如:分析一个可疑的 exe / 排查网站越权 / 内存里找配置偏移"></textarea>
+    <div class="act">
+      <button class="btn" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button>
+      <span class="hint" data-zh="Ctrl + Enter 立即查找,或继续浏览下方全部技能" data-en="Ctrl + Enter to search, or keep browsing below">Ctrl + Enter 立即查找,或继续浏览下方全部技能</span>
+    </div>
+  </div>
+  <div class="recs" id="rec-results"></div>
+  <div class="empty hidden" id="rec-empty" data-zh="没有匹配到技能,换个说法试试" data-en="No matching skills. Try different wording.">没有匹配到技能,换个说法试试</div>
 </div>
-<div class="search"><input id="q" type="search" data-zh="搜索技能名称或关键词(如 逆向 / pentest / TDD)…" data-en="Search skills (e.g. reverse / pentest / TDD)…" data-attr="placeholder" placeholder="搜索技能名称或关键词(如 逆向 / pentest / TDD)…"></div>
+<div class="search"><input id="q" type="search" data-zh="按名称或关键词筛选技能…" data-en="Filter skills by name or keyword…" data-attr="placeholder" placeholder="按名称或关键词筛选技能…"></div>
 {chips_html()}
 <div id="empty" class="empty hidden" data-zh="没有匹配的技能" data-en="No matching skills">没有匹配的技能</div>
-<h2 data-zh="自研技能" data-en="Own Skills">自研技能</h2>
-<div class="list">{own_cards}</div>
+<h2 data-zh="自研技能" data-en="Own skills">自研技能 <span class="n">{len(own)} 个 · 私有授权分发</span></h2>
+<div class="grid">{own_cards}</div>
 <div class="notice"><span data-zh="自研技能经私有仓库授权分发。获得授权的协作者:" data-en="Own skills are distributed via a private repo. Authorized collaborators:">自研技能经私有仓库授权分发。获得授权的协作者:</span><code class="inl">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill &lt;name&gt;</code></div>
-<h2 data-zh="社区精选" data-en="Curated">社区收录</h2>
+<h2 data-zh="社区精选" data-en="Curated">社区精选 <span class="n">{total_ext} 个 · 已过四坑检查</span></h2>
 {"".join(suite_sections) if suite_sections else "<p>暂无收录</p>"}'''
-    return page_shell("Skill X — Agent Skills 注册中心", "Skill X", "skills", inner)
+    return page_shell("Skill X — 给 AI Agent 的安全研究技能库", "Skill X", "skills", inner)
 
 
 AUDIT_PATH = Path(__file__).resolve().parent / "audit" / "audit-report.json"
@@ -635,7 +731,7 @@ def render_audit_block(entry, generated_at=""):
     return f'''<details class="audit">
   <summary>
     <span class="grade grade-{esc(grade)}">{esc(grade)}</span>
-    <span data-zh="安全审计(点击展开明细)" data-en="Security audit (click to expand)">安全审计(点击展开明细)</span>
+    <span data-zh="安全审计,点击展开明细" data-en="Security audit, click to expand">安全审计,点击展开明细</span>
     <span class="audit-meta">{score}/100 · {len(checks)} <span data-zh="项检查" data-en="checks">项检查</span> · {esc(generated_at)}</span>
   </summary>
   <div class="audit-body">
@@ -648,7 +744,7 @@ def render_audit_block(entry, generated_at=""):
 </details>'''
 
 
-def render_own_detail(s, tool_entries=None, audit_entry=None, audit_at=""):
+def render_own_detail(s, tool_entries=None, audit_entry=None, audit_at="", map_svg=""):
     cat_label = CATEGORIES.get(s.get("category", ""), "")
     tools_html = ""
     if tool_entries:
@@ -681,7 +777,7 @@ def render_own_detail(s, tool_entries=None, audit_entry=None, audit_at=""):
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(s.get("license") or "MIT")}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(s["name"])}">—</span></dd>
   </dl>
-  <div class="mmap"><img src="/mindmaps/{esc(s["name"])}.svg" alt="思维导图"></div>
+  <div class="mmap">{map_svg}</div>
   <p class="hint-warn" data-zh="获得授权的协作者可安装:" data-en="Authorized collaborators can install:">获得授权的协作者可安装:</p>
   <div class="cmd">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
   <button class="chip on copy-btn" data-copy="GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}" data-skill="{esc(s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
@@ -691,7 +787,7 @@ def render_own_detail(s, tool_entries=None, audit_entry=None, audit_at=""):
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
 
 
-def render_ext_detail(suite, s, audit_entry=None, audit_at=""):
+def render_ext_detail(suite, s, audit_entry=None, audit_at="", map_svg=""):
     ns = suite["namespace"]
     lic = suite["license"]["spdx"]
     lic_text = lic if lic != "UNKNOWN" else "未确认(仅链接收录)"
@@ -707,7 +803,7 @@ def render_ext_detail(suite, s, audit_entry=None, audit_at=""):
     <dt data-zh="上游文件" data-en="Upstream">上游文件</dt><dd>{esc(s["path"])}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(ns + "/" + s["name"])}">—</span></dd>
   </dl>
-  <div class="mmap"><a href="/suites/{ns_slug(ns)}.html"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图"></a></div>
+  <div class="mmap"><a href="/suites/{ns_slug(ns)}.html">{map_svg}</a></div>
   <p class="hint-ok" data-zh="一条命令安装(指向上游仓库):" data-en="Install with one command (from upstream):">一条命令安装(指向上游仓库):</p>
   <div class="cmd">{esc(install)}</div>
   <button class="chip on copy-btn" data-copy="{esc(install)}" data-skill="{esc(ns + "/" + s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
@@ -746,7 +842,7 @@ def render_suites_index(suites):
     return page_shell("套件中心", "Suites", "suites", inner)
 
 
-def render_suite_detail(suite):
+def render_suite_detail(suite, map_svg=""):
     ns = suite["namespace"]
     lic = suite["license"]["spdx"]
     st = suite.get("stats") or {}
@@ -754,7 +850,7 @@ def render_suite_detail(suite):
     forks = st.get("forks")
     total = suite.get("totalSkills", len(suite["skills"]))
     picked = len(suite["skills"])
-    cards = "\n".join(card(s, "ext", f"../skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
+    cards = "\n".join(card(s, "ext", f"../skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}", "row") for s in suite["skills"])
     inner = f'''<div class="detail">
   <h1>{esc(ns)}</h1>
   <dl class="kv">
@@ -765,7 +861,7 @@ def render_suite_detail(suite):
     <dt data-zh="收录日期" data-en="Ingested">收录日期</dt><dd>{esc(suite.get("ingestedAt", ""))}</dd>
     <dt data-zh="上游" data-en="Upstream">上游</dt><dd><a href="{esc(suite["upstream"])}">{esc(suite["upstream"])}</a></dd>
   </dl>
-  <div class="mmap"><img src="/mindmaps/suite-{ns_slug(ns)}.svg" alt="套件思维导图"></div>
+  <div class="mmap">{map_svg}</div>
   <p class="hint-ok" data-zh="整套件安装(含全部上游技能):" data-en="Install whole suite (all upstream skills):">整套件安装(含全部上游技能):</p>
   <div class="cmd">npx skills add {esc(ns)} --skill '*'</div>
   <button class="chip on copy-btn" data-copy="npx skills add {esc(ns)} --skill '*'" data-skill="{esc(ns)}" data-zh="复制套件安装命令" data-en="Copy suite install command">复制套件安装命令</button>
@@ -843,20 +939,32 @@ def main():
     for s in suites:
         s["stats"] = stats.get(s["namespace"], {})
 
+    # 导图先行渲染(详情页内联,支持悬停与连线动效)
+    mmaps = {}
+    mind_dir = Path(__file__).resolve().parent / "mindmaps"
+    if mind_dir.is_dir():
+        for y in sorted(mind_dir.glob("*.yaml")):
+            try:
+                mmaps[y.stem] = render_svg(parse_map(y.read_text(encoding="utf-8")), "")
+            except Exception:
+                continue
+
     pages = {"index.html": render_index(own, suites)}
     tool_docs = apidocs.collect()
     audit = load_audit()
     audit_at = audit.get("generatedAt", "")
     for s in own:
         pages[s["page"]] = render_own_detail(s, tool_docs.get(s["name"], []),
-                                            (audit.get("skills") or {}).get(s["name"]), audit_at)
+                                            (audit.get("skills") or {}).get(s["name"]), audit_at,
+                                            mmaps.get(s["name"], ""))
     pages["suites/index.html"] = render_suites_index(suites)
     for suite in suites:
         ns = suite["namespace"]
-        pages[f"suites/{ns_slug(ns)}.html"] = render_suite_detail(suite)
+        pages[f"suites/{ns_slug(ns)}.html"] = render_suite_detail(suite, mmaps.get(f"suite-{ns_slug(ns)}", ""))
         for s in suite["skills"]:
             pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(
-                suite, s, (audit.get("suites") or {}).get(ns), audit_at)
+                suite, s, (audit.get("suites") or {}).get(ns), audit_at,
+                mmaps.get(f"suite-{ns_slug(ns)}", ""))
     pages["recommend.html"] = render_recommend()
     pages["api.html"] = render_api(own, suites)
     pages["about.html"] = render_about(own, suites)

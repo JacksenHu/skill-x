@@ -104,7 +104,7 @@ def render_svg(root, title=""):
 
     # 连线:按 (depth, y) 找父子——用 (parent_y, child_y) 链接记录,但需重建父子关系
     parts = [f"<svg xmlns='http://www.w3.org/2000/svg' width='{width}' height='{height}' viewBox='0 0 {width} {height}'>",
-             "<rect width='100%' height='100%' fill='#ffffff' rx='8'/>"]
+             "<rect width='100%' height='100%' fill='none' rx='8'/>"]
     # 重建父子:layout 时 links 只有 y 对,改为在 layout 中记录 (parent_key, child_key)
     # 简化:二次遍历建立连接(按深度差与 y 序)
     by_depth = {}
@@ -117,8 +117,9 @@ def render_svg(root, title=""):
         color = PALETTE[(root_node if root_node is not None else depth) % len(PALETTE)]
         if depth == 0:
             color = "#1a1d24"
-        parts.append(f"<rect x='{x}' y='{cy}' width='{w}' height='{NODE_H}' rx='8' fill='{color}22' stroke='{color}' stroke-width='1.5'/>")
-        parts.append(f"<text x='{x + w/2}' y='{y + 5}' text-anchor='middle' font-size='13' fill='#1a1d24' {FONT}>{_esc(label)}</text>")
+        cls = "root" if depth == 0 else ""
+        parts.append(f"<g class='node'><rect class='{cls}' x='{x}' y='{cy}' width='{w}' height='{NODE_H}' rx='5' fill='none' stroke='{color}' stroke-width='1.4'/>")
+        parts.append(f"<text x='{x + w/2}' y='{y + 5}' text-anchor='middle' {FONT}>{_esc(label)}</text></g>")
 
     def link(parent, child, color_idx):
         pd, py = parent
