@@ -43,8 +43,8 @@ CATEGORIES = {
     "dev-workflow": "开发流程",
     "data": "数据",
     "web-frontend": "Web 前端",
+    "ai-media": "AI 媒体",
 }
-
 CSS = """
 :root{
   --bg:#0A0D11; --surface:#141A21; --surface2:#1A222C; --line:#232C38; --line2:#33404F;
@@ -580,12 +580,23 @@ def collect_mcps():
             "remote_url": remotes[0].get("url", "") if remotes else "",
             "remote_type": remotes[0].get("type", "") if remotes else "",
             "pkg_id": f"{pkgs[0].get('registryType')}:{pkgs[0].get('identifier')}" if pkgs else "",
+            "websiteUrl": s.get("websiteUrl", ""),
+            "repository": (s.get("repository") or {}).get("url", ""),
+            "riskNote": cur.get("riskNote", ""),
+            "reviewed": cur.get("reviewed") or {},
+            "upstreamStatus": cur.get("upstreamStatus") or {},
+            "remotes": remotes,
+            "packages": pkgs,
         })
     return out
 
 
 def ns_slug(ns: str) -> str:
     return re.sub(r"[^\w.-]+", "--", ns)
+
+
+def mcp_slug(name: str) -> str:
+    return re.sub(r"[^\w.-]+", "--", name)
 
 
 def leak_assert(pages: dict, bodies):
@@ -926,7 +937,7 @@ def render_mcp(mcps):
         cmd = m["installHint"] or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
         search = f"{m['name']} {m['title']} {m['description']} {m['description-zh']}".lower()
         cards.append(f'''<div class="card cat-{esc(m['category'])}" data-search="{esc(search)}" data-category="{esc(m['category'])}">
-  <h3>{esc(m['title'])}</h3>
+  <h3><a href="/mcp/{mcp_slug(m['name'])}.html">{esc(m['title'])}</a></h3>
   <div class="en-name">{esc(m['name'])}</div>
   <p><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'][:300])}">{esc(m['description-zh'])}</span></p>
   <div class="meta"><span class="tag cat">{esc(CATEGORIES.get(m['category'], m['category']))}</span><span class="tag kind-ext">{kind_text}</span><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span><span class="count">v{esc(m['version'])}</span></div>
@@ -939,6 +950,67 @@ def render_mcp(mcps):
 <div class="grid">{body}</div>
 <div class="notice"><span data-zh="收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均经人工审查(execReview=passed)才放出。" data-en="Curation & risk: stdio local packages execute third-party code on your machine (high risk); remote servers connect to third-party hosts (low risk). All entries pass manual review before listing.">收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均经人工审查(execReview=passed)才放出。</span></div>'''
     return page_shell("MCP 服务", "MCP Servers", "mcp", inner)
+
+
+def render_mcp_detail(m):
+    risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
+    kind_text = "远程" if m["kind"] == "remote" else "本地(stdio)"
+    cmd = m["installHint"] or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
+    conn_rows = ""
+    if m["kind"] == "remote":
+        for r in m["remotes"]:
+            conn_rows += f'<tr><td><code class="inl">{esc(r.get("type",""))}</code></td><td><code class="inl">{esc(r.get("url",""))}</code></td></tr>'
+        conn_html = (f'<h2 data-zh="连接端点" data-en="Connection endpoints">连接端点</h2>'
+                     f'<table class="api"><tr><th data-zh="传输" data-en="Transport">传输</th><th data-zh="URL" data-en="URL">URL</th></tr>{conn_rows}</table>'
+                     f'<p class="hint-dim" data-zh="远程服务:URL 填入客户端 MCP 配置即可连接;认证头/API 密钥在安装时填入本地配置,不经过本站。" data-en="Remote server: paste the URL into your client MCP config; auth headers/keys are filled locally at install time, never passing through this site.">远程服务:URL 填入客户端 MCP 配置即可连接;认证头/API 密钥在安装时填入本地配置,不经过本站。</p>')
+    else:
+        env_table = ""
+        for p in m["packages"]:
+            envs = ""
+            for ev in p.get("environmentVariables") or []:
+                req = "必填" if ev.get("isRequired") else "可选"
+                sec = " · 密钥" if ev.get("isSecret") else ""
+                envs += f'<tr><td><code class="inl">{esc(ev.get("name",""))}</code></td><td>{esc(req + sec)}</td><td>{esc(ev.get("description",""))}</td></tr>'
+            if envs:
+                env_table = (f'<h3 data-zh="环境变量" data-en="Environment variables">环境变量</h3>'
+                             f'<table class="api"><tr><th data-zh="变量" data-en="Variable">变量</th><th data-zh="要求" data-en="Required">要求</th><th data-zh="说明" data-en="Description">说明</th></tr>{envs}</table>')
+            conn_rows += (f'<tr><td><code class="inl">{esc(p.get("registryType",""))}</code></td>'
+                          f'<td><code class="inl">{esc(p.get("identifier",""))}</code></td>'
+                          f'<td>v{esc(p.get("version",""))}</td>'
+                          f'<td><code class="inl">{esc((p.get("transport") or {}).get("type",""))}</code></td></tr>')
+        conn_html = (f'<h2 data-zh="安装包" data-en="Package">安装包</h2>'
+                     f'<table class="api"><tr><th data-zh="仓库" data-en="Registry">仓库</th><th data-zh="标识" data-en="Identifier">标识</th><th data-zh="版本" data-en="Version">版本</th><th data-zh="传输" data-en="Transport">传输</th></tr>{conn_rows}</table>'
+                     f'<p class="hint-warn" data-zh="stdio 本地包:安装即在本机执行第三方进程,收录已过人工供应链审查;请确认客户端来源可信。" data-en="stdio local package: installs and runs third-party code on your machine; supply-chain reviewed at curation time.">stdio 本地包:安装即在本机执行第三方进程,收录已过人工供应链审查;请确认客户端来源可信。</p>'
+                     + env_table)
+    rev = m["reviewed"]
+    ups = m["upstreamStatus"]
+    alive = ups.get("alive", True)
+    status_txt = "🟢 在线" if alive else "🔴 失联"
+    links = []
+    if m["websiteUrl"]:
+        links.append(f'<a href="{esc(m["websiteUrl"])}">官网</a>')
+    if m["repository"]:
+        links.append(f'<a href="{esc(m["repository"])}">仓库</a>')
+    links_html = " · ".join(links) if links else "—"
+    inner = f'''<div class="detail">
+  <div class="card-head"><h1>{esc(m['title'])}</h1><span class="badge ext">MCP · {kind_text}</span></div>
+  <div class="en-name">{esc(m['name'])}</div>
+  <p class="desc"><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'])}">{esc(m['description-zh'])}</span></p>
+  <dl class="kv">
+    <dt data-zh="分类" data-en="Category">分类</dt><dd>{esc(CATEGORIES.get(m['category'], m['category']))}</dd>
+    <dt data-zh="版本" data-en="Version">版本</dt><dd>v{esc(m['version'])}</dd>
+    <dt data-zh="风险等级" data-en="Risk">风险等级</dt><dd><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span></dd>
+    <dt data-zh="上游状态" data-en="Upstream">上游状态</dt><dd>{status_txt} · {esc(ups.get('lastCheck') or '—')}</dd>
+    <dt data-zh="收录审查" data-en="Review">收录审查</dt><dd>{esc(rev.get('by') or '—')} · {esc(rev.get('at') or '—')}</dd>
+    <dt data-zh="外部链接" data-en="Links">外部链接</dt><dd>{links_html}</dd>
+  </dl>
+  <p class="hint-ok" data-zh="一条命令接入客户端:" data-en="Connect with one command:">一条命令接入客户端:</p>
+  <div class="cmd">{esc(cmd)}</div>
+  <button class="chip on copy-btn" data-copy="{esc(cmd)}" data-skill="mcp:{esc(m['name'])}" data-zh="复制接入命令" data-en="Copy connect command">复制接入命令</button>
+  <p class="hint-dim">{esc(m['riskNote'])}</p>
+</div>
+{conn_html}'''
+    return page_shell(m["title"], m["name"], "mcp", inner)
 
 
 def render_recommend():
@@ -1010,6 +1082,8 @@ def main():
                 mmaps.get(f"suite-{ns_slug(ns)}", ""))
     pages["recommend.html"] = render_recommend()
     pages["mcp.html"] = render_mcp(mcps)
+    for m in mcps:
+        pages[f"mcp/{mcp_slug(m['name'])}.html"] = render_mcp_detail(m)
     pages["api.html"] = render_api(own, suites)
     pages["about.html"] = render_about(own, suites)
 
