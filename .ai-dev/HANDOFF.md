@@ -69,3 +69,8 @@
 - 修复:导航加独立 `/mcp.html` tab;`collect_mcps()`+`render_mcp()`(MCP 卡片含双语简介/分类/远程或本地/风险徽章/版本/安装命令);`render_api` 补 `/v0/servers`+`/api/mcp/install` 说明与 curl;CSS 加 risk-* 徽章配色。
 - 部署:sync.py --skip-build(纯净重放);线上 `/mcp.html` 200、首页导航含 MCP、`/api.html` 含两端点。commit `fb64eeb` 已推送。
 - 教训:**数据面接通≠用户可见**,改完必须核对页面渲染与导航入口。
+
+## MCP 详情页闭环(2026-09-28 补,老胡要求卡片可点进详情)
+- 修复:collect_mcps 补全字段;mcp_slug();render_mcp 卡片 h3 套链接指向 `/mcp/<slug>.html`;新增 render_mcp_detail(与 skill 详情页同构:card-head/kv 键值表/接入命令块+copy/riskNote/连接端点表或安装包表);main 生成详情页;CATEGORIES 加 ai-media。
+- 部署:sync.py --skip-build;线上 `/mcp/ac.inference.sh--mcp.html` 200、列表卡片链接指向详情页。commit `a3e47ab` 已推送。
+- 教训:patch 多 hunk 易出语法断裂(本次 `},{"` 断行、CATEGORIES `}` 重复),打完必须 ast.parse 验证再 build。
