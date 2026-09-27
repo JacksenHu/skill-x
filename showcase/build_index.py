@@ -142,15 +142,6 @@ p{max-width:76ch}
 .card p{font-size:13px;color:var(--text2);margin-top:9px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card .meta{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
 
-/* 收录清单行(信息密度) */
-.list{display:block;margin-top:4px}
-.list>.row{display:grid;grid-template-columns:1fr auto;gap:5px 16px;padding:13px 4px;border-bottom:1px solid var(--line);animation:pop .38s cubic-bezier(.2,.7,.3,1) backwards;transition:background .16s;padding-left:10px;border-left:2px solid transparent}
-.list>.row:hover{background:var(--surface);border-left-color:var(--cat,var(--accent))}
-.row .name{font-size:15px;font-weight:600}
-.row .name a{color:var(--text)}
-.row .id{font-family:var(--mono);font-size:11.5px;color:var(--text3);margin-top:2px;word-break:break-all}
-.row .desc{font-size:13px;color:var(--text2);margin-top:6px;grid-column:1/-1}
-.row .facts{display:flex;align-items:center;gap:8px;grid-column:1/-1;flex-wrap:wrap}
 
 /* 标签:分类色编码 */
 .cat-reverse-engineering{--cat:var(--c-reverse-engineering)}
@@ -251,7 +242,6 @@ footer a{color:var(--signal)}
   .finder textarea{min-height:70px;font-size:14px}
   .grid{grid-template-columns:1fr}
   .recs{grid-template-columns:1fr}
-  .list>.row{grid-template-columns:1fr;gap:4px;padding-left:8px}
   .detail{padding:18px 16px}
   .kv{grid-template-columns:1fr;gap:4px}
   .cmd{font-size:12px;padding:11px 12px}
@@ -604,21 +594,13 @@ def page_shell(title, title_en, active, inner):
 </body></html>'''
 
 
-def card(s, kind, page, stat_key, variant="card"):
+def card(s, kind, page, stat_key):
     cat = s.get("category", "")
     cat_label = CATEGORIES.get(cat, cat)
     kind_cls = "kind-own" if kind == "own" else "kind-ext"
     kind_text = "自研" if kind == "own" else "收录"
     search = f'{s["name"]} {s.get("name-zh","")} {s["description"]} {s.get("description-zh","")}'.lower()
     desc_html = f'<span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span>'
-    if variant == "row":
-        return f'''<div class="row cat-{esc(cat)}" data-search="{esc(search)}" data-category="{esc(cat)}">
-  <div class="name"><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></div>
-  <div class="count" data-stat="{esc(stat_key)}">—</div>
-  <div class="id">{esc(s["name"])}</div>
-  <p class="desc">{desc_html}</p>
-  <div class="facts"><span class="tag {kind_cls}">{kind_text}</span><span class="tag cat">{esc(cat_label)}</span></div>
-</div>'''
     return f'''<div class="card cat-{esc(cat)}" data-search="{esc(search)}" data-category="{esc(cat)}">
   <h3><a href="/{page}">{esc(s.get("name-zh", s["name"]))}</a></h3>
   <div class="en-name">{esc(s["name"])}</div>
@@ -636,16 +618,16 @@ def chips_html():
 
 def render_index(own, suites):
     total_ext = sum(len(s["skills"]) for s in suites)
-    own_cards = "\n".join(card(s, "own", s["page"], s["name"], "card") for s in own)
+    own_cards = "\n".join(card(s, "own", s["page"], s["name"]) for s in own)
     suite_sections = []
     for suite in suites:
         ns = suite["namespace"]
         lic = suite["license"]["spdx"]
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
-        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}", "row") for s in suite["skills"])
+        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
   <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} <a href="{esc(suite["upstream"])}">上游仓库</a></span></h3>
-  <div class="list">{items}</div>
+  <div class="grid">{items}</div>
 </section>''')
 
     inner = f'''
@@ -850,7 +832,7 @@ def render_suite_detail(suite, map_svg=""):
     forks = st.get("forks")
     total = suite.get("totalSkills", len(suite["skills"]))
     picked = len(suite["skills"])
-    cards = "\n".join(card(s, "ext", f"../skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}", "row") for s in suite["skills"])
+    cards = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
     inner = f'''<div class="detail">
   <h1>{esc(ns)}</h1>
   <dl class="kv">
@@ -869,7 +851,7 @@ def render_suite_detail(suite, map_svg=""):
 </div>
 <h2 data-zh="精选技能" data-en="Curated skills">精选技能</h2>
 {chips_html()}
-<div class="list">{cards}</div>'''
+<div class="grid">{cards}</div>'''
     return page_shell(ns, ns, "suites", inner)
 
 

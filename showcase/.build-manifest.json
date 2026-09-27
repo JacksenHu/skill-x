@@ -1,12 +1,12 @@
 {
- "index.html": "d54d5aa0e73a0266",
+ "index.html": "4d1111aa3e6c66e8",
  "skills/own-binary-reverse-engineering.html": "f3b7db7cda6879fd",
  "skills/own-malware-analysis.html": "9923b1e209e18b9f",
  "skills/own-memory-forensics.html": "e5846382244593dc",
  "skills/own-pentest-methodology.html": "28219011f5dd69bb",
  "skills/own-verification-run-hygiene.html": "3b0b0cdf544df1ed",
- "suites/index.html": "59a024c626e428da",
- "suites/addyosmani--agent-skills.html": "96464be80081c3f4",
+ "suites/index.html": "a0c95f103a6c3f8a",
+ "suites/addyosmani--agent-skills.html": "4ed14478b2c23f96",
  "skills/ext-addyosmani--agent-skills--code-review-and-quality.html": "5993950af90a6d20",
  "skills/ext-addyosmani--agent-skills--debugging-and-error-recovery.html": "e256f4da54c151b9",
  "skills/ext-addyosmani--agent-skills--security-and-hardening.html": "c66ae8abfd3ebde5",
@@ -21,6 +21,6 @@
  "mindmaps/suite-addyosmani--agent-skills.svg": "3e614437ca795e87",
  "mindmaps/suite-vercel-labs--agent-skills.svg": "879bcef5166d6f0c",
  "mindmaps/verification-run-hygiene.svg": "95d1187fdb724b32",
- "assets/style.css": "1abe988abc7f851d",
+ "assets/style.css": "9eb69409660ba6e1",
  "assets/app.js": "9486b696124ea898"
 }
