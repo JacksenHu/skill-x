@@ -29,3 +29,10 @@
 ## 命名
 
 - 自研页 `skills/own-<name>.html`;收录页 `skills/ext-<ns-slug>--<name>.html`;套件页 `suites/<ns-slug>.html`;导图 `mindmaps/<skill>.svg`、套件导图 `mindmaps/suite-<ns-slug>.svg`。
+
+## 上下文与协作(devctx)
+
+- 每个会话/需求:开始前先读 `.ai-dev/START_HERE.md` + `.ai-dev/HANDOFF.md`;需求闭环(或切换工具/模型)时,必须把本轮压缩回写 `HANDOFF.md`——只留目标、可验证结果、有序下一步、新约束/决策、踩坑;不贴对话原文与大段代码/日志。
+- 长期规则写进 L2 文档(本文件 / architecture / project-brief / lessons);HANDOFF 只保留活跃工作记忆,超约 120 行先归档。
+- 增删/移动源码文件后同步刷新 `code-index.md`;项目文件即共享记忆,提交后立即 push。
+- 凭据(api_sk / PAT / token)只走会话环境变量:不落盘、不入库、不进 `.ai-dev`/memory。
