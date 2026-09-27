@@ -58,6 +58,12 @@ def main():
                 ra = call("files", "UploadFile", path="/www/wwwroot/skillx-api",
                           files={"zunfile": (fname, src.read_bytes())})
                 print(f"后端 {fname} ->", ra.get("msg"))
+        # server.py 以 BASE.parent(即 /www/wwwroot)找 mcp-registry.json,须传到父目录
+        mcp_reg = ROOT / "mcp-registry.json"
+        if mcp_reg.is_file():
+            ra = call("files", "UploadFile", path="/www/wwwroot",
+                      files={"zunfile": ("mcp-registry.json", mcp_reg.read_bytes())})
+            print("后端 mcp-registry.json ->", ra.get("msg"))
         print("[+] 后端已更新(server.py 内含热重载,约 30 秒内自动生效)")
 
     if r1.get("status") and r3.get("status"):

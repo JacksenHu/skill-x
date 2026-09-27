@@ -32,13 +32,14 @@ BASE = Path(__file__).resolve().parent
 DB = BASE / "stats.db"
 CACHE = BASE / "cache"
 REGISTRY = json.loads((BASE / "registry.json").read_text(encoding="utf-8"))
+MCP_REGISTRY_PATH = BASE.parent / "mcp-registry.json"
+MCP_REGISTRY = json.loads(MCP_REGISTRY_PATH.read_text(encoding="utf-8")) if MCP_REGISTRY_PATH.is_file() else {"servers": []}
 SITE_DATA = Path(os.environ.get("SITE_DATA", "/www/wwwroot/skillx.yueliai.top/site-data.json"))
 RATE_LIMIT = 60  # 次/分钟/IP
 UA = {"User-Agent": "skill-x-api/1.0"}
 _rate = {}
 
-VERSION = "2026-09-24.1"
-
+VERSION = "2026-09-28.1"
 VALID_KEY = re.compile(r"^[\w./-]{1,120}$")
 
 CAT_KW = {
@@ -123,6 +124,28 @@ def all_counts():
     rows = conn.execute("SELECT skill, n FROM counts").fetchall()
     conn.close()
     return {k: v for k, v in rows}
+
+
+def mcp_passed():
+    """只放出人工审查通过的 MCP server,形状对齐官方 Registry 响应。"""
+    out = []
+    for s in MCP_REGISTRY.get("servers", []):
+        cur = (s.get("_meta") or {}).get("top.skillx/curated") or {}
+        if (cur.get("reviewed") or {}).get("execReview") != "passed":
+            continue
+        pub = {k: v for k, v in s.items() if k != "_meta"}
+        out.append({
+            "server": pub,
+            "_meta": {
+                "top.skillx/curated": {k: cur[k] for k in ("description-zh", "category", "kind", "riskLevel", "installHint") if k in cur},
+                "io.modelcontextprotocol.registry/official": {
+                    "status": "active",
+                    "publishedAt": (cur.get("reviewed") or {}).get("at"),
+                    "isLatest": True,
+                },
+            },
+        })
+    return out
 
 
 def rate_ok(ip: str) -> bool:
@@ -218,6 +241,25 @@ class Handler(BaseHTTPRequestHandler):
             return
         if path == "/api/stats":
             return self._json({"counts": all_counts()})
+        if path == "/v0/servers":
+            qs = urllib.parse.parse_qs(urlparse(self.path).query)
+            try:
+                limit = max(1, min(int(qs.get("limit", ["100"])[0]), 100))
+            except ValueError:
+                limit = 100
+            items = mcp_passed()
+            cursor = qs.get("cursor", [""])[0]
+            start = 0
+            if cursor:
+                for i, it in enumerate(items):
+                    if f"{it['server']['name']}:{it['server']['version']}" == cursor:
+                        start = i + 1
+                        break
+            page = items[start:start + limit]
+            nxt = None
+            if start + limit < len(items) and page:
+                nxt = f"{page[-1]['server']['name']}:{page[-1]['server']['version']}"
+            return self._json({"servers": page, "metadata": {"nextCursor": nxt, "count": len(page)}})
         if path == "/api/recommend":
             q = urllib.parse.parse_qs(urlparse(self.path).query).get("q", [""])[0]
             if not q.strip():
@@ -233,7 +275,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
-        if path not in ("/api/download", "/api/recommend"):
+        if path not in ("/api/download", "/api/recommend", "/api/mcp/install"):
             return self._json({"error": "not found"}, 404)
         if not self._guarded():
             return
@@ -244,6 +286,12 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length) or b"{}")
         except Exception:
             return self._json({"error": "bad json"}, 400)
+        if path == "/api/mcp/install":
+            name = str(body.get("name", "")).strip()
+            if not name or not VALID_KEY.match(name):
+                return self._json({"error": "bad name"}, 400)
+            bump(f"mcp:{name}")
+            return self._json({"ok": True, "name": name, "n": all_counts().get(f"mcp:{name}", 0)})
         if path == "/api/recommend":
             q = str(body.get("query", "")).strip()
             if not q:

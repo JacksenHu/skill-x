@@ -1040,8 +1040,26 @@ def main():
                     "stats": s.get("stats", {}),
                     "skills": [{"name": x["name"], "name-zh": x.get("name-zh"), "description": x["description"],
                                 "description-zh": x.get("description-zh"), "category": x.get("category")} for x in s["skills"]]}
-                   for s in suites],
+                    for s in suites],
     }
+    # MCP 市场面:只放出人工审查通过的条目,绝不含用户密钥/认证头
+    mcp_reg = ROOT / "mcp-registry.json"
+    mcps = []
+    if mcp_reg.is_file():
+        for s in json.loads(mcp_reg.read_text(encoding="utf-8")).get("servers", []):
+            cur = (s.get("_meta") or {}).get("top.skillx/curated") or {}
+            if (cur.get("reviewed") or {}).get("execReview") != "passed":
+                continue
+            mcps.append({
+                "name": s.get("name"), "title": s.get("title") or s.get("name"),
+                "description": s.get("description"), "description-zh": cur.get("description-zh", ""),
+                "version": s.get("version"), "kind": cur.get("kind"),
+                "category": cur.get("category"), "riskLevel": cur.get("riskLevel"),
+                "installHint": cur.get("installHint", ""),
+                "remotes": [{"type": r.get("type"), "url": r.get("url")} for r in (s.get("remotes") or [])],
+                "packages": [{"registryType": p.get("registryType"), "identifier": p.get("identifier"), "version": p.get("version")} for p in (s.get("packages") or [])],
+            })
+    site_data["mcps"] = mcps
     (DIST / "site-data.json").write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # 机器可读数据接口:工具清单 + 审计报告(供外部程序调用,nginx 静态提供)

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "servers": [
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "ac.inference.sh/mcp",
+      "description": "Run 150+ AI apps — image, video, audio, LLMs, 3D and more. Browse, execute, stream results.",
+      "title": "inference.sh",
+      "version": "2.0.0",
+      "websiteUrl": "https://inference.sh",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://api.inference.sh/mcp"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "description-zh": "通过 MCP 调用 150+ AI 应用（图像/视频/音频/LLM/3D），浏览、执行并流式返回结果。",
+          "category": "ai-media",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "纯远程 streamable-http 连接，不在本机执行代码；按量计费，需自行注册 API 凭据。",
+          "installHint": "claude mcp add --transport http inference-sh https://api.inference.sh/mcp",
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "种子条目：metadata 来自官方 Registry 实拉记录（docs/mcp-marketplace-research.md），无本地代码面。"
+          },
+          "upstreamStatus": {
+            "source": "official-registry",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # Code Index — 代码地图（自动生成，请勿手改）
 
-- 生成时间：2026-09-28 00:40
-- 源码文件：68 个，合计约 5108 行
+- 生成时间：2026-09-28 01:53
+- 源码文件：71 个，合计约 5550 行
 - 用法：先在本文件定位目标，再精读对应源码；不要全仓遍历。增删/移动文件后用 build_index.py 重建。
 
 ## 目录结构
@@ -45,6 +45,7 @@ skills/
 - `CHANGELOG.md` (22 行) — Changelog  <!-- CHANGELOG.md -->
 - `CONTRIBUTING.md` (17 行) — 参与贡献  <!-- CONTRIBUTING.md -->
 - `README.md` (65 行) — Skill X  <!-- README.md -->
+- `mcp-registry.json` (41 行) — MCP 市场注册表(官方 server.json + `_meta.top.skillx/curated` 策展层)。  <!-- mcp-registry.json -->
 ### .github
 
 - `PULL_REQUEST_TEMPLATE.md` (33 行) — 变更说明  <!-- .github/PULL_REQUEST_TEMPLATE.md -->
@@ -56,7 +57,7 @@ skills/
 - `validate.yml` (17 行)  <!-- .github/workflows/validate.yml -->
 ### api
 
-- `server.py` (310 行) — Skill X 统计与下载代理后端(零第三方依赖,Python 3.8+ 标准库)。  <!-- api/server.py -->
+- `server.py` (359 行) — Skill X 统计与下载代理后端(零第三方依赖,Python 3.8+ 标准库)。  <!-- api/server.py -->
 ### deploy
 
 - `bt_deploy.py` (170 行) — 宝塔面板 API 部署工具(Skill X 专用)。  <!-- deploy/bt_deploy.py -->
@@ -67,6 +68,8 @@ skills/
 - `acceptance-testing.md` (44 行) — 对照验收 SOP:装了 ≠ 生效  <!-- docs/acceptance-testing.md -->
 - `access-management.md` (74 行) — 授权与安装管理  <!-- docs/access-management.md -->
 - `baota-api-notes.md` (49 行) — 腾讯云专享版宝塔 API 能力边界与变通(实操记录)  <!-- docs/baota-api-notes.md -->
+- `mcp-marketplace-research.md` (118 行) — MCP 安装连接市场调研  <!-- docs/mcp-marketplace-research.md -->
+- `mcp-onboarding-pipeline.md` (64 行) — MCP server 收录 SOP  <!-- docs/mcp-onboarding-pipeline.md -->
 - `onboarding-pipeline.md` (67 行) — 套件 / Skill 接入管线(维护 SOP)  <!-- docs/onboarding-pipeline.md -->
 - `skill-authoring-guide.md` (68 行) — SKILL.md 编写规范  <!-- docs/skill-authoring-guide.md -->
 ### docs/acceptance
@@ -78,11 +81,12 @@ skills/
 - `audit_skill.py` (258 行) — 技能安全审计(自动任务,纯标准库静态扫描)。  <!-- scripts/audit_skill.py -->
 - `ingest.py` (314 行) — Skill X 套件收录器(docs/onboarding-pipeline.md 的机器化实现,纯标准库)。  <!-- scripts/ingest.py -->
 - `link_check.py` (76 行) — upstream 死链探活(docs/onboarding-pipeline.md §2.4,纯标准库)。  <!-- scripts/link_check.py -->
+- `mcp_ingest.py` (193 行) — Skill X MCP server 收录器(docs/mcp-onboarding-pipeline.md 的机器化实现,纯标准库)。  <!-- scripts/mcp_ingest.py -->
 - `validate.py` (113 行) — SkillHub SKILL.md 规范校验(零第三方依赖)。  <!-- scripts/validate.py -->
 ### showcase
 
 - `apidocs.py` (77 行) — API 文档自动提取:从 skills/*/scripts/*.py 的 argparse 定义提取参数说明(AST 解析,不执行脚本)。  <!-- showcase/apidocs.py -->
-- `build_index.py` (1062 行) — Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。  <!-- showcase/build_index.py -->
+- `build_index.py` (1080 行) — Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。  <!-- showcase/build_index.py -->
 - `svg_map.py` (200 行) — 零依赖 SVG 思维导图渲染器。  <!-- showcase/svg_map.py -->
 ### showcase/mindmaps
 
