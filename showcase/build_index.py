@@ -156,6 +156,9 @@ p{max-width:76ch}
 .tag.cat{border-color:var(--cat,var(--line2));color:var(--cat,var(--text2))}
 .tag.kind-own{border-color:var(--accent);color:var(--accent)}
 .tag.kind-ext{border-color:var(--line2);color:var(--text2)}
+.tag.risk-low{border-color:#3FB96B;color:#3FB96B}
+.tag.risk-medium{border-color:var(--warn);color:var(--warn)}
+.tag.risk-high,.tag.risk-critical{border-color:var(--danger);color:var(--danger)}
 .count{font-family:var(--mono);font-size:12px;color:var(--text3);white-space:nowrap}
 .count.hit{color:var(--accent)}
 
@@ -553,6 +556,34 @@ def collect_external():
     return suites, i18n
 
 
+def collect_mcps():
+    """读 mcp-registry.json,只返回人工审查通过的条目(渲染用结构)。"""
+    reg = ROOT / "mcp-registry.json"
+    if not reg.is_file():
+        return []
+    out = []
+    for s in json.loads(reg.read_text(encoding="utf-8")).get("servers", []):
+        cur = (s.get("_meta") or {}).get("top.skillx/curated") or {}
+        if (cur.get("reviewed") or {}).get("execReview") != "passed":
+            continue
+        pkgs = s.get("packages") or []
+        remotes = s.get("remotes") or []
+        out.append({
+            "name": s.get("name", ""), "title": s.get("title") or s.get("name", ""),
+            "description": s.get("description", ""),
+            "description-zh": cur.get("description-zh", s.get("description", "")),
+            "version": s.get("version", ""),
+            "kind": cur.get("kind", "remote" if remotes else "local"),
+            "category": cur.get("category", "dev-workflow"),
+            "riskLevel": cur.get("riskLevel", "medium"),
+            "installHint": cur.get("installHint", ""),
+            "remote_url": remotes[0].get("url", "") if remotes else "",
+            "remote_type": remotes[0].get("type", "") if remotes else "",
+            "pkg_id": f"{pkgs[0].get('registryType')}:{pkgs[0].get('identifier')}" if pkgs else "",
+        })
+    return out
+
+
 def ns_slug(ns: str) -> str:
     return re.sub(r"[^\w.-]+", "--", ns)
 
@@ -574,6 +605,7 @@ def nav(active="skills"):
   <a href="/"{cls("skills")} data-zh="技能" data-en="Skills">技能</a>
   <a href="/recommend.html"{cls("recommend")} data-zh="技能推荐" data-en="Finder">技能推荐</a>
   <a href="/suites/"{cls("suites")} data-zh="套件" data-en="Suites">套件</a>
+  <a href="/mcp.html"{cls("mcp")} data-zh="MCP 服务" data-en="MCP">MCP 服务</a>
   <a href="/api.html"{cls("api")} data-zh="API 文档" data-en="API Docs">API 文档</a>
   <a href="/about.html"{cls("about")} data-zh="关于" data-en="About">关于</a>
   <button class="lang-btn">EN</button>
@@ -870,15 +902,43 @@ def render_api(own, suites):
 <tr><td><code class="inl">/tools.json</code></td><td>GET</td><td data-zh="自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)" data-en="Bundled tools inventory (scripts, functions, argparse params)">自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)</td></tr>
 <tr><td><code class="inl">/audit-report.json</code></td><td>GET</td><td data-zh="安全审计报告(各技能等级/评分/检查项明细,机器可读)" data-en="Security audit report (grades, scores, check details)">安全审计报告(各技能等级/评分/检查项明细,机器可读)</td></tr>
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
+<tr><td><code class="inl">/v0/servers</code></td><td>GET</td><td data-zh="MCP 服务列表(官方 Registry 兼容,游标分页 ?limit&cursor;只返回已过审条目)" data-en="MCP server list (official Registry-compatible, cursor-paginated; reviewed entries only)">MCP 服务列表(官方 Registry 兼容,游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目)</td></tr>
+<tr><td><code class="inl">/api/mcp/install</code></td><td>POST</td><td data-zh="记录一次 MCP 安装/连接。Body: {{&quot;name&quot;:&quot;&lt;ns/name&gt;&quot;}}" data-en="Record an MCP install/connect. Body: name">记录一次 MCP 安装/连接。Body: <code class="inl">{{"name":"&lt;ns/name&gt;"}}</code></td></tr>
 </table>
 <h2 class="h2-sm" data-zh="使用示例" data-en="Examples">使用示例</h2>
 <div class="cmd">curl -s https://skillx.yueliai.top/api/stats</div>
+<div class="cmd">curl -s "https://skillx.yueliai.top/v0/servers?limit=10"</div>
+<div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"name":"ac.inference.sh/mcp"}}' https://skillx.yueliai.top/api/mcp/install</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"skill":"malware-analysis","action":"copy"}}' https://skillx.yueliai.top/api/download</div>
 <div class="cmd">curl -s "https://skillx.yueliai.top/api/recommend?q=想给安卓apk脱壳"</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"query":"测试集体变红怎么排查"}}' https://skillx.yueliai.top/api/recommend</div>
 <div class="cmd">curl -s https://skillx.yueliai.top/audit-report.json</div>
 <div class="cmd">curl -sO https://skillx.yueliai.top/dl/addyosmani/agent-skills/test-driven-development.tar.gz</div>'''
     return page_shell("API 文档", "API Docs", "api", inner)
+
+
+def render_mcp(mcps):
+    risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
+    cards = []
+    for m in mcps:
+        kind_text = "远程" if m["kind"] == "remote" else "本地"
+        conn = m["remote_url"] if m["kind"] == "remote" else m["pkg_id"]
+        cmd = m["installHint"] or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
+        search = f"{m['name']} {m['title']} {m['description']} {m['description-zh']}".lower()
+        cards.append(f'''<div class="card cat-{esc(m['category'])}" data-search="{esc(search)}" data-category="{esc(m['category'])}">
+  <h3>{esc(m['title'])}</h3>
+  <div class="en-name">{esc(m['name'])}</div>
+  <p><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'][:300])}">{esc(m['description-zh'])}</span></p>
+  <div class="meta"><span class="tag cat">{esc(CATEGORIES.get(m['category'], m['category']))}</span><span class="tag kind-ext">{kind_text}</span><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span><span class="count">v{esc(m['version'])}</span></div>
+  <div class="cmd">{esc(cmd)}</div>
+</div>''')
+    body = "".join(cards) if cards else '<p class="hint-dim" data-zh="暂无已过审的 MCP 服务" data-en="No reviewed MCP servers yet">暂无已过审的 MCP 服务</p>'
+    inner = f'''
+<h2 data-zh="MCP 服务" data-en="MCP Servers">MCP 服务 <span class="n">{len(mcps)} 个 · 官方 server.json 标准</span></h2>
+<p class="hint-dim" data-zh="Model Context Protocol 服务的安装与连接入口。远程服务填入 URL 即可连接;本地包由客户端从公共包仓库拉取并在本机起进程。用户密钥在安装时填入本地配置,不经过本站。" data-en="Install & connect entries for Model Context Protocol servers. Remote ones connect via URL; local packages are pulled by the client from public registries. Secrets are filled locally at install time, never passing through this site.">Model Context Protocol 服务的安装与连接入口。远程服务填入 URL 即可连接;本地包由客户端从公共包仓库拉取并在本机起进程。用户密钥在安装时填入本地配置,不经过本站。</p>
+<div class="grid">{body}</div>
+<div class="notice"><span data-zh="收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均经人工审查(execReview=passed)才放出。" data-en="Curation & risk: stdio local packages execute third-party code on your machine (high risk); remote servers connect to third-party hosts (low risk). All entries pass manual review before listing.">收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均经人工审查(execReview=passed)才放出。</span></div>'''
+    return page_shell("MCP 服务", "MCP Servers", "mcp", inner)
 
 
 def render_recommend():
@@ -917,6 +977,7 @@ def render_about(own, suites):
 def main():
     own, bodies = collect_own_skills()
     suites, _ = collect_external()
+    mcps = collect_mcps()
     stats = fetch_upstream_stats([s["namespace"] for s in suites])
     for s in suites:
         s["stats"] = stats.get(s["namespace"], {})
@@ -948,6 +1009,7 @@ def main():
                 suite, s, (audit.get("suites") or {}).get(ns), audit_at,
                 mmaps.get(f"suite-{ns_slug(ns)}", ""))
     pages["recommend.html"] = render_recommend()
+    pages["mcp.html"] = render_mcp(mcps)
     pages["api.html"] = render_api(own, suites)
     pages["about.html"] = render_about(own, suites)
 
