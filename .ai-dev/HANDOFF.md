@@ -57,3 +57,9 @@
 - 审计报告由 CI(Linux)生成:本地 Windows 若再遇 `--check` 漂移,先看是否只是 `generatedAt` 跨日(正常,刷新报告即可),平台差异已由 `as_posix()` + LF 归一消除。
 - **apply_patch 一次多 hunk 时可能部分成功部分失败** → 打完必须 Select-String 逐处核对(本轮 server.py 缺 MCP_REGISTRY 加载行、do_POST 残留旧守卫行 404 即此因)。
 - 后台 job 起 python 服务随命令退出死亡 → 用独立会话长跑;改 server.py 后等 watch_reload 30 秒自检生效再验。
+
+## 部署闭环(本会话 2026-09-28 执行)
+- `deploy/sync.py --api --reload` 纯净重放成功;server.py/registry.json/mcp-registry.json 全上传;nginx vhost 备份后加 `/v0/` 反代并 reload。
+- 线上验收:`/api/health` version=2026-09-28.1;`GET /v0/servers` 返回 ac.inference.sh/mcp@2.0.0(official=active);`POST /api/mcp/install` 计数通(线上 stats.db 含 1 条本次测试计数,保留)。
+- commit `54c6e20` 已推送 origin main。
+- 注意:HANDOFF.md 是多会话共用,本会话只增量追加不覆盖;头部"另一会话负责"为并行会话所写,以其最新改动为准。
