@@ -63,3 +63,9 @@
 - 线上验收:`/api/health` version=2026-09-28.1;`GET /v0/servers` 返回 ac.inference.sh/mcp@2.0.0(official=active);`POST /api/mcp/install` 计数通(线上 stats.db 含 1 条本次测试计数,保留)。
 - commit `54c6e20` 已推送 origin main。
 - 注意:HANDOFF.md 是多会话共用,本会话只增量追加不覆盖;头部"另一会话负责"为并行会话所写,以其最新改动为准。
+
+## MCP 页面渲染闭环(2026-09-28 补,老胡指出线上无 MCP 入口)
+- 问题:上轮只做了数据面(site-data.json 有 mcps)和 API,**首页/导航/API 文档页无渲染** → 网页看不到 MCP。
+- 修复:导航加独立 `/mcp.html` tab;`collect_mcps()`+`render_mcp()`(MCP 卡片含双语简介/分类/远程或本地/风险徽章/版本/安装命令);`render_api` 补 `/v0/servers`+`/api/mcp/install` 说明与 curl;CSS 加 risk-* 徽章配色。
+- 部署:sync.py --skip-build(纯净重放);线上 `/mcp.html` 200、首页导航含 MCP、`/api.html` 含两端点。commit `fb64eeb` 已推送。
+- 教训:**数据面接通≠用户可见**,改完必须核对页面渲染与导航入口。
