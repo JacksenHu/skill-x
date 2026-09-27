@@ -23,7 +23,7 @@ def main():
     if "--skip-build" not in sys.argv:
         print("[*] 构建 dist …")
         r = subprocess.run([sys.executable, str(ROOT / "showcase" / "build_index.py")],
-                           capture_output=True, text=True)
+                           capture_output=True, text=True, encoding="utf-8", errors="replace")
         print((r.stdout or r.stderr).strip())
         if r.returncode != 0:
             print("[!] 构建失败,中止")
