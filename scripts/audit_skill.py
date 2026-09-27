@@ -44,9 +44,17 @@ def read(p: Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace")
 
 
+def stable_size(p: Path) -> int:
+    """写报告用的稳定体积:文本按 LF 归一,消除 Windows CRLF 检出造成的漂移。"""
+    data = p.read_bytes()
+    if b"\x00" in data:
+        return len(data)
+    return len(data.replace(b"\r\n", b"\n"))
+
+
 def code_files(skill_dir: Path):
     out = []
-    for f in sorted(skill_dir.rglob("*")):
+    for f in sorted(skill_dir.rglob("*"), key=lambda p: p.as_posix()):
         if f.is_symlink() or not f.is_file():
             continue
         if f.suffix.lower() in CODE_EXT:
@@ -118,7 +126,7 @@ def audit_skill(skill_dir: Path):
     # 1. 可执行面
     checks.append({
         "id": "exec-surface", "name": "可执行文件面", "level": "info" if not files else "low",
-        "pass": True, "detail": f"{len(files)} 个可执行文件" + (f":{', '.join(str(f.relative_to(skill_dir)) for f in files[:6])}" if files else "(方法论型技能)"),
+        "pass": True, "detail": f"{len(files)} 个可执行文件" + (f":{', '.join(f.relative_to(skill_dir).as_posix() for f in files[:6])}" if files else "(方法论型技能)"),
     })
     sig = analyze_code(files)
     urls = sorted(set(URL_RE.findall(code_text) + URL_RE.findall(text_all)))
@@ -171,7 +179,7 @@ def audit_skill(skill_dir: Path):
                    "pass": not hard_tp, "detail": dep_detail})
     # 8. 文件清单
     all_files = [f for f in skill_dir.rglob("*") if f.is_file() and not f.is_symlink()]
-    total = sum(f.stat().st_size for f in all_files)
+    total = sum(stable_size(f) for f in all_files)
     checks.append({
         "id": "inventory", "name": "文件清单与体积", "level": "info", "pass": True,
         "detail": f"{len(all_files)} 个文件, {total // 1024} KB",

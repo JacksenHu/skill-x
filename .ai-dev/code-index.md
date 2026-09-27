@@ -1,7 +1,7 @@
 # Code Index — 代码地图（自动生成，请勿手改）
 
-- 生成时间：2026-09-27 10:53
-- 源码文件：68 个，合计约 5118 行
+- 生成时间：2026-09-27 14:55
+- 源码文件：68 个，合计约 5126 行
 - 用法：先在本文件定位目标，再精读对应源码；不要全仓遍历。增删/移动文件后用 build_index.py 重建。
 
 ## 目录结构
@@ -75,7 +75,7 @@ skills/
 - `verification-run-hygiene-demo.md` (45 行) — 对照实验实录:verification-run-hygiene  <!-- docs/acceptance/verification-run-hygiene-demo.md -->
 ### scripts
 
-- `audit_skill.py` (250 行) — 技能安全审计(自动任务,纯标准库静态扫描)。  <!-- scripts/audit_skill.py -->
+- `audit_skill.py` (258 行) — 技能安全审计(自动任务,纯标准库静态扫描)。  <!-- scripts/audit_skill.py -->
 - `ingest.py` (314 行) — Skill X 套件收录器(docs/onboarding-pipeline.md 的机器化实现,纯标准库)。  <!-- scripts/ingest.py -->
 - `link_check.py` (76 行) — upstream 死链探活(docs/onboarding-pipeline.md §2.4,纯标准库)。  <!-- scripts/link_check.py -->
 - `validate.py` (113 行) — SkillHub SKILL.md 规范校验(零第三方依赖)。  <!-- scripts/validate.py -->
