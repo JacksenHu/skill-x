@@ -19,6 +19,16 @@
         "./skills/binary-reverse-engineering",
         "./skills/pentest-methodology"
       ]
+    },
+    {
+      "name": "skillhub-packs",
+      "source": "./",
+      "description": "Expert packs: persona-driven orchestration meta-skills (Abyss deep reverse, Rift pentest, Trace malware).",
+      "skills": [
+        "./skills/pack-abyss-deep-reverse",
+        "./skills/pack-rift-pentest",
+        "./skills/pack-trace-malware"
+      ]
     }
   ]
 }
