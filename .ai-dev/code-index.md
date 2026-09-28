@@ -1,7 +1,7 @@
 # Code Index — 代码地图（自动生成，请勿手改）
 
-- 生成时间：2026-09-28 11:31
-- 源码文件：73 个，合计约 6169 行
+- 生成时间：2026-09-28 12:02
+- 源码文件：73 个，合计约 6303 行
 - 用法：先在本文件定位目标，再精读对应源码；不要全仓遍历。增删/移动文件后用 build_index.py 重建。
 
 ## 目录结构
@@ -88,12 +88,12 @@ skills/
 ### showcase
 
 - `apidocs.py` (77 行) — API 文档自动提取:从 skills/*/scripts/*.py 的 argparse 定义提取参数说明(AST 解析,不执行脚本)。  <!-- showcase/apidocs.py -->
-- `build_index.py` (1351 行) — Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。  <!-- showcase/build_index.py -->
+- `build_index.py` (1474 行) — Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。  <!-- showcase/build_index.py -->
 - `svg_map.py` (200 行) — 零依赖 SVG 思维导图渲染器。  <!-- showcase/svg_map.py -->
 ### showcase/hyperframes/hero
 
 - `design.md` (32 行) — Skill X hero composition — design source of truth  <!-- showcase/hyperframes/hero/design.md -->
-- `index.html` (198 行)  <!-- showcase/hyperframes/hero/index.html -->
+- `index.html` (209 行)  <!-- showcase/hyperframes/hero/index.html -->
 ### showcase/mindmaps
 
 - `binary-reverse-engineering.yaml` (34 行)  <!-- showcase/mindmaps/binary-reverse-engineering.yaml -->
