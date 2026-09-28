@@ -18,16 +18,9 @@
       font-variant-numeric: tabular-nums;
     }
     .scene { position: absolute; top: 0; left: 0; width: 1600px; height: 900px; overflow: hidden; }
-    .scene-content {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      padding: 104px 132px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 22px;
-    }
+    #scene1 { z-index: 1; }
+    #scene2 { z-index: 2; opacity: 0; }
+    #scene3 { z-index: 3; opacity: 0; }
     .grid-bg {
       position: absolute;
       inset: 0;
@@ -35,122 +28,135 @@
         linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
       background-size: 48px 48px;
-      -webkit-mask-image: radial-gradient(circle at 38% 46%, #000 18%, transparent 76%);
-      mask-image: radial-gradient(circle at 38% 46%, #000 18%, transparent 76%);
+      -webkit-mask-image: radial-gradient(circle at 72% 46%, #000 22%, transparent 78%);
+      mask-image: radial-gradient(circle at 72% 46%, #000 22%, transparent 78%);
     }
-    .glow {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 44%, rgba(255,107,44,.17), transparent 52%);
-    }
-    .glow-right { background: radial-gradient(circle at 74% 52%, rgba(74,158,255,.13), transparent 48%); }
-    #scene1 { z-index: 1; }
-    #scene2 { z-index: 2; opacity: 0; }
-    #scene3 { z-index: 3; opacity: 0; }
-    .eyebrow {
-      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-      font-size: 20px;
-      letter-spacing: .14em;
-      color: #FF6B2C;
-      text-transform: uppercase;
-    }
-    .title {
-      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-      font-size: 152px;
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: -.01em;
-    }
-    .rule { width: 220px; height: 3px; background: #FF6B2C; }
-    .offer { font-size: 46px; line-height: 1.3; color: #E6EAF0; max-width: 24ch; font-weight: 600; }
-    .sub { font-size: 24px; color: #98A5B5; max-width: 60ch; }
+    .glow { position: absolute; inset: 0; background: radial-gradient(circle at 74% 42%, rgba(255,107,44,.16), transparent 52%); }
+    .glow-cool { background: radial-gradient(circle at 72% 56%, rgba(74,158,255,.12), transparent 50%); }
     .scan {
       position: absolute;
-      left: 0;
+      left: 46%;
       right: 0;
       top: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent, #FF6B2C, transparent);
       opacity: 0;
     }
-    .stats { display: flex; align-items: stretch; gap: 0; }
-    .stat {
-      position: relative;
-      flex: 1 1 0;
-      min-width: 0;
-      padding: 34px 40px 38px;
-      border-left: 1px solid rgba(255,255,255,.09);
+    .tag {
+      position: absolute;
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 18px;
+      letter-spacing: .12em;
+      color: #6A7686;
     }
-    .stat:first-child { border-left: 0; }
-    .stat b {
+    .tag-accent { color: #FF6B2C; }
+    .ticker { position: absolute; right: 132px; bottom: 132px; display: flex; gap: 54px; }
+    .ticker div { text-align: right; }
+    .ticker b {
       display: block;
       font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-      font-size: 104px;
+      font-size: 64px;
       line-height: 1;
       font-weight: 600;
       color: #E6EAF0;
     }
-    .stat span { display: block; font-size: 24px; color: #98A5B5; margin-top: 14px; }
-    .hl { position: absolute; left: 40px; bottom: 22px; width: 96px; height: 3px; background: #FF6B2C; }
-    .headline {
-      font-size: 72px;
-      line-height: 1.22;
-      font-weight: 700;
-      max-width: 20ch;
-    }
-    .domain {
+    .ticker span { display: block; margin-top: 10px; font-size: 18px; color: #98A5B5; }
+    .ticker i { display: block; width: 64px; height: 3px; background: #FF6B2C; margin: 14px 0 0 auto; }
+    .graph { position: absolute; right: 96px; top: 96px; width: 880px; height: 708px; }
+    .graph path { fill: none; stroke: rgba(255,107,44,.55); stroke-width: 2; stroke-dasharray: 900; stroke-dashoffset: 900; }
+    .graph path.cool { stroke: rgba(74,158,255,.45); }
+    .graph circle { fill: #141A21; stroke: rgba(255,255,255,.28); stroke-width: 2; }
+    .graph circle.hot { stroke: #FF6B2C; }
+    .graph text {
+      fill: #98A5B5;
       font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-      font-size: 30px;
-      color: #FF6B2C;
-      letter-spacing: .02em;
+      font-size: 17px;
     }
-    .chips { display: flex; gap: 16px; margin-top: 12px; }
-    .chips span {
-      font-size: 24px;
-      color: #E6EAF0;
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 14px 30px;
+    .packet { fill: #FF6B2C; }
+    .frame {
+      position: absolute;
+      right: 96px;
+      top: 96px;
+      width: 880px;
+      height: 708px;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .frame:before, .frame:after {
+      content: "";
+      position: absolute;
+      width: 46px;
+      height: 46px;
+      border: 2px solid #FF6B2C;
+    }
+    .frame:before { left: -2px; top: -2px; border-right: 0; border-bottom: 0; }
+    .frame:after { right: -2px; bottom: -2px; border-left: 0; border-top: 0; }
+    .frame-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 18px;
+      color: #FF6B2C;
+      letter-spacing: .08em;
     }
   </style>
 </head>
 <body>
-  <div id="root" data-composition-id="skillx-hero" data-width="1600" data-height="900" data-fps="30" data-start="0" data-duration="9">
+  <div id="root" data-composition-id="skillx-hero-bg" data-width="1600" data-height="900" data-fps="30" data-start="0" data-duration="8.5">
     <div id="scene1" class="scene">
       <div class="grid-bg"></div>
       <div class="glow"></div>
       <div class="scan" id="s1-scan"></div>
-      <div class="scene-content">
-        <div class="eyebrow" id="s1-eyebrow">security research skills for AI agents</div>
-        <h1 class="title" id="s1-title">Skill X</h1>
-        <div class="rule" id="s1-rule"></div>
-        <div class="offer" id="s1-offer">给 AI Agent 的安全研究技能库</div>
-        <div class="sub" id="s1-sub">逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可调用工具。</div>
+      <div class="frame" id="s1-frame">
+        <div class="frame-label" id="s1-frame-label">LIVE INDEX</div>
       </div>
+      <div class="ticker">
+        <div id="s1-t1"><b>05</b><span>自研技能</span><i></i></div>
+        <div id="s1-t2"><b>04</b><span>社区精选</span><i></i></div>
+        <div id="s1-t3"><b>08</b><span>项安全审计</span><i></i></div>
+      </div>
+      <div class="tag" id="s1-tag" style="left:820px;top:140px;">SKILL X // SIGNAL</div>
     </div>
 
     <div id="scene2" class="scene">
       <div class="grid-bg"></div>
-      <div class="glow glow-right"></div>
-      <div class="scene-content">
-        <div class="stats">
-          <div class="stat" id="s2-stat1"><b>05</b><span>自研技能</span><i class="hl" id="s2-hl1"></i></div>
-          <div class="stat" id="s2-stat2"><b>04</b><span>社区精选</span><i class="hl" id="s2-hl2"></i></div>
-          <div class="stat" id="s2-stat3"><b>08</b><span>项安全审计</span><i class="hl" id="s2-hl3"></i></div>
-        </div>
-      </div>
+      <div class="glow glow-cool"></div>
+      <svg class="graph" viewBox="0 0 880 708">
+        <path id="p1" d="M60 120 L300 120 L300 300 L560 300" />
+        <path id="p2" d="M60 360 L240 360 L240 540 L520 540" class="cool" />
+        <path id="p3" d="M560 300 L760 300 L760 150" />
+        <path id="p4" d="M520 540 L760 540 L760 640" class="cool" />
+        <path id="p5" d="M300 300 L300 480 L520 540" />
+        <circle cx="60" cy="120" r="9" class="hot" />
+        <circle cx="300" cy="120" r="9" />
+        <circle cx="300" cy="300" r="9" class="hot" />
+        <circle cx="560" cy="300" r="9" />
+        <circle cx="760" cy="300" r="9" />
+        <circle cx="760" cy="150" r="9" />
+        <circle cx="60" cy="360" r="9" class="hot" />
+        <circle cx="240" cy="360" r="9" />
+        <circle cx="240" cy="540" r="9" />
+        <circle cx="520" cy="540" r="9" class="hot" />
+        <circle cx="760" cy="640" r="9" />
+        <circle id="packet" class="packet" cx="60" cy="120" r="6" />
+        <text x="78" y="112">triage</text>
+        <text x="318" y="292">unpack</text>
+        <text x="578" y="292">map</text>
+        <text x="778" y="292">audit</text>
+        <text x="78" y="352">request</text>
+        <text x="258" y="532">evidence</text>
+        <text x="538" y="532">report</text>
+      </svg>
+      <div class="tag tag-accent" id="s2-tag" style="left:96px;top:120px;">GROUNDED TRACE</div>
     </div>
 
     <div id="scene3" class="scene">
       <div class="grid-bg"></div>
       <div class="glow"></div>
-      <div class="scene-content">
-        <div class="headline" id="s3-headline">技能库、MCP 服务与安全审计，一处可查。</div>
-        <div class="domain" id="s3-domain">skillx.yueliai.top</div>
-        <div class="chips">
-          <span id="s3-c1">浏览技能库</span>
-          <span id="s3-c2">查看 MCP 服务</span>
-        </div>
+      <div class="frame" id="s3-frame">
+        <div class="frame-label" id="s3-frame-label">skillx.yueliai.top</div>
       </div>
+      <div class="tag" id="s3-tag" style="left:96px;top:120px;">BROWSE · CONNECT · AUDIT</div>
     </div>
   </div>
 
@@ -158,41 +164,46 @@
     window.__timelines = window.__timelines || {};
     var tl = gsap.timeline({ paused: true });
 
-    /* Scene 1: title card */
-    tl.from("#s1-eyebrow", { y: 18, opacity: 0, duration: 0.5, ease: "power2.out" }, 0.15);
-    tl.from("#s1-title", { y: 44, opacity: 0, duration: 0.85, ease: "expo.out" }, 0.28);
-    tl.from("#s1-rule", { scaleX: 0, duration: 0.6, ease: "power3.inOut", transformOrigin: "left center" }, 0.7);
-    tl.from("#s1-offer", { y: 26, opacity: 0, duration: 0.6, ease: "power3.out" }, 0.62);
-    tl.from("#s1-sub", { y: 20, opacity: 0, duration: 0.55, ease: "power4.out" }, 0.82);
-    tl.fromTo("#s1-scan", { y: -40, opacity: 0 }, { y: 940, opacity: 1, duration: 3.1, ease: "none" }, 0.2);
+    /* Scene 1: live index */
+    tl.from("#s1-frame", { scale: 0.96, opacity: 0, duration: 0.8, ease: "expo.out" }, 0.2);
+    tl.from("#s1-frame-label", { y: 14, opacity: 0, duration: 0.5, ease: "power2.out" }, 0.45);
+    tl.from("#s1-tag", { y: 14, opacity: 0, duration: 0.5, ease: "power3.out" }, 0.55);
+    tl.from("#s1-t1", { y: 26, opacity: 0, duration: 0.6, ease: "expo.out" }, 0.65);
+    tl.from("#s1-t2", { y: 26, opacity: 0, duration: 0.6, ease: "power3.out" }, 0.8);
+    tl.from("#s1-t3", { y: 26, opacity: 0, duration: 0.6, ease: "power4.out" }, 0.95);
+    tl.fromTo("#s1-scan", { y: -30, opacity: 0 }, { y: 880, opacity: 1, duration: 2.9, ease: "none" }, 0.35);
 
     /* Transition 1: blur crossfade */
-    tl.to("#scene1", { filter: "blur(18px)", scale: 1.03, opacity: 0, duration: 0.55, ease: "power2.inOut" }, 3.3);
-    tl.fromTo("#scene2", { filter: "blur(18px)", scale: 0.98, opacity: 0 },
-      { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.7, ease: "power2.out" }, 3.4);
+    tl.to("#scene1", { filter: "blur(16px)", scale: 1.02, opacity: 0, duration: 0.55, ease: "power2.inOut" }, 3.1);
+    tl.fromTo("#scene2", { filter: "blur(16px)", scale: 0.98, opacity: 0 },
+      { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.65, ease: "power2.out" }, 3.2);
 
-    /* Scene 2: real numbers */
-    tl.from("#s2-stat1", { y: 30, opacity: 0, duration: 0.65, ease: "expo.out" }, 3.75);
-    tl.from("#s2-stat2", { y: 30, opacity: 0, duration: 0.65, ease: "power3.out" }, 3.9);
-    tl.from("#s2-stat3", { y: 30, opacity: 0, duration: 0.65, ease: "power4.out" }, 4.05);
-    tl.from("#s2-hl1", { scaleX: 0, duration: 0.4, ease: "power2.out", transformOrigin: "left center" }, 4.1);
-    tl.from("#s2-hl2", { scaleX: 0, duration: 0.4, ease: "power2.out", transformOrigin: "left center" }, 4.25);
-    tl.from("#s2-hl3", { scaleX: 0, duration: 0.4, ease: "power2.out", transformOrigin: "left center" }, 4.4);
+    /* Scene 2: grounded trace */
+    tl.from("#s2-tag", { x: -18, opacity: 0, duration: 0.5, ease: "power2.out" }, 3.45);
+    tl.fromTo("#p1", { strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 3.6);
+    tl.fromTo("#p2", { strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 3.78);
+    tl.fromTo("#p3", { strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 0.8, ease: "power3.inOut" }, 3.96);
+    tl.fromTo("#p4", { strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 0.8, ease: "power3.inOut" }, 4.14);
+    tl.fromTo("#p5", { strokeDashoffset: 900 }, { strokeDashoffset: 0, duration: 0.7, ease: "power4.inOut" }, 4.32);
+    tl.from(".graph circle", { scale: 0.4, opacity: 0, duration: 0.45, ease: "power3.out", transformOrigin: "center" }, 3.9);
+    tl.from(".graph text", { opacity: 0, y: 8, duration: 0.4, ease: "power2.out" }, 4.4);
+    tl.fromTo("#packet", { x: 0, y: 0 }, { x: 240, y: 0, duration: 0.7, ease: "power1.inOut" }, 4.5);
+    tl.to("#packet", { x: 240, y: 180, duration: 0.7, ease: "power1.inOut" }, 5.2);
+    tl.to("#packet", { x: 500, y: 180, duration: 0.7, ease: "power1.inOut" }, 5.9);
 
     /* Transition 2: crossfade */
-    tl.to("#scene2", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 6.5);
-    tl.fromTo("#scene3", { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.inOut" }, 6.55);
+    tl.to("#scene2", { opacity: 0, duration: 0.45, ease: "power2.inOut" }, 6.6);
+    tl.fromTo("#scene3", { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.inOut" }, 6.65);
 
-    /* Scene 3: closing card */
-    tl.from("#s3-headline", { y: 34, opacity: 0, duration: 0.75, ease: "expo.out" }, 6.7);
-    tl.from("#s3-domain", { y: 18, opacity: 0, duration: 0.5, ease: "power3.out" }, 7.0);
-    tl.from("#s3-c1", { y: 14, opacity: 0, duration: 0.45, ease: "power2.out" }, 7.15);
-    tl.from("#s3-c2", { y: 14, opacity: 0, duration: 0.45, ease: "power4.out" }, 7.28);
+    /* Scene 3: closing frame */
+    tl.from("#s3-frame", { scale: 1.04, opacity: 0, duration: 0.7, ease: "expo.out" }, 6.8);
+    tl.from("#s3-frame-label", { y: 14, opacity: 0, duration: 0.5, ease: "power2.out" }, 7.0);
+    tl.from("#s3-tag", { y: 14, opacity: 0, duration: 0.5, ease: "power3.out" }, 7.12);
 
-    /* Final scene may fade out (loop-friendly) */
-    tl.to("#scene3", { opacity: 0, duration: 0.6, ease: "power1.inOut" }, 8.4);
+    /* Final fade (loop-friendly) */
+    tl.to("#scene3", { opacity: 0, duration: 0.55, ease: "power1.inOut" }, 7.95);
 
-    window.__timelines["skillx-hero"] = tl;
+    window.__timelines["skillx-hero-bg"] = tl;
   </script>
 </body>
 </html>

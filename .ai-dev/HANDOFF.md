@@ -90,3 +90,10 @@
 - 构建:`showcase/assets/` 下的图片/视频按内容哈希复制进 `dist/assets/`;finesse 样式戳已写入 CSS 顶部,`.finesse/log.json` 本地记录且已加入 `.gitignore`。
 - 验证:build 17 页 + 泄露断言通过;`/`、`/skills.html`、`/mcp.html`、`/api.html`、`/about.html`、`/suites/`、技能详情、hero mp4 与 proof jpg 全 200;dist 无 `recommend.html`;桌面 1440 + 移动 390 截图核对无溢出。
 - 已部署(2026-09-28,纯净重放 686KB):线上首页 200(hero 视频 + 新导航)、`/skills.html`、`/mcp.html`、`/api.html`、`/about.html` 全 200;`hero-loop.mp4`(496534B)与 proof jpg 全 200;`/recommend.html` 已 404 下线。
+
+## 首页 v2:去截图改真实功能 + 滚动动效(2026-09-28 补,老胡要求)
+- 首页彻底去掉截图:删除 `.home-proof` 区块与 `proof-*.jpg` 资源(构建现在会清理 dist 里的过时媒体);hero 背景改为纯动效。
+- HyperFrames hero 重渲染为"无文字纯动效背景":LIVE INDEX 数字带 → 确定性路径追踪 → 收束框,3 场景 2 转场,`lint/inspect` 全过;`hero-loop.mp4` 8.5s / 348KB 全出血播放,左侧 scrim 保文案可读,reduced-motion 停播。
+- 新增"真实功能"区块(可交互,非示意):技能推荐器(真调 `/api/recommend`,失败降级 `/site-data.json`);交互式结构导图(内联真 SVG,悬停高亮/描边绘制);安全审计(真实 `<details>` 折叠，AST 8 项);MCP 接入(真调 `/v0/servers/<name>/install`,切换 Claude/Cursor/Codex/VS Code 片段并可复制)。
+- 滚动动效(R2 原生 scroll-driven,零依赖):顶部进度轨、hero 视差+文案渐隐、分区三种不同入场(rise/slide/settle)、h2 强调线随滚动绘制;`prefers-reduced-motion` 全停,无 `animation-timeline` 时由 app.js 用 rAF + IntersectionObserver 降级,另补 `@media print` 终态。
+- 验证:build 17 页 + 泄露断言;`#idea` / `#mcp-demo` 锚点截图确认滚动归位与 MCP 命令回显;dist/assets 仅剩 style.css / app.js / hero-loop.mp4;线上 `/api/recommend` 实测 3 条命中。

@@ -231,9 +231,9 @@ footer a{color:var(--signal)}
 
 /* 首页(品牌面) */
 .home-hero{position:relative;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-bottom:1px solid var(--line);overflow:hidden;background:#0A0D11;min-height:min(78vh,660px);display:flex;align-items:center}
-.home-hero-bg{position:absolute;inset:0;background:#0A0D11 url('/assets/proof-skills.jpg') center right/cover no-repeat;opacity:.5}
-.home-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.7;clip-path:inset(0 0 0 46%)}
-.home-hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,13,17,.98) 0%,rgba(10,13,17,.96) 34%,rgba(10,13,17,.55) 62%,rgba(10,13,17,.35) 100%)}
+.home-hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(circle at 74% 45%,#000 18%,transparent 78%);mask-image:radial-gradient(circle at 74% 45%,#000 18%,transparent 78%)}
+.home-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.9}
+.home-hero-scrim{position:absolute;inset:0;background:radial-gradient(circle at 76% 40%,rgba(255,107,44,.18),transparent 55%),linear-gradient(90deg,rgba(10,13,17,.97) 0%,rgba(10,13,17,.9) 42%,rgba(10,13,17,.5) 100%)}
 .home-hero-inner{position:relative;width:100%;max-width:1040px;margin:0 auto;padding:84px 20px 64px}
 .home-hero .eyebrow{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.08em}
 .home-hero h1{font-size:clamp(46px,7vw,78px);line-height:1;margin-top:16px;letter-spacing:-.01em}
@@ -244,12 +244,22 @@ footer a{color:var(--signal)}
 .home-stats div{background:rgba(10,13,17,.72);padding:12px 14px}
 .home-stats dt{font-size:12px;color:var(--text3)}
 .home-stats dd{font-family:var(--mono);font-size:22px;margin-top:4px;line-height:1.2}
-.home-proof,.home-featured,.home-mcp{margin-top:34px}
-.proof-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-top:16px}
-.proof{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.proof-wide{grid-row:span 2}
-.proof img{display:block;width:100%;height:auto}
-.proof figcaption{padding:9px 12px;font-size:12px;color:var(--text3);border-top:1px solid var(--line)}
+.home-demos,.home-featured,.home-mcp{margin-top:34px}
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px}
+.demo+.demo,.demo-grid{margin-top:12px}
+.demo-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.demo-head b{font-size:15px}
+.demo-head span{font-size:12.5px;color:var(--text3);max-width:74ch}
+.demo .finder{margin-top:10px}
+.demo-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px}
+.demo .mmap{margin-top:10px;border:1px solid var(--line);background:var(--bg);max-height:560px;overflow:auto}
+.demo .audit{margin-top:10px}
+.demo-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.tab{font-family:inherit;font-size:12.5px;padding:6px 13px;border:1px solid var(--line2);border-radius:2px;background:transparent;cursor:pointer;color:var(--text2);transition:border-color .16s,background .16s,color .16s}
+.tab:hover{border-color:var(--accent);color:var(--accent)}
+.tab.on{background:var(--accent);border-color:var(--accent);color:#160A04;font-weight:600}
+.demo-snippet{margin:12px 0 0;max-height:280px;overflow:auto}
+.demo-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
 .home-mcp-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:14px}
 .home-mcp-item{display:block;background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:3px;padding:14px 16px;transition:border-color .18s,background .18s}
 .home-mcp-item:hover{border-color:var(--line2);background:var(--surface2);text-decoration:none}
@@ -263,6 +273,30 @@ footer a{color:var(--signal)}
 .trust-item span{display:block;font-size:13px;color:var(--text2);margin-top:8px}
 .home-cta-band{margin-top:34px;border-top:1px solid var(--line);padding-top:26px}
 
+/* 滚动动效:R2 原生 scroll-driven;不支持时由 app.js 降级为 IntersectionObserver + rAF,reduced-motion 时全部停在终态 */
+.scroll-progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:60;background:linear-gradient(90deg,var(--accent),var(--signal));transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+.reveal-armed{opacity:0;transform:translate3d(0,26px,0);transition:opacity .55s cubic-bezier(.22,.7,.3,1),transform .55s cubic-bezier(.22,.7,.3,1)}
+.reveal-armed.reveal-in{opacity:1;transform:none}
+@supports (animation-timeline: view()){
+  @keyframes rail{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes riseIn{from{opacity:0;transform:translate3d(0,30px,0)}to{opacity:1;transform:none}}
+  @keyframes slideIn{from{opacity:0;transform:translate3d(-26px,0,0)}to{opacity:1;transform:none}}
+  @keyframes settleIn{from{opacity:0;transform:scale(.982)}to{opacity:1;transform:none}}
+  @keyframes heroDrift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,54px,0) scale(1.06)}}
+  @keyframes heroVeil{from{opacity:1}to{opacity:.42}}
+  .scroll-progress{animation:rail linear both;animation-timeline:scroll(root block)}
+  .home-hero-video{animation:heroDrift linear both;animation-timeline:scroll(root block);animation-range:0 70vh}
+  .home-hero-inner{animation:heroVeil linear both;animation-timeline:scroll(root block);animation-range:0 62vh}
+  .reveal{animation:riseIn linear both;animation-timeline:view();animation-range:entry 12% cover 36%}
+  .reveal-left{animation-name:slideIn}
+  .reveal-scale{animation-name:settleIn}
+  .home-trust .reveal:nth-child(2){animation-range:entry 18% cover 42%}
+  .home-trust .reveal:nth-child(3){animation-range:entry 24% cover 48%}
+  .home-demos>h2,.home-featured>h2,.home-mcp>h2{position:relative}
+  .home-demos>h2:after,.home-featured>h2:after,.home-mcp>h2:after{content:"";position:absolute;left:0;bottom:-1px;width:130px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;animation:rail linear both;animation-timeline:view();animation-range:entry 8% cover 30%}
+}
+
+@media print{.reveal,.reveal-armed{opacity:1!important;transform:none!important;animation:none!important}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mmap svg path{stroke-dashoffset:0}.home-hero-video{display:none}}
 
 @media (max-width:760px){
@@ -277,8 +311,7 @@ footer a{color:var(--signal)}
   .home-hero-video{width:100%;opacity:.5}
   .home-offer{max-width:none}
   .home-stats{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
-  .proof-grid{grid-template-columns:1fr}
-  .proof-wide{grid-row:auto}
+  .demo-grid{grid-template-columns:minmax(0,1fr)}
   .home-trust{grid-template-columns:1fr}
   .hero{padding:28px 0 24px}
   .hero h1{font-size:31px}
@@ -459,6 +492,60 @@ APP_JS = """
   /* 首页 hero 视频:reduced-motion 时停播,交给静态封面 */
   const heroVideo = document.querySelector('.home-hero-video');
   if (heroVideo && reduceMotion){ heroVideo.pause(); heroVideo.removeAttribute('autoplay'); }
+
+  /* 滚动动效降级:不支持 animation-timeline 时用 rAF 进度条 + IntersectionObserver 入场 */
+  const rail = document.querySelector('.scroll-progress');
+  const supportsScrollAnim = !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()'));
+  if (rail && !supportsScrollAnim){
+    let ticking = false;
+    const syncRail = function(){
+      const h = document.documentElement;
+      const max = (h.scrollHeight - h.clientHeight) || 1;
+      rail.style.transform = 'scaleX(' + Math.min(1, Math.max(0, h.scrollTop / max)) + ')';
+    };
+    window.addEventListener('scroll', function(){
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){ syncRail(); ticking = false; });
+    }, { passive: true });
+    syncRail();
+  }
+  if (!supportsScrollAnim && !reduceMotion && 'IntersectionObserver' in window){
+    const reveals = document.querySelectorAll('.reveal');
+    const io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('reveal-in'); io2.unobserve(e.target); } });
+    }, { threshold: .15 });
+    reveals.forEach(function(el){ el.classList.add('reveal-armed'); io2.observe(el); });
+  }
+
+  /* 首页 MCP 演示:读取真实接入描述,按客户端切换配置片段 */
+  const mcpDemo = document.getElementById('mcp-demo');
+  if (mcpDemo && mcpDemo.dataset.mcp){
+    const snippet = document.getElementById('mcp-snippet');
+    const status = document.getElementById('mcp-status');
+    const copyBtn = document.getElementById('mcp-copy');
+    let snippets = null, client = 'claude';
+    const paint = function(){
+      if (!snippets || !snippet || !snippets[client]) return;
+      snippet.textContent = JSON.stringify(snippets[client], null, 2);
+      if (copyBtn) copyBtn.dataset.copy = snippet.textContent;
+    };
+    mcpDemo.querySelectorAll('[data-client]').forEach(function(b){
+      b.addEventListener('click', function(){
+        client = b.dataset.client || 'claude';
+        mcpDemo.querySelectorAll('[data-client]').forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on'); paint();
+      });
+    });
+    fetch('/v0/servers/' + mcpDemo.dataset.mcp + '/install')
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+      .then(function(d){
+        snippets = d.clientSnippets || {};
+        if (status) status.textContent = '来自 /v0/servers/' + mcpDemo.dataset.mcp + '/install';
+        paint();
+      })
+      .catch(function(){ if (status) status.textContent = '接口暂不可用,已保留注册表中的接入命令。'; });
+  }
 
   /* 输入即推荐(防抖 400ms,少于 4 字不触发) */
   let recTimer = null;
@@ -676,6 +763,7 @@ def page_shell(title, title_en, active, inner):
 <title>{esc(title)} · Skill X</title>
 <link rel="stylesheet" href="/assets/style.css">
 </head><body>
+<div class="scroll-progress" aria-hidden="true"></div>
 {nav(active)}
 <div class="wrap">{inner}</div>
 <footer><a class="back" href="/">← <span data-zh="返回首页" data-en="Home">返回首页</span></a> · Skill X,Agent Skills 开放规范</footer>
@@ -1065,8 +1153,11 @@ def render_mcp_detail(m):
 
 
 
-def render_home(own, suites, mcps):
+def render_home(own, suites, mcps, map_svg=""):
     total_ext = sum(len(s["skills"]) for s in suites)
+    audit = load_audit()
+    audit_at = audit.get("generatedAt", "")
+    audit_entry = (audit.get("skills") or {}).get("binary-reverse-engineering")
     featured = "\n".join(card(s, "own", s["page"], s["name"]) for s in own[:3])
     for suite in suites:
         ns = suite["namespace"]
@@ -1087,6 +1178,12 @@ def render_home(own, suites, mcps):
     if not mcp_items:
         mcp_items = ('<p class="hint-dim" data-zh="MCP 服务正在收录中。" '
                      'data-en="MCP servers are being curated.">MCP 服务正在收录中。</p>')
+    first_mcp = mcps[0] if mcps else None
+    if first_mcp:
+        mcp_name = first_mcp["name"]
+        mcp_cmd = first_mcp.get("installHint") or (f"claude mcp add --transport http {mcp_name.split('/')[-1]} {first_mcp.get('remote_url','')}" if first_mcp.get("kind") == "remote" else "")
+    else:
+        mcp_name, mcp_cmd = "", ""
     inner = f'''
 <section class="home-hero">
   <div class="home-hero-bg" aria-hidden="true"></div>
@@ -1110,35 +1207,59 @@ def render_home(own, suites, mcps):
   </div>
 </section>
 
-<section class="home-proof">
-  <h2 data-zh="先看真实产物" data-en="See the real thing">先看真实产物 <span class="n" data-zh="本站页面实拍" data-en="actual screenshots">本站页面实拍</span></h2>
-  <p class="hint-dim" data-zh="下面三张是本站页面的真实截图,不是示意图。" data-en="These are actual screenshots of this site, not mockups.">下面三张是本站页面的真实截图,不是示意图。</p>
-  <div class="proof-grid">
-    <figure class="proof proof-wide"><img src="/assets/proof-skills.jpg" alt="技能库页面截图" width="1440" height="820" loading="lazy"><figcaption data-zh="技能库:分类筛选、实时推荐、统一卡片" data-en="Skills: filters, live finder, unified cards">技能库:分类筛选、实时推荐、统一卡片</figcaption></figure>
-    <figure class="proof"><img src="/assets/proof-detail.jpg" alt="技能详情页面截图" width="1440" height="820" loading="lazy"><figcaption data-zh="技能详情:结构导图与安全审计" data-en="Skill detail: structure map and security audit">技能详情:结构导图与安全审计</figcaption></figure>
-    <figure class="proof"><img src="/assets/proof-mcp.jpg" alt="MCP 服务页面截图" width="1440" height="820" loading="lazy"><figcaption data-zh="MCP 服务:过审条目与接入命令" data-en="MCP: reviewed entries and connect commands">MCP 服务:过审条目与接入命令</figcaption></figure>
+<section class="home-demos">
+  <h2 data-zh="真实功能" data-en="Real functionality">真实功能 <span class="n" data-zh="直接在这里用" data-en="usable right here">直接在这里用</span></h2>
+  <div class="demo reveal">
+    <div class="demo-head"><b data-zh="技能推荐器" data-en="Skill finder">技能推荐器</b><span data-zh="描述任务,返回适用技能;优先走 /api/recommend,失败时本地降级匹配。" data-en="Describe a task and get matching skills. Calls /api/recommend, falls back to local matching.">描述任务,返回适用技能;优先走 /api/recommend,失败时本地降级匹配。</span></div>
+    <div class="finder">
+      <textarea id="idea" rows="2" data-zh="例如:分析一个可疑的 exe / 排查接口越权 / 内存里找配置偏移" data-en="e.g. analyze a suspicious exe / test an IDOR / find offsets in memory" data-attr="placeholder" placeholder="例如:分析一个可疑的 exe / 排查接口越权 / 内存里找配置偏移"></textarea>
+      <div class="act"><button class="btn" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button><span class="hint" data-zh="Ctrl + Enter 立即查找" data-en="Ctrl + Enter to search">Ctrl + Enter 立即查找</span></div>
+    </div>
+    <div class="recs" id="rec-results"></div>
+    <div class="empty hidden" id="rec-empty" data-zh="没有匹配到技能,换个说法试试" data-en="No matching skills. Try different wording.">没有匹配到技能,换个说法试试</div>
+  </div>
+  <div class="demo-grid">
+    <div class="demo reveal-left">
+      <div class="demo-head"><b data-zh="交互式结构导图" data-en="Interactive structure map">交互式结构导图</b><span data-zh="悬停节点高亮,连线按绘制动效展开" data-en="Hover nodes to highlight; paths draw in">悬停节点高亮,连线按绘制动效展开</span></div>
+      <div class="mmap">{map_svg}</div>
+    </div>
+    <div class="demo reveal-scale">
+      <div class="demo-head"><b data-zh="安全审计" data-en="Security audit">安全审计</b><span data-zh="点击展开真实检查项(AST 级 8 项)" data-en="Click to expand the real 8 AST-level checks">点击展开真实检查项(AST 级 8 项)</span></div>
+      {render_audit_block(audit_entry, audit_at)}
+    </div>
+  </div>
+  <div class="demo reveal" id="mcp-demo" data-mcp="{esc(mcp_name)}">
+    <div class="demo-head"><b data-zh="MCP 接入" data-en="MCP connect">MCP 接入</b><span data-zh="读取真实接入描述 /v0/servers/&lt;name&gt;/install,生成各客户端配置" data-en="Reads the real install descriptor and renders per-client config">读取真实接入描述 /v0/servers/&lt;name&gt;/install,生成各客户端配置</span></div>
+    <div class="demo-tabs">
+      <button class="tab on" data-client="claude">Claude</button>
+      <button class="tab" data-client="cursor">Cursor</button>
+      <button class="tab" data-client="codex">Codex</button>
+      <button class="tab" data-client="vscode">VS Code</button>
+    </div>
+    <pre class="cmd demo-snippet" id="mcp-snippet">{esc(mcp_cmd)}</pre>
+    <div class="demo-actions"><button class="tab on copy-btn" id="mcp-copy" data-copy="{esc(mcp_cmd)}" data-skill="mcp:{esc(mcp_name)}" data-zh="复制配置" data-en="Copy config">复制配置</button><span class="hint-dim" id="mcp-status" data-zh="正在读取线上接入描述…" data-en="Loading the live install descriptor...">正在读取线上接入描述…</span></div>
   </div>
 </section>
 
 <section class="home-featured">
   <h2 data-zh="技能精选" data-en="Featured skills">技能精选 <span class="n">{len(own)} 个自研 · {total_ext} 个社区精选</span></h2>
-  <div class="grid">{featured}</div>
+  <div class="grid reveal">{featured}</div>
 </section>
 
 <section class="home-mcp">
   <h2 data-zh="MCP 服务" data-en="MCP servers">MCP 服务 <span class="n">{len(mcps)} 个已过审</span></h2>
   <p class="hint-dim" data-zh="按官方 server.json 标准收录,只放人工审查通过的条目;密钥与认证头永不经过本站。" data-en="Curated to the official server.json standard; reviewed entries only; secrets never pass through this site.">按官方 server.json 标准收录,只放人工审查通过的条目;密钥与认证头永不经过本站。</p>
-  <div class="home-mcp-list">{mcp_items}</div>
+  <div class="home-mcp-list reveal">{mcp_items}</div>
   <p class="home-more"><a class="btn ghost" href="/mcp.html" data-zh="全部 MCP 服务" data-en="All MCP servers">全部 MCP 服务</a></p>
 </section>
 
 <section class="home-trust">
-  <div class="trust-item"><b data-zh="四坑检查" data-en="Four checks">四坑检查</b><span data-zh="命名空间、许可证、供应链、死链,逐项核验后才收录。" data-en="Namespace, license, supply chain and link liveness are verified before anything is listed.">命名空间、许可证、供应链、死链,逐项核验后才收录。</span></div>
-  <div class="trust-item"><b data-zh="只放已过审" data-en="Reviewed only">只放已过审</b><span data-zh="未通过人工审查的条目不会出现在橱窗与 API 输出里。" data-en="Entries that fail human review never reach the catalog or the API output.">未通过人工审查的条目不会出现在橱窗与 API 输出里。</span></div>
-  <div class="trust-item"><b data-zh="密钥零留存" data-en="No secrets stored">密钥零留存</b><span data-zh="下载密钥、MCP 凭据只在会话内拼接使用,不落盘、不入库。" data-en="Download keys and MCP credentials are assembled in memory only; nothing is written to disk.">下载密钥、MCP 凭据只在会话内拼接使用,不落盘、不入库。</span></div>
+  <div class="trust-item reveal"><b data-zh="四坑检查" data-en="Four checks">四坑检查</b><span data-zh="命名空间、许可证、供应链、死链,逐项核验后才收录。" data-en="Namespace, license, supply chain and link liveness are verified before anything is listed.">命名空间、许可证、供应链、死链,逐项核验后才收录。</span></div>
+  <div class="trust-item reveal"><b data-zh="只放已过审" data-en="Reviewed only">只放已过审</b><span data-zh="未通过人工审查的条目不会出现在橱窗与 API 输出里。" data-en="Entries that fail human review never reach the catalog or the API output.">未通过人工审查的条目不会出现在橱窗与 API 输出里。</span></div>
+  <div class="trust-item reveal"><b data-zh="密钥零留存" data-en="No secrets stored">密钥零留存</b><span data-zh="下载密钥、MCP 凭据只在会话内拼接使用,不落盘、不入库。" data-en="Download keys and MCP credentials are assembled in memory only; nothing is written to disk.">下载密钥、MCP 凭据只在会话内拼接使用,不落盘、不入库。</span></div>
 </section>
 
-<section class="home-cta-band">
+<section class="home-cta-band reveal">
   <h2 data-zh="开始使用" data-en="Get started">开始使用</h2>
   <p data-zh="浏览技能库,或直接接入 MCP 服务。所有页面与 API 都有真实的审计与收录记录。" data-en="Browse the skill library or connect an MCP server. Every page and API is backed by real review records.">浏览技能库,或直接接入 MCP 服务。所有页面与 API 都有真实的审计与收录记录。</p>
   <div class="home-cta"><a class="btn" href="/skills.html" data-zh="浏览技能库" data-en="Browse skills">浏览技能库</a><a class="btn ghost" href="/api.html" data-zh="API 文档" data-en="API docs">API 文档</a></div>
@@ -1181,7 +1302,7 @@ def main():
             except Exception:
                 continue
 
-    pages = {"index.html": render_home(own, suites, mcps),
+    pages = {"index.html": render_home(own, suites, mcps, mmaps.get("binary-reverse-engineering", "")),
              "skills.html": render_index(own, suites)}
     tool_docs = apidocs.collect()
     audit = load_audit()
@@ -1285,7 +1406,9 @@ def main():
         if not f.is_file() or f.is_symlink():
             continue
         rel = str(f.relative_to(DIST)).replace("\\", "/")
-        if rel.endswith((".html", ".svg")) and rel not in valid:
+        stale_page = rel.endswith((".html", ".svg")) and rel not in valid
+        stale_media = rel.startswith("assets/") and rel not in valid
+        if stale_page or stale_media:
             f.unlink()
             removed += 1
             print(f"[-] 清理过时产物: {rel}")
