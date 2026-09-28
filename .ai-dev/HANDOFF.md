@@ -104,3 +104,4 @@
 - 重构:删除"真实功能"标题与四块平铺面板,改成 `.bench` 一体化工作台 = 左侧 4 步轨道(每步 52vh,驱动滚动) + 右侧 sticky 控制台(顶栏 dots/path/LIVE、4 个真实面板、底部 mono 状态行);滚到哪一步控制台就地切到对应面板(用 rect 判定,避开 IntersectionObserver 同屏竞态),点击步骤也可切;移动端退化为吸顶 tab 行。
 - 细节:hero 四个数字改 number-ticker 式滚动计数;控制台顶部流光 beamPulse;导图面板限高可滚;保留零依赖/严格 CSP/reduced-motion 全停/R2 滚动动效。
 - 验证:build 17 页 + 泄露断言;`#workbench`→推荐器面板、`#step-audit`→审计面板、`#step-mcp`→MCP 面板逐个截图核对;移动端 390 截图核对吸顶 tab 与面板;dist 无 proof 截图资源。
+- 已部署(纯净重放 400KB):线上首页 200(workbench/4 步/4 面板/4 计数器、无 proof 引用)、`/skills.html`、`/mcp.html` 200;`/v0/servers/.../install` 200、`/api/recommend` 200、`hero-loop.mp4` 356789B 200。提交 `4a2dcec`。
