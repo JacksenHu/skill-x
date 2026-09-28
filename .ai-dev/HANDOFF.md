@@ -89,4 +89,4 @@
 - HyperFrames 调用:`showcase/hyperframes/hero/`(design.md + index.html,3 场景/2 转场/确定性时间轴),`hyperframes lint/validate/inspect` 全过;渲染 `showcase/assets/hero-loop.mp4`(1600x900,9s,485KB);`showcase/assets/proof-{skills,detail,mcp}.jpg` 为本站页面 Playwright 实拍。
 - 构建:`showcase/assets/` 下的图片/视频按内容哈希复制进 `dist/assets/`;finesse 样式戳已写入 CSS 顶部,`.finesse/log.json` 本地记录且已加入 `.gitignore`。
 - 验证:build 17 页 + 泄露断言通过;`/`、`/skills.html`、`/mcp.html`、`/api.html`、`/about.html`、`/suites/`、技能详情、hero mp4 与 proof jpg 全 200;dist 无 `recommend.html`;桌面 1440 + 移动 390 截图核对无溢出。
-- 待办:本次改版仅本地验证,尚未部署(线上仍是旧导航);部署走 `python deploy/sync.py`(需 BT_API_SK)。
+- 已部署(2026-09-28,纯净重放 686KB):线上首页 200(hero 视频 + 新导航)、`/skills.html`、`/mcp.html`、`/api.html`、`/about.html` 全 200;`hero-loop.mp4`(496534B)与 proof jpg 全 200;`/recommend.html` 已 404 下线。
