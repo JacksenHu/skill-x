@@ -74,3 +74,11 @@
 - 修复:collect_mcps 补全字段;mcp_slug();render_mcp 卡片 h3 套链接指向 `/mcp/<slug>.html`;新增 render_mcp_detail(与 skill 详情页同构:card-head/kv 键值表/接入命令块+copy/riskNote/连接端点表或安装包表);main 生成详情页;CATEGORIES 加 ai-media。
 - 部署:sync.py --skip-build;线上 `/mcp/ac.inference.sh--mcp.html` 200、列表卡片链接指向详情页。commit `a3e47ab` 已推送。
 - 教训:patch 多 hunk 易出语法断裂(本次 `},{"` 断行、CATEGORIES `}` 重复),打完必须 ast.parse 验证再 build。
+
+## MCP 应用程序接入能力(2026-09-28 补,老胡指出无法程序化安装/连接)
+- 问题:原 `/v0/servers` 只是只读列表,`/api/mcp/install` 只是记数——应用程序无法通过 API 真正"装"和"连"。
+- 修复(接入描述 + 代为连接):
+  - `mcp_install_descriptor(name)`:远程 config={type,url};本地 config={command,args,env}(npm→npx -y/pypi→uvx+packageArguments);requiredSecrets 声明;clientSnippets 给 claude/cursor/codex/vscode 可直接写配置的 JSON 片段。
+  - `GET /v0/servers/<ns/name>/install` 返回接入描述;`POST /api/mcp/connect {name,client,secrets}` 校验必填密钥→内存拼接填好密钥的客户端片段返回(不落库)+计数(mcp-connect: 前缀)。
+- 部署:server.py 热重载;线上 install descriptor 与 connect(claude/codex/vscode)实测通过;api.html 已补文档。commit `dd9dc57` 已推送。线上含 1 条 mcp-connect 测试计数。
+- 教训:**"市场"的价值不是列表,是下发可写配置的接入描述**;POST 白名单守卫行 patch 又现重复(本轮 361-362),改后必须 Select-String 核对唯一性。
