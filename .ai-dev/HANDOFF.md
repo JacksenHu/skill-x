@@ -1,7 +1,7 @@
 # HANDOFF — 工作记忆(新会话只读 START_HERE + 本文件即可接续)
 
 - 更新时间:2026-09-28
-- 当前主线:MCP 安装连接市场(另一会话负责,骨架完成待部署);本站 v2 + 社区卡片 UI 已上线稳定。
+- 当前主线:MCP 安装连接市场 + Agent 插件指路牌(另一会话);专家团(Expert Packs)已本地落地待部署(本会话);本站 v2 + 社区卡片 UI 已上线稳定。
 
 ## 当前状态(可验证)
 
@@ -45,6 +45,7 @@
 - api_sk / PAT 不落盘、不入库、不进 memory/.ai-dev(只记"已提供/在用")。
 - 部署走 `deploy/sync.py`(纯净重放),不要手工解压覆盖。
 - 未过人工审查(execReview=passed)的 MCP 条目不进对外产物(橱窗+/v0/servers)。
+- 专家团成员必须全部可解析(非 optional)才能过审;改过 `skills/pack-*/SKILL.md` 或成员状态后先跑 `scripts/pack_ingest.py --sync` 再构建/部署。
 
 ## 陷阱区(本次踩到、下次先查 lessons.md)
 
@@ -57,6 +58,9 @@
 - 审计报告由 CI(Linux)生成:本地 Windows 若再遇 `--check` 漂移,先看是否只是 `generatedAt` 跨日(正常,刷新报告即可),平台差异已由 `as_posix()` + LF 归一消除。
 - **apply_patch 一次多 hunk 时可能部分成功部分失败** → 打完必须 Select-String 逐处核对(本轮 server.py 缺 MCP_REGISTRY 加载行、do_POST 残留旧守卫行 404 即此因)。
 - 后台 job 起 python 服务随命令退出死亡 → 用独立会话长跑;改 server.py 后等 watch_reload 30 秒自检生效再验。
+- **多会话并发改同一文件会造出“半成品语法断裂”**:本轮 build_index.py 被并行会话改到 f-string 未闭合 + 悬空 `{tools_html(m)}` 调用(helper 只在 _ins.py 里没跑)→ 构建直接失败。接手时先 `ast.parse` 全面体检,再按对方意图补完(`_ins.py` 三个 helper + 闭合修正),不要直接回退。
+- apply_patch 长行易被截断(本轮 `search = ...` 行断在 `+` 后)→ 每次 patch 后 `ast.parse` + 行数抽查,不要等 CI。
+- imagegen 内置工具在本会话不可用(无 image_gen 通道)→ 专家团头像用几何徽记 SVG(assets/avatars/*.svg),后续可1:1换位图。
 
 ## 部署闭环(本会话 2026-09-28 执行)
 - `deploy/sync.py --api --reload` 纯净重放成功;server.py/registry.json/mcp-registry.json 全上传;nginx vhost 备份后加 `/v0/` 反代并 reload。
@@ -82,6 +86,13 @@
   - `GET /v0/servers/<ns/name>/install` 返回接入描述;`POST /api/mcp/connect {name,client,secrets}` 校验必填密钥→内存拼接填好密钥的客户端片段返回(不落库)+计数(mcp-connect: 前缀)。
 - 部署:server.py 热重载;线上 install descriptor 与 connect(claude/codex/vscode)实测通过;api.html 已补文档。commit `dd9dc57` 已推送。线上含 1 条 mcp-connect 测试计数。
 - 教训:**"市场"的价值不是列表,是下发可写配置的接入描述**;POST 白名单守卫行 patch 又现重复(本轮 361-362),改后必须 Select-String 核对唯一性。
+
+## MCP 详情页对标 skillhub.cn(2026-09-28 补,老胡要求审查吸收)
+- 分析:腾讯云 WorkBuddy SkillHub 的 MCP 详情核心价值=把 MCP 当**可调用工具集合**展示(tools 清单/cases 使用案例/多维标签/分层安装/审核徽章);我们原详情只展示"怎么连",没展示"连上能干嘛"。
+- 吸收(剔除支付 SkillPay/Soul 人设/企业认证等平台包袱):mcp-registry 策展层加 `tools`/`useCases`/`tags`;render_mcp_detail 加 tools_html/cases_html/tags_html 三区块。
+- 种子条目补 tools(3)/useCases(3)/tags(4);审查 note 标注 tools 为官网公开能力**推断**(其 MCP endpoint 401,未实拉 tools/list),收录 SOP 要求维护者用真实凭据校正。
+- 已上线:详情页含提供工具/使用场景/标签。commit `f367785`(merge `f1e5abd` 含另一会话 packs/plugins 工作)已推送。
+- 多会话冲突提醒:另一会话在收录 VS Code 扩展为"插件"(entryType=plugin,非 MCP server)并加 packs/专家团;mcp-registry.json 与 HANDOFF.md 共用,`git add -A` 会卷入他人未提交工作 → 本会话只改自己条目、提交前 git status 复核范围。
 
 ## 首页改版 + HyperFrames hero(2026-09-28 补,老胡要求)
 - 目标:去掉独立技能推荐页(功能已在技能页内),导航改为 首页/技能/MCP/API/关于,新增宣传型首页。
@@ -111,3 +122,15 @@
 - nginx 缓存策略(`deploy/nginx/skillx.yueliai.top.conf`,旧配置已备份):`/` 与 `*.html`、`*.json` → `expires -1`(no-cache);`/assets/*`(css/js/mp4/图片/woff2/ico) → `expires 1y`;`/mindmaps/` → `expires 1h`(保留 CORS)。
 - 执行:写 vhost(备份 `deploy/nginx-backup/skillx.yueliai.top.20260928-144322.conf`)→ `sync.py --api --reload`:纯净重放站点、重传 server.py / registry.json / mcp-registry.json 触发后端热重载、nginx reload 返回执行成功。
 - 线上核对:`/`、`/skills.html`、`/site-data.json` → `Cache-Control: no-cache`;`/assets/style.css?v=109d9969` → `max-age=31536000`;`/mindmaps/*.svg` → `max-age=3600`;HTML 三处资源均带 `?v=109d9969`;`/api/recommend` 与 `/v0/servers/.../install` 均 200。
+
+## 专家团(Expert Packs)落地(2026-09-28 本会话,待部署)
+- 目标(老胡):对齐 skillhub.cn `skillspackage`(meta-skill 编排 + 人设 + 橱窗/详情),但对外形态改为**给第三方应用的 API + 提示词安装通道**;要完整人设;成员可跨类型;支持自研 + 收录双轨。
+- 数据层:`packs.json`(人设/成员 ref/`content` 剧本缓存/`degraded`);`scripts/resolve_members.py`(统一解析 own-skill / ext-skill / mcp / cli/api,缺失即降级);`scripts/pack_ingest.py`(`--sync` 重解析+同步 content,`--check` 漂移 exit=1,外部 pack.json 收录正负路径已验证);`showcase/i18n-packs.json`(展示层人工增补)。
+- 编排剧本:`skills/pack-<slug>/SKILL.md` ×3(meta-skill:`metadata.package_type` + `orchestration.children` + 分步工作流),因此能被 `npx skills add JacksenHu/skill-x --skill pack-<slug>` 直接装;`collect_own_skills()` 已跳过 meta-skill(不进技能格与泄露断言)。
+- 种子三团:深潜 Abyss(逆向)/ 裂空 Rift(渗透,含 1 个社区精选成员)/ 溯源 Trace(样本分析);头像 = 几何徽记 SVG(`showcase/assets/avatars/`),构建支持 avatars/ 子目录递归拷贝 + 内容哈希破缓存。
+- API(server.py):`GET /v0/packs`(游标分页,只放过审)、`GET /v0/packs/<slug>`(人设+剧本+成员描述符,mcp 成员附 `mcpInstall`)、`GET /v0/packs/<slug>/install.md`(text/markdown 专属契约)、`POST /api/pack/install`(计数 `pack:` 前缀);`recommend()` 已纳入专家团(kind=pack,编排层 +2 权重)。
+- 橱窗站:导航加「专家团」tab;`/packages.html` 列表(人设卡)+ `/packages/<slug>.html` 详情(人设头/kv/成员编队/协作剧本 Markdown 渲染/安装区:提示词+meta-skill 命令+API 说明);首页新增专家团区块;新增 `dist/install/pack-install.md`(全局安装契约,提示词入口)。
+- 全站样式补齐:`.card-head` / `.badge` 此前无 CSS(徽标堆叠)→ 补上(影响所有详情页,视觉更整齐);`.avatar` / `.md-body` / 成员卡等新增。
+- 验证:16 项自动化检查全过(解析/降级/渲染/契约/MCP 描述符/pending 不可见/列表不含 content);ingest 负路径 exit=2、--check 漂移 exit=1;构建 30 页 + 泄露断言通过;API 实测(列表/详情/install.md/计数 1→2/400/404/recommend 召回);桌面 1280 + 移动 390 截图核对。
+- **未部署**:本会话无 `BT_API_SK`;部署时跑 `BT_API_SK=... python deploy/sync.py --api --reload`(sync.py 已补传 packs.json 到 /www/wwwroot),然后线上核对 `/v0/packs`、`/packages.html`、三详情页、`/install/pack-install.md`。
+- 遗留:`_ins.py`(并行会话的插入脚本)留在仓库根,未提交;若提交前确认无用可删。`cli`/`api` 成员类型为预留(schema 已留,须内联 name+install)。
