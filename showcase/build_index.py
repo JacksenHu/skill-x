@@ -244,17 +244,39 @@ footer a{color:var(--signal)}
 .home-stats div{background:rgba(10,13,17,.72);padding:12px 14px}
 .home-stats dt{font-size:12px;color:var(--text3)}
 .home-stats dd{font-family:var(--mono);font-size:22px;margin-top:4px;line-height:1.2}
-.home-demos,.home-featured,.home-mcp{margin-top:34px}
-.demo{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px}
-.demo+.demo,.demo-grid{margin-top:12px}
-.demo-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
-.demo-head b{font-size:15px}
-.demo-head span{font-size:12.5px;color:var(--text3);max-width:74ch}
-.demo .finder{margin-top:10px}
-.demo-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px}
-.demo .mmap{margin-top:10px;border:1px solid var(--line);background:var(--bg);max-height:560px;overflow:auto}
-.demo .audit{margin-top:10px}
-.demo-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.bench,.home-featured,.home-mcp{margin-top:44px}
+.bench{display:grid;grid-template-columns:minmax(0,268px) minmax(0,1fr);gap:30px;align-items:start}
+.bench-rail{display:flex;flex-direction:column}
+.step{appearance:none;background:none;border:0;border-left:1px solid var(--line);color:var(--text2);cursor:pointer;font:inherit;text-align:left;display:flex;flex-direction:column;justify-content:center;gap:7px;min-height:52vh;padding:22px 0 22px 18px;position:relative;transition:color .2s}
+.step:before{content:"";position:absolute;left:-1px;top:50%;width:1px;height:0;background:var(--accent);transition:height .28s cubic-bezier(.22,.7,.3,1)}
+.step.on{color:var(--text)}
+.step.on:before{height:56px;margin-top:-28px}
+.step i{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--text3)}
+.step.on i{color:var(--accent)}
+.step b{font-size:19px;font-weight:650;line-height:1.3}
+.step span{font-size:13px;color:var(--text3);max-width:26ch}
+.step:hover b{color:var(--accent)}
+.bench-stage{position:sticky;top:76px}
+.console{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.34)}
+.console:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.2;animation:beamPulse 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes beamPulse{0%,100%{opacity:.14}50%{opacity:.72}}
+.console-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.dots{display:flex;gap:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line2)}
+.dots i:first-child{background:rgba(255,77,79,.7)}
+.dots i:nth-child(2){background:rgba(255,176,32,.7)}
+.dots i:nth-child(3){background:rgba(61,214,140,.7)}
+.console-path{font-family:var(--mono);font-size:11.5px;color:var(--text3)}
+.console-live{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--ok);border:1px solid rgba(61,214,140,.4);border-radius:2px;padding:1px 7px}
+.console-body{min-height:430px;padding:20px}
+.panel{display:none}
+.panel.on{display:block;animation:panelIn .34s cubic-bezier(.22,.7,.3,1) both}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.console-foot{padding:10px 14px;border-top:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:11.5px;color:var(--text3)}
+.panel .finder{margin-top:0}
+.panel .mmap{margin-top:0;border:1px solid var(--line);background:var(--bg);max-height:560px;overflow:auto}
+.panel .audit{margin-top:0}
+.demo-tabs{display:flex;gap:7px;flex-wrap:wrap}
 .tab{font-family:inherit;font-size:12.5px;padding:6px 13px;border:1px solid var(--line2);border-radius:2px;background:transparent;cursor:pointer;color:var(--text2);transition:border-color .16s,background .16s,color .16s}
 .tab:hover{border-color:var(--accent);color:var(--accent)}
 .tab.on{background:var(--accent);border-color:var(--accent);color:#160A04;font-weight:600}
@@ -292,8 +314,8 @@ footer a{color:var(--signal)}
   .reveal-scale{animation-name:settleIn}
   .home-trust .reveal:nth-child(2){animation-range:entry 18% cover 42%}
   .home-trust .reveal:nth-child(3){animation-range:entry 24% cover 48%}
-  .home-demos>h2,.home-featured>h2,.home-mcp>h2{position:relative}
-  .home-demos>h2:after,.home-featured>h2:after,.home-mcp>h2:after{content:"";position:absolute;left:0;bottom:-1px;width:130px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;animation:rail linear both;animation-timeline:view();animation-range:entry 8% cover 30%}
+  .home-featured>h2,.home-mcp>h2{position:relative}
+  .home-featured>h2:after,.home-mcp>h2:after{content:"";position:absolute;left:0;bottom:-1px;width:130px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;animation:rail linear both;animation-timeline:view();animation-range:entry 8% cover 30%}
 }
 
 @media print{.reveal,.reveal-armed{opacity:1!important;transform:none!important;animation:none!important}}
@@ -311,7 +333,16 @@ footer a{color:var(--signal)}
   .home-hero-video{width:100%;opacity:.5}
   .home-offer{max-width:none}
   .home-stats{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
-  .demo-grid{grid-template-columns:minmax(0,1fr)}
+  .bench{display:block;margin-top:30px}
+  .bench-rail{flex-direction:row;gap:8px;overflow-x:auto;position:sticky;top:52px;z-index:6;background:var(--bg);padding:6px 0;scrollbar-width:none}
+  .bench-rail::-webkit-scrollbar{display:none}
+  .step{flex:0 0 auto;min-height:auto;border:1px solid var(--line);border-left:1px solid var(--line);padding:9px 12px;white-space:nowrap;gap:0}
+  .step i,.step span{display:none}
+  .step b{font-size:13.5px}
+  .step.on{border-color:var(--accent);background:rgba(255,107,44,.08)}
+  .step.on:before{display:none}
+  .bench-stage{position:static;margin-top:12px}
+  .console-body{padding:14px;min-height:0}
   .home-trust{grid-template-columns:1fr}
   .hero{padding:28px 0 24px}
   .hero h1{font-size:31px}
@@ -519,6 +550,40 @@ APP_JS = """
   }
 
   /* 首页 MCP 演示:读取真实接入描述,按客户端切换配置片段 */
+  /* 工作台:左侧步骤与右侧控制台同步切换(桌面滚动联动,移动端点击切换) */
+  const bench = document.getElementById('workbench');
+  if (bench){
+    const steps = Array.prototype.slice.call(bench.querySelectorAll('.step'));
+    const panels = Array.prototype.slice.call(bench.querySelectorAll('.panel'));
+    const benchMeta = document.getElementById('bench-meta');
+    const metas = ['POST /api/recommend · 自然语言 → 技能排序', 'mindmaps/*.svg · 悬停高亮 · 描边绘制', 'scripts/audit_skill.py · AST 级 8 项', 'GET /v0/servers/<name>/install · clientSnippets'];
+    let benchActive = 0;
+    const benchSet = function(i){
+      if (i === benchActive) return;
+      benchActive = i;
+      steps.forEach(function(s, k){ s.classList.toggle('on', k === i); s.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      panels.forEach(function(p, k){ p.classList.toggle('on', k === i); });
+      if (benchMeta) benchMeta.textContent = metas[i] || '';
+    };
+    steps.forEach(function(s, i){ s.addEventListener('click', function(){ benchSet(i); }); });
+    if (window.matchMedia('(min-width: 761px)').matches){
+      let benchTick = false;
+      const syncStep = function(){
+        const cy = window.innerHeight * 0.5;
+        let best = 0;
+        steps.forEach(function(s, i){
+          if (s.getBoundingClientRect().top <= cy) best = i;
+        });
+        benchSet(best);
+      };
+      window.addEventListener('scroll', function(){
+        if (benchTick) return;
+        benchTick = true;
+        requestAnimationFrame(function(){ syncStep(); benchTick = false; });
+      }, { passive: true });
+      syncStep();
+    }
+  }
   const mcpDemo = document.getElementById('mcp-demo');
   if (mcpDemo && mcpDemo.dataset.mcp){
     const snippet = document.getElementById('mcp-snippet');
@@ -1199,45 +1264,52 @@ def render_home(own, suites, mcps, map_svg=""):
       <a class="btn ghost" href="/mcp.html" data-zh="查看 MCP 服务" data-en="Explore MCP servers">查看 MCP 服务</a>
     </div>
     <dl class="home-stats">
-      <div><dt data-zh="自研技能" data-en="Own skills">自研技能</dt><dd>{len(own)}</dd></div>
-      <div><dt data-zh="社区精选" data-en="Curated">社区精选</dt><dd>{total_ext}</dd></div>
-      <div><dt data-zh="MCP 服务" data-en="MCP servers">MCP 服务</dt><dd>{len(mcps)}</dd></div>
-      <div><dt data-zh="安全审计项" data-en="Audit checks">安全审计项</dt><dd>8</dd></div>
+      <div><dt data-zh="自研技能" data-en="Own skills">自研技能</dt><dd><span class="counter" data-count="{len(own)}">0</span></dd></div>
+      <div><dt data-zh="社区精选" data-en="Curated">社区精选</dt><dd><span class="counter" data-count="{total_ext}">0</span></dd></div>
+      <div><dt data-zh="MCP 服务" data-en="MCP servers">MCP 服务</dt><dd><span class="counter" data-count="{len(mcps)}">0</span></dd></div>
+      <div><dt data-zh="安全审计项" data-en="Audit checks">安全审计项</dt><dd><span class="counter" data-count="8">0</span></dd></div>
     </dl>
   </div>
 </section>
 
-<section class="home-demos">
-  <h2 data-zh="真实功能" data-en="Real functionality">真实功能 <span class="n" data-zh="直接在这里用" data-en="usable right here">直接在这里用</span></h2>
-  <div class="demo reveal">
-    <div class="demo-head"><b data-zh="技能推荐器" data-en="Skill finder">技能推荐器</b><span data-zh="描述任务,返回适用技能;优先走 /api/recommend,失败时本地降级匹配。" data-en="Describe a task and get matching skills. Calls /api/recommend, falls back to local matching.">描述任务,返回适用技能;优先走 /api/recommend,失败时本地降级匹配。</span></div>
-    <div class="finder">
-      <textarea id="idea" rows="2" data-zh="例如:分析一个可疑的 exe / 排查接口越权 / 内存里找配置偏移" data-en="e.g. analyze a suspicious exe / test an IDOR / find offsets in memory" data-attr="placeholder" placeholder="例如:分析一个可疑的 exe / 排查接口越权 / 内存里找配置偏移"></textarea>
-      <div class="act"><button class="btn" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button><span class="hint" data-zh="Ctrl + Enter 立即查找" data-en="Ctrl + Enter to search">Ctrl + Enter 立即查找</span></div>
-    </div>
-    <div class="recs" id="rec-results"></div>
-    <div class="empty hidden" id="rec-empty" data-zh="没有匹配到技能,换个说法试试" data-en="No matching skills. Try different wording.">没有匹配到技能,换个说法试试</div>
+<section class="bench" id="workbench">
+  <div class="bench-rail" role="tablist" aria-label="workbench">
+    <button class="step on" id="step-finder" data-step="0" role="tab" aria-selected="true"><i>01</i><b data-zh="技能推荐器" data-en="Skill finder">技能推荐器</b><span data-zh="描述任务,返回可用技能" data-en="Describe a task, get matching skills">描述任务,返回可用技能</span></button>
+    <button class="step" id="step-map" data-step="1" role="tab" aria-selected="false"><i>02</i><b data-zh="结构导图" data-en="Structure map">结构导图</b><span data-zh="技能的结构与工作流" data-en="Structure and workflow">技能的结构与工作流</span></button>
+    <button class="step" id="step-audit" data-step="2" role="tab" aria-selected="false"><i>03</i><b data-zh="安全审计" data-en="Security audit">安全审计</b><span data-zh="AST 级 8 项检查" data-en="8 AST-level checks">AST 级 8 项检查</span></button>
+    <button class="step" id="step-mcp" data-step="3" role="tab" aria-selected="false"><i>04</i><b data-zh="MCP 接入" data-en="MCP connect">MCP 接入</b><span data-zh="按客户端生成配置" data-en="Per-client config">按客户端生成配置</span></button>
   </div>
-  <div class="demo-grid">
-    <div class="demo reveal-left">
-      <div class="demo-head"><b data-zh="交互式结构导图" data-en="Interactive structure map">交互式结构导图</b><span data-zh="悬停节点高亮,连线按绘制动效展开" data-en="Hover nodes to highlight; paths draw in">悬停节点高亮,连线按绘制动效展开</span></div>
-      <div class="mmap">{map_svg}</div>
+  <div class="bench-stage">
+    <div class="console">
+      <div class="console-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="console-path">skillx://workbench</span><span class="console-live">LIVE</span></div>
+      <div class="console-body">
+        <div class="panel on" data-panel="0">
+          <div class="finder">
+            <textarea id="idea" rows="2" data-zh="例如:分析一个可疑的 exe / 排查接口越权 / 内存里找配置偏移" data-en="e.g. analyze a suspicious exe / test an IDOR / find offsets in memory" data-attr="placeholder" placeholder="例如:分析一个可疑的 exe / 排查接口越权 / 内存里找配置偏移"></textarea>
+            <div class="act"><button class="btn" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button><span class="hint" data-zh="Ctrl + Enter" data-en="Ctrl + Enter">Ctrl + Enter</span></div>
+          </div>
+          <div class="recs" id="rec-results"></div>
+          <div class="empty hidden" id="rec-empty" data-zh="没有匹配到技能,换个说法试试" data-en="No matching skills. Try different wording.">没有匹配到技能,换个说法试试</div>
+        </div>
+        <div class="panel" data-panel="1">
+          <div class="mmap">{map_svg}</div>
+        </div>
+        <div class="panel" data-panel="2">
+          {render_audit_block(audit_entry, audit_at)}
+        </div>
+        <div class="panel" data-panel="3" id="mcp-demo" data-mcp="{esc(mcp_name)}">
+          <div class="demo-tabs">
+            <button class="tab on" data-client="claude">Claude</button>
+            <button class="tab" data-client="cursor">Cursor</button>
+            <button class="tab" data-client="codex">Codex</button>
+            <button class="tab" data-client="vscode">VS Code</button>
+          </div>
+          <pre class="cmd demo-snippet" id="mcp-snippet">{esc(mcp_cmd)}</pre>
+          <div class="demo-actions"><button class="tab on copy-btn" id="mcp-copy" data-copy="{esc(mcp_cmd)}" data-skill="mcp:{esc(mcp_name)}" data-zh="复制配置" data-en="Copy config">复制配置</button><span class="hint-dim" id="mcp-status" data-zh="正在读取接入描述…" data-en="Loading install descriptor...">正在读取接入描述…</span></div>
+        </div>
+      </div>
+      <div class="console-foot" id="bench-meta">POST /api/recommend · 自然语言 → 技能排序</div>
     </div>
-    <div class="demo reveal-scale">
-      <div class="demo-head"><b data-zh="安全审计" data-en="Security audit">安全审计</b><span data-zh="点击展开真实检查项(AST 级 8 项)" data-en="Click to expand the real 8 AST-level checks">点击展开真实检查项(AST 级 8 项)</span></div>
-      {render_audit_block(audit_entry, audit_at)}
-    </div>
-  </div>
-  <div class="demo reveal" id="mcp-demo" data-mcp="{esc(mcp_name)}">
-    <div class="demo-head"><b data-zh="MCP 接入" data-en="MCP connect">MCP 接入</b><span data-zh="读取真实接入描述 /v0/servers/&lt;name&gt;/install,生成各客户端配置" data-en="Reads the real install descriptor and renders per-client config">读取真实接入描述 /v0/servers/&lt;name&gt;/install,生成各客户端配置</span></div>
-    <div class="demo-tabs">
-      <button class="tab on" data-client="claude">Claude</button>
-      <button class="tab" data-client="cursor">Cursor</button>
-      <button class="tab" data-client="codex">Codex</button>
-      <button class="tab" data-client="vscode">VS Code</button>
-    </div>
-    <pre class="cmd demo-snippet" id="mcp-snippet">{esc(mcp_cmd)}</pre>
-    <div class="demo-actions"><button class="tab on copy-btn" id="mcp-copy" data-copy="{esc(mcp_cmd)}" data-skill="mcp:{esc(mcp_name)}" data-zh="复制配置" data-en="Copy config">复制配置</button><span class="hint-dim" id="mcp-status" data-zh="正在读取线上接入描述…" data-en="Loading the live install descriptor...">正在读取线上接入描述…</span></div>
   </div>
 </section>
 

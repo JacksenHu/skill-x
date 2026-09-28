@@ -97,3 +97,10 @@
 - 新增"真实功能"区块(可交互,非示意):技能推荐器(真调 `/api/recommend`,失败降级 `/site-data.json`);交互式结构导图(内联真 SVG,悬停高亮/描边绘制);安全审计(真实 `<details>` 折叠，AST 8 项);MCP 接入(真调 `/v0/servers/<name>/install`,切换 Claude/Cursor/Codex/VS Code 片段并可复制)。
 - 滚动动效(R2 原生 scroll-driven,零依赖):顶部进度轨、hero 视差+文案渐隐、分区三种不同入场(rise/slide/settle)、h2 强调线随滚动绘制;`prefers-reduced-motion` 全停,无 `animation-timeline` 时由 app.js 用 rAF + IntersectionObserver 降级,另补 `@media print` 终态。
 - 验证:build 17 页 + 泄露断言;`#idea` / `#mcp-demo` 锚点截图确认滚动归位与 MCP 命令回显;dist/assets 仅剩 style.css / app.js / hero-loop.mp4;线上 `/api/recommend` 实测 3 条命中。
+
+## 首页 v3:一体化工作台(去掉功能罗列,2026-09-28 补,老胡要求)
+- 问题:上一版把四个真实功能写成"真实功能"标题 + 下方平铺,像功能清单;展示设计一般。
+- 联网参考(只取模式不抄代码):Magic UI 组件族(`registry.json` 清单 + `bento-grid.tsx` 源码:bento/terminal/dock/number-ticker/border-beam/scroll-progress);Linear/Vercel/Stripe 类产品的 sticky 产品舞台 + 滚动驱动步骤。
+- 重构:删除"真实功能"标题与四块平铺面板,改成 `.bench` 一体化工作台 = 左侧 4 步轨道(每步 52vh,驱动滚动) + 右侧 sticky 控制台(顶栏 dots/path/LIVE、4 个真实面板、底部 mono 状态行);滚到哪一步控制台就地切到对应面板(用 rect 判定,避开 IntersectionObserver 同屏竞态),点击步骤也可切;移动端退化为吸顶 tab 行。
+- 细节:hero 四个数字改 number-ticker 式滚动计数;控制台顶部流光 beamPulse;导图面板限高可滚;保留零依赖/严格 CSP/reduced-motion 全停/R2 滚动动效。
+- 验证:build 17 页 + 泄露断言;`#workbench`→推荐器面板、`#step-audit`→审计面板、`#step-mcp`→MCP 面板逐个截图核对;移动端 390 截图核对吸顶 tab 与面板;dist 无 proof 截图资源。
