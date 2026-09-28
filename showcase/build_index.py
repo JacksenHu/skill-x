@@ -639,6 +639,18 @@ def sha(s: str) -> str:
     return hashlib.sha256(s.encode()).hexdigest()[:16]
 
 
+def _asset_ver() -> str:
+    """静态资源版本号:CSS/JS 与 hero 视频内容变化时自动失效浏览器缓存。"""
+    parts = [CSS, APP_JS]
+    hero = Path(__file__).resolve().parent / "assets" / "hero-loop.mp4"
+    if hero.is_file():
+        parts.append(hashlib.sha256(hero.read_bytes()).hexdigest())
+    return sha("".join(parts))[:8]
+
+
+ASSET_VER = _asset_ver()
+
+
 def parse_frontmatter(text: str):
     """返回 (top_fields, meta_fields, body)。支持 metadata 嵌套键。"""
     lines = text.splitlines()
@@ -826,13 +838,13 @@ def page_shell(title, title_en, active, inner):
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} · Skill X</title>
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v={ASSET_VER}">
 </head><body>
 <div class="scroll-progress" aria-hidden="true"></div>
 {nav(active)}
 <div class="wrap">{inner}</div>
 <footer><a class="back" href="/">← <span data-zh="返回首页" data-en="Home">返回首页</span></a> · Skill X,Agent Skills 开放规范</footer>
-<script src="/assets/app.js"></script>
+<script src="/assets/app.js?v={ASSET_VER}"></script>
 </body></html>'''
 
 
@@ -1252,7 +1264,7 @@ def render_home(own, suites, mcps, map_svg=""):
     inner = f'''
 <section class="home-hero">
   <div class="home-hero-bg" aria-hidden="true"></div>
-  <video class="home-hero-video" src="/assets/hero-loop.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <video class="home-hero-video" src="/assets/hero-loop.mp4?v={ASSET_VER}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="home-hero-scrim" aria-hidden="true"></div>
   <div class="home-hero-inner">
     <p class="eyebrow" data-zh="security research skills for AI agents" data-en="security research skills for AI agents">security research skills for AI agents</p>

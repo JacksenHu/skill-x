@@ -105,3 +105,9 @@
 - 细节:hero 四个数字改 number-ticker 式滚动计数;控制台顶部流光 beamPulse;导图面板限高可滚;保留零依赖/严格 CSP/reduced-motion 全停/R2 滚动动效。
 - 验证:build 17 页 + 泄露断言;`#workbench`→推荐器面板、`#step-audit`→审计面板、`#step-mcp`→MCP 面板逐个截图核对;移动端 390 截图核对吸顶 tab 与面板;dist 无 proof 截图资源。
 - 已部署(纯净重放 400KB):线上首页 200(workbench/4 步/4 面板/4 计数器、无 proof 引用)、`/skills.html`、`/mcp.html` 200;`/v0/servers/.../install` 200、`/api/recommend` 200、`hero-loop.mp4` 356789B 200。提交 `4a2dcec`。
+
+## 缓存策略与重启(2026-09-28 补,老胡要求清缓存)
+- 资源版本化:`build_index.py` 新增 `ASSET_VER`(CSS + APP_JS + hero 视频内容哈希),`style.css` / `app.js` / `hero-loop.mp4` 均带 `?v=<hash>`;资源一变 URL 就变,不再靠用户手动强刷。当前版本 `v=109d9969`。
+- nginx 缓存策略(`deploy/nginx/skillx.yueliai.top.conf`,旧配置已备份):`/` 与 `*.html`、`*.json` → `expires -1`(no-cache);`/assets/*`(css/js/mp4/图片/woff2/ico) → `expires 1y`;`/mindmaps/` → `expires 1h`(保留 CORS)。
+- 执行:写 vhost(备份 `deploy/nginx-backup/skillx.yueliai.top.20260928-144322.conf`)→ `sync.py --api --reload`:纯净重放站点、重传 server.py / registry.json / mcp-registry.json 触发后端热重载、nginx reload 返回执行成功。
+- 线上核对:`/`、`/skills.html`、`/site-data.json` → `Cache-Control: no-cache`;`/assets/style.css?v=109d9969` → `max-age=31536000`;`/mindmaps/*.svg` → `max-age=3600`;HTML 三处资源均带 `?v=109d9969`;`/api/recommend` 与 `/v0/servers/.../install` 均 200。
