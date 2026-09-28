@@ -132,5 +132,6 @@
 - 橱窗站:导航加「专家团」tab;`/packages.html` 列表(人设卡)+ `/packages/<slug>.html` 详情(人设头/kv/成员编队/协作剧本 Markdown 渲染/安装区:提示词+meta-skill 命令+API 说明);首页新增专家团区块;新增 `dist/install/pack-install.md`(全局安装契约,提示词入口)。
 - 全站样式补齐:`.card-head` / `.badge` 此前无 CSS(徽标堆叠)→ 补上(影响所有详情页,视觉更整齐);`.avatar` / `.md-body` / 成员卡等新增。
 - 验证:16 项自动化检查全过(解析/降级/渲染/契约/MCP 描述符/pending 不可见/列表不含 content);ingest 负路径 exit=2、--check 漂移 exit=1;构建 30 页 + 泄露断言通过;API 实测(列表/详情/install.md/计数 1→2/400/404/recommend 召回);桌面 1280 + 移动 390 截图核对。
-- **未部署**:本会话无 `BT_API_SK`;部署时跑 `BT_API_SK=... python deploy/sync.py --api --reload`(sync.py 已补传 packs.json 到 /www/wwwroot),然后线上核对 `/v0/packs`、`/packages.html`、三详情页、`/install/pack-install.md`。
-- 遗留:`_ins.py`(并行会话的插入脚本)留在仓库根,未提交;若提交前确认无用可删。`cli`/`api` 成员类型为预留(schema 已留,须内联 name+install)。
+- **已部署(2026-09-28)**:`deploy/sync.py --api --reload` 纯净重放成功(424KB;server.py / registry.json / mcp-registry.json / packs.json 全上传;nginx reload 成功)。线上验收:19 条路由全 200(首页/skills/packages/三详情/mcp/plugins/suites/api/about/install/pack-install.md/v0-servers/v0-packs/site-data/tools/audit/mindmap);`/api/health` version=2026-09-28.2;`/api/recommend?q=逆向` 召回 pack;`POST /api/pack/install` 线上计数通(1 条测试计数保留)。
+- **安装链路验证(私有仓库)**:`npx skills add JacksenHu/skill-x --list` → 8 个技能分「Skillhub Core / Skillhub Packs」两组(后者为新增 `.claude-plugin/marketplace.json` 分组);临时目录真实安装 `--skill pack-abyss-deep-reverse` 成功(`.agents/skills/.../SKILL.md` 4372B,含 `orchestration.children`)。注:https 克隆偶发 502(瞬时),重试即过。
+- 遗留:`cli`/`api` 成员类型为预留(schema 已留,须内联 name+install);`pack_ingest.py <pack.json>` 外部专家团收录入口已可用但尚无外部候选;imagegen 头像替换为位图待补。
