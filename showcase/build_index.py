@@ -46,6 +46,7 @@ CATEGORIES = {
     "ai-media": "AI 媒体",
 }
 CSS = """
+/* finesse · register=brand · A=graphite+amber · B=heavy-mono/regular-sans · C=asymmetric-proof-grid · D=hyperframes-loop+scrim · E=forensic-grid · SOUL=8 SPECTACLE=6 DENSITY=4 */
 :root{
   --bg:#0A0D11; --surface:#141A21; --surface2:#1A222C; --line:#232C38; --line2:#33404F;
   --text:#E6EAF0; --text2:#98A5B5; --text3:#6A7686;
@@ -57,8 +58,8 @@ CSS = """
   --mono:ui-monospace,SFMono-Regular,"JetBrains Mono","Cascadia Code",Consolas,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:var(--signal);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -228,7 +229,41 @@ code.inl{font-family:var(--mono);font-size:12px;background:var(--surface2);paddi
 footer{text-align:left;font-size:12.5px;color:var(--text3);padding:22px 20px 40px;border-top:1px solid var(--line);margin-top:44px}
 footer a{color:var(--signal)}
 
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mmap svg path{stroke-dashoffset:0}}
+/* 首页(品牌面) */
+.home-hero{position:relative;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-bottom:1px solid var(--line);overflow:hidden;background:#0A0D11;min-height:min(78vh,660px);display:flex;align-items:center}
+.home-hero-bg{position:absolute;inset:0;background:#0A0D11 url('/assets/proof-skills.jpg') center right/cover no-repeat;opacity:.5}
+.home-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.7;clip-path:inset(0 0 0 46%)}
+.home-hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,13,17,.98) 0%,rgba(10,13,17,.96) 34%,rgba(10,13,17,.55) 62%,rgba(10,13,17,.35) 100%)}
+.home-hero-inner{position:relative;width:100%;max-width:1040px;margin:0 auto;padding:84px 20px 64px}
+.home-hero .eyebrow{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.08em}
+.home-hero h1{font-size:clamp(46px,7vw,78px);line-height:1;margin-top:16px;letter-spacing:-.01em}
+.home-offer{font-size:clamp(19px,2.6vw,27px);font-weight:600;margin-top:16px;max-width:20ch}
+.home-lede{font-size:15px;color:var(--text2);margin-top:14px;max-width:56ch}
+.home-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.home-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:36px;background:var(--line);border:1px solid var(--line);max-width:660px}
+.home-stats div{background:rgba(10,13,17,.72);padding:12px 14px}
+.home-stats dt{font-size:12px;color:var(--text3)}
+.home-stats dd{font-family:var(--mono);font-size:22px;margin-top:4px;line-height:1.2}
+.home-proof,.home-featured,.home-mcp{margin-top:34px}
+.proof-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-top:16px}
+.proof{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.proof-wide{grid-row:span 2}
+.proof img{display:block;width:100%;height:auto}
+.proof figcaption{padding:9px 12px;font-size:12px;color:var(--text3);border-top:1px solid var(--line)}
+.home-mcp-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:14px}
+.home-mcp-item{display:block;background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:3px;padding:14px 16px;transition:border-color .18s,background .18s}
+.home-mcp-item:hover{border-color:var(--line2);background:var(--surface2);text-decoration:none}
+.home-mcp-item .t{font-size:15px;font-weight:600;color:var(--text)}
+.home-mcp-item .id{font-family:var(--mono);font-size:11.5px;color:var(--text3);margin-top:3px;word-break:break-all}
+.home-mcp-item .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.home-more{margin-top:14px}
+.home-trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.trust-item{background:var(--bg);padding:18px}
+.trust-item b{display:block;font-size:14px}
+.trust-item span{display:block;font-size:13px;color:var(--text2);margin-top:8px}
+.home-cta-band{margin-top:34px;border-top:1px solid var(--line);padding-top:26px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mmap svg path{stroke-dashoffset:0}.home-hero-video{display:none}}
 
 @media (max-width:760px){
   body{font-size:15.5px}
@@ -237,6 +272,14 @@ footer a{color:var(--signal)}
   .topnav .brand{margin-right:12px;font-size:13px}
   .topnav a.nav{padding:8px 9px;font-size:13px;white-space:nowrap}
   .wrap{padding:0 14px 48px}
+  .home-hero{min-height:auto}
+  .home-hero-inner{padding:54px 14px 46px}
+  .home-hero-video{width:100%;opacity:.5}
+  .home-offer{max-width:none}
+  .home-stats{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
+  .proof-grid{grid-template-columns:1fr}
+  .proof-wide{grid-row:auto}
+  .home-trust{grid-template-columns:1fr}
   .hero{padding:28px 0 24px}
   .hero h1{font-size:31px}
   .hero .lede{font-size:14.5px}
@@ -412,6 +455,10 @@ APP_JS = """
     }, {threshold:.4});
     counters.forEach(function(c){ io.observe(c); });
   } else { counters.forEach(countUp); }
+
+  /* 首页 hero 视频:reduced-motion 时停播,交给静态封面 */
+  const heroVideo = document.querySelector('.home-hero-video');
+  if (heroVideo && reduceMotion){ heroVideo.pause(); heroVideo.removeAttribute('autoplay'); }
 
   /* 输入即推荐(防抖 400ms,少于 4 字不触发) */
   let recTimer = null;
@@ -608,16 +655,15 @@ def leak_assert(pages: dict, bodies):
     print(f"[+] 泄露断言通过({len(pages)} 页 x {len(bodies)} 个自研正文)")
 
 
-def nav(active="skills"):
+def nav(active="home"):
     def cls(k):
         return ' class="nav active"' if k == active else ' class="nav"'
     return f'''<div class="topnav">
   <a class="brand" href="/">Skill X</a>
-  <a href="/"{cls("skills")} data-zh="技能" data-en="Skills">技能</a>
-  <a href="/recommend.html"{cls("recommend")} data-zh="技能推荐" data-en="Finder">技能推荐</a>
-  <a href="/suites/"{cls("suites")} data-zh="套件" data-en="Suites">套件</a>
-  <a href="/mcp.html"{cls("mcp")} data-zh="MCP 服务" data-en="MCP">MCP 服务</a>
-  <a href="/api.html"{cls("api")} data-zh="API 文档" data-en="API Docs">API 文档</a>
+  <a href="/"{cls("home")} data-zh="首页" data-en="Home">首页</a>
+  <a href="/skills.html"{cls("skills")} data-zh="技能" data-en="Skills">技能</a>
+  <a href="/mcp.html"{cls("mcp")} data-zh="MCP" data-en="MCP">MCP</a>
+  <a href="/api.html"{cls("api")} data-zh="API" data-en="API">API</a>
   <a href="/about.html"{cls("about")} data-zh="关于" data-en="About">关于</a>
   <button class="lang-btn">EN</button>
 </div>'''
@@ -697,11 +743,11 @@ def render_index(own, suites):
 {chips_html()}
 <div id="empty" class="empty hidden" data-zh="没有匹配的技能" data-en="No matching skills">没有匹配的技能</div>
 <h2 data-zh="自研技能" data-en="Own skills">自研技能 <span class="n">{len(own)} 个 · 私有授权分发</span></h2>
-<div class="grid">{own_cards}</div>
+<div class="grid" id="library">{own_cards}</div>
 <div class="notice"><span data-zh="自研技能经私有仓库授权分发。获得授权的协作者:" data-en="Own skills are distributed via a private repo. Authorized collaborators:">自研技能经私有仓库授权分发。获得授权的协作者:</span><code class="inl">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill &lt;name&gt;</code></div>
-<h2 data-zh="社区精选" data-en="Curated">社区精选 <span class="n">{total_ext} 个 · 已过四坑检查</span></h2>
+<h2 data-zh="社区精选" data-en="Curated">社区精选 <span class="n">{total_ext} 个 · 已过四坑检查 · <a href="/suites/">套件中心</a></span></h2>
 {"".join(suite_sections) if suite_sections else "<p>暂无收录</p>"}'''
-    return page_shell("Skill X — 给 AI Agent 的安全研究技能库", "Skill X", "skills", inner)
+    return page_shell("技能库", "Skills", "skills", inner)
 
 
 AUDIT_PATH = Path(__file__).resolve().parent / "audit" / "audit-report.json"
@@ -864,7 +910,7 @@ def render_suites_index(suites):
 <p class="hint-dim" data-zh="精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从上游套件中筛选出的符合方向技能数,完整套件可从上游获取。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。" data-en="Curation: only skills aligned with security research / reverse engineering / engineering hygiene are listed. Full suites are available upstream.">精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从上游套件中筛选出的符合方向技能数,完整套件可从上游获取。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。</p>
 <div class="grid grid-mt">{"".join(cards)}</div>
 <div class="notice" data-zh="想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查与方向筛选后收录。" data-en="Want your suite listed? Submit a link per the onboarding SOP.">想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查与方向筛选后收录。</div>'''
-    return page_shell("套件中心", "Suites", "suites", inner)
+    return page_shell("套件中心", "Suites", "skills", inner)
 
 
 def render_suite_detail(suite, map_svg=""):
@@ -895,7 +941,7 @@ def render_suite_detail(suite, map_svg=""):
 <h2 data-zh="精选技能" data-en="Curated skills">精选技能</h2>
 {chips_html()}
 <div class="grid">{cards}</div>'''
-    return page_shell(ns, ns, "suites", inner)
+    return page_shell(ns, ns, "skills", inner)
 
 
 def render_api(own, suites):
@@ -1017,20 +1063,87 @@ def render_mcp_detail(m):
     return page_shell(m["title"], m["name"], "mcp", inner)
 
 
-def render_recommend():
-    inner = '''
-<div class="hero">
-  <h1 data-zh="技能推荐" data-en="Skill Finder">技能推荐</h1>
-  <p class="lede" data-zh="描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。" data-en="Describe what you want to do; we find matching skills. Natural language supported.">描述你想做的事,从技能库里找出适用的技能 —— 支持自然语言,如「我想分析一个可疑的 exe」「帮我查这个网站的越权问题」「内存里找配置偏移」。</p>
-</div>
-<div class="finder">
-  <textarea id="idea" rows="3" data-zh="描述你的任务或想法…(Ctrl+Enter 查找)" data-en="Describe your task… (Ctrl+Enter to search)" data-attr="placeholder" placeholder="描述你的任务或想法…(Ctrl+Enter 查找)"></textarea>
-  <div class="act"><button class="btn" id="find-btn" data-zh="查找适用技能" data-en="Find skills">查找适用技能</button></div>
-</div>
-<div id="rec-results" class="grid grid-mt"></div>
-<div id="rec-empty" class="empty hidden" data-zh="没有匹配到技能,试着换个说法或输入更具体的任务。" data-en="No matching skills. Try different wording.">没有匹配到技能,试着换个说法或输入更具体的任务。</div>
-<p class="hint-dim" data-zh="匹配方式:对输入做中英文分词,与技能名称、简介、分类交叉打分后排序;结果附命中理由。技能安装后由 agent 自动调用。" data-en="Matching: tokenized against skill names, descriptions and categories; results include match reasons.">匹配方式:对输入做中英文分词,与技能名称、简介、分类交叉打分后排序;结果附命中理由。技能安装后由 agent 自动调用。</p>'''
-    return page_shell("技能推荐", "Skill Finder", "recommend", inner)
+
+
+def render_home(own, suites, mcps):
+    total_ext = sum(len(s["skills"]) for s in suites)
+    featured = "\n".join(card(s, "own", s["page"], s["name"]) for s in own[:3])
+    for suite in suites:
+        ns = suite["namespace"]
+        for s in suite["skills"][:2]:
+            featured += "\n" + card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}")
+    mcp_items = ""
+    for m in mcps[:2]:
+        is_remote = m.get("kind") == "remote"
+        kind_zh = "远程" if is_remote else "本地"
+        kind_en = "Remote" if is_remote else "Local"
+        risk = esc(m.get("riskLevel", ""))
+        mcp_items += (f'<a class="home-mcp-item" href="/mcp/{mcp_slug(m["name"])}.html">'
+                      f'<div class="t">{esc(m.get("title", m["name"]))}</div>'
+                      f'<div class="id">{esc(m["name"])}</div>'
+                      f'<div class="meta"><span class="tag" data-zh="{kind_zh}" data-en="{kind_en}">{kind_zh}</span>'
+                      f'<span class="tag risk-{risk}">{risk}</span>'
+                      f'<span class="tag">v{esc(m.get("version", ""))}</span></div></a>')
+    if not mcp_items:
+        mcp_items = ('<p class="hint-dim" data-zh="MCP 服务正在收录中。" '
+                     'data-en="MCP servers are being curated.">MCP 服务正在收录中。</p>')
+    inner = f'''
+<section class="home-hero">
+  <div class="home-hero-bg" aria-hidden="true"></div>
+  <video class="home-hero-video" src="/assets/hero-loop.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <div class="home-hero-scrim" aria-hidden="true"></div>
+  <div class="home-hero-inner">
+    <p class="eyebrow" data-zh="security research skills for AI agents" data-en="security research skills for AI agents">security research skills for AI agents</p>
+    <h1>Skill X</h1>
+    <p class="home-offer" data-zh="给 AI Agent 的安全研究技能库" data-en="The security research skill library for AI agents">给 AI Agent 的安全研究技能库</p>
+    <p class="home-lede" data-zh="逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可直接调用的工具;社区精选技能一键指向上游。" data-en="Reverse engineering, pentesting, malware analysis, memory forensics. Every skill ships with a security audit, a structure map and runnable tools; curated community skills install straight from upstream.">逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可直接调用的工具;社区精选技能一键指向上游。</p>
+    <div class="home-cta">
+      <a class="btn" href="/skills.html" data-zh="浏览技能库" data-en="Browse skills">浏览技能库</a>
+      <a class="btn ghost" href="/mcp.html" data-zh="查看 MCP 服务" data-en="Explore MCP servers">查看 MCP 服务</a>
+    </div>
+    <dl class="home-stats">
+      <div><dt data-zh="自研技能" data-en="Own skills">自研技能</dt><dd>{len(own)}</dd></div>
+      <div><dt data-zh="社区精选" data-en="Curated">社区精选</dt><dd>{total_ext}</dd></div>
+      <div><dt data-zh="MCP 服务" data-en="MCP servers">MCP 服务</dt><dd>{len(mcps)}</dd></div>
+      <div><dt data-zh="安全审计项" data-en="Audit checks">安全审计项</dt><dd>8</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="home-proof">
+  <h2 data-zh="先看真实产物" data-en="See the real thing">先看真实产物 <span class="n" data-zh="本站页面实拍" data-en="actual screenshots">本站页面实拍</span></h2>
+  <p class="hint-dim" data-zh="下面三张是本站页面的真实截图,不是示意图。" data-en="These are actual screenshots of this site, not mockups.">下面三张是本站页面的真实截图,不是示意图。</p>
+  <div class="proof-grid">
+    <figure class="proof proof-wide"><img src="/assets/proof-skills.jpg" alt="技能库页面截图" width="1440" height="820" loading="lazy"><figcaption data-zh="技能库:分类筛选、实时推荐、统一卡片" data-en="Skills: filters, live finder, unified cards">技能库:分类筛选、实时推荐、统一卡片</figcaption></figure>
+    <figure class="proof"><img src="/assets/proof-detail.jpg" alt="技能详情页面截图" width="1440" height="820" loading="lazy"><figcaption data-zh="技能详情:结构导图与安全审计" data-en="Skill detail: structure map and security audit">技能详情:结构导图与安全审计</figcaption></figure>
+    <figure class="proof"><img src="/assets/proof-mcp.jpg" alt="MCP 服务页面截图" width="1440" height="820" loading="lazy"><figcaption data-zh="MCP 服务:过审条目与接入命令" data-en="MCP: reviewed entries and connect commands">MCP 服务:过审条目与接入命令</figcaption></figure>
+  </div>
+</section>
+
+<section class="home-featured">
+  <h2 data-zh="技能精选" data-en="Featured skills">技能精选 <span class="n">{len(own)} 个自研 · {total_ext} 个社区精选</span></h2>
+  <div class="grid">{featured}</div>
+</section>
+
+<section class="home-mcp">
+  <h2 data-zh="MCP 服务" data-en="MCP servers">MCP 服务 <span class="n">{len(mcps)} 个已过审</span></h2>
+  <p class="hint-dim" data-zh="按官方 server.json 标准收录,只放人工审查通过的条目;密钥与认证头永不经过本站。" data-en="Curated to the official server.json standard; reviewed entries only; secrets never pass through this site.">按官方 server.json 标准收录,只放人工审查通过的条目;密钥与认证头永不经过本站。</p>
+  <div class="home-mcp-list">{mcp_items}</div>
+  <p class="home-more"><a class="btn ghost" href="/mcp.html" data-zh="全部 MCP 服务" data-en="All MCP servers">全部 MCP 服务</a></p>
+</section>
+
+<section class="home-trust">
+  <div class="trust-item"><b data-zh="四坑检查" data-en="Four checks">四坑检查</b><span data-zh="命名空间、许可证、供应链、死链,逐项核验后才收录。" data-en="Namespace, license, supply chain and link liveness are verified before anything is listed.">命名空间、许可证、供应链、死链,逐项核验后才收录。</span></div>
+  <div class="trust-item"><b data-zh="只放已过审" data-en="Reviewed only">只放已过审</b><span data-zh="未通过人工审查的条目不会出现在橱窗与 API 输出里。" data-en="Entries that fail human review never reach the catalog or the API output.">未通过人工审查的条目不会出现在橱窗与 API 输出里。</span></div>
+  <div class="trust-item"><b data-zh="密钥零留存" data-en="No secrets stored">密钥零留存</b><span data-zh="下载密钥、MCP 凭据只在会话内拼接使用,不落盘、不入库。" data-en="Download keys and MCP credentials are assembled in memory only; nothing is written to disk.">下载密钥、MCP 凭据只在会话内拼接使用,不落盘、不入库。</span></div>
+</section>
+
+<section class="home-cta-band">
+  <h2 data-zh="开始使用" data-en="Get started">开始使用</h2>
+  <p data-zh="浏览技能库,或直接接入 MCP 服务。所有页面与 API 都有真实的审计与收录记录。" data-en="Browse the skill library or connect an MCP server. Every page and API is backed by real review records.">浏览技能库,或直接接入 MCP 服务。所有页面与 API 都有真实的审计与收录记录。</p>
+  <div class="home-cta"><a class="btn" href="/skills.html" data-zh="浏览技能库" data-en="Browse skills">浏览技能库</a><a class="btn ghost" href="/api.html" data-zh="API 文档" data-en="API docs">API 文档</a></div>
+</section>'''
+    return page_shell("Skill X", "Skill X", "home", inner)
 
 
 def render_about(own, suites):
@@ -1068,7 +1181,8 @@ def main():
             except Exception:
                 continue
 
-    pages = {"index.html": render_index(own, suites)}
+    pages = {"index.html": render_home(own, suites, mcps),
+             "skills.html": render_index(own, suites)}
     tool_docs = apidocs.collect()
     audit = load_audit()
     audit_at = audit.get("generatedAt", "")
@@ -1084,7 +1198,6 @@ def main():
             pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(
                 suite, s, (audit.get("suites") or {}).get(ns), audit_at,
                 mmaps.get(f"suite-{ns_slug(ns)}", ""))
-    pages["recommend.html"] = render_recommend()
     pages["mcp.html"] = render_mcp(mcps)
     for m in mcps:
         pages[f"mcp/{mcp_slug(m['name'])}.html"] = render_mcp_detail(m)
@@ -1146,6 +1259,24 @@ def main():
         else:
             p.write_text(content, encoding="utf-8")
             written += 1
+
+    # 静态媒体资源(hero 视频 / 实拍图):原样复制,内容哈希进 manifest
+    src_assets = Path(__file__).resolve().parent / "assets"
+    if src_assets.is_dir():
+        media_ext = (".jpg", ".jpeg", ".png", ".webp", ".avif", ".svg", ".ico", ".mp4", ".webm")
+        for f in sorted(src_assets.iterdir()):
+            if not f.is_file() or f.suffix.lower() not in media_ext:
+                continue
+            data = f.read_bytes()
+            rel_asset = f"assets/{f.name}"
+            key = sha(TEMPLATE_VERSION + f.name + hashlib.sha256(data).hexdigest())
+            new_manifest[rel_asset] = key
+            p = assets / f.name
+            if old_manifest.get(rel_asset) == key and p.is_file():
+                skipped += 1
+            else:
+                p.write_bytes(data)
+                written += 1
 
     # 清理过时产物(已下架技能/套件/导图的残留文件,避免旧页面仍可访问)
     valid = set(new_manifest.keys())

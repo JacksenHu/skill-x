@@ -82,3 +82,11 @@
   - `GET /v0/servers/<ns/name>/install` 返回接入描述;`POST /api/mcp/connect {name,client,secrets}` 校验必填密钥→内存拼接填好密钥的客户端片段返回(不落库)+计数(mcp-connect: 前缀)。
 - 部署:server.py 热重载;线上 install descriptor 与 connect(claude/codex/vscode)实测通过;api.html 已补文档。commit `dd9dc57` 已推送。线上含 1 条 mcp-connect 测试计数。
 - 教训:**"市场"的价值不是列表,是下发可写配置的接入描述**;POST 白名单守卫行 patch 又现重复(本轮 361-362),改后必须 Select-String 核对唯一性。
+
+## 首页改版 + HyperFrames hero(2026-09-28 补,老胡要求)
+- 目标:去掉独立技能推荐页(功能已在技能页内),导航改为 首页/技能/MCP/API/关于,新增宣传型首页。
+- `showcase/build_index.py`:新增 `render_home()`(品牌 hero + 真实数字带 + 产品实拍 + 技能精选 + MCP 入口 + 收录纪律 + CTA);原技能库迁到 `/skills.html`(推荐器/筛选/卡片全保留);删除 `render_recommend()` 与 `/recommend.html`(构建已自动清理旧产物);导航重写;套件页 active 归入"技能";技能页社区区补"套件中心"入口;`html/body` 改 `overflow-x:clip`;首页样式 + 移动端折叠 + reduced-motion 停播 hero 视频。
+- HyperFrames 调用:`showcase/hyperframes/hero/`(design.md + index.html,3 场景/2 转场/确定性时间轴),`hyperframes lint/validate/inspect` 全过;渲染 `showcase/assets/hero-loop.mp4`(1600x900,9s,485KB);`showcase/assets/proof-{skills,detail,mcp}.jpg` 为本站页面 Playwright 实拍。
+- 构建:`showcase/assets/` 下的图片/视频按内容哈希复制进 `dist/assets/`;finesse 样式戳已写入 CSS 顶部,`.finesse/log.json` 本地记录且已加入 `.gitignore`。
+- 验证:build 17 页 + 泄露断言通过;`/`、`/skills.html`、`/mcp.html`、`/api.html`、`/about.html`、`/suites/`、技能详情、hero mp4 与 proof jpg 全 200;dist 无 `recommend.html`;桌面 1440 + 移动 390 截图核对无溢出。
+- 待办:本次改版仅本地验证,尚未部署(线上仍是旧导航);部署走 `python deploy/sync.py`(需 BT_API_SK)。
