@@ -1269,7 +1269,7 @@ def render_mcp(mcps):
   <div class="en-name">{esc(m['name'])}</div>
   <p><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'][:300])}">{esc(m['description-zh'])}</span></p>
   <div class="meta"><span class="tag cat">{esc(CATEGORIES.get(m['category'], m['category']))}</span><span class="tag kind-ext">{kind_text}</span><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span><span class="count">v{esc(m['version'])}</span></div>
-  <button class="chip on copy-btn" data-copy="{esc(cmd)}" data-skill="mcp:{esc(m['name'])}" data-zh="复制接入命令" data-en="Copy command">复制接入命令</button>
+  <div class="cmd">{esc(cmd)}</div>
 </div>''')
     body = "".join(cards) if cards else '<p class="hint-dim" data-zh="暂无已过审的 MCP 服务" data-en="No reviewed MCP servers yet">暂无已过审的 MCP 服务</p>'
     inner = f'''
@@ -1292,7 +1292,7 @@ def render_plugins(plugins):
   <div class="en-name">{esc(m['name'])}</div>
   <p><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'][:300])}">{esc(m['description-zh'])}</span></p>
   <div class="meta"><span class="tag cat">{esc(CATEGORIES.get(m['category'], m['category']))}</span><span class="tag kind-ext">插件</span><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span><span class="count">v{esc(m['version'])}</span></div>
-  <button class="chip on copy-btn" data-copy="{esc(cmd)}" data-skill="plugin:{esc(m['name'])}" data-zh="复制安装命令" data-en="Copy command">复制安装命令</button>
+  <div class="cmd">{esc(cmd)}</div>
 </div>''')
     body = "".join(cards) if cards else '<p class="hint-dim" data-zh="暂无已过审的插件" data-en="No reviewed plugins yet">暂无已过审的插件</p>'
     inner = f'''

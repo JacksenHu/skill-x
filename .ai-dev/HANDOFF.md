@@ -135,3 +135,9 @@
 - **已部署(2026-09-28)**:`deploy/sync.py --api --reload` 纯净重放成功(424KB;server.py / registry.json / mcp-registry.json / packs.json 全上传;nginx reload 成功)。线上验收:19 条路由全 200(首页/skills/packages/三详情/mcp/plugins/suites/api/about/install/pack-install.md/v0-servers/v0-packs/site-data/tools/audit/mindmap);`/api/health` version=2026-09-28.2;`/api/recommend?q=逆向` 召回 pack;`POST /api/pack/install` 线上计数通(1 条测试计数保留)。
 - **安装链路验证(私有仓库)**:`npx skills add JacksenHu/skill-x --list` → 8 个技能分「Skillhub Core / Skillhub Packs」两组(后者为新增 `.claude-plugin/marketplace.json` 分组);临时目录真实安装 `--skill pack-abyss-deep-reverse` 成功(`.agents/skills/.../SKILL.md` 4372B,含 `orchestration.children`)。注:https 克隆偶发 502(瞬时),重试即过。
 - 遗留:`cli`/`api` 成员类型为预留(schema 已留,须内联 name+install);`pack_ingest.py <pack.json>` 外部专家团收录入口已可用但尚无外部候选;imagegen 头像替换为位图待补。
+
+## MCP/插件卡片去滚动条(2026-09-29 老胡要求)
+- 改动:render_mcp/render_plugins 卡片底部 `<div class=cmd>` 裸命令(长命令触发 overflow-x 横向滚动条)改为 chip copy-btn(复用 app.js 全局 sxCopy 事件委托+计数,data-skill 带 mcp:/plugin: 前缀)。
+- 已上线:mcp.html 卡片 0 个 .cmd、5 copy-btn;plugins.html 0 个 .cmd、13 copy-btn。
+- **重大工作区冲突**:另一会话把 tracked `build_index.py`(1948 行完整源码)未提交重构成 113 行 wrapper(跑 `__pycache__/*.pyc` 字节码 + icon 后处理);本会话不能覆盖 → 改用 **git plumbing**(hash-object/commit-tree/update-ref + 临时 GIT_INDEX_FILE)把"HEAD 完整源码+卡片改动"提交为 `36addcb`,**完全不碰工作区文件**;期间因 git show 空输出误产空 commit,用 `reset --soft/--mixed` 回滚后基于 HEAD^ 重做成功。已推送。
+- 教训:①另一会话把源码换成 wrapper 后,源码改动只能走 plumbing 提交,不能 git add;②subprocess `input=` 不是 `inp=`;③提交前必须核对 blob 非空(e69de29=空文件哈希)。
