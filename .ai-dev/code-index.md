@@ -1,7 +1,7 @@
 # Code Index — 代码地图（自动生成，请勿手改）
 
-- 生成时间：2026-09-28 01:53
-- 源码文件：71 个，合计约 5550 行
+- 生成时间：2026-09-28 11:31
+- 源码文件：73 个，合计约 6169 行
 - 用法：先在本文件定位目标，再精读对应源码；不要全仓遍历。增删/移动文件后用 build_index.py 重建。
 
 ## 目录结构
@@ -20,8 +20,11 @@ skills/
   workflows/
   nginx/
   acceptance/
+  assets/
   audit/
+  hyperframes/
   mindmaps/
+    hero/
   binary-reverse-engineering/
   malware-analysis/
   memory-forensics/
@@ -45,7 +48,6 @@ skills/
 - `CHANGELOG.md` (22 行) — Changelog  <!-- CHANGELOG.md -->
 - `CONTRIBUTING.md` (17 行) — 参与贡献  <!-- CONTRIBUTING.md -->
 - `README.md` (65 行) — Skill X  <!-- README.md -->
-- `mcp-registry.json` (41 行) — MCP 市场注册表(官方 server.json + `_meta.top.skillx/curated` 策展层)。  <!-- mcp-registry.json -->
 ### .github
 
 - `PULL_REQUEST_TEMPLATE.md` (33 行) — 变更说明  <!-- .github/PULL_REQUEST_TEMPLATE.md -->
@@ -57,12 +59,12 @@ skills/
 - `validate.yml` (17 行)  <!-- .github/workflows/validate.yml -->
 ### api
 
-- `server.py` (359 行) — Skill X 统计与下载代理后端(零第三方依赖,Python 3.8+ 标准库)。  <!-- api/server.py -->
+- `server.py` (471 行) — Skill X 统计与下载代理后端(零第三方依赖,Python 3.8+ 标准库)。  <!-- api/server.py -->
 ### deploy
 
 - `bt_deploy.py` (170 行) — 宝塔面板 API 部署工具(Skill X 专用)。  <!-- deploy/bt_deploy.py -->
 - `MANUAL_SETUP.md` (39 行) — 手动建站回退指引(api_sk 不可用时)  <!-- deploy/MANUAL_SETUP.md -->
-- `sync.py` (74 行) — Skill X 一键构建 + 部署(本地构建 → 宝塔 API 上传 → 站点生效)。  <!-- deploy/sync.py -->
+- `sync.py` (80 行) — Skill X 一键构建 + 部署(本地构建 → 宝塔 API 上传 → 站点生效)。  <!-- deploy/sync.py -->
 ### docs
 
 - `acceptance-testing.md` (44 行) — 对照验收 SOP:装了 ≠ 生效  <!-- docs/acceptance-testing.md -->
@@ -86,8 +88,12 @@ skills/
 ### showcase
 
 - `apidocs.py` (77 行) — API 文档自动提取:从 skills/*/scripts/*.py 的 argparse 定义提取参数说明(AST 解析,不执行脚本)。  <!-- showcase/apidocs.py -->
-- `build_index.py` (1080 行) — Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。  <!-- showcase/build_index.py -->
+- `build_index.py` (1351 行) — Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。  <!-- showcase/build_index.py -->
 - `svg_map.py` (200 行) — 零依赖 SVG 思维导图渲染器。  <!-- showcase/svg_map.py -->
+### showcase/hyperframes/hero
+
+- `design.md` (32 行) — Skill X hero composition — design source of truth  <!-- showcase/hyperframes/hero/design.md -->
+- `index.html` (198 行)  <!-- showcase/hyperframes/hero/index.html -->
 ### showcase/mindmaps
 
 - `binary-reverse-engineering.yaml` (34 行)  <!-- showcase/mindmaps/binary-reverse-engineering.yaml -->
