@@ -1,0 +1,73 @@
+{
+  "date": "2026-09-28",
+  "results": [
+    {
+      "namespace": "addyosmani/agent-skills",
+      "upstream": "https://github.com/addyosmani/agent-skills",
+      "alive": true,
+      "detail": "200"
+    },
+    {
+      "namespace": "vercel-labs/agent-skills",
+      "upstream": "https://github.com/vercel-labs/agent-skills",
+      "alive": true,
+      "detail": "200"
+    },
+    {
+      "namespace": "ac.inference.sh/mcp",
+      "upstream": "https://api.inference.sh/mcp",
+      "alive": true,
+      "detail": "HTTP 401 (auth-gated, alive)",
+      "entryType": "mcp"
+    },
+    {
+      "namespace": "ms-vscode.cpptools",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "vadimcn.vscode-lldb",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "webhint.vscode-webhint",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=webhint.vscode-webhint",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "semgrep.semgrep",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=semgrep.semgrep",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "github.vscode-github-actions",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "github.vscode-pull-request-github",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "tamasfe.even-better-toml",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    }
+  ]
+}

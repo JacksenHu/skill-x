@@ -34,12 +34,14 @@ CACHE = BASE / "cache"
 REGISTRY = json.loads((BASE / "registry.json").read_text(encoding="utf-8"))
 MCP_REGISTRY_PATH = BASE.parent / "mcp-registry.json"
 MCP_REGISTRY = json.loads(MCP_REGISTRY_PATH.read_text(encoding="utf-8")) if MCP_REGISTRY_PATH.is_file() else {"servers": []}
+PACKS_REGISTRY_PATH = Path(os.environ.get("PACKS_REGISTRY", BASE.parent / "packs.json"))
+PACKS_REGISTRY = json.loads(PACKS_REGISTRY_PATH.read_text(encoding="utf-8")) if PACKS_REGISTRY_PATH.is_file() else {"packs": []}
 SITE_DATA = Path(os.environ.get("SITE_DATA", "/www/wwwroot/skillx.yueliai.top/site-data.json"))
 RATE_LIMIT = 60  # 次/分钟/IP
 UA = {"User-Agent": "skill-x-api/1.0"}
 _rate = {}
 
-VERSION = "2026-09-28.1"
+VERSION = "2026-09-28.2"
 VALID_KEY = re.compile(r"^[\w./-]{1,120}$")
 
 CAT_KW = {
@@ -89,9 +91,44 @@ def recommend(query: str, top: int = 6):
             why.add(c)
         if score > 0:
             scored.append({"skill": sk, "score": score, "why": sorted(why)[:6]})
+    for pk in data.get("packs", []):
+        score, why = 0, set()
+        pers = pk.get("persona") or {}
+        nm = f"{pk.get('displayName','')} {pk.get('displayNameEn','')} {pk.get('slug','')} {pk.get('skill','')}".lower()
+        desc = f"{pk.get('summary','')} {pers.get('role','')} {pers.get('tagline','')}".lower()
+        mrefs = " ".join(f"{m.get('ref','')} {m.get('name','')}" for m in pk.get("members", [])).lower()
+        for t in toks:
+            if t in nm:
+                score += 10
+                why.add(t)
+            elif t in desc or t in mrefs:
+                score += 3
+                why.add(t)
+        c = pers.get("scene", "")
+        if cat_boost.get(c):
+            score += cat_boost[c]
+            why.add(c)
+        if score > 0:
+            scored.append({"pack": pk, "score": score + 2, "why": sorted(why)[:6]})  # 编排层优先 +2
     scored.sort(key=lambda x: -x["score"])
     out = []
     for item in scored[:top]:
+        if "pack" in item:
+            pk = item["pack"]
+            pers = pk.get("persona") or {}
+            out.append({
+                "name": pk.get("skill") or pk.get("slug"),
+                "name-zh": pk.get("displayName"),
+                "kind": "pack",
+                "description": pk.get("summaryEn", ""),
+                "description-zh": pk.get("summary", ""),
+                "category": pers.get("scene", ""),
+                "suite": None,
+                "page": pk.get("page", ""),
+                "install": pk.get("installPrompt", ""),
+                "score": item["score"], "matched": item["why"],
+            })
+            continue
         sk = item["skill"]
         out.append({
             "name": sk.get("name"), "name-zh": sk.get("name-zh"), "kind": sk.get("kind"),
@@ -127,7 +164,7 @@ def all_counts():
 
 
 def mcp_passed():
-    """只放出人工审查通过的 MCP server,形状对齐官方 Registry 响应。"""
+    """只放出人工审查通过的条目(MCP/plugin),形状对齐官方 Registry 响应。"""
     out = []
     for s in MCP_REGISTRY.get("servers", []):
         cur = (s.get("_meta") or {}).get("top.skillx/curated") or {}
@@ -137,7 +174,7 @@ def mcp_passed():
         out.append({
             "server": pub,
             "_meta": {
-                "top.skillx/curated": {k: cur[k] for k in ("description-zh", "category", "kind", "riskLevel", "installHint") if k in cur},
+                "top.skillx/curated": {k: cur[k] for k in ("description-zh", "category", "kind", "riskLevel", "installHint", "entryType") if k in cur},
                 "io.modelcontextprotocol.registry/official": {
                     "status": "active",
                     "publishedAt": (cur.get("reviewed") or {}).get("at"),
@@ -172,7 +209,15 @@ def mcp_install_descriptor(name: str):
     title = s.get("title") or name
     short = name.split("/")[-1]
     secrets = []
-    if remotes:
+    install = cur.get("install") or {}
+    if not pkgs and not remotes:
+        # plugin 指路牌条目:无包无端点,只返回官方安装指引
+        if not install:
+            return None
+        kind = "link"
+        config = {"method": install.get("method", "link"), "command": install.get("command", ""), "url": install.get("url", "")}
+        client_snippets = {}
+    elif remotes:
         r = remotes[0]
         kind = "remote"
         config = {"type": r.get("type", "streamable-http"), "url": r.get("url", "")}
@@ -213,16 +258,136 @@ def mcp_install_descriptor(name: str):
             "codex": {"mcp_servers": {short: {"command": runner, "args": args, "env": env}}},
             "vscode": {"servers": {short: {"type": "stdio", "command": runner, "args": args, "env": env}}},
         }
-    else:
-        return None
     return {
         "name": name, "title": title, "version": s.get("version", ""), "kind": kind,
+        "entryType": cur.get("entryType", "mcp"),
+        "install": install,
         "config": config,
         "requiredSecrets": secrets,
         "clientSnippets": client_snippets,
         "riskLevel": cur.get("riskLevel", "medium"),
         "riskNote": cur.get("riskNote", ""),
     }
+
+
+def pack_passed():
+    """只放出人工审查通过的专家团。"""
+    return [p for p in PACKS_REGISTRY.get("packs", [])
+            if (p.get("reviewed") or {}).get("execReview") == "passed"]
+
+
+def pack_find(slug: str):
+    """按 slug 找已过审专家团。"""
+    for p in PACKS_REGISTRY.get("packs", []):
+        if p.get("slug") == slug and (p.get("reviewed") or {}).get("execReview") == "passed":
+            return p
+    return None
+
+
+def pack_public(p, detail: bool = False):
+    """对外专家团形状:列表只放摘要;详情含完整成员安装描述符(含 MCP 接入描述)。"""
+    members = []
+    for m in p.get("members") or []:
+        item = {
+            "type": m.get("type"), "ref": m.get("ref"),
+            "name": m.get("name", m.get("ref")),
+            "title": m.get("title", m.get("ref")),
+            "resolved": bool(m.get("resolved")),
+            "optional": bool(m.get("optional")),
+        }
+        if detail:
+            item.update({
+                "description-zh": m.get("description-zh", ""),
+                "category": m.get("category", ""),
+                "page": m.get("page", ""),
+                "install": m.get("install", ""),
+                "installPath": m.get("installPath", ""),
+                "note": m.get("note", ""),
+            })
+            if m.get("type") == "mcp" and m.get("resolved"):
+                d = mcp_install_descriptor(m.get("ref"))
+                if d:
+                    item["mcpInstall"] = d
+        members.append(item)
+    out = {
+        "slug": p.get("slug"),
+        "displayName": p.get("displayName"),
+        "displayNameEn": p.get("displayNameEn"),
+        "persona": p.get("persona") or {},
+        "summary": p.get("summary", ""),
+        "summaryEn": p.get("summaryEn", ""),
+        "origin": p.get("origin", "own"),
+        "skill": p.get("skill", ""),
+        "install": p.get("install", ""),
+        "upstream": p.get("upstream"),
+        "license": (p.get("license") or {}).get("spdx", ""),
+        "memberCount": len(members),
+        "degraded": bool(p.get("degraded")),
+        "missingMembers": p.get("missingMembers") or [],
+        "members": members,
+        "page": f"/packages/{p.get('slug')}.html",
+        "installDoc": "/install/pack-install.md",
+        "reviewed": p.get("reviewed") or {},
+        "upstreamStatus": p.get("upstreamStatus") or {},
+    }
+    if detail:
+        out["content"] = p.get("content", "")
+        out["installMd"] = f"/v0/packs/{p.get('slug')}/install.md"
+    return out
+
+
+def pack_install_md(p) -> str:
+    """生成专家团专属安装契约(markdown,给 Agent 读的完整安装步骤)。"""
+    slug = p.get("slug")
+    persona = p.get("persona") or {}
+    members = p.get("members") or []
+    counts = {}
+    for m in members:
+        counts[m.get("type")] = counts.get(m.get("type"), 0) + 1
+    L = [f"# 专家团安装契约:{p.get('displayName')}({p.get('displayNameEn')}, {slug})",
+         "",
+         f"> 来源:https://skillx.yueliai.top/v0/packs/{slug}",
+         "", "## 专家团", "",
+         f"- 角色:{persona.get('role', '')}",
+         f"- 简介:{p.get('summary', '')}",
+         "- 成员:{n} 个(自研 {own} / 收录 {ext} / MCP {mcp})".format(
+             n=len(members), own=counts.get("own-skill", 0), ext=counts.get("ext-skill", 0), mcp=counts.get("mcp", 0)),
+         ]
+    if p.get("degraded"):
+        L.append(f"- 注意:成员暂不可用({', '.join(p.get('missingMembers') or [])}),安装时跳过并说明")
+    L += ["", "## 安装步骤", ""]
+    idx = 1
+    if p.get("install"):
+        L += [f"### 第 {idx} 步:安装专家团编排技能(meta-skill)", "", "```bash", p["install"], "```", ""]
+        idx += 1
+    L += [f"### 第 {idx} 步:按顺序安装成员", ""]
+    for i, m in enumerate(members, 1):
+        title = m.get("title") or m.get("ref")
+        L.append(f"#### {idx}.{i} {title}({m.get('type')}: {m.get('ref')})")
+        L.append("")
+        if not m.get("resolved"):
+            L += ["- 状态:不可用(已下架/未收录),跳过并向用户说明。", ""]
+            continue
+        if m.get("type") == "mcp":
+            L += [f"- 取接入描述:`GET /v0/servers/{m.get('ref')}/install`(含 claude/cursor/codex/vscode 客户端片段)。",
+                  "- 需要密钥时向用户索要;密钥只在本地写入客户端配置,不经过本站。", ""]
+            continue
+        cmd = m.get("install") or ""
+        if cmd:
+            L += ["```bash", cmd, "```", ""]
+        else:
+            L += [f"- 无标准安装命令;详情页:{m.get('page') or '(见专家团详情)'}", ""]
+    L += [f"### 第 {idx + 1} 步:回报安装(可选)", "",
+          "```bash",
+          f"curl -s -X POST -H \"Content-Type: application/json\" -d '{{\"slug\":\"{slug}\"}}' https://skillx.yueliai.top/api/pack/install",
+          "```", "",
+          "## 失败与回退", "",
+          "- 单个成员失败:记录原因,继续安装其余成员,最后汇总。",
+          "- API 不可达:改用橱窗页人工指引。",
+          "- 自研成员无 GITHUB_TOKEN:跳过自研成员,只装收录成员,并向用户说明。", "",
+          "## 验收", "",
+          "安装完成后逐项报告:已装成员(名称/类型/安装方式)、未装成员及原因、专家团 meta-skill 是否可被 Agent 加载。", ""]
+    return "\n".join(L) + "\n"
 
 
 def rate_ok(ip: str) -> bool:
@@ -297,6 +462,15 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _text(self, text, ctype="text/plain; charset=utf-8", code=200):
+        body = text.encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+        self.wfile.write(body)
+
     def _guarded(self):
         if not rate_ok(self._ip()):
             self._json({"error": "rate limited"}, 429)
@@ -337,7 +511,39 @@ class Handler(BaseHTTPRequestHandler):
             if start + limit < len(items) and page:
                 nxt = f"{page[-1]['server']['name']}:{page[-1]['server']['version']}"
             return self._json({"servers": page, "metadata": {"nextCursor": nxt, "count": len(page)}})
-        m_inst = re.fullmatch(r"/v0/servers/([\w.-]+/[\w.-]+)/install", path)
+        if path == "/v0/packs":
+            qs = urllib.parse.parse_qs(urlparse(self.path).query)
+            try:
+                limit = max(1, min(int(qs.get("limit", ["100"])[0]), 100))
+            except ValueError:
+                limit = 100
+            items = pack_passed()
+            cursor = qs.get("cursor", [""])[0]
+            start = 0
+            if cursor:
+                for i, it in enumerate(items):
+                    if it.get("slug") == cursor:
+                        start = i + 1
+                        break
+            page_packs = items[start:start + limit]
+            nxt_pack = None
+            if start + limit < len(items) and page_packs:
+                nxt_pack = page_packs[-1].get("slug")
+            return self._json({"packs": [pack_public(p) for p in page_packs],
+                               "metadata": {"nextCursor": nxt_pack, "count": len(page_packs)}})
+        m_pack_md = re.fullmatch(r"/v0/packs/([a-z0-9-]{3,41})/install\.md", path)
+        if m_pack_md:
+            p = pack_find(m_pack_md.group(1))
+            if not p:
+                return self._json({"error": "pack not found or not reviewed"}, 404)
+            return self._text(pack_install_md(p), "text/markdown; charset=utf-8")
+        m_pack = re.fullmatch(r"/v0/packs/([a-z0-9-]{3,41})", path)
+        if m_pack:
+            p = pack_find(m_pack.group(1))
+            if not p:
+                return self._json({"error": "pack not found or not reviewed"}, 404)
+            return self._json(pack_public(p, detail=True))
+        m_inst = re.fullmatch(r"/v0/servers/([\w.-]+(?:/[\w.-]+)?)/install", path)
         if m_inst:
             d = mcp_install_descriptor(m_inst.group(1))
             if not d:
@@ -358,7 +564,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
-        if path not in ("/api/download", "/api/recommend", "/api/mcp/install", "/api/mcp/connect"):
+        if path not in ("/api/download", "/api/recommend", "/api/mcp/install", "/api/mcp/connect",
+                        "/api/plugin/install", "/api/pack/install"):
             return self._json({"error": "not found"}, 404)
         if not self._guarded():
             return
@@ -405,6 +612,23 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"error": "bad name"}, 400)
             bump(f"mcp:{name}")
             return self._json({"ok": True, "name": name, "n": all_counts().get(f"mcp:{name}", 0)})
+        if path == "/api/plugin/install":
+            name = str(body.get("name", "")).strip()
+            if not name or not VALID_KEY.match(name):
+                return self._json({"error": "bad name"}, 400)
+            s, cur = mcp_find(name)
+            if not s or cur.get("entryType", "mcp") != "plugin":
+                return self._json({"error": "plugin not found or not reviewed"}, 404)
+            bump(f"plugin:{name}")
+            return self._json({"ok": True, "name": name, "n": all_counts().get(f"plugin:{name}", 0)})
+        if path == "/api/pack/install":
+            slug = str(body.get("slug", "")).strip()
+            if not slug or not re.fullmatch(r"[a-z0-9-]{3,41}", slug):
+                return self._json({"error": "bad slug"}, 400)
+            if not pack_find(slug):
+                return self._json({"error": "pack not found or not reviewed"}, 404)
+            bump(f"pack:{slug}")
+            return self._json({"ok": True, "slug": slug, "n": all_counts().get(f"pack:{slug}", 0)})
         if path == "/api/recommend":
             q = str(body.get("query", "")).strip()
             if not q:

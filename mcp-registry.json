@@ -22,6 +22,46 @@
           "riskLevel": "low",
           "riskNote": "纯远程 streamable-http 连接，不在本机执行代码；按量计费，需自行注册 API 凭据。",
           "installHint": "claude mcp add --transport http inference-sh https://api.inference.sh/mcp",
+          "tools": [
+            {
+              "name": "list_apps",
+              "description": "浏览可调用的 150+ AI 应用(图像/视频/音频/LLM/3D)",
+              "description-zh": "浏览可调用的 150+ AI 应用(图像/视频/音频/LLM/3D)"
+            },
+            {
+              "name": "run_app",
+              "description": "按 app id 执行指定 AI 应用并流式返回结果",
+              "description-zh": "按 app id 执行指定 AI 应用并流式返回结果"
+            },
+            {
+              "name": "get_result",
+              "description": "获取异步任务的执行结果",
+              "description-zh": "获取异步任务的执行结果"
+            }
+          ],
+          "useCases": [
+            {
+              "title": "文本生成图像",
+              "title-en": "Text to image",
+              "command": "用 inference.sh 调 stable-diffusion 把'赛博朋克城市夜景'生成 1024x1024 图"
+            },
+            {
+              "title": "语音转文字",
+              "title-en": "Speech to text",
+              "command": "用 inference.sh 跑 whisper 把这段会议录音转成带时间戳的文字稿"
+            },
+            {
+              "title": "批量视频理解",
+              "title-en": "Batch video understanding",
+              "command": "用 inference.sh 对这批 mp4 逐条生成内容摘要并汇总"
+            }
+          ],
+          "tags": [
+            "AI 媒体",
+            "按量计费",
+            "远程",
+            "多模态"
+          ],
           "reviewed": {
             "by": "codex",
             "at": "2026-09-28",
@@ -36,6 +76,279 @@
           }
         }
       }
+    },
+    {
+      "name": "ms-vscode.cpptools",
+      "title": "C/C++ (VS Code)",
+      "description": "C/C++ IntelliSense, debugging, and code browsing for VS Code. Debug native binaries with breakpoints, watch, call stack and memory views.",
+      "version": "1.24.5",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "VS Code 官方 C/C++ 扩展:IntelliSense、调试与代码浏览;逆向工程时断点调试原生二进制的标准工具,支持寄存器/内存/反汇编视图。",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;扩展安装后在本机客户端内运行;上游为微软官方一手仓库。",
+          "installHint": "code --install-extension ms-vscode.cpptools",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools",
+            "command": "code --install-extension ms-vscode.cpptools",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/microsoft/vscode-cpptools"
+    },
+    {
+      "name": "vadimcn.vscode-lldb",
+      "title": "CodeLLDB",
+      "description": "Native debugger for VS Code based on LLDB. Debug C/C++, Rust and other compiled languages with disassembly and memory inspection.",
+      "version": "1.11.4",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "基于 LLDB 的 VS Code 原生调试器:断点/单步/反汇编/内存检查,调试 C/C++/Rust 编译产物的常用扩展,逆向分析利器。",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;调试器扩展需本机调试权限;上游维护活跃、社区口碑良好。",
+          "installHint": "code --install-extension vadimcn.vscode-lldb",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb",
+            "command": "code --install-extension vadimcn.vscode-lldb",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/vadimcn/codelldb"
+    },
+    {
+      "name": "webhint.vscode-webhint",
+      "title": "webhint",
+      "description": "Best practices and security linting for the web: HTTPS, headers, XSS, CSRF and accessibility hints directly in the editor.",
+      "version": "2.1.14",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "Web 最佳实践与安全静态检查:HTTPS、安全响应头、XSS/CSRF 隐患、可访问性,直接在编辑器里标注,渗透前期快速面审前端安全配置。",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;静态检查类扩展,无外联执行面;上游为 webhint 官方组织。",
+          "installHint": "code --install-extension webhint.vscode-webhint",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=webhint.vscode-webhint",
+            "command": "code --install-extension webhint.vscode-webhint",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/webhintio/hint"
+    },
+    {
+      "name": "semgrep.semgrep",
+      "title": "Semgrep",
+      "description": "Static analysis for finding bugs and enforcing code standards with lightweight syntax-based rules; security rulesets included.",
+      "version": "1.74.0",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "轻量语法级静态分析:按规则查 bug 与安全问题,自带安全规则集;审计目标源码或写自定义规则定位危险调用面的利器。",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;静态分析扩展,规则可自定义;上游为 Semgrep 官方一手仓库。",
+          "installHint": "code --install-extension semgrep.semgrep",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=semgrep.semgrep",
+            "command": "code --install-extension semgrep.semgrep",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/semgrep/semgrep"
+    },
+    {
+      "name": "github.vscode-github-actions",
+      "title": "GitHub Actions",
+      "description": "Manage GitHub Actions workflows: YAML editing with schema validation, workflow run monitoring and log inspection.",
+      "version": "0.27.2",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "GitHub Actions 工作流管理:YAML 模式校验、运行状态监控、日志查看;工程效能方向,排查 CI 红绿与发布流水线的常用扩展。",
+          "category": "dev-workflow",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;上游为 GitHub 官方;需用户自行登录 GitHub 账号,凭据不经过本站。",
+          "installHint": "code --install-extension github.vscode-github-actions",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions",
+            "command": "code --install-extension github.vscode-github-actions",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/github/vscode-github-actions"
+    },
+    {
+      "name": "github.vscode-pull-request-github",
+      "title": "GitHub Pull Requests",
+      "description": "Review and manage GitHub pull requests and issues directly in the editor.",
+      "version": "0.98.0",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "在编辑器内审查与管理 GitHub PR 与 Issue:评审评论、检出分支、合并状态;协作评审与代码审查工作流的标准扩展。",
+          "category": "dev-workflow",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;上游为 GitHub 官方;凭据为用户本地 GitHub 登录,不经过本站。",
+          "installHint": "code --install-extension github.vscode-pull-request-github",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github",
+            "command": "code --install-extension github.vscode-pull-request-github",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/microsoft/vscode-pull-request-github"
+    },
+    {
+      "name": "tamasfe.even-better-toml",
+      "title": "Even Better TOML",
+      "description": "Fully-featured TOML support for VS Code: syntax highlighting, validation, formatting and schema completion.",
+      "version": "0.19.2",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "description-zh": "全功能 TOML 支持:语法高亮、校验、格式化与 schema 补全;编辑 Codex config.toml、pyproject 等配置文件的工程效能扩展。",
+          "category": "dev-workflow",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;纯语言支持类扩展,无网络执行面;上游维护状态正常。",
+          "installHint": "code --install-extension tamasfe.even-better-toml",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml",
+            "command": "code --install-extension tamasfe.even-better-toml",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "jacksen",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; upstream healthy; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "websiteUrl": "https://github.com/tamasfe/taplo"
     }
   ]
 }

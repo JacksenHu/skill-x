@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Abyss">
+  <defs>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0v16" fill="none" stroke="#1E2630" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="256" height="256" rx="6" fill="#141A21"/>
+  <rect width="256" height="256" rx="6" fill="url(#grid)"/>
+  <rect x="1" y="1" width="254" height="254" rx="6" fill="none" stroke="#232C38" stroke-width="2"/>
+  <polygon points="128,38 206,83 206,173 128,218 50,173 50,83" fill="none" stroke="#FF6B2C" stroke-width="3"/>
+  <polygon points="128,70 178,99 178,157 128,186 78,157 78,99" fill="none" stroke="#33404F" stroke-width="2"/>
+  <path d="M86 108l42 24 42-24" fill="none" stroke="#FF6B2C" stroke-width="5" stroke-linecap="square"/>
+  <path d="M86 132l42 24 42-24" fill="none" stroke="#FF9351" stroke-width="5" stroke-linecap="square"/>
+  <path d="M86 156l42 24 42-24" fill="none" stroke="#FFB020" stroke-width="5" stroke-linecap="square"/>
+  <circle cx="128" cy="108" r="5" fill="#FF6B2C"/>
+  <circle cx="206" cy="83" r="4" fill="#4A9EFF"/>
+  <circle cx="50" cy="173" r="4" fill="#4A9EFF"/>
+  <circle cx="206" cy="173" r="4" fill="#33404F"/>
+  <circle cx="50" cy="83" r="4" fill="#33404F"/>
+</svg>

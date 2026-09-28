@@ -1,0 +1,12 @@
+{
+  "_comment": "收录专家团的中文/展示层人工增补(与 i18n-ext.json 同模式)。键=pack slug;可覆盖 displayName/displayNameEn/summary/summaryEn 与 persona 字段。收录脚本重跑不会覆盖本文件。",
+  "_example": {
+    "some-external-pack": {
+      "summary": "人工撰写的中文简介(覆盖注册表里的默认值)",
+      "persona": {
+        "role": "人工补充的角色定位"
+      }
+    }
+  },
+  "packs": {}
+}

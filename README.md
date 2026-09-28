@@ -6,6 +6,8 @@
 - **全 Agent 兼容**:skill 只使用规范基础字段,可被 Claude Code、Codex、Cursor、Copilot 等 80+ agent 加载
 - **橱窗站**:技能介绍与外部套件收录,多页+搜索 → **https://3f3301ac5aa14f998efefa8913125d01.sg.agentos-app.run**(长期固定链接;内容更新后重新发布即刷新,链接不变)
 - **社区收录**:已收录 2 个外部套件共 34 个 skill(见 `external.json`,收录管线见 [接入 SOP](docs/onboarding-pipeline.md))
+- **第三方应用接入**:MCP 服务与 Agent 插件统一条目注册表(`mcp-registry.json`,官方 server.json 标准 + `entryType` 区分);插件指路牌只指向官方一手市场(见 [插件收录 SOP](docs/plugin-onboarding-pipeline.md))
+- **专家团**:带人设的编排层(自研 + 收录双轨),成员可跨 自研/收录/MCP;安装走《安装契约文档》与 `/v0/packs` API,Agent 读文档即会装(见 [专家团收录 SOP](docs/pack-onboarding-pipeline.md))
 
 ## 安装(授权用户)
 
@@ -26,10 +28,12 @@ GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hyg
 
 ```
 skills/<skill-name>/     # 自研技能(每个含 SKILL.md,可选 scripts/ references/ assets/)
-docs/                    # 编写规范、接入 SOP、授权管理
-scripts/                 # 仓库工具(validate / ingest / link_check)
+docs/                    # 编写规范、接入 SOP(skill/MCP/插件)、授权管理
+scripts/                 # 仓库工具(validate / ingest / mcp_ingest / link_check)
 showcase/                # 橱窗站构建器与产物(build_index.py -> dist/)
 external.json            # 社区收录套件登记(命名空间/许可证/审查/探活状态)
+mcp-registry.json        # 统一条目注册表:MCP server + Agent 插件(entryType 区分)
+packs.json               # 专家团注册表(人设/成员 ref/编排剧本 content,pack_ingest 维护)
 .claude-plugin/          # Claude Code 插件市场清单
 .codex-plugin/           # Codex 插件清单
 .github/workflows/       # CI:校验、发布、每日死链探活
@@ -53,6 +57,17 @@ external.json            # 社区收录套件登记(命名空间/许可证/审�
 | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | 9 | 未确认(仅链接收录) | `npx skills add vercel-labs/agent-skills --skill <name>` |
 
 收录均通过四坑检查(命名空间/许可证/供应链/死链),明细见 `external.json`。
+
+## 专家团(Expert Packs)
+
+| 专家团 | 人设 | 成员 | 安装 |
+|---|---|---|---|
+| [深潜 Abyss](skills/pack-abyss-deep-reverse/SKILL.md) | 二进制解剖师 | binary-reverse-engineering + verification-run-hygiene | `npx skills add JacksenHu/skill-x --skill pack-abyss-deep-reverse` |
+| [裂空 Rift](skills/pack-rift-pentest/SKILL.md) | 证据驱动渗透主理人 | pentest-methodology + verification-run-hygiene + security-and-hardening | `npx skills add JacksenHu/skill-x --skill pack-rift-pentest` |
+| [溯源 Trace](skills/pack-trace-malware/SKILL.md) | 样本溯源分析师 | malware-analysis + memory-forensics | `npx skills add JacksenHu/skill-x --skill pack-trace-malware` |
+
+第三方应用/Agent 接入:读《安装契约文档》 <https://skillx.yueliai.top/install/pack-install.md>,
+或调 `GET /v0/packs` / `GET /v0/packs/<slug>` 取成员安装描述符。
 
 ## 兼容性
 

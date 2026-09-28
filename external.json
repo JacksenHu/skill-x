@@ -16,7 +16,7 @@
         "execReview": "passed"
       },
       "upstreamStatus": {
-        "lastCheck": null,
+        "lastCheck": "2026-09-28",
         "alive": true,
         "failSince": null
       },
@@ -233,7 +233,7 @@
         "execReview": "passed"
       },
       "upstreamStatus": {
-        "lastCheck": null,
+        "lastCheck": "2026-09-28",
         "alive": true,
         "failSince": null
       },

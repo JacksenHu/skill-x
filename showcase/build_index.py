@@ -27,12 +27,17 @@ import apidocs  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 EXTERNAL = ROOT / "external.json"
+PACKS = ROOT / "packs.json"
 I18N_EXT = Path(__file__).resolve().parent / "i18n-ext.json"
+I18N_PACKS = Path(__file__).resolve().parent / "i18n-packs.json"
 CURATION = Path(__file__).resolve().parent / "curation.json"
 STAR_CACHE = Path(__file__).resolve().parent / ".upstream-cache.json"
 DIST = Path(__file__).resolve().parent / "dist"
 MANIFEST = Path(__file__).resolve().parent / ".build-manifest.json"
-TEMPLATE_VERSION = "3.0"
+TEMPLATE_VERSION = "3.2"
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from resolve_members import load_index, resolve_pack  # noqa: E402
 
 CATEGORIES = {
     "reverse-engineering": "逆向工程",
@@ -163,6 +168,42 @@ p{max-width:76ch}
 .count{font-family:var(--mono);font-size:12px;color:var(--text3);white-space:nowrap}
 .count.hit{color:var(--accent)}
 
+/* 专家团(persona/成员/剧本文档) */
+.avatar{width:52px;height:52px;border:1px solid var(--line2);border-radius:3px;background:var(--bg);flex:none;display:block}
+.avatar.xl{width:104px;height:104px}
+.pack-card .pack-head{display:flex;gap:12px;align-items:flex-start}
+.pack-card .pack-head h3{font-size:17px}
+.pack-card .role{font-size:12.5px;color:var(--accent);margin-top:9px}
+.pack-card p{margin-top:7px}
+.persona-hero{display:flex;gap:22px;align-items:flex-start}
+.persona-hero .persona-body{min-width:0;flex:1}
+.persona-role{font-size:13.5px;color:var(--accent);margin-top:10px}
+.persona-tagline{font-size:15px;color:var(--text);margin-top:8px}
+.tag.kind-mcp{border-color:var(--signal);color:var(--signal)}
+.tag.kind-preview{border-color:var(--line2);color:var(--text3);border-style:dashed}
+.member-card .cmd{margin-bottom:10px}
+.member-missing{border-color:var(--warn)}
+.md-body{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:22px 26px;margin-top:12px}
+.md-body h2{font-size:15px;margin:24px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line);display:block}
+.md-body h2:first-child{margin-top:0}
+.md-body h3{font-size:14px;margin:18px 0 8px;color:var(--text)}
+.md-body p{font-size:13.5px;color:var(--text2);margin:8px 0;max-width:82ch}
+.md-body ul,.md-body ol{margin:8px 0 8px 22px;font-size:13.5px;color:var(--text2)}
+.md-body li{margin:5px 0}
+.md-body code{font-family:var(--mono);font-size:12px;background:var(--surface2);padding:1px 5px;border-radius:2px;color:var(--text)}
+.md-body pre{background:#05070A;border:1px solid var(--line);border-left:3px solid var(--accent);padding:12px 14px;border-radius:3px;overflow-x:auto;margin:12px 0}
+.md-body pre code{background:none;padding:0;font-size:12.5px}
+.md-body blockquote{border-left:3px solid var(--line2);padding-left:12px;color:var(--text3);margin:10px 0}
+.md-body a{color:var(--signal)}
+.md-body strong{color:var(--text)}
+
+/* 卡片头部与徽标(全站复用:技能/套件/MCP/专家团详情) */
+.card-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card-head h1,.card-head h3{margin:0}
+.badge{font-family:var(--mono);font-size:10.5px;padding:2px 8px;border:1px solid var(--line2);border-radius:2px;color:var(--text2);white-space:nowrap}
+.badge.auth{border-color:var(--accent);color:var(--accent)}
+.badge.ext{border-color:var(--line2);color:var(--text2)}
+.badge.cat{border-color:var(--cat,var(--line2));color:var(--cat,var(--text2))}
 /* 详情页 */
 .detail{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px 28px;margin-top:16px}
 .detail h1{font-size:26px}
@@ -353,6 +394,9 @@ footer a{color:var(--signal)}
   .grid{grid-template-columns:1fr}
   .recs{grid-template-columns:1fr}
   .detail{padding:18px 16px}
+  .persona-hero{flex-direction:column;gap:14px}
+  .avatar.xl{width:88px;height:88px}
+  .md-body{padding:16px 14px}
   .kv{grid-template-columns:1fr;gap:4px}
   .cmd{font-size:12px;padding:11px 12px}
   table.api{display:block;overflow-x:auto;white-space:nowrap}
@@ -444,7 +488,7 @@ APP_JS = """
     if (!list || !list.length){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
     empty?.classList.add('hidden');
     box.innerHTML = list.map(function(r){
-      const kind = r.kind === 'own' ? '<span class="badge auth">自研·需授权</span>' : '<span class="badge ext">社区精选</span>';
+      const kind = r.kind === 'own' ? '<span class="badge auth">自研·需授权</span>' : (r.kind === 'pack' ? '<span class="badge auth">专家团</span>' : '<span class="badge ext">社区精选</span>');
       const cmd = r.install || '';
       const why = (r.matched || []).join(' · ');
       return '<div class="card"><div class="card-head"><h3><a href="'+r.page+'">'+((r['name-zh'])||r.name)+'</a></h3>'+kind+'</div>'+
@@ -685,6 +729,8 @@ def collect_own_skills():
             continue
         text = f.read_text(encoding="utf-8", errors="replace")
         top, meta, body = parse_frontmatter(text)
+        if meta.get("package_type") == "meta-skill":
+            continue  # 专家团编排技能(meta-skill)走 collect_packs(),不作为普通技能展示
         name = top.get("name", f.parent.name)
         skills.append({
             "name": name,
@@ -784,10 +830,12 @@ def collect_mcps():
             "description": s.get("description", ""),
             "description-zh": cur.get("description-zh", s.get("description", "")),
             "version": s.get("version", ""),
+            "entryType": cur.get("entryType", "mcp"),
             "kind": cur.get("kind", "remote" if remotes else "local"),
             "category": cur.get("category", "dev-workflow"),
             "riskLevel": cur.get("riskLevel", "medium"),
             "installHint": cur.get("installHint", ""),
+            "install": cur.get("install") or {},
             "remote_url": remotes[0].get("url", "") if remotes else "",
             "remote_type": remotes[0].get("type", "") if remotes else "",
             "pkg_id": f"{pkgs[0].get('registryType')}:{pkgs[0].get('identifier')}" if pkgs else "",
@@ -798,6 +846,9 @@ def collect_mcps():
             "upstreamStatus": cur.get("upstreamStatus") or {},
             "remotes": remotes,
             "packages": pkgs,
+            "tools": cur.get("tools") or [],
+            "useCases": cur.get("useCases") or [],
+            "tags": cur.get("tags") or [],
         })
     return out
 
@@ -808,6 +859,60 @@ def ns_slug(ns: str) -> str:
 
 def mcp_slug(name: str) -> str:
     return re.sub(r"[^\w.-]+", "--", name)
+
+
+def collect_packs():
+    """读 packs.json,只返回人工审查通过的专家团;成员实时重解析(下架即降级)。"""
+    if not PACKS.is_file():
+        return []
+    i18n = json.loads(I18N_PACKS.read_text(encoding="utf-8")) if I18N_PACKS.is_file() else {}
+    table = i18n.get("packs", i18n)  # 兼容 {packs:{slug:{...}}} 与平铺 {slug:{...}} 两种形态
+    index = load_index(ROOT)
+    out = []
+    for p in json.loads(PACKS.read_text(encoding="utf-8")).get("packs", []):
+        rev = p.get("reviewed") or {}
+        if rev.get("execReview") != "passed":
+            continue
+        extra = table.get(p.get("slug", "")) or {}
+        res = resolve_pack(p, index)
+        content = p.get("content", "")
+        fresh = True
+        src = p.get("source")
+        if src and (ROOT / src).is_file():
+            file_text = (ROOT / src).read_text(encoding="utf-8", errors="replace")
+            fresh = file_text == content
+            content = file_text
+        persona = {**(p.get("persona") or {}), **(extra.get("persona") or {})}
+        out.append({
+            "slug": p.get("slug", ""),
+            "displayName": extra.get("displayName", p.get("displayName", "")),
+            "displayNameEn": extra.get("displayNameEn", p.get("displayNameEn", "")),
+            "persona": persona,
+            "summary": extra.get("summary", p.get("summary", "")),
+            "summaryEn": extra.get("summaryEn", p.get("summaryEn", "")),
+            "origin": p.get("origin", "own"),
+            "skill": p.get("skill", ""),
+            "install": p.get("install", ""),
+            "upstream": p.get("upstream"),
+            "license": (p.get("license") or {}).get("spdx", ""),
+            "members": res["members"],
+            "missingMembers": res["missing"],
+            "degraded": res["degraded"],
+            "content": content,
+            "contentFresh": fresh,
+            "reviewed": rev,
+            "upstreamStatus": p.get("upstreamStatus") or {},
+            "page": f"packages/{p.get('slug', '')}.html",
+        })
+    return out
+
+
+def media_ver(rel: str) -> str:
+    """静态媒体文件内容哈希(8 位),用于 URL 版本号破缓存。"""
+    p = Path(__file__).resolve().parent / rel
+    if not p.is_file():
+        return ASSET_VER
+    return hashlib.sha256(p.read_bytes()).hexdigest()[:8]
 
 
 def leak_assert(pages: dict, bodies):
@@ -826,7 +931,9 @@ def nav(active="home"):
   <a class="brand" href="/">Skill X</a>
   <a href="/"{cls("home")} data-zh="首页" data-en="Home">首页</a>
   <a href="/skills.html"{cls("skills")} data-zh="技能" data-en="Skills">技能</a>
+  <a href="/packages.html"{cls("packs")} data-zh="专家团" data-en="Expert Packs">专家团</a>
   <a href="/mcp.html"{cls("mcp")} data-zh="MCP" data-en="MCP">MCP</a>
+  <a href="/plugins.html"{cls("plugins")} data-zh="插件" data-en="Plugins">插件</a>
   <a href="/api.html"{cls("api")} data-zh="API" data-en="API">API</a>
   <a href="/about.html"{cls("about")} data-zh="关于" data-en="About">关于</a>
   <button class="lang-btn">EN</button>
@@ -1126,6 +1233,13 @@ def render_api(own, suites):
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
 <tr><td><code class="inl">/v0/servers</code></td><td>GET</td><td data-zh="MCP 服务列表(官方 Registry 兼容,游标分页 ?limit&cursor;只返回已过审条目)" data-en="MCP server list (official Registry-compatible, cursor-paginated; reviewed entries only)">MCP 服务列表(官方 Registry 兼容,游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目)</td></tr>
 <tr><td><code class="inl">/api/mcp/install</code></td><td>POST</td><td data-zh="记录一次 MCP 安装/连接。Body: {{&quot;name&quot;:&quot;&lt;ns/name&gt;&quot;}}" data-en="Record an MCP install/connect. Body: name">记录一次 MCP 安装/连接。Body: <code class="inl">{{"name":"&lt;ns/name&gt;"}}</code></td></tr>
+<tr><td><code class="inl">/api/plugin/install</code></td><td>POST</td><td data-zh="记录一次插件安装(仅 entryType=plugin 的过审条目)。Body: {{&quot;name&quot;:&quot;&lt;name&gt;&quot;}}" data-en="Record a plugin install (reviewed entryType=plugin entries only). Body: name">记录一次插件安装(仅 <code class="inl">entryType=plugin</code> 的过审条目)。Body: <code class="inl">{{"name":"&lt;name&gt;"}}</code></td></tr>
+<tr><td><code class="inl">/plugins.html</code></td><td>GET</td><td data-zh="插件橱窗页(Agent 插件指路牌列表)" data-en="Plugins showcase page">插件橱窗页(Agent 插件指路牌列表)</td></tr>
+<tr><td><code class="inl">/v0/packs</code></td><td>GET</td><td data-zh="专家团列表(游标分页 ?limit&cursor;只返回已过审条目;含人设/成员摘要/降级标记)" data-en="Expert pack list (cursor-paginated, reviewed entries only)">专家团列表(游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目;含人设 / 成员摘要 / 降级标记)</td></tr>
+<tr><td><code class="inl">/v0/packs/&lt;slug&gt;</code></td><td>GET</td><td data-zh="专家团详情:完整人设 + 编排剧本正文 + 成员安装描述符数组(含安装命令与页面链接)" data-en="Expert pack detail: persona, orchestration script, member install descriptors">专家团详情:完整人设 + 编排剧本正文 + 成员安装描述符数组(含安装命令与页面链接)</td></tr>
+<tr><td><code class="inl">/v0/packs/&lt;slug&gt;/install.md</code></td><td>GET</td><td data-zh="专家团专属安装契约(markdown;给 Agent 读的完整安装步骤)" data-en="Per-pack install contract (markdown, agent-readable)">专家团专属安装契约(markdown;给 Agent 读的完整安装步骤)</td></tr>
+<tr><td><code class="inl">/install/pack-install.md</code></td><td>GET</td><td data-zh="全局安装契约文档(静态;提示词直接指向它即可让任意 Agent 完成安装)" data-en="Global install contract doc (static; point any agent at it)">全局安装契约文档(静态;提示词直接指向它即可让任意 Agent 完成安装)</td></tr>
+<tr><td><code class="inl">/api/pack/install</code></td><td>POST</td><td data-zh="记录一次专家团安装。Body: {{&quot;slug&quot;:&quot;&lt;slug&gt;&quot;}}" data-en="Record an expert pack install. Body: slug">记录一次专家团安装。Body: <code class="inl">{{&quot;slug&quot;:&quot;&lt;slug&gt;&quot;}}</code></td></tr>
 <tr><td><code class="inl">/v0/servers/&lt;ns/name&gt;/install</code></td><td>GET</td><td data-zh="MCP 接入描述:返回应用程序可直接用于安装/连接的结构化 JSON(config/requiredSecrets/clientSnippets 含 claude/cursor/codex/vscode 客户端片段)" data-en="MCP install descriptor: structured JSON for programmatic install/connect (config, requiredSecrets, clientSnippets for claude/cursor/codex/vscode)">MCP 接入描述:返回应用程序可直接用于安装/连接的结构化 JSON(config / requiredSecrets / clientSnippets 含 claude/cursor/codex/vscode 客户端片段)</td></tr>
 <tr><td><code class="inl">/api/mcp/connect</code></td><td>POST</td><td data-zh="代为连接:Body {{&quot;name&quot;,&quot;client&quot;,&quot;secrets&quot;}};校验必填密钥后返回填好密钥的客户端配置片段(密钥仅内存拼接返回,不落库)" data-en="Connect on behalf: body name/client/secrets; validates required secrets and returns the filled client config snippet (secrets assembled in memory only, never stored)">代为连接:Body <code class="inl">{{"name","client","secrets"}}</code>;校验必填密钥后返回填好密钥的客户端配置片段(密钥仅内存拼接返回,不落库)</td></tr>
 </table>
@@ -1148,7 +1262,6 @@ def render_mcp(mcps):
     cards = []
     for m in mcps:
         kind_text = "远程" if m["kind"] == "remote" else "本地"
-        conn = m["remote_url"] if m["kind"] == "remote" else m["pkg_id"]
         cmd = m["installHint"] or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
         search = f"{m['name']} {m['title']} {m['description']} {m['description-zh']}".lower()
         cards.append(f'''<div class="card cat-{esc(m['category'])}" data-search="{esc(search)}" data-category="{esc(m['category'])}">
@@ -1167,12 +1280,80 @@ def render_mcp(mcps):
     return page_shell("MCP 服务", "MCP Servers", "mcp", inner)
 
 
+def render_plugins(plugins):
+    risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
+    cards = []
+    for m in plugins:
+        cmd = m.get("installHint") or (m.get("install") or {}).get("command", "")
+        clients = ", ".join((m.get("install") or {}).get("clients") or [])
+        search = f"{m['name']} {m['title']} {m['description']} {m['description-zh']}".lower()
+        cards.append(f'''<div class="card cat-{esc(m['category'])}" data-search="{esc(search)}" data-category="{esc(m['category'])}">
+  <h3><a href="/mcp/{mcp_slug(m['name'])}.html">{esc(m['title'])}</a></h3>
+  <div class="en-name">{esc(m['name'])}</div>
+  <p><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'][:300])}">{esc(m['description-zh'])}</span></p>
+  <div class="meta"><span class="tag cat">{esc(CATEGORIES.get(m['category'], m['category']))}</span><span class="tag kind-ext">插件</span><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span><span class="count">v{esc(m['version'])}</span></div>
+  <div class="cmd">{esc(cmd)}</div>
+</div>''')
+    body = "".join(cards) if cards else '<p class="hint-dim" data-zh="暂无已过审的插件" data-en="No reviewed plugins yet">暂无已过审的插件</p>'
+    inner = f'''
+<h2 data-zh="Agent 插件" data-en="Agent Plugins">Agent 插件 <span class="n">{len(plugins)} 个 · 官方市场指路牌</span></h2>
+<p class="hint-dim" data-zh="面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。本站只做指路:安装命令指向官方一手市场,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。" data-en="Plugins & extensions for AI coding clients (VS Code / Cursor / Claude / Codex). This site only signposts: install commands point at official first-party marketplaces; nothing is redistributed. Credentials are filled locally, never passing through this site.">面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。本站只做指路:安装命令指向官方一手市场,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。</p>
+<div class="grid">{body}</div>
+<div class="notice"><span data-zh="收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);指路牌只指向官方市场/一手仓库;所有条目均经人工审查(execReview=passed)才放出。" data-en="Curation & risk: plugins run third-party code inside your local client (medium risk); signposts point only to official marketplaces/repos. All entries pass manual review before listing.">收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);指路牌只指向官方市场/一手仓库;所有条目均经人工审查(execReview=passed)才放出。</span></div>'''
+    return page_shell("Agent 插件", "Agent Plugins", "plugins", inner)
+
+
+def tools_html(m):
+    tools = m.get("tools") or []
+    if not tools:
+        return ""
+    rows = "".join(
+        f'<tr><td><code class="inl">{esc(t.get("name", ""))}</code></td>'
+        f'<td><span data-zh="{esc(t.get("description-zh", t.get("description", "")))}" data-en="{esc(t.get("description", ""))}">{esc(t.get("description-zh", t.get("description", "")))}</span></td></tr>'
+        for t in tools)
+    return (f'<h2 data-zh="提供工具" data-en="Tools">提供工具 <span class="n">{len(tools)} 个</span></h2>'
+            f'<table class="api"><tr><th data-zh="工具" data-en="Tool">工具</th><th data-zh="说明" data-en="Description">说明</th></tr>{rows}</table>')
+
+
+def cases_html(m):
+    cases = m.get("useCases") or []
+    if not cases:
+        return ""
+    items = "".join(
+        f'<div class="card"><h3><span data-zh="{esc(c.get("title", ""))}" data-en="{esc(c.get("title-en", c.get("title", "")))}">{esc(c.get("title", ""))}</span></h3>'
+        f'<div class="cmd">{esc(c.get("command", ""))}</div></div>'
+        for c in cases)
+    return (f'<h2 data-zh="使用场景" data-en="Use cases">使用场景 <span class="n">{len(cases)} 个</span></h2>'
+            f'<div class="grid">{items}</div>')
+
+
+def tags_html(m):
+    tags = m.get("tags") or []
+    if not tags:
+        return ""
+    chips = "".join(f'<span class="tag">{esc(t)}</span>' for t in tags)
+    return f'<div class="meta">{chips}</div>'
+
+
 def render_mcp_detail(m):
     risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
-    kind_text = "远程" if m["kind"] == "remote" else "本地(stdio)"
-    cmd = m["installHint"] or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
+    is_plugin = m.get("entryType", "mcp") == "plugin"
+    method = (m.get("install") or {}).get("method", "link")
+    method_zh = {"marketplace": "官方市场", "command": "命令安装", "link": "链接指路"}.get(method, "指路")
+    kind_text = (method_zh if is_plugin else ("远程" if m["kind"] == "remote" else "本地(stdio)"))
+    install = m.get("install") or {}
+    cmd = m["installHint"] or install.get("command", "") or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
     conn_rows = ""
-    if m["kind"] == "remote":
+    if is_plugin:
+        clients = ", ".join(install.get("clients") or []) or "—"
+        url = install.get("url", "")
+        url_link = f'<a href="{esc(url)}">{esc(url)}</a>' if url else "—"
+        conn_html = (f'<h2 data-zh="安装来源" data-en="Install source">安装来源</h2>'
+                     f'<table class="api"><tr><th data-zh="方式" data-en="Method">方式</th><td><code class="inl">{esc(install.get("method", "link"))}</code></td></tr>'
+                     f'<tr><th data-zh="官方市场页" data-en="Marketplace">官方市场页</th><td>{url_link}</td></tr>'
+                     f'<tr><th data-zh="适用客户端" data-en="Clients">适用客户端</th><td>{esc(clients)}</td></tr></table>'
+                     f'<p class="hint-dim" data-zh="指路牌条目:本体由官方市场分发,本站不托管;安装后在本地客户端内运行第三方代码,收录已过人工审查。" data-en="Signpost entry: distributed by the official marketplace, not hosted here; runs third-party code inside your local client; manually reviewed at curation time.">指路牌条目:本体由官方市场分发,本站不托管;安装后在本地客户端内运行第三方代码,收录已过人工审查。</p>')
+    elif m["kind"] == "remote":
         for r in m["remotes"]:
             conn_rows += f'<tr><td><code class="inl">{esc(r.get("type",""))}</code></td><td><code class="inl">{esc(r.get("url",""))}</code></td></tr>'
         conn_html = (f'<h2 data-zh="连接端点" data-en="Connection endpoints">连接端点</h2>'
@@ -1207,8 +1388,9 @@ def render_mcp_detail(m):
     if m["repository"]:
         links.append(f'<a href="{esc(m["repository"])}">仓库</a>')
     links_html = " · ".join(links) if links else "—"
+    badge = "MCP" if m.get("entryType", "mcp") == "mcp" else "插件"
     inner = f'''<div class="detail">
-  <div class="card-head"><h1>{esc(m['title'])}</h1><span class="badge ext">MCP · {kind_text}</span></div>
+  <div class="card-head"><h1>{esc(m['title'])}</h1><span class="badge ext">{badge} · {kind_text}</span></div>
   <div class="en-name">{esc(m['name'])}</div>
   <p class="desc"><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'])}">{esc(m['description-zh'])}</span></p>
   <dl class="kv">
@@ -1219,23 +1401,325 @@ def render_mcp_detail(m):
     <dt data-zh="收录审查" data-en="Review">收录审查</dt><dd>{esc(rev.get('by') or '—')} · {esc(rev.get('at') or '—')}</dd>
     <dt data-zh="外部链接" data-en="Links">外部链接</dt><dd>{links_html}</dd>
   </dl>
-  <p class="hint-ok" data-zh="一条命令接入客户端:" data-en="Connect with one command:">一条命令接入客户端:</p>
+  <p class="hint-ok" data-zh="一条命令接入客户端:" data-en="Install with one command:">一条命令接入客户端:</p>
   <div class="cmd">{esc(cmd)}</div>
-  <button class="chip on copy-btn" data-copy="{esc(cmd)}" data-skill="mcp:{esc(m['name'])}" data-zh="复制接入命令" data-en="Copy connect command">复制接入命令</button>
+  <button class="chip on copy-btn" data-copy="{esc(cmd)}" data-skill="{('plugin:' if is_plugin else 'mcp:')}{esc(m['name'])}" data-zh="复制接入命令" data-en="Copy install command">复制接入命令</button>
   <p class="hint-dim">{esc(m['riskNote'])}</p>
 </div>
-{conn_html}'''
-    return page_shell(m["title"], m["name"], "mcp", inner)
+{conn_html}
+{tools_html(m)}{cases_html(m)}{tags_html(m)}'''
+    nav_key = "mcp" if m.get("entryType", "mcp") == "mcp" else "plugins"
+    return page_shell(m["title"], m["name"], nav_key, inner)
 
 
 
 
-def render_home(own, suites, mcps, map_svg=""):
+MEMBER_TYPE_LABEL = {
+    "own-skill": ("自研技能", "Own skill", "kind-own"),
+    "ext-skill": ("社区精选", "Curated", "kind-ext"),
+    "mcp": ("MCP 服务", "MCP server", "kind-mcp"),
+    "cli": ("CLI 工具", "CLI tool", "kind-preview"),
+    "api": ("远程 API", "Remote API", "kind-preview"),
+}
+
+
+def _md_inline(s: str) -> str:
+    s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+    s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
+
+    def link(m):
+        url, text = m.group(2), m.group(1)
+        if not url.startswith(("https://", "http://", "/")):
+            return text
+        return f'<a href="{url}">{text}</a>'
+
+    return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", link, s)
+
+
+def md_to_html(text: str) -> str:
+    """最小 Markdown 渲染:标题/列表/代码块/引用/粗体/行内代码/链接。先转义再上标签。"""
+    out, para, list_open, in_code, code_buf = [], [], None, False, []
+
+    def flush_para():
+        if para:
+            out.append("<p>" + _md_inline(esc(" ".join(para))) + "</p>")
+            para.clear()
+
+    def close_list():
+        nonlocal list_open
+        if list_open:
+            out.append(f"</{list_open}>")
+            list_open = None
+
+    for raw in (text or "").splitlines():
+        line = raw.rstrip()
+        if line.strip().startswith("```"):
+            if in_code:
+                out.append("<pre><code>" + esc("\n".join(code_buf)) + "</code></pre>")
+                code_buf.clear()
+            else:
+                flush_para()
+                close_list()
+            in_code = not in_code
+            continue
+        if in_code:
+            code_buf.append(raw)
+            continue
+        if not line.strip():
+            flush_para()
+            close_list()
+            continue
+        m = re.match(r"^(#{1,4})\s+(.*)$", line)
+        if m:
+            flush_para()
+            close_list()
+            lvl = min(len(m.group(1)) + 1, 4)
+            out.append(f"<h{lvl}>" + _md_inline(esc(m.group(2))) + f"</h{lvl}>")
+            continue
+        m = re.match(r"^\s*[-*]\s+(.*)$", line)
+        if m:
+            flush_para()
+            if list_open != "ul":
+                close_list()
+                out.append("<ul>")
+                list_open = "ul"
+            out.append("<li>" + _md_inline(esc(m.group(1))) + "</li>")
+            continue
+        m = re.match(r"^\s*\d+\.\s+(.*)$", line)
+        if m:
+            flush_para()
+            if list_open != "ol":
+                close_list()
+                out.append("<ol>")
+                list_open = "ol"
+            out.append("<li>" + _md_inline(esc(m.group(1))) + "</li>")
+            continue
+        m = re.match(r"^\s*>\s?(.*)$", line)
+        if m:
+            flush_para()
+            close_list()
+            out.append("<blockquote>" + _md_inline(esc(m.group(1))) + "</blockquote>")
+            continue
+        para.append(line.strip())
+    if in_code and code_buf:
+        out.append("<pre><code>" + esc("\n".join(code_buf)) + "</code></pre>")
+    flush_para()
+    close_list()
+    return "\n".join(out)
+
+
+def pack_install_prompt(p) -> str:
+    return (f"请阅读 https://skillx.yueliai.top/install/pack-install.md,"
+            f"按其中的步骤安装专家团「{p['displayName']}」({p['slug']})。")
+
+
+def pack_card(p):
+    pers = p["persona"]
+    scene = pers.get("scene", "")
+    avatar = pers.get("avatar") or "assets/avatars/pack-default.svg"
+    origin_badge = ('<span class="tag kind-own" data-zh="自研" data-en="Own">自研</span>'
+                    if p.get("origin") == "own" else
+                    '<span class="tag kind-ext" data-zh="收录" data-en="Curated">收录</span>')
+    deg = ('<span class="tag risk-medium" data-zh="成员降级" data-en="Degraded">成员降级</span>'
+           if p.get("degraded") else "")
+    search = f"{p['displayName']} {p['displayNameEn']} {p['slug']} {p['summary']} {pers.get('role','')} {pers.get('tagline','')} " + " ".join(m.get('ref','') for m in p['members'])
+    tagline = pers.get("tagline") or p["summary"]
+    tagline_en = pers.get("taglineEn") or p["summaryEn"]
+    return f'''<div class="card pack-card cat-{esc(scene)}" data-search="{esc(search.lower())}" data-category="{esc(scene)}">
+  <div class="pack-head">
+    <img class="avatar" src="/{esc(avatar)}?v={media_ver(avatar)}" alt="" width="52" height="52">
+    <div>
+      <h3><a href="/{p['page']}">{esc(p['displayName'])}</a></h3>
+      <div class="en-name">{esc(p['displayNameEn'])} · {esc(p['slug'])}</div>
+    </div>
+  </div>
+  <div class="role">{esc(pers.get('role',''))}</div>
+  <p><span data-zh="{esc(tagline)}" data-en="{esc(tagline_en)}">{esc(tagline)}</span></p>
+  <div class="meta"><span class="tag cat">{esc(CATEGORIES.get(scene, scene))}</span>{origin_badge}{deg}<span class="count">{len(p['members'])} <span data-zh="个成员" data-en="members">个成员</span></span></div>
+</div>'''
+
+
+def render_packs(packs):
+    cards = "\n".join(pack_card(p) for p in packs)
+    body = cards if cards else ('<p class="hint-dim" data-zh="专家团正在收录中。" data-en="Expert packs are being curated.">专家团正在收录中。</p>')
+    inner = f'''
+<h2 data-zh="专家团" data-en="Expert Packs">专家团 <span class="n">{len(packs)} 个 · 人设 + 编排剧本 + 一键安装</span></h2>
+<p class="hint-dim" data-zh="专家团 = 带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队,配一份可直接执行的协作剧本。支持自研与收录两种来源;安装走安装契约文档,Agent 读文档即会安装,第三方应用也可直接调 API。" data-en="An expert pack is a persona-driven orchestration layer: own skills, curated skills and MCP servers grouped by scenario, with an executable collaboration script. Own and curated packs are both supported; installs follow the install contract doc, and third-party apps can call the API directly.">专家团 = 带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队,配一份可直接执行的协作剧本。支持自研与收录两种来源;安装走安装契约文档,Agent 读文档即会安装,第三方应用也可直接调 API。</p>
+<div class="search"><input id="q" type="search" data-zh="按名称或关键词筛选专家团…" data-en="Filter expert packs…" data-attr="placeholder" placeholder="按名称或关键词筛选专家团…"></div>
+{chips_html()}
+<div class="grid grid-mt">{body}</div>
+<div class="empty hidden" id="empty" data-zh="没有匹配的专家团" data-en="No matching expert packs">没有匹配的专家团</div>
+<div class="notice"><span data-zh="安装契约文档(给 Agent 读的提示词入口):" data-en="Install contract doc (prompt entry for agents):">安装契约文档(给 Agent 读的提示词入口):</span><code class="inl">https://skillx.yueliai.top/install/pack-install.md</code></div>'''
+    return page_shell("专家团", "Expert Packs", "packs", inner)
+
+
+def render_pack_detail(p):
+    pers = p["persona"]
+    scene = pers.get("scene", "")
+    avatar = pers.get("avatar") or "assets/avatars/pack-default.svg"
+    body_html = md_to_html(parse_frontmatter(p.get("content") or "")[2])
+    member_cards = []
+    for m in p["members"]:
+        zh, en, cls = MEMBER_TYPE_LABEL.get(m.get("type"), (m.get("type", ""), m.get("type", ""), "kind-preview"))
+        if not m.get("resolved"):
+            note = m.get("note", "成员暂不可用")
+            member_cards.append(f'''<div class="card member-card member-missing">
+  <div class="card-head"><h3>{esc(m.get('ref',''))}</h3><span class="tag risk-medium" data-zh="不可用" data-en="Unavailable">不可用</span></div>
+  <p class="hint-warn">{esc(note)}</p>
+</div>''')
+            continue
+        title = m.get("title") or m.get("ref", "")
+        title_html = f'<a href="{esc(m["page"])}">{esc(title)}</a>' if m.get("page") else esc(title)
+        desc = m.get("description-zh") or m.get("description", "")
+        cmd = m.get("install") or ""
+        if m.get("type") == "mcp":
+            path = esc(m.get("installPath", ""))
+            cmd_block = (f'<p class="hint-dim" data-zh="接入描述:GET {path}(含客户端配置片段与密钥声明)" '
+                         f'data-en="Install descriptor: GET {path}">接入描述:<code class="inl">GET {path}</code>(含客户端配置片段与密钥声明)</p>')
+            copy_btn = ""
+        elif cmd:
+            cmd_block = f'<div class="cmd">{esc(cmd)}</div>'
+            copy_btn = (f'<button class="chip on copy-btn" data-copy="{esc(cmd)}" data-skill="{esc(m.get("name", m.get("ref", "")))}" '
+                        f'data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>')
+        else:
+            cmd_block, copy_btn = "", ""
+        member_cards.append(f'''<div class="card member-card cat-{esc(m.get('category', ''))}">
+  <div class="card-head"><h3>{title_html}</h3><span class="tag {cls}" data-zh="{esc(zh)}" data-en="{esc(en)}">{esc(zh)}</span></div>
+  <div class="en-name">{esc(m.get('ref',''))}</div>
+  <p>{esc(desc)}</p>
+  {cmd_block}{copy_btn}
+</div>''')
+    members_html = "\n".join(member_cards)
+    prompt = pack_install_prompt(p)
+    deg_html = ("" if not p.get("degraded") else
+                f'<div class="notice"><span data-zh="部分成员已下架或未收录,安装前请核对成员状态:" data-en="Some members are unavailable; verify before install:">部分成员已下架或未收录,安装前请核对成员状态:</span><code class="inl">{esc(", ".join(p.get("missingMembers") or []))}</code></div>')
+    origin_text = "自研专家团" if p.get("origin") == "own" else "收录专家团"
+    origin_en = "Own pack" if p.get("origin") == "own" else "Curated pack"
+    upstream_html = (f'<a href="{esc(p["upstream"])}">上游来源</a>' if p.get("upstream") else "—")
+    status_txt = "部分成员不可用" if p.get("degraded") else "成员齐备"
+    install_cmd = p.get("install") or ""
+    install_html = (f'<div class="cmd">{esc(install_cmd)}</div><button class="chip on copy-btn" data-copy="{esc(install_cmd)}" data-skill="pack/{esc(p["slug"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>' if install_cmd else "")
+    inner = f'''<div class="detail persona-hero">
+  <img class="avatar xl" src="/{esc(avatar)}?v={media_ver(avatar)}" alt="" width="104" height="104">
+  <div class="persona-body">
+    <div class="card-head"><h1>{esc(p['displayName'])}</h1><span class="badge auth" data-zh="{origin_text}" data-en="{origin_en}">{origin_text}</span></div>
+    <div class="en-name">{esc(p['displayNameEn'])} · {esc(p['slug'])}</div>
+    <p class="persona-role"><span data-zh="{esc(pers.get('role',''))}" data-en="{esc(pers.get('roleEn',''))}">{esc(pers.get('role',''))}</span></p>
+    <p class="persona-tagline"><span data-zh="{esc(pers.get('tagline',''))}" data-en="{esc(pers.get('taglineEn',''))}">{esc(pers.get('tagline',''))}</span></p>
+    <p class="desc"><span data-zh="{esc(pers.get('intro',''))}" data-en="{esc(pers.get('introEn',''))}">{esc(pers.get('intro',''))}</span></p>
+  </div>
+</div>
+<dl class="kv">
+  <dt data-zh="场景" data-en="Scene">场景</dt><dd>{esc(CATEGORIES.get(scene, scene))}</dd>
+  <dt data-zh="成员" data-en="Members">成员</dt><dd>{len(p['members'])} 个</dd>
+  <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(p.get('license') or '—')}</dd>
+  <dt data-zh="成员状态" data-en="Status">成员状态</dt><dd>{status_txt}</dd>
+  <dt data-zh="收录审查" data-en="Review">收录审查</dt><dd>{esc(p['reviewed'].get('by') or '—')} · {esc(p['reviewed'].get('at') or '—')}</dd>
+  <dt data-zh="上游" data-en="Upstream">上游</dt><dd>{upstream_html}</dd>
+</dl>
+{deg_html}
+<h2 data-zh="成员编队" data-en="Member squad">成员编队 <span class="n">{len(p['members'])} 个 · 按剧本顺序安装</span></h2>
+<div class="grid">{members_html}</div>
+<h2 data-zh="协作剧本" data-en="Collaboration script">协作剧本 <span class="n">meta-skill 正文</span></h2>
+<div class="md-body">{body_html}</div>
+<h2 data-zh="安装" data-en="Install">安装</h2>
+<p class="hint-ok" data-zh="给 Agent 的安装提示词(复制后直接发给任意 Agent):" data-en="Install prompt for an agent (copy and send):">给 Agent 的安装提示词(复制后直接发给任意 Agent):</p>
+<div class="cmd">{esc(prompt)}</div>
+<button class="chip on copy-btn" data-copy="{esc(prompt)}" data-skill="pack/{esc(p["slug"])}" data-zh="复制安装提示词" data-en="Copy install prompt">复制安装提示词</button>
+<p class="hint-dim" data-zh="安装该专家团的编排技能(meta-skill,获得完整剧本):" data-en="Install the pack meta-skill (full script included):">安装该专家团的编排技能(meta-skill,获得完整剧本):</p>
+{install_html}
+<p class="hint-dim" data-zh="程序化接入:GET /v0/packs/{esc(p['slug'])} 取成员安装描述符;契约文档 /install/pack-install.md;安装回报 POST /api/pack/install。" data-en="Programmatic: GET /v0/packs/{esc(p['slug'])} for member descriptors; contract at /install/pack-install.md; report installs via POST /api/pack/install.">程序化接入:<code class="inl">GET /v0/packs/{esc(p['slug'])}</code> 取成员安装描述符;契约文档 <code class="inl">/install/pack-install.md</code>;安装回报 <code class="inl">POST /api/pack/install</code>。</p>'''
+    return page_shell(f"{p['displayName']} · 专家团", p['displayNameEn'], "packs", inner)
+
+
+def render_pack_install_doc(packs):
+    """全局安装契约文档(给 Agent 读的提示词入口,静态生成到 /install/pack-install.md)。"""
+    rows = [f"- {p['displayName']}({p['displayNameEn']}, slug: {p['slug']})· {p['summary']}" for p in packs]
+    lines = [
+        "# Skill X 专家团安装契约",
+        "",
+        "## 概述",
+        "",
+        "Skill X 是面向安全研究与逆向工程的技能/专家团注册中心,提供橱窗站与公开 API,不提供自有 CLI。",
+        "Agent 读取本文档后,用标准 HTTP 请求 + npx skills 即可完成专家团安装;第三方应用程序可直接按同样流程程序化接入。",
+        "",
+        "## 适用场景(先判断)",
+        "",
+        "- 仅安装某个专家团 → 直接执行第三节:先拉 GET /v0/packs/<slug>,再按成员清单逐个安装,不要重复询问。",
+        "- 想先浏览有哪些专家团 → 读第二节的清单接口或访问橱窗页。",
+        "",
+        "## 一、前置检查",
+        "",
+        "- 站点与 API 基址:`https://skillx.yueliai.top`(本机需可联网访问)。",
+        "- 安装成员需要能执行 `npx skills`(vercel-labs/skills CLI,支持 80+ agent)。",
+        "- 自研成员来自私有仓库,需要用户提供 `GITHUB_TOKEN`(PAT,Contents: read)。没有凭据时:跳过自研成员,只装收录成员,并向用户说明。",
+        "",
+        "## 二、浏览专家团(可选)",
+        "",
+        "```bash",
+        "curl -s https://skillx.yueliai.top/v0/packs",
+        "```",
+        "",
+        "返回 JSON:每个专家团含 slug / displayName / persona / summary / memberCount / degraded,游标分页(?cursor=&limit=)。",
+        "当前已收录的专家团:",
+        "",
+    ] + (rows or ["- (暂无)"]) + [
+        "",
+        "## 三、安装专家团(核心流程)",
+        "",
+        "### 第 1 步:读取专家团详情",
+        "",
+        "```bash",
+        "curl -s https://skillx.yueliai.top/v0/packs/<slug>",
+        "```",
+        "",
+        "详情返回 members[],每个成员带 type / ref / name / title / install / page / resolved:",
+        "",
+        "- type=own-skill:install 是自研安装命令(含 <PAT> 占位,需替换为用户提供的真实 GITHUB_TOKEN)。",
+        "- type=ext-skill:install 是上游安装命令,可直接执行。",
+        "- type=mcp:用 ref 调 GET /v0/servers/<ref>/install 取客户端配置片段;需要密钥时向用户索要,密钥只在本地写入客户端配置,不经过本站。",
+        "- type=cli/api:预留类型,按 install 字段执行。",
+        "",
+        "### 第 2 步:安装编排技能(meta-skill)",
+        "",
+        "专家团本身是一个 meta-skill(详情 install 字段给出命令),安装后 Agent 获得完整协作剧本:",
+        "",
+        "```bash",
+        "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-<slug>",
+        "```",
+        "",
+        "### 第 3 步:按顺序安装成员",
+        "",
+        "按成员清单顺序逐个安装;单个成员失败时:记录失败原因,继续安装其余成员,最后汇总。",
+        "",
+        "### 第 4 步:回报安装(可选)",
+        "",
+        "```bash",
+        "curl -s -X POST -H \"Content-Type: application/json\" -d '{\"slug\":\"<slug>\"}' https://skillx.yueliai.top/api/pack/install",
+        "```",
+        "",
+        "## 四、失败与回退",
+        "",
+        "- API 不可达:改用橱窗页 https://skillx.yueliai.top/packages/<slug>.html 人工指引。",
+        "- 成员 resolved=false(已下架):跳过该成员并说明;degraded=true 的专家团不阻塞其余成员安装。",
+        "- skills CLI 找不到全局加载目录:按目标 Agent 文档确认其全局 skills 目录后再装。",
+        "",
+        "## 五、验收",
+        "",
+        "安装完成后逐项报告:已装成员(名称/类型/安装方式)、未装成员及原因、专家团 meta-skill 是否可被 Agent 加载。",
+        "",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_home(own, suites, mcps, packs, map_svg=""):
     total_ext = sum(len(s["skills"]) for s in suites)
+    plugins = [m for m in mcps if m.get("entryType", "mcp") == "plugin"]
     audit = load_audit()
     audit_at = audit.get("generatedAt", "")
     audit_entry = (audit.get("skills") or {}).get("binary-reverse-engineering")
     featured = "\n".join(card(s, "own", s["page"], s["name"]) for s in own[:3])
+    packs_html = "\n".join(pack_card(p) for p in packs)
     for suite in suites:
         ns = suite["namespace"]
         for s in suite["skills"][:2]:
@@ -1255,6 +1739,15 @@ def render_home(own, suites, mcps, map_svg=""):
     if not mcp_items:
         mcp_items = ('<p class="hint-dim" data-zh="MCP 服务正在收录中。" '
                      'data-en="MCP servers are being curated.">MCP 服务正在收录中。</p>')
+    plugin_items = ""
+    for m in plugins[:3]:
+        risk = esc(m.get("riskLevel", ""))
+        plugin_items += (f'<a class="home-mcp-item" href="/mcp/{mcp_slug(m["name"])}.html">'
+                         f'<div class="t">{esc(m.get("title", m["name"]))}</div>'
+                         f'<div class="id">{esc(m["name"])}</div>'
+                         f'<div class="meta"><span class="tag" data-zh="插件" data-en="Plugin">插件</span>'
+                         f'<span class="tag risk-{risk}">{risk}</span>'
+                         f'<span class="tag">v{esc(m.get("version", ""))}</span></div></a>')
     first_mcp = mcps[0] if mcps else None
     if first_mcp:
         mcp_name = first_mcp["name"]
@@ -1331,10 +1824,24 @@ def render_home(own, suites, mcps, map_svg=""):
 </section>
 
 <section class="home-mcp">
-  <h2 data-zh="MCP 服务" data-en="MCP servers">MCP 服务 <span class="n">{len(mcps)} 个已过审</span></h2>
+  <h2 data-zh="专家团" data-en="Expert packs">专家团 <span class="n">{len(packs)} 个已过审 · 人设 + 编排剧本</span></h2>
+  <p class="hint-dim" data-zh="带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队。安装走安装契约文档,Agent 读文档即会安装。" data-en="Persona-driven orchestration: own skills, curated skills and MCP servers grouped by scenario. Installs follow the contract doc that agents can read directly.">带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队。安装走安装契约文档,Agent 读文档即会安装。</p>
+  <div class="grid reveal">{packs_html}</div>
+  <p class="home-more"><a class="btn ghost" href="/packages.html" data-zh="全部专家团" data-en="All expert packs">全部专家团</a></p>
+</section>
+
+<section class="home-mcp">
+  <h2 data-zh="MCP 服务" data-en="MCP servers">MCP 服务 <span class="n">{len([m for m in mcps if m.get('entryType','mcp') == 'mcp'])} 个已过审</span></h2>
   <p class="hint-dim" data-zh="按官方 server.json 标准收录,只放人工审查通过的条目;密钥与认证头永不经过本站。" data-en="Curated to the official server.json standard; reviewed entries only; secrets never pass through this site.">按官方 server.json 标准收录,只放人工审查通过的条目;密钥与认证头永不经过本站。</p>
   <div class="home-mcp-list reveal">{mcp_items}</div>
   <p class="home-more"><a class="btn ghost" href="/mcp.html" data-zh="全部 MCP 服务" data-en="All MCP servers">全部 MCP 服务</a></p>
+</section>
+
+<section class="home-mcp">
+  <h2 data-zh="Agent 插件" data-en="Agent plugins">Agent 插件 <span class="n">{len(plugins)} 个已过审</span></h2>
+  <p class="hint-dim" data-zh="AI 编程客户端的插件与扩展,指路牌只指向官方一手市场;本体不经本站分发。" data-en="Plugins & extensions for AI coding clients; signposts point only to official first-party marketplaces; nothing is redistributed.">AI 编程客户端的插件与扩展,指路牌只指向官方一手市场;本体不经本站分发。</p>
+  <div class="home-mcp-list reveal">{plugin_items}</div>
+  <p class="home-more"><a class="btn ghost" href="/plugins.html" data-zh="全部插件" data-en="All plugins">全部插件</a></p>
 </section>
 
 <section class="home-trust">
@@ -1372,6 +1879,7 @@ def main():
     own, bodies = collect_own_skills()
     suites, _ = collect_external()
     mcps = collect_mcps()
+    packs = collect_packs()
     stats = fetch_upstream_stats([s["namespace"] for s in suites])
     for s in suites:
         s["stats"] = stats.get(s["namespace"], {})
@@ -1386,8 +1894,10 @@ def main():
             except Exception:
                 continue
 
-    pages = {"index.html": render_home(own, suites, mcps, mmaps.get("binary-reverse-engineering", "")),
+    pages = {"index.html": render_home(own, suites, mcps, packs, mmaps.get("binary-reverse-engineering", "")),
              "skills.html": render_index(own, suites)}
+    pages["packages.html"] = render_packs(packs)
+    pages["install/pack-install.md"] = render_pack_install_doc(packs)
     tool_docs = apidocs.collect()
     audit = load_audit()
     audit_at = audit.get("generatedAt", "")
@@ -1403,9 +1913,17 @@ def main():
             pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(
                 suite, s, (audit.get("suites") or {}).get(ns), audit_at,
                 mmaps.get(f"suite-{ns_slug(ns)}", ""))
-    pages["mcp.html"] = render_mcp(mcps)
+    real_mcps = [m for m in mcps if m.get("entryType", "mcp") == "mcp"]
+    plugin_entries = [m for m in mcps if m.get("entryType", "mcp") == "plugin"]
+    pages["mcp.html"] = render_mcp(real_mcps)
+    pages["plugins.html"] = render_plugins(plugin_entries)
     for m in mcps:
         pages[f"mcp/{mcp_slug(m['name'])}.html"] = render_mcp_detail(m)
+    for p in packs:
+        pages[p["page"]] = render_pack_detail(p)
+    stale_packs = [p["slug"] for p in packs if not p["contentFresh"]]
+    if stale_packs:
+        print(f"[!] 专家团编排剧本与 packs.json 缓存不一致(跑 scripts/pack_ingest.py --sync 可修复): {', '.join(stale_packs)}")
     pages["api.html"] = render_api(own, suites)
     pages["about.html"] = render_about(own, suites)
 
@@ -1418,7 +1936,12 @@ def main():
         except json.JSONDecodeError:
             pass
     new_manifest, written, skipped = {}, 0, 0
-    src_all = "".join(s["src"] for s in own) + (EXTERNAL.read_text(encoding="utf-8") if EXTERNAL.is_file() else "") + (I18N_EXT.read_text(encoding="utf-8") if I18N_EXT.is_file() else "")
+    src_all = ("".join(s["src"] for s in own)
+               + (EXTERNAL.read_text(encoding="utf-8") if EXTERNAL.is_file() else "")
+               + (I18N_EXT.read_text(encoding="utf-8") if I18N_EXT.is_file() else "")
+               + (PACKS.read_text(encoding="utf-8") if PACKS.is_file() else "")
+               + (I18N_PACKS.read_text(encoding="utf-8") if I18N_PACKS.is_file() else "")
+               + "".join(p["content"] for p in packs))
 
     for rel, text in pages.items():
         key = sha(TEMPLATE_VERSION + rel + src_all + text)
@@ -1469,17 +1992,19 @@ def main():
     src_assets = Path(__file__).resolve().parent / "assets"
     if src_assets.is_dir():
         media_ext = (".jpg", ".jpeg", ".png", ".webp", ".avif", ".svg", ".ico", ".mp4", ".webm")
-        for f in sorted(src_assets.iterdir()):
+        for f in sorted(src_assets.rglob("*")):
             if not f.is_file() or f.suffix.lower() not in media_ext:
                 continue
             data = f.read_bytes()
-            rel_asset = f"assets/{f.name}"
-            key = sha(TEMPLATE_VERSION + f.name + hashlib.sha256(data).hexdigest())
+            rel_name = f.relative_to(src_assets).as_posix()
+            rel_asset = f"assets/{rel_name}"
+            key = sha(TEMPLATE_VERSION + rel_name + hashlib.sha256(data).hexdigest())
             new_manifest[rel_asset] = key
-            p = assets / f.name
+            p = assets / rel_name
             if old_manifest.get(rel_asset) == key and p.is_file():
                 skipped += 1
             else:
+                p.parent.mkdir(parents=True, exist_ok=True)
                 p.write_bytes(data)
                 written += 1
 
@@ -1490,7 +2015,7 @@ def main():
         if not f.is_file() or f.is_symlink():
             continue
         rel = str(f.relative_to(DIST)).replace("\\", "/")
-        stale_page = rel.endswith((".html", ".svg")) and rel not in valid
+        stale_page = rel.endswith((".html", ".svg", ".md")) and rel not in valid
         stale_media = rel.startswith("assets/") and rel not in valid
         if stale_page or stale_media:
             f.unlink()
@@ -1532,12 +2057,34 @@ def main():
                 "name": s.get("name"), "title": s.get("title") or s.get("name"),
                 "description": s.get("description"), "description-zh": cur.get("description-zh", ""),
                 "version": s.get("version"), "kind": cur.get("kind"),
+                "entryType": cur.get("entryType", "mcp"),
                 "category": cur.get("category"), "riskLevel": cur.get("riskLevel"),
                 "installHint": cur.get("installHint", ""),
+                "install": cur.get("install") or {},
+                "page": f"/mcp/{mcp_slug(s.get('name', ''))}.html",
                 "remotes": [{"type": r.get("type"), "url": r.get("url")} for r in (s.get("remotes") or [])],
                 "packages": [{"registryType": p.get("registryType"), "identifier": p.get("identifier"), "version": p.get("version")} for p in (s.get("packages") or [])],
             })
     site_data["mcps"] = mcps
+    # 专家团面:只放出已过审 pack;成员为解析后状态(降级可见),不含任何密钥
+    site_data["packs"] = [{
+        "slug": p["slug"],
+        "displayName": p["displayName"],
+        "displayNameEn": p["displayNameEn"],
+        "skill": p["skill"],
+        "summary": p["summary"],
+        "summaryEn": p["summaryEn"],
+        "persona": {k: p["persona"].get(k, "") for k in ("role", "roleEn", "tagline", "taglineEn", "scene", "subScene", "avatar")},
+        "origin": p["origin"],
+        "memberCount": len(p["members"]),
+        "members": [{"type": m.get("type"), "ref": m.get("ref"), "name": m.get("name", m.get("ref")), "resolved": m.get("resolved", False)} for m in p["members"]],
+        "degraded": p["degraded"],
+        "page": "/" + p["page"],
+        "install": p["install"],
+        "installPrompt": pack_install_prompt(p),
+        "installDoc": "/install/pack-install.md",
+        "detailApi": f"/v0/packs/{p['slug']}",
+    } for p in packs]
     (DIST / "site-data.json").write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # 机器可读数据接口:工具清单 + 审计报告(供外部程序调用,nginx 静态提供)
@@ -1550,7 +2097,7 @@ def main():
         (DIST / "audit-report.json").write_text(AUDIT_PATH.read_text(encoding="utf-8"), encoding="utf-8")
 
     MANIFEST.write_text(json.dumps(new_manifest, indent=1), encoding="utf-8")
-    print(f"[+] 产物 {len(pages)} 页 + 2 assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};自研 {len(own)},套件 {len(suites)})")
+    print(f"[+] 产物 {len(pages)} 页 + assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};自研 {len(own)},套件 {len(suites)},专家团 {len(packs)})")
     return 0
 
 
