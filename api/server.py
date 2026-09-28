@@ -148,6 +148,83 @@ def mcp_passed():
     return out
 
 
+def mcp_find(name: str):
+    """按 name 找已过审条目(原始 server.json + curated)。"""
+    for s in MCP_REGISTRY.get("servers", []):
+        if s.get("name") != name:
+            continue
+        cur = (s.get("_meta") or {}).get("top.skillx/curated") or {}
+        if (cur.get("reviewed") or {}).get("execReview") == "passed":
+            return s, cur
+    return None, None
+
+
+def mcp_install_descriptor(name: str):
+    """生成应用程序可直接用于 安装/连接 的结构化描述。
+    远程型:config={type,url};本地型:config={command,args,env}。
+    clientSnippets 给主流客户端可直接写入其 MCP 配置的 JSON 片段。
+    requiredSecrets 声明应用需向用户收集哪些密钥(不落库)。"""
+    s, cur = mcp_find(name)
+    if not s:
+        return None
+    pkgs = s.get("packages") or []
+    remotes = s.get("remotes") or []
+    title = s.get("title") or name
+    short = name.split("/")[-1]
+    secrets = []
+    if remotes:
+        r = remotes[0]
+        kind = "remote"
+        config = {"type": r.get("type", "streamable-http"), "url": r.get("url", "")}
+        for h in r.get("headers") or []:
+            if h.get("isSecret"):
+                secrets.append({"name": h.get("name"), "description": h.get("description", ""), "isRequired": bool(h.get("isRequired"))})
+        client_snippets = {
+            "claude": {"mcpServers": {short: {"type": "http", "url": config["url"]}}},
+            "cursor": {"mcpServers": {short: {"url": config["url"]}}},
+            "codex": {"mcp_servers": {short: {"url": config["url"]}}},
+            "vscode": {"servers": {short: {"type": "http", "url": config["url"]}}},
+        }
+    elif pkgs:
+        p = pkgs[0]
+        kind = "local"
+        rt = p.get("registryType", "npm")
+        ident = p.get("identifier", "")
+        ver = p.get("version", "")
+        runner = {"npm": "npx", "pypi": "uvx", "nuget": "dnx", "oci": "docker", "mcpb": "mcpb"}.get(rt, "npx")
+        if runner == "npx":
+            args = ["-y", f"{ident}@{ver}" if ver else ident]
+        elif runner == "uvx":
+            args = [f"{ident}=={ver}" if ver else ident]
+        else:
+            args = [ident]
+        for a in p.get("packageArguments") or []:
+            if a.get("type") == "positional":
+                args.append(a.get("value", ""))
+        env = {}
+        for ev in p.get("environmentVariables") or []:
+            env[ev.get("name", "")] = ""
+            if ev.get("isSecret"):
+                secrets.append({"name": ev.get("name"), "description": ev.get("description", ""), "isRequired": bool(ev.get("isRequired"))})
+        config = {"command": runner, "args": args, "env": env}
+        client_snippets = {
+            "claude": {"mcpServers": {short: {"command": runner, "args": args, "env": env}}},
+            "cursor": {"mcpServers": {short: {"command": runner, "args": args, "env": env}}},
+            "codex": {"mcp_servers": {short: {"command": runner, "args": args, "env": env}}},
+            "vscode": {"servers": {short: {"type": "stdio", "command": runner, "args": args, "env": env}}},
+        }
+    else:
+        return None
+    return {
+        "name": name, "title": title, "version": s.get("version", ""), "kind": kind,
+        "config": config,
+        "requiredSecrets": secrets,
+        "clientSnippets": client_snippets,
+        "riskLevel": cur.get("riskLevel", "medium"),
+        "riskNote": cur.get("riskNote", ""),
+    }
+
+
 def rate_ok(ip: str) -> bool:
     now = time.time()
     hits = [t for t in _rate.get(ip, []) if now - t < 60]
@@ -260,6 +337,12 @@ class Handler(BaseHTTPRequestHandler):
             if start + limit < len(items) and page:
                 nxt = f"{page[-1]['server']['name']}:{page[-1]['server']['version']}"
             return self._json({"servers": page, "metadata": {"nextCursor": nxt, "count": len(page)}})
+        m_inst = re.fullmatch(r"/v0/servers/([\w.-]+/[\w.-]+)/install", path)
+        if m_inst:
+            d = mcp_install_descriptor(m_inst.group(1))
+            if not d:
+                return self._json({"error": "server not found or not reviewed"}, 404)
+            return self._json(d)
         if path == "/api/recommend":
             q = urllib.parse.parse_qs(urlparse(self.path).query).get("q", [""])[0]
             if not q.strip():
@@ -275,7 +358,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
-        if path not in ("/api/download", "/api/recommend", "/api/mcp/install"):
+        if path not in ("/api/download", "/api/recommend", "/api/mcp/install", "/api/mcp/connect"):
             return self._json({"error": "not found"}, 404)
         if not self._guarded():
             return
@@ -286,6 +369,36 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length) or b"{}")
         except Exception:
             return self._json({"error": "bad json"}, 400)
+        if path == "/api/mcp/connect":
+            name = str(body.get("name", "")).strip()
+            client = str(body.get("client", "claude")).strip().lower()
+            secrets = body.get("secrets") or {}
+            if not name or not VALID_KEY.match(name):
+                return self._json({"error": "bad name"}, 400)
+            d = mcp_install_descriptor(name)
+            if not d:
+                return self._json({"error": "server not found or not reviewed"}, 404)
+            if client not in d["clientSnippets"]:
+                return self._json({"error": f"unsupported client, use one of {sorted(d['clientSnippets'])}"}, 400)
+            missing = [s["name"] for s in d["requiredSecrets"] if s.get("isRequired") and not secrets.get(s["name"])]
+            if missing:
+                return self._json({"error": "missing required secrets", "missing": missing}, 400)
+            # 内存中把密钥填进客户端片段返回;不落库、不写日志
+            snippet = json.loads(json.dumps(d["clientSnippets"][client]))
+            srv_key = next(iter(next(iter(snippet.values())).keys()))
+            node = next(iter(snippet.values()))[srv_key]
+            if d["kind"] == "local":
+                node.setdefault("env", {})
+                for k, v in secrets.items():
+                    if k in node["env"] or any(s["name"] == k for s in d["requiredSecrets"]):
+                        node["env"][k] = v
+            else:
+                if secrets:
+                    node.setdefault("headers", {})
+                    for k, v in secrets.items():
+                        node["headers"][k] = v
+            bump(f"mcp-connect:{name}")
+            return self._json({"ok": True, "name": name, "client": client, "configSnippet": snippet, "n": all_counts().get(f"mcp-connect:{name}", 0)})
         if path == "/api/mcp/install":
             name = str(body.get("name", "")).strip()
             if not name or not VALID_KEY.match(name):

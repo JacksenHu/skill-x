@@ -915,11 +915,15 @@ def render_api(own, suites):
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
 <tr><td><code class="inl">/v0/servers</code></td><td>GET</td><td data-zh="MCP 服务列表(官方 Registry 兼容,游标分页 ?limit&cursor;只返回已过审条目)" data-en="MCP server list (official Registry-compatible, cursor-paginated; reviewed entries only)">MCP 服务列表(官方 Registry 兼容,游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目)</td></tr>
 <tr><td><code class="inl">/api/mcp/install</code></td><td>POST</td><td data-zh="记录一次 MCP 安装/连接。Body: {{&quot;name&quot;:&quot;&lt;ns/name&gt;&quot;}}" data-en="Record an MCP install/connect. Body: name">记录一次 MCP 安装/连接。Body: <code class="inl">{{"name":"&lt;ns/name&gt;"}}</code></td></tr>
+<tr><td><code class="inl">/v0/servers/&lt;ns/name&gt;/install</code></td><td>GET</td><td data-zh="MCP 接入描述:返回应用程序可直接用于安装/连接的结构化 JSON(config/requiredSecrets/clientSnippets 含 claude/cursor/codex/vscode 客户端片段)" data-en="MCP install descriptor: structured JSON for programmatic install/connect (config, requiredSecrets, clientSnippets for claude/cursor/codex/vscode)">MCP 接入描述:返回应用程序可直接用于安装/连接的结构化 JSON(config / requiredSecrets / clientSnippets 含 claude/cursor/codex/vscode 客户端片段)</td></tr>
+<tr><td><code class="inl">/api/mcp/connect</code></td><td>POST</td><td data-zh="代为连接:Body {{&quot;name&quot;,&quot;client&quot;,&quot;secrets&quot;}};校验必填密钥后返回填好密钥的客户端配置片段(密钥仅内存拼接返回,不落库)" data-en="Connect on behalf: body name/client/secrets; validates required secrets and returns the filled client config snippet (secrets assembled in memory only, never stored)">代为连接:Body <code class="inl">{{"name","client","secrets"}}</code>;校验必填密钥后返回填好密钥的客户端配置片段(密钥仅内存拼接返回,不落库)</td></tr>
 </table>
 <h2 class="h2-sm" data-zh="使用示例" data-en="Examples">使用示例</h2>
 <div class="cmd">curl -s https://skillx.yueliai.top/api/stats</div>
 <div class="cmd">curl -s "https://skillx.yueliai.top/v0/servers?limit=10"</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"name":"ac.inference.sh/mcp"}}' https://skillx.yueliai.top/api/mcp/install</div>
+<div class="cmd">curl -s https://skillx.yueliai.top/v0/servers/ac.inference.sh/mcp/install</div>
+<div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"name":"ac.inference.sh/mcp","client":"claude","secrets":{{}}}}' https://skillx.yueliai.top/api/mcp/connect</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"skill":"malware-analysis","action":"copy"}}' https://skillx.yueliai.top/api/download</div>
 <div class="cmd">curl -s "https://skillx.yueliai.top/api/recommend?q=想给安卓apk脱壳"</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"query":"测试集体变红怎么排查"}}' https://skillx.yueliai.top/api/recommend</div>
