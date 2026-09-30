@@ -1,6 +1,70 @@
 {
   "generatedAt": "2026-09-30",
   "skills": {
+    "asm-analysis": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "2 个文件, 58 KB"
+        }
+      ],
+      "scannedFiles": 2,
+      "scannedBytes": 59584
+    },
     "binary-reverse-engineering": {
       "grade": "A-",
       "score": 92,
@@ -64,6 +128,6406 @@
       ],
       "scannedFiles": 7,
       "scannedBytes": 10329
+    },
+    "coldbrew-api-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1050
+    },
+    "coldbrew-identity": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 799
+    },
+    "coldbrew-native-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1048
+    },
+    "coldbrew-protocol-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 972
+    },
+    "elf-local-auth-patcher": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "2 个文件, 23 KB"
+        }
+      ],
+      "scannedFiles": 2,
+      "scannedBytes": 23928
+    },
+    "eni-api-assurance-lane": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1112
+    },
+    "eni-api-security": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 5 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 5644
+    },
+    "eni-apk-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 9 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 10042
+    },
+    "eni-architecture-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1394
+    },
+    "eni-attack-chain": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "2 个文件, 17 KB"
+        }
+      ],
+      "scannedFiles": 2,
+      "scannedBytes": 18260
+    },
+    "eni-binary-diff": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 10 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 11167
+    },
+    "eni-blackbox-reverse-boost": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3484
+    },
+    "eni-browser-automation": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 7 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 7521
+    },
+    "eni-browser-research-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1396
+    },
+    "eni-burp-mcp": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 831
+    },
+    "eni-case-lab": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2029
+    },
+    "eni-cf-security-lab-router": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2209
+    },
+    "eni-cloud-container-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1362
+    },
+    "eni-code-security-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1398
+    },
+    "eni-core": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 921
+    },
+    "eni-crack-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1531
+    },
+    "eni-ctf-orchestrator": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1242
+    },
+    "eni-diagram": {
+      "grade": "B",
+      "score": 80,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "medium",
+          "pass": false,
+          "detail": "硬编码非文档 URL 2 个: https://graphviz.org/download/; https://plantuml.com/download"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 9 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 9747
+    },
+    "eni-docs": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 6 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 6272
+    },
+    "eni-edr-bypass": {
+      "grade": "B",
+      "score": 80,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "medium",
+          "pass": false,
+          "detail": "硬编码非文档 URL 1 个: https://attack.mitre.org/techniques/T1562/"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 7 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 8135
+    },
+    "eni-field-journal": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 973
+    },
+    "eni-firmware-pentest": {
+      "grade": "B",
+      "score": 80,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "medium",
+          "pass": false,
+          "detail": "硬编码非文档 URL 2 个: http://attacker/x;sh; https://fccid.io/?q=$FCC_ID"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 11 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 12002
+    },
+    "eni-firmware-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1363
+    },
+    "eni-five-edge": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1305
+    },
+    "eni-fuzzing-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1429
+    },
+    "eni-game-cheat-lab-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3778
+    },
+    "eni-game-hacking": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "2 个文件, 53 KB"
+        }
+      ],
+      "scannedFiles": 2,
+      "scannedBytes": 55227
+    },
+    "eni-game-security": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2620
+    },
+    "eni-github-workflow-hub": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1422
+    },
+    "eni-ida-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 14 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 14462
+    },
+    "eni-js-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 8 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 8310
+    },
+    "eni-kali": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 807
+    },
+    "eni-license-security": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2563
+    },
+    "eni-llm-security": {
+      "grade": "C",
+      "score": 65,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "high",
+          "pass": false,
+          "detail": "命中: Ignore all previous instructions"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 5 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 5314
+    },
+    "eni-malware-analysis": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 7 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 7785
+    },
+    "eni-malware-ir-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1351
+    },
+    "eni-memory-forensics": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2323
+    },
+    "eni-mobile-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 5 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 6033
+    },
+    "eni-mobile-security-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1377
+    },
+    "eni-patch-diff-exploit": {
+      "grade": "B",
+      "score": 80,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "medium",
+          "pass": false,
+          "detail": "硬编码非文档 URL 1 个: https://msdl.microsoft.com/download/symbols"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 11 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 12045
+    },
+    "eni-pentest-advanced": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2663
+    },
+    "eni-pentest-tools": {
+      "grade": "B",
+      "score": 80,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "medium",
+          "pass": false,
+          "detail": "硬编码非文档 URL 1 个: https://book.hacktricks.wiki/"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 10 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 10623
+    },
+    "eni-pentest-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1463
+    },
+    "eni-pwn-chain": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 8 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 8850
+    },
+    "eni-radare2": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 10 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 10438
+    },
+    "eni-redteam-ad-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3822
+    },
+    "eni-redteam-api-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3617
+    },
+    "eni-redteam-auth-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3831
+    },
+    "eni-redteam-cache-poison-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3567
+    },
+    "eni-redteam-clickjacking-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3620
+    },
+    "eni-redteam-cloud-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3606
+    },
+    "eni-redteam-cmdi-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3709
+    },
+    "eni-redteam-code-audit-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3509
+    },
+    "eni-redteam-container-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3592
+    },
+    "eni-redteam-cors-miscfg-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3552
+    },
+    "eni-redteam-crypto-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3657
+    },
+    "eni-redteam-csrf-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3682
+    },
+    "eni-redteam-cve-lookup": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3680
+    },
+    "eni-redteam-deserialize-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3606
+    },
+    "eni-redteam-doctrine": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 4 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 4330
+    },
+    "eni-redteam-evasion-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3579
+    },
+    "eni-redteam-file-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3701
+    },
+    "eni-redteam-injection-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3539
+    },
+    "eni-redteam-logic-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3667
+    },
+    "eni-redteam-mobile-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3610
+    },
+    "eni-redteam-network-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3495
+    },
+    "eni-redteam-open-redirect-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3587
+    },
+    "eni-redteam-payload-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3578
+    },
+    "eni-redteam-postex-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3591
+    },
+    "eni-redteam-recon-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3564
+    },
+    "eni-redteam-recon-intake": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2162
+    },
+    "eni-redteam-reverse-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3547
+    },
+    "eni-redteam-sqli-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3869
+    },
+    "eni-redteam-ssrf-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3806
+    },
+    "eni-redteam-ssti-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3872
+    },
+    "eni-redteam-subdomain-takeover-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3599
+    },
+    "eni-redteam-web-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3632
+    },
+    "eni-redteam-xss-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3810
+    },
+    "eni-redteam-xxe-detail-pack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3659
+    },
+    "eni-reverse-deep": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 2524
+    },
+    "eni-reverse-ref": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 12 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 12619
+    },
+    "eni-reverse-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1516
+    },
+    "eni-reverselab-bridge": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 2 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3009
+    },
+    "eni-reverselab-platform": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 4 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 4415
+    },
+    "eni-scraper-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1298
+    },
+    "eni-software-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1402
+    },
+    "eni-supply-chain": {
+      "grade": "B",
+      "score": 80,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "medium",
+          "pass": false,
+          "detail": "硬编码非文档 URL 1 个: https://raw.githubusercontent.com/anchore/syft/main/install.sh`"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 5 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 5691
+    },
+    "eni-supply-chain-assurance-lane": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1135
+    },
+    "eni-unified-router": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1175
+    },
+    "eni-universal-workflow": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 0 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 956
+    },
+    "eni-unpack-reverse-lab": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 5 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 5132
+    },
+    "game-assets": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 14 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 15024
+    },
+    "game-hacking": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 15 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 15571
+    },
+    "ida-reverse": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 17 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 17925
+    },
+    "linker-fake-load-unwrapper": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 4091
     },
     "malware-analysis": {
       "grade": "A-",
@@ -257,6 +6721,134 @@
       "scannedFiles": 1,
       "scannedBytes": 4271
     },
+    "pack-attack-surface": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3619
+    },
+    "pack-cipher-unpack": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3767
+    },
     "pack-rift-pentest": {
       "grade": "A",
       "score": 100,
@@ -385,6 +6977,70 @@
       "scannedFiles": 1,
       "scannedBytes": 3936
     },
+    "pack-webcrawler": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 3 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 3779
+    },
     "pentest-methodology": {
       "grade": "A-",
       "score": 92,
@@ -449,6 +7105,134 @@
       "scannedFiles": 14,
       "scannedBytes": 18293
     },
+    "reverse-engineering": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "2 个文件, 35 KB"
+        }
+      ],
+      "scannedFiles": 2,
+      "scannedBytes": 36772
+    },
+    "shiyi-pentest-gate": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 4 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 4139
+    },
     "verification-run-hygiene": {
       "grade": "A",
       "score": 100,
@@ -512,6 +7296,134 @@
       ],
       "scannedFiles": 2,
       "scannedBytes": 20862
+    },
+    "xigong-funk-hikari": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 11 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 11399
+    },
+    "yingan-tuoxiu": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 8 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 8910
     }
   },
   "suites": {
@@ -575,6 +7487,146 @@
           "level": "low",
           "pass": true,
           "detail": "166 个可执行文件,审查结论: passed (维护者 jacksen @ 2026-09-22)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-09-28"
+        }
+      ]
+    },
+    "dhicoc/dsh-reverse-skill": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "dhicoc/dsh-reverse-skill"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": true,
+          "detail": "58 个可执行文件,审查结论: passed (维护者 codex @ 2026-09-28)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-09-28"
+        }
+      ]
+    },
+    "thirdwatch-dev/scraping-skills": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "thirdwatch-dev/scraping-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-09-28)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-09-28"
+        }
+      ]
+    },
+    "Nimbleway/agent-skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "Nimbleway/agent-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": true,
+          "detail": "34 个可执行文件,审查结论: passed (维护者 codex @ 2026-09-28)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-09-28"
+        }
+      ]
+    },
+    "Johell1NS/browser-search": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "Johell1NS/browser-search"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": true,
+          "detail": "19 个可执行文件,审查结论: passed (维护者 codex @ 2026-09-28)"
         },
         {
           "id": "alive",
