@@ -3,7 +3,7 @@ name: eni-redteam-mobile-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized mobile application security testing, including insecure storage, certificate pinning bypass, exposed components, and binary reverse engineering. Use when a task belongs to the mobile testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "移动应用安全测试"
-  description-zh: "移动应用安全测试"
+  description-zh: "渗透测试技能「移动应用安全测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

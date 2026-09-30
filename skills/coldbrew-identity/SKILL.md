@@ -3,7 +3,7 @@ name: coldbrew-identity
 description: "用户问身份、名字、你是谁时使用。"
 metadata:
   name-zh: "身份"
-  description-zh: "身份"
+  description-zh: "工程纪律技能「身份」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

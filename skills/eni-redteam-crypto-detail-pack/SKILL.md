@@ -3,7 +3,7 @@ name: eni-redteam-crypto-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized cryptography weakness testing, including weak algorithms, padding oracles, key management errors, insecure randomness, and hash collision risks. Use when a task belongs to the cryptography testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "密码学弱点测试"
-  description-zh: "密码学弱点测试"
+  description-zh: "渗透测试技能「密码学弱点测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

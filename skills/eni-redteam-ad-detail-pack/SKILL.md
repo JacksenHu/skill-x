@@ -3,7 +3,7 @@ name: eni-redteam-ad-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized Active Directory red-team security testing, including Kerberos attacks, domain privilege escalation, lateral movement, and GPO abuse. Use when a task belongs to the AD testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "Active Directory 域渗透"
-  description-zh: "Active Directory 域渗透"
+  description-zh: "渗透测试技能「Active Directory 域渗透」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

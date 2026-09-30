@@ -3,7 +3,7 @@ name: eni-ctf-orchestrator
 description: "[DOCUMENTATION ONLY] [仅文档入口] Single-entry CTF workflow for sandbox challenges across web, pwn, reverse, crypto, forensics, mobile, cloud, identity, protocol, firmware, and agent tasks."
 metadata:
   name-zh: "小寒 CTF single entry"
-  description-zh: "小寒 CTF single entry"
+  description-zh: "工程纪律技能「小寒 CTF single entry」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

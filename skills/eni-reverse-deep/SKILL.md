@@ -3,7 +3,7 @@ name: eni-reverse-deep
 description: "全局自动路由 | Deep reverse engineering for PE, ELF, Mach-O, firmware, drivers, APK/DEX, .NET, Go, Rust, Unity IL2CPP, Unreal, packed binaries, custom VMs, and undocumented protocols. Use when Codex receives a binary, disassembly, pseudocode, crash, native library, game artifact, firmware image, obfuscated application, or needs IDA/Ghidra/Frida/angr/Unicorn automation, algorithm recovery, unpacking, patching, or protocol reconstruction."
 metadata:
   name-zh: "eni-reverse-deep"
-  description-zh: "eni-reverse-deep"
+  description-zh: "逆向工程技能「eni-reverse-deep」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

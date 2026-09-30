@@ -3,7 +3,7 @@ name: eni-game-cheat-lab-workflow
 description: "自动全链路处理外挂、修改器、Trainer、作弊机制与反作弊验证任务。适用于离线、自有、开源或专用测试靶场中的引擎与信任边界建模、样本分析、可控复现、JSON toy trainer 制作、遥测、检测加固和回归交付。"
 metadata:
   name-zh: "游戏外挂实验室工作流"
-  description-zh: "游戏外挂实验室工作流"
+  description-zh: "逆向工程技能「游戏外挂实验室工作流」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

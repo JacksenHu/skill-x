@@ -3,7 +3,7 @@ name: eni-api-assurance-lane
 description: "[DOCUMENTATION ONLY] [仅文档] API assurance workflow for sequential eni-solo execution."
 metadata:
   name-zh: "eni-api-assurance-lane"
-  description-zh: "eni-api-assurance-lane"
+  description-zh: "工程纪律技能「eni-api-assurance-lane」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

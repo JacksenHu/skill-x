@@ -3,7 +3,7 @@ name: eni-radare2
 description: "全局自动路由 | |"
 metadata:
   name-zh: "eni-radare2"
-  description-zh: "eni-radare2"
+  description-zh: "逆向工程技能「eni-radare2」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: xigong-funk-hikari
 description: "Evidence-driven Hikari-LLVM/OLLVM deobfuscation and plaintext recovery for ELF/SO, especially Android/Linux AArch64 PIE executables that use MBA, BCF/opaque predicates, relocation-backed BR/BLR dispatch, function wrappers/FCO, runtime string decoding, high-entropy containers, flat anonymous RX/RO/RW inner images without a primary ELF magic, embedded auxiliary ELFs, and custom mmap/mprotect loaders. Use when the user asks for Hikari identification, complete deobfuscation, lossless plaintext restoration, searchable strings, runtime payload dumping/rebuilding, an IDA-ready inner ELF, a directly runnable plaintext-bearing single file, or a loader-free rebuild. Produces hash-bound layer artifacts, reversible register-preserving patch manifests, runtime materialization evidence, and structure/semantic/runtime/equivalence verification."
 metadata:
   name-zh: "西宫-FUNK-Hikari"
-  description-zh: "西宫-FUNK-Hikari"
+  description-zh: "工程纪律技能「西宫-FUNK-Hikari」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

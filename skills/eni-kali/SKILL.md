@@ -3,7 +3,7 @@ name: eni-kali
 description: "全局自动路由 | Kali reference and tooling"
 metadata:
   name-zh: "eni-kali"
-  description-zh: "eni-kali"
+  description-zh: "工程纪律技能「eni-kali」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

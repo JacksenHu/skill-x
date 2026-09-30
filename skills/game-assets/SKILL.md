@@ -3,7 +3,7 @@ name: game-assets
 description: "Create, edit, upgrade, animate, and prepare production-ready game assets with Meowa, including pixel and HD sprites, consistent item or character variants, multi-view characters, UI sheets, image and frame edits, seamless textures, terrain tilesets, isometric and side-scrolling maps, short video, sound effects, and game music. Use when a task requires choosing the right game-art workflow, planning a pixel or HD asset pipeline, running the bundled Meowa CLI, or validating final media for a game project."
 metadata:
   name-zh: "game-assets"
-  description-zh: "game-assets"
+  description-zh: "逆向工程技能「game-assets」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

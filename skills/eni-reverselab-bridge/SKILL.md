@@ -3,7 +3,7 @@ name: eni-reverselab-bridge
 description: "原创外部依赖桥接：把 Open ReverseLab（LING71671/open-reverselab，GPL-3.0）作为可选外部工具链接入本包，不捆绑其任何内容。路由、安装、配置与退出条件都在本文件内，反向/CTF/APK/PE 任务命中时按需接入。"
 metadata:
   name-zh: "Open ReverseLab 外部桥接（不捆绑）"
-  description-zh: "Open ReverseLab 外部桥接（不捆绑）"
+  description-zh: "逆向工程技能「Open ReverseLab 外部桥接（不捆绑）」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

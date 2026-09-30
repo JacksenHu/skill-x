@@ -3,7 +3,7 @@ name: coldbrew-api-reverse
 description: "前端签名、HAR、鉴权链路、加密参数还原时使用。"
 metadata:
   name-zh: "API 逆向"
-  description-zh: "API 逆向"
+  description-zh: "逆向工程技能「API 逆向」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: eni-crack-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Owned crackme, validation logic, license research, compatibility patch, and challenge workflow using preserved copies, static analysis, dynamic traces, and regression evidence."
 metadata:
   name-zh: "eni-crack-workflow"
-  description-zh: "eni-crack-workflow"
+  description-zh: "渗透测试技能「eni-crack-workflow」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

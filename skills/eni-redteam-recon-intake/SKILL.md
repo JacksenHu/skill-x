@@ -3,7 +3,7 @@ name: eni-redteam-recon-intake
 description: "[DOCUMENTATION ONLY] [仅文档] Recon intake skill for first contact with a bare domain, URL, or IP address. Use to build an initial recon_profile and provide factual inputs for CVE lookup and attack-path routing."
 metadata:
   name-zh: "eni-redteam-recon-intake"
-  description-zh: "eni-redteam-recon-intake"
+  description-zh: "渗透测试技能「eni-redteam-recon-intake」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

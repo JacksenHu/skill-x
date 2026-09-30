@@ -3,7 +3,7 @@ name: coldbrew-native-reverse
 description: "PE/ELF/SO、JNI、OLLVM、dump、补丁时使用。"
 metadata:
   name-zh: "Native 自动逆向"
-  description-zh: "Native 自动逆向"
+  description-zh: "逆向工程技能「Native 自动逆向」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

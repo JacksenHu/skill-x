@@ -3,7 +3,7 @@ name: eni-redteam-code-audit-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized source code security review, including dangerous function tracing, data-flow analysis, logic flaw detection, and dependency review. Use when a task belongs to the code audit domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "代码审计"
-  description-zh: "代码审计"
+  description-zh: "渗透测试技能「代码审计」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

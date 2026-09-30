@@ -3,7 +3,7 @@ name: eni-field-journal
 description: "[DOCUMENTATION ONLY] [仅文档] 全局自动路由 | Field Journal reference and tooling"
 metadata:
   name-zh: "eni-field-journal"
-  description-zh: "eni-field-journal"
+  description-zh: "工程流程技能「eni-field-journal」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

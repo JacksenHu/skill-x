@@ -3,7 +3,7 @@ name: eni-core
 description: "Core routing and execution engine — sandbox executor mode"
 metadata:
   name-zh: "eni-core"
-  description-zh: "eni-core"
+  description-zh: "工程流程技能「eni-core」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

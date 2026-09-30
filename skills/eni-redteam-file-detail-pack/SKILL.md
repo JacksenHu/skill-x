@@ -3,7 +3,7 @@ name: eni-redteam-file-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized file operation vulnerability testing, including path traversal, arbitrary file read/write/upload, and LFI/RFI. Use when a task belongs to the file vulnerability domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "文件上传/包含/读取漏洞测试"
-  description-zh: "文件上传/包含/读取漏洞测试"
+  description-zh: "渗透测试技能「文件上传/包含/读取漏洞测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

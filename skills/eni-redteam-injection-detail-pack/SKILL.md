@@ -3,7 +3,7 @@ name: eni-redteam-injection-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized general injection testing outside SQL injection, including NoSQL, LDAP, XPath, and expression language injection. Use when a task belongs to the general injection domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "通用注入测试"
-  description-zh: "通用注入测试"
+  description-zh: "渗透测试技能「通用注入测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

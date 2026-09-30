@@ -3,7 +3,7 @@ name: eni-redteam-doctrine
 description: "[DOCUMENTATION ONLY] [仅文档] Governance skill for red-team mode phase selection, router selection, detailed pack selection, OPSEC-aware progression, and choosing the next concrete skill. Use when red-team mode needs command-level decision support before technical testing."
 metadata:
   name-zh: "红队指挥决策"
-  description-zh: "红队指挥决策"
+  description-zh: "渗透测试技能「红队指挥决策」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

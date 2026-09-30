@@ -3,7 +3,7 @@ name: eni-redteam-logic-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized business logic vulnerability testing, including race conditions, flow bypass, price tampering, permission logic errors, and bulk operation abuse. Use when a task belongs to the logic testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "业务逻辑漏洞测试"
-  description-zh: "业务逻辑漏洞测试"
+  description-zh: "渗透测试技能「业务逻辑漏洞测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

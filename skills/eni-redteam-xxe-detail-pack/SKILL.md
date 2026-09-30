@@ -3,7 +3,7 @@ name: eni-redteam-xxe-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized XXE testing, including file read, SSRF, blind XXE, and parameter entity variants. Use when a task belongs to the XXE domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "XXE XML 外部实体注入测试"
-  description-zh: "XXE XML 外部实体注入测试"
+  description-zh: "渗透测试技能「XXE XML 外部实体注入测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

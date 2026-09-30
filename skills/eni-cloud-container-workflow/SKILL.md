@@ -3,7 +3,7 @@ name: eni-cloud-container-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Cloud, container, Kubernetes, image, IaC, identity, configuration, and compliance assessment workflow."
 metadata:
   name-zh: "eni-cloud-container-workflow"
-  description-zh: "eni-cloud-container-workflow"
+  description-zh: "渗透测试技能「eni-cloud-container-workflow」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

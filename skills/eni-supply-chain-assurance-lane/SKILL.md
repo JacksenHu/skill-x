@@ -3,7 +3,7 @@ name: eni-supply-chain-assurance-lane
 description: "[DOCUMENTATION ONLY] [仅文档] Supply-chain assurance workflow for sequential eni-solo execution."
 metadata:
   name-zh: "eni-supply-chain-assurance-lane"
-  description-zh: "eni-supply-chain-assurance-lane"
+  description-zh: "渗透测试技能「eni-supply-chain-assurance-lane」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

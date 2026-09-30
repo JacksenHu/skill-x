@@ -3,7 +3,7 @@ name: eni-game-hacking
 description: "[DOCUMENTATION ONLY] [仅文档] 全局自动路由 | Game hacking techniques"
 metadata:
   name-zh: "游戏安全研究与逆向工程技能"
-  description-zh: "游戏安全研究与逆向工程技能"
+  description-zh: "逆向工程技能「游戏安全研究与逆向工程技能」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: eni-redteam-sqli-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized SQL injection testing, including union-based, blind, error-based, stacked query, and second-order SQL injection variants. Use when a task belongs to the SQL injection domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "SQL 注入测试"
-  description-zh: "SQL 注入测试"
+  description-zh: "渗透测试技能「SQL 注入测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

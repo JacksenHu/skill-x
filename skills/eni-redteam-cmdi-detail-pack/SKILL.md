@@ -3,7 +3,7 @@ name: eni-redteam-cmdi-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized operating system command injection testing, including direct injection, blind injection, out-of-band callbacks, and argument injection. Use when a task belongs to the command injection domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "OS 命令注入测试"
-  description-zh: "OS 命令注入测试"
+  description-zh: "渗透测试技能「OS 命令注入测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

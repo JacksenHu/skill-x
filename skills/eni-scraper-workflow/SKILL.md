@@ -3,7 +3,7 @@ name: eni-scraper-workflow
 description: "Unified structured web collection workflow using request-first Scrapy-style crawling and Playwright-style browser fallback, with schema, retry, deduplication, and quality gates."
 metadata:
   name-zh: "eni-scraper-workflow"
-  description-zh: "eni-scraper-workflow"
+  description-zh: "数据采集技能「eni-scraper-workflow」，覆盖网页抓取、数据抽取与清洗入库。"
   category: data
   version: "1.0.0"
   license: "UNKNOWN"

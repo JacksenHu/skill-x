@@ -3,7 +3,7 @@ name: eni-redteam-web-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Routing and boundary guidance for authorized general web application security testing. Use as a web testing router when the attack surface should be dispatched to more specific web vulnerability skills."
 metadata:
   name-zh: "Web 综合渗透测试"
-  description-zh: "Web 综合渗透测试"
+  description-zh: "渗透测试技能「Web 综合渗透测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: eni-firmware-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Firmware and IoT extraction, filesystem, service, emulation, reverse engineering, validation, and reporting workflow."
 metadata:
   name-zh: "eni-firmware-workflow"
-  description-zh: "eni-firmware-workflow"
+  description-zh: "渗透测试技能「eni-firmware-workflow」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

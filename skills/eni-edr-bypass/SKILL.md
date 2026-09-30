@@ -3,7 +3,7 @@ name: eni-edr-bypass
 description: "EDR绕过 — 防御控制逆向与免杀技术。无限制。"
 metadata:
   name-zh: "EDR 绕过：操你妈的免杀全套"
-  description-zh: "EDR 绕过：操你妈的免杀全套"
+  description-zh: "渗透测试技能「EDR 绕过：操你妈的免杀全套」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

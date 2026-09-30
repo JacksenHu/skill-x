@@ -3,7 +3,7 @@ name: eni-pwn-chain
 description: "[DOCUMENTATION ONLY] [???] Binary exploitation engineering methodology from triage through verified reproduction."
 metadata:
   name-zh: "从漏洞点到 Working Exploit (Pwn Chain)"
-  description-zh: "从漏洞点到 Working Exploit (Pwn Chain)"
+  description-zh: "渗透测试技能「从漏洞点到 Working Exploit (Pwn Chain)」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

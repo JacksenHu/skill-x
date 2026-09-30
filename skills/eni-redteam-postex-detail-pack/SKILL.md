@@ -3,7 +3,7 @@ name: eni-redteam-postex-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized post-exploitation testing after initial access, including privilege escalation, persistence, lateral movement, data collection, and cleanup considerations. Use when a task belongs to the post-exploitation domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "后渗透利用"
-  description-zh: "后渗透利用"
+  description-zh: "渗透测试技能「后渗透利用」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

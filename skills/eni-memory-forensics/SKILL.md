@@ -3,7 +3,7 @@ name: eni-memory-forensics
 description: "全局自动路由 | Cross-platform process memory, dump, runtime, heap, pointer-chain, signature, structure, and memory-forensics analysis for Windows, Linux, Android, Unity IL2CPP, Unreal, native applications, crash dumps, and raw memory images."
 metadata:
   name-zh: "eni-memory-forensics"
-  description-zh: "eni-memory-forensics"
+  description-zh: "取证分析技能「eni-memory-forensics」，覆盖证据提取、时间线还原与结论验证。"
   category: forensics
   version: "1.0.0"
   license: "UNKNOWN"

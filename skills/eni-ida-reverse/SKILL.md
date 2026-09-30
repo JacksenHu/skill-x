@@ -3,7 +3,7 @@ name: eni-ida-reverse
 description: "全局自动路由 | |"
 metadata:
   name-zh: "IDA Pro 逆向分析技能"
-  description-zh: "IDA Pro 逆向分析技能"
+  description-zh: "逆向工程技能「IDA Pro 逆向分析技能」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

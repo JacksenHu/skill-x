@@ -3,7 +3,7 @@ name: eni-browser-research-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Reliable browser research and automation workflow using Playwright-style state, waits, capture, replay, extraction, and verification."
 metadata:
   name-zh: "eni-browser-research-workflow"
-  description-zh: "eni-browser-research-workflow"
+  description-zh: "数据采集技能「eni-browser-research-workflow」，覆盖网页抓取、数据抽取与清洗入库。"
   category: data
   version: "1.0.0"
   license: "UNKNOWN"

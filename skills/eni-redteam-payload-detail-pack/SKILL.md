@@ -3,7 +3,7 @@ name: eni-redteam-payload-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized payload construction and weaponization analysis, including shellcode, file format payloads, phishing payloads, and staged or stageless payload choices. Use when a task belongs to the payload construction domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "Payload 构造与武器化"
-  description-zh: "Payload 构造与武器化"
+  description-zh: "渗透测试技能「Payload 构造与武器化」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

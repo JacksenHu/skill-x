@@ -3,7 +3,7 @@ name: eni-js-reverse
 description: "[DOCUMENTATION ONLY] [仅文档] 全局自动路由 | 在使用 js-reverse-mcp 做前端 JavaScript 逆向时使用，适用于签名链路定位、页面观察取证、运行时采样、本地补环境复现与证据化输出。优先适配当前环境里的 js-reverse_* 工具，需要更强的浏览器/CDP/Hook 面时联动 jshookmcp。"
 metadata:
   name-zh: "MCP 前端 JS 逆向作业规范"
-  description-zh: "MCP 前端 JS 逆向作业规范"
+  description-zh: "逆向工程技能「MCP 前端 JS 逆向作业规范」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

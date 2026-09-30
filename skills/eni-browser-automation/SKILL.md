@@ -3,7 +3,7 @@ name: eni-browser-automation
 description: "全局自动路由 | 统一自动化入口。覆盖浏览器自动化（Playwright）和 Windows 桌面应用自动化（OpenReverse）。浏览器场景：打开网页、点击、填表、爬取、截图、自动化登录、渗透页面交互。桌面场景：操作 IDA/x64dbg 等 GUI 工具、Windows UI Automation、视觉驱动交互、桌面应用网络抓包。触发关键词：浏览器自动化、桌面自动化、打开网页、填表、爬取、截图、自动化登录、Playwright、agent-browser、headless、OpenReverse、UIA、CUA、桌面操作、Windows 自动化。"
 metadata:
   name-zh: "自动化操作 (Desktop & Browser Automation)"
-  description-zh: "自动化操作 (Desktop & Browser Automation)"
+  description-zh: "数据采集技能「自动化操作 (Desktop & Browser Automation)」，覆盖网页抓取、数据抽取与清洗入库。"
   category: data
   version: "1.0.0"
   license: "UNKNOWN"

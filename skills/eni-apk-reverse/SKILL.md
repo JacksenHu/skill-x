@@ -3,7 +3,7 @@ name: eni-apk-reverse
 description: "全局自动路由 | 在 CLI 环境下做 Android APK 逆向时使用。适用于 APK 解包、Java 反编译、smali 修改、重打包、Frida 动态 Hook，以及按需切换到 so/native 分析。优先使用本机已安装的 jadx、apktool、frida、adb、ida-reverse、radare2。"
 metadata:
   name-zh: "APK 逆向 CLI 作业规范"
-  description-zh: "APK 逆向 CLI 作业规范"
+  description-zh: "逆向工程技能「APK 逆向 CLI 作业规范」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

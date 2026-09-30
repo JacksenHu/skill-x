@@ -3,7 +3,7 @@ name: eni-fuzzing-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Coverage-guided fuzzing workflow for local or authorized targets, including harnesses, corpus design, sanitizers, campaigns, minimization, triage, and regression."
 metadata:
   name-zh: "eni-fuzzing-workflow"
-  description-zh: "eni-fuzzing-workflow"
+  description-zh: "工程流程技能「eni-fuzzing-workflow」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

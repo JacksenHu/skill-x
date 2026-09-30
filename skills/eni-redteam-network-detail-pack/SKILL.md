@@ -3,7 +3,7 @@ name: eni-redteam-network-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized network-layer security testing, including exposed services, protocol downgrade, man-in-the-middle risks, and segmentation bypasses. Use when a task belongs to the network testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "网络层渗透测试"
-  description-zh: "网络层渗透测试"
+  description-zh: "渗透测试技能「网络层渗透测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

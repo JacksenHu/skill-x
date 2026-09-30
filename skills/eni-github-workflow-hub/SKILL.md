@@ -3,7 +3,7 @@ name: eni-github-workflow-hub
 description: "Official GitHub workflow source catalog and local tool readiness adapter. Use when selecting upstream methods for reverse engineering, web testing, fuzzing, code security, cloud, mobile, memory, or scraping."
 metadata:
   name-zh: "小寒 GitHub Workflow Hub"
-  description-zh: "小寒 GitHub Workflow Hub"
+  description-zh: "工程流程技能「小寒 GitHub Workflow Hub」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: eni-redteam-open-redirect-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized open redirect testing, including parameter redirects, meta or JavaScript redirects, and OAuth redirect_uri abuse. Use when a task belongs to the open redirect domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "开放重定向测试"
-  description-zh: "开放重定向测试"
+  description-zh: "渗透测试技能「开放重定向测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

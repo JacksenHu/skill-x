@@ -3,7 +3,7 @@ name: eni-reverse-workflow
 description: "Deep, evidence-driven reverse engineering workflow for PE, ELF, Mach-O, firmware, drivers, bytecode, protocols, and local binaries."
 metadata:
   name-zh: "eni-reverse-workflow"
-  description-zh: "eni-reverse-workflow"
+  description-zh: "逆向工程技能「eni-reverse-workflow」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

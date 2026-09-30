@@ -3,7 +3,7 @@ name: eni-mobile-security-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Android and iOS static and dynamic analysis workflow using MobSF-style triage and Frida-style runtime observation."
 metadata:
   name-zh: "eni-mobile-security-workflow"
-  description-zh: "eni-mobile-security-workflow"
+  description-zh: "工程流程技能「eni-mobile-security-workflow」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

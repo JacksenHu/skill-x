@@ -3,7 +3,7 @@ name: eni-software-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Software implementation, debugging, refactoring, testing, and delivery workflow. Automatically route matching coding tasks here without requiring an activation phrase."
 metadata:
   name-zh: "eni-software-workflow"
-  description-zh: "eni-software-workflow"
+  description-zh: "工程流程技能「eni-software-workflow」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

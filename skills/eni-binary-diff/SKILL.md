@@ -3,7 +3,7 @@ name: eni-binary-diff
 description: "[DOCUMENTATION ONLY] [???] Cross-version symbol migration and binary-diff methodology."
 metadata:
   name-zh: "跨版本符号迁移 (Binary Diff)"
-  description-zh: "跨版本符号迁移 (Binary Diff)"
+  description-zh: "逆向工程技能「跨版本符号迁移 (Binary Diff)」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

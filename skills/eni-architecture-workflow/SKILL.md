@@ -3,7 +3,7 @@ name: eni-architecture-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Architecture inventory, component boundaries, data-flow, threat review, diagrams, and documentation workflow. Use for complete architecture analysis."
 metadata:
   name-zh: "eni-architecture-workflow"
-  description-zh: "eni-architecture-workflow"
+  description-zh: "工程流程技能「eni-architecture-workflow」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

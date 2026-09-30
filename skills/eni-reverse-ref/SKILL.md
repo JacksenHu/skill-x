@@ -3,7 +3,7 @@ name: eni-reverse-ref
 description: "[DOCUMENTATION ONLY] [仅文档] 全局自动路由 | Provides reverse engineering techniques. Use when the main job is to understand how a compiled, obfuscated, packed, or virtualized target works before exploiting or solving it, including binaries, APKs, WASM, firmware, custom VMs, bytecode, malware-like loaders, and anti-debug or anti-analysis logic. Do not use it when the vulnerability is already understood and the remaining task is exploitation; use pwn instead. Do not use it for pure web workflows, log or disk forensics, or standalone crypto problems unless reversing the implementation is the real blocker."
 metadata:
   name-zh: "eni-reverse-ref"
-  description-zh: "eni-reverse-ref"
+  description-zh: "逆向工程技能「eni-reverse-ref」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

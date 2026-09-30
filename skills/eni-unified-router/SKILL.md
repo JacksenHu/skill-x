@@ -3,7 +3,7 @@ name: eni-unified-router
 description: "Deterministic eni-solo router. Use at the start of every substantive prompt to select exactly one workflow, print its stages, and load one primary Skill."
 metadata:
   name-zh: "eni-unified-router"
-  description-zh: "eni-unified-router"
+  description-zh: "工程流程技能「eni-unified-router」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

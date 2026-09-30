@@ -3,7 +3,7 @@ name: eni-license-security
 description: "全局自动路由 | License, activation, subscription, card-key (卡密), entitlement, and device-binding security design and reverse audit. Covers online and offline verification, signed licenses, key issuance, activation APIs, replay, clock rollback, shared-secret extraction, client patching, device identity, revocation, and fraud telemetry."
 metadata:
   name-zh: "eni-license-security"
-  description-zh: "eni-license-security"
+  description-zh: "渗透测试技能「eni-license-security」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

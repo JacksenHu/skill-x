@@ -3,7 +3,7 @@ name: eni-redteam-auth-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized authentication, authorization, and session security testing, including password policy, JWT/token, OAuth, and MFA bypass issues. Use when a task belongs to the auth testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "认证与授权漏洞测试"
-  description-zh: "认证与授权漏洞测试"
+  description-zh: "渗透测试技能「认证与授权漏洞测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

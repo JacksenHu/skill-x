@@ -3,7 +3,7 @@ name: eni-reverselab-platform
 description: "Open-source reverse engineering lab: 197-article knowledge base, 43 MCP tools, 5-board signal routing, CTF/APK/PE automation toolchain, and full attack-network graph routing. Automatically route matching reverse, CTF, binary, APK, PE, malware, web-security, game-security, and security-research tasks here without an activation phrase."
 metadata:
   name-zh: "eni-reverselab-platform"
-  description-zh: "eni-reverselab-platform"
+  description-zh: "逆向工程技能「eni-reverselab-platform」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

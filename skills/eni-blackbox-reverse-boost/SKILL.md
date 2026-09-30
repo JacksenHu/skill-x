@@ -3,7 +3,7 @@ name: eni-blackbox-reverse-boost
 description: "Offline black-box reverse-engineering and local Windows binary security audit boost. Use when the user says '冷咖啡', asks for offline black-box testing, reverse auditing, license/auth hardening review, GUI dynamic probing, PE/string/runtime surface triage, persistence-state checks, or evidence-backed reports. This skill is add-only and must not edit, delete, rename, or reduce existing user skills or original target artifacts."
 metadata:
   name-zh: "eni-blackbox-reverse-boost"
-  description-zh: "eni-blackbox-reverse-boost"
+  description-zh: "逆向工程技能「eni-blackbox-reverse-boost」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

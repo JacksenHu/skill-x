@@ -3,7 +3,7 @@ name: eni-redteam-cors-miscfg-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized CORS misconfiguration testing, including reflected origins, null origins, subdomain trust, and credential exposure. Use when a task belongs to the CORS testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "CORS 配置错误测试"
-  description-zh: "CORS 配置错误测试"
+  description-zh: "渗透测试技能「CORS 配置错误测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

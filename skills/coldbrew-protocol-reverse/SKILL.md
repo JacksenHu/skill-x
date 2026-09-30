@@ -3,7 +3,7 @@ name: coldbrew-protocol-reverse
 description: "自定义协议、TCP/UDP 帧、回放与字段还原时使用。"
 metadata:
   name-zh: "协议分析"
-  description-zh: "协议分析"
+  description-zh: "逆向工程技能「协议分析」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

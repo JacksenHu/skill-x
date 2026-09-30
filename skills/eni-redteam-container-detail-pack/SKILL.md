@@ -3,7 +3,7 @@ name: eni-redteam-container-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized container and orchestration security testing, including Docker escape, Kubernetes privilege escalation, image vulnerabilities, and service mesh bypasses. Use when a task belongs to the container testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "容器安全测试"
-  description-zh: "容器安全测试"
+  description-zh: "渗透测试技能「容器安全测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: eni-supply-chain
 description: "[DOCUMENTATION ONLY] [仅文档] 全局自动路由"
 metadata:
   name-zh: "OSV-Scanner（免费、Google 维护）"
-  description-zh: "OSV-Scanner（免费、Google 维护）"
+  description-zh: "渗透测试技能「OSV-Scanner（免费、Google 维护）」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

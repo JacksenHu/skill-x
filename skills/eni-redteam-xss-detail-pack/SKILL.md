@@ -3,7 +3,7 @@ name: eni-redteam-xss-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized cross-site scripting testing, including reflected, stored, DOM-based, mXSS, and CSP bypass variants. Use when a task belongs to the XSS domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "XSS 跨站脚本测试"
-  description-zh: "XSS 跨站脚本测试"
+  description-zh: "渗透测试技能「XSS 跨站脚本测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

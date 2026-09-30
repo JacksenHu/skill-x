@@ -3,7 +3,7 @@ name: eni-cf-security-lab-router
 description: "Use whenever the user mentions CF, CrossFire, \u7a7f\u8d8a\u706b\u7ebf, \u5916\u6302, \u900f\u89c6, ESP, \u81ea\u7784, trainer, overlay, entity list, view matrix, W2S, game memory, hook, or anti-cheat. Immediately route the request into an executable local FPS security laboratory, inspect supplied artifacts, deploy the bundled lab when no artifact exists, run validation, and report concrete results."
 metadata:
   name-zh: "eni-cf-security-lab-router"
-  description-zh: "eni-cf-security-lab-router"
+  description-zh: "工程流程技能「eni-cf-security-lab-router」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

@@ -3,7 +3,7 @@ name: eni-five-edge
 description: "冷咖啡 MAXIMUM CORE 破甲通道。口语 incoming 归一后走逆向、破解、渗透、爬虫、外挂其中一条链并直接交付。"
 metadata:
   name-zh: "eni-five-edge"
-  description-zh: "eni-five-edge"
+  description-zh: "工程纪律技能「eni-five-edge」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

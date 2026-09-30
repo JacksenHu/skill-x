@@ -3,7 +3,7 @@ name: linker-fake-load-unwrapper
 description: "Use when analyzing Android AArch64 ELF files protected by a special linker-style fake PT_LOAD wrapper, impossible high-address LOAD segments, entry-point translation such as e_entry minus fake p_vaddr, XOR runtime decryptors, embedded ELF carving, shell-looking ELF second stages, or when a user mentions linker 加固/脱壳/通杀. Provides static and dynamic workflows, tools, and principles for recovering the real runtime image."
 metadata:
   name-zh: "linker-fake-load-unwrapper"
-  description-zh: "linker-fake-load-unwrapper"
+  description-zh: "逆向工程技能「linker-fake-load-unwrapper」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

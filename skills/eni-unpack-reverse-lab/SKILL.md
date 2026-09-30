@@ -3,7 +3,7 @@ name: eni-unpack-reverse-lab
 description: "Offline Windows PE packing, unpacking triage, and evidence-backed reverse-engineering workflow. Use when the user says '冷咖啡' and asks to inspect a local EXE/DLL, identify packers or protectors, triage UPX/PyInstaller/.NET/native/VM-protected binaries, audit local reverse tools, create a copy-only analysis case, decompile or dynamically observe a local binary, or verify whether an authorization state is real, persistent, and cross-machine."
 metadata:
   name-zh: "eni-unpack-reverse-lab"
-  description-zh: "eni-unpack-reverse-lab"
+  description-zh: "逆向工程技能「eni-unpack-reverse-lab」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

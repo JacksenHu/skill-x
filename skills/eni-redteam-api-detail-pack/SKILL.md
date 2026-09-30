@@ -3,7 +3,7 @@ name: eni-redteam-api-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized API security testing, including BOLA/IDOR, authentication bypass, mass assignment, missing rate limits, and GraphQL issues. Use when a task belongs to the API testing domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "API 安全测试"
-  description-zh: "API 安全测试"
+  description-zh: "渗透测试技能「API 安全测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"

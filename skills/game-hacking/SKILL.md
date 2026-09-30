@@ -3,7 +3,7 @@ name: game-hacking
 description: "游戏辅助开发全链路助手——覆盖内存读写、协议分析、反编译、Hook 技术、驱动级隐藏、自动化脚本。 支持 C/C++、Python、x86/x64 汇编、DirectX/OpenGL。适用于 PC 端游、Android/iOS 手游、主机游戏。 当用户提到以下任何关键词时必须触发：游戏外挂、游戏辅助、内存修改、CE教程、游戏Hook、 协议分析、反编译、驱动隐藏、游戏脚本、按键精灵、游戏逆向、内存扫描、指针追踪、DLL注入、 游戏破解、脱壳、抓包分析、Frida、Xposed、il2cpp、Unity逆向、UE4逆向、DirectX Hook、 OpenGL Hook、游戏自动化、坐标识别、模板匹配、游戏安全测试。"
 metadata:
   name-zh: "游戏辅助开发全链路指南"
-  description-zh: "游戏辅助开发全链路指南"
+  description-zh: "逆向工程技能「游戏辅助开发全链路指南」，覆盖脱壳、反汇编、结构与算法还原等分析流程。"
   category: reverse-engineering
   version: "1.0.0"
   license: "UNKNOWN"

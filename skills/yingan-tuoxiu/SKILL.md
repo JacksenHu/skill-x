@@ -3,7 +3,7 @@ name: yingan-tuoxiu
 description: "Owner-authorized YingAn/YingPo Android APK shell rehydration and stable rebuild workflow. Use for APKs with tiny or abnormal root DEX files, v.m.p or abcd655xx shell callbacks, libabcd/lib*shellservice_dex native loaders, protected assets, runtime-loaded DEX images, hidden real Application or Activity routes, and native lifecycle wrappers that must be recovered into a normally installable, signed multidex APK without changing product authentication or business authorization behavior."
 metadata:
   name-zh: "影安脱修"
-  description-zh: "影安脱修"
+  description-zh: "工程纪律技能「影安脱修」，覆盖验证、审计与结果可信度管理。"
   category: engineering-hygiene
   version: "1.0.0"
   license: "UNKNOWN"

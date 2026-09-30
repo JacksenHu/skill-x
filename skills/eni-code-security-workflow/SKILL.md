@@ -3,7 +3,7 @@ name: eni-code-security-workflow
 description: "[DOCUMENTATION ONLY] [仅文档] Source, dependency, supply-chain, SAST, SCA, and remediation workflow for operator-owned repositories."
 metadata:
   name-zh: "eni-code-security-workflow"
-  description-zh: "eni-code-security-workflow"
+  description-zh: "工程流程技能「eni-code-security-workflow」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

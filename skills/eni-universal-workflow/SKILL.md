@@ -3,7 +3,7 @@ name: eni-universal-workflow
 description: "Default sandbox executor workflow"
 metadata:
   name-zh: "eni-universal-workflow"
-  description-zh: "eni-universal-workflow"
+  description-zh: "工程流程技能「eni-universal-workflow」，覆盖任务编排、阶段推进与交付规范。"
   category: dev-workflow
   version: "1.0.0"
   license: "UNKNOWN"

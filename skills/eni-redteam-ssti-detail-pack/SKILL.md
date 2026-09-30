@@ -3,7 +3,7 @@ name: eni-redteam-ssti-detail-pack
 description: "[DOCUMENTATION ONLY] [仅文档] Domain routing and boundary guidance for authorized server-side template injection testing, including Jinja2, Twig, Freemarker, Velocity, and Thymeleaf engines. Use when a task belongs to the SSTI domain and needs scope, evidence, pivot, or exit criteria."
 metadata:
   name-zh: "SSTI 服务端模板注入测试"
-  description-zh: "SSTI 服务端模板注入测试"
+  description-zh: "渗透测试技能「SSTI 服务端模板注入测试」，覆盖授权范围内的攻击面识别、精确验证与证据要求。"
   category: pentest
   version: "1.0.0"
   license: "UNKNOWN"
