@@ -1,0 +1,17 @@
+root: APK 逆向 CLI 作业规范
+children:
+  - label: 核心能力
+    children:
+      - label: 目标识别
+      - label: 脱壳与反汇编
+      - label: 结构与算法还原
+  - label: 工具链
+    children:
+      - label: IDA / Ghidra
+      - label: Frida / radare2
+      - label: angr / 脚本
+  - label: 验证产出
+    children:
+      - label: 函数与结构映射
+      - label: 协议 / 格式重建
+      - label: 可复现报告

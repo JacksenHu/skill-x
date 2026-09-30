@@ -1,0 +1,17 @@
+root: 影安脱修
+children:
+  - label: 检查设计
+    children:
+      - label: 参照物固定
+      - label: 真红 / 假红
+      - label: 收口范围
+  - label: 执行纪律
+    children:
+      - label: 先量后改
+      - label: 结构化验错
+      - label: 回归归档
+  - label: 结果可信
+    children:
+      - label: 证据账本
+      - label: 变异自测
+      - label: 可复现结论

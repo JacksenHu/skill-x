@@ -1,0 +1,17 @@
+root: eni-code-security-workflow
+children:
+  - label: 阶段编排
+    children:
+      - label: 任务路由
+      - label: 阶段推进
+      - label: 交付规范
+  - label: 执行与验证
+    children:
+      - label: 可复现命令
+      - label: 证据记录
+      - label: 验收检查
+  - label: 闭环交付
+    children:
+      - label: 结果归档
+      - label: 未闭环项
+      - label: 后续动作

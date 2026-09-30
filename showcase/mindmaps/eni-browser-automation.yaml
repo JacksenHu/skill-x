@@ -1,0 +1,17 @@
+root: 自动化操作 (Desktop & Browser Automation)
+children:
+  - label: 合规边界
+    children:
+      - label: 授权范围
+      - label: robots / 条款
+      - label: 频率控制
+  - label: 站点侦察
+    children:
+      - label: 静态 / API
+      - label: 渲染型页面
+      - label: 反爬风险
+  - label: 抽取入库
+    children:
+      - label: 样本抽取
+      - label: 清洗去重
+      - label: 质量验证

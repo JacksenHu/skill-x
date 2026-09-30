@@ -1,0 +1,17 @@
+root: SSTI 服务端模板注入测试
+children:
+  - label: 授权范围
+    children:
+      - label: 范围固化
+      - label: 攻击面枚举
+      - label: 假设排序
+  - label: 精确验证
+    children:
+      - label: 最小请求集
+      - label: 异身份对照
+      - label: 证据固化
+  - label: 修复复测
+    children:
+      - label: 修复建议
+      - label: 复测标准
+      - label: 未闭环项

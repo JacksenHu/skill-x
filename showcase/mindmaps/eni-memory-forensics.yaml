@@ -1,0 +1,17 @@
+root: eni-memory-forensics
+children:
+  - label: 证据获取
+    children:
+      - label: 转储 / 镜像
+      - label: 进程与模块
+      - label: 关键字符串
+  - label: 结构分析
+    children:
+      - label: 指针链
+      - label: 签名扫描
+      - label: 结构重建
+  - label: 结论验证
+    children:
+      - label: 交叉验证
+      - label: 时间线还原
+      - label: 证据归档
