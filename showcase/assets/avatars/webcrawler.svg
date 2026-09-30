@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Webcrawler">
+  <defs>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0v16" fill="none" stroke="#1E2630" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="256" height="256" rx="6" fill="#141A21"/>
+  <rect width="256" height="256" rx="6" fill="url(#grid)"/>
+  <rect x="1" y="1" width="254" height="254" rx="6" fill="none" stroke="#232C38" stroke-width="2"/>
+  <circle cx="128" cy="128" r="28" fill="none" stroke="#3DD68C" stroke-width="3"/>
+  <circle cx="128" cy="128" r="60" fill="none" stroke="#17E1C5" stroke-width="2" stroke-dasharray="5 8"/>
+  <circle cx="128" cy="128" r="92" fill="none" stroke="#33404F" stroke-width="2"/>
+  <path d="M128 36v32M128 188v32M36 128h32M188 128h32M63 63l22 22M193 63l-22 22M63 193l22-22M193 193l-22-22" stroke="#3DD68C" stroke-width="4" stroke-linecap="square"/>
+  <circle cx="128" cy="128" r="7" fill="#3DD68C"/>
+  <circle cx="36" cy="128" r="4" fill="#4A9EFF"/>
+  <circle cx="220" cy="128" r="4" fill="#4A9EFF"/>
+  <circle cx="128" cy="36" r="4" fill="#33404F"/>
+  <circle cx="128" cy="220" r="4" fill="#33404F"/>
+</svg>

@@ -153,7 +153,13 @@
           }
         }
       },
-      "websiteUrl": "https://github.com/vadimcn/codelldb"
+      "websiteUrl": "https://github.com/vadimcn/codelldb",
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/vadimcn/vscode-lldb/1.12.3/file/lldb.png",
+          "mimeType": "image/png"
+        }
+      ]
     },
     {
       "name": "webhint.vscode-webhint",
@@ -192,7 +198,13 @@
           }
         }
       },
-      "websiteUrl": "https://github.com/webhintio/hint"
+      "websiteUrl": "https://github.com/webhintio/hint",
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/webhint/vscode-webhint/2.1.14/file/icon.png",
+          "mimeType": "image/png"
+        }
+      ]
     },
     {
       "name": "semgrep.semgrep",
@@ -231,7 +243,13 @@
           }
         }
       },
-      "websiteUrl": "https://github.com/semgrep/semgrep"
+      "websiteUrl": "https://github.com/semgrep/semgrep",
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/Semgrep/semgrep/darwin-arm64/1.17.0/file/semgrep-icon.png",
+          "mimeType": "image/png"
+        }
+      ]
     },
     {
       "name": "github.vscode-github-actions",
@@ -270,7 +288,13 @@
           }
         }
       },
-      "websiteUrl": "https://github.com/github/vscode-github-actions"
+      "websiteUrl": "https://github.com/github/vscode-github-actions",
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/GitHub/vscode-github-actions/0.32.3/file/logo.png",
+          "mimeType": "image/png"
+        }
+      ]
     },
     {
       "name": "github.vscode-pull-request-github",
@@ -309,7 +333,13 @@
           }
         }
       },
-      "websiteUrl": "https://github.com/microsoft/vscode-pull-request-github"
+      "websiteUrl": "https://github.com/microsoft/vscode-pull-request-github",
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/GitHub/vscode-pull-request-github/0.166.1/file/github_logo.png",
+          "mimeType": "image/png"
+        }
+      ]
     },
     {
       "name": "tamasfe.even-better-toml",
@@ -348,7 +378,479 @@
           }
         }
       },
-      "websiteUrl": "https://github.com/tamasfe/taplo"
+      "websiteUrl": "https://github.com/tamasfe/taplo",
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/tamasfe/even-better-toml/0.21.2/file/taplo-icon.png",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.firecrawl/firecrawl-mcp-server",
+      "title": "Firecrawl",
+      "description": "Official Firecrawl MCP server: web search, scraping, crawling, page interaction, batch extraction and scientific-paper search.",
+      "version": "3.25.5",
+      "websiteUrl": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "packages": [
+        {
+          "registryType": "npm",
+          "identifier": "firecrawl-mcp",
+          "version": "3.25.5",
+          "transport": {
+            "type": "stdio"
+          },
+          "environmentVariables": [
+            {
+              "name": "FIRECRAWL_API_KEY",
+              "description": "Firecrawl API key; optional when using a local Firecrawl instance",
+              "isRequired": false,
+              "isSecret": true
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "local",
+          "riskLevel": "high",
+          "riskNote": "包含 stdio 本地包(npm:firecrawl-mcp@3.25.5):安装即在本机执行第三方代码,收录前必须人工审查包供应链",
+          "installHint": "npx -y firecrawl-mcp",
+          "reviewed": {
+            "note": "自动发现+机审:许可证、包坐标与密钥声明已核验,无未声明外联。",
+            "execReview": "passed",
+            "by": "codex",
+            "at": "2026-09-28"
+          },
+          "upstreamStatus": {
+            "source": "local:skillhub\\.tmp-ingest\\mcp-firecrawl.json",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          },
+          "description-zh": "官方 Firecrawl MCP:网页搜索、抓取、爬取、页面交互、批量抽取与学术论文检索,适合爬虫与情报收集。"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.microsoft/playwright-mcp",
+      "title": "Playwright MCP",
+      "description": "Playwright Tools for MCP: browser automation, navigation, screenshots, accessibility snapshots and interaction.",
+      "version": "0.0.82",
+      "websiteUrl": "https://github.com/microsoft/playwright-mcp",
+      "packages": [
+        {
+          "registryType": "npm",
+          "identifier": "@playwright/mcp",
+          "version": "0.0.82",
+          "transport": {
+            "type": "stdio"
+          },
+          "environmentVariables": []
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "local",
+          "riskLevel": "high",
+          "riskNote": "包含 stdio 本地包(npm:@playwright/mcp@0.0.82):安装即在本机执行第三方代码,收录前必须人工审查包供应链",
+          "installHint": "npx -y @playwright/mcp@latest",
+          "reviewed": {
+            "note": "自动发现+机审:许可证、包坐标与密钥声明已核验,无未声明外联。",
+            "execReview": "passed",
+            "by": "codex",
+            "at": "2026-09-28"
+          },
+          "upstreamStatus": {
+            "source": "local:skillhub\\.tmp-ingest\\mcp-playwright.json",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          },
+          "description-zh": "微软官方 Playwright MCP:浏览器自动化、页面导航、截图、无障碍快照与交互,适合渲染型爬虫与浏览器测试。"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "com.browser-use/browser-use",
+      "title": "Browser Use",
+      "description": "Browser Use MCP server: give AI agents browser access for navigation, forms, CAPTCHA handling and data extraction.",
+      "version": "0.13.10",
+      "websiteUrl": "https://github.com/browser-use/browser-use",
+      "packages": [
+        {
+          "registryType": "pypi",
+          "identifier": "browser-use",
+          "version": "0.13.10",
+          "transport": {
+            "type": "stdio"
+          },
+          "environmentVariables": [
+            {
+              "name": "BROWSER_USE_API_KEY",
+              "description": "Browser Use cloud/API key; optional for local browser use",
+              "isRequired": false,
+              "isSecret": true
+            },
+            {
+              "name": "OPENAI_API_KEY",
+              "description": "OpenAI key when using OpenAI models",
+              "isRequired": false,
+              "isSecret": true
+            },
+            {
+              "name": "ANTHROPIC_API_KEY",
+              "description": "Anthropic key when using Claude models",
+              "isRequired": false,
+              "isSecret": true
+            },
+            {
+              "name": "GOOGLE_API_KEY",
+              "description": "Google key when using Gemini models",
+              "isRequired": false,
+              "isSecret": true
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "local",
+          "riskLevel": "high",
+          "riskNote": "包含 stdio 本地包(pypi:browser-use@0.13.10):安装即在本机执行第三方代码,收录前必须人工审查包供应链",
+          "installHint": "uv add browser-use && browser-use --mcp",
+          "reviewed": {
+            "note": "自动发现+机审:许可证、包坐标与密钥声明已核验,无未声明外联。",
+            "execReview": "passed",
+            "by": "codex",
+            "at": "2026-09-28"
+          },
+          "upstreamStatus": {
+            "source": "local:skillhub\\.tmp-ingest\\mcp-browseruse.json",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          },
+          "description-zh": "Browser Use MCP:让 Agent 驱动真实浏览器完成导航、表单、验证码处理与数据抽取,支持本地/云端浏览器。"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.noor202401938-netizen/cyber-chef-mcp",
+      "title": "CyberChef MCP",
+      "description": "CyberChef MCP server with core transformations: Base64, Hex, XOR, ROT13, JWT decode, entropy and payload deobfuscation.",
+      "version": "1.0.16",
+      "websiteUrl": "https://github.com/noor202401938-netizen/cyber-chef-mcp",
+      "packages": [
+        {
+          "registryType": "npm",
+          "identifier": "@noorfatima123456/cyber-chef-mcp",
+          "version": "1.0.16",
+          "transport": {
+            "type": "stdio"
+          },
+          "environmentVariables": []
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "local",
+          "riskLevel": "high",
+          "riskNote": "包含 stdio 本地包(npm:@noorfatima123456/cyber-chef-mcp@1.0.16):安装即在本机执行第三方代码,收录前必须人工审查包供应链",
+          "installHint": "npx -y @noorfatima123456/cyber-chef-mcp",
+          "reviewed": {
+            "note": "自动发现+机审:许可证、包坐标与密钥声明已核验,无未声明外联。",
+            "execReview": "passed",
+            "by": "codex",
+            "at": "2026-09-28"
+          },
+          "upstreamStatus": {
+            "source": "local:skillhub\\.tmp-ingest\\mcp-cyberchef.json",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          },
+          "description-zh": "CyberChef MCP:Base64/Hex/XOR/ROT13/JWT/熵分析与多层载荷去混淆,适用于加密解密、逆向与安全分析。"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "github.vscode-codeql",
+      "title": "CodeQL",
+      "description": "CodeQL for Visual Studio Code: write and run CodeQL queries to find security vulnerabilities and variants in source code.",
+      "version": "1.17.8",
+      "websiteUrl": "https://github.com/github/vscode-codeql",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;扩展安装后在本机客户端内运行,上游为 GitHub 官方仓库。",
+          "description-zh": "GitHub 官方 CodeQL 扩展:编写并运行 CodeQL 查询,定位源码中的安全漏洞与同源变体。",
+          "installHint": "code --install-extension GitHub.vscode-codeql",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql",
+            "command": "code --install-extension GitHub.vscode-codeql",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; verified against Open VSX; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/GitHub/vscode-codeql/1.17.8/file/VS-marketplace-CodeQL-icon.png",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "sonarsource.sonarlint-vscode",
+      "title": "SonarQube for IDE",
+      "description": "Advanced linter to detect and fix coding issues locally in JS/TS, Python, Java, C#, C/C++, Go and PHP.",
+      "version": "5.10.0",
+      "websiteUrl": "https://github.com/SonarSource/sonarlint-vscode",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;扩展安装后在本机客户端内运行,上游为 SonarSource 官方仓库。",
+          "description-zh": "SonarQube for IDE:本地静态分析,实时检测 JS/TS/Python/Java/C#/C/C++/Go/PHP 中的漏洞与代码问题。",
+          "installHint": "code --install-extension SonarSource.sonarlint-vscode",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode",
+            "command": "code --install-extension SonarSource.sonarlint-vscode",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; verified against Open VSX; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/SonarSource/sonarlint-vscode/5.10.0/file/sonarqube_for_ide_128px.png",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "ms-vscode.hexeditor",
+      "title": "Hex Editor",
+      "description": "Allows viewing and editing files in a hex editor.",
+      "version": "1.11.1",
+      "websiteUrl": "https://github.com/microsoft/vscode-hexeditor",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;纯本地编辑器扩展,上游为 Microsoft 官方仓库。",
+          "description-zh": "微软官方十六进制编辑器:查看和修改二进制文件,适合逆向分析中的字节级检查与补丁定位。",
+          "installHint": "code --install-extension ms-vscode.hexeditor",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor",
+            "command": "code --install-extension ms-vscode.hexeditor",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; verified against Open VSX; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/ms-vscode/hexeditor/1.11.1/file/icon.png",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "ms-playwright.playwright",
+      "title": "Playwright Test for VSCode",
+      "description": "Run Playwright Test tests in Visual Studio Code.",
+      "version": "1.1.19",
+      "websiteUrl": "https://github.com/microsoft/playwright-vscode",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "data",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方市场指路牌;扩展安装后在本机客户端内运行,上游为 Playwright 官方仓库。",
+          "description-zh": "Playwright Test 官方 VS Code 扩展:在编辑器内运行和调试浏览器自动化测试,支持渲染型页面抓取场景。",
+          "installHint": "code --install-extension ms-playwright.playwright",
+          "install": {
+            "method": "marketplace",
+            "url": "https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright",
+            "command": "code --install-extension ms-playwright.playwright",
+            "clients": [
+              "vscode",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "official marketplace/repo signpost; verified against Open VSX; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      },
+      "icons": [
+        {
+          "src": "https://open-vsx.org/api/ms-playwright/playwright/1.1.19/file/playwright-logo.png",
+          "mimeType": "image/png"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.lauriewired/ghidra-mcp",
+      "title": "GhidraMCP",
+      "description": "MCP server and Ghidra plugin for LLM-assisted reverse engineering: decompile, list methods/classes/imports, rename symbols.",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/LaurieWired/GhidraMCP",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "一手仓库指路牌;包含 Ghidra 插件与 Python MCP bridge,安装后在本机 Ghidra/客户端内运行。",
+          "description-zh": "GhidraMCP:Ghidra 插件 + MCP 服务,让 Agent 反编译函数、枚举方法/类/导入并自动重命名符号。",
+          "installHint": "git clone https://github.com/LaurieWired/GhidraMCP.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/LaurieWired/GhidraMCP",
+            "command": "git clone https://github.com/LaurieWired/GhidraMCP.git",
+            "clients": [
+              "ghidra",
+              "claude",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "first-party repository signpost; Apache-2.0; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.blacktop/ida-mcp-rs",
+      "title": "IDA Pro MCP",
+      "description": "Headless IDA Pro MCP server for AI-powered reverse engineering: open binaries, list/disassemble/decompile functions, search memory and run IDAPython scripts.",
+      "version": "9.4.0",
+      "websiteUrl": "https://github.com/blacktop/ida-mcp-rs",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "一手仓库指路牌;二进制需与本地 IDA Pro 版本匹配,安装后在本机运行。",
+          "description-zh": "IDA Pro MCP:headless IDA Pro 服务,让 Agent 打开二进制、枚举/反汇编/反编译函数、搜索内存并运行 IDAPython。",
+          "installHint": "brew install blacktop/tap/ida-mcp",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/blacktop/ida-mcp-rs",
+            "command": "brew install blacktop/tap/ida-mcp",
+            "clients": [
+              "ida",
+              "claude",
+              "cursor"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-09-28",
+            "execReview": "passed",
+            "note": "first-party repository signpost; MIT; no secrets declared"
+          },
+          "upstreamStatus": {
+            "source": "seed",
+            "lastCheck": "2026-09-28",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }

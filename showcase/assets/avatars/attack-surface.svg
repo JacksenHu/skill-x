@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="AttackSurface">
+  <defs>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0v16" fill="none" stroke="#1E2630" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="256" height="256" rx="6" fill="#141A21"/>
+  <rect width="256" height="256" rx="6" fill="url(#grid)"/>
+  <rect x="1" y="1" width="254" height="254" rx="6" fill="none" stroke="#232C38" stroke-width="2"/>
+  <path d="M46 72l82 46 82-46" fill="none" stroke="#FF4D4F" stroke-width="3"/>
+  <path d="M46 128l82 46 82-46" fill="none" stroke="#FF6B2C" stroke-width="3"/>
+  <path d="M46 184l82 46 82-46" fill="none" stroke="#33404F" stroke-width="2"/>
+  <path d="M82 96l26-14 20 11 18-10 28 15" fill="none" stroke="#FF4D4F" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="128" cy="118" r="6" fill="#FF4D4F"/>
+  <circle cx="46" cy="72" r="4" fill="#4A9EFF"/>
+  <circle cx="210" cy="72" r="4" fill="#4A9EFF"/>
+  <circle cx="210" cy="230" r="4" fill="#33404F"/>
+  <circle cx="46" cy="230" r="4" fill="#33404F"/>
+</svg>

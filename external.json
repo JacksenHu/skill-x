@@ -462,6 +462,654 @@
         "skills\\vercel-optimize\\scripts\\verify-and-regen.mjs",
         "skills\\vercel-optimize\\scripts\\verify-finding.mjs"
       ]
+    },
+    {
+      "namespace": "dhicoc/dsh-reverse-skill",
+      "upstream": "https://github.com/dhicoc/dsh-reverse-skill",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE:L1",
+        "attribution": "保留上游 LICENSE 与署名"
+      },
+      "ingestedAt": "2026-09-28",
+      "verified": {
+        "by": "codex",
+        "at": "2026-09-28",
+        "execReview": "passed"
+      },
+      "upstreamStatus": {
+        "lastCheck": "2026-09-28",
+        "alive": true,
+        "failSince": null
+      },
+      "manifestVia": "scan:skills/",
+      "skills": [
+        {
+          "name": "api-security",
+          "path": "skills\\api-security\\SKILL.md",
+          "description": "Use for authorized security assessment of REST, GraphQL, WebSocket, or SOAP APIs, including discovery, authentication, authorization, rate-limit, and CI/CD testing.",
+          "version": ""
+        },
+        {
+          "name": "apk-reverse",
+          "path": "skills\\apk-reverse\\SKILL.md",
+          "description": "在 CLI 环境下做 Android APK 逆向时使用。适用于 APK 解包、Java 反编译、smali 修改、重打包、Frida 动态 Hook，以及按需切换到 so/native 分析。优先使用本机已安装的 jadx、apktool、frida、adb、ida-reverse、radare2。",
+          "version": ""
+        },
+        {
+          "name": "attack-chain",
+          "path": "skills\\attack-chain\\SKILL.md",
+          "description": "Use for authorized multi-stage attack-path planning and orchestration when a task spans reconnaissance, initial access, privilege escalation, lateral movement, or impact assessment. Route single-stage tasks directly to their specialist skill.",
+          "version": ""
+        },
+        {
+          "name": "binary-diff",
+          "path": "skills\\binary-diff\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "browser-automation",
+          "path": "skills\\browser-automation\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "browser-extension-reverse",
+          "path": "skills\\browser-extension-reverse\\SKILL.md",
+          "description": "Use for authorized reverse engineering of browser extensions (Chrome/Firefox) including manifest analysis, background workers, and extension-based credential or traffic logic recovery.",
+          "version": ""
+        },
+        {
+          "name": "case-review",
+          "path": "skills\\case-review\\SKILL.md",
+          "description": "Reviews a reverse-skill case package for scope readiness, Evidence to Finding to Path traceability, work item coverage, timeline references, and optional artifact hash integrity before report handoff.",
+          "version": ""
+        },
+        {
+          "name": "cloud-k8s",
+          "path": "skills\\cloud-k8s\\SKILL.md",
+          "description": "Use for authorized cloud, container, and Kubernetes security assessment including metadata SSRF, IAM misconfig, container escape paths, and cluster RBAC review.",
+          "version": ""
+        },
+        {
+          "name": "code-audit",
+          "path": "skills\\code-audit\\SKILL.md",
+          "description": "Use for authorized source-code security review and SAST workflows including Semgrep, CodeQL patterns, dangerous API hunting, and fix verification.",
+          "version": ""
+        },
+        {
+          "name": "ctf-sandbox",
+          "path": "skills\\ctf-sandbox\\SKILL.md",
+          "description": "Thin PRIMARY for CTF / AWD / 靶场 multi-type orchestration. Hands off to the sidecar CTF-Sandbox-Orchestrator. Use when the user says CTF, AWD, 靶场, or 比赛题 and no more specific pwn/APK/IDA route already won.",
+          "version": ""
+        },
+        {
+          "name": "database-security",
+          "path": "skills\\database-security\\SKILL.md",
+          "description": "Use for authorized database security assessment covering PostgreSQL/MySQL/MSSQL/Mongo/Redis exposure, authz, UDF/command paths, and misconfiguration review.",
+          "version": ""
+        },
+        {
+          "name": "diagram-generator",
+          "path": "skills\\diagram-generator\\SKILL.md",
+          "description": "generate, refine, validate, and render diagrams from natural language, notes, code snippets, schemas, tables, or existing diagram source. use for flowcharts, swimlanes, sequence diagrams, state diagrams, er diagrams, class diagrams, architecture/c4-style diagrams, dependency graphs, gantt charts, mind maps, user journeys, sankey-style flows, org charts, network graphs, and other visual models. supports mermaid by default, graphviz dot for complex graph layout, plantuml for uml-heavy engineering diagrams, and svg output when direct markup is more reliable.",
+          "version": ""
+        },
+        {
+          "name": "digital-forensics",
+          "path": "skills\\digital-forensics\\SKILL.md",
+          "description": "Use for authorized digital forensics including memory dumps, disk timelines, PCAP investigation, artifact triage, and IR evidence preservation.",
+          "version": ""
+        },
+        {
+          "name": "docs-generator",
+          "path": "skills\\docs-generator\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "dotnet-reverse",
+          "path": "skills\\dotnet-reverse\\SKILL.md",
+          "description": ".NET / C# 二进制逆向。当目标是 .NET assembly（PE 头含 CLR、.exe/.dll 托管程序）、C# 编译产物（含 NativeAOT）、红队 Sharp* 工具（Rubeus / SharpHound / SharpHound 等）、.NET 混淆程序（ConfuserEx / SmartAssembly / Babel / Eazfuscator）、.NET loader / info-stealer / 套壳 malware 时使用。优先用 dnSpyEx + de4dot，需要 AI 直接操作时联动 dnSpy MCP。不用于纯 native 二进制（走 reverse-engineering / ida-reverse）。",
+          "version": ""
+        },
+        {
+          "name": "edr-bypass-re",
+          "path": "skills\\edr-bypass-re\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "email-security",
+          "path": "skills\\email-security\\SKILL.md",
+          "description": "Use for authorized email security review including phishing analysis, header authentication (SPF/DKIM/DMARC), BEC patterns, and mailbox token abuse research.",
+          "version": ""
+        },
+        {
+          "name": "firmware-pentest",
+          "path": "skills\\firmware-pentest\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "ghidra-reverse",
+          "path": "skills\\ghidra-reverse\\SKILL.md",
+          "description": "Use for free/open reverse engineering with Ghidra (headless or GUI), including decompile, cross-refs, and optional Ghidra MCP workflows when IDA is unavailable.",
+          "version": ""
+        },
+        {
+          "name": "go-rust-reverse",
+          "path": "skills\\go-rust-reverse\\SKILL.md",
+          "description": "Use for reverse engineering stripped Go and Rust binaries including runtime recognition, pclntab/moduel data recovery, panic strings, and idiomatic decompilation recovery.",
+          "version": ""
+        },
+        {
+          "name": "hardware-security",
+          "path": "skills\\hardware-security\\SKILL.md",
+          "description": "Use for authorized hardware and embedded interface security research including UART/JTAG discovery, debug pad triage, secure boot overview, and offline firmware extraction support.",
+          "version": ""
+        },
+        {
+          "name": "ida-reverse",
+          "path": "skills\\ida-reverse\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "identity-federation",
+          "path": "skills\\identity-federation\\SKILL.md",
+          "description": "Use for authorized assessment of federated identity systems including SAML, OIDC, OAuth2 flows, SSO misconfiguration, and token confusion issues.",
+          "version": ""
+        },
+        {
+          "name": "js-reverse",
+          "path": "skills\\js-reverse\\SKILL.md",
+          "description": "在使用 js-reverse-mcp 做前端 JavaScript 逆向时使用，适用于签名链路定位、页面观察取证、运行时采样、本地补环境复现与证据化输出。优先适配当前环境里的 js-reverse_* 工具，需要更强的浏览器/CDP/Hook 面时联动 jshookmcp。",
+          "version": ""
+        },
+        {
+          "name": "llm-security",
+          "path": "skills\\llm-security\\SKILL.md",
+          "description": "Use for authorized security assessment of LLM applications and AI agents, including prompt injection, tool abuse, RAG exposure, memory poisoning, and model supply-chain risks.",
+          "version": ""
+        },
+        {
+          "name": "macos-reverse",
+          "path": "skills\\macos-reverse\\SKILL.md",
+          "description": "Use for authorized macOS and Mach-O reverse engineering including codesign, Objective-C/Swift recovery, endpoint security surfaces, and Apple platform malware analysis.",
+          "version": ""
+        },
+        {
+          "name": "malware-analysis",
+          "path": "skills\\malware-analysis\\SKILL.md",
+          "description": "Use when analyzing suspected malware through static, dynamic, and behavioral techniques, including IOC extraction, YARA or Sigma rules, sandboxing, and anti-analysis behavior.",
+          "version": ""
+        },
+        {
+          "name": "mobile-reverse",
+          "path": "skills\\mobile-reverse\\SKILL.md",
+          "description": "Use for authorized Android or iOS application reverse engineering and security testing, including APK or IPA analysis, runtime instrumentation, SSL pinning, and platform protection checks.",
+          "version": ""
+        },
+        {
+          "name": "ot-ics",
+          "path": "skills\\ot-ics\\SKILL.md",
+          "description": "Use for authorized OT/ICS security assessment covering Purdue model zoning, PLC/SCADA exposure, industrial protocol discovery, and safe passive-first evaluation.",
+          "version": ""
+        },
+        {
+          "name": "patch-diff-exploit",
+          "path": "skills\\patch-diff-exploit\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "pentest-tools",
+          "path": "skills\\pentest-tools\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "src-hunter",
+          "path": "skills\\pentest-tools\\src-hunter\\SKILL.md",
+          "description": "实战 SRC / 众测 / Bug bounty 漏洞挖掘工作流 skill。包含：5 阶段方法论（intake → recon → enum → hunt → report）、19 个攻击类 playbook（SQLi/XSS/RCE/SSRF/IDOR/CSRF/Path Traversal/File Upload/SSTI/XXE/Race/HTTP Smuggling/OAuth/JWT/SAML/GraphQL/Mobile/LLM/DoS）、305 个结构化 payload、263 个 WAF/EDR 绕过变体、2887 份 HackerOne 真实 High/Critical 已披露案例、77,000+ WooYun 案例统计、国产 OA / 中间件指纹库、银行 / 电信行业垂直 playbook。当用户提到 \"src 挖洞 / src 漏洞挖掘 / bug bounty / 众测 / hackerone / 漏洞赏金 / SRC / 任意 X 漏洞 / 渗透测试\" 或问\"如何挖某个目标 / 怎么测某个 API / 如何绕过 WAF\" 时触发。",
+          "version": ""
+        },
+        {
+          "name": "protocol-reverse",
+          "path": "skills\\protocol-reverse\\SKILL.md",
+          "description": "Use for authorized reverse engineering of custom binary protocols, Protobuf/gRPC, WebSocket frames, and PCAP-driven protocol recovery.",
+          "version": ""
+        },
+        {
+          "name": "pwn-chain",
+          "path": "skills\\pwn-chain\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "radare2",
+          "path": "skills\\radare2\\SKILL.md",
+          "description": "|",
+          "version": ""
+        },
+        {
+          "name": "radio-sdr",
+          "path": "skills\\radio-sdr\\SKILL.md",
+          "description": "Use for authorized RF/SDR security research including signal identification, replay feasibility study in shielded labs, and wireless protocol analysis outside classic Wi-Fi.",
+          "version": ""
+        },
+        {
+          "name": "dsl-vm-reverse",
+          "path": "skills\\reverse-engineering\\dsl-vm-reverse\\SKILL.md",
+          "description": "Reverse JavaScript-based custom DSL/VM interpreters, non-standard WASM-like runtimes, and risk-control engines. Use when analyzing IIFE or switch-based opcode dispatchers, extracting instruction tables, recovering bytecode semantics, capturing VM state at runtime, or reconstructing execution flow.",
+          "version": ""
+        },
+        {
+          "name": "reverse-engineering",
+          "path": "skills\\reverse-engineering\\SKILL.md",
+          "description": "Provides reverse engineering techniques. Use when the main job is to understand how a compiled, obfuscated, packed, or virtualized target works before exploiting or solving it, including binaries, APKs, WASM, firmware, custom VMs, bytecode, malware-like loaders, and anti-debug or anti-analysis logic. Do not use it when the vulnerability is already understood and the remaining task is exploitation; use pwn instead. Do not use it for pure web workflows, log or disk forensics, or standalone crypto problems unless reversing the implementation is the real blocker.",
+          "version": ""
+        },
+        {
+          "name": "reverse-skill-router",
+          "path": "skills\\SKILL.md",
+          "description": "Routes reverse engineering, exploitation, penetration testing, malware, mobile, firmware, browser automation, documentation, and security tasks to the appropriate specialist skill. Use when a task spans modules or the correct reverse-skill entrypoint is unclear.",
+          "version": ""
+        },
+        {
+          "name": "supply-chain-security",
+          "path": "skills\\supply-chain-security\\SKILL.md",
+          "description": "Use for software supply-chain security assessment covering SBOM, SCA, CI/CD pipelines, container images, build integrity, dependency provenance, and vulnerability reachability.",
+          "version": ""
+        },
+        {
+          "name": "thick-client",
+          "path": "skills\\thick-client\\SKILL.md",
+          "description": "Use for authorized security testing of desktop thick clients including local storage, update channels, IPC, traffic, and client-side trust boundaries.",
+          "version": ""
+        },
+        {
+          "name": "threat-hunting",
+          "path": "skills\\threat-hunting\\SKILL.md",
+          "description": "Use for blue-team threat hunting, detection engineering with Sigma/YARA, SIEM query design, and incident detection validation.",
+          "version": ""
+        },
+        {
+          "name": "threat-intelligence",
+          "path": "skills\\threat-intelligence\\SKILL.md",
+          "description": "Use for authorized OSINT and cyber threat intelligence that enriches IOCs, campaigns, impersonation, scams, or threat actors from public sources. Includes bounded X/Twitter search through Xquik, source preservation, corroboration, and evidence handoff.",
+          "version": ""
+        },
+        {
+          "name": "wifi-wireless",
+          "path": "skills\\wifi-wireless\\SKILL.md",
+          "description": "Use for authorized wireless security assessment including Wi-Fi capture, WPA handshake analysis, rogue AP detection research, and lab-only deauth testing.",
+          "version": ""
+        },
+        {
+          "name": "windows-ad",
+          "path": "skills\\windows-ad\\SKILL.md",
+          "description": "Use for authorized Active Directory and Windows identity attacks including Kerberos, AD CS, BloodHound paths, NTLM relay, and domain privilege escalation research.",
+          "version": ""
+        }
+      ],
+      "executables": [
+        "_selftest.mjs",
+        "lib\\index.js",
+        "lib\\types\\index.d.ts",
+        "port.py",
+        "skills\\apk-reverse\\scripts\\decode.ps1",
+        "skills\\apk-reverse\\scripts\\decode.sh",
+        "skills\\apk-reverse\\scripts\\frida-run.ps1",
+        "skills\\apk-reverse\\scripts\\frida-run.sh",
+        "skills\\apk-reverse\\scripts\\manifest-summary.ps1",
+        "skills\\apk-reverse\\scripts\\rebuild-sign-install.ps1",
+        "skills\\apk-reverse\\scripts\\rebuild-sign-install.sh",
+        "skills\\browser-automation\\scripts\\setup.ps1",
+        "skills\\case-review\\scripts\\review_case.py",
+        "skills\\case-review\\tests\\test_review_case.py",
+        "skills\\diagram-generator\\scripts\\create_sample_diagrams.py",
+        "skills\\diagram-generator\\scripts\\render_diagram.py",
+        "skills\\ida-reverse\\scripts\\IdaOpenHelpers.ps1",
+        "skills\\ida-reverse\\scripts\\install-autostart.ps1",
+        "skills\\ida-reverse\\scripts\\open.ps1",
+        "skills\\ida-reverse\\scripts\\run-supervisor.py",
+        "skills\\ida-reverse\\scripts\\start-gui.ps1",
+        "skills\\ida-reverse\\scripts\\start.ps1",
+        "skills\\ida-reverse\\scripts\\watchdog.ps1",
+        "skills\\radare2\\scripts\\recon.ps1",
+        "skills\\radare2\\scripts\\recon.sh",
+        "skills\\scripts\\append-evidence.ps1",
+        "skills\\scripts\\bootstrap-reverse.ps1",
+        "skills\\scripts\\bootstrap-reverse.sh",
+        "skills\\scripts\\case-guard.ps1",
+        "skills\\scripts\\case-guard.sh",
+        "skills\\scripts\\case-init.ps1",
+        "skills\\scripts\\case-init.sh",
+        "skills\\scripts\\extract-summaries.ps1",
+        "skills\\scripts\\lib\\BootstrapSupplyChain.ps1",
+        "skills\\scripts\\lib\\HostRuntime.ps1",
+        "skills\\scripts\\lib\\RouteScope.ps1",
+        "skills\\scripts\\lib\\ToolDiscovery.ps1",
+        "skills\\scripts\\lib\\WorkRoot.ps1",
+        "skills\\scripts\\master-route.ps1",
+        "skills\\scripts\\master-route.sh",
+        "skills\\scripts\\refresh-tool-index.ps1",
+        "skills\\scripts\\refresh-tool-index.sh",
+        "skills\\scripts\\scan-leaks.ps1",
+        "skills\\scripts\\smoke.ps1",
+        "skills\\scripts\\test-bootstrap-codex-encoding.ps1",
+        "skills\\scripts\\test-bootstrap-manifest.sh",
+        "skills\\scripts\\test-bootstrap-supply-chain.ps1",
+        "skills\\scripts\\test-client-neutral-bootstrap.ps1",
+        "skills\\scripts\\test-client-neutral-bootstrap.sh",
+        "skills\\scripts\\test-p0-friction.ps1",
+        "skills\\scripts\\test-parse-contracts.ps1",
+        "skills\\scripts\\test-routing.ps1",
+        "skills\\scripts\\test-routing.sh",
+        "skills\\scripts\\test-workflow-title-safety.ps1",
+        "skills\\scripts\\update-star-history.ps1",
+        "skills\\scripts\\verify-doc-facts.ps1",
+        "skills\\scripts\\verify-routing-coherence.ps1",
+        "src\\index.ts"
+      ]
+    },
+    {
+      "namespace": "thirdwatch-dev/scraping-skills",
+      "upstream": "https://github.com/thirdwatch-dev/scraping-skills",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE:L1",
+        "attribution": "保留上游 LICENSE 与署名"
+      },
+      "ingestedAt": "2026-09-28",
+      "verified": {
+        "by": "codex",
+        "at": "2026-09-28",
+        "execReview": "passed"
+      },
+      "upstreamStatus": {
+        "lastCheck": "2026-09-28",
+        "alive": true,
+        "failSince": null
+      },
+      "manifestVia": "scan:skills/",
+      "skills": [
+        {
+          "name": "anti-bot-scraping",
+          "path": "skills\\anti-bot-scraping\\SKILL.md",
+          "description": "Use when a site blocks your scraper and you need to get past it — 403 Forbidden on the first request, JS challenges, CAPTCHAs, Cloudflare Turnstile, DataDome, Akamai, PerimeterX, \"Just a moment...\", access denied, IP bans, or an empty/skeleton page where data should be. Covers diagnosing transient failures vs real blocks, the cheapest-first technique ladder (plain HTTP → TLS fingerprint spoof → stealth browser → full browser), TLS spoofing with impit/curl_cffi, Camoufox stealth-browser setup, the Cloudflare Turnstile iframe-click, homepage warmup for cookie-based defenses, browser cookie reuse, XHR interception, proxy selection (residential vs datacenter vs SERP), and which targets genuinely resist affordable bypasses. Triggers on \"site is blocking me\", \"getting 403\", \"Cloudflare\", \"DataDome\", \"Turnstile\", \"CAPTCHA\", \"bypass anti-bot\", \"scraper stopped working\", \"blocked\".",
+          "version": ""
+        },
+        {
+          "name": "apify-actor-builder",
+          "path": "skills\\apify-actor-builder\\SKILL.md",
+          "description": "Use when you want to package a web scraper as a deployable, monetizable Apify Actor in Python — set up the directory structure, choose a runtime pattern (HTTP / impit / Playwright / Camoufox), write the input/output/dataset schemas, deploy with the apify CLI, and configure pay-per-event pricing. Triggers on \"build an Apify actor\", \"deploy/publish a scraper to Apify\", \"monetize a scraper\", \"pay-per-event pricing\", \"Apify input schema\", \"Apify output schema\", \"actor.json\".",
+          "version": ""
+        },
+        {
+          "name": "business-lead-data-scraping",
+          "path": "skills\\business-lead-data-scraping\\SKILL.md",
+          "description": "Use when you need B2B leads or company data — business listings with contact info, supplier directories, company/people enrichment, KYB/verification, or trade data. Covers Google Maps (local listings), IndiaMart and JustDial (supplier/business directories), LinkedIn (company employees and candidate finder), GST Verification (India KYB), UN Comtrade (trade data), and Product Hunt (launches). Triggers on \"lead generation\", \"B2B leads\", \"find businesses\", \"company data\", \"supplier directory\", \"KYB\", \"due diligence\", \"market sizing\", \"sales prospecting\".",
+          "version": ""
+        },
+        {
+          "name": "ecommerce-product-scraping",
+          "path": "skills\\ecommerce-product-scraping\\SKILL.md",
+          "description": "Use when you need to scrape e-commerce product data — titles, brands, prices, MRP/list price, discounts, ratings, variants/sizes, availability, images, and product URLs — from online storefronts and marketplaces. Covers Amazon, Flipkart, AliExpress, Myntra, Nykaa, Meesho, Snapdeal, Noon, AJIO, FirstCry, Tata Cliq, and any Shopify store. For price monitoring / MAP enforcement, catalog building, competitor price tracking, and dropshipping product research. Triggers on \"scrape products\", \"price monitoring\", \"product catalog\", \"competitor prices\", \"MAP\", \"track prices\", \"build a product database\", \"compare prices across stores\".",
+          "version": ""
+        },
+        {
+          "name": "food-delivery-scraping",
+          "path": "skills\\food-delivery-scraping\\SKILL.md",
+          "description": "Use when you need data from food-delivery platforms — restaurants, menus, item prices, ratings, and delivery times/fees — for menu and price intelligence, restaurant coverage analysis, market analysis, or competitor menu tracking. Covers Swiggy and Zomato (India), Talabat (Middle East), Deliveroo (UK/UAE/EU), and Noon Food. Triggers on \"scrape restaurants\", \"menu data\", \"food delivery\", \"restaurant prices\", \"menu prices\", \"delivery fees\", \"restaurant ratings\".",
+          "version": ""
+        },
+        {
+          "name": "job-market-scraping",
+          "path": "skills\\job-market-scraping\\SKILL.md",
+          "description": "Use when scraping the job market — job listings, salaries, company ratings, or candidate/profile sourcing — from LinkedIn, Indeed, Glassdoor, Naukri, Google Jobs, RemoteOK, Wellfound, Monster, ZipRecruiter, Reed, Adzuna, Upwork, CutShort, or AmbitionBox. Covers building a job aggregator, salary benchmarking, recruiting/sourcing, and ATS/market feeds. Triggers on \"scrape jobs\", \"job listings\", \"salary data\", \"company ratings\", \"find candidates\", \"source candidates\", \"recruiting\", \"job board scraper\", \"job aggregator\".",
+          "version": ""
+        },
+        {
+          "name": "real-estate-scraping",
+          "path": "skills\\real-estate-scraping\\SKILL.md",
+          "description": "Use when you need property or real-estate listing data — sale and rental listings, asking prices, BHK / bed-bath counts, carpet/built-up area, floor, location and coordinates, and agent/owner details. Covers Rightmove (UK), 99acres, MagicBricks, NoBroker, CommonFloor (India), and Craigslist housing. Triggers on \"scrape property listings\", \"real estate data\", \"rental prices\", \"property prices\", \"housing\", \"for-sale listings\", \"rental comps\", \"real estate lead gen\".",
+          "version": ""
+        },
+        {
+          "name": "review-reputation-scraping",
+          "path": "skills\\review-reputation-scraping\\SKILL.md",
+          "description": "Use when scraping reviews, ratings, or reputation data — review text, star ratings, TrustScore, pros/cons, company replies. Covers Trustpilot, G2, Capterra, Yelp, Google Maps, and Shopify review widgets. Triggers on \"scrape reviews\", \"ratings\", \"brand monitoring\", \"voice of customer\", \"VOC\", \"competitor reviews\", \"review mining\", \"review sentiment\", \"TrustScore\".",
+          "version": ""
+        },
+        {
+          "name": "seo-serp-scraping",
+          "path": "skills\\seo-serp-scraping\\SKILL.md",
+          "description": "Use when scraping search engines, SERPs, or SEO data — Google Search organic results, Google News headlines, bulk on-page SEO audits (titles/meta/headings/schema), sitemap and subdomain discovery, or bulk image download from pages. Covers rank tracking, SERP/news monitoring, technical SEO audits at scale, competitive recon, and asset inventory. Triggers on \"scrape Google\", \"SERP\", \"rank tracking\", \"SEO audit\", \"search results\", \"Google News\", \"subdomains\", \"sitemap\", \"scrape search engine\", \"competitor SEO\".",
+          "version": ""
+        },
+        {
+          "name": "social-media-content-scraping",
+          "path": "skills\\social-media-content-scraping\\SKILL.md",
+          "description": "Use when you need to scrape social media or content platforms — posts, engagement metrics, profiles, videos, ads, or transcripts — from Twitter/X, Instagram, TikTok, Reddit, LinkedIn, Pinterest, YouTube, Facebook Ad Library, or IMDb. Covers social listening, influencer research, content and trend analysis, ad-creative intelligence, and building RAG datasets from video transcripts. Triggers on \"scrape social media\", \"influencer\", \"social listening\", \"engagement metrics\", \"ad library\", \"video transcripts\", \"scrape tweets/posts/reels/videos\", \"subreddit data\".",
+          "version": ""
+        },
+        {
+          "name": "travel-hotel-scraping",
+          "path": "skills\\travel-hotel-scraping\\SKILL.md",
+          "description": "Use when you need travel and hospitality data — hotels, vacation rentals, attractions, or car-sharing listings with their prices, ratings, reviews, availability, star levels, and amenities. Covers Booking.com, Trip.com/Ctrip, TripAdvisor, and Turo. Use for rate and price monitoring, competitive pricing analysis, availability tracking, and review/ranking tracking. Triggers on \"scrape hotels\", \"hotel prices\", \"hotel rates\", \"travel data\", \"car rental\", \"hotel availability\", \"TripAdvisor rankings\", \"Booking.com scraper\".",
+          "version": ""
+        },
+        {
+          "name": "web-scraping-playbook",
+          "path": "skills\\web-scraping-playbook\\SKILL.md",
+          "description": "Use when starting any web scraping or structured-data-extraction task and you need to decide HOW to get the data — whether to call an API, run a ready-made scraper, or build a custom one. Covers the cost-first technique ladder (plain HTTP → TLS fingerprint spoof → stealth browser → full browser), the build-vs-buy decision, data-extraction priority order, proxy choices, rate limiting, and legal/compliance basics. Triggers on \"scrape\", \"extract data from website\", \"crawl\", \"how do I get data from X\", \"is there a scraper for X\".",
+          "version": ""
+        }
+      ],
+      "executables": []
+    },
+    {
+      "namespace": "Nimbleway/agent-skills",
+      "upstream": "https://github.com/Nimbleway/agent-skills",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE:L1",
+        "attribution": "保留上游 LICENSE 与署名"
+      },
+      "ingestedAt": "2026-09-28",
+      "verified": {
+        "by": "codex",
+        "at": "2026-09-28",
+        "execReview": "passed"
+      },
+      "upstreamStatus": {
+        "lastCheck": "2026-09-28",
+        "alive": true,
+        "failSince": null
+      },
+      "manifestVia": ".claude-plugin/marketplace.json",
+      "skills": [
+        {
+          "name": "nimble-web-expert",
+          "path": "skills\\nimble-web-expert\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "meeting-prep",
+          "path": "skills\\meeting-prep\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "local-places",
+          "path": "skills\\local-places\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "competitor-intel",
+          "path": "skills\\competitor-intel\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "company-deep-dive",
+          "path": "skills\\company-deep-dive\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "market-finder",
+          "path": "skills\\market-finder\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "competitor-positioning",
+          "path": "skills\\competitor-positioning\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "brand-mention-monitor",
+          "path": "skills\\brand-mention-monitor\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "launch-monitor",
+          "path": "skills\\launch-monitor\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "healthcare-providers-extract",
+          "path": "skills\\healthcare-providers-extract\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "healthcare-providers-enrich",
+          "path": "skills\\healthcare-providers-enrich\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "healthcare-providers-verify",
+          "path": "skills\\healthcare-providers-verify\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "seo-intel",
+          "path": "skills\\seo-intel\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "talent-sourcing",
+          "path": "skills\\talent-sourcing\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        },
+        {
+          "name": "nimble-databricks-data-products",
+          "path": "skills\\nimble-databricks-data-products\\SKILL.md",
+          "description": "|",
+          "version": "1.7.0"
+        }
+      ],
+      "executables": [
+        "evals\\evals\\__init__.py",
+        "evals\\evals\\backends\\__init__.py",
+        "evals\\evals\\backends\\claude.py",
+        "evals\\evals\\backends\\codex.py",
+        "evals\\evals\\commons\\__init__.py",
+        "evals\\evals\\commons\\cli_events.py",
+        "evals\\evals\\commons\\dataset.py",
+        "evals\\evals\\commons\\eval_prompt.py",
+        "evals\\evals\\commons\\gold.py",
+        "evals\\evals\\commons\\langfuse_emit.py",
+        "evals\\evals\\commons\\langfuse_otel.py",
+        "evals\\evals\\commons\\langfuse_payload.py",
+        "evals\\evals\\commons\\nimble_cmd.py",
+        "evals\\evals\\commons\\normalize.py",
+        "evals\\evals\\commons\\run_experiment.py",
+        "evals\\evals\\commons\\settings.py",
+        "evals\\evals\\commons\\trace.py",
+        "evals\\evals\\scorers\\__init__.py",
+        "evals\\evals\\scorers\\metrics.py",
+        "evals\\evals\\suites\\__init__.py",
+        "evals\\evals\\suites\\web_expert\\__init__.py",
+        "evals\\evals\\suites\\web_expert\\__main__.py",
+        "evals\\tests\\test_backends_skill_routing.py",
+        "evals\\tests\\test_cli_to_langfuse.py",
+        "evals\\tests\\test_langfuse_metadata.py",
+        "evals\\tests\\test_nimble_cmd.py",
+        "evals\\tests\\test_scorers.py",
+        "scripts\\check-plugin-manifests.py",
+        "scripts\\check-plugin-structure.sh",
+        "scripts\\run-routing-eval.py",
+        "scripts\\sync-shared.sh",
+        "scripts\\tag-release.sh",
+        "skills\\nimble-databricks-data-products\\scripts\\build_dashboard.py",
+        "skills\\nimble-databricks-data-products\\scripts\\ingest.sh"
+      ]
+    },
+    {
+      "namespace": "Johell1NS/browser-search",
+      "upstream": "https://github.com/Johell1NS/browser-search",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE:L1",
+        "attribution": "保留上游 LICENSE 与署名"
+      },
+      "ingestedAt": "2026-09-28",
+      "verified": {
+        "by": "codex",
+        "at": "2026-09-28",
+        "execReview": "passed"
+      },
+      "upstreamStatus": {
+        "lastCheck": "2026-09-28",
+        "alive": true,
+        "failSince": null
+      },
+      "manifestVia": "scan:root",
+      "skills": [
+        {
+          "name": "browser-search",
+          "path": "SKILL.md",
+          "description": "Multi-engine web search (SearXNG) + browsing/scraping (Camofox, CloakBrowser). Use whenever you need to do web research.",
+          "version": ""
+        }
+      ],
+      "executables": [
+        "scripts\\audit.sh",
+        "scripts\\camofox\\camofox-client.mjs",
+        "scripts\\camofox\\camofox.mjs",
+        "scripts\\camofox\\Readability.js",
+        "scripts\\check.sh",
+        "scripts\\cloak\\challenges.mjs",
+        "scripts\\cloak\\cloak-fetch.mjs",
+        "scripts\\cloak\\cloak-script.mjs",
+        "scripts\\cloak\\lib\\__tests__\\sandbox.test.mjs",
+        "scripts\\cloak\\lib\\__tests__\\url-validation.test.mjs",
+        "scripts\\cloak\\lib\\credentials.mjs",
+        "scripts\\cloak\\lib\\rate-limiter.mjs",
+        "scripts\\cloak\\lib\\sandbox.mjs",
+        "scripts\\cloak\\lib\\session.mjs",
+        "scripts\\cloak\\lib\\url-validation.mjs",
+        "scripts\\cloak\\scripts\\screenshot.mjs",
+        "scripts\\searxng\\searxng.mjs",
+        "scripts\\setup.sh",
+        "scripts\\smart-extract.mjs"
+      ]
     }
   ]
 }

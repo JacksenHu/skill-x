@@ -9,6 +9,8 @@
 
 ## 收录流程
 
+图标规则:MCP/插件优先使用官方 server.json 的 icons[0].src;没有官方图标时,构建器默认使用 showcase/assets/avatars/icon-default.svg 同风格占位图。
+
 ### 1. 获取 server.json 底稿
 
 优先从官方 Registry 拉取（已是标准格式，省一次手写）：

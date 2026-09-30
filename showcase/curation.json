@@ -12,7 +12,21 @@
       "debugging-and-error-recovery",
       "using-agent-skills"
     ],
-    "vercel-labs/agent-skills": []
+    "vercel-labs/agent-skills": [],
+    "Nimbleway/agent-skills": [
+      "nimble-web-expert",
+      "competitor-intel",
+      "company-deep-dive",
+      "market-finder",
+      "competitor-positioning",
+      "brand-mention-monitor",
+      "launch-monitor",
+      "healthcare-providers-extract",
+      "healthcare-providers-enrich",
+      "healthcare-providers-verify",
+      "seo-intel",
+      "talent-sourcing"
+    ]
   },
   "excluded": {
     "addyosmani/agent-skills": {

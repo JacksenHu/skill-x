@@ -1,10 +1,35 @@
 {
- "_ts": 1790527205.3080556,
+ "_ts": 1790788015.255946,
  "repos": {
   "addyosmani/agent-skills": {
-   "stars": 99422,
-   "forks": 10441,
-   "pushed": "2026-09-26"
+   "stars": 0,
+   "forks": 0,
+   "pushed": ""
+  },
+  "vercel-labs/agent-skills": {
+   "stars": 0,
+   "forks": 0,
+   "pushed": ""
+  },
+  "dhicoc/dsh-reverse-skill": {
+   "stars": 0,
+   "forks": 0,
+   "pushed": ""
+  },
+  "thirdwatch-dev/scraping-skills": {
+   "stars": 0,
+   "forks": 0,
+   "pushed": ""
+  },
+  "Nimbleway/agent-skills": {
+   "stars": 0,
+   "forks": 0,
+   "pushed": ""
+  },
+  "Johell1NS/browser-search": {
+   "stars": 0,
+   "forks": 0,
+   "pushed": ""
   }
  }
 }

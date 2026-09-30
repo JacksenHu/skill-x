@@ -47,6 +47,107 @@
         "web-design-guidelines",
         "writing-guidelines"
       ]
+    },
+    {
+      "namespace": "dhicoc/dsh-reverse-skill",
+      "upstream": "https://github.com/dhicoc/dsh-reverse-skill",
+      "branch": "main",
+      "skills": [
+        "api-security",
+        "apk-reverse",
+        "attack-chain",
+        "binary-diff",
+        "browser-automation",
+        "browser-extension-reverse",
+        "case-review",
+        "cloud-k8s",
+        "code-audit",
+        "ctf-sandbox",
+        "database-security",
+        "diagram-generator",
+        "digital-forensics",
+        "docs-generator",
+        "dotnet-reverse",
+        "edr-bypass-re",
+        "email-security",
+        "firmware-pentest",
+        "ghidra-reverse",
+        "go-rust-reverse",
+        "hardware-security",
+        "ida-reverse",
+        "identity-federation",
+        "js-reverse",
+        "llm-security",
+        "macos-reverse",
+        "malware-analysis",
+        "mobile-reverse",
+        "ot-ics",
+        "patch-diff-exploit",
+        "pentest-tools",
+        "src-hunter",
+        "protocol-reverse",
+        "pwn-chain",
+        "radare2",
+        "radio-sdr",
+        "dsl-vm-reverse",
+        "reverse-engineering",
+        "reverse-skill-router",
+        "supply-chain-security",
+        "thick-client",
+        "threat-hunting",
+        "threat-intelligence",
+        "wifi-wireless",
+        "windows-ad"
+      ]
+    },
+    {
+      "namespace": "thirdwatch-dev/scraping-skills",
+      "upstream": "https://github.com/thirdwatch-dev/scraping-skills",
+      "branch": "main",
+      "skills": [
+        "anti-bot-scraping",
+        "apify-actor-builder",
+        "business-lead-data-scraping",
+        "ecommerce-product-scraping",
+        "food-delivery-scraping",
+        "job-market-scraping",
+        "real-estate-scraping",
+        "review-reputation-scraping",
+        "seo-serp-scraping",
+        "social-media-content-scraping",
+        "travel-hotel-scraping",
+        "web-scraping-playbook"
+      ]
+    },
+    {
+      "namespace": "Nimbleway/agent-skills",
+      "upstream": "https://github.com/Nimbleway/agent-skills",
+      "branch": "main",
+      "skills": [
+        "nimble-web-expert",
+        "meeting-prep",
+        "local-places",
+        "competitor-intel",
+        "company-deep-dive",
+        "market-finder",
+        "competitor-positioning",
+        "brand-mention-monitor",
+        "launch-monitor",
+        "healthcare-providers-extract",
+        "healthcare-providers-enrich",
+        "healthcare-providers-verify",
+        "seo-intel",
+        "talent-sourcing",
+        "nimble-databricks-data-products"
+      ]
+    },
+    {
+      "namespace": "Johell1NS/browser-search",
+      "upstream": "https://github.com/Johell1NS/browser-search",
+      "branch": "main",
+      "skills": [
+        "browser-search"
+      ]
     }
   ]
 }

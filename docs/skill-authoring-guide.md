@@ -24,6 +24,9 @@ skills/<skill-name>/
 | `license` | 可用 | 短名(如 `MIT`)或许可证文件名 |
 | `compatibility` | 可用 | ≤500 字符,仅在有环境要求时写 |
 | `metadata` | 可用 | 任意键值;非标准字段(如 `triggers`)一律挪到这里 |
+
+默认展示中文:自研 skill 的 metadata 必须提供 
+ame-zh、description-zh、category;缺少中文字段不得发布到橱窗站。
 | `allowed-tools` | **禁用** | Kiro CLI / Zencoder 不支持 |
 | `context: fork` | **禁用** | 仅 Claude Code 支持 |
 | Hooks | **禁用** | 仅 Claude Code / Cline 支持 |

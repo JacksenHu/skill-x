@@ -14,6 +14,30 @@
       "detail": "200"
     },
     {
+      "namespace": "dhicoc/dsh-reverse-skill",
+      "upstream": "https://github.com/dhicoc/dsh-reverse-skill",
+      "alive": true,
+      "detail": "200"
+    },
+    {
+      "namespace": "thirdwatch-dev/scraping-skills",
+      "upstream": "https://github.com/thirdwatch-dev/scraping-skills",
+      "alive": true,
+      "detail": "200"
+    },
+    {
+      "namespace": "Nimbleway/agent-skills",
+      "upstream": "https://github.com/Nimbleway/agent-skills",
+      "alive": true,
+      "detail": "200"
+    },
+    {
+      "namespace": "Johell1NS/browser-search",
+      "upstream": "https://github.com/Johell1NS/browser-search",
+      "alive": true,
+      "detail": "200"
+    },
+    {
       "namespace": "ac.inference.sh/mcp",
       "upstream": "https://api.inference.sh/mcp",
       "alive": true,
@@ -65,6 +89,76 @@
     {
       "namespace": "tamasfe.even-better-toml",
       "upstream": "https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "io.github.firecrawl/firecrawl-mcp-server",
+      "upstream": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "alive": true,
+      "detail": "200",
+      "entryType": "mcp"
+    },
+    {
+      "namespace": "io.github.microsoft/playwright-mcp",
+      "upstream": "https://github.com/microsoft/playwright-mcp",
+      "alive": true,
+      "detail": "200",
+      "entryType": "mcp"
+    },
+    {
+      "namespace": "com.browser-use/browser-use",
+      "upstream": "https://github.com/browser-use/browser-use",
+      "alive": true,
+      "detail": "200",
+      "entryType": "mcp"
+    },
+    {
+      "namespace": "io.github.noor202401938-netizen/cyber-chef-mcp",
+      "upstream": "https://github.com/noor202401938-netizen/cyber-chef-mcp",
+      "alive": true,
+      "detail": "200",
+      "entryType": "mcp"
+    },
+    {
+      "namespace": "github.vscode-codeql",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "sonarsource.sonarlint-vscode",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "ms-vscode.hexeditor",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "ms-playwright.playwright",
+      "upstream": "https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "io.github.lauriewired/ghidra-mcp",
+      "upstream": "https://github.com/LaurieWired/GhidraMCP",
+      "alive": true,
+      "detail": "200",
+      "entryType": "plugin"
+    },
+    {
+      "namespace": "io.github.blacktop/ida-mcp-rs",
+      "upstream": "https://github.com/blacktop/ida-mcp-rs",
       "alive": true,
       "detail": "200",
       "entryType": "plugin"

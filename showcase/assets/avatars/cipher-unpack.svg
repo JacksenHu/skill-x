@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Cipher">
+  <defs>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0v16" fill="none" stroke="#1E2630" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="256" height="256" rx="6" fill="#141A21"/>
+  <rect width="256" height="256" rx="6" fill="url(#grid)"/>
+  <rect x="1" y="1" width="254" height="254" rx="6" fill="none" stroke="#232C38" stroke-width="2"/>
+  <rect x="70" y="60" width="116" height="136" rx="8" fill="none" stroke="#4A9EFF" stroke-width="3"/>
+  <rect x="86" y="76" width="84" height="104" rx="6" fill="none" stroke="#33404F" stroke-width="2" stroke-dasharray="5 8"/>
+  <path d="M128 76v104M86 128h84" stroke="#FF6B2C" stroke-width="4" stroke-linecap="square"/>
+  <path d="M96 96c14 10 22 10 32 0s18-10 32 0" fill="none" stroke="#FF9351" stroke-width="3" stroke-linecap="square"/>
+  <circle cx="128" cy="128" r="6" fill="#FF6B2C"/>
+  <circle cx="70" cy="60" r="4" fill="#4A9EFF"/>
+  <circle cx="186" cy="196" r="4" fill="#4A9EFF"/>
+  <circle cx="186" cy="60" r="4" fill="#33404F"/>
+  <circle cx="70" cy="196" r="4" fill="#33404F"/>
+</svg>

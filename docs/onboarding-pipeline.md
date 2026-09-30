@@ -46,6 +46,10 @@
 
 ## 第 3 步:收录
 
+图标规则:每个展示条目默认使用 showcase/assets/avatars/icon-default.svg 占位图标;上游自带图标时,在 showcase/i18n-ext.json 的对应条目补 icon 字段指向官方图标。
+
+新增收录默认以中文展示:除 external.json 外,同步在 `showcase/i18n-ext.json` 为该套件每个展示条目补 `name-zh` / `description-zh` / `category`;未提供中文的条目不得进入橱窗。
+
 向 `external.json` 追加条目:
 
 ```json

@@ -6,6 +6,8 @@
 
 ## 定位:带人设的编排层
 
+图标硬要求:所有专家团必须提供 persona.avatar,且风格与 ssets/avatars/abyss-deep-reverse.svg / ift-pentest.svg / 	race-malware.svg 一致;自研专家团必须创建专属头像,不允许所有新专家团共用同一个占位图。
+
 专家团 = **人设(名称/头像/角色文案) + 跨类型成员编队 + 一份可直接执行的协作剧本(meta-skill)**。
 
 - 成员类型:`own-skill`(自研技能)/ `ext-skill`(社区精选技能)/ `mcp`(MCP 服务)/ `cli` / `api`(后两类为预留,须在 pack 定义内联 `name` + `install` 才视为已解析)。
