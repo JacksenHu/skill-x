@@ -1956,6 +1956,19 @@ def gitmcp_url(website_url: str) -> str:
     m = re.match(r"https?://(?:www\.)?github\.com/([\w.-]+/[\w.-]+)", website_url)
     return f"https://gitmcp.io/{m.group(1)}" if m else ""
 
+
+CAT_LABELS = {
+    "reverse-engineering": "逆向工程",
+    "pentest": "渗透测试",
+    "malware": "样本分析",
+    "forensics": "内存取证",
+    "engineering-hygiene": "工程纪律",
+    "dev-workflow": "工程流程",
+    "data": "数据抓取",
+    "web-frontend": "Web 前端",
+    "ai-media": "AI 媒体",
+}
+
 def original_icon_map():
     reg_path = ROOT / "mcp-registry.json"
     if not reg_path.is_file():
@@ -2035,6 +2048,32 @@ def inject_copy_config_buttons():
                f'data-skill="mcp:{name}" data-zh="复制配置" data-en="Copy config">复制配置</button>')
         html = html[:end + 9] + " " + btn + html[end + 9:]
         page.write_text(html, encoding="utf-8")
+
+def inject_mcp_plugin_filters():
+    """给 mcp.html / plugins.html 注入搜索框 + 分类筛选 chips(复用 app.js sxFilter)。"""
+    dist = SHOWCASE / "dist"
+    for fname in ("mcp.html", "plugins.html"):
+        path = dist / fname
+        if not path.is_file():
+            continue
+        html = path.read_text(encoding="utf-8", errors="replace")
+        if 'id="q"' in html:
+            continue
+        cats = sorted(set(re.findall(r'data-category="([\w-]+)"', html)))
+        chips = ['<span class="chip on" data-cat="" data-zh="全部" data-en="All">全部</span>']
+        for c in cats:
+            zh = CAT_LABELS.get(c, c)
+            chips.append(f'<span class="chip" data-cat="{c}" data-zh="{zh}" data-en="{c}">{zh}</span>')
+        block = ('<div class="search"><input id="q" type="search" '
+                 'data-zh="按名称或关键词筛选…" data-en="Filter by name or keyword…" '
+                 'data-attr="placeholder" placeholder="按名称或关键词筛选…"></div>\n'
+                 '<div class="chips">' + "".join(chips) + '</div>\n')
+        idx = html.find('<div class="grid">')
+        if idx < 0:
+            continue
+        html = html[:idx] + block + html[idx:]
+        path.write_text(html, encoding="utf-8")
+
 
 def append_card_icon_css():
     css_path = SHOWCASE / "dist" / "assets" / "style.css"
@@ -2274,6 +2313,7 @@ def main():
     update_site_data_icons()
     insert_detail_icons()
     inject_copy_config_buttons()
+    inject_mcp_plugin_filters()
     append_card_icon_css()
 
     return 0
