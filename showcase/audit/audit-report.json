@@ -6977,6 +6977,70 @@
       "scannedFiles": 1,
       "scannedBytes": 1964
     },
+    "pack-game-security": {
+      "grade": "A",
+      "score": 100,
+      "checks": [
+        {
+          "id": "exec-surface",
+          "name": "可执行文件面",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件(方法论型技能)"
+        },
+        {
+          "id": "dangerous-calls",
+          "name": "危险调用(subprocess/eval/exec/rmtree)",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "network",
+          "name": "网络外联",
+          "level": "info",
+          "pass": true,
+          "detail": "无网络模块, 无外部 URL"
+        },
+        {
+          "id": "credentials",
+          "name": "凭证读取",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现敏感环境变量读取"
+        },
+        {
+          "id": "prompt-injection",
+          "name": "SKILL.md 指令注入模式",
+          "level": "info",
+          "pass": true,
+          "detail": "未发现"
+        },
+        {
+          "id": "obfuscation",
+          "name": "混淆特征(长 base64/hex)",
+          "level": "info",
+          "pass": true,
+          "detail": "长 base64 串 0 处, 长 hex 串 0 处"
+        },
+        {
+          "id": "deps",
+          "name": "第三方依赖",
+          "level": "info",
+          "pass": true,
+          "detail": "纯标准库"
+        },
+        {
+          "id": "inventory",
+          "name": "文件清单与体积",
+          "level": "info",
+          "pass": true,
+          "detail": "1 个文件, 1 KB"
+        }
+      ],
+      "scannedFiles": 1,
+      "scannedBytes": 1920
+    },
     "pack-rift-pentest": {
       "grade": "A",
       "score": 100,
@@ -8064,6 +8128,41 @@
           "level": "low",
           "pass": true,
           "detail": "76 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-01)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-01"
+        }
+      ]
+    },
+    "rehan-remade/universal-modder": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "rehan-remade/universal-modder"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-01)"
         },
         {
           "id": "alive",
