@@ -2532,6 +2532,852 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.usestrix/strix",
+      "title": "Strix AI 渗透框架",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):开源 AI 渗透测试工具:自动化发现与验证 Web/云漏洞,含 MCP 接入。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/usestrix/strix",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/usestrix/strix"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 usestrix/strix",
+          "description-zh": "开源 AI 渗透测试工具:自动化发现与验证 Web/云漏洞,含 MCP 接入。",
+          "installHint": "gitmcp.io:usestrix/strix",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/usestrix/strix",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.samugit83/redamon",
+      "title": "Redamon AI 红队框架",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):AI 驱动红队框架,从侦察到利用到后渗透的自动化进攻性安全操作,双向 MCP。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/samugit83/redamon",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/samugit83/redamon"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 samugit83/redamon",
+          "description-zh": "AI 驱动红队框架,从侦察到利用到后渗透的自动化进攻性安全操作,双向 MCP。",
+          "installHint": "gitmcp.io:samugit83/redamon",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/samugit83/redamon",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.KeygraphHQ/shannon",
+      "title": "Shannon AI Web/API 渗透",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):AI Web/API 渗透测试:自动化侦察、漏洞验证与报告。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/KeygraphHQ/shannon",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/KeygraphHQ/shannon"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 KeygraphHQ/shannon",
+          "description-zh": "AI Web/API 渗透测试:自动化侦察、漏洞验证与报告。",
+          "installHint": "gitmcp.io:KeygraphHQ/shannon",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/KeygraphHQ/shannon",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.Fausto-404/js-reverse-automation--skill",
+      "title": "前端 JS 逆向 Skill",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):前端 JS 逆向自动化 Skill:混淆还原、签名分析与接口提取。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Fausto-404/js-reverse-automation--skill",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 Fausto-404/js-reverse-automation--skill",
+          "description-zh": "前端 JS 逆向自动化 Skill:混淆还原、签名分析与接口提取。",
+          "installHint": "gitmcp.io:Fausto-404/js-reverse-automation--skill",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.SimoneAvogadro/android-reverse-engineering-skill",
+      "title": "Android 逆向 Skill",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):Android 逆向工程 Skill:APK 分析、脱壳、Hook 与动态调试。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 SimoneAvogadro/android-reverse-engineering-skill",
+          "description-zh": "Android 逆向工程 Skill:APK 分析、脱壳、Hook 与动态调试。",
+          "installHint": "gitmcp.io:SimoneAvogadro/android-reverse-engineering-skill",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.tanweai/wooyun-legacy",
+      "title": "WooYun 漏洞知识库",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):WooYun 历史漏洞知识库,收录真实漏洞案例与修复思路。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/tanweai/wooyun-legacy",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/tanweai/wooyun-legacy"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 tanweai/wooyun-legacy",
+          "description-zh": "WooYun 历史漏洞知识库,收录真实漏洞案例与修复思路。",
+          "installHint": "gitmcp.io:tanweai/wooyun-legacy",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/tanweai/wooyun-legacy",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.JDArmy/Evasion-SubAgents",
+      "title": "免杀 SubAgents",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):免杀/规避检测的 SubAgents 集合,红队对抗技术。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/JDArmy/Evasion-SubAgents",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/JDArmy/Evasion-SubAgents"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "malware",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 JDArmy/Evasion-SubAgents",
+          "description-zh": "免杀/规避检测的 SubAgents 集合,红队对抗技术。",
+          "installHint": "gitmcp.io:JDArmy/Evasion-SubAgents",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/JDArmy/Evasion-SubAgents",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.Ta0ing/MCP-SecurityTools",
+      "title": "安全 MCP 收录集",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):安全类 MCP 工具收录集合,汇总进攻性安全 MCP 服务。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Ta0ing/MCP-SecurityTools",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/Ta0ing/MCP-SecurityTools"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 Ta0ing/MCP-SecurityTools",
+          "description-zh": "安全类 MCP 工具收录集合,汇总进攻性安全 MCP 服务。",
+          "installHint": "gitmcp.io:Ta0ing/MCP-SecurityTools",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/Ta0ing/MCP-SecurityTools",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.slowmist/MCP-Security-Checklist",
+      "title": "MCP 安全自查清单",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):慢雾 MCP 安全自查清单:审计 AI Agent/MCP 的供应链与配置风险。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/slowmist/MCP-Security-Checklist",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/slowmist/MCP-Security-Checklist"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "dev-workflow",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 slowmist/MCP-Security-Checklist",
+          "description-zh": "慢雾 MCP 安全自查清单:审计 AI Agent/MCP 的供应链与配置风险。",
+          "installHint": "gitmcp.io:slowmist/MCP-Security-Checklist",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/slowmist/MCP-Security-Checklist",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.Acmesec/theAIMythbook",
+      "title": "AI 应用与安全指南",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):AI 应用与安全攻防知识库:模型、Agent、供应链与对抗攻击。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Acmesec/theAIMythbook",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/Acmesec/theAIMythbook"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 Acmesec/theAIMythbook",
+          "description-zh": "AI 应用与安全攻防知识库:模型、Agent、供应链与对抗攻击。",
+          "installHint": "gitmcp.io:Acmesec/theAIMythbook",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/Acmesec/theAIMythbook",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.Acmesec/PromptJailbreakManual",
+      "title": "Prompt 越狱手册",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):Prompt 越狱与对抗性提示词手册,LLM 安全测试参考。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Acmesec/PromptJailbreakManual",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/Acmesec/PromptJailbreakManual"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 Acmesec/PromptJailbreakManual",
+          "description-zh": "Prompt 越狱与对抗性提示词手册,LLM 安全测试参考。",
+          "installHint": "gitmcp.io:Acmesec/PromptJailbreakManual",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/Acmesec/PromptJailbreakManual",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.danielmiessler/SecLists",
+      "title": "安全字典/清单",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):SecLists:安全测试字典、用户名/口令、目录与 Payload 清单。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/danielmiessler/SecLists",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/danielmiessler/SecLists"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 danielmiessler/SecLists",
+          "description-zh": "SecLists:安全测试字典、用户名/口令、目录与 Payload 清单。",
+          "installHint": "gitmcp.io:danielmiessler/SecLists",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/danielmiessler/SecLists",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.swisskyrepo/PayloadsAllTheThings",
+      "title": "Payload 知识库",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):PayloadsAllTheThings:各类漏洞的 Payload 与绕过技巧大全。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 swisskyrepo/PayloadsAllTheThings",
+          "description-zh": "PayloadsAllTheThings:各类漏洞的 Payload 与绕过技巧大全。",
+          "installHint": "gitmcp.io:swisskyrepo/PayloadsAllTheThings",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.HackTricks-wiki/hacktricks",
+      "title": "渗透技巧百科",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):HackTricks:渗透测试技巧、命令与攻防百科。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/HackTricks-wiki/hacktricks",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/HackTricks-wiki/hacktricks"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 HackTricks-wiki/hacktricks",
+          "description-zh": "HackTricks:渗透测试技巧、命令与攻防百科。",
+          "installHint": "gitmcp.io:HackTricks-wiki/hacktricks",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/HackTricks-wiki/hacktricks",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.TheKingOfDuck/fuzzDicts",
+      "title": "模糊测试字典",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):fuzzDicts:模糊测试与爆破字典合集。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/TheKingOfDuck/fuzzDicts",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/TheKingOfDuck/fuzzDicts"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 TheKingOfDuck/fuzzDicts",
+          "description-zh": "fuzzDicts:模糊测试与爆破字典合集。",
+          "installHint": "gitmcp.io:TheKingOfDuck/fuzzDicts",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/TheKingOfDuck/fuzzDicts",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.insightglacier/Dictionary-Of-Pentesting",
+      "title": "渗透字典",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):渗透测试字典合集,覆盖目录、参数、子域等。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/insightglacier/Dictionary-Of-Pentesting",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 insightglacier/Dictionary-Of-Pentesting",
+          "description-zh": "渗透测试字典合集,覆盖目录、参数、子域等。",
+          "installHint": "gitmcp.io:insightglacier/Dictionary-Of-Pentesting",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.FeeiCN/Security-PPT",
+      "title": "安全会议 PPT/报告",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):安全会议 PPT 与研究报告合集,行业视野与案例。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/FeeiCN/Security-PPT",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/FeeiCN/Security-PPT"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 FeeiCN/Security-PPT",
+          "description-zh": "安全会议 PPT 与研究报告合集,行业视野与案例。",
+          "installHint": "gitmcp.io:FeeiCN/Security-PPT",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/FeeiCN/Security-PPT",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.gitmcp.XiaomingX/data-cve-poc",
+      "title": "CVE PoC 汇总",
+      "description": "GitMCP 上下文型 Remote MCP(读 llms.txt/README):CVE 漏洞 PoC 汇总,用于验证与复现已知漏洞。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/XiaomingX/data-cve-poc",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://gitmcp.io/XiaomingX/data-cve-poc"
+        }
+      ],
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "malware",
+          "kind": "remote",
+          "riskLevel": "low",
+          "riskNote": "gitmcp.io 上下文型 Remote MCP(底层 idosal/git-mcp),只读仓库上下文,无本地执行。来源 XiaomingX/data-cve-poc",
+          "description-zh": "CVE 漏洞 PoC 汇总,用于验证与复现已知漏洞。",
+          "installHint": "gitmcp.io:XiaomingX/data-cve-poc",
+          "install": {
+            "method": "remote",
+            "url": "https://gitmcp.io/XiaomingX/data-cve-poc",
+            "command": "",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "GitMCP 上下文收录:仓库经分拣,远程只读,无本地执行。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
