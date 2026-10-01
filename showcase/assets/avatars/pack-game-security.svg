@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Game Security">
+  <defs><pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0v16" fill="none" stroke="#1E2630" stroke-width="1"/></pattern></defs>
+  <rect width="256" height="256" rx="6" fill="#141A21"/>
+  <rect width="256" height="256" rx="6" fill="url(#grid)"/>
+  <rect x="1" y="1" width="254" height="254" rx="6" fill="none" stroke="#232C38" stroke-width="2"/>
+  <circle cx="128" cy="128" r="70" fill="none" stroke="#3DD68C" stroke-width="3"/>
+  <circle cx="128" cy="128" r="46" fill="none" stroke="#33404F" stroke-width="2"/>
+  <path d="M128 82l40 22v44l-40 22-40-22v-44z" fill="none" stroke="#3DD68C" stroke-width="3"/>
+  <path d="M128 104l20 11v22l-20 11-20-11v-22z" fill="none" stroke="#33404F" stroke-width="2"/>
+  <circle cx="128" cy="128" r="6" fill="#3DD68C"/>
+</svg>

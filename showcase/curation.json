@@ -1245,6 +1245,18 @@
     ],
     "newliver666/apk-reverse": [
       "apk-reverse"
+    ],
+    "rehan-remade/universal-modder": [
+      "asset-pipeline",
+      "fal-assets",
+      "game-automation",
+      "game-recon",
+      "mashup-mods",
+      "mod-any-game",
+      "publish-mod",
+      "reverse-engineering",
+      "share-field-notes",
+      "showcase-video"
     ]
   },
   "excluded": {

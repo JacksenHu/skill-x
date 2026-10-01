@@ -1,0 +1,18 @@
+root: rehan-remade/universal-modder 套件
+children:
+  - label: AI 媒体
+    children:
+      - label: 游戏资源管线
+      - label: fal 游戏资产生成
+      - label: Mod 演示视频
+  - label: 逆向工程
+    children:
+      - label: 游戏自动化测试
+      - label: 游戏 Mod 侦察
+      - label: 跨游戏混搭 Mod
+      - label: 任意游戏 Mod
+      - label: 游戏逆向工程
+  - label: 工程流程
+    children:
+      - label: Mod 打包发布
+      - label: Mod 现场笔记共享

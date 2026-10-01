@@ -1031,6 +1031,147 @@
       "degraded": false,
       "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-threat-intel",
       "content": "---\nname: pack-threat-intel\ndescription: >-\n  Threat intelligence workflow: lead, scoring, pivoting, correlation, reporting. Members: CVE/Shodan/VirusTotal/OSINT MCP.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills/MCP are installed or connected on demand.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 烛照\n  aliases:\n    - 烛照\n    - Threat Intel\n    - pack-threat-intel\n  name-zh: 烛照 · 威胁情报分析师\n  description-zh: 威胁情报专家团:从 CVE 定级、资产测绘、样本判定到开源情报关联,输出带来源的威胁情报。\n  category: malware\norchestration:\n  children:\n    - io.github.mukul975/cve-mcp-server\n    - io.github.w0h1v/mcp-shodan\n    - io.github.w0h1v/mcp-virustotal\n    - io.github.badchars/osint-mcp-server\n---\n# 烛照（Threat Intel）\n\n烛照从一条 IOC 或 CVE 出发,用 CVE/EPSS/KEV 定级,用 Shodan/VirusTotal/OSINT 扩线,再落成带来源的情报结论。\n\n## 工作原则\n\n先定边界,再取证,最后成报。任何结论都落到可复现证据,不写“看起来像”。\n\n## 步骤 1:定边界与目标\n\n- 明确本次要回答的问题(漏洞 / 解题 / 情报结论)\n- 确认目标与授权范围;涉及攻击面的只做授权内动作\n\n## 步骤 2:调度成员\n\n按任务类型调用 `orchestration.children` 中的对应技能或 MCP:\n- 漏洞赏金 → bug-bounty / bb-methodology / offensive-bug-identification / Burp / Nuclei\n- CTF → ctf-reverse / ctf-pwn / ctf-crypto / radare2 / frida\n- 威胁情报 → cve-mcp-server / shodan / virustotal / osint\n\n## 步骤 3:执行与验证\n\n- 每一步记录输入、命令、输出\n- 证据可复现,区分真信号与噪声\n\n## 步骤 4:交付\n\n- 漏洞:PoC + 请求/响应 + 影响评估 + 修复建议\n- CTF:flag + 解题过程 + 标准 writeup\n- 威胁情报:定级 + 关联链 + 来源 + 建议动作\n"
+    },
+    {
+      "slug": "pack-game-security",
+      "displayName": "猎游",
+      "displayNameEn": "Game Security",
+      "persona": {
+        "role": "游戏安全研究员",
+        "roleEn": "Game security researcher",
+        "tagline": "先摸清游戏引擎与资产,再谈注入、Mod 与外挂防护——每一步留证据。",
+        "taglineEn": "Map the engine and assets first, then inject, mod, and defend—with evidence at every step.",
+        "intro": "猎游不信盲改。先侦察目标游戏(引擎/资产/存档),再逆向关键逻辑,用注入与外挂工具链验证,最后落到可复现的结论与外挂防护建议。",
+        "introEn": "Game Security does not blind-patch. Recon the game first, reverse the key logic, verify with injection and cheat toolchains, then land reproducible findings and anti-cheat recommendations.",
+        "avatar": "assets/avatars/pack-game-security.svg",
+        "scene": "reverse-engineering",
+        "subScene": "game"
+      },
+      "summary": "游戏安全/反作弊工作流:侦察→逆向→注入/Mod→验证→防护。成员:游戏逆向与 Mod 技能 + Cheat Engine/Android 逆向 MCP。",
+      "summaryEn": "Game security / anti-cheat workflow: recon, reverse, inject/mod, verify, defend. Members: game reverse & modding skills + Cheat Engine / Android reverse MCP.",
+      "origin": "own",
+      "skill": "pack-game-security",
+      "source": "skills/pack-game-security/SKILL.md",
+      "license": {
+        "spdx": "MIT"
+      },
+      "members": [
+        {
+          "type": "own-skill",
+          "ref": "game-hacking",
+          "name": "game-hacking",
+          "title": "游戏辅助开发全链路指南",
+          "description-zh": "逆向工程技能「游戏辅助开发全链路指南」，覆盖脱壳、反汇编、结构与算法还原等分析流程。",
+          "description": "游戏辅助开发全链路助手——覆盖内存读写、协议分析、反编译、Hook 技术、驱动级隐藏、自动化脚本。 支持 C/C++、Python、x86/x64 汇编、DirectX/OpenGL。适用于 PC 端游、Android/iOS 手游、主机游戏。 当用户提到以下任何关键词时必须触发：游戏外挂、游戏辅助、内存修改、CE教程、游戏Hook、 协议分析、反编译、驱动隐藏、游戏脚本、按键精灵、游戏逆向、内存扫描、指针追踪、DLL注入、 游戏破解、脱壳、抓包分析、Frida、Xposed、il2cpp、Unity逆向、UE4逆向、DirectX Hook、 OpenGL Hook、游戏自动化、坐标识别、模板匹配、游戏安全测试。",
+          "category": "reverse-engineering",
+          "page": "/skills/own-game-hacking.html",
+          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill game-hacking",
+          "resolved": true
+        },
+        {
+          "type": "own-skill",
+          "ref": "eni-game-cheat-lab-workflow",
+          "name": "eni-game-cheat-lab-workflow",
+          "title": "游戏外挂实验室工作流",
+          "description-zh": "逆向工程技能「游戏外挂实验室工作流」，覆盖脱壳、反汇编、结构与算法还原等分析流程。",
+          "description": "自动全链路处理外挂、修改器、Trainer、作弊机制与反作弊验证任务。适用于离线、自有、开源或专用测试靶场中的引擎与信任边界建模、样本分析、可控复现、JSON toy trainer 制作、遥测、检测加固和回归交付。",
+          "category": "reverse-engineering",
+          "page": "/skills/own-eni-game-cheat-lab-workflow.html",
+          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill eni-game-cheat-lab-workflow",
+          "resolved": true
+        },
+        {
+          "type": "ext-skill",
+          "ref": "rehan-remade/universal-modder/game-recon",
+          "name": "rehan-remade/universal-modder/game-recon",
+          "title": "game-recon",
+          "description-zh": "Figure out how a specific installed game can be modded, before writing any mod code. Covers where it's installed, the engine and version, managed vs native code, anti-cheat, loaders already present, save and config folders, and the community's modding route. Use when the user asks \"can I mod <game>?\", \"what engine is <game>\", \"how do people mod <game>\", or at the start of any modding task. Produces MODDING_PLAN.md.",
+          "description": "Figure out how a specific installed game can be modded, before writing any mod code. Covers where it's installed, the engine and version, managed vs native code, anti-cheat, loaders already present, save and config folders, and the community's modding route. Use when the user asks \"can I mod <game>?\", \"what engine is <game>\", \"how do people mod <game>\", or at the start of any modding task. Produces MODDING_PLAN.md.",
+          "category": "dev-workflow",
+          "page": "/skills/ext-rehan-remade--universal-modder--game-recon.html",
+          "install": "npx skills add rehan-remade/universal-modder --skill game-recon",
+          "suite": "rehan-remade/universal-modder",
+          "license": "MIT",
+          "resolved": true
+        },
+        {
+          "type": "ext-skill",
+          "ref": "rehan-remade/universal-modder/reverse-engineering",
+          "name": "rehan-remade/universal-modder/reverse-engineering",
+          "title": "reverse-engineering",
+          "description-zh": "Read how a game actually works so a mod can hook it. Decompile .NET/Mono (ILSpy), IL2CPP (Cpp2IL, Il2CppDumper), Java (Vineflower) and native code (Ghidra, IDA, via MCP servers); dump data and asset formats; reverse-engineer a binary file format and prove it with a round trip; read live memory (Cheat Engine, Frida, x64dbg); find render passes (RenderDoc). Use when a mod needs game internals, e.g. \"how does the boss AI work\", \"find the damage function\", \"what format is this .sld/.pak/.dat\", \"where is the player position in memory\".",
+          "description": "Read how a game actually works so a mod can hook it. Decompile .NET/Mono (ILSpy), IL2CPP (Cpp2IL, Il2CppDumper), Java (Vineflower) and native code (Ghidra, IDA, via MCP servers); dump data and asset formats; reverse-engineer a binary file format and prove it with a round trip; read live memory (Cheat Engine, Frida, x64dbg); find render passes (RenderDoc). Use when a mod needs game internals, e.g. \"how does the boss AI work\", \"find the damage function\", \"what format is this .sld/.pak/.dat\", \"where is the player position in memory\".",
+          "category": "dev-workflow",
+          "page": "/skills/ext-rehan-remade--universal-modder--reverse-engineering.html",
+          "install": "npx skills add rehan-remade/universal-modder --skill reverse-engineering",
+          "suite": "rehan-remade/universal-modder",
+          "license": "MIT",
+          "resolved": true
+        },
+        {
+          "type": "mcp",
+          "ref": "io.github.bethington/cheat-engine-server-python",
+          "name": "io.github.bethington/cheat-engine-server-python",
+          "title": "Cheat Engine MCP Server",
+          "description-zh": "Cheat Engine MCP:安全的结构化只读内存分析与调试,面向开发者、安全研究员与游戏 Mod 制作。",
+          "description": "Cheat Engine 内存分析 MCP;MIT;需本机 Cheat Engine;仅限自有/授权进程。",
+          "category": "reverse-engineering",
+          "page": "/mcp/io.github.bethington--cheat-engine-server-python.html",
+          "install": "git clone https://github.com/bethington/cheat-engine-server-python.git",
+          "entryType": "mcp",
+          "kind": "link",
+          "riskLevel": "medium",
+          "installPath": "/v0/servers/io.github.bethington/cheat-engine-server-python/install",
+          "resolved": true
+        },
+        {
+          "type": "mcp",
+          "ref": "io.github.c4x64/droid-re-chain",
+          "name": "io.github.c4x64/droid-re-chain",
+          "title": "Droid Re-Chain MCP",
+          "description-zh": "Droid Re-Chain:无头 Android 逆向 MCP,122 个工具覆盖 ADB、NDK、il2cpp、Hook、崩溃捕获、内存分析、Frida 与 APK 操作。",
+          "description": "Android 逆向 MCP;MIT;需 Android 逆向工具链;仅限授权目标。",
+          "category": "reverse-engineering",
+          "page": "/mcp/io.github.c4x64--droid-re-chain.html",
+          "install": "git clone https://github.com/c4x64/droid-re-chain.git",
+          "entryType": "mcp",
+          "kind": "link",
+          "riskLevel": "medium",
+          "installPath": "/v0/servers/io.github.c4x64/droid-re-chain/install",
+          "resolved": true
+        },
+        {
+          "type": "mcp",
+          "ref": "io.github.Diphome/UnityRift",
+          "name": "io.github.Diphome/UnityRift",
+          "title": "UnityRift",
+          "description-zh": "UnityRift:Unity 游戏逆向与移植工具包,含 Unity→Godot 4 管线(GUI/CLI/MCP server)。",
+          "description": "Unity 游戏逆向/移植 MCP;MIT;需 Unity/Godot。",
+          "category": "reverse-engineering",
+          "page": "/mcp/io.github.Diphome--UnityRift.html",
+          "install": "git clone https://github.com/Diphome/UnityRift.git",
+          "entryType": "mcp",
+          "kind": "link",
+          "riskLevel": "medium",
+          "installPath": "/v0/servers/io.github.Diphome/UnityRift/install",
+          "resolved": true
+        }
+      ],
+      "reviewed": {
+        "by": "codex",
+        "at": "2026-10-01",
+        "execReview": "passed",
+        "note": "自研专家团:人设与编排剧本机审"
+      },
+      "upstreamStatus": {
+        "source": "own",
+        "lastCheck": "2026-10-01",
+        "alive": true,
+        "failSince": null
+      },
+      "degraded": false,
+      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-game-security",
+      "content": "---\nname: pack-game-security\ndescription: >-\n  Game security / anti-cheat workflow: recon, reverse, inject/mod, verify, defend. Members: game reverse & modding skills + Cheat Engine / Android reverse MCP.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills/MCP are installed or connected on demand.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 猎游\n  aliases:\n    - 猎游\n    - Game Security\n    - pack-game-security\n  name-zh: 猎游 · 游戏安全研究员\n  description-zh: 游戏安全与反作弊专家团:游戏侦察、引擎/资产逆向、注入与 Mod 验证,输出可复现结论与反作弊建议。\n  category: reverse-engineering\norchestration:\n  children:\n    - game-hacking\n    - eni-game-cheat-lab-workflow\n    - rehan-remade/universal-modder/game-recon\n    - rehan-remade/universal-modder/reverse-engineering\n    - io.github.bethington/cheat-engine-server-python\n    - io.github.c4x64/droid-re-chain\n    - io.github.Diphome/UnityRift\n---\n# 猎游（Game Security）\n\n猎游不信盲改。先侦察目标游戏(引擎/资产/存档),再逆向关键逻辑,用注入与外挂工具链验证,最后落到可复现的结论与外挂防护建议。\n\n## 工作原则\n\n先侦察边界,再逆向,再注入验证;每条结论落到可复现证据,不做无授权的内存读写。\n\n## 步骤 1:侦察与边界\n\n- 确认目标游戏与授权范围\n- 用 game-recon 摸清引擎、资产、存档、可 Hook 点\n\n## 步骤 2:逆向关键逻辑\n\n- 用游戏逆向技能(.NET/IL2CPP/原生)还原关键函数与数据结构\n- 用 Cheat Engine / Droid Re-Chain MCP 做内存/动态验证\n\n## 步骤 3:注入与验证\n\n- 用 game-hacking / 外挂实验室工作流实现注入与 Mod\n- 每步记录命令、输入、输出,保留证据\n\n## 步骤 4:防护与交付\n\n- 输出可复现结论 + 反作弊/防篡改建议\n- 归档:证据、脚本、报告\n"
     }
   ]
 }

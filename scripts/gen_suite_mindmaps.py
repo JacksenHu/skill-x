@@ -58,6 +58,7 @@ def main():
         "ljagiello/ctf-skills",
         "yaklang/hack-skills",
         "newliver666/apk-reverse",
+        "rehan-remade/universal-modder",
     ]
 
     written = 0

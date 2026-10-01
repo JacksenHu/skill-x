@@ -1,70 +1,70 @@
 {
- "_ts": 1790824048.6133666,
+ "_ts": 1790841668.8550138,
  "repos": {
   "addyosmani/agent-skills": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
-  },
-  "vercel-labs/agent-skills": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 100211,
+   "forks": 10528,
+   "pushed": "2026-09-26"
   },
   "dhicoc/dsh-reverse-skill": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 183,
+   "forks": 24,
+   "pushed": "2026-09-30"
   },
   "thirdwatch-dev/scraping-skills": {
-   "stars": 0,
+   "stars": 5,
    "forks": 0,
-   "pushed": ""
+   "pushed": "2026-06-30"
   },
   "Nimbleway/agent-skills": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 56,
+   "forks": 18,
+   "pushed": "2026-09-25"
   },
   "Johell1NS/browser-search": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 528,
+   "forks": 41,
+   "pushed": "2026-09-02"
   },
   "mukul975/Anthropic-Cybersecurity-Skills": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 33638,
+   "forks": 4081,
+   "pushed": "2026-08-31"
   },
   "zhaoxuya520/reverse-skill": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 39153,
+   "forks": 5460,
+   "pushed": "2026-09-22"
   },
   "elementalsouls/Claude-BugHunter": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 4736,
+   "forks": 711,
+   "pushed": "2026-09-30"
   },
   "SnailSploit/Claude-Red": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 7147,
+   "forks": 939,
+   "pushed": "2026-09-19"
   },
   "ljagiello/ctf-skills": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 3378,
+   "forks": 393,
+   "pushed": "2026-09-13"
   },
   "yaklang/hack-skills": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 2343,
+   "forks": 314,
+   "pushed": "2026-09-13"
   },
   "newliver666/apk-reverse": {
-   "stars": 0,
-   "forks": 0,
-   "pushed": ""
+   "stars": 3109,
+   "forks": 630,
+   "pushed": "2026-09-24"
+  },
+  "rehan-remade/universal-modder": {
+   "stars": 1051,
+   "forks": 76,
+   "pushed": "2026-09-30"
   }
  }
 }

@@ -6250,5 +6250,57 @@
       "description-zh": "逆向工程技能，覆盖APK 逆向相关的样本分析、脱壳、结构与算法还原。",
       "category": "reverse-engineering"
     }
+  },
+  "rehan-remade/universal-modder": {
+    "asset-pipeline": {
+      "name-zh": "游戏资源管线",
+      "description-zh": "把生成或手工制作的美术资源转成游戏引擎可直接加载的格式。",
+      "category": "ai-media"
+    },
+    "fal-assets": {
+      "name-zh": "fal 游戏资产生成",
+      "description-zh": "通过 fal MCP / um fal CLI 生成游戏美术、3D 与音频资源。",
+      "category": "ai-media"
+    },
+    "game-automation": {
+      "name-zh": "游戏自动化测试",
+      "description-zh": "启动、观察并驱动真实游戏进程,让 Agent 能测试自己的 Mod。",
+      "category": "reverse-engineering"
+    },
+    "game-recon": {
+      "name-zh": "游戏 Mod 侦察",
+      "description-zh": "在写 Mod 前搞清楚某个已安装游戏怎么改、引擎与资产结构。",
+      "category": "reverse-engineering"
+    },
+    "mashup-mods": {
+      "name-zh": "跨游戏混搭 Mod",
+      "description-zh": "构建跨游戏混搭与完全转换 Mod(如 Minecraft 放进 Elden Ring)。",
+      "category": "reverse-engineering"
+    },
+    "mod-any-game": {
+      "name-zh": "任意游戏 Mod",
+      "description-zh": "把想法做成能跑在真实游戏里的 Mod 并录像,覆盖逆向、注入与测试。",
+      "category": "reverse-engineering"
+    },
+    "publish-mod": {
+      "name-zh": "Mod 打包发布",
+      "description-zh": "打包并发布完成的游戏 Mod,含发布前 lint、去混淆与清单。",
+      "category": "dev-workflow"
+    },
+    "reverse-engineering": {
+      "name-zh": "游戏逆向工程",
+      "description-zh": "读懂游戏内部实现以便 Hook:.NET/Mono(ILSpy)、IL2CPP、原生、资产与存档格式。",
+      "category": "reverse-engineering"
+    },
+    "share-field-notes": {
+      "name-zh": "Mod 现场笔记共享",
+      "description-zh": "检索并贡献共享的 AI Mod 知识库,记录各游戏的可 Hook 点与坑。",
+      "category": "dev-workflow"
+    },
+    "showcase-video": {
+      "name-zh": "Mod 演示视频",
+      "description-zh": "录制并剪辑游戏 Mod 的展示短片,可直接发布。",
+      "category": "ai-media"
+    }
   }
 }

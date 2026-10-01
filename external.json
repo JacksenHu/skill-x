@@ -9464,6 +9464,90 @@
         "tests\\unit\\test_protobuf_decode_raw.py",
         "tests\\unit\\test_scan_leaks.py"
       ]
+    },
+    {
+      "namespace": "rehan-remade/universal-modder",
+      "upstream": "https://github.com/rehan-remade/universal-modder",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE",
+        "attribution": "保留上游 LICENSE 与署名"
+      },
+      "ingestedAt": "2026-10-01",
+      "verified": {
+        "by": "codex",
+        "at": "2026-10-01",
+        "execReview": "passed"
+      },
+      "upstreamStatus": {
+        "lastCheck": "2026-10-01",
+        "alive": true,
+        "failSince": null
+      },
+      "manifestVia": "scan:skills/",
+      "skills": [
+        {
+          "name": "asset-pipeline",
+          "path": "skills/asset-pipeline/SKILL.md",
+          "description": "Turn generated or hand-made art into exactly what a game engine loads. Covers sprite cutout, trim and nearest-neighbour fitting to frame sizes, pixelation to a palette, sprite sheets and strips, player/team-colour masks, seamless textures, and rendering a 3D model into sprite frames from the game's own camera (isometric/RTS 8 or 16 headings, side view, top-down) with Blender. Use after generating assets, or when the user asks to make sprites, sprite sheets, animation frames, isometric unit sprites or icons for a game.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "fal-assets",
+          "path": "skills/fal-assets/SKILL.md",
+          "description": "Generate game assets with fal (fal.ai) through the fal MCP server, the `um fal` CLI (REST) or `fal api`. Covers sprites and icons with transparent backgrounds, consistent variants and animation frames, pixel art, seamless textures, PBR material maps, image-to-3D models, remeshing, auto-rigging, sound effects, music, voice lines, and trailer or cutscene video. Use whenever a mod needs new art, audio or 3D models, or the user mentions fal, generating sprites, textures, models, SFX or music for a game.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "game-automation",
+          "path": "skills/game-automation/SKILL.md",
+          "description": "Launch, see and drive a real game so an agent can test its own mods. Covers launching via Steam or the exe, windowed mode at a fixed size, screenshots of the game window (GPU-safe capture), clicking and typing into menus, holding keys, relative mouse, crash-reporter cleanup, killing by PID, reading logs, scripted test scenes, and an in-game JSON bridge that lets an agent observe and act. Windows-first (also from WSL), with notes for Linux and macOS. Use when a mod must be verified in game, when navigating menus automatically, or when building a repeatable test or demo scene.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "game-recon",
+          "path": "skills/game-recon/SKILL.md",
+          "description": "Figure out how a specific installed game can be modded, before writing any mod code. Covers where it's installed, the engine and version, managed vs native code, anti-cheat, loaders already present, save and config folders, and the community's modding route. Use when the user asks \"can I mod <game>?\", \"what engine is <game>\", \"how do people mod <game>\", or at the start of any modding task. Produces MODDING_PLAN.md.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "mashup-mods",
+          "path": "skills/mashup-mods/SKILL.md",
+          "description": "Build cross-game mashups and total conversions, the \"Minecraft inside Elden Ring\" or \"skateboarding in MW2\" kind. Covers passthrough mods (two games running at once and exchanging state, rendering and collision), porting one game's content or mechanics into another, embedding a decompiled game as a library, and clean reimplementations that read the user's own game files. Use when the user wants to combine two games, bring an enemy, mechanic or world from one game into another, or rebuild a game's runtime.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "mod-any-game",
+          "path": "skills/mod-any-game/SKILL.md",
+          "description": "Mod a PC game the user owns, taking an idea to working in the real game and recorded. It covers new items, weapons, enemies, bosses, units, civilizations, mechanics, art, sound, VR and cross-game mashups. Use when the user wants to mod, extend, hack on, reverse engineer or mash up a game (\"add a nuke to Terraria\", \"make a new civ for Age of Empires\", \"put Minecraft inside X\", \"can I mod this game?\"). It covers recon (engine, loaders, anti-cheat), choosing the route, a safe lab, a first vertical slice, fal-generated assets, in-game verification and a showcase clip.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "publish-mod",
+          "path": "skills/publish-mod/SKILL.md",
+          "description": "Package and release a finished game mod. Covers the pre-release lint (no game files, decompiled code or leaked keys), README and install steps, credits and AI disclosure, versioning, where to upload (Nexus Mods, Steam Workshop, Thunderstore, mod.io, GitHub releases), and the post with a video. Use when the user wants to ship, share, upload, release or post a mod.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "reverse-engineering",
+          "path": "skills/reverse-engineering/SKILL.md",
+          "description": "Read how a game actually works so a mod can hook it. Decompile .NET/Mono (ILSpy), IL2CPP (Cpp2IL, Il2CppDumper), Java (Vineflower) and native code (Ghidra, IDA, via MCP servers); dump data and asset formats; reverse-engineer a binary file format and prove it with a round trip; read live memory (Cheat Engine, Frida, x64dbg); find render passes (RenderDoc). Use when a mod needs game internals, e.g. \"how does the boss AI work\", \"find the damage function\", \"what format is this .sld/.pak/.dat\", \"where is the player position in memory\".",
+          "version": "1.0.0"
+        },
+        {
+          "name": "share-field-notes",
+          "path": "skills/share-field-notes/SKILL.md",
+          "description": "Search and contribute to the shared AI-modding knowledge base, where field notes record how specific games were modded, decompiled or reverse-engineered (exact versions, route, engine facts, verification, gotchas). Use before starting work on a game (\"has anyone modded X?\"), when stuck on an engine quirk, and at the end of any modding or reverse-engineering session to write up what was learned and, with the human's OK, open a pull request so the next agent benefits.",
+          "version": "1.0.0"
+        },
+        {
+          "name": "showcase-video",
+          "path": "skills/showcase-video/SKILL.md",
+          "description": "Record and cut a short showcase video of a game mod, or a compilation of clips, ready to post on X/YouTube. Records the game window with only the game's own audio, picks moments from contact sheets, and edits with one-line animated titles, creator credits, transitions, music, watermark and fade-out via an EDL JSON. Use when the user wants a demo video, trailer, clip or montage of a mod, or wants to combine existing clips into a styled video.",
+          "version": "1.0.0"
+        }
+      ],
+      "executables": []
     }
   ]
 }
