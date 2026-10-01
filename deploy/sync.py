@@ -6,6 +6,7 @@
   BT_API_SK=xxx python deploy/sync.py --skip-build # 只部署当前 dist
   BT_API_SK=xxx python deploy/sync.py --reload     # 部署后 reload nginx
 """
+import os
 import subprocess
 import sys
 import tarfile
@@ -20,10 +21,16 @@ TAR = ROOT / "showcase" / "skillx-dist.tar.gz"
 
 
 def main():
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
     if "--skip-build" not in sys.argv:
         print("[*] 构建 dist …")
         r = subprocess.run([sys.executable, str(ROOT / "showcase" / "build_index.py")],
-                           capture_output=True, text=True, encoding="utf-8", errors="replace")
+                           capture_output=True, text=True, encoding="utf-8", errors="replace",
+                           env={**os.environ, "PYTHONIOENCODING": "utf-8"})
         print((r.stdout or r.stderr).strip())
         if r.returncode != 0:
             print("[!] 构建失败,中止")
