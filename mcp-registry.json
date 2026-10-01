@@ -2122,6 +2122,129 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.bethington/cheat-engine-server-python",
+      "title": "Cheat Engine MCP Server",
+      "description": "Cheat Engine 内存分析 MCP;MIT;需本机 Cheat Engine;仅限自有/授权进程。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/bethington/cheat-engine-server-python",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Cheat Engine 内存分析 MCP;MIT;需本机 Cheat Engine;仅限自有/授权进程。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Cheat Engine MCP:安全的结构化只读内存分析与调试,面向开发者、安全研究员与游戏 Mod 制作。",
+          "installHint": "git clone https://github.com/bethington/cheat-engine-server-python.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/bethington/cheat-engine-server-python",
+            "command": "git clone https://github.com/bethington/cheat-engine-server-python.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.c4x64/droid-re-chain",
+      "title": "Droid Re-Chain MCP",
+      "description": "Android 逆向 MCP;MIT;需 Android 逆向工具链;仅限授权目标。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/c4x64/droid-re-chain",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Android 逆向 MCP;MIT;需 Android 逆向工具链;仅限授权目标。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Droid Re-Chain:无头 Android 逆向 MCP,122 个工具覆盖 ADB、NDK、il2cpp、Hook、崩溃捕获、内存分析、Frida 与 APK 操作。",
+          "installHint": "git clone https://github.com/c4x64/droid-re-chain.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/c4x64/droid-re-chain",
+            "command": "git clone https://github.com/c4x64/droid-re-chain.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.Diphome/UnityRift",
+      "title": "UnityRift",
+      "description": "Unity 游戏逆向/移植 MCP;MIT;需 Unity/Godot。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Diphome/UnityRift",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Unity 游戏逆向/移植 MCP;MIT;需 Unity/Godot。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "UnityRift:Unity 游戏逆向与移植工具包,含 Unity→Godot 4 管线(GUI/CLI/MCP server)。",
+          "installHint": "git clone https://github.com/Diphome/UnityRift.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/Diphome/UnityRift",
+            "command": "git clone https://github.com/Diphome/UnityRift.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
