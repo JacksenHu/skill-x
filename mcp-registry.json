@@ -2040,6 +2040,88 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.bornpresident/Volatility-MCP-Server",
+      "title": "Volatility MCP Server",
+      "description": "Volatility 3 内存取证 MCP;MIT;需本机安装 Volatility 3。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/bornpresident/Volatility-MCP-Server",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "forensics",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Volatility 3 内存取证 MCP;MIT;需本机安装 Volatility 3。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Volatility MCP:把 Volatility 3 内存取证框架接入 Agent,做进程分析、恶意检测、载荷重建与 YARA 扫描。",
+          "installHint": "git clone https://github.com/bornpresident/Volatility-MCP-Server.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/bornpresident/Volatility-MCP-Server",
+            "command": "git clone https://github.com/bornpresident/Volatility-MCP-Server.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.0xhackerfren/Windows-Memory-Forensics-MCP",
+      "title": "Windows Memory Forensics MCP",
+      "description": "Windows 内存取证 MCP;MIT;需 Volatility 3/MemProcFS。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/0xhackerfren/Windows-Memory-Forensics-MCP",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "forensics",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Windows 内存取证 MCP;MIT;需 Volatility 3/MemProcFS。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Windows 内存取证 MCP:33 个工具,用 Volatility 3 / MemProcFS / CLR-SOS 后端分析内存转储。",
+          "installHint": "git clone https://github.com/0xhackerfren/Windows-Memory-Forensics-MCP.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/0xhackerfren/Windows-Memory-Forensics-MCP",
+            "command": "git clone https://github.com/0xhackerfren/Windows-Memory-Forensics-MCP.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
