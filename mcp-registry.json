@@ -1466,6 +1466,334 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.0xKoda/WireMCP",
+      "title": "WireMCP (Wireshark)",
+      "description": "tshark/Wireshark MCP;MIT;需本机安装 Wireshark/tshark。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/0xKoda/WireMCP",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "forensics",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "tshark/Wireshark MCP;MIT;需本机安装 Wireshark/tshark。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "WireMCP:基于 tshark 的 Wireshark MCP,让 Agent 做实时网络流量抓包、协议解析与异常分析。",
+          "installHint": "git clone https://github.com/0xKoda/WireMCP.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/0xKoda/WireMCP",
+            "command": "git clone https://github.com/0xKoda/WireMCP.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.merajmehrabi/puppeteer-mcp-server",
+      "title": "Puppeteer MCP Server",
+      "description": "Puppeteer 浏览器自动化 MCP;MIT;需 Node/Puppeteer。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/merajmehrabi/puppeteer-mcp-server",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Puppeteer 浏览器自动化 MCP;MIT;需 Node/Puppeteer。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Puppeteer MCP:浏览器自动化,支持新建实例或复用已有 Chrome 窗口做抓取、交互与截图。",
+          "installHint": "git clone https://github.com/merajmehrabi/puppeteer-mcp-server.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/merajmehrabi/puppeteer-mcp-server",
+            "command": "git clone https://github.com/merajmehrabi/puppeteer-mcp-server.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.addcontent/nuclei-mcp",
+      "title": "Nuclei MCP",
+      "description": "Nuclei 扫描器 MCP;MIT;需本机安装 nuclei;仅限授权目标。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/addcontent/nuclei-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Nuclei 扫描器 MCP;MIT;需本机安装 nuclei;仅限授权目标。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Nuclei MCP:上下文感知的漏洞扫描,按目标智能选择模板执行并产出结果。",
+          "installHint": "git clone https://github.com/addcontent/nuclei-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/addcontent/nuclei-mcp",
+            "command": "git clone https://github.com/addcontent/nuclei-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.drcrypterdotru/sqlmap-skynet",
+      "title": "SQLMap Skynet",
+      "description": "SQLMap AI MCP;Apache-2.0;仅限授权目标。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/drcrypterdotru/sqlmap-skynet",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "SQLMap AI MCP;Apache-2.0;仅限授权目标。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "SQLMap Skynet:带自主 AI 分阶段工作流、RAG 记忆与 MCP 工具化的 SQLMap 注入检测。",
+          "installHint": "git clone https://github.com/drcrypterdotru/sqlmap-skynet.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/drcrypterdotru/sqlmap-skynet",
+            "command": "git clone https://github.com/drcrypterdotru/sqlmap-skynet.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.LING71671/open-reverselab",
+      "title": "Open Reverselab",
+      "description": "逆向实验平台 MCP;GPL-3.0(仅指路牌收录,不镜像代码)。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/LING71671/open-reverselab",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "逆向实验平台 MCP;GPL-3.0(仅指路牌收录,不镜像代码)。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Open Reverselab:面向 Ghidra/Frida/x64dbg/Rizin 的 AI 逆向实验平台,100+ MCP 工具,覆盖 PE/APK/二进制分析。",
+          "installHint": "git clone https://github.com/LING71671/open-reverselab.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/LING71671/open-reverselab",
+            "command": "git clone https://github.com/LING71671/open-reverselab.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.vmoranv/jshookmcp",
+      "title": "jsHook MCP",
+      "description": "JS Hook MCP;AGPL-3.0(仅指路牌收录)。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/vmoranv/jshookmcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "JS Hook MCP;AGPL-3.0(仅指路牌收录)。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "jsHook MCP:JavaScript Hook 工具集,用于前端逆向、动态插桩与运行时调试。",
+          "installHint": "git clone https://github.com/vmoranv/jshookmcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/vmoranv/jshookmcp",
+            "command": "git clone https://github.com/vmoranv/jshookmcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.FuzzySecurity/kahlo-mcp",
+      "title": "Kahlo MCP (Frida)",
+      "description": "Frida Android 插桩 MCP;许可证未声明(仅指路牌收录)。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/FuzzySecurity/kahlo-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Frida Android 插桩 MCP;许可证未声明(仅指路牌收录)。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Kahlo MCP:基于 Frida 的 Android 插桩 MCP,支持自主 AI 辅助的运行时分析。",
+          "installHint": "git clone https://github.com/FuzzySecurity/kahlo-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/FuzzySecurity/kahlo-mcp",
+            "command": "git clone https://github.com/FuzzySecurity/kahlo-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.mrphrazer/binary-ninja-headless-mcp",
+      "title": "Binary Ninja Headless MCP",
+      "description": "Binary Ninja 插件 + MCP;GPL-2.0(仅指路牌收录);需 Binary Ninja。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/mrphrazer/binary-ninja-headless-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Binary Ninja 插件 + MCP;GPL-2.0(仅指路牌收录);需 Binary Ninja。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Binary Ninja Headless MCP:180 个工具,给 AI 深度逆向能力(反编译、函数/符号、类型恢复)。",
+          "installHint": "git clone https://github.com/mrphrazer/binary-ninja-headless-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/mrphrazer/binary-ninja-headless-mcp",
+            "command": "git clone https://github.com/mrphrazer/binary-ninja-headless-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
