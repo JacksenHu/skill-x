@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-01",
   "skills": {
     "asm-analysis": {
       "grade": "A",
@@ -7634,6 +7634,251 @@
           "level": "info",
           "pass": true,
           "detail": "在线 | 检查于 2026-09-28"
+        }
+      ]
+    },
+    "mukul975/Anthropic-Cybersecurity-Skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "mukul975/Anthropic-Cybersecurity-Skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "Apache-2.0 | LICENSE:L2"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "1105 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    },
+    "zhaoxuya520/reverse-skill": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "zhaoxuya520/reverse-skill"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "73 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    },
+    "elementalsouls/Claude-BugHunter": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "elementalsouls/Claude-BugHunter"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "54 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    },
+    "SnailSploit/Claude-Red": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "SnailSploit/Claude-Red"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "3 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    },
+    "ljagiello/ctf-skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "ljagiello/ctf-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "18 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-01"
+        }
+      ]
+    },
+    "yaklang/hack-skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "yaklang/hack-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "4 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
+        }
+      ]
+    },
+    "newliver666/apk-reverse": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "newliver666/apk-reverse"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": false,
+          "detail": "76 个可执行文件,审查结论: pending (维护者 - @ -)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 未探活"
         }
       ]
     }
