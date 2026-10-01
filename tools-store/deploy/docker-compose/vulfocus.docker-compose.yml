@@ -1,0 +1,13 @@
+# Vulfocus 漏洞集成平台 —— 一键部署模板
+# 需挂载宿主 docker.sock 以便动态拉起漏洞环境镜像
+services:
+  vulfocus:
+    image: vulfocus/vulfocus:latest
+    container_name: vulfocus
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - VUL_IP=${VUL_IP:-127.0.0.1}   # 对外可访问的宿主机 IP

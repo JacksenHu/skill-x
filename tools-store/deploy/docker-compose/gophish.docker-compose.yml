@@ -1,0 +1,17 @@
+# GoPhish 钓鱼演练平台 —— 一键部署模板
+# 使用官方镜像 gophish/gophish，管理面板 3333，钓鱼页面 80
+services:
+  gophish:
+    image: gophish/gophish:latest
+    container_name: gophish
+    restart: unless-stopped
+    ports:
+      - "3333:3333"   # 管理后台
+      - "80:80"       # 钓鱼页面
+    volumes:
+      - gophish_data:/data
+    environment:
+      - ADMIN_INITIAL_PASSWORD=${ADMIN_INITIAL_PASSWORD:-gophish} # 首次登录后请立即修改
+
+volumes:
+  gophish_data:

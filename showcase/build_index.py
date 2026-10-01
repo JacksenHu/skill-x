@@ -2315,6 +2315,11 @@ def main():
     inject_copy_config_buttons()
     inject_mcp_plugin_filters()
     append_card_icon_css()
+    try:
+        from render_tools_store import main as render_tools
+        render_tools()
+    except Exception as e:  # noqa: BLE001
+        print("[!] 工具商店渲染失败:", e)
 
     return 0
 

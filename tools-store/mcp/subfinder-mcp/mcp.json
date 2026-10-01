@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "subfinder": {
+      "command": "python",
+      "args": ["server.py"],
+      "cwd": "C:/Users/24664/workbuddy-ai/skillsX/security-tool-store/mcp/subfinder-mcp"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "target": "gitmcp.io",
+  "note": "gitmcp.io 将任意 github.com/owner/repo 的域名替换为 gitmcp.io 即生成上下文型 Remote MCP。以下按收录优先级排序。",
+  "tier1_native_ai_mcp": [
+    {"repo":"usestrix/strix","url":"https://gitmcp.io/usestrix/strix","type":"AI 渗透测试框架"},
+    {"repo":"samugit83/redamon","url":"https://gitmcp.io/samugit83/redamon","type":"AI redteam 框架（双向 MCP）"},
+    {"repo":"KeygraphHQ/shannon","url":"https://gitmcp.io/KeygraphHQ/shannon","type":"AI Web/API 渗透"},
+    {"repo":"Fausto-404/js-reverse-automation--skill","url":"https://gitmcp.io/Fausto-404/js-reverse-automation--skill","type":"前端 JS 逆向 Skill"},
+    {"repo":"SimoneAvogadro/android-reverse-engineering-skill","url":"https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill","type":"Android 逆向 Skill"},
+    {"repo":"tanweai/wooyun-legacy","url":"https://gitmcp.io/tanweai/wooyun-legacy","type":"WooYun 漏洞知识库插件"},
+    {"repo":"JDArmy/Evasion-SubAgents","url":"https://gitmcp.io/JDArmy/Evasion-SubAgents","type":"免杀 SubAgents"},
+    {"repo":"Ta0ing/MCP-SecurityTools","url":"https://gitmcp.io/Ta0ing/MCP-SecurityTools","type":"安全 MCP 收录集"},
+    {"repo":"slowmist/MCP-Security-Checklist","url":"https://gitmcp.io/slowmist/MCP-Security-Checklist","type":"MCP 安全自查清单"}
+  ],
+  "tier1_knowledge_context": [
+    {"repo":"Acmesec/theAIMythbook","url":"https://gitmcp.io/Acmesec/theAIMythbook","type":"AI 应用与安全指南"},
+    {"repo":"Acmesec/PromptJailbreakManual","url":"https://gitmcp.io/Acmesec/PromptJailbreakManual","type":"Prompt 越狱手册"},
+    {"repo":"danielmiessler/SecLists","url":"https://gitmcp.io/danielmiessler/SecLists","type":"安全字典/清单"},
+    {"repo":"swisskyrepo/PayloadsAllTheThings","url":"https://gitmcp.io/swisskyrepo/PayloadsAllTheThings","type":"Payload 知识库"},
+    {"repo":"HackTricks-wiki/hacktricks","url":"https://gitmcp.io/HackTricks-wiki/hacktricks","type":"渗透技巧百科"},
+    {"repo":"TheKingOfDuck/fuzzDicts","url":"https://gitmcp.io/TheKingOfDuck/fuzzDicts","type":"模糊测试字典"},
+    {"repo":"insightglacier/Dictionary-Of-Pentesting","url":"https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting","type":"渗透字典"},
+    {"repo":"FeeiCN/Security-PPT","url":"https://gitmcp.io/FeeiCN/Security-PPT","type":"安全会议 PPT/报告"},
+    {"repo":"XiaomingX/data-cve-poc","url":"https://gitmcp.io/XiaomingX/data-cve-poc","type":"CVE PoC 汇总"}
+  ],
+  "tier2_function_mcp_candidates": {
+    "note": "这些不是 gitmcp.io 的上下文收录项，而是需要自研 stdio/HTTP MCP server 的「可调用工具」候选。",
+    "read_only_osint": ["projectdiscovery/subfinder","lc/gau","tomnomnom/waybackurls","projectdiscovery/wappalyzergo","soxoj/maigret","Josue87/EmailFinder","dwisiswant0/apkleaks","wgpsec/ENScan_GO","ExpLangcn/InfoSearchAll","Kento-Sec/AsamF","wgpsec/fofa_viewer","shmilylty/OneForAll","urbanadventurer/WhatWeb"],
+    "active_scan": ["projectdiscovery/naabu","projectdiscovery/nuclei","projectdiscovery/katana","ffuf/ffuf","OJ/gobuster","epi052/feroxbuster","maurosoria/dirsearch","hahwul/dalfox","s0md3v/Arjun","vladko312/SSTImap","ticarpi/jwt_tool","jayus0821/swagger-hack","zan8in/afrog","chaitin/xray","knownsec/pocsuite3","shadow1ng/fscan","m4ll0k/SecretFinder","KathanP19/JSFScan.sh"],
+    "libraries_sdk": ["projectdiscovery/wappalyzergo","fortra/impacket","carlospolop/PEASS-ng","soot-oss/soot","wh1t3p1g/tabby","frohoff/ysoserial","Y4er/ysoserial","qi4L/JYso","github/codeql-cli-binaries","webraybtl/CodeQLpy","4ra1n/jar-analyzer","momosecurity/FindSomething","momosecurity/momo-code-sec-inspector-java"]
+  }
+}
