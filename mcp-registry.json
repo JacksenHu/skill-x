@@ -1794,6 +1794,252 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.badchars/cloud-audit-mcp",
+      "title": "Cloud Audit MCP",
+      "description": "云配置审计 MCP;MIT;需各云厂商凭据;仅限自有/授权环境。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/badchars/cloud-audit-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "云配置审计 MCP;MIT;需各云厂商凭据;仅限自有/授权环境。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "云安全审计 MCP:AWS、Azure、GCP 的错误配置检测,38 个工具、60+ 项检查。",
+          "installHint": "git clone https://github.com/badchars/cloud-audit-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/badchars/cloud-audit-mcp",
+            "command": "git clone https://github.com/badchars/cloud-audit-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.argus-code-scanning/argus-codescan-mcp",
+      "title": "Argus CodeScan MCP",
+      "description": "多面安全扫描 MCP;MIT;适合开发流程与 CI 集成。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/argus-code-scanning/argus-codescan-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "dev-workflow",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "多面安全扫描 MCP;MIT;适合开发流程与 CI 集成。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Argus:开源安全扫描器,覆盖 SAST、DAST、SCA、密钥、IaC、Terraform、Ansible,走 CLI 与 MCP。",
+          "installHint": "git clone https://github.com/argus-code-scanning/argus-codescan-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/argus-code-scanning/argus-codescan-mcp",
+            "command": "git clone https://github.com/argus-code-scanning/argus-codescan-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.leonamvasquez/terraview",
+      "title": "TerraView",
+      "description": "Terraform 安全分析 MCP;MIT。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/leonamvasquez/terraview",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "dev-workflow",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Terraform 安全分析 MCP;MIT。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "TerraView:对 Terraform 基础设施做静态与上下文安全分析,在 apply 前检测错误配置与合规风险。",
+          "installHint": "git clone https://github.com/leonamvasquez/terraview.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/leonamvasquez/terraview",
+            "command": "git clone https://github.com/leonamvasquez/terraview.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.boy-offi9-inc/hexforge-gateway",
+      "title": "HexForge Gateway",
+      "description": "Android 逆向工作台 MCP;MIT;需本机 Android 逆向工具链。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/boy-offi9-inc/hexforge-gateway",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Android 逆向工作台 MCP;MIT;需本机 Android 逆向工具链。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "HexForge:自托管逆向工作台,编排 jadx/apktool/adb/frida/APKiD,以 MCP 工具暴露给 Agent。",
+          "installHint": "git clone https://github.com/boy-offi9-inc/hexforge-gateway.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/boy-offi9-inc/hexforge-gateway",
+            "command": "git clone https://github.com/boy-offi9-inc/hexforge-gateway.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.NoOne-hub/android-reverse-mcp",
+      "title": "Android Reverse MCP",
+      "description": "Android 逆向网关 MCP;Apache-2.0;需本机 jadx/apktool。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/NoOne-hub/android-reverse-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Android 逆向网关 MCP;Apache-2.0;需本机 jadx/apktool。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Android Reverse MCP:统一无头网关,集成 JADX 语义分析、APKTool 打包/签名/差分。",
+          "installHint": "git clone https://github.com/NoOne-hub/android-reverse-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/NoOne-hub/android-reverse-mcp",
+            "command": "git clone https://github.com/NoOne-hub/android-reverse-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.trailofbits/slither-mcp",
+      "title": "Slither MCP",
+      "description": "Slither Solidity 静态分析 MCP;AGPL-3.0(仅指路牌收录);需 Slither。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/trailofbits/slither-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Slither Solidity 静态分析 MCP;AGPL-3.0(仅指路牌收录);需 Slither。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Slither MCP:对 Solidity 智能合约做静态分析,检测重入、越权、溢出等漏洞。",
+          "installHint": "git clone https://github.com/trailofbits/slither-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/trailofbits/slither-mcp",
+            "command": "git clone https://github.com/trailofbits/slither-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
