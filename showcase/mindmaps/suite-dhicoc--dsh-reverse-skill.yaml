@@ -1,0 +1,58 @@
+root: dhicoc/dsh-reverse-skill 套件
+children:
+  - label: 渗透测试
+    children:
+      - label: API 安全
+      - label: 攻击链编排
+      - label: 案例复盘
+      - label: 云与 Kubernetes 安全
+      - label: 代码审计
+      - label: CTF 沙箱
+      - label: 数据库安全
+      - label: 邮件安全
+      - label: 固件渗透
+      - label: 硬件安全
+      - label: 身份联邦安全
+      - label: LLM 安全
+      - label: 工控安全
+      - label: 渗透测试工具链
+      - label: SRC 漏洞挖掘
+      - label: 漏洞利用链
+      - label: 供应链安全
+      - label: 胖客户端测试
+      - label: ……等 20 个
+  - label: 逆向工程
+    children:
+      - label: APK 逆向
+      - label: 二进制差分
+      - label: 浏览器扩展逆向
+      - label: .NET 逆向
+      - label: EDR 绕过研究
+      - label: Ghidra 逆向
+      - label: Go/Rust 逆向
+      - label: IDA 逆向
+      - label: JavaScript 逆向
+      - label: macOS 逆向
+      - label: 移动端逆向
+      - label: 补丁差分利用
+      - label: 协议逆向
+      - label: radare2 分析
+      - label: DSL/VM 逆向
+      - label: 逆向工程
+      - label: 逆向技能路由
+  - label: 数据抓取
+    children:
+      - label: 浏览器自动化
+  - label: 工程流程
+    children:
+      - label: 图表生成
+      - label: 文档生成
+  - label: 内存取证
+    children:
+      - label: 数字取证
+      - label: 无线电与 SDR
+  - label: 样本分析
+    children:
+      - label: 恶意样本分析
+      - label: 威胁狩猎
+      - label: 威胁情报

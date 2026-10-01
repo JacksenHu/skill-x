@@ -1,0 +1,36 @@
+root: elementalsouls/Claude-BugHunter 套件
+children:
+  - label: 逆向工程
+    children:
+      - label: APK 红队 流水线
+  - label: 渗透测试
+    children:
+      - label: 漏洞赏金 本地 工具包
+      - label: 漏洞赏金 方法论
+      - label: 漏洞赏金
+      - label: 云 IAM deep
+      - label: 企业 VPN 攻击
+      - label: evidence hygiene
+      - label: 排查 API 配置错误
+      - label: 排查 aspnet
+      - label: 排查 ato
+      - label: 排查 认证 绕过
+      - label: 排查 暴力破解
+      - label: 排查 business logic
+      - label: 排查 cache poison
+      - label: 排查 验证码绕过
+      - label: 排查 cicd
+      - label: 排查 点击劫持
+      - label: 排查 云 配置错误
+      - label: 排查 CORS
+      - label: ……等 76 个
+  - label: 工程流程
+    children:
+      - label: Bugcrowd 报告
+      - label: iOS 红队 流水线
+      - label: 供应链 ATT&CK 侦察
+  - label: 数据抓取
+    children:
+      - label: 排查 子域
+      - label: 攻击 OSINT
+      - label: OSINT 方法论

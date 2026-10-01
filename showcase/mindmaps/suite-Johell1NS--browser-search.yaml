@@ -1,0 +1,5 @@
+root: Johell1NS/browser-search 套件
+children:
+  - label: 数据抓取
+    children:
+      - label: 浏览器搜索

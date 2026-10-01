@@ -1,0 +1,23 @@
+root: ljagiello/ctf-skills 套件
+children:
+  - label: 渗透测试
+    children:
+      - label: CTF AI ML
+      - label: CTF 加密
+      - label: CTF 杂项
+      - label: CTF Web
+      - label: CTF 复盘报告
+      - label: 解题
+  - label: 内存取证
+    children:
+      - label: CTF 取证
+  - label: 样本分析
+    children:
+      - label: CTF 恶意软件
+  - label: 数据抓取
+    children:
+      - label: CTF OSINT
+  - label: 逆向工程
+    children:
+      - label: CTF PWN
+      - label: CTF 逆向

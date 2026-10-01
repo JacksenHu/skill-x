@@ -1,0 +1,52 @@
+root: yaklang/hack-skills 套件
+children:
+  - label: 渗透测试
+    children:
+      - label: 401 403 绕过 技术
+      - label: Active Directory ACL 滥用
+      - label: Active Directory 证书 服务
+      - label: Active Directory Kerberos 攻击
+      - label: AI ML 安全
+      - label: Android pentesting 技巧
+      - label: 反调试 技术
+      - label: API 认证 JWT 滥用
+      - label: API 授权 bola
+      - label: API 侦察 docs
+      - label: API 安全
+      - label: arbitrary write RCE
+      - label: 攻击面 映射
+      - label: 认证安全
+      - label: authbypass 认证 flaws
+      - label: 业务逻辑漏洞
+      - label: business logic 漏洞
+      - label: 古典密码分析
+      - label: ……等 84 个
+  - label: 逆向工程
+    children:
+      - label: 二进制 防护 绕过
+      - label: 浏览器利用 v8
+      - label: 代码混淆 去混淆
+      - label: 格式化字符串利用
+      - label: 堆利用
+      - label: 内核利用
+      - label: 逆向 shell 技术
+      - label: 栈溢出与 ROP
+      - label: 符号执行工具
+      - label: 虚拟机与字节码逆向
+  - label: 样本分析
+    children:
+      - label: 容器逃逸 技术
+      - label: CORS cross origin 配置错误
+      - label: OAuth OIDC 配置错误
+      - label: 沙箱逃逸技术
+  - label: 工程流程
+    children:
+      - label: 依赖混淆
+      - label: 不安全 source code 管理
+  - label: 内存取证
+    children:
+      - label: 内存取证 Volatility
+      - label: 流量分析 PCAP
+  - label: 数据抓取
+    children:
+      - label: 子域 接管

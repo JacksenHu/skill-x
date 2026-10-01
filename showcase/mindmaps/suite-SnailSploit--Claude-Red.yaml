@@ -1,0 +1,46 @@
+root: SnailSploit/Claude-Red 套件
+children:
+  - label: 渗透测试
+    children:
+      - label: 攻击 Active Directory
+      - label: 攻击 NetExec
+      - label: 攻击 AI 安全
+      - label: 攻击 API 滥用
+      - label: 攻击 API 安全
+      - label: 攻击 JWT
+      - label: 攻击 OAuth
+      - label: 攻击 CI/CD 密钥
+      - label: 攻击云
+      - label: 攻击 K8s
+      - label: 攻击密码
+      - label: 攻击 TLS
+      - label: 攻击崩溃分析
+      - label: 攻击 漏洞利用开发 课程
+      - label: 攻击漏洞利用开发
+      - label: 攻击缓解
+      - label: 攻击 TOCTOU
+      - label: 攻击漏洞识别
+      - label: ……等 66 个
+  - label: 工程流程
+    children:
+      - label: 攻击 CI/CD 流水线
+      - label: 攻击依赖混淆
+      - label: 攻击供应链
+      - label: 攻击报告
+  - label: 样本分析
+    children:
+      - label: 攻击容器逃逸
+      - label: 攻击 C2 框架
+      - label: 攻击数据外泄
+      - label: 攻击持久化
+  - label: 逆向工程
+    children:
+      - label: 攻击基础利用
+      - label: 攻击 Shellcode
+  - label: 内存取证
+    children:
+      - label: 攻击反取证
+  - label: 数据抓取
+    children:
+      - label: 攻击 OSINT
+      - label: 攻击 OSINT 方法论

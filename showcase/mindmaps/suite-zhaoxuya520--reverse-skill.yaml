@@ -1,0 +1,56 @@
+root: zhaoxuya520/reverse-skill 套件
+children:
+  - label: 渗透测试
+    children:
+      - label: API 安全
+      - label: 攻击链
+      - label: browser automation
+      - label: case 审查
+      - label: 云与 Kubernetes
+      - label: code 审计
+      - label: 数据库安全
+      - label: EDR 绕过逆向
+      - label: 邮件安全
+      - label: 固件渗透
+      - label: 硬件安全
+      - label: LLM 安全
+      - label: OT/ICS
+      - label: 渗透工具
+      - label: 源码猎人
+      - label: 无线电 SDR
+      - label: 厚客户端
+      - label: 威胁狩猎
+      - label: ……等 21 个
+  - label: 逆向工程
+    children:
+      - label: APK 逆向
+      - label: 二进制 差分
+      - label: Binary Ninja 逆向
+      - label: browser extension 逆向
+      - label: .NET 逆向
+      - label: Ghidra 逆向
+      - label: Go/Rust 逆向
+      - label: IDA 逆向
+      - label: JS 逆向
+      - label: macOS 逆向
+      - label: 移动逆向
+      - label: patch 差分 利用
+      - label: 协议逆向
+      - label: PWN 链
+      - label: radare2
+      - label: DSL/VM 逆向
+      - label: 逆向工程
+      - label: 逆向技能路由
+  - label: 样本分析
+    children:
+      - label: CTF 沙箱
+      - label: 图表生成
+      - label: 文档生成
+      - label: 身份联邦
+      - label: 恶意软件 分析
+  - label: 内存取证
+    children:
+      - label: 数字取证
+  - label: 工程流程
+    children:
+      - label: 供应链安全

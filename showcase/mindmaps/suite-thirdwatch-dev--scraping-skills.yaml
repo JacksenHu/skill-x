@@ -1,0 +1,16 @@
+root: thirdwatch-dev/scraping-skills 套件
+children:
+  - label: 数据抓取
+    children:
+      - label: 反爬与绕过策略
+      - label: Apify Actor 构建
+      - label: 企业线索抓取
+      - label: 电商商品抓取
+      - label: 外卖数据抓取
+      - label: 招聘数据抓取
+      - label: 房产数据抓取
+      - label: 评价与口碑抓取
+      - label: SEO/SERP 抓取
+      - label: 社媒内容抓取
+      - label: 旅游酒店抓取
+      - label: 网页抓取指南

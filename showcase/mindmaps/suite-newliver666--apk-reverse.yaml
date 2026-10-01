@@ -1,0 +1,5 @@
+root: newliver666/apk-reverse 套件
+children:
+  - label: 逆向工程
+    children:
+      - label: APK 逆向

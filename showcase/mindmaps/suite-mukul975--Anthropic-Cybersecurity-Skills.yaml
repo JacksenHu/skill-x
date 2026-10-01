@@ -1,0 +1,115 @@
+root: mukul975/Anthropic-Cybersecurity-Skills 套件
+children:
+  - label: 渗透测试
+    children:
+      - label: 滥用 DPAPI 凭据 访问
+      - label: 滥用 影子凭据 提权
+      - label: 分析 Active Directory ACL 滥用
+      - label: 分析 API gateway 访问 日志
+      - label: 分析 apt 组织 MITRE Navigator
+      - label: 分析 Azure activity 日志 威胁
+      - label: 分析 活动 归因 evidence
+      - label: 分析 证书 transparency 钓鱼
+      - label: 分析 云 存储 访问 模式
+      - label: 分析 C2 沟通
+      - label: 分析 cyber 杀伤链
+      - label: 分析 邮件 headers 钓鱼 调查
+      - label: 分析 ethereum 智能合约 漏洞
+      - label: 分析 indicators compromise
+      - label: 分析 iOS app 安全 objection
+      - label: 分析 malicious PDF peepdf
+      - label: 分析 malicious url urlscan
+      - label: 分析 网络 flow data netflow
+      - label: ……等 535 个
+  - label: 工程流程
+    children:
+      - label: 达成 CMMC 级别 2 合规
+      - label: 分析 Kubernetes 审计日志
+      - label: 分析 Linux 审计日志 intrusion
+      - label: 分析 office365 审计日志 compromise
+      - label: 分析 SBOM 供应链 漏洞
+      - label: 审计 Terraform infrastructure 安全
+      - label: 构建 devsecops 流水线 gitlab ci
+      - label: 构建 身份治理 生命周期 流程
+      - label: 构建 事件 响应 仪表盘
+      - label: 构建 钓鱼 报告 button 流程
+      - label: 构建 SOC 指标 KPI tracking
+      - label: 构建 漏洞 老化 SLA tracking
+      - label: 构建 漏洞 仪表盘 defectdojo
+      - label: 构建 漏洞扫描 流程
+      - label: 开展 cyber risk 评估 NIST 800 30
+      - label: 开展 GDPR 合规 评估
+      - label: 检测 依赖混淆
+      - label: 检测 供应链 攻击 ci cd
+      - label: ……等 63 个
+  - label: 内存取证
+    children:
+      - label: 获取 磁盘 镜像 dd dcfldd
+      - label: 分析 browser 取证 hindsight
+      - label: 分析 磁盘 镜像 autopsy
+      - label: 分析 Docker 容器 取证
+      - label: 分析 Linux system 痕迹
+      - label: 分析 LNK file jump list 痕迹
+      - label: 分析 内存 dumps Volatility
+      - label: 分析 内存取证 lime Volatility
+      - label: 分析 MFT deleted file 恢复
+      - label: 分析 网络 traffic incidents
+      - label: 分析 网络 traffic Wireshark
+      - label: 分析 outlook PST 邮件 取证
+      - label: 分析 powershell empire 痕迹
+      - label: 分析 预读取 files execution 历史
+      - label: 分析 slack space file system 痕迹
+      - label: 分析 Windows AmCache 痕迹
+      - label: 分析 Windows LNK files 痕迹
+      - label: 分析 Windows 预读取 python
+      - label: ……等 58 个
+  - label: 逆向工程
+    children:
+      - label: 分析 Android 恶意软件 Apktool
+      - label: 分析 golang 恶意软件 Ghidra
+      - label: 分析 heap spray 利用
+      - label: 分析 packed 恶意软件 upx unpacker
+      - label: 去混淆 JavaScript 恶意软件
+      - label: 去混淆 powershell obfuscated 恶意软件
+      - label: 检测 越权 object property 级别 授权
+      - label: 落地 GCP 二进制 授权
+      - label: 落地 rapid7 insightvm 扫描
+      - label: 执行 二进制 利用 分析
+      - label: 执行 blind SSRF 利用
+      - label: 执行 SSRF 漏洞 利用
+      - label: 逆向工程 Android 恶意软件 JADX
+      - label: 逆向工程 .NET 恶意软件 dnSpy
+      - label: 逆向工程 iOS app Frida
+      - label: 逆向工程 恶意软件 Ghidra
+      - label: 逆向工程 勒索软件 加密 routine
+      - label: 逆向工程 Rust 恶意软件
+  - label: 样本分析
+    children:
+      - label: 分析 Bootkit Rootkit samples
+      - label: 分析 Cobalt Strike beacon 配置
+      - label: 分析 cobaltstrike malleable C2 profiles
+      - label: 分析 DNS 日志 数据外泄
+      - label: 分析 Linux ELF 恶意软件
+      - label: 分析 Linux kernel rootkits
+      - label: 分析 宏 恶意软件 Office documents
+      - label: 分析 恶意软件 行为 cuckoo 沙箱
+      - label: 分析 恶意软件 family relationships malpedia
+      - label: 分析 恶意软件 持久化 autoruns
+      - label: 分析 恶意软件 沙箱 规避 技术
+      - label: 分析 网络 covert channels 恶意软件
+      - label: 分析 网络 traffic 恶意软件
+      - label: 分析 PDF 恶意软件 pdfid
+      - label: 分析 持久化 mechanisms Linux
+      - label: 分析 勒索软件 加密 mechanisms
+      - label: 分析 勒索软件 泄露站点 情报
+      - label: 分析 勒索软件 网络 indicators
+      - label: ……等 137 个
+  - label: 数据抓取
+    children:
+      - label: 分析 仿冒 domains dnstwist
+      - label: 构建 威胁组织 画像 OSINT
+      - label: 收集 open source 情报
+      - label: 开展 external 侦察 OSINT
+      - label: 执行 AI driven OSINT 关联
+      - label: 执行 ip reputation 分析 Shodan
+      - label: 执行 OSINT spiderfoot
