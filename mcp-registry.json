@@ -2245,6 +2245,293 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.NadavLor/windbg-ext-mcp",
+      "title": "WinDbg Ext MCP",
+      "description": "WinDbg 内核调试 MCP;MIT;需 WinDbg。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/NadavLor/windbg-ext-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "WinDbg 内核调试 MCP;MIT;需 WinDbg。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "WinDbg-ext-MCP:把 LLM 客户端接到 WinDbg,做实时 AI 辅助内核调试与崩溃分析。",
+          "installHint": "git clone https://github.com/NadavLor/windbg-ext-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/NadavLor/windbg-ext-mcp",
+            "command": "git clone https://github.com/NadavLor/windbg-ext-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.gengstah/windbg-mcp",
+      "title": "WinDbg MCP (pybag)",
+      "description": "WinDbg/pybag 调试 MCP;许可证未声明(仅指路牌收录)。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/gengstah/windbg-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "WinDbg/pybag 调试 MCP;许可证未声明(仅指路牌收录)。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "WinDbg MCP:把 pybag Windows 调试器函数暴露为 MCP 工具,控制用户态进程、内核会话与崩溃转储分析。",
+          "installHint": "git clone https://github.com/gengstah/windbg-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/gengstah/windbg-mcp",
+            "command": "git clone https://github.com/gengstah/windbg-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.Letenz/windows-drv-harness",
+      "title": "Windows Driver Harness",
+      "description": "Windows 驱动测试/调试 MCP;MIT;需 VMware/WinDbg。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Letenz/windows-drv-harness",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Windows 驱动测试/调试 MCP;MIT;需 VMware/WinDbg。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Windows Driver Harness:测试驱动内核驱动的内循环,快照回滚→部署→测试→比对→修复,MCP+VMware+WinDbg。",
+          "installHint": "git clone https://github.com/Letenz/windows-drv-harness.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/Letenz/windows-drv-harness",
+            "command": "git clone https://github.com/Letenz/windows-drv-harness.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.nebulae/trudi",
+      "title": "Trudi (DFIR Agent)",
+      "description": "DFIR 应急响应 MCP;MIT;需 SANS SIFT 工具集。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/nebulae/trudi",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "forensics",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "DFIR 应急响应 MCP;MIT;需 SANS SIFT 工具集。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Trudi:自主 DFIR Agent,SANS SIFT 工作站 MCP,面向应急响应。",
+          "installHint": "git clone https://github.com/nebulae/trudi.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/nebulae/trudi",
+            "command": "git clone https://github.com/nebulae/trudi.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.M507/AI-SOC-Agent",
+      "title": "AI SOC Agent MCP",
+      "description": "SOC/IR 自动化 MCP;MIT;需 ELK/IRIS。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/M507/AI-SOC-Agent",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "forensics",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "SOC/IR 自动化 MCP;MIT;需 ELK/IRIS。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "AI SOC Agent:自动化安全调查、告警分诊与应急响应 MCP,集成 ELK、IRIS 等平台。",
+          "installHint": "git clone https://github.com/M507/AI-SOC-Agent.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/M507/AI-SOC-Agent",
+            "command": "git clone https://github.com/M507/AI-SOC-Agent.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.thomasxm/CrowdSentinels-AI-MCP",
+      "title": "CrowdSentinels AI MCP",
+      "description": "威胁狩猎/IR MCP;GPL-3.0(仅指路牌收录);需 Elasticsearch/OpenSearch。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/thomasxm/CrowdSentinels-AI-MCP",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "forensics",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "威胁狩猎/IR MCP;GPL-3.0(仅指路牌收录);需 Elasticsearch/OpenSearch。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "CrowdSentinels AI:面向 Elasticsearch/OpenSearch 的 AI 威胁狩猎与应急响应 MCP。",
+          "installHint": "git clone https://github.com/thomasxm/CrowdSentinels-AI-MCP.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/thomasxm/CrowdSentinels-AI-MCP",
+            "command": "git clone https://github.com/thomasxm/CrowdSentinels-AI-MCP.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.bornpresident/MISP-MCP-SERVER",
+      "title": "MISP MCP Server",
+      "description": "MISP 威胁情报 MCP;许可证未声明(仅指路牌收录);需 MISP 实例。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/bornpresident/MISP-MCP-SERVER",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "malware",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "MISP 威胁情报 MCP;许可证未声明(仅指路牌收录);需 MISP 实例。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "MISP MCP:把 MISP 威胁情报平台接入 LLM,提供情报检索与关联能力。",
+          "installHint": "git clone https://github.com/bornpresident/MISP-MCP-SERVER.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/bornpresident/MISP-MCP-SERVER",
+            "command": "git clone https://github.com/bornpresident/MISP-MCP-SERVER.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
