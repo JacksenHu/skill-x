@@ -54,6 +54,30 @@ CAT_KW = {
 }
 
 
+def gitmcp_url(website_url: str) -> str:
+    """github.com/owner/repo -> gitmcp.io/owner/repo(即时 AI 上下文)。"""
+    if not website_url:
+        return ""
+    m = re.match(r"https?://(?:www\.)?github\.com/([\w.-]+/[\w.-]+)", website_url)
+    return f"https://gitmcp.io/{m.group(1)}" if m else ""
+
+
+SKILL_TARGET_DIRS = {
+    "claude": "~/.claude/skills/{name}/",
+    "codex": ".agents/skills/{name}/",
+    "cursor": ".cursor/skills/{name}/",
+    "gemini": "~/.gemini/skills/{name}/",
+    "generic": "<skillsRoot>/{name}/",
+}
+
+MCP_CONFIG_PATHS = {
+    "claude": "~/.claude/.mcp.json",
+    "cursor": "~/.cursor/mcp.json",
+    "codex": "~/.codex/config.toml 的 mcp_servers 段",
+    "vscode": ".vscode/mcp.json",
+}
+
+
 def tokenize(s: str):
     low = (s or "").lower()
     toks = set(w for w in re.findall(r"[a-z0-9][a-z0-9_.-]+", low) if len(w) >= 2)
@@ -258,6 +282,9 @@ def mcp_install_descriptor(name: str):
             "codex": {"mcp_servers": {short: {"command": runner, "args": args, "env": env}}},
             "vscode": {"servers": {short: {"type": "stdio", "command": runner, "args": args, "env": env}}},
         }
+    gm = gitmcp_url(s.get("websiteUrl") or "")
+    copy_config = ({"mcpServers": {short: {"type": "http", "url": gm}}} if gm
+                   else (client_snippets.get("claude") or {}))
     return {
         "name": name, "title": title, "version": s.get("version", ""), "kind": kind,
         "entryType": cur.get("entryType", "mcp"),
@@ -265,6 +292,9 @@ def mcp_install_descriptor(name: str):
         "config": config,
         "requiredSecrets": secrets,
         "clientSnippets": client_snippets,
+        "gitmcpUrl": gm,
+        "copyConfig": copy_config,
+        "configPaths": MCP_CONFIG_PATHS,
         "riskLevel": cur.get("riskLevel", "medium"),
         "riskNote": cur.get("riskNote", ""),
     }
@@ -327,6 +357,9 @@ def pack_public(p, detail: bool = False):
         "members": members,
         "page": f"/packages/{p.get('slug')}.html",
         "installDoc": "/install/pack-install.md",
+        "gitmcpUrl": gitmcp_url(p.get("upstream") or "https://github.com/JacksenHu/skill-x"),
+        "copyConfig": {"mcpServers": {"skill-x": {"type": "http", "url": "https://gitmcp.io/JacksenHu/skill-x"}}},
+        "skillTargetDirs": SKILL_TARGET_DIRS,
         "reviewed": p.get("reviewed") or {},
         "upstreamStatus": p.get("upstreamStatus") or {},
     }

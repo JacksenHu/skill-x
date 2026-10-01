@@ -21,6 +21,14 @@ def slug(name: str) -> str:
     return re.sub(r"[^\w.-]+", "--", name)
 
 
+def gitmcp_url(website_url: str) -> str:
+    """github.com/owner/repo -> gitmcp.io/owner/repo(即时 AI 上下文)。"""
+    if not website_url:
+        return ""
+    m = re.match(r"https?://(?:www\.)?github\.com/([\w.-]+/[\w.-]+)", website_url)
+    return f"https://gitmcp.io/{m.group(1)}" if m else ""
+
+
 def ensure_upstream_cache():
     cache_path = SHOWCASE / ".upstream-cache.json"
     if cache_path.is_file():
@@ -108,6 +116,39 @@ def insert_detail_icons():
         path.write_text(html, encoding="utf-8")
 
 
+def inject_copy_config_buttons():
+    """MCP 详情页注入「复制配置」按钮:复制 gitmcp.io MCP 配置(无需 clone/装依赖)。"""
+    reg = ROOT / "mcp-registry.json"
+    dist_mcp = SHOWCASE / "dist" / "mcp"
+    if not reg.is_file() or not dist_mcp.is_dir():
+        return
+    doc = json.loads(reg.read_text(encoding="utf-8"))
+    for s in doc.get("servers", []):
+        name = s.get("name", "")
+        url = gitmcp_url(s.get("websiteUrl") or "")
+        if not url:
+            continue
+        short = name.split("/")[-1]
+        cfg = json.dumps({"mcpServers": {short: {"type": "http", "url": url}}}, ensure_ascii=False)
+        page = dist_mcp / (slug(name) + ".html")
+        if not page.is_file():
+            continue
+        html = page.read_text(encoding="utf-8", errors="replace")
+        if 'data-zh="复制配置"' in html:
+            continue
+        anchor = f'data-skill="mcp:{name}" data-zh="复制接入命令"'
+        idx = html.find(anchor)
+        if idx < 0:
+            continue
+        end = html.find("</button>", idx)
+        if end < 0:
+            continue
+        btn = (f'<button class="chip copy-btn" data-copy=\'{cfg}\' '
+               f'data-skill="mcp:{name}" data-zh="复制配置" data-en="Copy config">复制配置</button>')
+        html = html[:end + 9] + " " + btn + html[end + 9:]
+        page.write_text(html, encoding="utf-8")
+
+
 def append_card_icon_css():
     css_path = SHOWCASE / "dist" / "assets" / "style.css"
     if not css_path.is_file():
@@ -126,6 +167,7 @@ def main():
     run_legacy_builder()
     update_site_data_icons()
     insert_detail_icons()
+    inject_copy_config_buttons()
     append_card_icon_css()
 
 
