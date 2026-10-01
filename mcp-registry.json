@@ -851,6 +851,621 @@
           }
         }
       }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.0x4m4/hexstrike-ai",
+      "title": "HexStrike AI",
+      "description": "聚合 150+ 渗透工具的 MCP server;MIT;本地运行,仅限授权目标。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/0x4m4/hexstrike-ai",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "聚合 150+ 渗透工具的 MCP server;MIT;本地运行,仅限授权目标。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "HexStrike AI:让 Agent 自主调用 150+ 网络安全工具,做自动化渗透、漏洞发现与漏洞赏金。",
+          "installHint": "git clone https://github.com/0x4m4/hexstrike-ai.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/0x4m4/hexstrike-ai",
+            "command": "git clone https://github.com/0x4m4/hexstrike-ai.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.mukul975/cve-mcp-server",
+      "title": "CVE Intelligence MCP",
+      "description": "威胁情报聚合 MCP;Apache-2.0;需配置各 API 密钥。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/mukul975/cve-mcp-server",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "malware",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "威胁情报聚合 MCP;Apache-2.0;需配置各 API 密钥。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "CVE 情报 MCP:27 个工具覆盖 21 个 API,CVE 查询、EPSS、CISA KEV、MITRE ATT&CK、Shodan、VirusTotal。",
+          "installHint": "git clone https://github.com/mukul975/cve-mcp-server.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/mukul975/cve-mcp-server",
+            "command": "git clone https://github.com/mukul975/cve-mcp-server.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.FuzzingLabs/mcp-security-hub",
+      "title": "Security Hub MCP",
+      "description": "进攻性安全工具 MCP 合集;MIT;仅限授权目标。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/FuzzingLabs/mcp-security-hub",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "进攻性安全工具 MCP 合集;MIT;仅限授权目标。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "安全工具 MCP 合集:Nmap、Ghidra、Nuclei、SQLMap、Hashcat 等进攻性安全工具接入 AI。",
+          "installHint": "git clone https://github.com/FuzzingLabs/mcp-security-hub.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/FuzzingLabs/mcp-security-hub",
+            "command": "git clone https://github.com/FuzzingLabs/mcp-security-hub.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.cyproxio/mcp-for-security",
+      "title": "MCP for Security",
+      "description": "渗透工具 MCP 合集;MIT;仅限授权测试。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/cyproxio/mcp-for-security",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "渗透工具 MCP 合集;MIT;仅限授权测试。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "安全 MCP 合集:SQLMap、FFUF、Nmap、Masscan 等常用渗透工具接入 AI 工作流。",
+          "installHint": "git clone https://github.com/cyproxio/mcp-for-security.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/cyproxio/mcp-for-security",
+            "command": "git clone https://github.com/cyproxio/mcp-for-security.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.radareorg/radare2-mcp",
+      "title": "radare2 MCP",
+      "description": "官方 radare2 stdio MCP;MIT;需本机安装 radare2。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/radareorg/radare2-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "官方 radare2 stdio MCP;MIT;需本机安装 radare2。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "官方 radare2 MCP:让 Agent 驱动 radare2 做二进制反汇编、函数分析与符号重命名。",
+          "installHint": "git clone https://github.com/radareorg/radare2-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/radareorg/radare2-mcp",
+            "command": "git clone https://github.com/radareorg/radare2-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.dnakov/frida-mcp",
+      "title": "Frida MCP",
+      "description": "Frida stdio MCP;MIT;需本机安装 frida。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/dnakov/frida-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Frida stdio MCP;MIT;需本机安装 frida。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Frida MCP:让 Agent 驱动 Frida 做动态插桩、Hook、内存读写与运行时分析。",
+          "installHint": "git clone https://github.com/dnakov/frida-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/dnakov/frida-mcp",
+            "command": "git clone https://github.com/dnakov/frida-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.sjkim1127/Reversecore_MCP",
+      "title": "Reversecore MCP",
+      "description": "逆向分析 MCP;MIT;聚合多种分析引擎。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/sjkim1127/Reversecore_MCP",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "reverse-engineering",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "逆向分析 MCP;MIT;聚合多种分析引擎。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Reversecore:基于 Radare2/YARA/LIEF/Capstone 的逆向、恶意样本、取证、漏洞研究与 SAST 一体化 MCP。",
+          "installHint": "git clone https://github.com/sjkim1127/Reversecore_MCP.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/sjkim1127/Reversecore_MCP",
+            "command": "git clone https://github.com/sjkim1127/Reversecore_MCP.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.GH05TCREW/MetasploitMCP",
+      "title": "Metasploit MCP",
+      "description": "Metasploit RPC 封装 MCP;Apache-2.0;仅限授权环境。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/GH05TCREW/MetasploitMCP",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Metasploit RPC 封装 MCP;Apache-2.0;仅限授权环境。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Metasploit MCP:让 Agent 通过 MSF RPC 执行模块、管理会话与生成攻击载荷。",
+          "installHint": "git clone https://github.com/GH05TCREW/MetasploitMCP.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/GH05TCREW/MetasploitMCP",
+            "command": "git clone https://github.com/GH05TCREW/MetasploitMCP.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.six2dez/burp-ai-agent",
+      "title": "Burp AI Agent",
+      "description": "Burp Suite 扩展;MIT;需 Burp Suite。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/six2dez/burp-ai-agent",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Burp Suite 扩展;MIT;需 Burp Suite。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Burp Suite 扩展:内置 MCP 工具、AI 辅助分析、隐私控制与被动/主动扫描。",
+          "installHint": "git clone https://github.com/six2dez/burp-ai-agent.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/six2dez/burp-ai-agent",
+            "command": "git clone https://github.com/six2dez/burp-ai-agent.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.Cy-S3c/BurpMCP-Ultra",
+      "title": "BurpMCP Ultra",
+      "description": "Burp Suite MCP;MIT;需 Burp Suite Professional。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/Cy-S3c/BurpMCP-Ultra",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "plugin",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Burp Suite MCP;MIT;需 Burp Suite Professional。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Burp Suite MCP:149 个工具覆盖代理、扫描、内联模糊测试、条件竞争、JWT/IDOR 攻击、侦察与 OOB。",
+          "installHint": "git clone https://github.com/Cy-S3c/BurpMCP-Ultra.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/Cy-S3c/BurpMCP-Ultra",
+            "command": "git clone https://github.com/Cy-S3c/BurpMCP-Ultra.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.w0h1v/mcp-shodan",
+      "title": "Shodan MCP",
+      "description": "Shodan API 封装 MCP;MIT;需 SHODAN_API_KEY。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/w0h1v/mcp-shodan",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "Shodan API 封装 MCP;MIT;需 SHODAN_API_KEY。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Shodan MCP:搜索联网设备、IP 侦察、DNS 查询与 CVE/CPE 漏洞情报。",
+          "installHint": "git clone https://github.com/w0h1v/mcp-shodan.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/w0h1v/mcp-shodan",
+            "command": "git clone https://github.com/w0h1v/mcp-shodan.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.w0h1v/mcp-virustotal",
+      "title": "VirusTotal MCP",
+      "description": "VirusTotal API 封装 MCP;MIT;需 VIRUSTOTAL_API_KEY。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/w0h1v/mcp-virustotal",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "malware",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "VirusTotal API 封装 MCP;MIT;需 VIRUSTOTAL_API_KEY。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "VirusTotal MCP:分析 URL、文件、IP、域名,输出综合安全报告与关系分析。",
+          "installHint": "git clone https://github.com/w0h1v/mcp-virustotal.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/w0h1v/mcp-virustotal",
+            "command": "git clone https://github.com/w0h1v/mcp-virustotal.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.badchars/osint-mcp-server",
+      "title": "OSINT MCP Server",
+      "description": "OSINT 聚合 MCP;MIT;需配置各数据源密钥。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/badchars/osint-mcp-server",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "OSINT 聚合 MCP;MIT;需配置各数据源密钥。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "OSINT MCP:37 个工具、12 个数据源,覆盖 Shodan、VirusTotal、Censys、DNS 侦察、WHOIS、证书透明、BGP、Wayback 等。",
+          "installHint": "git clone https://github.com/badchars/osint-mcp-server.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/badchars/osint-mcp-server",
+            "command": "git clone https://github.com/badchars/osint-mcp-server.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.DMontgomery40/pentest-mcp",
+      "title": "Pentest MCP",
+      "description": "渗透测试 MCP;MIT;仅限授权目标。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/DMontgomery40/pentest-mcp",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "pentest",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "渗透测试 MCP;MIT;仅限授权目标。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "渗透测试 MCP:STDIO/HTTP/SSE,集成 nmap、dirbuster、nikto、John the Ripper、hashcat 与字典构建。",
+          "installHint": "git clone https://github.com/DMontgomery40/pentest-mcp.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/DMontgomery40/pentest-mcp",
+            "command": "git clone https://github.com/DMontgomery40/pentest-mcp.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.unclecode/crawl4ai",
+      "title": "Crawl4AI",
+      "description": "网页抓取 MCP/库;Apache-2.0;支持本地或云。",
+      "version": "1.0.0",
+      "websiteUrl": "https://github.com/unclecode/crawl4ai",
+      "_meta": {
+        "top.skillx/curated": {
+          "entryType": "mcp",
+          "category": "data",
+          "kind": "link",
+          "riskLevel": "medium",
+          "riskNote": "网页抓取 MCP/库;Apache-2.0;支持本地或云。 收录为上游指路牌,不镜像代码。",
+          "description-zh": "Crawl4AI:开源网页爬虫/抓取器,把任意网站转成 LLM 就绪的干净 Markdown,可本地部署或用 Cloud API。",
+          "installHint": "git clone https://github.com/unclecode/crawl4ai.git",
+          "install": {
+            "method": "link",
+            "url": "https://github.com/unclecode/crawl4ai",
+            "command": "git clone https://github.com/unclecode/crawl4ai.git",
+            "clients": [
+              "claude",
+              "cursor",
+              "codex"
+            ]
+          },
+          "reviewed": {
+            "by": "codex",
+            "at": "2026-10-01",
+            "execReview": "passed",
+            "note": "自动发现+机审:GitHub 仓库与许可证已核验;收录为指路牌。"
+          },
+          "upstreamStatus": {
+            "source": "github",
+            "lastCheck": "2026-10-01",
+            "alive": true,
+            "failSince": null
+          }
+        }
+      }
     }
   ]
 }
