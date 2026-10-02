@@ -1,1124 +1,1332 @@
 {
-  "schema": "tool-store.import.v1",
-  "endpoint": "POST /v1/tools/import",
-  "source": "security-tool-store",
-  "categories": [
-    {
-      "id": "recon",
-      "name": "侦察测绘",
-      "name_en": "Recon & Asset Discovery",
-      "order": 1
-    },
-    {
-      "id": "vuln",
-      "name": "漏洞扫描",
-      "name_en": "Vulnerability Scanning",
-      "order": 2
-    },
-    {
-      "id": "lab",
-      "name": "靶场实验",
-      "name_en": "Labs & Ranges",
-      "order": 3
-    },
-    {
-      "id": "tunnel",
-      "name": "内网与隧道",
-      "name_en": "Intranet & Tunneling",
-      "order": 4
-    },
-    {
-      "id": "defense",
-      "name": "蜜罐与防守",
-      "name_en": "Honeypot & Defense",
-      "order": 5
-    },
-    {
-      "id": "intel",
-      "name": "威胁情报",
-      "name_en": "Threat Intelligence",
-      "order": 6
-    }
-  ],
-  "tools": [
-    {
-      "slug": "rengine",
-      "name": "reNgine",
-      "name_zh": "自动化侦察框架",
-      "category_id": "recon",
-      "summary": "开源的自动化侦察与资产测绘引擎，聚合子域枚举、端口扫描、目录爆破与截图，输出集中式侦察面板。",
-      "description": "开源的自动化侦察与资产测绘引擎，聚合子域枚举、端口扫描、目录爆破与截图，输出集中式侦察面板。",
-      "detail_url": "/tools/rengine.html",
-      "repo": "yogeshojha/rengine",
-      "docs_url": "https://github.com/yogeshojha/rengine",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/yogeshojha/rengine && cd rengine && docker compose up -d --build",
-        "compose_file": "deploy/docker-compose/rengine.docker-compose.yml",
-        "image": null
-      },
-      "ports": [
-        8000,
-        8082,
-        443
-      ],
-      "default_port": 8000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/yogeshojha/rengine"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "arl-plus-docker",
-      "name": "ARL-Plus",
-      "name_zh": "资产灯塔增强版",
-      "category_id": "recon",
-      "summary": "ARL 的容器化增强版（arl-ki9mu），一条 Docker Compose 命令完成资产侦察系统部署。",
-      "description": "ARL 的容器化增强版（arl-ki9mu），一条 Docker Compose 命令完成资产侦察系统部署。",
-      "detail_url": "/tools/arl-plus-docker.html",
-      "repo": "ki9mu/ARL-plus-docker",
-      "docs_url": "https://github.com/ki9mu/ARL-plus-docker",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/ki9mu/ARL-plus-docker && cd ARL-plus-docker && docker compose up -d",
-        "compose_file": "deploy/docker-compose/arl-plus.docker-compose.yml",
-        "image": "ki9mu/arl-ki9mu:v3.0.1"
-      },
-      "ports": [
-        5003
-      ],
-      "default_port": 5003,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/ki9mu/ARL-plus-docker"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "nemo_go",
-      "name": "Nemo",
-      "name_zh": "自动化信息收集平台",
-      "category_id": "recon",
-      "summary": "Nemo：分布式自动化信息收集平台，集成端口扫描、子域发现、指纹识别与目录爆破。",
-      "description": "Nemo：分布式自动化信息收集平台，集成端口扫描、子域发现、指纹识别与目录爆破。",
-      "detail_url": "/tools/nemo_go.html",
-      "repo": "hanc00l/nemo_go",
-      "docs_url": "https://github.com/hanc00l/nemo_go",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/hanc00l/nemo_go && cd nemo_go && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        5000
-      ],
-      "default_port": 5000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/hanc00l/nemo_go"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "scopesentry-scan",
-      "name": "ScopeSentry",
-      "name_zh": "网络空间测绘+扫描",
-      "category_id": "recon",
-      "summary": "ScopeSentry：资产收集与扫描一体化的安全侦察平台。",
-      "description": "ScopeSentry：资产收集与扫描一体化的安全侦察平台。",
-      "detail_url": "/tools/scopesentry-scan.html",
-      "repo": "Autumn-27/ScopeSentry-Scan",
-      "docs_url": "https://github.com/Autumn-27/ScopeSentry-Scan",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/Autumn-27/ScopeSentry-Scan && cd ScopeSentry-Scan && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8000
-      ],
-      "default_port": 8000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/Autumn-27/ScopeSentry-Scan"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "cyberedge",
-      "name": "CyberEdge",
-      "name_zh": "互联网资产测绘",
-      "category_id": "recon",
-      "summary": "CyberEdge：网络空间资产测绘与暴露面管理工具。",
-      "description": "CyberEdge：网络空间资产测绘与暴露面管理工具。",
-      "detail_url": "/tools/cyberedge.html",
-      "repo": "Symph0nia/CyberEdge",
-      "docs_url": "https://github.com/Symph0nia/CyberEdge",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/Symph0nia/CyberEdge && cd CyberEdge && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8000
-      ],
-      "default_port": 8000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/Symph0nia/CyberEdge"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "linglong",
-      "name": "linglong",
-      "name_zh": "资产无限巡航",
-      "category_id": "recon",
-      "summary": "玲珑 linglong：资产巡航与安全巡检平台，用于持续资产测绘与漏洞发现。",
-      "description": "玲珑 linglong：资产巡航与安全巡检平台，用于持续资产测绘与漏洞发现。",
-      "detail_url": "/tools/linglong.html",
-      "repo": "awake1t/linglong",
-      "docs_url": "https://github.com/awake1t/linglong",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/awake1t/linglong && cd linglong && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8000
-      ],
-      "default_port": 8000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/awake1t/linglong"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "gosint",
-      "name": "gosint",
-      "name_zh": "分布式资产收集与漏洞扫描",
-      "category_id": "recon",
-      "summary": "gosint：分布式资产收集与漏洞扫描框架，支持任务分发与结果汇总。",
-      "description": "gosint：分布式资产收集与漏洞扫描框架，支持任务分发与结果汇总。",
-      "detail_url": "/tools/gosint.html",
-      "repo": "1in9e/gosint",
-      "docs_url": "https://github.com/1in9e/gosint",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/1in9e/gosint && cd gosint && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8080
-      ],
-      "default_port": 8080,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/1in9e/gosint"
-      },
-      "labels": [
-        "recon",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "slack",
-      "name": "Slack",
-      "name_zh": "安全服务集成化工具平台",
-      "category_id": "recon",
-      "summary": "Slack：安全服务集成化赋能平台（桌面端），聚合多种安全能力到统一工作台。",
-      "description": "Slack：安全服务集成化赋能平台（桌面端），聚合多种安全能力到统一工作台。",
-      "detail_url": "/tools/slack.html",
-      "repo": "qiwentaidi/Slack",
-      "docs_url": "https://github.com/qiwentaidi/Slack",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制或按仓库说明构建运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "desktop",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/qiwentaidi/Slack"
-      },
-      "labels": [
-        "recon",
-        "binary",
-        "desktop"
-      ]
-    },
-    {
-      "slug": "yakit",
-      "name": "Yakit",
-      "name_zh": "单兵作战武器库平台",
-      "category_id": "recon",
-      "summary": "Yakit：网络安全一站式可视化平台，集成扫描、渗透、插件与数据工作流。",
-      "description": "Yakit：网络安全一站式可视化平台，集成扫描、渗透、插件与数据工作流。",
-      "detail_url": "/tools/yakit.html",
-      "repo": "yaklang/yakit",
-      "docs_url": "https://github.com/yaklang/yakit",
-      "deploy": {
-        "method": "binary",
-        "command": "下载官方安装包安装；服务端可用 docker 运行 yakit",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8080
-      ],
-      "default_port": 8080,
-      "form": "desktop",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/yaklang/yakit"
-      },
-      "labels": [
-        "recon",
-        "binary",
-        "desktop"
-      ]
-    },
-    {
-      "slug": "vulfocus",
-      "name": "Vulfocus",
-      "name_zh": "漏洞集成平台",
-      "category_id": "lab",
-      "summary": "Vulfocus：漏洞集成平台，将漏洞环境与镜像统一管理，提供一键拉起靶场。",
-      "description": "Vulfocus：漏洞集成平台，将漏洞环境与镜像统一管理，提供一键拉起靶场。",
-      "detail_url": "/tools/vulfocus.html",
-      "repo": "fofapro/vulfocus",
-      "docs_url": "https://github.com/fofapro/vulfocus",
-      "deploy": {
-        "method": "docker",
-        "command": "docker run -d -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock -e VUL_IP=<本机IP> vulfocus/vulfocus",
-        "compose_file": null,
-        "image": "vulfocus/vulfocus"
-      },
-      "ports": [
-        80
-      ],
-      "default_port": 80,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/fofapro/vulfocus"
-      },
-      "labels": [
-        "lab",
-        "docker",
-        "web"
-      ]
-    },
-    {
-      "slug": "vulhub",
-      "name": "Vulhub",
-      "name_zh": "漏洞靶场合集",
-      "category_id": "lab",
-      "summary": "Vulhub：开源漏洞环境合集，一条 docker compose 命令拉起各类漏洞靶场。",
-      "description": "Vulhub：开源漏洞环境合集，一条 docker compose 命令拉起各类漏洞靶场。",
-      "detail_url": "/tools/vulhub.html",
-      "repo": "vulhub/vulhub",
-      "docs_url": "https://github.com/vulhub/vulhub",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/vulhub/vulhub && cd vulhub/<具体漏洞目录> && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/vulhub/vulhub"
-      },
-      "labels": [
-        "lab",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "metarget",
-      "name": "Metarget",
-      "name_zh": "云原生靶场构建",
-      "category_id": "lab",
-      "summary": "Metarget：云原生靶机自动化搭建工具，快速构建有漏洞的容器/集群环境。",
-      "description": "Metarget：云原生靶机自动化搭建工具，快速构建有漏洞的容器/集群环境。",
-      "detail_url": "/tools/metarget.html",
-      "repo": "Metarget/metarget",
-      "docs_url": "https://github.com/Metarget/metarget",
-      "deploy": {
-        "method": "cli",
-        "command": "pip3 install metarget && metarget cnv install cve-2019-5736",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cli",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/Metarget/metarget"
-      },
-      "labels": [
-        "lab",
-        "cli",
-        "cli"
-      ]
-    },
-    {
-      "slug": "goad",
-      "name": "GOAD",
-      "name_zh": "Active Directory 靶场",
-      "category_id": "lab",
-      "summary": "GOAD：Active Directory 红队靶场，基于 Vagrant/云自动化搭建多域攻击环境。",
-      "description": "GOAD：Active Directory 红队靶场，基于 Vagrant/云自动化搭建多域攻击环境。",
-      "detail_url": "/tools/goad.html",
-      "repo": "Orange-Cyberdefense/GOAD",
-      "docs_url": "https://github.com/Orange-Cyberdefense/GOAD",
-      "deploy": {
-        "method": "iac",
-        "command": "git clone https://github.com/Orange-Cyberdefense/GOAD && cd GOAD && vagrant up",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cloud",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/Orange-Cyberdefense/GOAD"
-      },
-      "labels": [
-        "lab",
-        "iac",
-        "cloud"
-      ]
-    },
-    {
-      "slug": "terraformgoat",
-      "name": "TerraformGoat",
-      "name_zh": "多云场景漏洞靶场",
-      "category_id": "lab",
-      "summary": "TerraformGoat：云环境（多云）漏洞靶场，用于云安全与 IaC 安全实践。",
-      "description": "TerraformGoat：云环境（多云）漏洞靶场，用于云安全与 IaC 安全实践。",
-      "detail_url": "/tools/terraformgoat.html",
-      "repo": "HXSecurity/TerraformGoat",
-      "docs_url": "https://github.com/HXSecurity/TerraformGoat",
-      "deploy": {
-        "method": "iac",
-        "command": "git clone https://github.com/HXSecurity/TerraformGoat && cd TerraformGoat/<场景> && terraform apply",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cloud",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/HXSecurity/TerraformGoat"
-      },
-      "labels": [
-        "lab",
-        "iac",
-        "cloud"
-      ]
-    },
-    {
-      "slug": "cicd-goat",
-      "name": "CI/CD Goat",
-      "name_zh": "CI/CD 安全靶场",
-      "category_id": "lab",
-      "summary": "CI/CD Goat：CI/CD 流水线安全靶场，覆盖供应链与流水线攻击场景。",
-      "description": "CI/CD Goat：CI/CD 流水线安全靶场，覆盖供应链与流水线攻击场景。",
-      "detail_url": "/tools/cicd-goat.html",
-      "repo": "cider-security-research/cicd-goat",
-      "docs_url": "https://github.com/cider-security-research/cicd-goat",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/cider-security-research/cicd-goat && cd cicd-goat && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8000
-      ],
-      "default_port": 8000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/cider-security-research/cicd-goat"
-      },
-      "labels": [
-        "lab",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "dnslog-platform-golang",
-      "name": "DNSLog 平台",
-      "name_zh": "DNSLOG 外带平台",
-      "category_id": "tunnel",
-      "summary": "DNSLog 探测平台：Go 实现的外带探测（OAST）服务，用于验证 DNS 回连。",
-      "description": "DNSLog 探测平台：Go 实现的外带探测（OAST）服务，用于验证 DNS 回连。",
-      "detail_url": "/tools/dnslog-platform-golang.html",
-      "repo": "yumusb/DNSLog-Platform-Golang",
-      "docs_url": "https://github.com/yumusb/DNSLog-Platform-Golang",
-      "deploy": {
-        "method": "source",
-        "command": "git clone https://github.com/yumusb/DNSLog-Platform-Golang && cd DNSLog-Platform-Golang && go build && 配置域名后运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        80,
-        53
-      ],
-      "default_port": 80,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/yumusb/DNSLog-Platform-Golang"
-      },
-      "labels": [
-        "tunnel",
-        "source",
-        "service"
-      ]
-    },
-    {
-      "slug": "gophish",
-      "name": "GoPhish",
-      "name_zh": "钓鱼演练平台",
-      "category_id": "defense",
-      "summary": "GoPhish：开源钓鱼演练平台，支持邮件模板、目标组与活动统计。",
-      "description": "GoPhish：开源钓鱼演练平台，支持邮件模板、目标组与活动统计。",
-      "detail_url": "/tools/gophish.html",
-      "repo": "gophish/gophish",
-      "docs_url": "https://github.com/gophish/gophish",
-      "deploy": {
-        "method": "docker",
-        "command": "docker run -d -p 3333:3333 -p 80:80 -v gophish_data:/data --name gophish gophish/gophish",
-        "compose_file": "deploy/docker-compose/gophish.docker-compose.yml",
-        "image": "gophish/gophish"
-      },
-      "ports": [
-        3333,
-        80
-      ],
-      "default_port": 3333,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/gophish/gophish"
-      },
-      "labels": [
-        "defense",
-        "docker",
-        "web"
-      ]
-    },
-    {
-      "slug": "proxy_pool",
-      "name": "proxy_pool",
-      "name_zh": "爬虫代理池",
-      "category_id": "tunnel",
-      "summary": "proxy_pool：HTTP 代理池服务，自动采集、验证与调度可用代理。",
-      "description": "proxy_pool：HTTP 代理池服务，自动采集、验证与调度可用代理。",
-      "detail_url": "/tools/proxy_pool.html",
-      "repo": "jhao104/proxy_pool",
-      "docs_url": "https://github.com/jhao104/proxy_pool",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/jhao104/proxy_pool && cd proxy_pool && docker compose up -d",
-        "compose_file": "deploy/docker-compose/proxy-pool.docker-compose.yml",
-        "image": null
-      },
-      "ports": [
-        5010
-      ],
-      "default_port": 5010,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/jhao104/proxy_pool"
-      },
-      "labels": [
-        "tunnel",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "rotateproxy",
-      "name": "rotateproxy",
-      "name_zh": "Socks5 代理池轮切",
-      "category_id": "tunnel",
-      "summary": "rotateproxy：Socks5 代理轮换器，按策略轮换出口 IP。",
-      "description": "rotateproxy：Socks5 代理轮换器，按策略轮换出口 IP。",
-      "detail_url": "/tools/rotateproxy.html",
-      "repo": "akkuman/rotateproxy",
-      "docs_url": "https://github.com/akkuman/rotateproxy",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制后运行 rotateproxy",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8899
-      ],
-      "default_port": 8899,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/akkuman/rotateproxy"
-      },
-      "labels": [
-        "tunnel",
-        "binary",
-        "service"
-      ]
-    },
-    {
-      "slug": "deadpool",
-      "name": "Deadpool",
-      "name_zh": "Socks5 代理池",
-      "category_id": "tunnel",
-      "summary": "Deadpool：Socks5 代理池（Go 实现），采集并维护可用代理列表。",
-      "description": "Deadpool：Socks5 代理池（Go 实现），采集并维护可用代理列表。",
-      "detail_url": "/tools/deadpool.html",
-      "repo": "thinkoaa/Deadpool",
-      "docs_url": "https://github.com/thinkoaa/Deadpool",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制或按仓库说明构建运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/thinkoaa/Deadpool"
-      },
-      "labels": [
-        "tunnel",
-        "binary",
-        "service"
-      ]
-    },
-    {
-      "slug": "frp",
-      "name": "frp",
-      "name_zh": "内网穿透",
-      "category_id": "tunnel",
-      "summary": "frp：内网穿透与反向代理工具，将内网服务映射到公网。",
-      "description": "frp：内网穿透与反向代理工具，将内网服务映射到公网。",
-      "detail_url": "/tools/frp.html",
-      "repo": "fatedier/frp",
-      "docs_url": "https://github.com/fatedier/frp",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 的 frps/frpc 二进制并配置 frps.toml/frpc.toml 运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        7000,
-        7500
-      ],
-      "default_port": 7000,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/fatedier/frp"
-      },
-      "labels": [
-        "tunnel",
-        "binary",
-        "service"
-      ]
-    },
-    {
-      "slug": "nps",
-      "name": "nps",
-      "name_zh": "内网穿透服务端",
-      "category_id": "tunnel",
-      "summary": "nps：轻量级内网穿透代理，提供 Web 管理面板与多协议隧道。",
-      "description": "nps：轻量级内网穿透代理，提供 Web 管理面板与多协议隧道。",
-      "detail_url": "/tools/nps.html",
-      "repo": "ehang-io/nps",
-      "docs_url": "https://github.com/ehang-io/nps",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制，运行 nps 并访问 8080 管理面板",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8080,
-        8024
-      ],
-      "default_port": 8080,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/ehang-io/nps"
-      },
-      "labels": [
-        "tunnel",
-        "binary",
-        "web"
-      ]
-    },
-    {
-      "slug": "goproxy",
-      "name": "goproxy",
-      "name_zh": "Go 代理工具",
-      "category_id": "tunnel",
-      "summary": "goproxy：Go 实现的高性能代理工具集，支持 HTTP/SOCKS/TCP 转发。",
-      "description": "goproxy：Go 实现的高性能代理工具集，支持 HTTP/SOCKS/TCP 转发。",
-      "detail_url": "/tools/goproxy.html",
-      "repo": "snail007/goproxy",
-      "docs_url": "https://github.com/snail007/goproxy",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制后按 proxy 命令运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8080
-      ],
-      "default_port": 8080,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/snail007/goproxy"
-      },
-      "labels": [
-        "tunnel",
-        "binary",
-        "service"
-      ]
-    },
-    {
-      "slug": "axiom",
-      "name": "Axiom",
-      "name_zh": "动态基础设施框架",
-      "category_id": "recon",
-      "summary": "Axiom：动态云渗透基础设施，按需在云端拉起分布式扫描与攻击节点。",
-      "description": "Axiom：动态云渗透基础设施，按需在云端拉起分布式扫描与攻击节点。",
-      "detail_url": "/tools/axiom.html",
-      "repo": "pry0cc/axiom",
-      "docs_url": "https://github.com/pry0cc/axiom",
-      "deploy": {
-        "method": "iac",
-        "command": "git clone https://github.com/pry0cc/axiom && cd axiom && 按说明配置云厂商后部署实例",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cloud",
-      "credentials": [
-        "云厂商AK/SK"
-      ],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/pry0cc/axiom"
-      },
-      "labels": [
-        "recon",
-        "iac",
-        "cloud"
-      ]
-    },
-    {
-      "slug": "f8x",
-      "name": "f8x",
-      "name_zh": "攻防环境一键部署",
-      "category_id": "recon",
-      "summary": "f8x：安全工具一键安装脚本，批量部署常用渗透/侦察工具。",
-      "description": "f8x：安全工具一键安装脚本，批量部署常用渗透/侦察工具。",
-      "detail_url": "/tools/f8x.html",
-      "repo": "ffffffff0x/f8x",
-      "docs_url": "https://github.com/ffffffff0x/f8x",
-      "deploy": {
-        "method": "script",
-        "command": "bash -c \"$(curl -fsSL https://raw.githubusercontent.com/ffffffff0x/f8x/main/install.sh)\" 或克隆后运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cli",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/ffffffff0x/f8x"
-      },
-      "labels": [
-        "recon",
-        "script",
-        "cli"
-      ]
-    },
-    {
-      "slug": "ehoney",
-      "name": "Ehoney",
-      "name_zh": "蜜罐管理系统",
-      "category_id": "defense",
-      "summary": "Ehoney：蜜罐系统，用于欺骗攻击者、捕获入侵行为与告警。",
-      "description": "Ehoney：蜜罐系统，用于欺骗攻击者、捕获入侵行为与告警。",
-      "detail_url": "/tools/ehoney.html",
-      "repo": "seccome/Ehoney",
-      "docs_url": "https://github.com/seccome/Ehoney",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/seccome/Ehoney && cd Ehoney && 使用仓库内 docker-compose 部署",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8080
-      ],
-      "default_port": 8080,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/seccome/Ehoney"
-      },
-      "labels": [
-        "defense",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "darkangel",
-      "name": "DarkAngel",
-      "name_zh": "全自动漏洞扫描器",
-      "category_id": "vuln",
-      "summary": "DarkAngel：全自动漏洞扫描器，自动化信息收集与漏洞探测。",
-      "description": "DarkAngel：全自动漏洞扫描器，自动化信息收集与漏洞探测。",
-      "detail_url": "/tools/darkangel.html",
-      "repo": "Bywalks/DarkAngel",
-      "docs_url": "https://github.com/Bywalks/DarkAngel",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/Bywalks/DarkAngel && cd DarkAngel && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8000
-      ],
-      "default_port": 8000,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/Bywalks/DarkAngel"
-      },
-      "labels": [
-        "vuln",
-        "docker-compose",
-        "service"
-      ]
-    },
-    {
-      "slug": "dongtai",
-      "name": "洞态 IAST",
-      "name_zh": "交互式应用安全测试",
-      "category_id": "defense",
-      "summary": "洞态 IAST：交互式应用安全测试，运行时检测应用漏洞与数据流。",
-      "description": "洞态 IAST：交互式应用安全测试，运行时检测应用漏洞与数据流。",
-      "detail_url": "/tools/dongtai.html",
-      "repo": "HXSecurity/DongTai",
-      "docs_url": "https://github.com/HXSecurity/DongTai",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/HXSecurity/DongTai && cd DongTai && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        8000,
-        8080
-      ],
-      "default_port": 8000,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/HXSecurity/DongTai"
-      },
-      "labels": [
-        "defense",
-        "docker-compose",
-        "web"
-      ]
-    },
-    {
-      "slug": "dependencycheck",
-      "name": "DependencyCheck",
-      "name_zh": "软件成分分析 SCA",
-      "category_id": "defense",
-      "summary": "OWASP Dependency-Check：软件成分分析（SCA），识别依赖中的已知漏洞。",
-      "description": "OWASP Dependency-Check：软件成分分析（SCA），识别依赖中的已知漏洞。",
-      "detail_url": "/tools/dependencycheck.html",
-      "repo": "jeremylong/DependencyCheck",
-      "docs_url": "https://github.com/jeremylong/DependencyCheck",
-      "deploy": {
-        "method": "cli",
-        "command": "下载官方 CLI zip 或使用 Maven/Gradle 插件运行 dependency-check",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cli",
-      "credentials": [
-        "NVD API Key(可选)"
-      ],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/jeremylong/DependencyCheck"
-      },
-      "labels": [
-        "defense",
-        "cli",
-        "cli"
-      ]
-    },
-    {
-      "slug": "xray",
-      "name": "xray",
-      "name_zh": "被动漏洞扫描器",
-      "category_id": "vuln",
-      "summary": "xray：新一代被动/主动漏洞扫描器，支持 web 漏洞检测与联动。",
-      "description": "xray：新一代被动/主动漏洞扫描器，支持 web 漏洞检测与联动。",
-      "detail_url": "/tools/xray.html",
-      "repo": "chaitin/xray",
-      "docs_url": "https://github.com/chaitin/xray",
-      "deploy": {
-        "method": "binary",
-        "command": "下载官方 xray 二进制并运行 xray webscan --listen 127.0.0.1:7777",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        7777
-      ],
-      "default_port": 7777,
-      "form": "service",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/chaitin/xray"
-      },
-      "labels": [
-        "vuln",
-        "binary",
-        "service"
-      ]
-    },
-    {
-      "slug": "kubehound",
-      "name": "KubeHound",
-      "name_zh": "K8s 攻击路径分析",
-      "category_id": "defense",
-      "summary": "KubeHound：Kubernetes 攻击路径分析工具，识别集群内潜在攻击链路。",
-      "description": "KubeHound：Kubernetes 攻击路径分析工具，识别集群内潜在攻击链路。",
-      "detail_url": "/tools/kubehound.html",
-      "repo": "DataDog/KubeHound",
-      "docs_url": "https://github.com/DataDog/KubeHound",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制后运行 kubehound dump / graph",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "cli",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/DataDog/KubeHound"
-      },
-      "labels": [
-        "defense",
-        "binary",
-        "cli"
-      ]
-    },
-    {
-      "slug": "watchvuln",
-      "name": "watchvuln",
-      "name_zh": "漏洞情报采集推送",
-      "category_id": "intel",
-      "summary": "watchvuln：漏洞情报采集与监控，聚合推送最新漏洞预警。",
-      "description": "watchvuln：漏洞情报采集与监控，聚合推送最新漏洞预警。",
-      "detail_url": "/tools/watchvuln.html",
-      "repo": "zema1/watchvuln",
-      "docs_url": "https://github.com/zema1/watchvuln",
-      "deploy": {
-        "method": "binary",
-        "command": "下载 Release 二进制并配置推送渠道后运行",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "service",
-      "credentials": [
-        "推送渠道Token"
-      ],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/zema1/watchvuln"
-      },
-      "labels": [
-        "intel",
-        "binary",
-        "service"
-      ]
-    },
-    {
-      "slug": "ngcbot",
-      "name": "NGCBot",
-      "name_zh": "安全资讯微信机器人",
-      "category_id": "intel",
-      "summary": "NGCBot：安全资讯微信机器人，定时推送安全情报与漏洞预警。",
-      "description": "NGCBot：安全资讯微信机器人，定时推送安全情报与漏洞预警。",
-      "detail_url": "/tools/ngcbot.html",
-      "repo": "ngc660sec/NGCBot",
-      "docs_url": "https://github.com/ngc660sec/NGCBot",
-      "deploy": {
-        "method": "docker-compose",
-        "command": "git clone https://github.com/ngc660sec/NGCBot && cd NGCBot && 使用仓库内 docker-compose 部署",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "service",
-      "credentials": [
-        "微信HOOK/Token"
-      ],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/ngc660sec/NGCBot"
-      },
-      "labels": [
-        "intel",
-        "docker-compose",
-        "service"
-      ]
-    },
-    {
-      "slug": "seccrawler",
-      "name": "SecCrawler",
-      "name_zh": "安全日报爬取推送",
-      "category_id": "intel",
-      "summary": "SecCrawler：安全日报/情报爬取工具，聚合多源安全资讯。",
-      "description": "SecCrawler：安全日报/情报爬取工具，聚合多源安全资讯。",
-      "detail_url": "/tools/seccrawler.html",
-      "repo": "Le0nsec/SecCrawler",
-      "docs_url": "https://github.com/Le0nsec/SecCrawler",
-      "deploy": {
-        "method": "source",
-        "command": "git clone https://github.com/Le0nsec/SecCrawler && cd SecCrawler && pip install -r requirements.txt && python run.py",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [],
-      "default_port": null,
-      "form": "service",
-      "credentials": [
-        "推送渠道Token"
-      ],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/Le0nsec/SecCrawler"
-      },
-      "labels": [
-        "intel",
-        "source",
-        "service"
-      ]
-    }
-  ]
+ "schema": "tool-store.import.v1",
+ "endpoint": "POST /v1/tools/import",
+ "source": "security-tool-store",
+ "categories": [
+  {
+   "id": "recon",
+   "name": "侦察测绘",
+   "name_en": "Recon & Asset Discovery",
+   "order": 1
+  },
+  {
+   "id": "vuln",
+   "name": "漏洞扫描",
+   "name_en": "Vulnerability Scanning",
+   "order": 2
+  },
+  {
+   "id": "lab",
+   "name": "靶场实验",
+   "name_en": "Labs & Ranges",
+   "order": 3
+  },
+  {
+   "id": "tunnel",
+   "name": "内网与隧道",
+   "name_en": "Intranet & Tunneling",
+   "order": 4
+  },
+  {
+   "id": "defense",
+   "name": "蜜罐与防守",
+   "name_en": "Honeypot & Defense",
+   "order": 5
+  },
+  {
+   "id": "intel",
+   "name": "威胁情报",
+   "name_en": "Threat Intelligence",
+   "order": 6
+  }
+ ],
+ "tools": [
+  {
+   "slug": "rengine",
+   "name": "reNgine",
+   "name_zh": "自动化侦察框架",
+   "category_id": "recon",
+   "summary": "开源的自动化侦察与资产测绘引擎，聚合子域枚举、端口扫描、目录爆破与截图，输出集中式侦察面板。",
+   "description": "开源的自动化侦察与资产测绘引擎，聚合子域枚举、端口扫描、目录爆破与截图，输出集中式侦察面板。",
+   "detail_url": "/tools/rengine.html",
+   "repo": "yogeshojha/rengine",
+   "docs_url": "https://github.com/yogeshojha/rengine",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/yogeshojha/rengine && cd rengine && docker compose up -d --build",
+    "compose_file": "deploy/docker-compose/rengine.docker-compose.yml",
+    "image": null
+   },
+   "ports": [
+    8000,
+    8082,
+    443
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yogeshojha/rengine"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 8868,
+    "pushedAt": "2026-09-30T10:31:09Z"
+   }
+  },
+  {
+   "slug": "arl-plus-docker",
+   "name": "ARL-Plus",
+   "name_zh": "资产灯塔增强版",
+   "category_id": "recon",
+   "summary": "ARL 的容器化增强版（arl-ki9mu），一条 Docker Compose 命令完成资产侦察系统部署。",
+   "description": "ARL 的容器化增强版（arl-ki9mu），一条 Docker Compose 命令完成资产侦察系统部署。",
+   "detail_url": "/tools/arl-plus-docker.html",
+   "repo": "ki9mu/ARL-plus-docker",
+   "docs_url": "https://github.com/ki9mu/ARL-plus-docker",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/ki9mu/ARL-plus-docker && cd ARL-plus-docker && docker compose up -d",
+    "compose_file": "deploy/docker-compose/arl-plus.docker-compose.yml",
+    "image": "ki9mu/arl-ki9mu:v3.0.1"
+   },
+   "ports": [
+    5003
+   ],
+   "default_port": 5003,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ki9mu/ARL-plus-docker"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 998,
+    "pushedAt": "2025-06-26T12:28:39Z"
+   }
+  },
+  {
+   "slug": "nemo_go",
+   "name": "Nemo",
+   "name_zh": "自动化信息收集平台",
+   "category_id": "recon",
+   "summary": "Nemo：分布式自动化信息收集平台，集成端口扫描、子域发现、指纹识别与目录爆破。",
+   "description": "Nemo：分布式自动化信息收集平台，集成端口扫描、子域发现、指纹识别与目录爆破。",
+   "detail_url": "/tools/nemo_go.html",
+   "repo": "hanc00l/nemo_go",
+   "docs_url": "https://github.com/hanc00l/nemo_go",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/hanc00l/nemo_go && cd nemo_go && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    5000
+   ],
+   "default_port": 5000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/hanc00l/nemo_go"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 2095,
+    "pushedAt": "2026-08-15T12:05:30Z"
+   }
+  },
+  {
+   "slug": "scopesentry-scan",
+   "name": "ScopeSentry",
+   "name_zh": "网络空间测绘+扫描",
+   "category_id": "recon",
+   "summary": "ScopeSentry：资产收集与扫描一体化的安全侦察平台。",
+   "description": "ScopeSentry：资产收集与扫描一体化的安全侦察平台。",
+   "detail_url": "/tools/scopesentry-scan.html",
+   "repo": "Autumn-27/ScopeSentry-Scan",
+   "docs_url": "https://github.com/Autumn-27/ScopeSentry-Scan",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/Autumn-27/ScopeSentry-Scan && cd ScopeSentry-Scan && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Autumn-27/ScopeSentry-Scan"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 224,
+    "pushedAt": "2026-06-10T15:48:33Z"
+   }
+  },
+  {
+   "slug": "cyberedge",
+   "name": "CyberEdge",
+   "name_zh": "互联网资产测绘",
+   "category_id": "recon",
+   "summary": "CyberEdge：网络空间资产测绘与暴露面管理工具。",
+   "description": "CyberEdge：网络空间资产测绘与暴露面管理工具。",
+   "detail_url": "/tools/cyberedge.html",
+   "repo": "Symph0nia/CyberEdge",
+   "docs_url": "https://github.com/Symph0nia/CyberEdge",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/Symph0nia/CyberEdge && cd CyberEdge && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Symph0nia/CyberEdge"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 613,
+    "pushedAt": "2026-08-12T02:12:28Z"
+   }
+  },
+  {
+   "slug": "linglong",
+   "name": "linglong",
+   "name_zh": "资产无限巡航",
+   "category_id": "recon",
+   "summary": "玲珑 linglong：资产巡航与安全巡检平台，用于持续资产测绘与漏洞发现。",
+   "description": "玲珑 linglong：资产巡航与安全巡检平台，用于持续资产测绘与漏洞发现。",
+   "detail_url": "/tools/linglong.html",
+   "repo": "awake1t/linglong",
+   "docs_url": "https://github.com/awake1t/linglong",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/awake1t/linglong && cd linglong && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/awake1t/linglong"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1850,
+    "pushedAt": "2022-04-19T01:16:33Z"
+   }
+  },
+  {
+   "slug": "gosint",
+   "name": "gosint",
+   "name_zh": "分布式资产收集与漏洞扫描",
+   "category_id": "recon",
+   "summary": "gosint：分布式资产收集与漏洞扫描框架，支持任务分发与结果汇总。",
+   "description": "gosint：分布式资产收集与漏洞扫描框架，支持任务分发与结果汇总。",
+   "detail_url": "/tools/gosint.html",
+   "repo": "1in9e/gosint",
+   "docs_url": "https://github.com/1in9e/gosint",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/1in9e/gosint && cd gosint && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/1in9e/gosint"
+   },
+   "labels": [
+    "recon",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 429,
+    "pushedAt": "2023-03-03T17:11:01Z"
+   }
+  },
+  {
+   "slug": "slack",
+   "name": "Slack",
+   "name_zh": "安全服务集成化工具平台",
+   "category_id": "recon",
+   "summary": "Slack：安全服务集成化赋能平台（桌面端），聚合多种安全能力到统一工作台。",
+   "description": "Slack：安全服务集成化赋能平台（桌面端），聚合多种安全能力到统一工作台。",
+   "detail_url": "/tools/slack.html",
+   "repo": "qiwentaidi/Slack",
+   "docs_url": "https://github.com/qiwentaidi/Slack",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制或按仓库说明构建运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "desktop",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/qiwentaidi/Slack"
+   },
+   "labels": [
+    "recon",
+    "binary",
+    "desktop"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1070,
+    "pushedAt": "2026-04-29T08:57:44Z"
+   }
+  },
+  {
+   "slug": "yakit",
+   "name": "Yakit",
+   "name_zh": "单兵作战武器库平台",
+   "category_id": "recon",
+   "summary": "Yakit：网络安全一站式可视化平台，集成扫描、渗透、插件与数据工作流。",
+   "description": "Yakit：网络安全一站式可视化平台，集成扫描、渗透、插件与数据工作流。",
+   "detail_url": "/tools/yakit.html",
+   "repo": "yaklang/yakit",
+   "docs_url": "https://github.com/yaklang/yakit",
+   "deploy": {
+    "method": "binary",
+    "command": "下载官方安装包安装；服务端可用 docker 运行 yakit",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "desktop",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yaklang/yakit"
+   },
+   "labels": [
+    "recon",
+    "binary",
+    "desktop"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 7783,
+    "pushedAt": "2026-09-30T09:26:49Z"
+   }
+  },
+  {
+   "slug": "vulfocus",
+   "name": "Vulfocus",
+   "name_zh": "漏洞集成平台",
+   "category_id": "lab",
+   "summary": "Vulfocus：漏洞集成平台，将漏洞环境与镜像统一管理，提供一键拉起靶场。",
+   "description": "Vulfocus：漏洞集成平台，将漏洞环境与镜像统一管理，提供一键拉起靶场。",
+   "detail_url": "/tools/vulfocus.html",
+   "repo": "fofapro/vulfocus",
+   "docs_url": "https://github.com/fofapro/vulfocus",
+   "deploy": {
+    "method": "docker",
+    "command": "docker run -d -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock -e VUL_IP=<本机IP> vulfocus/vulfocus",
+    "compose_file": null,
+    "image": "vulfocus/vulfocus"
+   },
+   "ports": [
+    80
+   ],
+   "default_port": 80,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/fofapro/vulfocus"
+   },
+   "labels": [
+    "lab",
+    "docker",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 3500,
+    "pushedAt": "2025-09-09T12:58:16Z"
+   }
+  },
+  {
+   "slug": "vulhub",
+   "name": "Vulhub",
+   "name_zh": "漏洞靶场合集",
+   "category_id": "lab",
+   "summary": "Vulhub：开源漏洞环境合集，一条 docker compose 命令拉起各类漏洞靶场。",
+   "description": "Vulhub：开源漏洞环境合集，一条 docker compose 命令拉起各类漏洞靶场。",
+   "detail_url": "/tools/vulhub.html",
+   "repo": "vulhub/vulhub",
+   "docs_url": "https://github.com/vulhub/vulhub",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/vulhub/vulhub && cd vulhub/<具体漏洞目录> && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/vulhub/vulhub"
+   },
+   "labels": [
+    "lab",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 21310,
+    "pushedAt": "2026-09-18T17:56:42Z"
+   }
+  },
+  {
+   "slug": "metarget",
+   "name": "Metarget",
+   "name_zh": "云原生靶场构建",
+   "category_id": "lab",
+   "summary": "Metarget：云原生靶机自动化搭建工具，快速构建有漏洞的容器/集群环境。",
+   "description": "Metarget：云原生靶机自动化搭建工具，快速构建有漏洞的容器/集群环境。",
+   "detail_url": "/tools/metarget.html",
+   "repo": "Metarget/metarget",
+   "docs_url": "https://github.com/Metarget/metarget",
+   "deploy": {
+    "method": "cli",
+    "command": "pip3 install metarget && metarget cnv install cve-2019-5736",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Metarget/metarget"
+   },
+   "labels": [
+    "lab",
+    "cli",
+    "cli"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1419,
+    "pushedAt": "2026-07-22T06:44:06Z"
+   }
+  },
+  {
+   "slug": "goad",
+   "name": "GOAD",
+   "name_zh": "Active Directory 靶场",
+   "category_id": "lab",
+   "summary": "GOAD：Active Directory 红队靶场，基于 Vagrant/云自动化搭建多域攻击环境。",
+   "description": "GOAD：Active Directory 红队靶场，基于 Vagrant/云自动化搭建多域攻击环境。",
+   "detail_url": "/tools/goad.html",
+   "repo": "Orange-Cyberdefense/GOAD",
+   "docs_url": "https://github.com/Orange-Cyberdefense/GOAD",
+   "deploy": {
+    "method": "iac",
+    "command": "git clone https://github.com/Orange-Cyberdefense/GOAD && cd GOAD && vagrant up",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cloud",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Orange-Cyberdefense/GOAD"
+   },
+   "labels": [
+    "lab",
+    "iac",
+    "cloud"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 8396,
+    "pushedAt": "2026-03-12T06:57:44Z"
+   }
+  },
+  {
+   "slug": "terraformgoat",
+   "name": "TerraformGoat",
+   "name_zh": "多云场景漏洞靶场",
+   "category_id": "lab",
+   "summary": "TerraformGoat：云环境（多云）漏洞靶场，用于云安全与 IaC 安全实践。",
+   "description": "TerraformGoat：云环境（多云）漏洞靶场，用于云安全与 IaC 安全实践。",
+   "detail_url": "/tools/terraformgoat.html",
+   "repo": "HXSecurity/TerraformGoat",
+   "docs_url": "https://github.com/HXSecurity/TerraformGoat",
+   "deploy": {
+    "method": "iac",
+    "command": "git clone https://github.com/HXSecurity/TerraformGoat && cd TerraformGoat/<场景> && terraform apply",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cloud",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/HXSecurity/TerraformGoat"
+   },
+   "labels": [
+    "lab",
+    "iac",
+    "cloud"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 640,
+    "pushedAt": "2022-11-30T08:17:23Z"
+   }
+  },
+  {
+   "slug": "cicd-goat",
+   "name": "CI/CD Goat",
+   "name_zh": "CI/CD 安全靶场",
+   "category_id": "lab",
+   "summary": "CI/CD Goat：CI/CD 流水线安全靶场，覆盖供应链与流水线攻击场景。",
+   "description": "CI/CD Goat：CI/CD 流水线安全靶场，覆盖供应链与流水线攻击场景。",
+   "detail_url": "/tools/cicd-goat.html",
+   "repo": "cider-security-research/cicd-goat",
+   "docs_url": "https://github.com/cider-security-research/cicd-goat",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/cider-security-research/cicd-goat && cd cicd-goat && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/cider-security-research/cicd-goat"
+   },
+   "labels": [
+    "lab",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 2312,
+    "pushedAt": "2024-07-14T11:26:38Z"
+   }
+  },
+  {
+   "slug": "dnslog-platform-golang",
+   "name": "DNSLog 平台",
+   "name_zh": "DNSLOG 外带平台",
+   "category_id": "tunnel",
+   "summary": "DNSLog 探测平台：Go 实现的外带探测（OAST）服务，用于验证 DNS 回连。",
+   "description": "DNSLog 探测平台：Go 实现的外带探测（OAST）服务，用于验证 DNS 回连。",
+   "detail_url": "/tools/dnslog-platform-golang.html",
+   "repo": "yumusb/DNSLog-Platform-Golang",
+   "docs_url": "https://github.com/yumusb/DNSLog-Platform-Golang",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yumusb/DNSLog-Platform-Golang && cd DNSLog-Platform-Golang && go build && 配置域名后运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80,
+    53
+   ],
+   "default_port": 80,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yumusb/DNSLog-Platform-Golang"
+   },
+   "labels": [
+    "tunnel",
+    "source",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 437,
+    "pushedAt": "2021-12-30T03:29:29Z"
+   }
+  },
+  {
+   "slug": "gophish",
+   "name": "GoPhish",
+   "name_zh": "钓鱼演练平台",
+   "category_id": "defense",
+   "summary": "GoPhish：开源钓鱼演练平台，支持邮件模板、目标组与活动统计。",
+   "description": "GoPhish：开源钓鱼演练平台，支持邮件模板、目标组与活动统计。",
+   "detail_url": "/tools/gophish.html",
+   "repo": "gophish/gophish",
+   "docs_url": "https://github.com/gophish/gophish",
+   "deploy": {
+    "method": "docker",
+    "command": "docker run -d -p 3333:3333 -p 80:80 -v gophish_data:/data --name gophish gophish/gophish",
+    "compose_file": "deploy/docker-compose/gophish.docker-compose.yml",
+    "image": "gophish/gophish"
+   },
+   "ports": [
+    3333,
+    80
+   ],
+   "default_port": 3333,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/gophish/gophish"
+   },
+   "labels": [
+    "defense",
+    "docker",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 14284,
+    "pushedAt": "2024-09-23T04:24:43Z"
+   }
+  },
+  {
+   "slug": "proxy_pool",
+   "name": "proxy_pool",
+   "name_zh": "爬虫代理池",
+   "category_id": "tunnel",
+   "summary": "proxy_pool：HTTP 代理池服务，自动采集、验证与调度可用代理。",
+   "description": "proxy_pool：HTTP 代理池服务，自动采集、验证与调度可用代理。",
+   "detail_url": "/tools/proxy_pool.html",
+   "repo": "jhao104/proxy_pool",
+   "docs_url": "https://github.com/jhao104/proxy_pool",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/jhao104/proxy_pool && cd proxy_pool && docker compose up -d",
+    "compose_file": "deploy/docker-compose/proxy-pool.docker-compose.yml",
+    "image": null
+   },
+   "ports": [
+    5010
+   ],
+   "default_port": 5010,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/jhao104/proxy_pool"
+   },
+   "labels": [
+    "tunnel",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 23741,
+    "pushedAt": "2026-06-15T14:36:35Z"
+   }
+  },
+  {
+   "slug": "rotateproxy",
+   "name": "rotateproxy",
+   "name_zh": "Socks5 代理池轮切",
+   "category_id": "tunnel",
+   "summary": "rotateproxy：Socks5 代理轮换器，按策略轮换出口 IP。",
+   "description": "rotateproxy：Socks5 代理轮换器，按策略轮换出口 IP。",
+   "detail_url": "/tools/rotateproxy.html",
+   "repo": "akkuman/rotateproxy",
+   "docs_url": "https://github.com/akkuman/rotateproxy",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制后运行 rotateproxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8899
+   ],
+   "default_port": 8899,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/akkuman/rotateproxy"
+   },
+   "labels": [
+    "tunnel",
+    "binary",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 867,
+    "pushedAt": "2025-05-20T01:36:04Z"
+   }
+  },
+  {
+   "slug": "deadpool",
+   "name": "Deadpool",
+   "name_zh": "Socks5 代理池",
+   "category_id": "tunnel",
+   "summary": "Deadpool：Socks5 代理池（Go 实现），采集并维护可用代理列表。",
+   "description": "Deadpool：Socks5 代理池（Go 实现），采集并维护可用代理列表。",
+   "detail_url": "/tools/deadpool.html",
+   "repo": "thinkoaa/Deadpool",
+   "docs_url": "https://github.com/thinkoaa/Deadpool",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制或按仓库说明构建运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/thinkoaa/Deadpool"
+   },
+   "labels": [
+    "tunnel",
+    "binary",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 725,
+    "pushedAt": "2026-05-06T01:53:44Z"
+   }
+  },
+  {
+   "slug": "frp",
+   "name": "frp",
+   "name_zh": "内网穿透",
+   "category_id": "tunnel",
+   "summary": "frp：内网穿透与反向代理工具，将内网服务映射到公网。",
+   "description": "frp：内网穿透与反向代理工具，将内网服务映射到公网。",
+   "detail_url": "/tools/frp.html",
+   "repo": "fatedier/frp",
+   "docs_url": "https://github.com/fatedier/frp",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 的 frps/frpc 二进制并配置 frps.toml/frpc.toml 运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    7000,
+    7500
+   ],
+   "default_port": 7000,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/fatedier/frp"
+   },
+   "labels": [
+    "tunnel",
+    "binary",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 109718,
+    "pushedAt": "2026-09-15T05:55:33Z"
+   }
+  },
+  {
+   "slug": "nps",
+   "name": "nps",
+   "name_zh": "内网穿透服务端",
+   "category_id": "tunnel",
+   "summary": "nps：轻量级内网穿透代理，提供 Web 管理面板与多协议隧道。",
+   "description": "nps：轻量级内网穿透代理，提供 Web 管理面板与多协议隧道。",
+   "detail_url": "/tools/nps.html",
+   "repo": "ehang-io/nps",
+   "docs_url": "https://github.com/ehang-io/nps",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制，运行 nps 并访问 8080 管理面板",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080,
+    8024
+   ],
+   "default_port": 8080,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ehang-io/nps"
+   },
+   "labels": [
+    "tunnel",
+    "binary",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 34232,
+    "pushedAt": "2024-05-30T03:51:08Z"
+   }
+  },
+  {
+   "slug": "goproxy",
+   "name": "goproxy",
+   "name_zh": "Go 代理工具",
+   "category_id": "tunnel",
+   "summary": "goproxy：Go 实现的高性能代理工具集，支持 HTTP/SOCKS/TCP 转发。",
+   "description": "goproxy：Go 实现的高性能代理工具集，支持 HTTP/SOCKS/TCP 转发。",
+   "detail_url": "/tools/goproxy.html",
+   "repo": "snail007/goproxy",
+   "docs_url": "https://github.com/snail007/goproxy",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制后按 proxy 命令运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/snail007/goproxy"
+   },
+   "labels": [
+    "tunnel",
+    "binary",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 17141,
+    "pushedAt": "2026-08-17T05:46:30Z"
+   }
+  },
+  {
+   "slug": "axiom",
+   "name": "Axiom",
+   "name_zh": "动态基础设施框架",
+   "category_id": "recon",
+   "summary": "Axiom：动态云渗透基础设施，按需在云端拉起分布式扫描与攻击节点。",
+   "description": "Axiom：动态云渗透基础设施，按需在云端拉起分布式扫描与攻击节点。",
+   "detail_url": "/tools/axiom.html",
+   "repo": "pry0cc/axiom",
+   "docs_url": "https://github.com/pry0cc/axiom",
+   "deploy": {
+    "method": "iac",
+    "command": "git clone https://github.com/pry0cc/axiom && cd axiom && 按说明配置云厂商后部署实例",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cloud",
+   "credentials": [
+    "云厂商AK/SK"
+   ],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/pry0cc/axiom"
+   },
+   "labels": [
+    "recon",
+    "iac",
+    "cloud"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 4429,
+    "pushedAt": "2024-09-30T17:18:52Z"
+   }
+  },
+  {
+   "slug": "f8x",
+   "name": "f8x",
+   "name_zh": "攻防环境一键部署",
+   "category_id": "recon",
+   "summary": "f8x：安全工具一键安装脚本，批量部署常用渗透/侦察工具。",
+   "description": "f8x：安全工具一键安装脚本，批量部署常用渗透/侦察工具。",
+   "detail_url": "/tools/f8x.html",
+   "repo": "ffffffff0x/f8x",
+   "docs_url": "https://github.com/ffffffff0x/f8x",
+   "deploy": {
+    "method": "script",
+    "command": "bash -c \"$(curl -fsSL https://raw.githubusercontent.com/ffffffff0x/f8x/main/install.sh)\" 或克隆后运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ffffffff0x/f8x"
+   },
+   "labels": [
+    "recon",
+    "script",
+    "cli"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 2164,
+    "pushedAt": "2026-07-25T21:19:17Z"
+   }
+  },
+  {
+   "slug": "ehoney",
+   "name": "Ehoney",
+   "name_zh": "蜜罐管理系统",
+   "category_id": "defense",
+   "summary": "Ehoney：蜜罐系统，用于欺骗攻击者、捕获入侵行为与告警。",
+   "description": "Ehoney：蜜罐系统，用于欺骗攻击者、捕获入侵行为与告警。",
+   "detail_url": "/tools/ehoney.html",
+   "repo": "seccome/Ehoney",
+   "docs_url": "https://github.com/seccome/Ehoney",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/seccome/Ehoney && cd Ehoney && 使用仓库内 docker-compose 部署",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/seccome/Ehoney"
+   },
+   "labels": [
+    "defense",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1271,
+    "pushedAt": "2023-10-17T06:52:50Z"
+   }
+  },
+  {
+   "slug": "darkangel",
+   "name": "DarkAngel",
+   "name_zh": "全自动漏洞扫描器",
+   "category_id": "vuln",
+   "summary": "DarkAngel：全自动漏洞扫描器，自动化信息收集与漏洞探测。",
+   "description": "DarkAngel：全自动漏洞扫描器，自动化信息收集与漏洞探测。",
+   "detail_url": "/tools/darkangel.html",
+   "repo": "Bywalks/DarkAngel",
+   "docs_url": "https://github.com/Bywalks/DarkAngel",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/Bywalks/DarkAngel && cd DarkAngel && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Bywalks/DarkAngel"
+   },
+   "labels": [
+    "vuln",
+    "docker-compose",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 604,
+    "pushedAt": "2023-08-17T07:38:29Z"
+   }
+  },
+  {
+   "slug": "dongtai",
+   "name": "洞态 IAST",
+   "name_zh": "交互式应用安全测试",
+   "category_id": "defense",
+   "summary": "洞态 IAST：交互式应用安全测试，运行时检测应用漏洞与数据流。",
+   "description": "洞态 IAST：交互式应用安全测试，运行时检测应用漏洞与数据流。",
+   "detail_url": "/tools/dongtai.html",
+   "repo": "HXSecurity/DongTai",
+   "docs_url": "https://github.com/HXSecurity/DongTai",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/HXSecurity/DongTai && cd DongTai && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000,
+    8080
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/HXSecurity/DongTai"
+   },
+   "labels": [
+    "defense",
+    "docker-compose",
+    "web"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1311,
+    "pushedAt": "2025-05-22T08:23:05Z"
+   }
+  },
+  {
+   "slug": "dependencycheck",
+   "name": "DependencyCheck",
+   "name_zh": "软件成分分析 SCA",
+   "category_id": "defense",
+   "summary": "OWASP Dependency-Check：软件成分分析（SCA），识别依赖中的已知漏洞。",
+   "description": "OWASP Dependency-Check：软件成分分析（SCA），识别依赖中的已知漏洞。",
+   "detail_url": "/tools/dependencycheck.html",
+   "repo": "jeremylong/DependencyCheck",
+   "docs_url": "https://github.com/jeremylong/DependencyCheck",
+   "deploy": {
+    "method": "cli",
+    "command": "下载官方 CLI zip 或使用 Maven/Gradle 插件运行 dependency-check",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [
+    "NVD API Key(可选)"
+   ],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/jeremylong/DependencyCheck"
+   },
+   "labels": [
+    "defense",
+    "cli",
+    "cli"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 55,
+    "pushedAt": "2025-09-27T20:17:48Z",
+    "archived": true,
+    "note": "上游仓库已归档（archived），不再更新，仍可只读使用。"
+   }
+  },
+  {
+   "slug": "xray",
+   "name": "xray",
+   "name_zh": "被动漏洞扫描器",
+   "category_id": "vuln",
+   "summary": "xray：新一代被动/主动漏洞扫描器，支持 web 漏洞检测与联动。",
+   "description": "xray：新一代被动/主动漏洞扫描器，支持 web 漏洞检测与联动。",
+   "detail_url": "/tools/xray.html",
+   "repo": "chaitin/xray",
+   "docs_url": "https://github.com/chaitin/xray",
+   "deploy": {
+    "method": "binary",
+    "command": "下载官方 xray 二进制并运行 xray webscan --listen 127.0.0.1:7777",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    7777
+   ],
+   "default_port": 7777,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/chaitin/xray"
+   },
+   "labels": [
+    "vuln",
+    "binary",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 11753,
+    "pushedAt": "2024-10-29T16:15:53Z"
+   }
+  },
+  {
+   "slug": "kubehound",
+   "name": "KubeHound",
+   "name_zh": "K8s 攻击路径分析",
+   "category_id": "defense",
+   "summary": "KubeHound：Kubernetes 攻击路径分析工具，识别集群内潜在攻击链路。",
+   "description": "KubeHound：Kubernetes 攻击路径分析工具，识别集群内潜在攻击链路。",
+   "detail_url": "/tools/kubehound.html",
+   "repo": "DataDog/KubeHound",
+   "docs_url": "https://github.com/DataDog/KubeHound",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制后运行 kubehound dump / graph",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/DataDog/KubeHound"
+   },
+   "labels": [
+    "defense",
+    "binary",
+    "cli"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1004,
+    "pushedAt": "2026-09-30T06:36:18Z"
+   }
+  },
+  {
+   "slug": "watchvuln",
+   "name": "watchvuln",
+   "name_zh": "漏洞情报采集推送",
+   "category_id": "intel",
+   "summary": "watchvuln：漏洞情报采集与监控，聚合推送最新漏洞预警。",
+   "description": "watchvuln：漏洞情报采集与监控，聚合推送最新漏洞预警。",
+   "detail_url": "/tools/watchvuln.html",
+   "repo": "zema1/watchvuln",
+   "docs_url": "https://github.com/zema1/watchvuln",
+   "deploy": {
+    "method": "binary",
+    "command": "下载 Release 二进制并配置推送渠道后运行",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [
+    "推送渠道Token"
+   ],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/zema1/watchvuln"
+   },
+   "labels": [
+    "intel",
+    "binary",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 1897,
+    "pushedAt": "2026-09-07T12:35:50Z"
+   }
+  },
+  {
+   "slug": "ngcbot",
+   "name": "NGCBot",
+   "name_zh": "安全资讯微信机器人",
+   "category_id": "intel",
+   "summary": "NGCBot：安全资讯微信机器人，定时推送安全情报与漏洞预警。",
+   "description": "NGCBot：安全资讯微信机器人，定时推送安全情报与漏洞预警。",
+   "detail_url": "/tools/ngcbot.html",
+   "repo": "ngc660sec/NGCBot",
+   "docs_url": "https://github.com/ngc660sec/NGCBot",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/ngc660sec/NGCBot && cd NGCBot && 使用仓库内 docker-compose 部署",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [
+    "微信HOOK/Token"
+   ],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ngc660sec/NGCBot"
+   },
+   "labels": [
+    "intel",
+    "docker-compose",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 3291,
+    "pushedAt": "2025-05-25T03:51:19Z",
+    "archived": true,
+    "note": "上游仓库已归档（archived），不再更新，仍可只读使用。"
+   }
+  },
+  {
+   "slug": "seccrawler",
+   "name": "SecCrawler",
+   "name_zh": "安全日报爬取推送",
+   "category_id": "intel",
+   "summary": "SecCrawler：安全日报/情报爬取工具，聚合多源安全资讯。",
+   "description": "SecCrawler：安全日报/情报爬取工具，聚合多源安全资讯。",
+   "detail_url": "/tools/seccrawler.html",
+   "repo": "Le0nsec/SecCrawler",
+   "docs_url": "https://github.com/Le0nsec/SecCrawler",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Le0nsec/SecCrawler && cd SecCrawler && pip install -r requirements.txt && python run.py",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [
+    "推送渠道Token"
+   ],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Le0nsec/SecCrawler"
+   },
+   "labels": [
+    "intel",
+    "source",
+    "service"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-03",
+    "alive": true,
+    "stars": 938,
+    "pushedAt": "2023-12-24T16:26:56Z"
+   }
+  }
+ ]
 }

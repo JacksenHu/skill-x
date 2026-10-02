@@ -70,6 +70,24 @@ def head(title, asset_ver=""):
 <div class="scroll-progress" aria-hidden="true"></div>'''
 
 
+def upstream_badge(up):
+    """上游可用性徽标：由 scripts/upstream_audit.py 的实测结果驱动。"""
+    if not up:
+        return ""
+    parts = []
+    if up.get("archived"):
+        parts.append('<span class="tag warn" title="上游仓库已归档，仅只读可用">上游已归档</span>')
+    elif up.get("alive") is False:
+        parts.append('<span class="tag danger">上游失联</span>')
+    else:
+        parts.append('<span class="tag ok" title="上游仓库可达">上游在线</span>')
+    if up.get("pushedAt"):
+        parts.append('<span class="tag">最近推送 ' + esc(str(up["pushedAt"])[:10]) + '</span>')
+    if up.get("lastCheck"):
+        parts.append('<span class="tag dim">核验 ' + esc(str(up["lastCheck"])) + '</span>')
+    return '<div class="meta">' + ''.join(parts) + '</div>'
+
+
 def meta_html(t, cat_meta):
     cat = t.get("category_id", "")
     cm = cat_meta.get(cat, {})
@@ -131,6 +149,7 @@ def card(t, cat_meta):
     cat = t.get("category_id", "")
     name = t.get("name", "")
     name_zh = t.get("name_zh", "") or name
+    up = t.get("upstream") or {}
     detail = t.get("detail_url", f"/tools/{t.get('slug', '')}.html")
     docs = t.get("docs_url", "")
     gm = (t.get("gitmcp") or {}).get("url", "")
@@ -149,9 +168,11 @@ def card(t, cat_meta):
         actions.append(f'<a class="chip" href="{esc(gm)}" target="_blank" rel="noopener">gitmcp ↗</a>')
     actions_html = f'<div class="actions">{"".join(actions)}</div>' if actions else ""
     summary_html = f'<p class="hint-dim">{esc(summary)}</p>' if summary else ""
+    up_html = upstream_badge(up)
     return f'''<div class="card cat-{color}" data-search="{esc(search)}" data-category="{esc(cat)}">
   <h3><a href="{esc(detail)}">{esc(name_zh)}</a></h3>
   <div class="en-name">{esc(name)}</div>
+  {up_html}
   {meta_html(t, cat_meta)}
   {summary_html}
   {actions_html}
@@ -169,6 +190,7 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
     credentials = t.get("credentials") or []
     note = t.get("note", "")
     description = t.get("description", "") or t.get("summary", "") or ""
+    up = t.get("upstream") or {}
 
     chips = ['<a class="chip on" href="/tools.html" data-zh="返回工具商店" data-en="Back to Tool Store">← 返回工具商店</a>']
     if docs:
@@ -183,6 +205,15 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
         rows.append(f'<tr><th>形态</th><td>{esc(form)}</td></tr>')
     if repo:
         rows.append(f'<tr><th>仓库</th><td><code class="inl">{esc(repo)}</code></td></tr>')
+    if up:
+        state = "已归档（只读）" if up.get("archived") else ("失联" if up.get("alive") is False else "在线")
+        rows.append(f'<tr><th>上游状态</th><td>{esc(state)} · 核验 {esc(str(up.get("lastCheck", "—")))}</td></tr>')
+        if up.get("pushedAt"):
+            rows.append(f'<tr><th>最近推送</th><td>{esc(str(up.get("pushedAt"))[:10])}</td></tr>')
+        if up.get("stars") is not None:
+            rows.append(f'<tr><th>Star</th><td>{esc(str(up.get("stars")))}</td></tr>')
+        if up.get("note"):
+            rows.append(f'<tr><th>提示</th><td>{esc(up.get("note"))}</td></tr>')
     if credentials:
         rows.append(f'<tr><th>第三方凭证</th><td>{esc(", ".join(str(c) for c in credentials))}</td></tr>')
     if note:
@@ -193,9 +224,10 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
     return f'''{head(name_zh + " · 安全工具商店", asset_ver)}
 {nav("tools")}
 <div class="wrap">
-<h2>{esc(name_zh)} <span class="en-name">{esc(name)}</span></h2>
-{meta_html(t, cat_meta)}
-<p class="desc">{esc(tool_intro(t, cat_meta))}</p>
+ <h2>{esc(name_zh)} <span class="en-name">{esc(name)}</span></h2>
+ {meta_html(t, cat_meta)}
+ {upstream_badge(up)}
+ <p class="desc">{esc(tool_intro(t, cat_meta))}</p>
 <div class="chips">{"".join(chips)}</div>
 <h3 data-zh="一键部署" data-en="Deploy">一键部署</h3>
 {cmd or '<p class="hint-dim">该工具无标准命令行部署入口。</p>'}

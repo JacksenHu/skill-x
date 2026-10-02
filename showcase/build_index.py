@@ -203,6 +203,10 @@ p{max-width:76ch}
 .tag.risk-low{border-color:#34d399;color:#34d399}
 .tag.risk-medium{border-color:var(--warn);color:var(--warn)}
 .tag.risk-high,.tag.risk-critical{border-color:var(--danger);color:var(--danger)}
+.tag.ok{border-color:#34d399;color:#34d399;background:rgba(52,211,153,.08)}
+.tag.warn{border-color:var(--warn);color:var(--warn);background:color-mix(in srgb,var(--warn) 10%,transparent)}
+.tag.danger{border-color:var(--danger);color:var(--danger);background:color-mix(in srgb,var(--danger) 10%,transparent)}
+.tag.dim{color:var(--text3);border-style:dashed}
 .count{font-family:var(--mono);font-size:12px;color:var(--text3);white-space:nowrap}
 .count.hit{color:var(--accent)}
 .badge{font-family:var(--mono);font-size:11px;padding:3px 9px;border:1px solid var(--line2);border-radius:5px;color:var(--text2);white-space:nowrap}
@@ -911,6 +915,8 @@ def collect_mcps():
             "riskNote": cur.get("riskNote", ""),
             "reviewed": cur.get("reviewed") or {},
             "upstreamStatus": cur.get("upstreamStatus") or {},
+            "archived": bool(cur.get("archived")),
+            "upstreamNote": cur.get("upstreamNote", ""),
             "remotes": remotes,
             "packages": pkgs,
             "tools": cur.get("tools") or [],
@@ -1530,13 +1536,23 @@ def render_mcp_detail(m):
     rev = m["reviewed"]
     ups = m["upstreamStatus"]
     alive = ups.get("alive", True)
-    status_txt = "🟢 在线" if alive else "🔴 失联"
+    if m.get("archived"):
+        status_txt = "⚠️ 上游已归档（只读）"
+    elif alive:
+        status_txt = "🟢 在线"
+    else:
+        status_txt = "🔴 失联"
     links = []
     if m["websiteUrl"]:
         links.append(f'<a href="{esc(m["websiteUrl"])}">官网</a>')
     if m["repository"]:
         links.append(f'<a href="{esc(m["repository"])}">仓库</a>')
     links_html = " · ".join(links) if links else "—"
+    pushed_html = ""
+    if ups.get("pushedAt"):
+        pushed_html = " · 最近推送 " + esc(str(ups.get("pushedAt"))[:10])
+    if m.get("upstreamNote"):
+        pushed_html += " · " + esc(m.get("upstreamNote"))
     badge = "MCP" if m.get("entryType", "mcp") == "mcp" else "插件"
     inner = f'''<div class="detail">
   <div class="card-head"><h1>{esc(m['title'])}</h1><span class="badge ext">{badge} · {kind_text}</span></div>
@@ -1546,7 +1562,7 @@ def render_mcp_detail(m):
     <dt data-zh="分类" data-en="Category">分类</dt><dd>{esc(CATEGORIES.get(m['category'], m['category']))}</dd>
     <dt data-zh="版本" data-en="Version">版本</dt><dd>v{esc(m['version'])}</dd>
     <dt data-zh="风险等级" data-en="Risk">风险等级</dt><dd><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span></dd>
-    <dt data-zh="上游状态" data-en="Upstream">上游状态</dt><dd>{status_txt} · {esc(ups.get('lastCheck') or '—')}</dd>
+    <dt data-zh="上游状态" data-en="Upstream">上游状态</dt><dd>{status_txt} · {esc(ups.get('lastCheck') or '—')}{pushed_html}</dd>
     <dt data-zh="收录审查" data-en="Review">收录审查</dt><dd>{esc(rev.get('by') or '—')} · {esc(rev.get('at') or '—')}</dd>
     <dt data-zh="外部链接" data-en="Links">外部链接</dt><dd>{links_html}</dd>
   </dl>
