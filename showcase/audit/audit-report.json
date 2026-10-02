@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01",
+  "generatedAt": "2026-10-02",
   "skills": {
     "asm-analysis": {
       "grade": "A",
@@ -8170,6 +8170,41 @@
           "level": "info",
           "pass": true,
           "detail": "在线 | 检查于 2026-10-01"
+        }
+      ]
+    },
+    "brucesongs/kali-claw": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "brucesongs/kali-claw"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE:L1"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "low",
+          "pass": true,
+          "detail": "38 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-02)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-02"
         }
       ]
     }
