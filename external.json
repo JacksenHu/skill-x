@@ -9548,6 +9548,903 @@
         }
       ],
       "executables": []
+    },
+    {
+      "namespace": "brucesongs/kali-claw",
+      "upstream": "https://github.com/brucesongs/kali-claw",
+      "license": {
+        "spdx": "MIT",
+        "evidence": "LICENSE:L1",
+        "attribution": "保留上游 LICENSE 与署名"
+      },
+      "ingestedAt": "2026-10-02",
+      "verified": {
+        "by": null,
+        "at": null,
+        "execReview": "pending"
+      },
+      "upstreamStatus": {
+        "lastCheck": null,
+        "alive": true,
+        "failSince": null
+      },
+      "manifestVia": "scan:skills/",
+      "skills": [
+        {
+          "name": "5g-6g-telecom-attack-advanced",
+          "path": "skills\\5g-6g-telecom-attack-advanced\\SKILL.md",
+          "description": "Advanced 5G/6G telecom attacks covering 5G Core (SBA) exploitation, IMSI catcher evolution (5G Stingray), SIP/Diameter protocol attacks, Open RAN vulnerabilities, network slicing abuse, and early 6G research vectors (THz comms, AI-native air interface).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "5g-telecom-attack",
+          "path": "skills\\5g-telecom-attack\\SKILL.md",
+          "description": "5G core (AMF/SMF/UPF), RAN, signaling (PFCP/GTP/Diameter/SS7), IMSI catchers, O-RAN security, roaming abuse, SMS interception, and telecom infrastructure red team operations.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ad-cs-abuse",
+          "path": "skills\\ad-cs-abuse\\SKILL.md",
+          "description": "Active Directory Certificate Services (AD CS) abuse — ESC1-ESC15 attack patterns, PKINIT, PetitPotam to AD CS to Domain Admin chains, CVE-2022-26923 (Certifried), Shadow Credentials, Golden Certificate, certificate template ACL abuse, NTLM relay to web enrollment.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ad-ldap-attack",
+          "path": "skills\\ad-ldap-attack\\SKILL.md",
+          "description": "Active Directory is the backbone of enterprise identity and access management, making it a primary target during internal network penetration tests.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "agentic-pentest",
+          "path": "skills\\agentic-pentest\\SKILL.md",
+          "description": "LLM-driven autonomous penetration testing framework operations covering PentestGPT, HexStrike AI, Viper, PentestAgent, AI-Infra-Guard, AutoPWN, and custom agent harness patterns — including reasoning chain orchestration, tool delegation, context window management, output validation, multi-agent pentest team coordination, and human-in-the-loop checkpoints.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ai-agent-framework-attack",
+          "path": "skills\\ai-agent-framework-attack\\SKILL.md",
+          "description": "AI agent framework attack surface — orchestration-layer compromise of LangChain (Python/JS), LangGraph, CrewAI, Microsoft AutoGen, OpenAI Assistants API v2, Anthropic Claude Agent SDK, LlamaIndex, Microsoft Semantic Kernel, Google ADK, SmolAgents, and MCP-integrated agent runtimes. Covers tool poisoning (Simon Willison 2025 research), indirect prompt injection via untrusted tool outputs, tool rug-pull attacks (npm/PyPI dependency confusion in agent toolkits), LangChain SSRF via RequestsTool / SqlQueryTool / PythonREPLTool (CVE-2024-21514 area, CVE-2024-43480 area), CrewAI tool RCE via decorators (CVE-2024-10231 area), AutoGen code executor escape (Docker/code execution services), OpenAI Assistants API code_interpreter abuse, Claude Agent SDK MCP injection, LangGraph state injection via checkpoint poisoning, LlamaIndex query engine injection, MCP server poisoning (Anthropic/rug-pull.com research Nov 2024), tool description injection, agent memory poisoning, Retrieval-Augmented Generation (RAG) corpus poisoning",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ai-agent-security",
+          "path": "skills\\ai-agent-security\\SKILL.md",
+          "description": "Offensive security testing of AI agent systems covering MCP server attacks, tool poisoning, indirect prompt injection against agents, RAG knowledge base poisoning, agent sandbox escape, multi-agent compromise chains, and autonomous agent hijacking — using MCP security testers, HexStrike AI, AI-Infra-Guard, custom agent harness probes, and prompt injection toolkits.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ai-agent-supply-chain-attack",
+          "path": "skills\\ai-agent-supply-chain-attack\\SKILL.md",
+          "description": "AI/ML supply chain attacks — model poisoning, Pickle RCE, Hugging Face / Ollama registry compromise, LangChain plugin backdoors, OpenClaw / ClawHub ecosystem threats. Distinguishes from ci-cd-supply-chain-attack by focusing on model weights, training data, and serialization formats. Anchored by the 2026-07 Hugging Face incident (the 'Chernobyl moment' of software supply chain security).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ai-fuzzing",
+          "path": "skills\\ai-fuzzing\\SKILL.md",
+          "description": "AI-assisted fuzzing for automated vulnerability discovery. Coverage-guided fuzzing engines, AI-driven seed generation, intelligent mutation strategies, and systematic crash triage.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ai-safety-redteam-advanced",
+          "path": "skills\\ai-safety-redteam-advanced\\SKILL.md",
+          "description": "Advanced AI safety red team operations covering OWASP LLM Top 10 (2025), prompt injection (direct/indirect/multi-turn), jailbreak techniques (DAN, cognitive hacking, persona-based), data poisoning detection, model inversion attacks, adversarial examples (evasion), model extraction, and AI supply chain attacks against LLM-integrated applications, agent frameworks, and RAG systems.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ai-security",
+          "path": "skills\\ai-security\\SKILL.md",
+          "description": "Semantic-layer attack testing against AI systems and LLM-integrated applications.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "anti-forensics",
+          "path": "skills\\anti-forensics\\SKILL.md",
+          "description": "Anti-forensics is the offensive counterpart to digital forensics.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "api-security",
+          "path": "skills\\api-security\\SKILL.md",
+          "description": "API Security Testing covers security assessment across three major API architectures: REST, GraphQL, and gRPC, focusing on the OWASP API Security Top 10 core risks: Broken Authentication, Broken Object Level Authorization (BOLA), Excessive Data Exposure, Rate Limiting Bypass.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "article-writing",
+          "path": "skills\\article-writing\\SKILL.md",
+          "description": "Transform technical findings into clear, structured written content: penetration test reports, vulnerability disclosures, security blog posts, and technical documentation.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "automotive-vehicle-security",
+          "path": "skills\\automotive-vehicle-security\\SKILL.md",
+          "description": "CAN/CAN-FD bus analysis, UDS diagnostics, IVI pentest, OBD-II exploitation, key fob replay/relay attacks, GNSS spoofing, EV charging station (ISO 15118), and connected vehicle red team operations.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "autonomous-loops",
+          "path": "skills\\autonomous-loops\\SKILL.md",
+          "description": "Performing repetitive enumeration across many targets - Running batch vulnerability scans on multiple hosts - Monitoring for changes in target environment - Executing attack chains that require iterative steps - User says \\\"loop\\\", \\\"automate\\\", \\\"batch\\\", \\\"repeat.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "av-edr-evasion",
+          "path": "skills\\av-edr-evasion\\SKILL.md",
+          "description": "AV/EDR evasion covers techniques for bypassing antivirus (AV) and Endpoint Detection/Response (EDR) solutions during payload delivery, execution, and post-exploitation.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "binary-reverse",
+          "path": "skills\\binary-reverse\\SKILL.md",
+          "description": "Binary reverse engineering covers the complete chain from static analysis, dynamic debugging, to vulnerability discovery, exploit development, and malware analysis.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "blockchain-l2-attack",
+          "path": "skills\\blockchain-l2-attack\\SKILL.md",
+          "description": "Layer-2 blockchain attack — Lightning Network (BOLT, HTLC), Optimistic Rollups (Optimism/Arbitrum/Boba/Base), ZK Rollups (zkSync/StarkNet/Polygon zkEVM/Scroll/Linea), Polygon PoS, Gnosis sidechain, cross-chain bridges (Wormhole/Nomad/Ronin/Poly Network/Multichain/Horizon), state channels, ERC-4337 account abstraction, and DA layers (Celestia/EigenDA/Avail).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "blockchain-web3",
+          "path": "skills\\blockchain-web3\\SKILL.md",
+          "description": "Blockchain & Web3 security — Solidity/Vyper smart contract auditing, DeFi attack vectors (flash loans, MEV, oracle manipulation), bridge attacks, wallet security, with tooling from Slither/Mythril/Foundry.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "bluetooth-rfid-nfc",
+          "path": "skills\\bluetooth-rfid-nfc\\SKILL.md",
+          "description": "Near-field wireless penetration testing skills covering Bluetooth Classic device enumeration and exploitation, BLE GATT service attacks against IoT devices, RFID card cloning (MIFARE Classic/DESFire), NFC tag manipulation, and contactless payment probing.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "browser-qa",
+          "path": "skills\\browser-qa\\SKILL.md",
+          "description": "Automated browser-based security testing using Playwright and browser devtools. Interact with web applications as a user would — click, type, navigate — while monitoring network traffic, JavaScript execution, and DOM changes for security issues.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "chronicle",
+          "path": "skills\\chronicle\\SKILL.md",
+          "description": "A system for recording, indexing, and distilling knowledge from agent lifecycle events. Through a three-layer document system (overview -> detailed records -> knowledge distillation), raw conversation events are transformed into reusable experience.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ci-cd-supply-chain-attack",
+          "path": "skills\\ci-cd-supply-chain-attack\\SKILL.md",
+          "description": "CI/CD pipeline and software supply chain compromise covering Jenkins (script console, Jenkinsfile injection, shared library abuse, CVE-2024-23897 args4j), GitLab CI/CD (runner abuse, .gitlab-ci.yml injection, self-hosted runner takeover, CVE-2022-1162, OmniAuth CVE-2024-9653), GitHub Actions (self-hosted runner abuse, pull_request_target trap, workflow injection via issue/PR title, secrets exfiltration via cache/artifact, GITHUB_TOKEN scope), CircleCI (context theft, OIDC abuse), Argo CD (CVE-2022-24348, default app creds), Flux CD (GitRepository CRD abuse), Tekton, Buildkite, Drone CI, software supply chain attacks (dependency confusion, typosquatting, brandjacking, malicious npm/PyPI packages, SBOM/SLSA, Sigstore/cosign, in-toto, S2C2F), notable incidents (SolarWinds SUNBURST, 3CX, Codecov, xz-utils CVE-2024-3094, event-stream, ua-parser-js), and detection/defense tooling (StepSecurity Harden-Runner, OpenSSF Scorecard, Socket, Sonatype Nexus, Snyk, Anchore Syft/Grype, KICS, Checkov, semgrep).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "cloud-identity-attack",
+          "path": "skills\\cloud-identity-attack\\SKILL.md",
+          "description": "Cloud identity provider attacks covering Azure AD/Entra ID, Okta, Auth0, Ping, AWS IAM Identity Center, and Google Workspace — including OAuth 2.0 token theft, OIDC redirect abuse, SAML response forgery, conditional access bypass, MFA fatigue, federation compromise (AD FS, Ping), app registration abuse, and JIT access exploitation using ROADtools, AADInternals, MicroBurst, MFASweep, TokenTactics, and Okta API probing tools.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "cloud-native-vuln-research",
+          "path": "skills\\cloud-native-vuln-research\\SKILL.md",
+          "description": "CVE research methodology, PoC reproduction, patch gap analysis, and exploit chain composition across container/k8s/cloud-native surfaces; SBOM-driven vuln management and nuclei template authoring.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "cloud-security",
+          "path": "skills\\cloud-security\\SKILL.md",
+          "description": "Cloud security covers security assessment for major cloud platforms including AWS, Azure, and GCP, with core focus on IAM misconfiguration detection, storage bucket exposure scanning, metadata service attacks, container escape, and Kubernetes RBAC auditing.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "cms-framework-attack",
+          "path": "skills\\cms-framework-attack\\SKILL.md",
+          "description": "Targeted security assessment of Content Management Systems (WordPress, Joomla, Drupal) using specialized scanners and exploit techniques.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "codebase-onboarding",
+          "path": "skills\\codebase-onboarding\\SKILL.md",
+          "description": "Rapidly acquire a mental model of any unfamiliar codebase — from a 500-line script to a 100M+ line monorepo. This skill transforms raw code into structured intelligence: architecture maps, entry points, data flows, security surfaces, and onboarding confidence scores.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "command-injection-advanced",
+          "path": "skills\\command-injection-advanced\\SKILL.md",
+          "description": "Advanced injection attacks beyond SQL - covering OS command injection, LDAP injection, NoSQL injection, template injection (SSTI), XPath injection, and comprehensive filter bypass techniques.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "concurrency-exploitation",
+          "path": "skills\\concurrency-exploitation\\SKILL.md",
+          "description": "Concurrency exploitation covers race condition vulnerabilities including TOCTOU, signal handler races, thread synchronization bypasses, and timing attacks.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "confidential-computing-attack",
+          "path": "skills\\confidential-computing-attack\\SKILL.md",
+          "description": "Attacks against Trusted Execution Environments (TEEs) and confidential computing platforms — Intel SGX (Foreshadow/SGAxe/LVI/ÆPIC Leak), Intel TDX, AMD SEV/SEV-ES/SEV-SNP (CrossLine/BadRAM), Azure CCF, Marblerun, and Gramine/Occlum libos enclaves. Covers side-channel leakage, attestation forgery, ABI misuse, host-to-enclave breakout, enclave-to-host escape, and recovery of sealed secrets. Distinct from hardware-security (broad hardware attacks) and firmware-reverse (UEFI/BIOS).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "container-security",
+          "path": "skills\\container-security\\SKILL.md",
+          "description": "Container security covers the complete lifecycle from image building, registry management, runtime protection, to orchestration platform (Kubernetes) security.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "continuous-learning",
+          "path": "skills\\continuous-learning\\SKILL.md",
+          "description": "After completing a penetration test engagement - When encountering a novel attack technique or defense - After a tool produces unexpected results - When identifying recurring patterns across targets - User says \\\"learn\\\", \\\"remember this\\\", \\\"pattern.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "council",
+          "path": "skills\\council\\SKILL.md",
+          "description": "Council provides a structured framework for analyzing security questions from multiple adversarial and defensive perspectives simultaneously.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "cps-attack",
+          "path": "skills\\cps-attack\\SKILL.md",
+          "description": "Cyber-Physical Systems (CPS) attacks — PLCs (Siemens S7, Rockwell ControlLogix, Schneider Modicon, Mitsubishi MELSEC), ICS protocols (Modbus, DNP3, Profinet, EtherNet/IP, IEC 61850, OPC UA), HMIs, SCADA historians, OT-to-IT pivot, SIS bypass. Distinct from scada-ics-security (broader ICS overview) — this skill goes deep on protocol-level PLC exploitation, packet replay/injection, and field-device firmware attacks. Covers 2024-2025 incidents (Unitronics PLC attack, Pipedream/Incontroller, multi-vendor PLC CVEs).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "crypto-attacks",
+          "path": "skills\\crypto-attacks\\SKILL.md",
+          "description": "Cryptographic Attacks target implementation flaws and algorithm weaknesses in encryption systems, covering OWASP A04: Cryptographic Failures.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "cspm-casb-attack",
+          "path": "skills\\cspm-casb-attack\\SKILL.md",
+          "description": "CSPM/CASB/CNAPP platform bypass and abuse — rule suppression exploitation, IaC state manipulation, CASB proxy evasion, SaaS shadow discovery, Wiz/Prisma/Lacework/Defender coverage gap identification, and tag-tampering attacks against cloud posture management tools.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "darkweb-intel",
+          "path": "skills\\darkweb-intel\\SKILL.md",
+          "description": "Dark web intelligence gathering — Tor/onion service reconnaissance, marketplace monitoring, breach data markets, threat actor profiling, with strict OPSEC for investigators.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "data-exfiltration-attack",
+          "path": "skills\\data-exfiltration-attack\\SKILL.md",
+          "description": "Attacks for exfiltrating data from compromised networks and bypassing DLP/egress controls. Covers DNS tunneling, ICMP/HTTPS tunneling, protocol smuggling, steganographic exfil, cloud-native exfil (S3/OpenSearch/BigQuery), and DLP bypass. Use when testing egress monitoring, validating DLP controls, or simulating APT exfiltration campaigns.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "data-loss-prevention-bypass",
+          "path": "skills\\data-loss-prevention-bypass\\SKILL.md",
+          "description": "DLP bypass techniques covering steganography (LSB, audio, video), DNS tunneling, ICMP tunneling, cloud sync abuse (Dropbox, OneDrive), WebSocket/HTTP3 exfil, AI-augmented exfil (semantic chunking), and modern DLP evasion patterns.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "data-platform-attack",
+          "path": "skills\\data-platform-attack\\SKILL.md",
+          "description": "Attacks against cloud data platforms and analytics pipelines — Snowflake, Databricks, BigQuery, Redshift, dbt, Apache Airflow, and lakehouse architectures. Covers identity-based breaches (no perimeter), warehouse SQL injection at scale, IAM privilege escalation, secrets in DAGs, notebook code injection, and cross-tenant data exfiltration. Distinct from database-attack (protocol-level RDBMS) and cloud-security (broader CSP control plane).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "data-scraper-agent",
+          "path": "skills\\data-scraper-agent\\SKILL.md",
+          "description": "Automated data collection from structured sources: CVE databases, threat intelligence feeds, exploit databases, and security advisories. Transform unstructured web data into structured knowledge units.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "database-attack",
+          "path": "skills\\database-attack\\SKILL.md",
+          "description": "Direct attacks against database servers at the protocol level — distinct from web-based SQL injection (covered by web-sqli). This skill targets database listeners, authentication mechanisms, stored procedures, and protocol-level misconfigurations.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "deception-honeypot",
+          "path": "skills\\deception-honeypot\\SKILL.md",
+          "description": "Defensive deception and honeypot deployment covering SSH/Telnet (Cowrie), web (OpenCanary), enterprise (HFish), ICS/SCADA (Conpot), all-in-one (T-Pot), AI-driven deception (Beelzebub), Thinkst Canarytokens (DNS, HTTP, file, AWS API key, SQL), Dionaea multi-protocol honeypot, notification pipelines (Slack/Teams webhooks), false positive tuning, and attacker engagement — including lure design, deployment OPSEC, IOC extraction, and attacker attribution.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "deep-research",
+          "path": "skills\\deep-research\\SKILL.md",
+          "description": "Multi-source intelligence gathering through systematic web research — producing thorough, cited reports from diverse sources.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "detection-engineering",
+          "path": "skills\\detection-engineering\\SKILL.md",
+          "description": "Detection-as-code engineering covering Sigma rule authoring, YARA signature development, Splunk SPL / Kusto KQL / Elastic EQL queries, MITRE ATT&CK mapping, detection CI/CD pipelines, false-positive tuning, and rule testing against EVTX-ATTACK-SAMPLES — using SigmaHQ, Yara-Rules, Loki, yarGen, hayabusa, SigmaCLI, and zircollo.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "digital-forensics",
+          "path": "skills\\digital-forensics\\SKILL.md",
+          "description": "Digital forensics covers the complete workflow of disk forensics, memory forensics, network forensics, file recovery/carving, and chain of custody.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "dns-attacks",
+          "path": "skills\\dns-attacks\\SKILL.md",
+          "description": "DNS Attacks exploit the Domain Name System protocol for reconnaissance, spoofing, tunneling, and data exfiltration. DNS is a foundational infrastructure service that is frequently misconfigured, poorly monitored, and trusted by default -- making it an ideal attack vector.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "docker-patterns",
+          "path": "skills\\docker-patterns\\SKILL.md",
+          "description": "Setting up a practice lab for penetration testing techniques - Creating isolated environments for exploit development and testing - Building vulnerable application targets for training - Testing tools against known-vulnerable configurations - User says \\\"lab\\\", \\\"docker lab.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "edge-computing-attack",
+          "path": "skills\\edge-computing-attack\\SKILL.md",
+          "description": "Attacks against edge computing platforms — Cloudflare Workers (V8 isolate), Fastly Compute@Edge (WASM/Wasmtime), AWS Lambda@Edge and CloudFront Functions, Akamai EdgeWorkers, Vercel Edge Functions, and Deno Deploy. Covers V8 isolate escape, WASM sandbox bypass, request smuggling at the edge, edge KV store abuse, secret leakage via edge logs, and bypass of origin WAF via edge script injection. Distinct from cloud-security (broader CSP control plane), container-security (Linux namespaces), and web-ssrf (origin-side issues).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "edge-computing-security",
+          "path": "skills\\edge-computing-security\\SKILL.md",
+          "description": "Edge computing security testing covering CDN bypass, Cloudflare Workers abuse, AWS Lambda@Edge attacks, cache poisoning, origin IP discovery, WAF bypass, and edge function injection.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "email-protocol-attack",
+          "path": "skills\\email-protocol-attack\\SKILL.md",
+          "description": "Email protocol attacks targeting mail infrastructure at the protocol level.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "email-security-deep",
+          "path": "skills\\email-security-deep\\SKILL.md",
+          "description": "Phishing infrastructure and email gateway bypass covering AiTM MFA interception (evilginx2/modlishka/evilgophish), campaign platforms (gophish/King-Phisher), enterprise gateway evasion (Proofpoint/Mimecast/Cisco ESA/Microsoft Defender for Office), email bombing/DoS, sender reputation engineering, and full-stack campaign operations including landing pages, payload staging, and post-click telemetry — complementary to email-protocol-attack which handles protocol-level forgery.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "embedded-rtos-security",
+          "path": "skills\\embedded-rtos-security\\SKILL.md",
+          "description": "RTOS penetration testing — VxWorks WDB debug agent (Urgent/11), QNX microkernel, FreeRTOS+TCP CVEs, ThreadX/Azure RTOS, Zephyr, Mbed OS, TI-RTOS, MicroC/OS, NuttX, RIOT, Contiki",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "engagement-manager",
+          "path": "skills\\engagement-manager\\SKILL.md",
+          "description": "End-to-end penetration test project management skill. Orchestrates the full engagement lifecycle from scoping through reporting, managing skill composition, evidence chains, and phase transitions.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "eu-ai-act-compliance-redteam",
+          "path": "skills\\eu-ai-act-compliance-redteam\\SKILL.md",
+          "description": "EU AI Act (Regulation (EU) 2024/1689) compliance-focused red team testing for high-risk AI systems — Article 9 adversarial testing, Annex III classification, Annex IV technical documentation, conformity assessment, and Notified Body audit preparation. Enforceable since 2 August 2026 with fines up to €35M or 7% global turnover.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "exa-search",
+          "path": "skills\\exa-search\\SKILL.md",
+          "description": "Semantic search using Exa API for security research queries. Unlike keyword-based search, Exa understands context and retrieves high-quality, relevant results for technical research.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "exploit-development",
+          "path": "skills\\exploit-development\\SKILL.md",
+          "description": "Exploit development covers the full chain from vulnerability discovery through crash analysis to working exploit code, spanning buffer overflows, ROP chains, format string bugs, and shellcode injection across x86 and ARM architectures.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "file-inclusion",
+          "path": "skills\\file-inclusion\\SKILL.md",
+          "description": "Local File Inclusion (LFI) and Remote File Inclusion (RFI) attack techniques covering path traversal, PHP wrapper abuse, log poisoning, session file inclusion, and remote payload hosting for code execution.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "firmware-reverse",
+          "path": "skills\\firmware-reverse\\SKILL.md",
+          "description": "Firmware reverse engineering covers the full pipeline from raw firmware image acquisition through filesystem extraction, static and dynamic analysis, full-system emulation, and vulnerability/backdoor detection.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "game-anticheat-bypass",
+          "path": "skills\\game-anticheat-bypass\\SKILL.md",
+          "description": "Security research on game anti-cheat systems (EAC/BattlEye/Vanguard/Ricochet) — kernel-mode driver architecture, BYOVD attacks, memory access interception, integrity check evasion, and defense-side anti-cheat engineering.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "gitops-security",
+          "path": "skills\\gitops-security\\SKILL.md",
+          "description": "Attacks against GitOps control planes (Argo CD, FluxCD, Jenkins X, Tekton, Fleet, Rancher) — repo impersonation, manifest tampering, RBAC bypass, sync-wave abuse, secret management compromise (Sealed Secrets / SOPS / External Secrets / Vault), cluster privilege escalation via Application/CRDs, and post-exploitation persistence through CRD backdoors. Covers 2024-2025 Argo CD CVEs (CVE-2022-24348, CVE-2024-21626, CVE-2024-32564), FluxCD CVE-2024-37286, and the Akuukam/Code Catalyst supply chain incidents.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "hardware-security",
+          "path": "skills\\hardware-security\\SKILL.md",
+          "description": "Hardware and embedded system security testing covering physical interface exploitation, firmware extraction and analysis, side-channel attacks, RFID/NFC cloning, and fault injection.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "hardware-side-channel-advanced",
+          "path": "skills\\hardware-side-channel-advanced\\SKILL.md",
+          "description": "Advanced hardware side-channel attacks covering power analysis (SPA/DPA), electromagnetic emanation, timing attacks, cache-timing attacks (Spectre/Meltdown variants), glitching (voltage/clock), optical fault injection, and countermeasure evaluation.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "hf-vhf-radio-attack",
+          "path": "skills\\hf-vhf-radio-attack\\SKILL.md",
+          "description": "Licensed HF/VHF/UHF radio attack — ADS-B 1090 MHz, AIS, ACARS, VDL Mode 2, POCSAG/FLEX pagers, APRS, NDB, ATC/maritime VHF, DSC, weather fax, MLAT",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "hsm-attack",
+          "path": "skills\\hsm-attack\\SKILL.md",
+          "description": "Hardware Security Module attacks — physical (side-channel, fault injection, decapping) and logical (PKCS#11 API abuse, key extraction, M-of-N quorum bypass, RDP, firmware exploitation). Covers Thales Luna (SafeNet), Utimaco SecurityServer, nCipher nShield, YubiHSM, AWS CloudHSM, Azure Dedicated HSM, Google Cloud HSM. Includes 2024-2025 CVEs (CVE-2024-47787 Thales Luna, CVE-2024-45294 Utimaco), HSM-as-a-Service tenant isolation attacks, and quorum-spoofing scenarios. Distinct from crypto-attacks (algorithm-level) and pam-privilege-attack (credential management).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "hypervisor-introspection",
+          "path": "skills\\hypervisor-introspection\\SKILL.md",
+          "description": "Hypervisor introspection (VMI) and virtualization escape attacks — VMware ESXi, Hyper-V, KVM/QEMU, Xen, Proxmox, VirtualBox, LibVMI, DRAKVUF, VENOM CVE-2015-3456, hardware-assisted VT-x/EPT/AMD-V",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "ics-fieldbus-attack",
+          "path": "skills\\ics-fieldbus-attack\\SKILL.md",
+          "description": "Industrial fieldbus protocol penetration testing beyond Modbus — Profibus/PROFINET, EtherCAT, DNP3, IEC 61850 (GOOSE/SV/MMS), IEC 60870-5-101/104, Foundation Fieldbus, HART, CC-Link, BACnet deep dive. Covers power utility, process automation, building automation, and automotive fieldbus attack surfaces.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "identity-provider-attack",
+          "path": "skills\\identity-provider-attack\\SKILL.md",
+          "description": "Identity Provider (IdP) attack patterns covering OAuth 2.0/OIDC, SAML, JWT, token theft/replay, MFA fatigue, service principal abuse (Azure AD/Entra ID), Okta, Auth0, Keycloak, and modern identity-based attacks.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "insecure-design",
+          "path": "skills\\insecure-design\\SKILL.md",
+          "description": "Insecure Design (OWASP A06:2025) focuses on security flaws in system architecture and design phases, rather than code implementation-level bugs.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "iot-pentest",
+          "path": "skills\\iot-pentest\\SKILL.md",
+          "description": "IoT application-layer penetration testing covering MQTT broker abuse, CoAP server attacks, AMQP exploitation, OT/cloud IoT gateways (AWS IoT, Azure IoT Hub), device management platforms, mobile companion apps, embedded web services, and proprietary IoT protocol reverse engineering using mosquitto, MQTT-Pwn, IoT-Goat, EMQX, CoAP testing tools, and IoT-Goat lab environments.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "knowledge-ops",
+          "path": "skills\\knowledge-ops\\SKILL.md",
+          "description": "Build and maintain structured, persistent knowledge graphs across sessions. Knowledge-ops transforms ephemeral session findings into reusable intelligence — connecting entities, tracking confidence over time, and enabling recall across engagements.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "kubernetes-attack",
+          "path": "skills\\kubernetes-attack\\SKILL.md",
+          "description": "Kubernetes cluster attack and red team covering RBAC abuse, pod escape (privileged pods, hostPath, capabilities, hostPID/hostIPC, container runtime sockets, kernel CVEs), kubelet API abuse (10250/10255), etcd direct access, service account token theft (legacy and projected), RBAC privilege escalation chains, cloud-managed K8s (EKS/GKE/AKS) pivoting, and kubectl plugin ecosystem (peirates, CDK, kube-hunter, BOtB, kubeletctl, kubescape, stratus-red-team, kubernetes-goat).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "llm-red-team",
+          "path": "skills\\llm-red-team\\SKILL.md",
+          "description": "LLM and generative AI red team testing covering prompt injection, jailbreaking (DAN, many-shot, Crescendo, PAIR/TAP, GCG suffix, persona modulation, prefix injection, payload smuggling), model extraction, RAG poisoning, agentic tool abuse, and safety policy bypass using promptfoo, garak, PyRIT, PurpleLlama, AI-Infra-Guard and llm-guard — plus Constitutional AI, Llama Guard, NeMo Guardrails, and Azure AI Content Filter evasion.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "logging-monitoring",
+          "path": "skills\\logging-monitoring\\SKILL.md",
+          "description": "Security logging and monitoring deficiencies (OWASP A09:2021) refer to applications failing to properly record security events or lacking effective monitoring, resulting in attacks going undetected, malicious activities being untraceable.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "macos-security",
+          "path": "skills\\macos-security\\SKILL.md",
+          "description": "macOS red team and security assessment — SIP/TCC bypass, Endpoint Security framework, Apple Silicon/T2/M-series attacks, Mach-O analysis, Keychain extraction, MDM bypass, LaunchAgents/Daemons persistence, and macOS-native malware analysis.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "mainframe-security",
+          "path": "skills\\mainframe-security\\SKILL.md",
+          "description": "IBM z/OS, RACF (Resource Access Control Facility), CICS, DB2, JES2, TSO/ISPF penetration testing; APF library abuse, dataset access control, SNA/Appc attacks, and legacy mainframe security assessment for financial/government environments.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "malware-analysis-advanced",
+          "path": "skills\\malware-analysis-advanced\\SKILL.md",
+          "description": "Advanced malware analysis covering unpacking (UPX, VMProtect, Themida, Enigma, custom packers), sandbox-evasion detection (anti-VM, anti-debug, anti-analysis), rootkit analysis (user-mode, kernel-mode, bootkits, UEFI), YARA rule authoring and optimization, and IDA Pro / Ghidra / Binary Ninja workflows. Distinct from foundational `binary-reverse` — focuses on dynamic unpacking, evasion triage, rootkit techniques, and analyst workflow automation. Use when analyzing modern packed malware (Emotet, TrickBot, Conti, LockBit, BlackCat/ALPHV, REvil), authoring detection rules, or building automated malware triage pipelines.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "mcp-server-patterns",
+          "path": "skills\\mcp-server-patterns\\SKILL.md",
+          "description": "Building and security-testing MCP (Model Context Protocol) servers for Kali Linux security tools.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "mobile-app-instrumentation",
+          "path": "skills\\mobile-app-instrumentation\\SKILL.md",
+          "description": "Dynamic instrumentation of iOS/Android apps via Frida, Objection, r2frida, and Introspy; runtime SSL pinning bypass, jailbreak/root detection bypass, native library hooking, and runtime secrets extraction.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "mobile-security",
+          "path": "skills\\mobile-security\\SKILL.md",
+          "description": "Mobile security covers the complete attack/defense chain of Android/iOS application security testing, APK/IPA reverse engineering, runtime manipulation, certificate pinning bypass, and mobile data protection.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "multi-agent-collaboration",
+          "path": "skills\\multi-agent-collaboration\\SKILL.md",
+          "description": "Coordinating multiple specialized agents to conduct complex penetration testing engagements through task decomposition, parallel execution, result aggregation, and conflict resolution.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "multi-agent-runtime-engineering",
+          "path": "skills\\multi-agent-runtime-engineering\\SKILL.md",
+          "description": "Runtime engineering discipline for agent systems — structured JSON memory schemas, memory-driven convergence rules, shared-memory multi-agent coordination via POSIX flock + atomic write + version vector, anti-pattern prevention, and topology selection. Solidifies the engineering patterns of SCEN-007 (shared-memory multi-agent exploit dev) and SCEN-MEMORY-SCHEMA (structured memory foundation) into a reusable knowledge base. Inspired by MopMonk Agent three-layer harness (Chinese press nickname *扫地僧* — CyberGym 73.1%, China #1) — proving that harness engineering beats base-model parameter scaling.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "network-pentest",
+          "path": "skills\\network-pentest\\SKILL.md",
+          "description": "Network penetration testing covering the full attack chain from reconnaissance, port scanning, and service fingerprinting through vulnerability assessment, exploitation, traffic sniffing, and MITM attacks.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "network-sniffing-mitm",
+          "path": "skills\\network-sniffing-mitm\\SKILL.md",
+          "description": "Network Sniffing and MITM attacks focus on intercepting, analyzing, and manipulating network traffic between two communicating parties.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "network-tunneling-proxy",
+          "path": "skills\\network-tunneling-proxy\\SKILL.md",
+          "description": "Network tunneling encapsulates one protocol inside another to bypass firewalls, evade detection, and route traffic through restricted networks.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "open-banking-attack",
+          "path": "skills\\open-banking-attack\\SKILL.md",
+          "description": "Open Banking / PSD2 / Open Finance attacks — FAPI (Financial-grade API), OpenID Connect for Financial APIs, OAuth2 PKCE, Strong Customer Authentication (SCA) bypass, AIS/PIS/CBPII API abuse, payment redirection, consent manipulation. Covers UK Open Banking, US FDX, Brazil Open Finance, India Account Aggregator, Singapore MAS APIX, Australia CDR. Includes 2024-2025 incidents (Token Hijacking, IdOR on AIS endpoints, PIS redirect manipulation).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "osint",
+          "path": "skills\\osint\\SKILL.md",
+          "description": "A specialized skill for intelligence gathering using publicly available sources.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "pam-privilege-attack",
+          "path": "skills\\pam-privilege-attack\\SKILL.md",
+          "description": "Privileged Access Management (PAM) vendor abuse — CyberArk PVWA/PSM/EPV/AIM/CFE, BeyondTrust PRA/Password Safe/Identity Security Insights, Delinea Secret Server/Privilege Manager, One Identity Safeguard, ManageEngine Password Manager Pro, WALLIX Bastion, Devolutions Server, Xton Core. Covers PVWA auth bypass (CVE-2025-32564 area), CyberArk safe enumeration via WebSocket, credential file (.cue) theft and decryption, PSM session hijacking, AIM/CCP provider abuse, master key escrow analysis, BeyondTrust SAML account injection (CVE-2022-2451), Password Safe API abuse, session recording tampering, Delinea OAuth token theft, DPAPI-protected agent config extraction, distributed engine lateral movement, One Identity Safeguard SSL pinning bypass, ManageEngine PMP API key enumeration, PostgreSQL backend extraction (CVE-2022-28226 area), pass-the-hash in PAM contexts, golden ticket interaction with PAM credential rotation, and modern ransomware operator TTPs targeting PAM (BlackCat/ALPHV, LockBit, Royal/BlackSuit).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "password-attack",
+          "path": "skills\\password-attack\\SKILL.md",
+          "description": "Password attacks encompass the complete attack chain from hash extraction, hash type identification, dictionary attacks, rule-based attacks, and bruteforcing to online service brute forcing.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "patch-to-poc-pipeline",
+          "path": "skills\\patch-to-poc-pipeline\\SKILL.md",
+          "description": "The end-to-end patch-diff vulnerability reproduction workflow — patch analysis (read diff, identify protective pattern, hypothesize bug class), source or binary-only code path walking (Ghidra + BinDiff), PoC generation (manual craft OR AFL++/libFuzzer harness with ASan/UBSan), CyberGym-style differential verification (vuln crashes, patched clean) as the deterministic stop condition, and YARA + Sigma detection rule authoring tested against both versions. Covers 2024-2026 CVEs (libwebp, xz-utils, runc, glibc Looney Tuner, regreSSHion, MOVEit, Jenkins, Confluence, TeamCity, OFBiz). Solidifies validation/scenarios/SCEN-008.md into a reusable knowledge base and wires in Schema 3 reproduction memory for memory-driven convergence.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "payload-generation",
+          "path": "skills\\payload-generation\\SKILL.md",
+          "description": "Payload generation covers the creation, encoding, and delivery of shellcode and executable payloads for initial access and command-and-control (C2) communication.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "payment-security",
+          "path": "skills\\payment-security\\SKILL.md",
+          "description": "Payment systems security — PCI-DSS compliance testing, payment API security (Stripe/Adyen/PayPal), EMV chip/PIN, 3-D Secure, mobile wallets (Apple Pay/Google Pay), and fraud system assessment.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "pentest-reporting",
+          "path": "skills\\pentest-reporting\\SKILL.md",
+          "description": "Initialize Dradis for collaborative report authoring and Faraday for vulnerability correlation before testing begins.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "physical-security-testing",
+          "path": "skills\\physical-security-testing\\SKILL.md",
+          "description": "Physical penetration testing covering mechanical lock bypass (pin-tubular/wafer), RFID/NFC badge cloning (Proxmark3/ESP-RFID-Tool/Walrus), HID iCLASS/Mifare duplication, drop box deployment (LAN Turtle/Packet Squirrel), USB weapons (Rubber Ducky/Bash Bunny), hidden camera placement, and on-site engagement operations including tailgating pretext preparation and physical-docs legal templates.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "post-exploitation",
+          "path": "skills\\post-exploitation\\SKILL.md",
+          "description": "Post-exploitation covers the complete attack chain after obtaining initial access: privilege escalation, persistence, lateral movement, data collection and exfiltration, and covering tracks.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "post-quantum-migration-attack",
+          "path": "skills\\post-quantum-migration-attack\\SKILL.md",
+          "description": "Attacks against cryptographic systems during the PQC migration period. Covers Harvest-Now-Decrypt-Later (SNDL/HNDL), hybrid PQC downgrade abuse, KEM combiner flaws, mixed-protocol failures, NIST PQC standard implementations (ML-KEM/Kyber, ML-DSA/Dilithium, SLH-DSA/SPHINCS+), and QKD infrastructure attacks. Use when reviewing cryptographic agility, hybrid deployments, or preparing for quantum threat readiness.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "pqc-implementation-attack",
+          "path": "skills\\pqc-implementation-attack\\SKILL.md",
+          "description": "Post-quantum cryptography implementation-layer attacks — ML-KEM/Kyber side channels (KyberSlash-class timing, single-trace power/EM, template and deep-learning SCA), fault injection on decapsulation, RNG/keygen weaknesses in liboqs/oqs-provider/PQClean/pqm4, hybrid KEM combiner implementation flaws, and Kyber ransomware sample triage with implementation-defect recovery paths.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "privilege-escalation",
+          "path": "skills\\privilege-escalation\\SKILL.md",
+          "description": "Privilege escalation is the process of elevating access from a low-privileged user context (standard user, service account, or limited shell) to root on Linux or SYSTEM/Administrator on Windows.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "protocol-state-exploitation",
+          "path": "skills\\protocol-state-exploitation\\SKILL.md",
+          "description": "Protocol state exploitation targets vulnerabilities in network protocol state machines including SSH/TLS/HTTP2/DNS, covering illegal state transitions, stateful fuzzing, and protocol-level race conditions.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "quantum-crypto-attack",
+          "path": "skills\\quantum-crypto-attack\\SKILL.md",
+          "description": "Post-quantum and modern national cryptography attack surface testing covering NIST PQC candidates (ML-KEM/ML-DSA/SLH-DSA), hybrid TLS analysis, QKD/BB84 protocol attacks, Chinese national crypto (SM2/SM3/SM4/SM9) implementation flaws, lattice/hashing signature probing, and quantum-vulnerable RSA/ECC asset discovery using liboqs, GmSSL, cloudflare/circl, OQS-OpenSSL, and PQCrypto-Break.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "recon-osint",
+          "path": "skills\\recon-osint\\SKILL.md",
+          "description": "The most critical first step in penetration testing. Information gathering determines the precision and efficiency of subsequent attacks.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "red-team-infrastructure",
+          "path": "skills\\red-team-infrastructure\\SKILL.md",
+          "description": "Building, deploying, and operating stealthy C2 infrastructure for red team engagements. Covers Mythic, Havoc, Sliver, Covenant, PoshC2, Brute Ratel, and Cobalt Strike; redirector chains (Nginx mTLS, Cloudflare workers, CDN domain fronting); dead-drop resolvers; infrastructure OPSEC (compartmentalized servers, auto-rotated certs, decoupled domains); AMIS/GoDaddy API for automated rotation. Use when deploying dedicated adversary emulation infrastructure, planning redirector chains, or testing OPSEC resilience of red team operators.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "repo-scan",
+          "path": "skills\\repo-scan\\SKILL.md",
+          "description": "Cross-stack source code asset audit that classifies every file, detects embedded third-party libraries, and delivers actionable verdicts per module.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "reverse-engineering-advanced",
+          "path": "skills\\reverse-engineering-advanced\\SKILL.md",
+          "description": "Advanced reverse engineering covering symbolic execution (angr, KLEE, manticore), decompiler confusion (Hex-Rays, Ghidra deobfuscation), binary diffing (BinDiff, Diaphora, Kam1n0), firmware RE workflow (binwalk, FACT, EMBA), and obfuscated code analysis (LLVM obfuscation, OLLVM, Tigress). Distinct from foundational `binary-reverse` — focuses on advanced program analysis, automated RE techniques, and firmware / obfuscation workflows. Use when analyzing obfuscated or packed binaries, automating RE pipelines, analyzing firmware, or studying APT-grade obfuscation (Equation Group, Pegasus).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "safety-guard",
+          "path": "skills\\safety-guard\\SKILL.md",
+          "description": "Before executing ANY potentially destructive or irreversible command - When a command targets production or critical infrastructure - When operating under a defined rules of engagement (ROE) - When a loop or automated sequence is about to start - User says \\\"safe?",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "sase-sse-attack",
+          "path": "skills\\sase-sse-attack\\SKILL.md",
+          "description": "Secure Access Service Edge (SASE) and Security Service Edge (SSE) platform compromise covering Zscaler (ZIA/ZPA/ZDX/Client Connector), Netskope (Security Cloud, SWG, CASB, Private Access), Palo Alto Prisma Access, Cisco Umbrella, CATO Networks SASE, Cloudflare One (WARP, Gateway, Access), and Microsoft Entra Global Secure Access — including client connector reverse engineering, TLS inspection bypass via certificate pinning and ESNI/ECH, split-tunnel race conditions, BYOD vs managed device bypass, stolen SSO token replay through SSE proxy, anonymizer proxy evasion (Shadowsocks/V2Ray/Obfs4/Trojan), and detection avoidance using Wireshark, Frida, mitmproxy, JA3/JA4 fingerprint spoofing.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "satellite-leo-security",
+          "path": "skills\\satellite-leo-security\\SKILL.md",
+          "description": "Satellite and LEO communication security — Starlink, Kuiper, OneWeb, Iridium, Inmarsat, Viasat KA-SAT, HughesNet, DVB-S/S2, VSAT (iDirect/Hughes), GNSS receiver attacks, AcidRain wiper (Viasat 2022)",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "scada-ics-security",
+          "path": "skills\\scada-ics-security\\SKILL.md",
+          "description": "SCADA/ICS security assessment covering industrial control system protocols including Modbus TCP, S7comm (Siemens), DNP3, EtherNet/IP (CIP), OPC UA, BACnet, and GOOSE.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "sdr-rf-attack",
+          "path": "skills\\sdr-rf-attack\\SKILL.md",
+          "description": "Software Defined Radio and RF signal attacks encompass a broad range of offensive techniques targeting wireless communication systems.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "search-first",
+          "path": "skills\\search-first\\SKILL.md",
+          "description": "Systematizes the \\\"search for existing tools, exploits, and techniques before writing custom ones\\\" workflow.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "secret-management-attack",
+          "path": "skills\\secret-management-attack\\SKILL.md",
+          "description": "Secret discovery, SAST code audit, and secrets-management platform attack covering gitleaks, semgrep, trufflehog, infisical, bearer, DeepAudit, apkleaks, and cariddi — including HashiCorp Vault exploitation (auth methods, secrets engines, policies, response-wrap hijacking, SSRF), AWS KMS key policy abuse, GCP KMS IAM escalation, Azure Key Vault access policy review, BYOK/HYOK attacks, Kyverno/external-secrets/secrets-store-csi-driver misconfig hunting, hardcoded credential discovery, secret rotation abuse, and CI/CD pipeline secret theft.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "security-bounty-hunter",
+          "path": "skills\\security-bounty-hunter\\SKILL.md",
+          "description": "Hunt for exploitable, bounty-worthy security issues in target systems. Focuses on remotely reachable vulnerabilities that qualify for real reports and responsible disclosure, not broad best-practices reviews or theoretical findings.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "security-misconfiguration",
+          "path": "skills\\security-misconfiguration\\SKILL.md",
+          "description": "Security misconfiguration detection (OWASP A02:2025) covering default credentials, unnecessary services, verbose errors, missing security headers, and directory listing exposures across deployed systems.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "security-review",
+          "path": "skills\\security-review\\SKILL.md",
+          "description": "Comprehensive security checklist and review patterns for analyzing applications, configurations, and infrastructure. This skill provides structured review methodology to identify vulnerabilities across OWASP Top 10 categories during penetration testing.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "social-engineering",
+          "path": "skills\\social-engineering\\SKILL.md",
+          "description": "Social engineering is the art of exploiting human psychological weaknesses rather than technical vulnerabilities to execute attacks. Attack vectors encompass Phishing, Pretexting, Baiting, Tailgating, Vishing, and other techniques.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "social-intelligence",
+          "path": "skills\\social-intelligence\\SKILL.md",
+          "description": "Real-time intelligence gathering from social platforms and community discussions — capturing what people are saying, sharing, and leaking right now.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "steganography",
+          "path": "skills\\steganography\\SKILL.md",
+          "description": "Steganography is the practice of concealing data within non-secret carrier files such as images, audio, video, and documents. Unlike encryption, which makes data unreadable but visibly present, steganography hides the very existence of the hidden data.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "storage-san-attack",
+          "path": "skills\\storage-san-attack\\SKILL.md",
+          "description": "Storage/SAN/NAS/Object storage penetration testing — iSCSI, Fibre Channel, NFSv3/v4, SMB3, S3-compatible APIs, NetApp ONTAP, Dell EMC, Pure Storage, QNAP, Synology, TrueNAS, NDMP backup tape pilfering, and ransomware patterns targeting storage appliances. Distinct from database-attack (which targets RDBMS/NoSQL query protocols) and cloud-native-vuln-research (which focuses on CVE research rather than storage fabric and appliance pentest).",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "supply-chain-security",
+          "path": "skills\\supply-chain-security\\SKILL.md",
+          "description": "Software supply chain security covering the entire lifecycle from code development to deployment: dependency vulnerabilities (known-vulnerable third-party packages), malicious packages (injection and typosquatting.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "terminal-ops",
+          "path": "skills\\terminal-ops\\SKILL.md",
+          "description": "Evidence-first execution workflow for running security commands, inspecting system state, debugging tool failures, and making verified changes. This skill enforces a disciplined approach: inspect before acting, keep changes narrow, and report exact execution state.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "threat-hunting",
+          "path": "skills\\threat-hunting\\SKILL.md",
+          "description": "Proactive threat hunting — MITRE ATT&CK-mapped hunt hypotheses, Sigma detection engineering, SIEM query authoring (Splunk SPL, KQL, Lucene), and SOC workflow integration.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "threat-intel-platform-attack",
+          "path": "skills\\threat-intel-platform-attack\\SKILL.md",
+          "description": "Attacking threat intelligence platforms (MISP, OpenCTI, Anomali ThreatStream, ThreatQuotient, ThreatConnect, IBM Threat Intel, Palo Alto AutoFocus, Mandiant Advantage). Covers platform CVEs (MISP CVE-2022-29527, OpenCTI vulnerabilities), API abuse, sharing-group trust abuse, false-positive IOC injection, STIX/TAXII feed manipulation, and supply-chain attacks via poisoned TI feeds. Use when testing threat-intel platform security, validating IOC sharing trust models, or simulating APT feed-poisoning campaigns.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "tool-mastery",
+          "path": "skills\\tool-mastery\\SKILL.md",
+          "description": "Verification and assessment of practical proficiency with Kali Linux security tools. Covers tool classification, proficiency levels, verification methods, and combination strategies across the 518-tool Kali arsenal.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "uav-drone-security",
+          "path": "skills\\uav-drone-security\\SKILL.md",
+          "description": "UAV/drone security testing — PX4/ArduPilot autopilot attacks, MAVLink protocol fuzzing, RF link hijacking (2.4GHz control / 5.8GHz video), GPS spoofing/jamming, DroneSploit framework, DJI hardware reversing, and counter-UAS methodologies.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "username-profiling",
+          "path": "skills\\username-profiling\\SKILL.md",
+          "description": "Build a complete dossier on a person using only a username.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "verification-loop",
+          "path": "skills\\verification-loop\\SKILL.md",
+          "description": "After discovering a potential vulnerability or exploit - Before submitting any finding to a report or bounty platform - When verifying that a remediation or patch is effective - When cross-checking automated scanner results - User says \\\"verify\\\", \\\"confirm\\\", \\\"validate.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "voip-sip-attack",
+          "path": "skills\\voip-sip-attack\\SKILL.md",
+          "description": "Voice over IP (VoIP) systems use the Session Initiation Protocol (SIP) for call signaling, the Real-time Transport Protocol (RTP) for media streaming, and the Inter-Asterisk eXchange protocol (IAX2) for alternative VoIP communication.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "vpn-attack",
+          "path": "skills\\vpn-attack\\SKILL.md",
+          "description": "Virtual Private Networks (VPNs) are a critical component of enterprise network security, providing encrypted tunnels for remote access and site-to-site connectivity.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "vulnerability-assessment",
+          "path": "skills\\vulnerability-assessment\\SKILL.md",
+          "description": "Vulnerability assessment is the process of systematically identifying and quantifying security weaknesses in information systems through automated scanning, CVE analysis, and risk scoring.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-access-control",
+          "path": "skills\\web-access-control\\SKILL.md",
+          "description": "Broken Access Control (OWASP Top 10 2025 - A01) attacks and defense — covering core attack surfaces including IDOR (Insecure Direct Object Reference), vertical/horizontal privilege escalation, path traversal, and permission bypass.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-auth-bypass",
+          "path": "skills\\web-auth-bypass\\SKILL.md",
+          "description": "Authentication Bypass refers to attackers exploiting design flaws or implementation vulnerabilities in authentication mechanisms to bypass the normal authentication process and gain unauthorized access.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-deserialization",
+          "path": "skills\\web-deserialization\\SKILL.md",
+          "description": "Deserialization vulnerabilities arise when an application reconstructs objects from byte streams (Java), serialized strings (PHP), Base64 blobs (.NET), or pickle data (Python) supplied by the client.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-sqli",
+          "path": "skills\\web-sqli\\SKILL.md",
+          "description": "SQL injection attacks and defense - covering all major SQLi types including error-based, union-based, blind (boolean/time), double query (error-based), stacked queries, and out-of-band injection.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-ssrf",
+          "path": "skills\\web-ssrf\\SKILL.md",
+          "description": "Server-Side Request Forgery (SSRF) attacks including basic, blind, and advanced bypass techniques, internal port scanning, cloud metadata extraction (AWS/GCP/Azure), protocol smuggling (gopher://, dict://, file://), and chained RCE exploitation.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-xss",
+          "path": "skills\\web-xss\\SKILL.md",
+          "description": "XSS (Cross-Site Scripting) is an attack that injects malicious scripts into trusted websites.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "web-xxe",
+          "path": "skills\\web-xxe\\SKILL.md",
+          "description": "XML External Entity (XXE) injection exploits vulnerable XML parsers to read local files, initiate SSRF attacks, exfiltrate data through out-of-band channels, and cause denial of service.",
+          "version": "0.2.0.2"
+        },
+        {
+          "name": "wifi-pentest",
+          "path": "skills\\wifi-pentest\\SKILL.md",
+          "description": "WiFi security assessment skills: covering wireless network reconnaissance, WPA/WPA2 handshake capture and offline cracking, WPS PIN brute forcing, Evil Twin attacks, wireless sniffing, and deauthentication attacks.",
+          "version": "0.2.0.2"
+        }
+      ],
+      "executables": [
+        "skills\\chronicle\\chronicle-template.py",
+        "skills\\crypto-attacks\\guides\\crypto_failures_scanner.py",
+        "skills\\ics-fieldbus-attack\\evidence\\2026-08-10\\fake-plc.py",
+        "skills\\network-pentest\\guides\\comprehensive_pentest_demo.sh",
+        "skills\\supply-chain-security\\guides\\supply_chain_scanner.py",
+        "skills\\web-access-control\\guides\\access_control_scanner.py",
+        "skills\\web-sqli\\guides\\bug_bounty_sqli_scanner.py",
+        "skills\\web-sqli\\guides\\comprehensive_double_query_test.py",
+        "skills\\web-sqli\\guides\\ctf_sqli_solver.py",
+        "skills\\web-sqli\\guides\\double_query_correct_test.py",
+        "skills\\web-sqli\\guides\\double_query_simplified_test.py",
+        "skills\\web-sqli\\guides\\double_query_test.py",
+        "skills\\web-sqli\\guides\\master_double_query_final.py",
+        "skills\\web-sqli\\guides\\portswigger_sqli_auto.py",
+        "skills\\web-sqli\\guides\\sqli-labs-auto.sh",
+        "skills\\web-sqli\\guides\\sqli-labs-batch-test.sh",
+        "validation\\auto-backup.sh",
+        "validation\\batch-improve.sh",
+        "validation\\check-tool-versions.py",
+        "validation\\cybergym-download-all-data.sh",
+        "validation\\cybergym-download-tasks.py",
+        "validation\\cybergym-multi-agent.sh",
+        "validation\\cybergym-runner.sh",
+        "validation\\cybergym-skill-optimizer.sh",
+        "validation\\cybergym-stream-orchestrator.sh",
+        "validation\\drift-detect.sh",
+        "validation\\gen-full-instance-list.py",
+        "validation\\heartbeat.sh",
+        "validation\\lib\\polish.sh",
+        "validation\\orchestrator.sh",
+        "validation\\report-generator.sh",
+        "validation\\scenario-runner.sh",
+        "validation\\SCORE.sh",
+        "validation\\skill-lint.py",
+        "validation\\tool-selector.sh",
+        "validation\\update-skill-standard.py",
+        "validation\\validate-payloads.py",
+        "validation\\validate-testcases.py"
+      ]
     }
   ]
 }
