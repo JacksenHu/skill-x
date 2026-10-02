@@ -2227,6 +2227,8 @@ def main():
         if not f.is_file() or f.is_symlink():
             continue
         rel = str(f.relative_to(DIST)).replace("\\", "/")
+        if rel == "tools.html" or rel.startswith("tools/"):
+            continue  # 工具商店由 render_tools_store 在 manifest 之后生成,不参与清理
         stale_page = rel.endswith((".html", ".svg", ".md")) and rel not in valid
         stale_media = rel.startswith("assets/") and rel not in valid
         if stale_page or stale_media:
@@ -2317,7 +2319,7 @@ def main():
     append_card_icon_css()
     try:
         from render_tools_store import main as render_tools
-        render_tools()
+        render_tools(ASSET_VER)
     except Exception as e:  # noqa: BLE001
         print("[!] 工具商店渲染失败:", e)
 
