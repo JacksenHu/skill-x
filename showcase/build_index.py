@@ -2251,8 +2251,12 @@ def main():
                + (EXTERNAL.read_text(encoding="utf-8") if EXTERNAL.is_file() else "")
                + (I18N_EXT.read_text(encoding="utf-8") if I18N_EXT.is_file() else "")
                + (PACKS.read_text(encoding="utf-8") if PACKS.is_file() else "")
-               + (I18N_PACKS.read_text(encoding="utf-8") if I18N_PACKS.is_file() else "")
-               + "".join(p["content"] for p in packs))
+                + (I18N_PACKS.read_text(encoding="utf-8") if I18N_PACKS.is_file() else "")
+                + "".join(p["content"] for p in packs))
+
+    # 工具商店源数据纳入缓存键：改了工具数据也要重建工具页
+    _tools_src = ROOT / "tools-store" / "api-import-payload.json"
+    src_all += (_tools_src.read_text(encoding="utf-8") if _tools_src.is_file() else "")
 
     for rel, text in pages.items():
         key = sha(TEMPLATE_VERSION + rel + src_all + text)

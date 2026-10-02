@@ -81,6 +81,10 @@ def upstream_badge(up):
         parts.append('<span class="tag danger">上游失联</span>')
     else:
         parts.append('<span class="tag ok" title="上游仓库可达">上游在线</span>')
+    if up.get("deployBroken"):
+        parts.append('<span class="tag danger" title="实测：部署入口已消失，无法按命令安装">部署不可用</span>')
+    elif up.get("deployVerified"):
+        parts.append('<span class="tag ok" title="已实测部署入口（镜像/Release/compose 文件）真实存在">部署已实测</span>')
     if up.get("pushedAt"):
         parts.append('<span class="tag">最近推送 ' + esc(str(up["pushedAt"])[:10]) + '</span>')
     if up.get("lastCheck"):
@@ -133,6 +137,15 @@ def tool_intro(t, cat_meta):
     if desc:
         out += f" {desc.strip('。')}。"
     return out
+
+
+def deploy_unavailable(up, note):
+    """部署入口不可用时的显式说明。"""
+    if (up or {}).get("deployBroken"):
+        return ('<p class="hint-warn">⚠️ 部署入口已不可用：'
+                + esc(note or '上游已移除部署产物')
+                + '</p><p class="hint-dim">本条目仅作情报索引保留，不提供一键部署。</p>')
+    return '<p class="hint-dim">该工具无标准命令行部署入口，请参考上游仓库说明。</p>'
 
 
 def deploy_block(t):
@@ -230,7 +243,7 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
  <p class="desc">{esc(tool_intro(t, cat_meta))}</p>
 <div class="chips">{"".join(chips)}</div>
 <h3 data-zh="一键部署" data-en="Deploy">一键部署</h3>
-{cmd or '<p class="hint-dim">该工具无标准命令行部署入口。</p>'}
+{cmd or deploy_unavailable(up, note)}
 {table}
 {tool_mindmap(t, cat_meta)}
 </div>

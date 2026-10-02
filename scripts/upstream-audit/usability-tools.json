@@ -1,0 +1,476 @@
+[
+ {
+  "slug": "rengine",
+  "repo": "yogeshojha/rengine",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "docker-compose.dev.yml",
+    "docker-compose.yml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 docker-compose.dev.yml,docker-compose.yml"
+ },
+ {
+  "slug": "arl-plus-docker",
+  "repo": "ki9mu/ARL-plus-docker",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "docker-compose.yml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 docker-compose.yml"
+ },
+ {
+  "slug": "nemo_go",
+  "repo": "hanc00l/nemo_go",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    ".idea",
+    "LICENSE",
+    "README.md",
+    "v2",
+    "v3"
+   ]
+  },
+  "verdict": "RISKY",
+  "reason": "根目录无 compose，需进入子目录（属该仓库设计）"
+ },
+ {
+  "slug": "scopesentry-scan",
+  "repo": "Autumn-27/ScopeSentry-Scan",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    ".github",
+    ".gitignore",
+    ".goreleaser.yaml",
+    "README.md",
+    "ScopeSentryConfig.yaml",
+    "build",
+    "cmd",
+    "dockerfile",
+    "go.mod",
+    "go.sum",
+    "go.work.sum",
+    "internal"
+   ]
+  },
+  "verdict": "RISKY",
+  "reason": "根目录无 compose，需进入子目录（属该仓库设计）"
+ },
+ {
+  "slug": "cyberedge",
+  "repo": "Symph0nia/CyberEdge",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "compose.yaml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 compose.yaml"
+ },
+ {
+  "slug": "linglong",
+  "repo": "awake1t/linglong",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "docker-compose.yml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 docker-compose.yml"
+ },
+ {
+  "slug": "gosint",
+  "repo": "1in9e/gosint",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "docker-compose.yml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 docker-compose.yml"
+ },
+ {
+  "slug": "slack",
+  "repo": "qiwentaidi/Slack",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v2.2.9",
+   "assets": 6,
+   "published": "2026-03-20"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v2.2.9（6 个产物，2026-03-20）"
+ },
+ {
+  "slug": "yakit",
+  "repo": "yaklang/yakit",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v1.4.9-0925",
+   "assets": 10,
+   "published": "2026-09-24"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v1.4.9-0925（10 个产物，2026-09-24）"
+ },
+ {
+  "slug": "vulfocus",
+  "repo": "fofapro/vulfocus",
+  "method": "docker",
+  "image": "vulfocus/vulfocus",
+  "dockerhub": {
+   "ok": true
+  },
+  "verdict": "USABLE",
+  "reason": "镜像 vulfocus/vulfocus 存在"
+ },
+ {
+  "slug": "vulhub",
+  "repo": "vulhub/vulhub",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    ".autocorrectrc",
+    ".claude",
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    ".gitmodules",
+    "1panel",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.md",
+    "README.zh-cn.md"
+   ]
+  },
+  "verdict": "RISKY",
+  "reason": "根目录无 compose，需进入子目录（属该仓库设计）"
+ },
+ {
+  "slug": "metarget",
+  "repo": "Metarget/metarget",
+  "method": "cli",
+  "pkg": "metarget",
+  "pypi": {
+   "ok": false,
+   "status": 404
+  },
+  "verdict": "BROKEN",
+  "reason": "PyPI metarget 不存在"
+ },
+ {
+  "slug": "goad",
+  "repo": "Orange-Cyberdefense/GOAD",
+  "method": "iac",
+  "build_files": [],
+  "verdict": "RISKY",
+  "reason": "未识别构建入口"
+ },
+ {
+  "slug": "terraformgoat",
+  "repo": "HXSecurity/TerraformGoat",
+  "method": "iac",
+  "build_files": [],
+  "verdict": "RISKY",
+  "reason": "未识别构建入口"
+ },
+ {
+  "slug": "cicd-goat",
+  "repo": "cider-security-research/cicd-goat",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "docker-compose.yaml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 docker-compose.yaml"
+ },
+ {
+  "slug": "dnslog-platform-golang",
+  "repo": "yumusb/DNSLog-Platform-Golang",
+  "method": "source",
+  "build_files": [
+   "go.mod",
+   "main.go"
+  ],
+  "verdict": "USABLE",
+  "reason": "存在构建入口 go.mod,main.go"
+ },
+ {
+  "slug": "gophish",
+  "repo": "gophish/gophish",
+  "method": "docker",
+  "image": "gophish/gophish",
+  "dockerhub": {
+   "ok": true
+  },
+  "verdict": "USABLE",
+  "reason": "镜像 gophish/gophish 存在"
+ },
+ {
+  "slug": "proxy_pool",
+  "repo": "jhao104/proxy_pool",
+  "method": "docker-compose",
+  "compose": {
+   "ok": true,
+   "files": [
+    "docker-compose.yml"
+   ]
+  },
+  "verdict": "USABLE",
+  "reason": "仓库根目录存在 docker-compose.yml"
+ },
+ {
+  "slug": "rotateproxy",
+  "repo": "akkuman/rotateproxy",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v0.8.3",
+   "assets": 9,
+   "published": "2025-05-20"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v0.8.3（9 个产物，2025-05-20）"
+ },
+ {
+  "slug": "deadpool",
+  "repo": "thinkoaa/Deadpool",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v1.8",
+   "assets": 7,
+   "published": "2026-05-06"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v1.8（7 个产物，2026-05-06）"
+ },
+ {
+  "slug": "frp",
+  "repo": "fatedier/frp",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v0.71.0",
+   "assets": 18,
+   "published": "2026-08-14"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v0.71.0（18 个产物，2026-08-14）"
+ },
+ {
+  "slug": "nps",
+  "repo": "ehang-io/nps",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v0.26.10",
+   "assets": 35,
+   "published": "2021-04-08"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v0.26.10（35 个产物，2021-04-08）"
+ },
+ {
+  "slug": "goproxy",
+  "repo": "snail007/goproxy",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v15.3",
+   "assets": 50,
+   "published": "2026-08-17"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v15.3（50 个产物，2026-08-17）"
+ },
+ {
+  "slug": "axiom",
+  "repo": "pry0cc/axiom",
+  "method": "iac",
+  "build_files": [],
+  "verdict": "RISKY",
+  "reason": "未识别构建入口"
+ },
+ {
+  "slug": "f8x",
+  "repo": "ffffffff0x/f8x",
+  "method": "script",
+  "script_url": "https://raw.githubusercontent.com/ffffffff0x/f8x/main/install.sh",
+  "verdict": "BROKEN",
+  "reason": "安装脚本 HTTP 404"
+ },
+ {
+  "slug": "ehoney",
+  "repo": "seccome/Ehoney",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    ".gitattributes",
+    ".github",
+    ".gitignore",
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "LICENSE",
+    "README-EN.md",
+    "README.md",
+    "SECURITY.md",
+    "agent",
+    "configs",
+    "controllers"
+   ]
+  },
+  "verdict": "RISKY",
+  "reason": "根目录无 compose，需进入子目录（属该仓库设计）"
+ },
+ {
+  "slug": "darkangel",
+  "repo": "Bywalks/DarkAngel",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "README.md",
+    "README_CN.md",
+    "THANKS.md",
+    "darkangel.py",
+    "h1domain",
+    "requirements.txt",
+    "subdomain",
+    "vcommon",
+    "vconfig",
+    "vulscan"
+   ]
+  },
+  "verdict": "RISKY",
+  "reason": "根目录无 compose，需进入子目录（属该仓库设计）"
+ },
+ {
+  "slug": "dongtai",
+  "repo": "HXSecurity/DongTai",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    ".batect",
+    ".dockerignore",
+    ".github",
+    ".gitignore",
+    "CHANGELOG.md",
+    "CHANGELOG_CN.md",
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "LICENSE.txt",
+    "Pipfile",
+    "Pipfile.lock",
+    "README-zh.md"
+   ]
+  },
+  "verdict": "RISKY",
+  "reason": "根目录无 compose，需进入子目录（属该仓库设计）"
+ },
+ {
+  "slug": "dependencycheck",
+  "repo": "jeremylong/DependencyCheck",
+  "method": "cli",
+  "verdict": "RISKY",
+  "reason": "官方分发包，非 PyPI/npm（需官网下载）"
+ },
+ {
+  "slug": "xray",
+  "repo": "chaitin/xray",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "xpoc-0.1.0",
+   "assets": 5,
+   "published": "2024-07-19"
+  },
+  "verdict": "USABLE",
+  "reason": "Release xpoc-0.1.0（5 个产物，2024-07-19）"
+ },
+ {
+  "slug": "kubehound",
+  "repo": "DataDog/KubeHound",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v1.6.7",
+   "assets": 17,
+   "published": "2025-11-14"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v1.6.7（17 个产物，2025-11-14）"
+ },
+ {
+  "slug": "watchvuln",
+  "repo": "zema1/watchvuln",
+  "method": "binary",
+  "release": {
+   "ok": true,
+   "tag": "v2.7.0",
+   "assets": 6,
+   "published": "2025-11-14"
+  },
+  "verdict": "USABLE",
+  "reason": "Release v2.7.0（6 个产物，2025-11-14）"
+ },
+ {
+  "slug": "ngcbot",
+  "repo": "ngc660sec/NGCBot",
+  "method": "docker-compose",
+  "compose": {
+   "ok": false,
+   "reason": "根目录无 compose 文件",
+   "files": [
+    "README.MD"
+   ]
+  },
+  "verdict": "BROKEN",
+  "reason": "根目录无 compose 文件"
+ },
+ {
+  "slug": "seccrawler",
+  "repo": "Le0nsec/SecCrawler",
+  "method": "source",
+  "build_files": [
+   "go.mod",
+   "main.go"
+  ],
+  "verdict": "USABLE",
+  "reason": "存在构建入口 go.mod,main.go"
+ }
+]

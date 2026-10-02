@@ -78,7 +78,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 8868,
-    "pushedAt": "2026-09-30T10:31:09Z"
+    "pushedAt": "2026-09-30T10:31:09Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -116,7 +117,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 998,
-    "pushedAt": "2025-06-26T12:28:39Z"
+    "pushedAt": "2025-06-26T12:28:39Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -131,7 +133,7 @@
    "docs_url": "https://github.com/hanc00l/nemo_go",
    "deploy": {
     "method": "docker-compose",
-    "command": "git clone https://github.com/hanc00l/nemo_go && cd nemo_go && docker compose up -d",
+    "command": "git clone https://github.com/hanc00l/nemo_go && cd nemo_go/v3 && docker compose up -d",
     "compose_file": null,
     "image": null
    },
@@ -154,8 +156,11 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 2095,
-    "pushedAt": "2026-08-15T12:05:30Z"
-   }
+    "pushedAt": "2026-08-15T12:05:30Z",
+    "deployVerified": "2026-10-03",
+    "deployNote": "根目录无 compose，需进入子目录（属该仓库设计）"
+   },
+   "note": "compose 文件在 v3/ 子目录，需在 v3 下执行。"
   },
   {
    "slug": "scopesentry-scan",
@@ -192,7 +197,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 224,
-    "pushedAt": "2026-06-10T15:48:33Z"
+    "pushedAt": "2026-06-10T15:48:33Z",
+    "deployNote": "根目录无 compose，需进入子目录（属该仓库设计）"
    }
   },
   {
@@ -230,7 +236,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 613,
-    "pushedAt": "2026-08-12T02:12:28Z"
+    "pushedAt": "2026-08-12T02:12:28Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -268,7 +275,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1850,
-    "pushedAt": "2022-04-19T01:16:33Z"
+    "pushedAt": "2022-04-19T01:16:33Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -306,7 +314,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 429,
-    "pushedAt": "2023-03-03T17:11:01Z"
+    "pushedAt": "2023-03-03T17:11:01Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -342,7 +351,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1070,
-    "pushedAt": "2026-04-29T08:57:44Z"
+    "pushedAt": "2026-04-29T08:57:44Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -380,7 +390,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 7783,
-    "pushedAt": "2026-09-30T09:26:49Z"
+    "pushedAt": "2026-09-30T09:26:49Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -418,7 +429,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 3500,
-    "pushedAt": "2025-09-09T12:58:16Z"
+    "pushedAt": "2025-09-09T12:58:16Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -454,7 +466,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 21310,
-    "pushedAt": "2026-09-18T17:56:42Z"
+    "pushedAt": "2026-09-18T17:56:42Z",
+    "deployNote": "根目录无 compose，需进入子目录（属该仓库设计）"
    }
   },
   {
@@ -468,8 +481,8 @@
    "repo": "Metarget/metarget",
    "docs_url": "https://github.com/Metarget/metarget",
    "deploy": {
-    "method": "cli",
-    "command": "pip3 install metarget && metarget cnv install cve-2019-5736",
+    "method": "source",
+    "command": "git clone https://github.com/Metarget/metarget && cd metarget && pip3 install -r requirements.txt && python3 metarget cnv install cve-2019-5736",
     "compose_file": null,
     "image": null
    },
@@ -490,8 +503,10 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1419,
-    "pushedAt": "2026-07-22T06:44:06Z"
-   }
+    "pushedAt": "2026-07-22T06:44:06Z",
+    "deployVerified": "2026-10-03"
+   },
+   "note": "PyPI 无 metarget 包，官方安装方式为克隆后本地安装依赖运行。"
   },
   {
    "slug": "goad",
@@ -526,7 +541,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 8396,
-    "pushedAt": "2026-03-12T06:57:44Z"
+    "pushedAt": "2026-03-12T06:57:44Z",
+    "deployNote": "未识别构建入口"
    }
   },
   {
@@ -562,7 +578,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 640,
-    "pushedAt": "2022-11-30T08:17:23Z"
+    "pushedAt": "2022-11-30T08:17:23Z",
+    "deployNote": "未识别构建入口"
    }
   },
   {
@@ -600,7 +617,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 2312,
-    "pushedAt": "2024-07-14T11:26:38Z"
+    "pushedAt": "2024-07-14T11:26:38Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -639,7 +657,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 437,
-    "pushedAt": "2021-12-30T03:29:29Z"
+    "pushedAt": "2021-12-30T03:29:29Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -678,7 +697,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 14284,
-    "pushedAt": "2024-09-23T04:24:43Z"
+    "pushedAt": "2024-09-23T04:24:43Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -716,7 +736,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 23741,
-    "pushedAt": "2026-06-15T14:36:35Z"
+    "pushedAt": "2026-06-15T14:36:35Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -754,7 +775,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 867,
-    "pushedAt": "2025-05-20T01:36:04Z"
+    "pushedAt": "2025-05-20T01:36:04Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -790,7 +812,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 725,
-    "pushedAt": "2026-05-06T01:53:44Z"
+    "pushedAt": "2026-05-06T01:53:44Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -829,7 +852,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 109718,
-    "pushedAt": "2026-09-15T05:55:33Z"
+    "pushedAt": "2026-09-15T05:55:33Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -868,7 +892,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 34232,
-    "pushedAt": "2024-05-30T03:51:08Z"
+    "pushedAt": "2024-05-30T03:51:08Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -906,7 +931,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 17141,
-    "pushedAt": "2026-08-17T05:46:30Z"
+    "pushedAt": "2026-08-17T05:46:30Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -944,7 +970,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 4429,
-    "pushedAt": "2024-09-30T17:18:52Z"
+    "pushedAt": "2024-09-30T17:18:52Z",
+    "deployNote": "未识别构建入口"
    }
   },
   {
@@ -959,7 +986,7 @@
    "docs_url": "https://github.com/ffffffff0x/f8x",
    "deploy": {
     "method": "script",
-    "command": "bash -c \"$(curl -fsSL https://raw.githubusercontent.com/ffffffff0x/f8x/main/install.sh)\" 或克隆后运行",
+    "command": "git clone https://github.com/ffffffff0x/f8x && cd f8x && bash f8x",
     "compose_file": null,
     "image": null
    },
@@ -980,8 +1007,10 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 2164,
-    "pushedAt": "2026-07-25T21:19:17Z"
-   }
+    "pushedAt": "2026-07-25T21:19:17Z",
+    "deployVerified": "2026-10-03"
+   },
+   "note": "原 install.sh 直链已失效(404)，当前入口为仓库内的 f8x 脚本。"
   },
   {
    "slug": "ehoney",
@@ -1018,7 +1047,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1271,
-    "pushedAt": "2023-10-17T06:52:50Z"
+    "pushedAt": "2023-10-17T06:52:50Z",
+    "deployNote": "根目录无 compose，需进入子目录（属该仓库设计）"
    }
   },
   {
@@ -1056,7 +1086,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 604,
-    "pushedAt": "2023-08-17T07:38:29Z"
+    "pushedAt": "2023-08-17T07:38:29Z",
+    "deployNote": "根目录无 compose，需进入子目录（属该仓库设计）"
    }
   },
   {
@@ -1071,7 +1102,7 @@
    "docs_url": "https://github.com/HXSecurity/DongTai",
    "deploy": {
     "method": "docker-compose",
-    "command": "git clone https://github.com/HXSecurity/DongTai && cd DongTai && docker compose up -d",
+    "command": "git clone https://github.com/HXSecurity/DongTai && cd DongTai/deploy/docker-compose && docker compose up -d",
     "compose_file": null,
     "image": null
    },
@@ -1095,8 +1126,11 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1311,
-    "pushedAt": "2025-05-22T08:23:05Z"
-   }
+    "pushedAt": "2025-05-22T08:23:05Z",
+    "deployVerified": "2026-10-03",
+    "deployNote": "根目录无 compose，需进入子目录（属该仓库设计）"
+   },
+   "note": "compose 文件在 deploy/docker-compose/ 下，根目录直接 up 会失败。"
   },
   {
    "slug": "dependencycheck",
@@ -1135,7 +1169,8 @@
     "stars": 55,
     "pushedAt": "2025-09-27T20:17:48Z",
     "archived": true,
-    "note": "上游仓库已归档（archived），不再更新，仍可只读使用。"
+    "note": "上游仓库已归档（archived），不再更新，仍可只读使用。",
+    "deployNote": "官方分发包，非 PyPI/npm（需官网下载）"
    }
   },
   {
@@ -1173,7 +1208,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 11753,
-    "pushedAt": "2024-10-29T16:15:53Z"
+    "pushedAt": "2024-10-29T16:15:53Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -1209,7 +1245,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1004,
-    "pushedAt": "2026-09-30T06:36:18Z"
+    "pushedAt": "2026-09-30T06:36:18Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -1247,7 +1284,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 1897,
-    "pushedAt": "2026-09-07T12:35:50Z"
+    "pushedAt": "2026-09-07T12:35:50Z",
+    "deployVerified": "2026-10-03"
    }
   },
   {
@@ -1262,7 +1300,7 @@
    "docs_url": "https://github.com/ngc660sec/NGCBot",
    "deploy": {
     "method": "docker-compose",
-    "command": "git clone https://github.com/ngc660sec/NGCBot && cd NGCBot && 使用仓库内 docker-compose 部署",
+    "command": "",
     "compose_file": null,
     "image": null
    },
@@ -1287,8 +1325,10 @@
     "stars": 3291,
     "pushedAt": "2025-05-25T03:51:19Z",
     "archived": true,
-    "note": "上游仓库已归档（archived），不再更新，仍可只读使用。"
-   }
+    "note": "上游仓库已归档（archived），不再更新，仍可只读使用。",
+    "deployBroken": true
+   },
+   "note": "上游仓库已归档且仓库内仅剩 README.MD，无 compose / 无 Release 产物，一键部署入口已不可用；此处仅作情报索引保留。"
   },
   {
    "slug": "seccrawler",
@@ -1325,7 +1365,8 @@
     "lastCheck": "2026-10-03",
     "alive": true,
     "stars": 938,
-    "pushedAt": "2023-12-24T16:26:56Z"
+    "pushedAt": "2023-12-24T16:26:56Z",
+    "deployVerified": "2026-10-03"
    }
   }
  ]

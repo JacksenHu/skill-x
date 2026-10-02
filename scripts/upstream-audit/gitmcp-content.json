@@ -1,0 +1,86 @@
+[
+ {
+  "repo": "danielmiessler/SecLists",
+  "verdict": "BROKEN",
+  "reason": "握手失败 0",
+  "verdict_label": "BROKEN"
+ },
+ {
+  "repo": "swisskyrepo/PayloadsAllTheThings",
+  "tools": [
+   "fetch_repo_docs",
+   "search_repo_docs",
+   "search_repo_code",
+   "fetch_generic_url_content"
+  ],
+  "calls": [
+   {
+    "q": "PayloadsAllTheThings",
+    "len": 4198,
+    "preview": "# Payloads All The Things\n\nA list of useful payloads and bypasses for Web Application Security.\nFeel free to improve with your payloads and techniques!\n\nYou can also contribute wit"
+   },
+   {
+    "q": "XSS",
+    "len": 4198,
+    "preview": "# Payloads All The Things\n\nA list of useful payloads and bypasses for Web Application Security.\nFeel free to improve with your payloads and techniques!\n\nYou can also contribute wit"
+   }
+  ],
+  "verdict": "REAL",
+  "reason": "返回 4198 字节实质内容",
+  "verdict_label": "REAL"
+ },
+ {
+  "repo": "HackTricks-wiki/hacktricks",
+  "verdict": "BROKEN",
+  "reason": "握手失败 0",
+  "verdict_label": "BROKEN"
+ },
+ {
+  "repo": "vulhub/vulhub",
+  "tools": [
+   "fetch_vulhub_documentation",
+   "search_vulhub_documentation",
+   "search_vulhub_code",
+   "fetch_generic_url_content"
+  ],
+  "calls": [
+   {
+    "q": "vulhub",
+    "len": 0,
+    "preview": ""
+   },
+   {
+    "q": "log4j",
+    "len": 5242,
+    "preview": "<!-- markdownlint-disable first-line-heading -->\n<p align=\"center\">\n  <a href=\"https://vulhub.org\" target=\"_blank\"><img src=\".github/assets/banner.png\" alt=\"Vulhub\" height=\"auto\" /"
+   }
+  ],
+  "verdict": "REAL",
+  "reason": "返回 5242 字节实质内容",
+  "verdict_label": "REAL"
+ },
+ {
+  "repo": "slowmist/MCP-Security-Checklist",
+  "tools": [
+   "fetch_MCP_Security_docs",
+   "search_MCP_Security_docs",
+   "search_MCP_Security_code",
+   "fetch_generic_url_content"
+  ],
+  "calls": [
+   {
+    "q": "MCP-Security-Checklist",
+    "len": 25555,
+    "preview": "# MCP Security Checklist: A Security Guide for the AI Tool Ecosystem\n\n[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/slowmist_team.svg?style=social&label=Foll"
+   },
+   {
+    "q": "tool poisoning",
+    "len": 25555,
+    "preview": "# MCP Security Checklist: A Security Guide for the AI Tool Ecosystem\n\n[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/slowmist_team.svg?style=social&label=Foll"
+   }
+  ],
+  "verdict": "REAL",
+  "reason": "返回 25555 字节实质内容",
+  "verdict_label": "REAL"
+ }
+]
