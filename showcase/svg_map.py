@@ -182,6 +182,22 @@ def render_file(yaml_path, out_path, title=""):
     return out_path
 
 
+def mindmap_tree(root_label, branches):
+    """(分支名, [叶节点...]) -> 树结构,供 render_svg 直接渲染。"""
+    return {
+        "label": root_label,
+        "children": [
+            {"label": bl, "children": [{"label": leaf, "children": []} for leaf in leaves]}
+            for bl, leaves in branches
+        ],
+    }
+
+
+def mmap_html(root_label, branches, title=""):
+    """生成内联思维导图 SVG 的 HTML 片段。"""
+    return f'<div class="mmap">{render_svg(mindmap_tree(root_label, branches), title)}</div>'
+
+
 if __name__ == "__main__":
     if len(sys.argv) >= 3:
         render_file(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "")

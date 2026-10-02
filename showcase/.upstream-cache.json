@@ -1,13 +1,13 @@
 {
- "_ts": 1790841668.8550138,
+ "_ts": 1790943586.650421,
  "repos": {
   "addyosmani/agent-skills": {
-   "stars": 100211,
-   "forks": 10528,
-   "pushed": "2026-09-26"
+   "stars": 100436,
+   "forks": 10553,
+   "pushed": "2026-10-02"
   },
   "dhicoc/dsh-reverse-skill": {
-   "stars": 183,
+   "stars": 187,
    "forks": 24,
    "pushed": "2026-09-30"
   },
@@ -17,7 +17,7 @@
    "pushed": "2026-06-30"
   },
   "Nimbleway/agent-skills": {
-   "stars": 56,
+   "stars": 57,
    "forks": 18,
    "pushed": "2026-09-25"
   },
@@ -27,44 +27,49 @@
    "pushed": "2026-09-02"
   },
   "mukul975/Anthropic-Cybersecurity-Skills": {
-   "stars": 33638,
-   "forks": 4081,
+   "stars": 33707,
+   "forks": 4088,
    "pushed": "2026-08-31"
   },
   "zhaoxuya520/reverse-skill": {
-   "stars": 39153,
-   "forks": 5460,
+   "stars": 39314,
+   "forks": 5491,
    "pushed": "2026-09-22"
   },
   "elementalsouls/Claude-BugHunter": {
-   "stars": 4736,
+   "stars": 4745,
    "forks": 711,
-   "pushed": "2026-09-30"
+   "pushed": "2026-10-02"
   },
   "SnailSploit/Claude-Red": {
-   "stars": 7147,
-   "forks": 939,
+   "stars": 7183,
+   "forks": 944,
    "pushed": "2026-09-19"
   },
   "ljagiello/ctf-skills": {
-   "stars": 3378,
-   "forks": 393,
+   "stars": 3383,
+   "forks": 394,
    "pushed": "2026-09-13"
   },
   "yaklang/hack-skills": {
-   "stars": 2343,
-   "forks": 314,
+   "stars": 2349,
+   "forks": 315,
    "pushed": "2026-09-13"
   },
   "newliver666/apk-reverse": {
-   "stars": 3109,
-   "forks": 630,
+   "stars": 3157,
+   "forks": 643,
    "pushed": "2026-09-24"
   },
   "rehan-remade/universal-modder": {
-   "stars": 1051,
-   "forks": 76,
+   "stars": 1802,
+   "forks": 132,
    "pushed": "2026-09-30"
+  },
+  "brucesongs/kali-claw": {
+   "stars": 72,
+   "forks": 19,
+   "pushed": "2026-09-09"
   }
  }
 }

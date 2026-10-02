@@ -21,7 +21,7 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from svg_map import parse_map, render_svg  # noqa: E402
+from svg_map import parse_map, render_svg, mmap_html  # noqa: E402
 import apidocs  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1403,6 +1403,35 @@ def tags_html(m):
     return f'<div class="meta">{chips}</div>'
 
 
+def _mcp_mindmap(m):
+    risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
+    is_plugin = m.get("entryType", "mcp") == "plugin"
+    kind = "插件指路" if is_plugin else ("远程服务" if m.get("kind") == "remote" else "本地 stdio")
+    cat = m.get("category", "") or "未分类"
+    branches = [("概览", [CATEGORIES.get(cat, cat), f"v{m.get('version', '')}", kind, risk_label.get(m.get("riskLevel"), m.get("riskLevel", "medium"))])]
+    tools = m.get("tools") or []
+    if tools:
+        branches.append(("提供工具", [t.get("name", "") for t in tools[:8]]))
+    cases = m.get("useCases") or []
+    if cases:
+        branches.append(("使用场景", [c.get("title", "")[:24] for c in cases[:6]]))
+    tags = m.get("tags") or []
+    if tags:
+        branches.append(("标签", tags[:8]))
+    return mmap_html(m.get("title", m.get("name", "")), branches, "结构导图")
+
+
+def _pack_mindmap(p):
+    pers = p.get("persona") or {}
+    scene = pers.get("scene", "") or "未分类"
+    branches = [("人设", [pers.get("role", "") or "—", CATEGORIES.get(scene, scene)])]
+    members = p.get("members") or []
+    if members:
+        branches.append(("成员编队", [(m.get("title") or m.get("ref", ""))[:24] for m in members[:10]]))
+    branches.append(("安装", [f"meta-skill: pack-{p.get('slug', '')}", "GET /v0/packs/" + p.get("slug", "")]))
+    return mmap_html(p.get("displayName", ""), branches, "结构导图")
+
+
 def render_mcp_detail(m):
     risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
     is_plugin = m.get("entryType", "mcp") == "plugin"
@@ -1475,6 +1504,7 @@ def render_mcp_detail(m):
   <p class="hint-dim">{esc(m['riskNote'])}</p>
 </div>
 {conn_html}
+{_mcp_mindmap(m)}
 {tools_html(m)}{cases_html(m)}{tags_html(m)}'''
     nav_key = "mcp" if m.get("entryType", "mcp") == "mcp" else "plugins"
     return page_shell(m["title"], m["name"], nav_key, inner)
@@ -1686,6 +1716,7 @@ def render_pack_detail(p):
   <dt data-zh="上游" data-en="Upstream">上游</dt><dd>{upstream_html}</dd>
 </dl>
 {deg_html}
+{_pack_mindmap(p)}
 <h2 data-zh="成员编队" data-en="Member squad">成员编队 <span class="n">{len(p['members'])} 个 · 按剧本顺序安装</span></h2>
 <div class="grid">{members_html}</div>
 <h2 data-zh="协作剧本" data-en="Collaboration script">协作剧本 <span class="n">meta-skill 正文</span></h2>

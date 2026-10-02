@@ -15,6 +15,9 @@ DIST = SHOWCASE / "dist"
 TS = ROOT / "tools-store"
 DETAIL_DIR = DIST / "tools"
 
+sys.path.insert(0, str(SHOWCASE))
+from svg_map import mmap_html  # noqa: E402
+
 CAT_COLORS = {
     "recon": "data", "vuln": "pentest", "lab": "dev-workflow",
     "tunnel": "malware", "defense": "forensics", "intel": "reverse-engineering",
@@ -81,6 +84,18 @@ def meta_html(t, cat_meta):
     if ports:
         parts.append(f'<span class="tag">端口 {esc(ports)}</span>')
     return f'<div class="meta">{"".join(parts)}</div>'
+
+
+def tool_mindmap(t, cat_meta):
+    cat = t.get("category_id", "")
+    cm = cat_meta.get(cat, {})
+    deploy = (t.get("deploy") or {}).get("method", "") or "—"
+    form = t.get("form", "") or "—"
+    ports = ",".join(str(x) for x in (t.get("ports") or []))
+    branches = [("概览", [cm.get("name", cat) or "未分类", deploy, form, (f"端口 {ports}" if ports else "无固定端口")])]
+    repo = t.get("repo", "") or "—"
+    branches.append(("上游", [repo]))
+    return mmap_html(t.get("name_zh") or t.get("name", ""), branches, "结构导图")
 
 
 def deploy_block(t):
@@ -166,6 +181,7 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
 <h3 data-zh="一键部署" data-en="Deploy">一键部署</h3>
 {cmd or '<p class="hint-dim">该工具无标准命令行部署入口。</p>'}
 {table}
+{tool_mindmap(t, cat_meta)}
 </div>
 {footer()}
 <script src="/assets/app.js?v={asset_ver}"></script>
