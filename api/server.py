@@ -41,7 +41,7 @@ RATE_LIMIT = 60  # 次/分钟/IP
 UA = {"User-Agent": "skill-x-api/1.0"}
 _rate = {}
 
-VERSION = "2026-09-28.2"
+VERSION = "2026-10-02.3"
 VALID_KEY = re.compile(r"^[\w./-]{1,120}$")
 
 CAT_KW = {
@@ -583,7 +583,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json({"error": "server not found or not reviewed"}, 404)
             return self._json(d)
         if path == "/api/recommend":
-            q = urllib.parse.parse_qs(urlparse(self.path).query).get("q", [""])[0]
+            qs = urllib.parse.parse_qs(urlparse(self.path).query)
+            q = (qs.get("q") or qs.get("query") or [""])[0]
             if not q.strip():
                 return self._json({"error": "missing query param q"}, 400)
             res = recommend(q)
@@ -663,18 +664,19 @@ class Handler(BaseHTTPRequestHandler):
             bump(f"pack:{slug}")
             return self._json({"ok": True, "slug": slug, "n": all_counts().get(f"pack:{slug}", 0)})
         if path == "/api/recommend":
-            q = str(body.get("query", "")).strip()
+            q = str(body.get("query") or body.get("q") or "").strip()
             if not q:
                 return self._json({"error": "missing query"}, 400)
             res = recommend(q)
             if res is None:
                 return self._json({"error": "site data unavailable"}, 503)
             return self._json({"query": q, "results": res})
+        action = str(body.get("action", "copy")).strip()[:24]
         skill = str(body.get("skill", "")).strip()
         if not skill or not VALID_KEY.match(skill):
             return self._json({"error": "bad skill"}, 400)
         bump(skill)
-        self._json({"ok": True, "skill": skill, "n": all_counts().get(skill, 0)})
+        self._json({"ok": True, "skill": skill, "action": action, "n": all_counts().get(skill, 0)})
 
     def _dl(self, ns: str, skill: str):
         suite = find_suite(ns)
