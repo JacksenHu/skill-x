@@ -98,6 +98,25 @@ def tool_mindmap(t, cat_meta):
     return mmap_html(t.get("name_zh") or t.get("name", ""), branches, "结构导图")
 
 
+def tool_intro(t, cat_meta):
+    cat = t.get("category_id", "")
+    cm = cat_meta.get(cat, {})
+    cat_name = cm.get("name", cat) or "未分类"
+    deploy = (t.get("deploy") or {}).get("method", "") or "—"
+    form = t.get("form", "") or "—"
+    out = f"「{t.get('name_zh') or t.get('name', '')}」（{t.get('name', '')}）是一款{cat_name}方向的{form}形态安全工具，部署方式为{deploy}。"
+    ports = t.get("ports") or []
+    if ports:
+        out += f" 默认端口 {', '.join(str(x) for x in ports)}。"
+    repo = t.get("repo", "")
+    if repo:
+        out += f" 上游仓库 {repo}。"
+    desc = t.get("description", "") or t.get("summary", "")
+    if desc:
+        out += f" {desc.strip('。')}。"
+    return out
+
+
 def deploy_block(t):
     command = (t.get("deploy") or {}).get("command", "")
     if not command:
@@ -176,7 +195,7 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
 <div class="wrap">
 <h2>{esc(name_zh)} <span class="en-name">{esc(name)}</span></h2>
 {meta_html(t, cat_meta)}
-<p class="hint-dim">{esc(description)}</p>
+<p class="desc">{esc(tool_intro(t, cat_meta))}</p>
 <div class="chips">{"".join(chips)}</div>
 <h3 data-zh="一键部署" data-en="Deploy">一键部署</h3>
 {cmd or '<p class="hint-dim">该工具无标准命令行部署入口。</p>'}

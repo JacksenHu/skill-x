@@ -1432,6 +1432,58 @@ def _pack_mindmap(p):
     return mmap_html(p.get("displayName", ""), branches, "结构导图")
 
 
+def _mcp_intro(m):
+    risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
+    is_plugin = m.get("entryType", "mcp") == "plugin"
+    kind = "插件/扩展指路牌" if is_plugin else ("远程 MCP 服务" if m.get("kind") == "remote" else "本地 stdio MCP 包")
+    cat = CATEGORIES.get(m.get("category", ""), m.get("category", "") or "未分类")
+    out = f"「{m.get('title', m.get('name', ''))}」（{m.get('name', '')}）是一个{kind}，归类于「{cat}」，版本 v{m.get('version', '')}，风险等级{risk_label.get(m.get('riskLevel'), m.get('riskLevel', 'medium'))}。"
+    desc = m.get("description-zh") or m.get("description", "")
+    if desc:
+        out += f" {desc.strip('。')}。"
+    tools = m.get("tools") or []
+    if tools:
+        names = "、".join(t.get("name", "") for t in tools[:5])
+        more = f" 等 {len(tools)} 个" if len(tools) > 5 else ""
+        out += f" 它对外提供 {len(tools)} 个工具：{names}{more}。"
+    cases = m.get("useCases") or []
+    if cases:
+        titles = "、".join(c.get("title", "") for c in cases[:4])
+        out += f" 典型使用场景包括：{titles}。"
+    if is_plugin:
+        clients = ", ".join((m.get("install") or {}).get("clients") or [])
+        if clients:
+            out += f" 支持客户端：{clients}。"
+    elif m.get("kind") == "remote":
+        rem = (m.get("remotes") or [{}])[0]
+        url = rem.get("url", "")
+        if url:
+            out += f" 通过远程端点 {url} 连接，无需本地安装。"
+    else:
+        out += " 以本地 stdio 方式运行，安装后由客户端拉起第三方进程。"
+    if m.get("riskNote"):
+        out += f" {m['riskNote']}"
+    return out
+
+
+def _pack_intro(p):
+    pers = p.get("persona") or {}
+    scene = CATEGORIES.get(pers.get("scene", ""), pers.get("scene", "") or "未分类")
+    out = f"「{p.get('displayName', '')}」（{p.get('displayNameEn', '')}）是一个{scene}方向的专家团，角色定位为「{pers.get('role', '')}」。"
+    if pers.get("tagline"):
+        out += f" 一句话定位：{pers.get('tagline', '')}。"
+    if pers.get("intro"):
+        out += f" {pers['intro'].strip('。')}。"
+    members = p.get("members") or []
+    if members:
+        names = "、".join((m.get("title") or m.get("ref", "")) for m in members[:5])
+        more = f" 等 {len(members)} 个" if len(members) > 5 else ""
+        out += f" 成员编队共 {len(members)} 个（{names}{more}），按协作剧本顺序安装执行。"
+    if p.get("summary"):
+        out += f" {p['summary'].strip('。')}。"
+    return out
+
+
 def render_mcp_detail(m):
     risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
     is_plugin = m.get("entryType", "mcp") == "plugin"
@@ -1489,7 +1541,7 @@ def render_mcp_detail(m):
     inner = f'''<div class="detail">
   <div class="card-head"><h1>{esc(m['title'])}</h1><span class="badge ext">{badge} · {kind_text}</span></div>
   <div class="en-name">{esc(m['name'])}</div>
-  <p class="desc"><span data-zh="{esc(m['description-zh'])}" data-en="{esc(m['description'])}">{esc(m['description-zh'])}</span></p>
+  <p class="desc"><span data-zh="{esc(_mcp_intro(m))}" data-en="{esc(m['description'])}">{esc(_mcp_intro(m))}</span></p>
   <dl class="kv">
     <dt data-zh="分类" data-en="Category">分类</dt><dd>{esc(CATEGORIES.get(m['category'], m['category']))}</dd>
     <dt data-zh="版本" data-en="Version">版本</dt><dd>v{esc(m['version'])}</dd>
@@ -1704,7 +1756,7 @@ def render_pack_detail(p):
     <div class="en-name">{esc(p['displayNameEn'])} · {esc(p['slug'])}</div>
     <p class="persona-role"><span data-zh="{esc(pers.get('role',''))}" data-en="{esc(pers.get('roleEn',''))}">{esc(pers.get('role',''))}</span></p>
     <p class="persona-tagline"><span data-zh="{esc(pers.get('tagline',''))}" data-en="{esc(pers.get('taglineEn',''))}">{esc(pers.get('tagline',''))}</span></p>
-    <p class="desc"><span data-zh="{esc(pers.get('intro',''))}" data-en="{esc(pers.get('introEn',''))}">{esc(pers.get('intro',''))}</span></p>
+    <p class="desc"><span data-zh="{esc(_pack_intro(p))}" data-en="{esc(pers.get('introEn',''))}">{esc(_pack_intro(p))}</span></p>
   </div>
 </div>
 <dl class="kv">
