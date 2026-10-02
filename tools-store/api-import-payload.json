@@ -76,39 +76,6 @@
       ]
     },
     {
-      "slug": "arl",
-      "name": "ARL",
-      "name_zh": "资产灯塔",
-      "category_id": "recon",
-      "summary": "灯塔 ARL：网络资产侦察与管理平台，支持资产发现、指纹识别、端口扫描与持续监控。",
-      "description": "灯塔 ARL：网络资产侦察与管理平台，支持资产发现、指纹识别、端口扫描与持续监控。",
-      "detail_url": "/tools/arl.html",
-      "repo": "TophantTechnology/ARL",
-      "docs_url": "https://github.com/TophantTechnology/ARL",
-      "deploy": {
-        "method": "docker",
-        "command": "git clone https://github.com/TophantTechnology/ARL && cd ARL/docker && docker compose up -d",
-        "compose_file": null,
-        "image": null
-      },
-      "ports": [
-        5003
-      ],
-      "default_port": 5003,
-      "form": "web",
-      "credentials": [],
-      "gitmcp": {
-        "enabled": true,
-        "url": "https://gitmcp.io/TophantTechnology/ARL"
-      },
-      "labels": [
-        "recon",
-        "docker",
-        "web"
-      ],
-      "note": "原始仓库地址若已变更，可用镜像化版本 ki9mu/ARL-plus-docker 替代"
-    },
-    {
       "slug": "arl-plus-docker",
       "name": "ARL-Plus",
       "name_zh": "资产灯塔增强版",
