@@ -9559,12 +9559,12 @@
       },
       "ingestedAt": "2026-10-02",
       "verified": {
-        "by": null,
-        "at": null,
-        "execReview": "pending"
+        "by": "codex",
+        "at": "2026-10-02",
+        "execReview": "passed"
       },
       "upstreamStatus": {
-        "lastCheck": null,
+        "lastCheck": "2026-10-02",
         "alive": true,
         "failSince": null
       },
