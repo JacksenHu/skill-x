@@ -1,0 +1,389 @@
+[
+ {
+  "url": "https://api.inference.sh/mcp",
+  "repo": "ac.inference.sh/mcp",
+  "init_status": 401,
+  "verdict": "BROKEN",
+  "reason": "握手 HTTP 401: {\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32000,\"message\":\"Authentication required\"}}\n",
+  "name": "ac.inference.sh/mcp",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/Acmesec/PromptJailbreakManual",
+  "repo": "io.gitmcp.Acmesec/PromptJailbreakManual",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_repo_docs",
+   "search_repo_docs",
+   "search_repo_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.Acmesec/PromptJailbreakManual",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/Acmesec/theAIMythbook",
+  "repo": "io.gitmcp.Acmesec/theAIMythbook",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_theAIMythbook_documentation",
+   "search_theAIMythbook_docs",
+   "search_theAIMythbook_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 0,
+  "call_len": 0,
+  "call_preview": "",
+  "verdict": "BROKEN",
+  "reason": "tools/call 超时",
+  "name": "io.gitmcp.Acmesec/theAIMythbook",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill",
+  "repo": "io.gitmcp.Fausto-404/js-reverse-automation--skill",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_js_docs",
+   "search_js_docs",
+   "search_js_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.Fausto-404/js-reverse-automation--skill",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/FeeiCN/Security-PPT",
+  "repo": "io.gitmcp.FeeiCN/Security-PPT",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_Security_PPT_documentation",
+   "search_Security_PPT_documentation",
+   "search_Security_PPT_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.FeeiCN/Security-PPT",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/HackTricks-wiki/hacktricks",
+  "repo": "io.gitmcp.HackTricks-wiki/hacktricks",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_hacktricks_documentation",
+   "search_hacktricks_documentation",
+   "search_hacktricks_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 0,
+  "call_len": 0,
+  "call_preview": "",
+  "verdict": "BROKEN",
+  "reason": "tools/call 超时",
+  "name": "io.gitmcp.HackTricks-wiki/hacktricks",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/JDArmy/Evasion-SubAgents",
+  "repo": "io.gitmcp.JDArmy/Evasion-SubAgents",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_Evasion_SubAgents_docs",
+   "search_Evasion_SubAgents_docs",
+   "search_Evasion_SubAgents_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.JDArmy/Evasion-SubAgents",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/KeygraphHQ/shannon",
+  "repo": "io.gitmcp.KeygraphHQ/shannon",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_shannon_documentation",
+   "search_shannon_documentation",
+   "search_shannon_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 0,
+  "call_len": 0,
+  "call_preview": "",
+  "verdict": "BROKEN",
+  "reason": "tools/call 超时",
+  "name": "io.gitmcp.KeygraphHQ/shannon",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill",
+  "repo": "io.gitmcp.SimoneAvogadro/android-reverse-engineering-skill",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_docs",
+   "search_docs",
+   "search_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.SimoneAvogadro/android-reverse-engineering-skill",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/Ta0ing/MCP-SecurityTools",
+  "repo": "io.gitmcp.Ta0ing/MCP-SecurityTools",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_MCP_SecurityTools_docs",
+   "search_MCP_SecurityTools_docs",
+   "search_MCP_SecurityTools_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.Ta0ing/MCP-SecurityTools",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/TheKingOfDuck/fuzzDicts",
+  "repo": "io.gitmcp.TheKingOfDuck/fuzzDicts",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_fuzzDicts_documentation",
+   "search_fuzzDicts_documentation",
+   "search_fuzzDicts_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.TheKingOfDuck/fuzzDicts",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/XiaomingX/data-cve-poc",
+  "repo": "io.gitmcp.XiaomingX/data-cve-poc",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_data_cve_poc_documentation",
+   "search_data_cve_poc_documentation",
+   "search_data_cve_poc_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.XiaomingX/data-cve-poc",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/danielmiessler/SecLists",
+  "repo": "io.gitmcp.danielmiessler/SecLists",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_SecLists_documentation",
+   "search_SecLists_documentation",
+   "search_SecLists_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.danielmiessler/SecLists",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting",
+  "repo": "io.gitmcp.insightglacier/Dictionary-Of-Pentesting",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_Dictionary_docs",
+   "search_Dictionary_docs",
+   "search_Dictionary_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.insightglacier/Dictionary-Of-Pentesting",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/samugit83/redamon",
+  "repo": "io.gitmcp.samugit83/redamon",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_redamon_documentation",
+   "search_redamon_documentation",
+   "search_redamon_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.samugit83/redamon",
+  "attempts": 3
+ },
+ {
+  "url": "https://gitmcp.io/slowmist/MCP-Security-Checklist",
+  "repo": "io.gitmcp.slowmist/MCP-Security-Checklist",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_MCP_Security_docs",
+   "search_MCP_Security_docs",
+   "search_MCP_Security_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.slowmist/MCP-Security-Checklist",
+  "attempts": 2
+ },
+ {
+  "url": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings",
+  "repo": "io.gitmcp.swisskyrepo/PayloadsAllTheThings",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_repo_docs",
+   "search_repo_docs",
+   "search_repo_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.swisskyrepo/PayloadsAllTheThings",
+  "attempts": 1
+ },
+ {
+  "url": "https://gitmcp.io/tanweai/wooyun-legacy",
+  "repo": "io.gitmcp.tanweai/wooyun-legacy",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_wooyun_legacy_documentation",
+   "search_wooyun_legacy_docs",
+   "search_wooyun_legacy_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.tanweai/wooyun-legacy",
+  "attempts": 2
+ },
+ {
+  "url": "https://gitmcp.io/usestrix/strix",
+  "repo": "io.gitmcp.usestrix/strix",
+  "init_status": 200,
+  "server_info": "GitMCP",
+  "tool_count": 4,
+  "tools": [
+   "fetch_strix_documentation",
+   "search_strix_documentation",
+   "search_strix_code",
+   "fetch_generic_url_content"
+  ],
+  "call_tool": "fetch_generic_url_content",
+  "call_status": 200,
+  "call_len": 156,
+  "call_preview": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.",
+  "verdict": "USABLE",
+  "reason": "握手+列工具+实抓全部返回实质内容",
+  "name": "io.gitmcp.usestrix/strix",
+  "attempts": 2
+ }
+]

@@ -1,0 +1,2757 @@
+{
+ "generated_at": "2026-10-03 01:34:58",
+ "elapsed_sec": 32.5,
+ "mcp": [
+  {
+   "name": "ac.inference.sh/mcp",
+   "title": "inference.sh",
+   "kind": "remote",
+   "websiteUrl": "https://inference.sh",
+   "remote_url": "https://api.inference.sh/mcp",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://api.inference.sh/mcp",
+     "status": 401,
+     "ok": true
+    }
+   ]
+  },
+  {
+   "name": "com.browser-use/browser-use",
+   "title": "Browser Use",
+   "kind": "local",
+   "websiteUrl": "https://github.com/browser-use/browser-use",
+   "pkg": {
+    "registry": "pypi",
+    "id": "browser-use",
+    "version": "0.13.10"
+   },
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "version_present": true,
+     "latest": "0.13.10",
+     "type": "pkg:pypi",
+     "target": "browser-use"
+    }
+   ]
+  },
+  {
+   "name": "github.vscode-codeql",
+   "title": "CodeQL",
+   "kind": "link",
+   "websiteUrl": "https://github.com/github/vscode-codeql",
+   "checks": []
+  },
+  {
+   "name": "github.vscode-github-actions",
+   "title": "GitHub Actions",
+   "kind": "link",
+   "websiteUrl": "https://github.com/github/vscode-github-actions",
+   "checks": []
+  },
+  {
+   "name": "github.vscode-pull-request-github",
+   "title": "GitHub Pull Requests",
+   "kind": "link",
+   "websiteUrl": "https://github.com/microsoft/vscode-pull-request-github",
+   "checks": []
+  },
+  {
+   "name": "io.github.0x4m4/hexstrike-ai",
+   "title": "HexStrike AI",
+   "kind": "link",
+   "websiteUrl": "https://github.com/0x4m4/hexstrike-ai",
+   "repo": "0x4m4/hexstrike-ai",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 12284,
+     "pushed_at": "2026-08-03T14:33:09Z",
+     "full_name": "0x4m4/hexstrike-ai",
+     "desc": "HexStrike AI MCP Agents is an advanced MCP server that lets AI agents (Claude, GPT, Copilot, etc.) autonomously run 150+",
+     "type": "github",
+     "target": "0x4m4/hexstrike-ai"
+    }
+   ]
+  },
+  {
+   "name": "io.github.0xKoda/WireMCP",
+   "title": "WireMCP (Wireshark)",
+   "kind": "link",
+   "websiteUrl": "https://github.com/0xKoda/WireMCP",
+   "repo": "0xKoda/WireMCP",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 585,
+     "pushed_at": "2025-07-09T20:28:22Z",
+     "full_name": "0xKoda/WireMCP",
+     "desc": "An MCP for WireShark (tshark). Empower LLM's with realtime network traffic analysis capability",
+     "type": "github",
+     "target": "0xKoda/WireMCP"
+    }
+   ]
+  },
+  {
+   "name": "io.github.0xhackerfren/Windows-Memory-Forensics-MCP",
+   "title": "Windows Memory Forensics MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/0xhackerfren/Windows-Memory-Forensics-MCP",
+   "repo": "0xhackerfren/Windows-Memory-Forensics-MCP",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 13,
+     "pushed_at": "2026-01-28T15:57:56Z",
+     "full_name": "0xhackerfren/Windows-Memory-Forensics-MCP",
+     "desc": "MCP server for Windows memory forensics. Provides AI agents with 33 tools for analyzing memory dumps using Volatility 3,",
+     "type": "github",
+     "target": "0xhackerfren/Windows-Memory-Forensics-MCP"
+    }
+   ]
+  },
+  {
+   "name": "io.github.Cy-S3c/BurpMCP-Ultra",
+   "title": "BurpMCP Ultra",
+   "kind": "link",
+   "websiteUrl": "https://github.com/Cy-S3c/BurpMCP-Ultra",
+   "repo": "Cy-S3c/BurpMCP-Ultra",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 263,
+     "pushed_at": "2026-09-28T03:59:31Z",
+     "full_name": "Cy-S3c/BurpMCP-Ultra",
+     "desc": "AI-powered MCP server for Burp Suite Professional — 149 tools across proxy, scanner, inline fuzzer, race conditions, gui",
+     "type": "github",
+     "target": "Cy-S3c/BurpMCP-Ultra"
+    }
+   ]
+  },
+  {
+   "name": "io.github.DMontgomery40/pentest-mcp",
+   "title": "Pentest MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/DMontgomery40/pentest-mcp",
+   "repo": "DMontgomery40/pentest-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 147,
+     "pushed_at": "2026-03-23T19:36:42Z",
+     "full_name": "DMontgomery40/pentest-mcp",
+     "desc": "NOT for educational purposes: An MCP server for professional penetration testers including STDIO/HTTP/SSE support, nmap,",
+     "type": "github",
+     "target": "DMontgomery40/pentest-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.Diphome/UnityRift",
+   "title": "UnityRift",
+   "kind": "link",
+   "websiteUrl": "https://github.com/Diphome/UnityRift",
+   "repo": "Diphome/UnityRift",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 6,
+     "pushed_at": "2026-09-28T17:57:35Z",
+     "full_name": "Diphome/UnityRift",
+     "desc": "Toolkit for reverse-engineering and porting Unity games, with a full Unity → Godot 4 pipeline (GUI, CLI, MCP server).",
+     "type": "github",
+     "target": "Diphome/UnityRift"
+    }
+   ]
+  },
+  {
+   "name": "io.github.FuzzingLabs/mcp-security-hub",
+   "title": "Security Hub MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/FuzzingLabs/mcp-security-hub",
+   "repo": "FuzzingLabs/mcp-security-hub",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 795,
+     "pushed_at": "2026-04-08T01:44:15Z",
+     "full_name": "FuzzingLabs/mcp-security-hub",
+     "desc": "A growing collection of MCP servers bringing offensive security tools to AI assistants. Nmap, Ghidra, Nuclei, SQLMap, Ha",
+     "type": "github",
+     "target": "FuzzingLabs/mcp-security-hub"
+    }
+   ]
+  },
+  {
+   "name": "io.github.FuzzySecurity/kahlo-mcp",
+   "title": "Kahlo MCP (Frida)",
+   "kind": "link",
+   "websiteUrl": "https://github.com/FuzzySecurity/kahlo-mcp",
+   "repo": "FuzzySecurity/kahlo-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 135,
+     "pushed_at": "2026-02-08T03:45:22Z",
+     "full_name": "FuzzySecurity/kahlo-mcp",
+     "desc": "A Frida MCP server to enable autonomous AI assistance for Android instrumentation",
+     "type": "github",
+     "target": "FuzzySecurity/kahlo-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.GH05TCREW/MetasploitMCP",
+   "title": "Metasploit MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/GH05TCREW/MetasploitMCP",
+   "repo": "GH05TCREW/MetasploitMCP",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 734,
+     "pushed_at": "2026-02-05T16:43:49Z",
+     "full_name": "GH05TCREW/MetasploitMCP",
+     "desc": "MCP Server for Metasploit",
+     "type": "github",
+     "target": "GH05TCREW/MetasploitMCP"
+    }
+   ]
+  },
+  {
+   "name": "io.github.LING71671/open-reverselab",
+   "title": "Open Reverselab",
+   "kind": "link",
+   "websiteUrl": "https://github.com/LING71671/open-reverselab",
+   "repo": "LING71671/open-reverselab",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1200,
+     "pushed_at": "2026-09-29T15:34:53Z",
+     "full_name": "LING71671/open-reverselab",
+     "desc": "Open-source AI reverse-engineering agent platform and MCP server for Ghidra, Frida, x64dbg and Rizin — automated PE/APK/",
+     "type": "github",
+     "target": "LING71671/open-reverselab"
+    }
+   ]
+  },
+  {
+   "name": "io.github.Letenz/windows-drv-harness",
+   "title": "Windows Driver Harness",
+   "kind": "link",
+   "websiteUrl": "https://github.com/Letenz/windows-drv-harness",
+   "repo": "Letenz/windows-drv-harness",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2,
+     "pushed_at": "2026-09-08T10:06:03Z",
+     "full_name": "Letenz/windows-drv-harness",
+     "desc": "About AI-driven. The test-driven inner loop for Windows kernel drivers. Automates: snapshot revert → deploy → test → com",
+     "type": "github",
+     "target": "Letenz/windows-drv-harness"
+    }
+   ]
+  },
+  {
+   "name": "io.github.M507/AI-SOC-Agent",
+   "title": "AI SOC Agent MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/M507/AI-SOC-Agent",
+   "repo": "M507/AI-SOC-Agent",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 51,
+     "pushed_at": "2026-09-30T07:09:51Z",
+     "full_name": "M507/AI-SOC-Agent",
+     "desc": "Blackhat 2025 presentation and codebase: AI SOC agent & MCP server for automated security investigation, alert triage, a",
+     "type": "github",
+     "target": "M507/AI-SOC-Agent"
+    }
+   ]
+  },
+  {
+   "name": "io.github.NadavLor/windbg-ext-mcp",
+   "title": "WinDbg Ext MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/NadavLor/windbg-ext-mcp",
+   "repo": "NadavLor/windbg-ext-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 119,
+     "pushed_at": "2025-09-10T15:17:35Z",
+     "full_name": "NadavLor/windbg-ext-mcp",
+     "desc": "WinDbg-ext-MCP bridges your favorite LLM client (like Cursor, Claude, or VS Code) with WinDbg, enabling real-time, AI as",
+     "type": "github",
+     "target": "NadavLor/windbg-ext-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.NoOne-hub/android-reverse-mcp",
+   "title": "Android Reverse MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/NoOne-hub/android-reverse-mcp",
+   "repo": "NoOne-hub/android-reverse-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1,
+     "pushed_at": "2026-05-04T04:42:08Z",
+     "full_name": "NoOne-hub/android-reverse-mcp",
+     "desc": "Unified headless MCP gateway for Android reverse engineering: JADX semantic analysis, APKTool patching, signing, diff, a",
+     "type": "github",
+     "target": "NoOne-hub/android-reverse-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.addcontent/nuclei-mcp",
+   "title": "Nuclei MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/addcontent/nuclei-mcp",
+   "repo": "addcontent/nuclei-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 49,
+     "pushed_at": "2025-08-04T11:23:07Z",
+     "full_name": "addcontent/nuclei-mcp",
+     "desc": "An implementation of a Model Context Protocol (MCP) for the Nuclei scanner. This tool enables context-aware vulnerabilit",
+     "type": "github",
+     "target": "addcontent/nuclei-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.argus-code-scanning/argus-codescan-mcp",
+   "title": "Argus CodeScan MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/argus-code-scanning/argus-codescan-mcp",
+   "repo": "argus-code-scanning/argus-codescan-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 8,
+     "pushed_at": "2026-09-19T12:48:24Z",
+     "full_name": "argus-code-scanning/argus-codescan-mcp",
+     "desc": "Argus — open-source security scanner with many eyes. SAST, DAST, SCA, Secrets, IaC, Terraform, and Ansible scanning via ",
+     "type": "github",
+     "target": "argus-code-scanning/argus-codescan-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.badchars/cloud-audit-mcp",
+   "title": "Cloud Audit MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/badchars/cloud-audit-mcp",
+   "repo": "badchars/cloud-audit-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 24,
+     "pushed_at": "2026-03-14T21:37:16Z",
+     "full_name": "badchars/cloud-audit-mcp",
+     "desc": "Cloud security audit tools for AI agents — AWS, Azure, GCP misconfiguration detection via MCP. 38 tools, 60+ checks. The",
+     "type": "github",
+     "target": "badchars/cloud-audit-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.badchars/osint-mcp-server",
+   "title": "OSINT MCP Server",
+   "kind": "link",
+   "websiteUrl": "https://github.com/badchars/osint-mcp-server",
+   "repo": "badchars/osint-mcp-server",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 58,
+     "pushed_at": "2026-03-17T02:39:31Z",
+     "full_name": "badchars/osint-mcp-server",
+     "desc": "OSINT intelligence MCP server for AI agents — 37 tools, 12 sources. Shodan, VirusTotal, Censys, SecurityTrails, DNS reco",
+     "type": "github",
+     "target": "badchars/osint-mcp-server"
+    }
+   ]
+  },
+  {
+   "name": "io.github.bethington/cheat-engine-server-python",
+   "title": "Cheat Engine MCP Server",
+   "kind": "link",
+   "websiteUrl": "https://github.com/bethington/cheat-engine-server-python",
+   "repo": "bethington/cheat-engine-server-python",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 66,
+     "pushed_at": "2026-01-29T07:47:32Z",
+     "full_name": "bethington/cheat-engine-server-python",
+     "desc": "MCP Cheat Engine Server — provides safe, structured read-only access to memory analysis and debugging functionality thro",
+     "type": "github",
+     "target": "bethington/cheat-engine-server-python"
+    }
+   ]
+  },
+  {
+   "name": "io.github.blacktop/ida-mcp-rs",
+   "title": "IDA Pro MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/blacktop/ida-mcp-rs",
+   "checks": []
+  },
+  {
+   "name": "io.github.bornpresident/MISP-MCP-SERVER",
+   "title": "MISP MCP Server",
+   "kind": "link",
+   "websiteUrl": "https://github.com/bornpresident/MISP-MCP-SERVER",
+   "repo": "bornpresident/MISP-MCP-SERVER",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 12,
+     "pushed_at": "2025-04-09T06:26:15Z",
+     "full_name": "bornpresident/MISP-MCP-SERVER",
+     "desc": "A Model Context Protocol (MCP) server that integrates with the MISP (Malware Information Sharing Platform) to provide th",
+     "type": "github",
+     "target": "bornpresident/MISP-MCP-SERVER"
+    }
+   ]
+  },
+  {
+   "name": "io.github.bornpresident/Volatility-MCP-Server",
+   "title": "Volatility MCP Server",
+   "kind": "link",
+   "websiteUrl": "https://github.com/bornpresident/Volatility-MCP-Server",
+   "repo": "bornpresident/Volatility-MCP-Server",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 41,
+     "pushed_at": "2025-07-07T12:20:52Z",
+     "full_name": "bornpresident/Volatility-MCP-Server",
+     "desc": "A Model Context Protocol (MCP) server that integrates Volatility 3 memory forensics framework with Claude",
+     "type": "github",
+     "target": "bornpresident/Volatility-MCP-Server"
+    }
+   ]
+  },
+  {
+   "name": "io.github.boy-offi9-inc/hexforge-gateway",
+   "title": "HexForge Gateway",
+   "kind": "link",
+   "websiteUrl": "https://github.com/boy-offi9-inc/hexforge-gateway",
+   "repo": "boy-offi9-inc/hexforge-gateway",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 7,
+     "pushed_at": "2026-10-02T00:21:37Z",
+     "full_name": "boy-offi9-inc/hexforge-gateway",
+     "desc": "Self-hosted reverse-engineering workspace API — orchestrates jadx/apktool/adb/frida/APKiD via a job & workflow engine, e",
+     "type": "github",
+     "target": "boy-offi9-inc/hexforge-gateway"
+    }
+   ]
+  },
+  {
+   "name": "io.github.c4x64/droid-re-chain",
+   "title": "Droid Re-Chain MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/c4x64/droid-re-chain",
+   "repo": "c4x64/droid-re-chain",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 8,
+     "pushed_at": "2026-05-25T11:23:06Z",
+     "full_name": "c4x64/droid-re-chain",
+     "desc": "MCP server for headless AI-driven Android reverse engineering — 122 tools across 8 categories for ADB, NDK, il2cpp, hook",
+     "type": "github",
+     "target": "c4x64/droid-re-chain"
+    }
+   ]
+  },
+  {
+   "name": "io.github.cyproxio/mcp-for-security",
+   "title": "MCP for Security",
+   "kind": "link",
+   "websiteUrl": "https://github.com/cyproxio/mcp-for-security",
+   "repo": "cyproxio/mcp-for-security",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": true,
+     "disabled": false,
+     "stars": 629,
+     "pushed_at": "2026-03-30T17:37:45Z",
+     "full_name": "cyproxio/mcp-for-security",
+     "desc": "MCP for Security: A collection of Model Context Protocol servers for popular security tools like SQLMap, FFUF, NMAP, Mas",
+     "type": "github",
+     "target": "cyproxio/mcp-for-security"
+    }
+   ]
+  },
+  {
+   "name": "io.github.dnakov/frida-mcp",
+   "title": "Frida MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/dnakov/frida-mcp",
+   "repo": "dnakov/frida-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 433,
+     "pushed_at": "2025-05-12T12:25:32Z",
+     "full_name": "dnakov/frida-mcp",
+     "desc": "MCP stdio server for frida",
+     "type": "github",
+     "target": "dnakov/frida-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.drcrypterdotru/sqlmap-skynet",
+   "title": "SQLMap Skynet",
+   "kind": "link",
+   "websiteUrl": "https://github.com/drcrypterdotru/sqlmap-skynet",
+   "repo": "drcrypterdotru/sqlmap-skynet",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 98,
+     "pushed_at": "2026-02-26T13:53:53Z",
+     "full_name": "drcrypterdotru/sqlmap-skynet",
+     "desc": "SQLMap with Autonomous AI, phased workflows, RAG memory, and MCP Agent Tools",
+     "type": "github",
+     "target": "drcrypterdotru/sqlmap-skynet"
+    }
+   ]
+  },
+  {
+   "name": "io.github.firecrawl/firecrawl-mcp-server",
+   "title": "Firecrawl",
+   "kind": "local",
+   "websiteUrl": "https://github.com/firecrawl/firecrawl-mcp-server",
+   "pkg": {
+    "registry": "npm",
+    "id": "firecrawl-mcp",
+    "version": "3.25.5"
+   },
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "version_present": true,
+     "latest": "3.27.2",
+     "type": "pkg:npm",
+     "target": "firecrawl-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.gengstah/windbg-mcp",
+   "title": "WinDbg MCP (pybag)",
+   "kind": "link",
+   "websiteUrl": "https://github.com/gengstah/windbg-mcp",
+   "repo": "gengstah/windbg-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 94,
+     "pushed_at": "2026-05-03T08:58:10Z",
+     "full_name": "gengstah/windbg-mcp",
+     "desc": "An MCP (Model Context Protocol) server that turns all pybag Windows debugger functions into native MCP tools. It lets MC",
+     "type": "github",
+     "target": "gengstah/windbg-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.lauriewired/ghidra-mcp",
+   "title": "GhidraMCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/LaurieWired/GhidraMCP",
+   "repo": "LaurieWired/GhidraMCP",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 10246,
+     "pushed_at": "2025-06-23T04:18:18Z",
+     "full_name": "LaurieWired/GhidraMCP",
+     "desc": "MCP Server for Ghidra",
+     "type": "github",
+     "target": "LaurieWired/GhidraMCP"
+    }
+   ]
+  },
+  {
+   "name": "io.github.leonamvasquez/terraview",
+   "title": "TerraView",
+   "kind": "link",
+   "websiteUrl": "https://github.com/leonamvasquez/terraview",
+   "repo": "leonamvasquez/terraview",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 13,
+     "pushed_at": "2026-09-14T09:14:15Z",
+     "full_name": "leonamvasquez/terraview",
+     "desc": "Realiza análise estática e contextual de segurança em infraestrutura Terraform, detecta misconfigurations e riscos de co",
+     "type": "github",
+     "target": "leonamvasquez/terraview"
+    }
+   ]
+  },
+  {
+   "name": "io.github.merajmehrabi/puppeteer-mcp-server",
+   "title": "Puppeteer MCP Server",
+   "kind": "link",
+   "websiteUrl": "https://github.com/merajmehrabi/puppeteer-mcp-server",
+   "repo": "merajmehrabi/puppeteer-mcp-server",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 485,
+     "pushed_at": "2025-03-14T00:12:50Z",
+     "full_name": "merajmehrabi/puppeteer-mcp-server",
+     "desc": "This MCP server provides browser automation capabilities through Puppeteer, allowing interaction with both new browser i",
+     "type": "github",
+     "target": "merajmehrabi/puppeteer-mcp-server"
+    }
+   ]
+  },
+  {
+   "name": "io.github.microsoft/playwright-mcp",
+   "title": "Playwright MCP",
+   "kind": "local",
+   "websiteUrl": "https://github.com/microsoft/playwright-mcp",
+   "pkg": {
+    "registry": "npm",
+    "id": "@playwright/mcp",
+    "version": "0.0.82"
+   },
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "version_present": true,
+     "latest": "0.0.83",
+     "type": "pkg:npm",
+     "target": "@playwright/mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.mrphrazer/binary-ninja-headless-mcp",
+   "title": "Binary Ninja Headless MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/mrphrazer/binary-ninja-headless-mcp",
+   "repo": "mrphrazer/binary-ninja-headless-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 249,
+     "pushed_at": "2026-09-19T15:35:42Z",
+     "full_name": "mrphrazer/binary-ninja-headless-mcp",
+     "desc": "Headless Binary Ninja MCP server — giving AI agents deep reverse-engineering capabilities via 180 tools.",
+     "type": "github",
+     "target": "mrphrazer/binary-ninja-headless-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.mukul975/cve-mcp-server",
+   "title": "CVE Intelligence MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/mukul975/cve-mcp-server",
+   "repo": "mukul975/cve-mcp-server",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1609,
+     "pushed_at": "2026-10-01T07:11:17Z",
+     "full_name": "mukul975/cve-mcp-server",
+     "desc": "Production-grade MCP server giving Claude 27 security intelligence tools across 21 APIs — CVE lookup, EPSS scoring, CISA",
+     "type": "github",
+     "target": "mukul975/cve-mcp-server"
+    }
+   ]
+  },
+  {
+   "name": "io.github.nebulae/trudi",
+   "title": "Trudi (DFIR Agent)",
+   "kind": "link",
+   "websiteUrl": "https://github.com/nebulae/trudi",
+   "repo": "nebulae/trudi",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 65,
+     "pushed_at": "2026-09-24T21:35:57Z",
+     "full_name": "nebulae/trudi",
+     "desc": "Autonomous DFIR agent — SANS SIFT Workstation MCP server for incident response",
+     "type": "github",
+     "target": "nebulae/trudi"
+    }
+   ]
+  },
+  {
+   "name": "io.github.noor202401938-netizen/cyber-chef-mcp",
+   "title": "CyberChef MCP",
+   "kind": "local",
+   "websiteUrl": "https://github.com/noor202401938-netizen/cyber-chef-mcp",
+   "pkg": {
+    "registry": "npm",
+    "id": "@noorfatima123456/cyber-chef-mcp",
+    "version": "1.0.16"
+   },
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "version_present": true,
+     "latest": "1.0.16",
+     "type": "pkg:npm",
+     "target": "@noorfatima123456/cyber-chef-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.radareorg/radare2-mcp",
+   "title": "radare2 MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/radareorg/radare2-mcp",
+   "repo": "radareorg/radare2-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 312,
+     "pushed_at": "2026-09-27T14:20:14Z",
+     "full_name": "radareorg/radare2-mcp",
+     "desc": "MCP stdio server for radare2",
+     "type": "github",
+     "target": "radareorg/radare2-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.six2dez/burp-ai-agent",
+   "title": "Burp AI Agent",
+   "kind": "link",
+   "websiteUrl": "https://github.com/six2dez/burp-ai-agent",
+   "repo": "six2dez/burp-ai-agent",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1520,
+     "pushed_at": "2026-09-02T18:54:13Z",
+     "full_name": "six2dez/burp-ai-agent",
+     "desc": "Burp Suite extension that adds built-in MCP tooling, AI-assisted analysis, privacy controls, passive and active scanning",
+     "type": "github",
+     "target": "six2dez/burp-ai-agent"
+    }
+   ]
+  },
+  {
+   "name": "io.github.sjkim1127/Reversecore_MCP",
+   "title": "Reversecore MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/sjkim1127/Reversecore_MCP",
+   "repo": "sjkim1127/Reversecore_MCP",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 205,
+     "pushed_at": "2026-10-02T10:14:07Z",
+     "full_name": "sjkim1127/Reversecore_MCP",
+     "desc": "A security-first MCP server that empowers AI agents to perform automated reverse engineering, malware analysis, forensic",
+     "type": "github",
+     "target": "sjkim1127/Reversecore_MCP"
+    }
+   ]
+  },
+  {
+   "name": "io.github.thomasxm/CrowdSentinels-AI-MCP",
+   "title": "CrowdSentinels AI MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/thomasxm/CrowdSentinels-AI-MCP",
+   "repo": "thomasxm/CrowdSentinels-AI-MCP",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 206,
+     "pushed_at": "2026-07-19T21:09:49Z",
+     "full_name": "thomasxm/CrowdSentinels-AI-MCP",
+     "desc": "AI-powered threat hunting and incident response MCP server for Elasticsearch/OpenSearch",
+     "type": "github",
+     "target": "thomasxm/CrowdSentinels-AI-MCP"
+    }
+   ]
+  },
+  {
+   "name": "io.github.trailofbits/slither-mcp",
+   "title": "Slither MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/trailofbits/slither-mcp",
+   "repo": "trailofbits/slither-mcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 96,
+     "pushed_at": "2026-05-19T22:18:12Z",
+     "full_name": "trailofbits/slither-mcp",
+     "desc": "MCP server for Slither static analysis of Solidity smart contracts",
+     "type": "github",
+     "target": "trailofbits/slither-mcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.unclecode/crawl4ai",
+   "title": "Crawl4AI",
+   "kind": "link",
+   "websiteUrl": "https://github.com/unclecode/crawl4ai",
+   "repo": "unclecode/crawl4ai",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 84637,
+     "pushed_at": "2026-09-25T06:37:14Z",
+     "full_name": "unclecode/crawl4ai",
+     "desc": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself,",
+     "type": "github",
+     "target": "unclecode/crawl4ai"
+    }
+   ]
+  },
+  {
+   "name": "io.github.vmoranv/jshookmcp",
+   "title": "jsHook MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/vmoranv/jshookmcp",
+   "repo": "vmoranv/jshookmcp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2019,
+     "pushed_at": "2026-10-02T16:13:03Z",
+     "full_name": "vmoranv/jshookmcp",
+     "desc": "js hook toolkit that all you need",
+     "type": "github",
+     "target": "vmoranv/jshookmcp"
+    }
+   ]
+  },
+  {
+   "name": "io.github.w0h1v/mcp-shodan",
+   "title": "Shodan MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/w0h1v/mcp-shodan",
+   "repo": "w0h1v/mcp-shodan",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 173,
+     "pushed_at": "2026-09-08T18:27:50Z",
+     "full_name": "w0h1v/mcp-shodan",
+     "desc": "MCP server for Shodan — search internet-connected devices, IP reconnaissance, DNS lookups, and CVE/CPE vulnerability int",
+     "type": "github",
+     "target": "w0h1v/mcp-shodan"
+    }
+   ]
+  },
+  {
+   "name": "io.github.w0h1v/mcp-virustotal",
+   "title": "VirusTotal MCP",
+   "kind": "link",
+   "websiteUrl": "https://github.com/w0h1v/mcp-virustotal",
+   "repo": "w0h1v/mcp-virustotal",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 149,
+     "pushed_at": "2026-09-08T18:22:44Z",
+     "full_name": "w0h1v/mcp-virustotal",
+     "desc": "MCP server for VirusTotal API — analyze URLs, files, IPs, and domains with comprehensive security reports, relationship ",
+     "type": "github",
+     "target": "w0h1v/mcp-virustotal"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.Acmesec/PromptJailbreakManual",
+   "title": "Prompt 越狱手册",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/Acmesec/PromptJailbreakManual",
+   "remote_url": "https://gitmcp.io/Acmesec/PromptJailbreakManual",
+   "gitmcp": "https://gitmcp.io/Acmesec/PromptJailbreakManual",
+   "repo": "Acmesec/PromptJailbreakManual",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/Acmesec/PromptJailbreakManual",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Acmesec/PromptJailbreakManual",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 3652,
+     "pushed_at": "2024-12-17T13:11:24Z",
+     "full_name": "Acmesec/PromptJailbreakManual",
+     "desc": "Prompt越狱手册",
+     "type": "github",
+     "target": "Acmesec/PromptJailbreakManual"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.Acmesec/theAIMythbook",
+   "title": "AI 应用与安全指南",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/Acmesec/theAIMythbook",
+   "remote_url": "https://gitmcp.io/Acmesec/theAIMythbook",
+   "gitmcp": "https://gitmcp.io/Acmesec/theAIMythbook",
+   "repo": "Acmesec/theAIMythbook",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/Acmesec/theAIMythbook",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Acmesec/theAIMythbook",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1339,
+     "pushed_at": "2025-03-24T05:00:17Z",
+     "full_name": "Acmesec/theAIMythbook",
+     "desc": "Ai迷思录（应用与安全指南）",
+     "type": "github",
+     "target": "Acmesec/theAIMythbook"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.Fausto-404/js-reverse-automation--skill",
+   "title": "前端 JS 逆向 Skill",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/Fausto-404/js-reverse-automation--skill",
+   "remote_url": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill",
+   "gitmcp": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill",
+   "repo": "Fausto-404/js-reverse-automation--skill",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Fausto-404/js-reverse-automation--skill",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 586,
+     "pushed_at": "2026-09-18T05:43:34Z",
+     "full_name": "Fausto-404/js-reverse-automation--skill",
+     "desc": "结合chrome-devtools-mcp的能力并加上Skill的规范，实现JSRPC+Flask+autoDecoder方案的前端JS逆向自动化分析，提升JS逆向的效率",
+     "type": "github",
+     "target": "Fausto-404/js-reverse-automation--skill"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.FeeiCN/Security-PPT",
+   "title": "安全会议 PPT/报告",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/FeeiCN/Security-PPT",
+   "remote_url": "https://gitmcp.io/FeeiCN/Security-PPT",
+   "gitmcp": "https://gitmcp.io/FeeiCN/Security-PPT",
+   "repo": "FeeiCN/Security-PPT",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/FeeiCN/Security-PPT",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/FeeiCN/Security-PPT",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": true,
+     "disabled": false,
+     "stars": 3600,
+     "pushed_at": "2022-09-26T07:24:14Z",
+     "full_name": "FeeiCN/Security-PPT",
+     "desc": "Security-related Slide Presentation & Security Research Report（大安全各领域各公司各会议分享的PPT以及各类安全研究报告）",
+     "type": "github",
+     "target": "FeeiCN/Security-PPT"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.HackTricks-wiki/hacktricks",
+   "title": "渗透技巧百科",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/HackTricks-wiki/hacktricks",
+   "remote_url": "https://gitmcp.io/HackTricks-wiki/hacktricks",
+   "gitmcp": "https://gitmcp.io/HackTricks-wiki/hacktricks",
+   "repo": "HackTricks-wiki/hacktricks",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/HackTricks-wiki/hacktricks",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/HackTricks-wiki/hacktricks",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 12461,
+     "pushed_at": "2026-10-02T16:31:39Z",
+     "full_name": "HackTricks-wiki/hacktricks",
+     "desc": "Welcome to the page where you will find each trick/technique/whatever I have learnt in CTFs, real life apps, and reading",
+     "type": "github",
+     "target": "HackTricks-wiki/hacktricks"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.JDArmy/Evasion-SubAgents",
+   "title": "免杀 SubAgents",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/JDArmy/Evasion-SubAgents",
+   "remote_url": "https://gitmcp.io/JDArmy/Evasion-SubAgents",
+   "gitmcp": "https://gitmcp.io/JDArmy/Evasion-SubAgents",
+   "repo": "JDArmy/Evasion-SubAgents",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/JDArmy/Evasion-SubAgents",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/JDArmy/Evasion-SubAgents",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 321,
+     "pushed_at": "2026-04-09T04:10:36Z",
+     "full_name": "JDArmy/Evasion-SubAgents",
+     "desc": "Claude Code 免杀 SubAgents",
+     "type": "github",
+     "target": "JDArmy/Evasion-SubAgents"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.KeygraphHQ/shannon",
+   "title": "Shannon AI Web/API 渗透",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/KeygraphHQ/shannon",
+   "remote_url": "https://gitmcp.io/KeygraphHQ/shannon",
+   "gitmcp": "https://gitmcp.io/KeygraphHQ/shannon",
+   "repo": "KeygraphHQ/shannon",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/KeygraphHQ/shannon",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/KeygraphHQ/shannon",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 48532,
+     "pushed_at": "2026-10-01T22:17:59Z",
+     "full_name": "KeygraphHQ/shannon",
+     "desc": "Shannon is an AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and e",
+     "type": "github",
+     "target": "KeygraphHQ/shannon"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.SimoneAvogadro/android-reverse-engineering-skill",
+   "title": "Android 逆向 Skill",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+   "remote_url": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill",
+   "gitmcp": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill",
+   "repo": "SimoneAvogadro/android-reverse-engineering-skill",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/SimoneAvogadro/android-reverse-engineering-skill",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 7950,
+     "pushed_at": "2026-09-30T08:17:37Z",
+     "full_name": "SimoneAvogadro/android-reverse-engineering-skill",
+     "desc": "Claude Code skill to support Android app's reverse engineering",
+     "type": "github",
+     "target": "SimoneAvogadro/android-reverse-engineering-skill"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.Ta0ing/MCP-SecurityTools",
+   "title": "安全 MCP 收录集",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/Ta0ing/MCP-SecurityTools",
+   "remote_url": "https://gitmcp.io/Ta0ing/MCP-SecurityTools",
+   "gitmcp": "https://gitmcp.io/Ta0ing/MCP-SecurityTools",
+   "repo": "Ta0ing/MCP-SecurityTools",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/Ta0ing/MCP-SecurityTools",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Ta0ing/MCP-SecurityTools",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 410,
+     "pushed_at": "2025-04-07T12:34:52Z",
+     "full_name": "Ta0ing/MCP-SecurityTools",
+     "desc": "MCP-SecurityTools 是一个专注于收录和更新网络安全领域 MCP 的开源项目，旨在汇总、整理和优化各类与 MCP 相关的安全工具、技术及实战经验。",
+     "type": "github",
+     "target": "Ta0ing/MCP-SecurityTools"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.TheKingOfDuck/fuzzDicts",
+   "title": "模糊测试字典",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/TheKingOfDuck/fuzzDicts",
+   "remote_url": "https://gitmcp.io/TheKingOfDuck/fuzzDicts",
+   "gitmcp": "https://gitmcp.io/TheKingOfDuck/fuzzDicts",
+   "repo": "TheKingOfDuck/fuzzDicts",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/TheKingOfDuck/fuzzDicts",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/TheKingOfDuck/fuzzDicts",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 8450,
+     "pushed_at": "2023-11-13T03:48:29Z",
+     "full_name": "TheKingOfDuck/fuzzDicts",
+     "desc": "You Know, For WEB Fuzzing ! ",
+     "type": "github",
+     "target": "TheKingOfDuck/fuzzDicts"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.XiaomingX/data-cve-poc",
+   "title": "CVE PoC 汇总",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/XiaomingX/data-cve-poc",
+   "remote_url": "https://gitmcp.io/XiaomingX/data-cve-poc",
+   "gitmcp": "https://gitmcp.io/XiaomingX/data-cve-poc",
+   "repo": "XiaomingX/data-cve-poc",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/XiaomingX/data-cve-poc",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/XiaomingX/data-cve-poc",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": true,
+     "disabled": false,
+     "stars": 618,
+     "pushed_at": "2026-01-30T00:43:32Z",
+     "full_name": "XiaomingX/data-cve-poc",
+     "desc": "这个仓库收集了所有在 GitHub 上能找到的 CVE 漏洞利用工具。 This repository collects all CVE exploits found on GitHub. ",
+     "type": "github",
+     "target": "XiaomingX/data-cve-poc"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.danielmiessler/SecLists",
+   "title": "安全字典/清单",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/danielmiessler/SecLists",
+   "remote_url": "https://gitmcp.io/danielmiessler/SecLists",
+   "gitmcp": "https://gitmcp.io/danielmiessler/SecLists",
+   "repo": "danielmiessler/SecLists",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/danielmiessler/SecLists",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/danielmiessler/SecLists",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 73882,
+     "pushed_at": "2026-10-02T16:19:08Z",
+     "full_name": "danielmiessler/SecLists",
+     "desc": "SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessmen",
+     "type": "github",
+     "target": "danielmiessler/SecLists"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.insightglacier/Dictionary-Of-Pentesting",
+   "title": "渗透字典",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/insightglacier/Dictionary-Of-Pentesting",
+   "remote_url": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting",
+   "gitmcp": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting",
+   "repo": "insightglacier/Dictionary-Of-Pentesting",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/insightglacier/Dictionary-Of-Pentesting",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2074,
+     "pushed_at": "2023-07-21T01:14:24Z",
+     "full_name": "insightglacier/Dictionary-Of-Pentesting",
+     "desc": "Dictionary collection project such as Pentesing, Fuzzing, Bruteforce and BugBounty. 渗透测试、SRC漏洞挖掘、爆破、Fuzzing等字典收集项目。",
+     "type": "github",
+     "target": "insightglacier/Dictionary-Of-Pentesting"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.samugit83/redamon",
+   "title": "Redamon AI 红队框架",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/samugit83/redamon",
+   "remote_url": "https://gitmcp.io/samugit83/redamon",
+   "gitmcp": "https://gitmcp.io/samugit83/redamon",
+   "repo": "samugit83/redamon",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/samugit83/redamon",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/samugit83/redamon",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2900,
+     "pushed_at": "2026-10-02T16:29:02Z",
+     "full_name": "samugit83/redamon",
+     "desc": "Open-source, self-hosted AI penetration testing framework: maps your attack surface into a graph, autonomously exploits ",
+     "type": "github",
+     "target": "samugit83/redamon"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.slowmist/MCP-Security-Checklist",
+   "title": "MCP 安全自查清单",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/slowmist/MCP-Security-Checklist",
+   "remote_url": "https://gitmcp.io/slowmist/MCP-Security-Checklist",
+   "gitmcp": "https://gitmcp.io/slowmist/MCP-Security-Checklist",
+   "repo": "slowmist/MCP-Security-Checklist",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/slowmist/MCP-Security-Checklist",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/slowmist/MCP-Security-Checklist",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 834,
+     "pushed_at": "2025-04-28T12:34:08Z",
+     "full_name": "slowmist/MCP-Security-Checklist",
+     "desc": "A comprehensive security checklist for MCP-based AI tools. Built by SlowMist to safeguard LLM plugin ecosystems.",
+     "type": "github",
+     "target": "slowmist/MCP-Security-Checklist"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.swisskyrepo/PayloadsAllTheThings",
+   "title": "Payload 知识库",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+   "remote_url": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings",
+   "gitmcp": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings",
+   "repo": "swisskyrepo/PayloadsAllTheThings",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/swisskyrepo/PayloadsAllTheThings",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 81415,
+     "pushed_at": "2026-08-27T07:52:21Z",
+     "full_name": "swisskyrepo/PayloadsAllTheThings",
+     "desc": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF",
+     "type": "github",
+     "target": "swisskyrepo/PayloadsAllTheThings"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.tanweai/wooyun-legacy",
+   "title": "WooYun 漏洞知识库",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/tanweai/wooyun-legacy",
+   "remote_url": "https://gitmcp.io/tanweai/wooyun-legacy",
+   "gitmcp": "https://gitmcp.io/tanweai/wooyun-legacy",
+   "repo": "tanweai/wooyun-legacy",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/tanweai/wooyun-legacy",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/tanweai/wooyun-legacy",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1777,
+     "pushed_at": "2026-07-14T13:55:59Z",
+     "full_name": "tanweai/wooyun-legacy",
+     "desc": "wooyun-legacy skill for claude code ",
+     "type": "github",
+     "target": "tanweai/wooyun-legacy"
+    }
+   ]
+  },
+  {
+   "name": "io.gitmcp.usestrix/strix",
+   "title": "Strix AI 渗透框架",
+   "kind": "remote",
+   "websiteUrl": "https://github.com/usestrix/strix",
+   "remote_url": "https://gitmcp.io/usestrix/strix",
+   "gitmcp": "https://gitmcp.io/usestrix/strix",
+   "repo": "usestrix/strix",
+   "checks": [
+    {
+     "type": "remote-http",
+     "url": "https://gitmcp.io/usestrix/strix",
+     "status": 400,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/usestrix/strix",
+     "status": 405,
+     "ok": false
+    },
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 66106,
+     "pushed_at": "2026-10-02T15:41:54Z",
+     "full_name": "usestrix/strix",
+     "desc": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+     "type": "github",
+     "target": "usestrix/strix"
+    }
+   ]
+  },
+  {
+   "name": "ms-playwright.playwright",
+   "title": "Playwright Test for VSCode",
+   "kind": "link",
+   "websiteUrl": "https://github.com/microsoft/playwright-vscode",
+   "checks": []
+  },
+  {
+   "name": "ms-vscode.cpptools",
+   "title": "C/C++ (VS Code)",
+   "kind": "link",
+   "websiteUrl": "https://github.com/microsoft/vscode-cpptools",
+   "checks": []
+  },
+  {
+   "name": "ms-vscode.hexeditor",
+   "title": "Hex Editor",
+   "kind": "link",
+   "websiteUrl": "https://github.com/microsoft/vscode-hexeditor",
+   "checks": []
+  },
+  {
+   "name": "semgrep.semgrep",
+   "title": "Semgrep",
+   "kind": "link",
+   "websiteUrl": "https://github.com/semgrep/semgrep",
+   "checks": []
+  },
+  {
+   "name": "sonarsource.sonarlint-vscode",
+   "title": "SonarQube for IDE",
+   "kind": "link",
+   "websiteUrl": "https://github.com/SonarSource/sonarlint-vscode",
+   "checks": []
+  },
+  {
+   "name": "tamasfe.even-better-toml",
+   "title": "Even Better TOML",
+   "kind": "link",
+   "websiteUrl": "https://github.com/tamasfe/taplo",
+   "checks": []
+  },
+  {
+   "name": "vadimcn.vscode-lldb",
+   "title": "CodeLLDB",
+   "kind": "link",
+   "websiteUrl": "https://github.com/vadimcn/codelldb",
+   "checks": []
+  },
+  {
+   "name": "webhint.vscode-webhint",
+   "title": "webhint",
+   "kind": "link",
+   "websiteUrl": "https://github.com/webhintio/hint",
+   "checks": []
+  }
+ ],
+ "tools": [
+  {
+   "slug": "arl-plus-docker",
+   "name": "ARL-Plus",
+   "repo": "ki9mu/ARL-plus-docker",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 998,
+     "pushed_at": "2025-06-26T12:28:39Z",
+     "full_name": "ki9mu/ARL-plus-docker",
+     "desc": "基于ARL-V2.6.2修改后的版本",
+     "type": "github",
+     "target": "ki9mu/ARL-plus-docker"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/ki9mu/ARL-plus-docker",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/ki9mu/ARL-plus-docker",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "axiom",
+   "name": "Axiom",
+   "repo": "pry0cc/axiom",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 4429,
+     "pushed_at": "2024-09-30T17:18:52Z",
+     "full_name": "pry0cc/axiom",
+     "desc": "The dynamic infrastructure framework for everybody! Distribute the workload of many different scanning tools with ease, ",
+     "type": "github",
+     "target": "pry0cc/axiom"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/pry0cc/axiom",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/pry0cc/axiom",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "cicd-goat",
+   "name": "CI/CD Goat",
+   "repo": "cider-security-research/cicd-goat",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2312,
+     "pushed_at": "2024-07-14T11:26:38Z",
+     "full_name": "cider-security-research/cicd-goat",
+     "desc": "A deliberately vulnerable CI/CD environment. Learn CI/CD security through multiple challenges.",
+     "type": "github",
+     "target": "cider-security-research/cicd-goat"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/cider-security-research/cicd-goat",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/cider-security-research/cicd-goat",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "cyberedge",
+   "name": "CyberEdge",
+   "repo": "Symph0nia/CyberEdge",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 613,
+     "pushed_at": "2026-08-12T02:12:28Z",
+     "full_name": "Symph0nia/CyberEdge",
+     "desc": "互联网资产综合扫描/攻击面测绘",
+     "type": "github",
+     "target": "Symph0nia/CyberEdge"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/Symph0nia/CyberEdge",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Symph0nia/CyberEdge",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "darkangel",
+   "name": "DarkAngel",
+   "repo": "Bywalks/DarkAngel",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 604,
+     "pushed_at": "2023-08-17T07:38:29Z",
+     "full_name": "Bywalks/DarkAngel",
+     "desc": "DarkAngel 是一款全自动白帽漏洞扫描器，从hackerone、bugcrowd资产监听到漏洞报告生成、漏洞URL截屏、消息通知。",
+     "type": "github",
+     "target": "Bywalks/DarkAngel"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/Bywalks/DarkAngel",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Bywalks/DarkAngel",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "deadpool",
+   "name": "Deadpool",
+   "repo": "thinkoaa/Deadpool",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 725,
+     "pushed_at": "2026-05-06T01:53:44Z",
+     "full_name": "thinkoaa/Deadpool",
+     "desc": "deadpool代理池工具，可从hunter、quake、fofa等网络空间测绘平台取高质量socks5代理，或本地导入socks5代理，轮询使用代理进行流量转发。",
+     "type": "github",
+     "target": "thinkoaa/Deadpool"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/thinkoaa/Deadpool",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/thinkoaa/Deadpool",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "dependencycheck",
+   "name": "DependencyCheck",
+   "repo": "jeremylong/DependencyCheck",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": true,
+     "disabled": false,
+     "stars": 55,
+     "pushed_at": "2025-09-27T20:17:48Z",
+     "full_name": "jeremylong/DependencyCheck",
+     "desc": "The dependency-check repository has moved:",
+     "type": "github",
+     "target": "jeremylong/DependencyCheck"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/jeremylong/DependencyCheck",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/jeremylong/DependencyCheck",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "dnslog-platform-golang",
+   "name": "DNSLog 平台",
+   "repo": "yumusb/DNSLog-Platform-Golang",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 437,
+     "pushed_at": "2021-12-30T03:29:29Z",
+     "full_name": "yumusb/DNSLog-Platform-Golang",
+     "desc": "DNSLOG平台 golang",
+     "type": "github",
+     "target": "yumusb/DNSLog-Platform-Golang"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/yumusb/DNSLog-Platform-Golang",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/yumusb/DNSLog-Platform-Golang",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "dongtai",
+   "name": "洞态 IAST",
+   "repo": "HXSecurity/DongTai",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1311,
+     "pushed_at": "2025-05-22T08:23:05Z",
+     "full_name": "HXSecurity/DongTai",
+     "desc": "Dongtai IAST is an open-source Interactive Application Security Testing (IAST) tool that enables real-time detection of ",
+     "type": "github",
+     "target": "HXSecurity/DongTai"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/HXSecurity/DongTai",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/HXSecurity/DongTai",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "ehoney",
+   "name": "Ehoney",
+   "repo": "seccome/Ehoney",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1271,
+     "pushed_at": "2023-10-17T06:52:50Z",
+     "full_name": "seccome/Ehoney",
+     "desc": "安全、快捷、高交互、企业级的蜜罐管理系统，护网；支持多种协议蜜罐、蜜签、诱饵等功能。A safe, fast, highly interactive and enterprise level honeypot management syst",
+     "type": "github",
+     "target": "seccome/Ehoney"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/seccome/Ehoney",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/seccome/Ehoney",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "f8x",
+   "name": "f8x",
+   "repo": "ffffffff0x/f8x",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2164,
+     "pushed_at": "2026-07-25T21:19:17Z",
+     "full_name": "ffffffff0x/f8x",
+     "desc": "红/蓝队环境自动化部署工具 | Red/Blue team environment automation deployment tool",
+     "type": "github",
+     "target": "ffffffff0x/f8x"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/ffffffff0x/f8x",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/ffffffff0x/f8x",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "frp",
+   "name": "frp",
+   "repo": "fatedier/frp",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 109718,
+     "pushed_at": "2026-09-15T05:55:33Z",
+     "full_name": "fatedier/frp",
+     "desc": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
+     "type": "github",
+     "target": "fatedier/frp"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/fatedier/frp",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/fatedier/frp",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "goad",
+   "name": "GOAD",
+   "repo": "Orange-Cyberdefense/GOAD",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 8396,
+     "pushed_at": "2026-03-12T06:57:44Z",
+     "full_name": "Orange-Cyberdefense/GOAD",
+     "desc": "game of active directory",
+     "type": "github",
+     "target": "Orange-Cyberdefense/GOAD"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/Orange-Cyberdefense/GOAD",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Orange-Cyberdefense/GOAD",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "gophish",
+   "name": "GoPhish",
+   "repo": "gophish/gophish",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 14284,
+     "pushed_at": "2024-09-23T04:24:43Z",
+     "full_name": "gophish/gophish",
+     "desc": "Open-Source Phishing Toolkit",
+     "type": "github",
+     "target": "gophish/gophish"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/gophish/gophish",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/gophish/gophish",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "goproxy",
+   "name": "goproxy",
+   "repo": "snail007/goproxy",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 17141,
+     "pushed_at": "2026-08-17T05:46:30Z",
+     "full_name": "snail007/goproxy",
+     "desc": "🔥  Proxy is a high performance HTTP(S) proxies, SOCKS5 proxies,WEBSOCKET, TCP, UDP proxy server implemented by golang. N",
+     "type": "github",
+     "target": "snail007/goproxy"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/snail007/goproxy",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/snail007/goproxy",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "gosint",
+   "name": "gosint",
+   "repo": "1in9e/gosint",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 429,
+     "pushed_at": "2023-03-03T17:11:01Z",
+     "full_name": "1in9e/gosint",
+     "desc": "Gosint is a distributed asset information collection and vulnerability scanning platform",
+     "type": "github",
+     "target": "1in9e/gosint"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/1in9e/gosint",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/1in9e/gosint",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "kubehound",
+   "name": "KubeHound",
+   "repo": "DataDog/KubeHound",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1004,
+     "pushed_at": "2026-09-30T06:36:18Z",
+     "full_name": "DataDog/KubeHound",
+     "desc": "Tool for building Kubernetes attack paths",
+     "type": "github",
+     "target": "DataDog/KubeHound"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/DataDog/KubeHound",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/DataDog/KubeHound",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "linglong",
+   "name": "linglong",
+   "repo": "awake1t/linglong",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1850,
+     "pushed_at": "2022-04-19T01:16:33Z",
+     "full_name": "awake1t/linglong",
+     "desc": "一款甲方资产巡航扫描系统。系统定位是发现资产，进行端口爆破。帮助企业更快发现弱口令问题。主要功能包括: 资产探测、端口爆破、定时任务、管理后台识别、报表展示",
+     "type": "github",
+     "target": "awake1t/linglong"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/awake1t/linglong",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/awake1t/linglong",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "metarget",
+   "name": "Metarget",
+   "repo": "Metarget/metarget",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1419,
+     "pushed_at": "2026-07-22T06:44:06Z",
+     "full_name": "Metarget/metarget",
+     "desc": "Metarget is a framework providing automatic constructions of vulnerable infrastructures.",
+     "type": "github",
+     "target": "Metarget/metarget"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/Metarget/metarget",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Metarget/metarget",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "nemo_go",
+   "name": "Nemo",
+   "repo": "hanc00l/nemo_go",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 2095,
+     "pushed_at": "2026-08-15T12:05:30Z",
+     "full_name": "hanc00l/nemo_go",
+     "desc": "Nemo是用来进行自动化信息收集的一个简单平台，通过集成常用的信息收集工具和技术，实现对内网及互联网资产信息的自动收集，提高隐患排查和渗透测试的工作效率。",
+     "type": "github",
+     "target": "hanc00l/nemo_go"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/hanc00l/nemo_go",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/hanc00l/nemo_go",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "ngcbot",
+   "name": "NGCBot",
+   "repo": "ngc660sec/NGCBot",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": true,
+     "disabled": false,
+     "stars": 3291,
+     "pushed_at": "2025-05-25T03:51:19Z",
+     "full_name": "ngc660sec/NGCBot",
+     "desc": "一个基于✨HOOK机制的微信机器人，支持🌱安全新闻定时推送【FreeBuf，先知，安全客，奇安信攻防社区】，👯Kfc文案，⚡漏洞查询，⚡手机号归属地查询，⚡知识库查询，🎉星座查询，⚡天气查询，🌱摸鱼日历，⚡微步威胁情报查询， 🐛视频，⚡图片",
+     "type": "github",
+     "target": "ngc660sec/NGCBot"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/ngc660sec/NGCBot",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/ngc660sec/NGCBot",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "nps",
+   "name": "nps",
+   "repo": "ehang-io/nps",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 34232,
+     "pushed_at": "2024-05-30T03:51:08Z",
+     "full_name": "ehang-io/nps",
+     "desc": "一款轻量级、高性能、功能强大的内网穿透代理服务器。支持tcp、udp、socks5、http等几乎所有流量转发，可用来访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析、内网socks5代理等等……，并带有功能强大的web",
+     "type": "github",
+     "target": "ehang-io/nps"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/ehang-io/nps",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/ehang-io/nps",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "proxy_pool",
+   "name": "proxy_pool",
+   "repo": "jhao104/proxy_pool",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 23741,
+     "pushed_at": "2026-06-15T14:36:35Z",
+     "full_name": "jhao104/proxy_pool",
+     "desc": "Python ProxyPool for web spider",
+     "type": "github",
+     "target": "jhao104/proxy_pool"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/jhao104/proxy_pool",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/jhao104/proxy_pool",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "rengine",
+   "name": "reNgine",
+   "repo": "yogeshojha/rengine",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 8868,
+     "pushed_at": "2026-09-30T10:31:09Z",
+     "full_name": "yogeshojha/rengine",
+     "desc": "reNgine is an automated reconnaissance framework for web applications with a focus on highly configurable streamlined re",
+     "type": "github",
+     "target": "yogeshojha/rengine"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/yogeshojha/rengine",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/yogeshojha/rengine",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "rotateproxy",
+   "name": "rotateproxy",
+   "repo": "akkuman/rotateproxy",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 867,
+     "pushed_at": "2025-05-20T01:36:04Z",
+     "full_name": "akkuman/rotateproxy",
+     "desc": "利用fofa搜索socks5开放代理进行代理池轮切的工具",
+     "type": "github",
+     "target": "akkuman/rotateproxy"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/akkuman/rotateproxy",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/akkuman/rotateproxy",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "scopesentry-scan",
+   "name": "ScopeSentry",
+   "repo": "Autumn-27/ScopeSentry-Scan",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 224,
+     "pushed_at": "2026-06-10T15:48:33Z",
+     "full_name": "Autumn-27/ScopeSentry-Scan",
+     "desc": "ScopeSentry tool scans the source code",
+     "type": "github",
+     "target": "Autumn-27/ScopeSentry-Scan"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/Autumn-27/ScopeSentry-Scan",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Autumn-27/ScopeSentry-Scan",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "seccrawler",
+   "name": "SecCrawler",
+   "repo": "Le0nsec/SecCrawler",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 938,
+     "pushed_at": "2023-12-24T16:26:56Z",
+     "full_name": "Le0nsec/SecCrawler",
+     "desc": "一个方便安全研究人员获取每日安全日报的爬虫和推送程序，目前爬取范围包括先知社区、安全客、Seebug Paper、跳跳糖、奇安信攻防社区、棱角社区以及绿盟、腾讯玄武、天融信、360等实验室博客，持续更新中。",
+     "type": "github",
+     "target": "Le0nsec/SecCrawler"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/Le0nsec/SecCrawler",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/Le0nsec/SecCrawler",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "slack",
+   "name": "Slack",
+   "repo": "qiwentaidi/Slack",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1070,
+     "pushed_at": "2026-04-29T08:57:44Z",
+     "full_name": "qiwentaidi/Slack",
+     "desc": "安全服务集成化工具集",
+     "type": "github",
+     "target": "qiwentaidi/Slack"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/qiwentaidi/Slack",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/qiwentaidi/Slack",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "terraformgoat",
+   "name": "TerraformGoat",
+   "repo": "HXSecurity/TerraformGoat",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 640,
+     "pushed_at": "2022-11-30T08:17:23Z",
+     "full_name": "HXSecurity/TerraformGoat",
+     "desc": "TerraformGoat is HXSecurity research lab's \"Vulnerable by Design\" multi cloud deployment tool.",
+     "type": "github",
+     "target": "HXSecurity/TerraformGoat"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/HXSecurity/TerraformGoat",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/HXSecurity/TerraformGoat",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "vulfocus",
+   "name": "Vulfocus",
+   "repo": "fofapro/vulfocus",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 3500,
+     "pushed_at": "2025-09-09T12:58:16Z",
+     "full_name": "fofapro/vulfocus",
+     "desc": "🚀Vulfocus 是一个漏洞集成平台，将漏洞环境 docker 镜像，放入即可使用，开箱即用。",
+     "type": "github",
+     "target": "fofapro/vulfocus"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/fofapro/vulfocus",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/fofapro/vulfocus",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "vulhub",
+   "name": "Vulhub",
+   "repo": "vulhub/vulhub",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 21310,
+     "pushed_at": "2026-09-18T17:56:42Z",
+     "full_name": "vulhub/vulhub",
+     "desc": "Pre-Built Vulnerable Environments Based on Docker-Compose",
+     "type": "github",
+     "target": "vulhub/vulhub"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/vulhub/vulhub",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/vulhub/vulhub",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "watchvuln",
+   "name": "watchvuln",
+   "repo": "zema1/watchvuln",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 1897,
+     "pushed_at": "2026-09-07T12:35:50Z",
+     "full_name": "zema1/watchvuln",
+     "desc": "一个高价值漏洞采集与推送服务 | Collect valueable vulnerabilities and push them to various services",
+     "type": "github",
+     "target": "zema1/watchvuln"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/zema1/watchvuln",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/zema1/watchvuln",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "xray",
+   "name": "xray",
+   "repo": "chaitin/xray",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 11753,
+     "pushed_at": "2024-10-29T16:15:53Z",
+     "full_name": "chaitin/xray",
+     "desc": "一款长亭自研的完善的安全评估工具，支持常见 web 安全问题扫描和自定义 poc | 使用之前务必先阅读文档",
+     "type": "github",
+     "target": "chaitin/xray"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/chaitin/xray",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/chaitin/xray",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  },
+  {
+   "slug": "yakit",
+   "name": "Yakit",
+   "repo": "yaklang/yakit",
+   "checks": [
+    {
+     "ok": true,
+     "status": 200,
+     "archived": false,
+     "disabled": false,
+     "stars": 7783,
+     "pushed_at": "2026-09-30T09:26:49Z",
+     "full_name": "yaklang/yakit",
+     "desc": "Cyber Security ALL-IN-ONE Platform",
+     "type": "github",
+     "target": "yaklang/yakit"
+    },
+    {
+     "type": "docs",
+     "url": "https://github.com/yaklang/yakit",
+     "status": 200,
+     "ok": true
+    },
+    {
+     "type": "gitmcp",
+     "url": "https://gitmcp.io/yaklang/yakit",
+     "status": 405,
+     "ok": false
+    }
+   ]
+  }
+ ]
+}

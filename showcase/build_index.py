@@ -930,6 +930,14 @@ def ns_slug(ns: str) -> str:
     return re.sub(r"[^\w.-]+", "--", ns)
 
 
+def skill_slug(name: str) -> str:
+    """技能页文件名用 slug：替换路径分隔符与非法字符，防止生成非法路径。"""
+    bad = set('/:*?"<>|' + chr(92))
+    out = "".join("-" if (c in bad or ord(c) < 32) else c for c in (name or ""))
+    out = " ".join(out.split())
+    return out.strip(" .") or "skill"
+
+
 def mcp_slug(name: str) -> str:
     return re.sub(r"[^\w.-]+", "--", name)
 
@@ -1059,7 +1067,7 @@ def render_index(own, suites):
         ns = suite["namespace"]
         lic = suite["license"]["spdx"]
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
-        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
+        items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html", f"{ns}/{s['name']}") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
   <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} <a href="{esc(suite["upstream"])}">上游仓库</a></span></h3>
   <div class="grid">{items}</div>
@@ -1267,7 +1275,7 @@ def render_suite_detail(suite, map_svg=""):
     forks = st.get("forks") or 0
     total = suite.get("totalSkills", len(suite["skills"]))
     picked = len(suite["skills"])
-    cards = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}") for s in suite["skills"])
+    cards = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html", f"{ns}/{s['name']}") for s in suite["skills"])
     inner = f'''<div class="detail">
   <h1>{esc(ns)}</h1>
   <dl class="kv">
@@ -1890,7 +1898,7 @@ def render_home(own, suites, mcps, packs, map_svg=""):
     for suite in suites:
         ns = suite["namespace"]
         for s in suite["skills"][:2]:
-            featured += "\n" + card(s, "ext", f"skills/ext-{ns_slug(ns)}--{s['name']}.html", f"{ns}/{s['name']}")
+            featured += "\n" + card(s, "ext", f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html", f"{ns}/{s['name']}")
     mcp_items = ""
     for m in mcps[:2]:
         is_remote = m.get("kind") == "remote"
@@ -2221,7 +2229,7 @@ def main():
         ns = suite["namespace"]
         pages[f"suites/{ns_slug(ns)}.html"] = render_suite_detail(suite, mmaps.get(f"suite-{ns_slug(ns)}", ""))
         for s in suite["skills"]:
-            pages[f"skills/ext-{ns_slug(ns)}--{s['name']}.html"] = render_ext_detail(
+            pages[f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html"] = render_ext_detail(
                 suite, s, (audit.get("suites") or {}).get(ns), audit_at,
                 mmaps.get(f"suite-{ns_slug(ns)}", ""))
     real_mcps = [m for m in mcps if m.get("entryType", "mcp") == "mcp"]
@@ -2351,7 +2359,7 @@ def main():
             + [{"name": x["name"], "name-zh": x.get("name-zh", x["name"]),
                 "description": x["description"], "description-zh": x.get("description-zh", ""),
                 "category": x.get("category", ""), "kind": "ext", "suite": st["namespace"],
-                "page": f"/skills/ext-{ns_slug(st['namespace'])}--{x['name']}.html",
+                "page": f"/skills/ext-{ns_slug(st['namespace'])}--{skill_slug(x['name'])}.html",
                 "install": f"npx skills add {st['namespace']} --skill {x['name']}"}
                for st in suites for x in st["skills"]]
         ),

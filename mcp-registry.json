@@ -3504,6 +3504,539 @@
      "upstreamNote": "上游仓库已归档（archived），不再更新，仍可只读使用。"
     }
    }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.bethington/ghidra-mcp",
+   "title": "ghidra-mcp",
+   "description": "Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin + headless server, lazy tool loading, convention enforcement, batch operations",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/bethington/ghidra-mcp",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "ghidra-mcp 许可证 Apache-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "Ghidra MCP：把 Ghidra 反汇编与反编译能力接入 Agent，提供 200+ MCP 工具做静态分析、函数重命名、交叉引用与结构化摘要。",
+     "installHint": "git clone https://github.com/bethington/ghidra-mcp.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/bethington/ghidra-mcp",
+      "command": "git clone https://github.com/bethington/ghidra-mcp.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.duty1g/x64dbg-mcp-server",
+   "title": "x64dbg-mcp-server",
+   "description": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatibl",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/duty1g/x64dbg-mcp-server",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "x64dbg-mcp-server 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "x64dbg MCP Server：x64dbg 原生 MCP 插件，让 Agent 直接操控调试器下断点、单步、读写内存与寄存器，做动态逆向。",
+     "installHint": "git clone https://github.com/duty1g/x64dbg-mcp-server.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/duty1g/x64dbg-mcp-server",
+      "command": "git clone https://github.com/duty1g/x64dbg-mcp-server.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.ShinoLeah/eDBG",
+   "title": "eDBG",
+   "description": "eBPF-based lightweight debugger for Android with MCP support",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/ShinoLeah/eDBG",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "eDBG 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "eDBG：基于 eBPF 的 Android 轻量调试器，带 MCP 支持，无需重打包即可对原生库下钩与追踪。",
+     "installHint": "git clone https://github.com/ShinoLeah/eDBG.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/ShinoLeah/eDBG",
+      "command": "git clone https://github.com/ShinoLeah/eDBG.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.cyberkaida/reverse-engineering-assistant",
+   "title": "reverse-engineering-assistant",
+   "description": "MCP server for reverse engineering tasks in Ghidra 👩‍💻",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/cyberkaida/reverse-engineering-assistant",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "reverse-engineering-assistant 许可证 Apache-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "Reverse Engineering Assistant：Ghidra 内逆向任务的 MCP 服务，把反编译结果交给大模型做语义分析与重命名。",
+     "installHint": "git clone https://github.com/cyberkaida/reverse-engineering-assistant.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/cyberkaida/reverse-engineering-assistant",
+      "command": "git clone https://github.com/cyberkaida/reverse-engineering-assistant.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.zinja-coder/apktool-mcp-server",
+   "title": "apktool-mcp-server",
+   "description": "A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites)",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/zinja-coder/apktool-mcp-server",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "apktool-mcp-server 许可证 Apache-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "Apktool MCP Server：把 Apktool 反编译/回编译流程封装为 MCP，供 Agent 做 Android 应用解包与重打包。",
+     "installHint": "git clone https://github.com/zinja-coder/apktool-mcp-server.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/zinja-coder/apktool-mcp-server",
+      "command": "git clone https://github.com/zinja-coder/apktool-mcp-server.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.SetsunaYukiOvO/x64dbg-mcp",
+   "title": "x64dbg-mcp",
+   "description": "MCP server plugin for x64dbg debugger - enables AI agents and external tools to control debugging via JSON-RPC 2.0 over HTTP/SSE",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/SetsunaYukiOvO/x64dbg-mcp",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "x64dbg-mcp 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "x64dbg MCP：x64dbg 调试器 MCP 插件，支持脱壳、断点与内存操作自动化。",
+     "installHint": "git clone https://github.com/SetsunaYukiOvO/x64dbg-mcp.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/SetsunaYukiOvO/x64dbg-mcp",
+      "command": "git clone https://github.com/SetsunaYukiOvO/x64dbg-mcp.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.1-3-7/disrobe",
+   "title": "disrobe",
+   "description": "Static decompiler, deobfuscator, and unpacker for reverse engineering and malware analysis: Python decompiler (3.8-3.15), PyInstaller extractor, PyArmor unpacke",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/1-3-7/disrobe",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "disrobe 许可证 NOASSERTION；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "disrobe：静态反编译器 + 反混淆器 + 脱壳器，面向逆向工程的 MCP 服务，覆盖加壳样本还原与控制流还原。",
+     "installHint": "git clone https://github.com/1-3-7/disrobe.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/1-3-7/disrobe",
+      "command": "git clone https://github.com/1-3-7/disrobe.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.xiaoyeuzixi/revlab",
+   "title": "revlab",
+   "description": "REVLab - Windows PE reverse engineering workflow platform (static analysis, unpacking, disassembly, decompile, dynamic sandbox, network capture, custom pipeline",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/xiaoyeuzixi/revlab",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "revlab 许可证 NOASSERTION；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "REVLab：Windows PE 逆向工作流平台，含静态分析、脱壳与反汇编编排。",
+     "installHint": "git clone https://github.com/xiaoyeuzixi/revlab.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/xiaoyeuzixi/revlab",
+      "command": "git clone https://github.com/xiaoyeuzixi/revlab.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.index-login/MobileRE-Skill",
+   "title": "MobileRE-Skill",
+   "description": "AI Agent 驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX dump、Ghidra MCP 符号/结构恢复。AI-agent skill system for mobile reverse engineering.",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/index-login/MobileRE-Skill",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "MobileRE-Skill 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "MobileRE：AI Agent 驱动的移动端逆向技能集，含 Frida hook、一键脱壳、反检测绕过、内存 DEX dump 与 Ghidra MCP 联动。",
+     "installHint": "git clone https://github.com/index-login/MobileRE-Skill.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/index-login/MobileRE-Skill",
+      "command": "git clone https://github.com/index-login/MobileRE-Skill.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.JameZUK/Arkana",
+   "title": "Arkana",
+   "description": "Arkana - Your entire malware analysis lab, behind one AI prompt. 250+ MCP tools for binary analysis with Claude Code or other MCP",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/JameZUK/Arkana",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "Arkana 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "Arkana：一体化恶意代码分析实验室，250+ MCP 工具覆盖反混淆、脱壳、行为分析与 IOC 提取。",
+     "installHint": "git clone https://github.com/JameZUK/Arkana.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/JameZUK/Arkana",
+      "command": "git clone https://github.com/JameZUK/Arkana.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.mrphrazer/agentic-malware-analysis",
+   "title": "agentic-malware-analysis",
+   "description": "Agentic malware analysis environment with MCP-connected disassemblers, RE tooling, and structured workflows for Claude Code and Codex CLI.",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/mrphrazer/agentic-malware-analysis",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "agentic-malware-analysis 许可证 GPL-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "Agentic Malware Analysis：MCP 连接的反汇编器与逆向工具链，含反调试对抗与加壳样本分析环境。",
+     "installHint": "git clone https://github.com/mrphrazer/agentic-malware-analysis.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/mrphrazer/agentic-malware-analysis",
+      "command": "git clone https://github.com/mrphrazer/agentic-malware-analysis.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.bl4ckr0ss3/knife",
+   "title": "knife",
+   "description": "A terminal-first reverse engineering toolkit in Rust: PE/ELF/Mach-O analysis through CLI, TUI, and MCP. Installs as knife.",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/bl4ckr0ss3/knife",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "knife 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "knife：Rust 写的终端优先逆向工具箱，统一分析 PE/ELF/Mach-O，支持 MCP 接入。",
+     "installHint": "git clone https://github.com/bl4ckr0ss3/knife.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/bl4ckr0ss3/knife",
+      "command": "git clone https://github.com/bl4ckr0ss3/knife.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.morluto/rea",
+   "title": "rea",
+   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/morluto/rea",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "rea 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
+     "description-zh": "rea：从应用行为到原生二进制的 Agent 化逆向框架，含反混淆与脱壳流程。",
+     "installHint": "git clone https://github.com/morluto/rea.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/morluto/rea",
+      "command": "git clone https://github.com/morluto/rea.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-03",
+      "execReview": "passed",
+      "note": "方向化爬取+核验:GitHub 仓库与许可证已核验,收录为指路牌。"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-03",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
   }
  ]
 }

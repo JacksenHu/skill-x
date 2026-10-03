@@ -1,0 +1,1251 @@
+[
+ {
+  "full_name": "bethington/ghidra-mcp",
+  "kind": "mcp",
+  "stars": 4106,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2026-10-02T01:16:47Z",
+  "desc": "Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin + headless server, lazy tool loading, convention enforcement, batch operations",
+  "topics": [
+   "ai",
+   "binary-analysis",
+   "ghidra",
+   "ghidra-extension",
+   "java",
+   "mcp",
+   "mcp-server",
+   "model-context-protocol"
+  ],
+  "caps": [
+   "disassembl",
+   "licens",
+   "protect"
+  ],
+  "readme_len": 76694
+ },
+ {
+  "full_name": "duty1g/x64dbg-mcp-server",
+  "kind": "mcp",
+  "stars": 2169,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-30T07:13:53Z",
+  "desc": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatibl",
+  "topics": [
+   "ai-agents",
+   "ai-debugging",
+   "binary-analysis",
+   "claude",
+   "claude-code",
+   "malware-analysis",
+   "malware-research",
+   "malware-scanner"
+  ],
+  "caps": [
+   "disassembl",
+   "licens",
+   "protect"
+  ],
+  "readme_len": 13156
+ },
+ {
+  "full_name": "ShinoLeah/eDBG",
+  "kind": "mcp",
+  "stars": 851,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-03-27T10:27:27Z",
+  "desc": "eBPF-based lightweight debugger for Android with MCP support",
+  "topics": [
+   "android",
+   "ebpf",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "disassembl",
+   "licens"
+  ],
+  "readme_len": 6143
+ },
+ {
+  "full_name": "cyberkaida/reverse-engineering-assistant",
+  "kind": "mcp",
+  "stars": 845,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2026-09-29T04:34:53Z",
+  "desc": "MCP server for reverse engineering tasks in Ghidra 👩‍💻",
+  "topics": [
+   "assistant",
+   "binaryninja",
+   "ghidra",
+   "llm",
+   "mcp",
+   "mcp-server",
+   "reverse-engineering"
+  ],
+  "caps": [],
+  "readme_len": 8837
+ },
+ {
+  "full_name": "zinja-coder/apktool-mcp-server",
+  "kind": "mcp",
+  "stars": 661,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2026-07-02T14:20:56Z",
+  "desc": "A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites)",
+  "topics": [
+   "ai",
+   "android",
+   "apktool",
+   "llm",
+   "mcp",
+   "mcp-server",
+   "mobile",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "licens"
+  ],
+  "readme_len": 11796
+ },
+ {
+  "full_name": "SetsunaYukiOvO/x64dbg-mcp",
+  "kind": "mcp",
+  "stars": 512,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-08-21T01:25:31Z",
+  "desc": "MCP server plugin for x64dbg debugger - enables AI agents and external tools to control debugging via JSON-RPC 2.0 over HTTP/SSE",
+  "topics": [],
+  "caps": [
+   "disassembl",
+   "licens",
+   "packer",
+   "unpack"
+  ],
+  "readme_len": 18349
+ },
+ {
+  "full_name": "1-3-7/disrobe",
+  "kind": "mcp",
+  "stars": 142,
+  "license": "NOASSERTION",
+  "archived": false,
+  "pushed_at": "2026-10-03T10:22:32Z",
+  "desc": "Static decompiler, deobfuscator, and unpacker for reverse engineering and malware analysis: Python decompiler (3.8-3.15), PyInstaller extractor, PyArmor unpacke",
+  "topics": [
+   "android-reverse-engineering",
+   "apk-decompiler",
+   "ctf-tools",
+   "decompiler",
+   "deobfuscation",
+   "deobfuscator",
+   "dotnet",
+   "javascript-deobfuscator"
+  ],
+  "caps": [
+   "crypter",
+   "deobfuscat",
+   "disassembl",
+   "hook",
+   "licens",
+   "obfuscat",
+   "packer",
+   "protect",
+   "unpack",
+   "virtualiz"
+  ],
+  "readme_len": 41146
+ },
+ {
+  "full_name": "xiaoyeuzixi/revlab",
+  "kind": "mcp",
+  "stars": 73,
+  "license": "NOASSERTION",
+  "archived": false,
+  "pushed_at": "2026-09-03T00:21:42Z",
+  "desc": "REVLab - Windows PE reverse engineering workflow platform (static analysis, unpacking, disassembly, decompile, dynamic sandbox, network capture, custom pipeline",
+  "topics": [],
+  "caps": [
+   "disassembl",
+   "packer",
+   "unpack"
+  ],
+  "readme_len": 9473
+ },
+ {
+  "full_name": "index-login/MobileRE-Skill",
+  "kind": "mcp",
+  "stars": 92,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-30T02:40:32Z",
+  "desc": "AI Agent 驱动的移动端逆向技能集：Frida hook、一键脱壳、反检测绕过、内存 DEX dump、Ghidra MCP 符号/结构恢复。AI-agent skill system for mobile reverse engineering.",
+  "topics": [
+   "agent-skills",
+   "ai-agent",
+   "android-security",
+   "anti-debug",
+   "dex",
+   "dynamic-instrumentation",
+   "frida",
+   "frida-scripts"
+  ],
+  "caps": [
+   "hook",
+   "licens",
+   "unpack"
+  ],
+  "readme_len": 9968
+ },
+ {
+  "full_name": "JameZUK/Arkana",
+  "kind": "mcp",
+  "stars": 238,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-12T13:31:15Z",
+  "desc": "Arkana - Your entire malware analysis lab, behind one AI prompt. 250+ MCP tools for binary analysis with Claude Code or other MCP",
+  "topics": [
+   "binary",
+   "cybersecurity-tools",
+   "malware-analysis",
+   "malware-analyzer",
+   "malware-research",
+   "mcp-server",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "crack",
+   "deobfuscat",
+   "licens",
+   "obfuscat",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 20454
+ },
+ {
+  "full_name": "mrphrazer/agentic-malware-analysis",
+  "kind": "mcp",
+  "stars": 309,
+  "license": "GPL-2.0",
+  "archived": false,
+  "pushed_at": "2026-03-22T23:28:55Z",
+  "desc": "Agentic malware analysis environment with MCP-connected disassemblers, RE tooling, and structured workflows for Claude Code and Codex CLI.",
+  "topics": [],
+  "caps": [
+   "anti-debug",
+   "antidebug",
+   "disassembl",
+   "licens",
+   "packer"
+  ],
+  "readme_len": 15855
+ },
+ {
+  "full_name": "bl4ckr0ss3/knife",
+  "kind": "mcp",
+  "stars": 359,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-25T16:40:46Z",
+  "desc": "A terminal-first reverse engineering toolkit in Rust: PE/ELF/Mach-O analysis through CLI, TUI, and MCP. Installs as knife.",
+  "topics": [
+   "binary-analysis",
+   "cli",
+   "disassembler",
+   "elf",
+   "macho",
+   "malware-analysis",
+   "pe",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "disassembl",
+   "licens",
+   "packer"
+  ],
+  "readme_len": 17750
+ },
+ {
+  "full_name": "morluto/rea",
+  "kind": "mcp",
+  "stars": 433,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-10-03T10:05:43Z",
+  "desc": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+  "topics": [
+   "agent-skills",
+   "ai-agent-tools",
+   "ai-agents",
+   "binary-analysis",
+   "cli",
+   "coding-agent",
+   "coding-agents",
+   "cordis"
+  ],
+  "caps": [
+   "disassembl",
+   "licens",
+   "obfuscat",
+   "unpack"
+  ],
+  "readme_len": 61769
+ },
+ {
+  "full_name": "horsicq/DIE-engine",
+  "kind": "tool",
+  "stars": 3283,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-10-02T22:44:38Z",
+  "desc": "DIE engine",
+  "topics": [
+   "binary-analysis",
+   "disassembler",
+   "elf",
+   "entropy",
+   "hacktoberfest",
+   "hacktoberfest22",
+   "program-analysis",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "protect"
+  ],
+  "readme_len": 1029
+ },
+ {
+  "full_name": "rednaga/APKiD",
+  "kind": "tool",
+  "stars": 2586,
+  "license": "NOASSERTION",
+  "archived": false,
+  "pushed_at": "2026-09-02T18:55:19Z",
+  "desc": "Android Application Identifier for Packers, Protectors, Obfuscators and Oddities - PEiD for Android",
+  "topics": [
+   "android",
+   "android-protect-apps",
+   "android-protection",
+   "antivirus",
+   "appshielding",
+   "machine-learning",
+   "malware-analysis",
+   "malware-detection"
+  ],
+  "caps": [
+   "disassembl",
+   "licens",
+   "obfuscat",
+   "packer"
+  ],
+  "readme_len": 5973
+ },
+ {
+  "full_name": "j4k0xb/webcrack",
+  "kind": "tool",
+  "stars": 2947,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-07-26T22:22:19Z",
+  "desc": "Deobfuscate obfuscator.io, unminify and unpack bundled javascript",
+  "topics": [
+   "ast",
+   "browserify",
+   "bundle",
+   "debundle",
+   "deobfuscation",
+   "deobfuscator",
+   "extract",
+   "javascript"
+  ],
+  "caps": [
+   "crack",
+   "deobfuscat",
+   "licens",
+   "obfuscat",
+   "unpack"
+  ],
+  "readme_len": 2879
+ },
+ {
+  "full_name": "Lil-House/Pyarmor-Static-Unpack-1shot",
+  "kind": "tool",
+  "stars": 690,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2026-10-01T01:35:35Z",
+  "desc": "✅ No execution ✅ Pyarmor 8.0 - 9.2.x (latest) ✅ Universal ✅ Statically convert obfuscated Python scripts to disassembly and (experimentally) source code.",
+  "topics": [
+   "deobfuscator",
+   "pyarmor",
+   "unpacker"
+  ],
+  "caps": [
+   "crack",
+   "disassembl",
+   "licens",
+   "obfuscat",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 7357
+ },
+ {
+  "full_name": "void-stack/VMUnprotect.Dumper",
+  "kind": "tool",
+  "stars": 461,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2022-08-30T19:21:33Z",
+  "desc": "VMUnprotect.Dumper can dynamically untamper VMProtected Assembly.",
+  "topics": [
+   "antitamper",
+   "deobfuscator",
+   "dotnet",
+   "dumper",
+   "unpacker",
+   "vmp",
+   "vmprotect"
+  ],
+  "caps": [
+   "licens",
+   "protect",
+   "tamper",
+   "unpack",
+   "virtualiz"
+  ],
+  "readme_len": 1718
+ },
+ {
+  "full_name": "AdvDebug/AntiCrack-DotNet",
+  "kind": "tool",
+  "stars": 354,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2025-07-19T22:28:02Z",
+  "desc": ".NET Project containing plenty of advanced techniques to detect various types of malicious actions on your software, with syscall support.",
+  "topics": [
+   "anti-debug",
+   "anti-debugging",
+   "anti-detection",
+   "anti-sandbox",
+   "anti-tamper",
+   "anti-vm",
+   "anticheat",
+   "antidebug"
+  ],
+  "caps": [
+   "anti-debug",
+   "crack",
+   "hook",
+   "licens",
+   "protect",
+   "virtualiz"
+  ],
+  "readme_len": 5412
+ },
+ {
+  "full_name": "NotRequiem/antidbg",
+  "kind": "tool",
+  "stars": 339,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-21T19:41:51Z",
+  "desc": "A stealthy, fully syscalled C/C++ userland anti-debugging library for Windows, designed to protect software from reverse engineering",
+  "topics": [
+   "anti-analysis",
+   "anti-attach",
+   "anti-debug",
+   "anti-debugging",
+   "anti-disassembly",
+   "anti-dump",
+   "anti-reverse-engineer",
+   "anti-reverse-engineering"
+  ],
+  "caps": [
+   "anti-debug",
+   "antidebug",
+   "disassembl",
+   "hook",
+   "licens",
+   "protect",
+   "tamper"
+  ],
+  "readme_len": 13213
+ },
+ {
+  "full_name": "JonathanSalwan/Tigress_protection",
+  "kind": "tool",
+  "stars": 925,
+  "license": "UNKNOWN",
+  "archived": false,
+  "pushed_at": "2023-11-21T15:21:50Z",
+  "desc": "Playing with the Tigress software protection. Break some of its protections and solve their reverse engineering challenges. Automatic deobfuscation using symbol",
+  "topics": [
+   "deobfuscation",
+   "llvm",
+   "reverse-engineering",
+   "solution-tigress-challenge",
+   "symbolic-execution",
+   "taint-analysis",
+   "tigress",
+   "tigress-protections"
+  ],
+  "caps": [
+   "deobfuscat",
+   "hook",
+   "obfuscat",
+   "protect",
+   "virtualiz"
+  ],
+  "readme_len": 9407
+ },
+ {
+  "full_name": "SychicBoy/NETReactorSlayer",
+  "kind": "tool",
+  "stars": 1265,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2026-09-12T13:26:38Z",
+  "desc": "An open source (GPLv3) deobfuscator and unpacker for Eziriz .NET Reactor",
+  "topics": [
+   "deobfuscator",
+   "dnlib",
+   "dotnet",
+   "dotnet-reactor",
+   "reverse-engineering",
+   "unpacker"
+  ],
+  "caps": [
+   "deobfuscat",
+   "licens",
+   "obfuscat",
+   "packer",
+   "unpack"
+  ],
+  "readme_len": 2576
+ },
+ {
+  "full_name": "Svenskithesource/PyArmor-Unpacker",
+  "kind": "tool",
+  "stars": 761,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2025-07-01T12:06:26Z",
+  "desc": "A deobfuscator for PyArmor.",
+  "topics": [
+   "deobfuscator",
+   "pyarmor",
+   "python",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "deobfuscat",
+   "disassembl",
+   "hook",
+   "licens",
+   "obfuscat",
+   "packer",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 26487
+ },
+ {
+  "full_name": "TopSoftdeveloper/UnpackThemida",
+  "kind": "tool",
+  "stars": 208,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2026-08-05T06:25:05Z",
+  "desc": "Dynamic Themida unpacker and import fixer for Themida/WinLicense 2.x and 3.x.",
+  "topics": [
+   "crack",
+   "crack500",
+   "decompile",
+   "reverse-engineering",
+   "themida",
+   "themida-software",
+   "unpack"
+  ],
+  "caps": [
+   "licens",
+   "obfuscat",
+   "packer",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 2135
+ },
+ {
+  "full_name": "ergrelet/unlicense",
+  "kind": "tool",
+  "stars": 1488,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2023-08-19T19:09:22Z",
+  "desc": "Dynamic unpacker and import fixer for Themida/WinLicense 2.x and 3.x.",
+  "topics": [
+   "dotnet-assembly",
+   "dump",
+   "frida",
+   "malware-analysis",
+   "malware-unpacker",
+   "portable-executable",
+   "python",
+   "scylla"
+  ],
+  "caps": [
+   "licens",
+   "obfuscat",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 2676
+ },
+ {
+  "full_name": "ergrelet/themida-unmutate",
+  "kind": "tool",
+  "stars": 395,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2024-07-29T21:22:36Z",
+  "desc": "Static deobfuscator for Themida, WinLicense and Code Virtualizer 3.x's mutation-based obfuscation.",
+  "topics": [
+   "code-mutation",
+   "code-virtualizer",
+   "deobfuscation",
+   "miasm",
+   "obfuscation",
+   "python",
+   "symbolic-execution",
+   "themida"
+  ],
+  "caps": [
+   "deobfuscat",
+   "licens",
+   "obfuscat",
+   "protect",
+   "virtualiz"
+  ],
+  "readme_len": 1986
+ },
+ {
+  "full_name": "JonathanSalwan/VMProtect-devirtualization",
+  "kind": "tool",
+  "stars": 1526,
+  "license": "UNKNOWN",
+  "archived": false,
+  "pushed_at": "2022-06-11T05:13:00Z",
+  "desc": "Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM.",
+  "topics": [
+   "deobfuscation",
+   "llvm-ir",
+   "program-analysis",
+   "symbolic-execution",
+   "vmprotect"
+  ],
+  "caps": [
+   "deobfuscat",
+   "disassembl",
+   "obfuscat",
+   "protect",
+   "virtualiz"
+  ],
+  "readme_len": 22389
+ },
+ {
+  "full_name": "CodingGay/BlackDex",
+  "kind": "tool",
+  "stars": 6454,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2023-11-09T01:49:20Z",
+  "desc": "BlackDex is an Android unpack(dexdump) tool, it supports Android 5.0~12 and need not rely to any environment. BlackDex can run on any Android mobile phone or em",
+  "topics": [
+   "android",
+   "android-unpack",
+   "blackbox",
+   "blackdex",
+   "dexdump",
+   "dump",
+   "dumpdex",
+   "shell"
+  ],
+  "caps": [
+   "hook",
+   "licens"
+  ],
+  "readme_len": 2321
+ },
+ {
+  "full_name": "strazzere/android-unpacker",
+  "kind": "tool",
+  "stars": 1180,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2020-01-20T19:57:15Z",
+  "desc": "Android Unpacker presented at Defcon 22: Android Hacker Protection Level 0",
+  "topics": [
+   "android",
+   "android-unpacker",
+   "gdb",
+   "qemu",
+   "reverse-engineering",
+   "unpacker"
+  ],
+  "caps": [
+   "licens",
+   "packer",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 1534
+ },
+ {
+  "full_name": "ThomasThelen/Anti-Debugging",
+  "kind": "tool",
+  "stars": 628,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2021-12-28T23:17:53Z",
+  "desc": "A collection of c++ programs that demonstrate common ways to detect the presence of an attached debugger.",
+  "topics": [
+   "anti-debugging",
+   "anti-malware",
+   "anti-reversing",
+   "checkremotedebuggerpresent",
+   "cracking",
+   "debugging",
+   "hacking",
+   "isdebuggerpresent"
+  ],
+  "caps": [
+   "anti-debug",
+   "anti-reverse",
+   "antidebug",
+   "licens",
+   "protect"
+  ],
+  "readme_len": 2165
+ },
+ {
+  "full_name": "x86byte/Obfusk8",
+  "kind": "tool",
+  "stars": 826,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-06-25T14:45:47Z",
+  "desc": "Obfusk8: lightweight Obfuscation library based on C++17 / Header Only for windows binaries",
+  "topics": [
+   "code-protection",
+   "compile-time",
+   "compiler-obfuscation",
+   "cpp17-obfuscation",
+   "crypter",
+   "malware-development",
+   "msvc",
+   "obfuscation"
+  ],
+  "caps": [
+   "anti-debug",
+   "deobfuscat",
+   "disassembl",
+   "hook",
+   "obfuscat",
+   "packer",
+   "protect"
+  ],
+  "readme_len": 30595
+ },
+ {
+  "full_name": "undisassemble/yap",
+  "kind": "tool",
+  "stars": 31,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-07-31T20:21:53Z",
+  "desc": "A free and open source protector for x86-64 Windows PEs.",
+  "topics": [
+   "anti-debug",
+   "anti-debugging",
+   "anti-reverse-engineer",
+   "anti-reversing",
+   "bin2bin",
+   "obfuscation",
+   "obfuscator",
+   "packer"
+  ],
+  "caps": [
+   "anti-debug",
+   "disassembl",
+   "licens",
+   "obfuscat",
+   "packer",
+   "protect"
+  ],
+  "readme_len": 2822
+ },
+ {
+  "full_name": "uzokingkong/BTG-packer",
+  "kind": "tool",
+  "stars": 32,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2026-10-02T14:20:16Z",
+  "desc": "A Rust-based x86-64 PE protection framework with RISC program virtualization, polymorphic VM bytecode, CFG transformation, runtime hardening, integrity checks, ",
+  "topics": [
+   "anti-debug",
+   "anti-dump",
+   "binary-protection",
+   "malware",
+   "obfuscation",
+   "obfuscator",
+   "obfuscator-llvm",
+   "obfuscators"
+  ],
+  "caps": [
+   "anti-debug",
+   "licens",
+   "packer",
+   "protect",
+   "virtualiz"
+  ],
+  "readme_len": 9207
+ },
+ {
+  "full_name": "ekcbw/pyc-zipper",
+  "kind": "tool",
+  "stars": 70,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-01-03T14:52:04Z",
+  "desc": "A tool for packing, unpacking, compressing and obfuscating Python bytecode files (.pyc) .",
+  "topics": [
+   "anti-reversing",
+   "bytecode",
+   "compressor",
+   "obfuscator",
+   "packer",
+   "python",
+   "reverse-engineering",
+   "unpacker"
+  ],
+  "caps": [
+   "anti-debug",
+   "hook",
+   "licens",
+   "obfuscat",
+   "unpack"
+  ],
+  "readme_len": 14698
+ },
+ {
+  "full_name": "DosX-dev/UPX-Patcher",
+  "kind": "tool",
+  "stars": 196,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2025-05-21T10:19:29Z",
+  "desc": "Make \"upx -d\" unpacking impossible!",
+  "topics": [
+   "cantunpackexception",
+   "cryptor",
+   "easy-to-use",
+   "executable",
+   "mod",
+   "mutation",
+   "obfuscator",
+   "packer"
+  ],
+  "caps": [
+   "packer",
+   "unpack"
+  ],
+  "readme_len": 516
+ },
+ {
+  "full_name": "invokr/elf-stuff",
+  "kind": "tool",
+  "stars": 21,
+  "license": "UNKNOWN",
+  "archived": false,
+  "pushed_at": "2017-11-19T10:31:51Z",
+  "desc": "Compilation of ELF Packers and ELF obfuscation / Anti-Debugging stuff ",
+  "topics": [
+   "binary-protection",
+   "elf"
+  ],
+  "caps": [
+   "anti-debug",
+   "licens",
+   "packer"
+  ],
+  "readme_len": 992
+ },
+ {
+  "full_name": "iukpo/Proteus",
+  "kind": "tool",
+  "stars": 28,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2016-05-12T05:29:46Z",
+  "desc": "Proteus is an anti-reverse engineering system that provides protection from disassembly and debugging for software written in Java and C/C++.",
+  "topics": [],
+  "caps": [
+   "anti-debug",
+   "anti-reverse",
+   "crack",
+   "disassembl",
+   "licens",
+   "obfuscat",
+   "protect"
+  ],
+  "readme_len": 4915
+ },
+ {
+  "full_name": "NIKJOO/Nanomits",
+  "kind": "tool",
+  "stars": 44,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2025-05-15T01:34:12Z",
+  "desc": "Powerful anti dumping & Anti reverse engineering protection",
+  "topics": [
+   "anti-dump",
+   "anti-reverse-engineering",
+   "armadillo",
+   "nanomits",
+   "obfuscation",
+   "obfuscator",
+   "protection",
+   "software-protection"
+  ],
+  "caps": [
+   "disassembl",
+   "protect"
+  ],
+  "readme_len": 1196
+ },
+ {
+  "full_name": "ga0/pyprotect",
+  "kind": "tool",
+  "stars": 398,
+  "license": "BSD-3-Clause",
+  "archived": false,
+  "pushed_at": "2020-07-24T15:36:23Z",
+  "desc": "A lightweight python code protector, makes your python project harder to reverse engineer",
+  "topics": [
+   "copy-protection",
+   "licensing",
+   "obfuscation",
+   "protector",
+   "python",
+   "security"
+  ],
+  "caps": [
+   "licens",
+   "protect"
+  ],
+  "readme_len": 2504
+ },
+ {
+  "full_name": "anpa1200/Unpacker",
+  "kind": "tool",
+  "stars": 31,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-08-05T13:57:51Z",
+  "desc": "Packer detection and unpacking workflow for malware analysis: UPX, ASPack, Themida, VMProtect, PE and ELF.",
+  "topics": [
+   "cti",
+   "dynamic-analysis",
+   "malware-analysis",
+   "pe-analysis",
+   "pypi",
+   "python",
+   "reverse-engineering",
+   "static-analysis"
+  ],
+  "caps": [
+   "licens",
+   "packer",
+   "protect",
+   "unpack"
+  ],
+  "readme_len": 19545
+ },
+ {
+  "full_name": "wuji66dde/jshook-skill",
+  "kind": "tool",
+  "stars": 269,
+  "license": "GPL-3.0",
+  "archived": false,
+  "pushed_at": "2026-02-11T06:00:30Z",
+  "desc": "  AI-powered JS reverse engineering: deobfuscation, crypto detection, CDP debugging, hook injection, anti-detection |   AI驱动JS逆向：反混淆、加密识别、CDP调试、Hook注入、反检测",
+  "topics": [],
+  "caps": [
+   "anti-debug",
+   "crack",
+   "deobfuscat",
+   "hook",
+   "licens",
+   "obfuscat",
+   "packer",
+   "unpack"
+  ],
+  "readme_len": 13316
+ },
+ {
+  "full_name": "Fadi002/de4py",
+  "kind": "tool",
+  "stars": 1005,
+  "license": "NOASSERTION",
+  "archived": false,
+  "pushed_at": "2026-08-25T12:28:28Z",
+  "desc": "The ultimate AI-powered toolkit for python reverse engineering",
+  "topics": [
+   "ai",
+   "ai-deobfuscators",
+   "de4py",
+   "deobfuscator",
+   "engine",
+   "injector",
+   "llm-deobfuscator",
+   "obfuscation"
+  ],
+  "caps": [
+   "deobfuscat",
+   "licens",
+   "obfuscat",
+   "packer"
+  ],
+  "readme_len": 4412
+ },
+ {
+  "full_name": "P4nda0s/reverse-skills",
+  "kind": "plugin",
+  "stars": 2223,
+  "license": "UNKNOWN",
+  "archived": false,
+  "pushed_at": "2026-05-06T12:46:29Z",
+  "desc": "Reverse engineering skills for Claude Code | 逆向工程 Claude Code Skills 插件",
+  "topics": [],
+  "caps": [],
+  "readme_len": 869
+ },
+ {
+  "full_name": "Masriyan/Claude-Code-CyberSecurity-Skill",
+  "kind": "plugin",
+  "stars": 457,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-07T15:58:00Z",
+  "desc": "22 production-quality Claude Code Skills for cybersecurity professionals — covering offensive security, defensive operations, reverse engineering, threat huntin",
+  "topics": [
+   "claude-skills",
+   "claudecode"
+  ],
+  "caps": [
+   "disassembl",
+   "licens"
+  ],
+  "readme_len": 17041
+ },
+ {
+  "full_name": "gl0bal01/malware-analysis-claude-skills",
+  "kind": "plugin",
+  "stars": 49,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-09-05T21:47:23Z",
+  "desc": "Complete Claude skills toolkit for professional malware analysis. 5 specialized skills covering triage, dynamic analysis, detection engineering, and reporting. ",
+  "topics": [
+   "blue-team",
+   "claude-ai",
+   "claude-skills",
+   "cybersecurity",
+   "flarevm",
+   "incident-response",
+   "malware-analysis",
+   "malware-detection"
+  ],
+  "caps": [
+   "deobfuscat",
+   "disassembl",
+   "obfuscat"
+  ],
+  "readme_len": 17453
+ },
+ {
+  "full_name": "incogbyte/android-reverse-engineering-claude-skill",
+  "kind": "plugin",
+  "stars": 121,
+  "license": "Unlicense",
+  "archived": false,
+  "pushed_at": "2026-06-20T13:53:06Z",
+  "desc": "Claude Code skill that automates Android application reverse engineering",
+  "topics": [
+   "ai-tools",
+   "android",
+   "claude-skills",
+   "pentest",
+   "reverse-engineering"
+  ],
+  "caps": [
+   "deobfuscat",
+   "hook",
+   "licens",
+   "obfuscat",
+   "protect",
+   "tamper"
+  ],
+  "readme_len": 17897
+ },
+ {
+  "full_name": "meirm/reverse-engineering-skill",
+  "kind": "plugin",
+  "stars": 37,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-10-02T15:29:11Z",
+  "desc": "Claude skill for reverse engineering",
+  "topics": [],
+  "caps": [
+   "licens"
+  ],
+  "readme_len": 9390
+ },
+ {
+  "full_name": "LichAmnesia/skill-lint",
+  "kind": "plugin",
+  "stars": 11,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-04-19T17:07:22Z",
+  "desc": "Security scanner for Claude Code / agent skills. Catches prompt injection, obfuscation, credential exfiltration, and supply-chain risks before you install a thi",
+  "topics": [],
+  "caps": [
+   "hook",
+   "licens",
+   "obfuscat",
+   "protect",
+   "tamper"
+  ],
+  "readme_len": 7405
+ },
+ {
+  "full_name": "highimpact-dev/skill-shield",
+  "kind": "plugin",
+  "stars": 5,
+  "license": "UNKNOWN",
+  "archived": false,
+  "pushed_at": "2026-03-24T23:14:30Z",
+  "desc": "Security auditor for AI agent skills. Scans for prompt injection, data exfiltration, destructive ops, and obfuscation. Trust scores + marketplace with CI verifi",
+  "topics": [],
+  "caps": [
+   "hook",
+   "licens",
+   "obfuscat"
+  ],
+  "readme_len": 5883
+ },
+ {
+  "full_name": "almasumdev/awesome-mobile-security-agent-skills",
+  "kind": "plugin",
+  "stars": 2,
+  "license": "NOASSERTION",
+  "archived": false,
+  "pushed_at": "2026-04-19T14:41:54Z",
+  "desc": "Agent skills for securing mobile apps: storage, transport, auth, obfuscation, and hardening.",
+  "topics": [
+   "agent-skills",
+   "ai-agents",
+   "appsec",
+   "awesome",
+   "copilot",
+   "mobile",
+   "owasp-masvs",
+   "security"
+  ],
+  "caps": [
+   "licens",
+   "obfuscat",
+   "protect",
+   "tamper"
+  ],
+  "readme_len": 7457
+ },
+ {
+  "full_name": "Njones17/AI-agent-master-cyber-skills-list",
+  "kind": "pack",
+  "stars": 24,
+  "license": "UNKNOWN",
+  "archived": false,
+  "pushed_at": "2026-03-06T16:13:09Z",
+  "desc": "The most comprehensive cybersecurity skill pack for AI coding agents — 741 skills spanning offense, defense, cloud, forensics, malware analysis, CTF, AppSec, De",
+  "topics": [],
+  "caps": [
+   "licens"
+  ],
+  "readme_len": 4194
+ },
+ {
+  "full_name": "meltedinhex/analyst-ai-pack",
+  "kind": "pack",
+  "stars": 21,
+  "license": "Apache-2.0",
+  "archived": false,
+  "pushed_at": "2026-07-07T13:15:57Z",
+  "desc": "An open agent-skills library for malware analysis, reverse engineering, and threat hunting - 118 curated, runnable skills mapped to MITRE ATT&CK, D3FEND, and CA",
+  "topics": [
+   "agent-skills",
+   "detection-engineering",
+   "dfir",
+   "malware-analysis",
+   "mitre-attack",
+   "reverse-engineering",
+   "threat-hunting"
+  ],
+  "caps": [
+   "deobfuscat",
+   "disassembl",
+   "licens",
+   "obfuscat",
+   "unpack"
+  ],
+  "readme_len": 9694
+ },
+ {
+  "full_name": "ibrdot/swe-re-expert",
+  "kind": "pack",
+  "stars": 2,
+  "license": "MIT",
+  "archived": false,
+  "pushed_at": "2026-08-25T09:08:40Z",
+  "desc": "Expert-level Software Engineering & Reverse Engineering skill for AI agents. Analyze, audit, debug, refactor, and reverse-engineer codebases and binaries across",
+  "topics": [
+   "agent-skills",
+   "ai-agent",
+   "ai-skills",
+   "binary-analysis",
+   "code-analysis",
+   "code-audit",
+   "cybersecurity",
+   "developer-tools"
+  ],
+  "caps": [
+   "crack",
+   "disassembl",
+   "licens",
+   "obfuscat"
+  ],
+  "readme_len": 5683
+ }
+]
