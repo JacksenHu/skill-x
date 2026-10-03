@@ -3515,7 +3515,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "ghidra-mcp 许可证 Apache-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3556,7 +3556,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "x64dbg-mcp-server 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3597,7 +3597,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "eDBG 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3638,7 +3638,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "reverse-engineering-assistant 许可证 Apache-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3679,7 +3679,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "apktool-mcp-server 许可证 Apache-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3720,7 +3720,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "x64dbg-mcp 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3761,7 +3761,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "disrobe 许可证 NOASSERTION；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3802,7 +3802,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "revlab 许可证 NOASSERTION；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3843,7 +3843,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "MobileRE-Skill 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3884,7 +3884,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "Arkana 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3925,7 +3925,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "agentic-malware-analysis 许可证 GPL-2.0；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -3966,7 +3966,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "knife 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",
@@ -4007,7 +4007,7 @@
    "_meta": {
     "top.skillx/curated": {
      "entryType": "mcp",
-     "category": "reverse-engineering",
+     "category": "network-engineering-defense",
      "kind": "link",
      "riskLevel": "medium",
      "riskNote": "rea 许可证 MIT；指路牌条目，本体由上游仓库分发，本站不镜像代码。",

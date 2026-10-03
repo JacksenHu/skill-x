@@ -43,7 +43,7 @@ RATE_LIMIT = 60  # 次/分钟/IP
 UA = {"User-Agent": "skill-x-api/1.0"}
 _rate = {}
 
-VERSION = "2026-10-03.1"
+VERSION = "2026-10-03.2"
 VALID_KEY = re.compile(r"^[\w./-]{1,120}$")
 
 CAT_KW = {
@@ -52,6 +52,7 @@ CAT_KW = {
     "malware": ["样本", "恶意", "病毒", "木马", "后门", "勒索", "c2", "ioc", "yara", "加壳", "免杀", "远控"],
     "forensics": ["内存", "转储", "dump", "进程", "指针", "偏移", "aob", "特征码", "基址", "崩溃"],
     "engineering-hygiene": ["测试", "回归", "验证", "质量", "审查", "纪律", "假红", "污染"],
+    "network-engineering-defense": ["加壳", "脱壳", "混淆", "加解密", "防调试", "反调试", "加固", "防逆向", "反破解", "壳"],
     "dev-workflow": ["开发", "流程", "工程", "ci", "部署", "调试"],
 }
 

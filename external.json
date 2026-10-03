@@ -10517,7 +10517,8 @@
     }
    ],
    "name-zh": "逆向工程 Claude Code Skills 插件",
-   "summary-zh": "逆向工程 Claude Code Skills 插件：为 Claude Code 提供反汇编、反编译、脱壳与反混淆的成套技能。"
+   "summary-zh": "逆向工程 Claude Code Skills 插件：为 Claude Code 提供反汇编、反编译、脱壳与反混淆的成套技能。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "Masriyan/Claude-Code-CyberSecurity-Skill",
@@ -10674,7 +10675,8 @@
     }
    ],
    "name-zh": "Claude Code 网络安全技能包",
-   "summary-zh": "Claude Code 网络安全技能包：22 个生产级技能，覆盖逆向、二进制分析与安全审计。"
+   "summary-zh": "Claude Code 网络安全技能包：22 个生产级技能，覆盖逆向、二进制分析与安全审计。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "gl0bal01/malware-analysis-claude-skills",
@@ -10735,7 +10737,8 @@
     }
    ],
    "name-zh": "恶意代码分析 Claude 技能工具箱",
-   "summary-zh": "恶意代码分析 Claude 技能工具箱：5 个专业化技能，含反混淆、反汇编与行为分析。"
+   "summary-zh": "恶意代码分析 Claude 技能工具箱：5 个专业化技能，含反混淆、反汇编与行为分析。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "incogbyte/android-reverse-engineering-claude-skill",
@@ -10766,7 +10769,8 @@
     }
    ],
    "name-zh": "Android 逆向 Claude 技能",
-   "summary-zh": "Android 逆向 Claude 技能：自动化 Android 应用反编译、反混淆与 hook 注入。"
+   "summary-zh": "Android 逆向 Claude 技能：自动化 Android 应用反编译、反混淆与 hook 注入。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "meirm/reverse-engineering-skill",
@@ -10839,7 +10843,8 @@
     }
    ],
    "name-zh": "逆向工程 Claude 技能",
-   "summary-zh": "逆向工程 Claude 技能：为 Agent 提供二进制逆向的工作流与提示词。"
+   "summary-zh": "逆向工程 Claude 技能：为 Agent 提供二进制逆向的工作流与提示词。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "LichAmnesia/skill-lint",
@@ -11086,7 +11091,8 @@
     }
    ],
    "name-zh": "skill-lint",
-   "summary-zh": "skill-lint：Agent 技能安全扫描器，检测提示词注入、混淆载荷与数据外泄。"
+   "summary-zh": "skill-lint：Agent 技能安全扫描器，检测提示词注入、混淆载荷与数据外泄。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "highimpact-dev/skill-shield",
@@ -11141,7 +11147,8 @@
     }
    ],
    "name-zh": "skill-shield",
-   "summary-zh": "skill-shield：AI Agent 技能安全审计工具，扫描提示词注入与数据外泄风险。"
+   "summary-zh": "skill-shield：AI Agent 技能安全审计工具，扫描提示词注入与数据外泄风险。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "almasumdev/awesome-mobile-security-agent-skills",
@@ -11286,7 +11293,8 @@
     }
    ],
    "name-zh": "移动安全 Agent 技能集",
-   "summary-zh": "移动安全 Agent 技能集：存储、传输、认证与代码混淆方向的加固技能。"
+   "summary-zh": "移动安全 Agent 技能集：存储、传输、认证与代码混淆方向的加固技能。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "Njones17/AI-agent-master-cyber-skills-list",
@@ -11551,7 +11559,8 @@
     }
    ],
    "name-zh": "网络安全技能总表",
-   "summary-zh": "网络安全技能总表：741 个面向 AI 编码 Agent 的安全技能清单，含逆向与对抗方向。"
+   "summary-zh": "网络安全技能总表：741 个面向 AI 编码 Agent 的安全技能清单，含逆向与对抗方向。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "meltedinhex/analyst-ai-pack",
@@ -11816,7 +11825,8 @@
     }
    ],
    "name-zh": "analyst-ai-pack",
-   "summary-zh": "analyst-ai-pack：开放的恶意代码分析与逆向技能库，含反混淆、反汇编与脱壳流程。"
+   "summary-zh": "analyst-ai-pack：开放的恶意代码分析与逆向技能库，含反混淆、反汇编与脱壳流程。",
+   "category": "network-engineering-defense"
   },
   {
    "namespace": "ibrdot/swe-re-expert",
@@ -11847,7 +11857,8 @@
     }
    ],
    "name-zh": "SWE/RE 专家技能",
-   "summary-zh": "SWE/RE 专家技能：面向 AI Agent 的专家级软件工程与逆向工程技能。"
+   "summary-zh": "SWE/RE 专家技能：面向 AI Agent 的专家级软件工程与逆向工程技能。",
+   "category": "network-engineering-defense"
   }
  ]
 }

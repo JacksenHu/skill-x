@@ -1373,7 +1373,7 @@
    "slug": "die-engine",
    "name": "DIE-engine",
    "name_zh": "DIE Engine",
-   "category_id": "recon",
+   "category_id": "network-engineering-defense",
    "summary": "DIE Engine：Detect It Easy 的核心引擎，识别 2000+ 加壳器、编译器、保护壳与混淆器特征，是脱壳前的第一道工序。",
    "description": "DIE Engine：Detect It Easy 的核心引擎，识别 2000+ 加壳器、编译器、保护壳与混淆器特征，是脱壳前的第一道工序。",
    "detail_url": "/tools/die-engine.html",
@@ -1394,7 +1394,7 @@
     "url": "https://gitmcp.io/horsicq/DIE-engine"
    },
    "labels": [
-    "recon",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1410,7 +1410,7 @@
    "slug": "apkid",
    "name": "APKiD",
    "name_zh": "APKiD",
-   "category_id": "recon",
+   "category_id": "network-engineering-defense",
    "summary": "APKiD：Android 应用指纹识别工具，判定所用加壳器、保护壳、混淆器与编译器，支撑后续脱壳与反混淆决策。",
    "description": "APKiD：Android 应用指纹识别工具，判定所用加壳器、保护壳、混淆器与编译器，支撑后续脱壳与反混淆决策。",
    "detail_url": "/tools/apkid.html",
@@ -1431,7 +1431,7 @@
     "url": "https://gitmcp.io/rednaga/APKiD"
    },
    "labels": [
-    "recon",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1447,7 +1447,7 @@
    "slug": "webcrack",
    "name": "webcrack",
    "name_zh": "webcrack",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "webcrack：反混淆 obfuscator.io、还原压缩并解包打包后的 JavaScript，前端逆向常用。",
    "description": "webcrack：反混淆 obfuscator.io、还原压缩并解包打包后的 JavaScript，前端逆向常用。",
    "detail_url": "/tools/webcrack.html",
@@ -1468,7 +1468,7 @@
     "url": "https://gitmcp.io/j4k0xb/webcrack"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1484,7 +1484,7 @@
    "slug": "pyarmor-static-unpack-1shot",
    "name": "Pyarmor-Static-Unpack-1shot",
    "name_zh": "Pyarmor 静态脱壳",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Pyarmor 静态脱壳：无需执行样本即可还原 Pyarmor 8.0-9.2 加密的 Python 字节码。",
    "description": "Pyarmor 静态脱壳：无需执行样本即可还原 Pyarmor 8.0-9.2 加密的 Python 字节码。",
    "detail_url": "/tools/pyarmor-static-unpack-1shot.html",
@@ -1505,7 +1505,7 @@
     "url": "https://gitmcp.io/Lil-House/Pyarmor-Static-Unpack-1shot"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1521,7 +1521,7 @@
    "slug": "vmunprotect-dumper",
    "name": "VMUnprotect.Dumper",
    "name_zh": "VMUnprotect.Dumper",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "VMUnprotect.Dumper：动态还原被 VMProtect 虚拟化保护的程序集，处理代码虚拟化与篡改检测。",
    "description": "VMUnprotect.Dumper：动态还原被 VMProtect 虚拟化保护的程序集，处理代码虚拟化与篡改检测。",
    "detail_url": "/tools/vmunprotect-dumper.html",
@@ -1542,7 +1542,7 @@
     "url": "https://gitmcp.io/void-stack/VMUnprotect.Dumper"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1558,7 +1558,7 @@
    "slug": "anticrack-dotnet",
    "name": "AntiCrack-DotNet",
    "name_zh": "AntiCrack-DotNet",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "AntiCrack-DotNet：.NET 反破解技术合集，覆盖调试器检测、篡改检测与反注入等多种防护手段的实现。",
    "description": "AntiCrack-DotNet：.NET 反破解技术合集，覆盖调试器检测、篡改检测与反注入等多种防护手段的实现。",
    "detail_url": "/tools/anticrack-dotnet.html",
@@ -1579,7 +1579,7 @@
     "url": "https://gitmcp.io/AdvDebug/AntiCrack-DotNet"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1595,7 +1595,7 @@
    "slug": "antidbg",
    "name": "antidbg",
    "name_zh": "antidbg",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "antidbg：全系统调用的 C/C++ 用户态反调试库，规避常规 API 挂钩检测，研究对抗调试器行为。",
    "description": "antidbg：全系统调用的 C/C++ 用户态反调试库，规避常规 API 挂钩检测，研究对抗调试器行为。",
    "detail_url": "/tools/antidbg.html",
@@ -1616,7 +1616,7 @@
     "url": "https://gitmcp.io/NotRequiem/antidbg"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1632,7 +1632,7 @@
    "slug": "tigress-protection",
    "name": "Tigress_protection",
    "name_zh": "Tigress Protection",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Tigress Protection：针对 Tigress 代码混淆保护的分析与破解实践，含虚拟化、控制流平坦化等变换的还原。",
    "description": "Tigress Protection：针对 Tigress 代码混淆保护的分析与破解实践，含虚拟化、控制流平坦化等变换的还原。",
    "detail_url": "/tools/tigress-protection.html",
@@ -1653,7 +1653,7 @@
     "url": "https://gitmcp.io/JonathanSalwan/Tigress_protection"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1669,7 +1669,7 @@
    "slug": "netreactorslayer",
    "name": "NETReactorSlayer",
    "name_zh": "NETReactorSlayer",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "NETReactorSlayer：.NET Reactor 保护样本的开源反混淆与脱壳器。",
    "description": "NETReactorSlayer：.NET Reactor 保护样本的开源反混淆与脱壳器。",
    "detail_url": "/tools/netreactorslayer.html",
@@ -1690,7 +1690,7 @@
     "url": "https://gitmcp.io/SychicBoy/NETReactorSlayer"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1706,7 +1706,7 @@
    "slug": "pyarmor-unpacker",
    "name": "PyArmor-Unpacker",
    "name_zh": "PyArmor-Unpacker",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "PyArmor-Unpacker：PyArmor 混淆 Python 代码的反混淆器。",
    "description": "PyArmor-Unpacker：PyArmor 混淆 Python 代码的反混淆器。",
    "detail_url": "/tools/pyarmor-unpacker.html",
@@ -1727,7 +1727,7 @@
     "url": "https://gitmcp.io/Svenskithesource/PyArmor-Unpacker"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1743,7 +1743,7 @@
    "slug": "unpackthemida",
    "name": "UnpackThemida",
    "name_zh": "UnpackThemida",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "UnpackThemida：Themida/WinLicense 2.x/3.x 动态脱壳器与导入表修复工具。",
    "description": "UnpackThemida：Themida/WinLicense 2.x/3.x 动态脱壳器与导入表修复工具。",
    "detail_url": "/tools/unpackthemida.html",
@@ -1764,7 +1764,7 @@
     "url": "https://gitmcp.io/TopSoftdeveloper/UnpackThemida"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1780,7 +1780,7 @@
    "slug": "unlicense",
    "name": "unlicense",
    "name_zh": "unlicense",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "unlicense：Themida/WinLicense 动态脱壳器与导入表修复，脱壳分析常用工具。",
    "description": "unlicense：Themida/WinLicense 动态脱壳器与导入表修复，脱壳分析常用工具。",
    "detail_url": "/tools/unlicense.html",
@@ -1801,7 +1801,7 @@
     "url": "https://gitmcp.io/ergrelet/unlicense"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1817,7 +1817,7 @@
    "slug": "themida-unmutate",
    "name": "themida-unmutate",
    "name_zh": "themida-unmutate",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "themida-unmutate：Themida / WinLicense / Code Virtualizer 3.x 的静态反混淆器，还原变异指令。",
    "description": "themida-unmutate：Themida / WinLicense / Code Virtualizer 3.x 的静态反混淆器，还原变异指令。",
    "detail_url": "/tools/themida-unmutate.html",
@@ -1838,7 +1838,7 @@
     "url": "https://gitmcp.io/ergrelet/themida-unmutate"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1854,7 +1854,7 @@
    "slug": "vmprotect-devirtualization",
    "name": "VMProtect-devirtualization",
    "name_zh": "VMProtect Devirtualization",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "VMProtect Devirtualization：VMProtect 虚拟化代码的自动反混淆与去虚拟化研究实现。",
    "description": "VMProtect Devirtualization：VMProtect 虚拟化代码的自动反混淆与去虚拟化研究实现。",
    "detail_url": "/tools/vmprotect-devirtualization.html",
@@ -1875,7 +1875,7 @@
     "url": "https://gitmcp.io/JonathanSalwan/VMProtect-devirtualization"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1891,7 +1891,7 @@
    "slug": "blackdex",
    "name": "BlackDex",
    "name_zh": "BlackDex",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "BlackDex：Android 脱壳（dex dump）工具，支持 Android 5.0-14，无需 root 即可抽取运行时 DEX。",
    "description": "BlackDex：Android 脱壳（dex dump）工具，支持 Android 5.0-14，无需 root 即可抽取运行时 DEX。",
    "detail_url": "/tools/blackdex.html",
@@ -1912,7 +1912,7 @@
     "url": "https://gitmcp.io/CodingGay/BlackDex"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1928,7 +1928,7 @@
    "slug": "android-unpacker",
    "name": "android-unpacker",
    "name_zh": "Android Unpacker",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Android Unpacker：Defcon 22 发布的 Android 脱壳方案，应对各类加固与反调试保护。",
    "description": "Android Unpacker：Defcon 22 发布的 Android 脱壳方案，应对各类加固与反调试保护。",
    "detail_url": "/tools/android-unpacker.html",
@@ -1949,7 +1949,7 @@
     "url": "https://gitmcp.io/strazzere/android-unpacker"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -1965,7 +1965,7 @@
    "slug": "anti-debugging",
    "name": "Anti-Debugging",
    "name_zh": "Anti-Debugging",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Anti-Debugging：C++ 编写的常见反调试检测手法合集，用于理解与对抗调试器检测。",
    "description": "Anti-Debugging：C++ 编写的常见反调试检测手法合集，用于理解与对抗调试器检测。",
    "detail_url": "/tools/anti-debugging.html",
@@ -1986,7 +1986,7 @@
     "url": "https://gitmcp.io/ThomasThelen/Anti-Debugging"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2002,7 +2002,7 @@
    "slug": "obfusk8",
    "name": "Obfusk8",
    "name_zh": "Obfusk8",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Obfusk8：C++17 头文件级轻量混淆库，支持控制流混淆与反调试，适合研究混淆实现。",
    "description": "Obfusk8：C++17 头文件级轻量混淆库，支持控制流混淆与反调试，适合研究混淆实现。",
    "detail_url": "/tools/obfusk8.html",
@@ -2023,7 +2023,7 @@
     "url": "https://gitmcp.io/x86byte/Obfusk8"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2039,7 +2039,7 @@
    "slug": "yap",
    "name": "yap",
    "name_zh": "yap",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "yap：x86-64 Windows PE 的开源保护壳，含代码加密与反调试，可用于研究壳的实现原理。",
    "description": "yap：x86-64 Windows PE 的开源保护壳，含代码加密与反调试，可用于研究壳的实现原理。",
    "detail_url": "/tools/yap.html",
@@ -2060,7 +2060,7 @@
     "url": "https://gitmcp.io/undisassemble/yap"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2076,7 +2076,7 @@
    "slug": "btg-packer",
    "name": "BTG-packer",
    "name_zh": "BTG-packer",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "BTG-packer：Rust 实现的 x86-64 PE 保护框架，内置 RISC 程序虚拟化与反调试。",
    "description": "BTG-packer：Rust 实现的 x86-64 PE 保护框架，内置 RISC 程序虚拟化与反调试。",
    "detail_url": "/tools/btg-packer.html",
@@ -2097,7 +2097,7 @@
     "url": "https://gitmcp.io/uzokingkong/BTG-packer"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2113,7 +2113,7 @@
    "slug": "pyc-zipper",
    "name": "pyc-zipper",
    "name_zh": "pyc-zipper",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "pyc-zipper：Python 字节码的加壳、压缩与混淆工具，可做样本构造与防护研究。",
    "description": "pyc-zipper：Python 字节码的加壳、压缩与混淆工具，可做样本构造与防护研究。",
    "detail_url": "/tools/pyc-zipper.html",
@@ -2134,7 +2134,7 @@
     "url": "https://gitmcp.io/ekcbw/pyc-zipper"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2150,7 +2150,7 @@
    "slug": "upx-patcher",
    "name": "UPX-Patcher",
    "name_zh": "UPX-Patcher",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "UPX-Patcher：改造 UPX 壳使 upx -d 无法直接脱壳，用于研究壳的检测与对抗。",
    "description": "UPX-Patcher：改造 UPX 壳使 upx -d 无法直接脱壳，用于研究壳的检测与对抗。",
    "detail_url": "/tools/upx-patcher.html",
@@ -2171,7 +2171,7 @@
     "url": "https://gitmcp.io/DosX-dev/UPX-Patcher"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2187,7 +2187,7 @@
    "slug": "elf-stuff",
    "name": "elf-stuff",
    "name_zh": "elf-stuff",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "elf-stuff：ELF 加壳器、混淆与反调试技术资料与实现合集。",
    "description": "elf-stuff：ELF 加壳器、混淆与反调试技术资料与实现合集。",
    "detail_url": "/tools/elf-stuff.html",
@@ -2208,7 +2208,7 @@
     "url": "https://gitmcp.io/invokr/elf-stuff"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2224,7 +2224,7 @@
    "slug": "proteus",
    "name": "Proteus",
    "name_zh": "Proteus",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Proteus：反逆向工程保护系统，集成本地代码虚拟化、反调试与防篡改。",
    "description": "Proteus：反逆向工程保护系统，集成本地代码虚拟化、反调试与防篡改。",
    "detail_url": "/tools/proteus.html",
@@ -2245,7 +2245,7 @@
     "url": "https://gitmcp.io/iukpo/Proteus"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2261,7 +2261,7 @@
    "slug": "nanomits",
    "name": "Nanomits",
    "name_zh": "Nanomits",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Nanomits：强对抗的内存转储防护与反逆向工程保护库。",
    "description": "Nanomits：强对抗的内存转储防护与反逆向工程保护库。",
    "detail_url": "/tools/nanomits.html",
@@ -2282,7 +2282,7 @@
     "url": "https://gitmcp.io/NIKJOO/Nanomits"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2298,7 +2298,7 @@
    "slug": "pyprotect",
    "name": "pyprotect",
    "name_zh": "pyprotect",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "pyprotect：轻量 Python 代码保护工具，提升项目被逆向的难度。",
    "description": "pyprotect：轻量 Python 代码保护工具，提升项目被逆向的难度。",
    "detail_url": "/tools/pyprotect.html",
@@ -2319,7 +2319,7 @@
     "url": "https://gitmcp.io/ga0/pyprotect"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2335,7 +2335,7 @@
    "slug": "unpacker",
    "name": "Unpacker",
    "name_zh": "Unpacker",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "Unpacker：恶意代码分析中的加壳识别与脱壳工作流，覆盖 UPX、ASPack 等常见壳。",
    "description": "Unpacker：恶意代码分析中的加壳识别与脱壳工作流，覆盖 UPX、ASPack 等常见壳。",
    "detail_url": "/tools/unpacker.html",
@@ -2356,7 +2356,7 @@
     "url": "https://gitmcp.io/anpa1200/Unpacker"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2372,7 +2372,7 @@
    "slug": "jshook-skill",
    "name": "jshook-skill",
    "name_zh": "jshook-skill",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "jshook-skill：AI 驱动的 JS 逆向技能，含反混淆、加密检测与 hook 注入。",
    "description": "jshook-skill：AI 驱动的 JS 逆向技能，含反混淆、加密检测与 hook 注入。",
    "detail_url": "/tools/jshook-skill.html",
@@ -2393,7 +2393,7 @@
     "url": "https://gitmcp.io/wuji66dde/jshook-skill"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],
@@ -2409,7 +2409,7 @@
    "slug": "de4py",
    "name": "de4py",
    "name_zh": "de4py",
-   "category_id": "reverse-engineering",
+   "category_id": "network-engineering-defense",
    "summary": "de4py：AI 驱动的 Python 逆向工具箱，含反混淆与脱壳辅助。",
    "description": "de4py：AI 驱动的 Python 逆向工具箱，含反混淆与脱壳辅助。",
    "detail_url": "/tools/de4py.html",
@@ -2430,7 +2430,7 @@
     "url": "https://gitmcp.io/Fadi002/de4py"
    },
    "labels": [
-    "reverse-engineering",
+    "network-engineering-defense",
     "source",
     "anti-reverse"
    ],

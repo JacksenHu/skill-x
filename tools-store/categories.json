@@ -3,9 +3,9 @@
  "version": "1.0.0",
  "categories": [
   {
-   "id": "reverse-engineering",
-   "name": "逆向工程",
-   "name_en": "Reverse Engineering",
+   "id": "network-engineering-defense",
+   "name": "网络与工程防御",
+   "name_en": "Network & Engineering Defense",
    "order": 0
   },
   {

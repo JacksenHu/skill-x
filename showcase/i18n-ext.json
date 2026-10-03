@@ -6302,5 +6302,967 @@
       "description-zh": "录制并剪辑游戏 Mod 的展示短片,可直接发布。",
       "category": "ai-media"
     }
+  },
+  "P4nda0s/reverse-skills": {
+    "rev-dex-dumper": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev DEX dumper",
+      "description-zh": "网络与工程防御技能，覆盖rev DEX dumper相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-frida": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev Frida",
+      "description-zh": "网络与工程防御技能，覆盖rev Frida相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-idapython": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev idapython",
+      "description-zh": "网络与工程防御技能，覆盖rev idapython相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-ios-dump": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev iOS dump",
+      "description-zh": "网络与工程防御技能，覆盖rev iOS dump相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-struct": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev struct",
+      "description-zh": "网络与工程防御技能，覆盖rev struct相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-symbol": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev symbol",
+      "description-zh": "网络与工程防御技能，覆盖rev symbol相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-u3d-dump": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev u3d dump",
+      "description-zh": "网络与工程防御技能，覆盖rev u3d dump相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rev-unicorn-debug": {
+      "category": "network-engineering-defense",
+      "name-zh": "rev unicorn debug",
+      "description-zh": "网络与工程防御技能，覆盖rev unicorn debug相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "Masriyan/Claude-Code-CyberSecurity-Skill": {
+    "Reconnaissance & OSINT Automation": {
+      "category": "network-engineering-defense",
+      "name-zh": "Reconnaissance & OSINT Automation",
+      "description-zh": "网络与工程防御技能，覆盖Reconnaissance & OSINT Automation相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Vulnerability Scanning & Assessment": {
+      "category": "network-engineering-defense",
+      "name-zh": "Vulnerability Scanning & Assessment",
+      "description-zh": "网络与工程防御技能，覆盖Vulnerability Scanning & Assessment相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Exploit Development & Payload Engineering": {
+      "category": "network-engineering-defense",
+      "name-zh": "Exploit Development & Payload Engineering",
+      "description-zh": "网络与工程防御技能，覆盖Exploit Development & Payload Engineering相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Reverse Engineering & Binary Analysis": {
+      "category": "network-engineering-defense",
+      "name-zh": "Reverse Engineering & Binary Analysis",
+      "description-zh": "网络与工程防御技能，覆盖Reverse Engineering & Binary Analysis相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Malware Analysis & Sandboxing": {
+      "category": "network-engineering-defense",
+      "name-zh": "Malware Analysis & Sandboxing",
+      "description-zh": "网络与工程防御技能，覆盖Malware Analysis & Sandboxing相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Threat Hunting & IOC Analysis": {
+      "category": "network-engineering-defense",
+      "name-zh": "Threat Hunting & IOC Analysis",
+      "description-zh": "网络与工程防御技能，覆盖Threat Hunting & IOC Analysis相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Incident Response & Digital Forensics": {
+      "category": "network-engineering-defense",
+      "name-zh": "Incident Response & Digital Forensics",
+      "description-zh": "网络与工程防御技能，覆盖Incident Response & Digital Forensics相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Network Security & Traffic Analysis": {
+      "category": "network-engineering-defense",
+      "name-zh": "Network Security & Traffic Analysis",
+      "description-zh": "网络与工程防御技能，覆盖Network Security & Traffic Analysis相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Web Application Security Testing": {
+      "category": "network-engineering-defense",
+      "name-zh": "Web Application Security Testing",
+      "description-zh": "网络与工程防御技能，覆盖Web Application Security Testing相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Cloud Security & Container Hardening": {
+      "category": "network-engineering-defense",
+      "name-zh": "Cloud Security & Container Hardening",
+      "description-zh": "网络与工程防御技能，覆盖Cloud Security & Container Hardening相关的防护机制、逆向对抗与工程加固。"
+    },
+    "CSOC Operations & Playbook Automation": {
+      "category": "network-engineering-defense",
+      "name-zh": "CSOC Operations & Playbook Automation",
+      "description-zh": "网络与工程防御技能，覆盖CSOC Operations & Playbook Automation相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Log Analysis & SIEM Integration": {
+      "category": "network-engineering-defense",
+      "name-zh": "Log Analysis & SIEM Integration",
+      "description-zh": "网络与工程防御技能，覆盖Log Analysis & SIEM Integration相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Cryptographic Analysis & Assessment": {
+      "category": "network-engineering-defense",
+      "name-zh": "Cryptographic Analysis & Assessment",
+      "description-zh": "网络与工程防御技能，覆盖Cryptographic Analysis & Assessment相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Red Team Operations & Engagement Planning": {
+      "category": "network-engineering-defense",
+      "name-zh": "Red Team Operations & Engagement Planning",
+      "description-zh": "网络与工程防御技能，覆盖Red Team Operations & Engagement Planning相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Blue Team Defense & Hardening": {
+      "category": "network-engineering-defense",
+      "name-zh": "Blue Team Defense & Hardening",
+      "description-zh": "网络与工程防御技能，覆盖Blue Team Defense & Hardening相关的防护机制、逆向对抗与工程加固。"
+    },
+    "AI & LLM Security": {
+      "category": "network-engineering-defense",
+      "name-zh": "AI & LLM Security",
+      "description-zh": "网络与工程防御技能，覆盖AI & LLM Security相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Mobile Application Security": {
+      "category": "network-engineering-defense",
+      "name-zh": "Mobile Application Security",
+      "description-zh": "网络与工程防御技能，覆盖Mobile Application Security相关的防护机制、逆向对抗与工程加固。"
+    },
+    "OT / ICS / SCADA Security": {
+      "category": "network-engineering-defense",
+      "name-zh": "OT / ICS / SCADA Security",
+      "description-zh": "网络与工程防御技能，覆盖OT / ICS / SCADA Security相关的防护机制、逆向对抗与工程加固。"
+    },
+    "GRC & Compliance": {
+      "category": "network-engineering-defense",
+      "name-zh": "GRC & Compliance",
+      "description-zh": "网络与工程防御技能，覆盖GRC & Compliance相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Supply Chain Security": {
+      "category": "network-engineering-defense",
+      "name-zh": "Supply Chain Security",
+      "description-zh": "网络与工程防御技能，覆盖Supply Chain Security相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Threat Intelligence & CTI": {
+      "category": "network-engineering-defense",
+      "name-zh": "Threat Intelligence & CTI",
+      "description-zh": "网络与工程防御技能，覆盖Threat Intelligence & CTI相关的防护机制、逆向对抗与工程加固。"
+    },
+    "Purple Team & Adversary Emulation": {
+      "category": "network-engineering-defense",
+      "name-zh": "Purple Team & Adversary Emulation",
+      "description-zh": "网络与工程防御技能，覆盖Purple Team & Adversary Emulation相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "gl0bal01/malware-analysis-claude-skills": {
+    "malware-analysis": {
+      "category": "network-engineering-defense",
+      "name-zh": "恶意软件 分析",
+      "description-zh": "网络与工程防御技能，覆盖恶意软件 分析相关的防护机制、逆向对抗与工程加固。"
+    },
+    "detection-engineer": {
+      "category": "network-engineering-defense",
+      "name-zh": "检测 engineer",
+      "description-zh": "网络与工程防御技能，覆盖检测 engineer相关的防护机制、逆向对抗与工程加固。"
+    },
+    "malware-dynamic-analysis": {
+      "category": "network-engineering-defense",
+      "name-zh": "恶意软件 动态分析",
+      "description-zh": "网络与工程防御技能，覆盖恶意软件 动态分析相关的防护机制、逆向对抗与工程加固。"
+    },
+    "malware-report-writer": {
+      "category": "network-engineering-defense",
+      "name-zh": "恶意软件 报告 writer",
+      "description-zh": "网络与工程防御技能，覆盖恶意软件 报告 writer相关的防护机制、逆向对抗与工程加固。"
+    },
+    "malware-triage": {
+      "category": "network-engineering-defense",
+      "name-zh": "恶意软件 分诊",
+      "description-zh": "网络与工程防御技能，覆盖恶意软件 分诊相关的防护机制、逆向对抗与工程加固。"
+    },
+    "specialized-file-analyzer": {
+      "category": "network-engineering-defense",
+      "name-zh": "specialized file analyzer",
+      "description-zh": "网络与工程防御技能，覆盖specialized file analyzer相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "incogbyte/android-reverse-engineering-claude-skill": {
+    "android-reverse-engineering": {
+      "category": "network-engineering-defense",
+      "name-zh": "Android 逆向工程",
+      "description-zh": "网络与工程防御技能，覆盖Android 逆向工程相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "meirm/reverse-engineering-skill": {
+    "analyze-business-logic-gaps": {
+      "category": "network-engineering-defense",
+      "name-zh": "analyze business logic gaps",
+      "description-zh": "网络与工程防御技能，覆盖analyze business logic gaps相关的防护机制、逆向对抗与工程加固。"
+    },
+    "bdd-orchestrator": {
+      "category": "network-engineering-defense",
+      "name-zh": "bdd orchestrator",
+      "description-zh": "网络与工程防御技能，覆盖bdd orchestrator相关的防护机制、逆向对抗与工程加固。"
+    },
+    "derive-acceptance-criteria-from-business-logic": {
+      "category": "network-engineering-defense",
+      "name-zh": "derive acceptance criteria business logic",
+      "description-zh": "网络与工程防御技能，覆盖derive acceptance criteria business logic相关的防护机制、逆向对抗与工程加固。"
+    },
+    "generate-tests-from-business-logic": {
+      "category": "network-engineering-defense",
+      "name-zh": "generate tests business logic",
+      "description-zh": "网络与工程防御技能，覆盖generate tests business logic相关的防护机制、逆向对抗与工程加固。"
+    },
+    "refine-business-logic-for-implementation": {
+      "category": "network-engineering-defense",
+      "name-zh": "refine business logic implementation",
+      "description-zh": "网络与工程防御技能，覆盖refine business logic implementation相关的防护机制、逆向对抗与工程加固。"
+    },
+    "reverse-engineering-business-logic": {
+      "category": "network-engineering-defense",
+      "name-zh": "逆向工程 business logic",
+      "description-zh": "网络与工程防御技能，覆盖逆向工程 business logic相关的防护机制、逆向对抗与工程加固。"
+    },
+    "tailor-bdd-skills-for-project": {
+      "category": "network-engineering-defense",
+      "name-zh": "tailor bdd skills project",
+      "description-zh": "网络与工程防御技能，覆盖tailor bdd skills project相关的防护机制、逆向对抗与工程加固。"
+    },
+    "validate-business-logic-against-code": {
+      "category": "network-engineering-defense",
+      "name-zh": "validate business logic against code",
+      "description-zh": "网络与工程防御技能，覆盖validate business logic against code相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "LichAmnesia/skill-lint": {
+    "docstring-zip": {
+      "category": "network-engineering-defense",
+      "name-zh": "docstring zip",
+      "description-zh": "网络与工程防御技能，覆盖docstring zip相关的防护机制、逆向对抗与工程加固。"
+    },
+    "github-api": {
+      "category": "network-engineering-defense",
+      "name-zh": "github API",
+      "description-zh": "网络与工程防御技能，覆盖github API相关的防护机制、逆向对抗与工程加固。"
+    },
+    "hf-api": {
+      "category": "network-engineering-defense",
+      "name-zh": "hf API",
+      "description-zh": "网络与工程防御技能，覆盖hf API相关的防护机制、逆向对抗与工程加固。"
+    },
+    "r07-mention": {
+      "category": "network-engineering-defense",
+      "name-zh": "r07 mention",
+      "description-zh": "网络与工程防御技能，覆盖r07 mention相关的防护机制、逆向对抗与工程加固。"
+    },
+    "markdown-link-formatter": {
+      "category": "network-engineering-defense",
+      "name-zh": "markdown link formatter",
+      "description-zh": "网络与工程防御技能，覆盖markdown link formatter相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ts-generics": {
+      "category": "network-engineering-defense",
+      "name-zh": "ts generics",
+      "description-zh": "网络与工程防御技能，覆盖ts generics相关的防护机制、逆向对抗与工程加固。"
+    },
+    "b64-py": {
+      "category": "network-engineering-defense",
+      "name-zh": "b64 py",
+      "description-zh": "网络与工程防御技能，覆盖b64 py相关的防护机制、逆向对抗与工程加固。"
+    },
+    "base64-short": {
+      "category": "network-engineering-defense",
+      "name-zh": "base64 short",
+      "description-zh": "网络与工程防御技能，覆盖base64 short相关的防护机制、逆向对抗与工程加固。"
+    },
+    "git-commit-formatter": {
+      "category": "network-engineering-defense",
+      "name-zh": "git commit formatter",
+      "description-zh": "网络与工程防御技能，覆盖git commit formatter相关的防护机制、逆向对抗与工程加固。"
+    },
+    "chatml-injection": {
+      "category": "network-engineering-defense",
+      "name-zh": "chatml 注入",
+      "description-zh": "网络与工程防御技能，覆盖chatml 注入相关的防护机制、逆向对抗与工程加固。"
+    },
+    "anthropic-official": {
+      "category": "network-engineering-defense",
+      "name-zh": "anthropic official",
+      "description-zh": "网络与工程防御技能，覆盖anthropic official相关的防护机制、逆向对抗与工程加固。"
+    },
+    "dev-helper-official": {
+      "category": "network-engineering-defense",
+      "name-zh": "开发 helper official",
+      "description-zh": "网络与工程防御技能，覆盖开发 helper official相关的防护机制、逆向对抗与工程加固。"
+    },
+    "download-redirect-run": {
+      "category": "network-engineering-defense",
+      "name-zh": "download redirect run",
+      "description-zh": "网络与工程防御技能，覆盖download redirect run相关的防护机制、逆向对抗与工程加固。"
+    },
+    "download-source": {
+      "category": "network-engineering-defense",
+      "name-zh": "download source",
+      "description-zh": "网络与工程防御技能，覆盖download source相关的防护机制、逆向对抗与工程加固。"
+    },
+    "env-wrap": {
+      "category": "network-engineering-defense",
+      "name-zh": "env wrap",
+      "description-zh": "网络与工程防御技能，覆盖env wrap相关的防护机制、逆向对抗与工程加固。"
+    },
+    "eval-printf": {
+      "category": "network-engineering-defense",
+      "name-zh": "eval printf",
+      "description-zh": "网络与工程防御技能，覆盖eval printf相关的防护机制、逆向对抗与工程加固。"
+    },
+    "eval-var-cmdsub": {
+      "category": "network-engineering-defense",
+      "name-zh": "eval var cmdsub",
+      "description-zh": "网络与工程防御技能，覆盖eval var cmdsub相关的防护机制、逆向对抗与工程加固。"
+    },
+    "home-cred": {
+      "category": "network-engineering-defense",
+      "name-zh": "home cred",
+      "description-zh": "网络与工程防御技能，覆盖home cred相关的防护机制、逆向对抗与工程加固。"
+    },
+    "home-default": {
+      "category": "network-engineering-defense",
+      "name-zh": "home default",
+      "description-zh": "网络与工程防御技能，覆盖home default相关的防护机制、逆向对抗与工程加固。"
+    },
+    "interp-path": {
+      "category": "network-engineering-defense",
+      "name-zh": "interp path",
+      "description-zh": "网络与工程防御技能，覆盖interp path相关的防护机制、逆向对抗与工程加固。"
+    },
+    "line-cont": {
+      "category": "network-engineering-defense",
+      "name-zh": "line cont",
+      "description-zh": "网络与工程防御技能，覆盖line cont相关的防护机制、逆向对抗与工程加固。"
+    },
+    "no-preserve-root": {
+      "category": "network-engineering-defense",
+      "name-zh": "no preserve root",
+      "description-zh": "网络与工程防御技能，覆盖no preserve root相关的防护机制、逆向对抗与工程加固。"
+    },
+    "url-opener": {
+      "category": "network-engineering-defense",
+      "name-zh": "url opener",
+      "description-zh": "网络与工程防御技能，覆盖url opener相关的防护机制、逆向对抗与工程加固。"
+    },
+    "py-exfil": {
+      "category": "network-engineering-defense",
+      "name-zh": "py exfil",
+      "description-zh": "网络与工程防御技能，覆盖py exfil相关的防护机制、逆向对抗与工程加固。"
+    },
+    "py-subprocess": {
+      "category": "network-engineering-defense",
+      "name-zh": "py subprocess",
+      "description-zh": "网络与工程防御技能，覆盖py subprocess相关的防护机制、逆向对抗与工程加固。"
+    },
+    "r07-components": {
+      "category": "network-engineering-defense",
+      "name-zh": "r07 components",
+      "description-zh": "网络与工程防御技能，覆盖r07 components相关的防护机制、逆向对抗与工程加固。"
+    },
+    "r07-home-default": {
+      "category": "network-engineering-defense",
+      "name-zh": "r07 home default",
+      "description-zh": "网络与工程防御技能，覆盖r07 home default相关的防护机制、逆向对抗与工程加固。"
+    },
+    "r07-indirect": {
+      "category": "network-engineering-defense",
+      "name-zh": "r07 indirect",
+      "description-zh": "网络与工程防御技能，覆盖r07 indirect相关的防护机制、逆向对抗与工程加固。"
+    },
+    "r07-nested": {
+      "category": "network-engineering-defense",
+      "name-zh": "r07 nested",
+      "description-zh": "网络与工程防御技能，覆盖r07 nested相关的防护机制、逆向对抗与工程加固。"
+    },
+    "raw-github": {
+      "category": "network-engineering-defense",
+      "name-zh": "raw github",
+      "description-zh": "网络与工程防御技能，覆盖raw github相关的防护机制、逆向对抗与工程加固。"
+    },
+    "readme-trick": {
+      "category": "network-engineering-defense",
+      "name-zh": "readme trick",
+      "description-zh": "网络与工程防御技能，覆盖readme trick相关的防护机制、逆向对抗与工程加固。"
+    },
+    "reverse-shell": {
+      "category": "network-engineering-defense",
+      "name-zh": "逆向 shell",
+      "description-zh": "网络与工程防御技能，覆盖逆向 shell相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rm-home": {
+      "category": "network-engineering-defense",
+      "name-zh": "rm home",
+      "description-zh": "网络与工程防御技能，覆盖rm home相关的防护机制、逆向对抗与工程加固。"
+    },
+    "rm-variants": {
+      "category": "network-engineering-defense",
+      "name-zh": "rm variants",
+      "description-zh": "网络与工程防御技能，覆盖rm variants相关的防护机制、逆向对抗与工程加固。"
+    },
+    "tee-xargs": {
+      "category": "network-engineering-defense",
+      "name-zh": "tee xargs",
+      "description-zh": "网络与工程防御技能，覆盖tee xargs相关的防护机制、逆向对抗与工程加固。"
+    },
+    "xargs-noc": {
+      "category": "network-engineering-defense",
+      "name-zh": "xargs noc",
+      "description-zh": "网络与工程防御技能，覆盖xargs noc相关的防护机制、逆向对抗与工程加固。"
+    },
+    "xxd": {
+      "category": "network-engineering-defense",
+      "name-zh": "xxd",
+      "description-zh": "网络与工程防御技能，覆盖xxd相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "highimpact-dev/skill-shield": {
+    "skill-shield": {
+      "category": "network-engineering-defense",
+      "name-zh": "skill shield",
+      "description-zh": "网络与工程防御技能，覆盖skill shield相关的防护机制、逆向对抗与工程加固。"
+    },
+    "commit-message-writer": {
+      "category": "network-engineering-defense",
+      "name-zh": "commit message writer",
+      "description-zh": "网络与工程防御技能，覆盖commit message writer相关的防护机制、逆向对抗与工程加固。"
+    },
+    "command-safety-4": {
+      "category": "network-engineering-defense",
+      "name-zh": "command safety 4",
+      "description-zh": "网络与工程防御技能，覆盖command safety 4相关的防护机制、逆向对抗与工程加固。"
+    },
+    "code-optimizer": {
+      "category": "network-engineering-defense",
+      "name-zh": "code optimizer",
+      "description-zh": "网络与工程防御技能，覆盖code optimizer相关的防护机制、逆向对抗与工程加固。"
+    },
+    "deploy-helper": {
+      "category": "network-engineering-defense",
+      "name-zh": "deploy helper",
+      "description-zh": "网络与工程防御技能，覆盖deploy helper相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "almasumdev/awesome-mobile-security-agent-skills": {
+    "biometric-auth": {
+      "category": "network-engineering-defense",
+      "name-zh": "biometric 认证",
+      "description-zh": "网络与工程防御技能，覆盖biometric 认证相关的防护机制、逆向对抗与工程加固。"
+    },
+    "mfa-on-mobile": {
+      "category": "network-engineering-defense",
+      "name-zh": "MFA 移动",
+      "description-zh": "网络与工程防御技能，覆盖MFA 移动相关的防护机制、逆向对抗与工程加固。"
+    },
+    "oauth-mobile": {
+      "category": "network-engineering-defense",
+      "name-zh": "OAuth 移动",
+      "description-zh": "网络与工程防御技能，覆盖OAuth 移动相关的防护机制、逆向对抗与工程加固。"
+    },
+    "token-storage": {
+      "category": "network-engineering-defense",
+      "name-zh": "令牌 存储",
+      "description-zh": "网络与工程防御技能，覆盖令牌 存储相关的防护机制、逆向对抗与工程加固。"
+    },
+    "anti-tampering": {
+      "category": "network-engineering-defense",
+      "name-zh": "anti tampering",
+      "description-zh": "网络与工程防御技能，覆盖anti tampering相关的防护机制、逆向对抗与工程加固。"
+    },
+    "code-obfuscation": {
+      "category": "network-engineering-defense",
+      "name-zh": "代码混淆",
+      "description-zh": "网络与工程防御技能，覆盖代码混淆相关的防护机制、逆向对抗与工程加固。"
+    },
+    "root-jailbreak-detection": {
+      "category": "network-engineering-defense",
+      "name-zh": "root jailbreak 检测",
+      "description-zh": "网络与工程防御技能，覆盖root jailbreak 检测相关的防护机制、逆向对抗与工程加固。"
+    },
+    "gdpr-mobile": {
+      "category": "network-engineering-defense",
+      "name-zh": "GDPR 移动",
+      "description-zh": "网络与工程防御技能，覆盖GDPR 移动相关的防护机制、逆向对抗与工程加固。"
+    },
+    "api-abuse-protection": {
+      "category": "network-engineering-defense",
+      "name-zh": "API 滥用 防护",
+      "description-zh": "网络与工程防御技能，覆盖API 滥用 防护相关的防护机制、逆向对抗与工程加固。"
+    },
+    "mitm-prevention": {
+      "category": "network-engineering-defense",
+      "name-zh": "mitm 预防",
+      "description-zh": "网络与工程防御技能，覆盖mitm 预防相关的防护机制、逆向对抗与工程加固。"
+    },
+    "tls-pinning": {
+      "category": "network-engineering-defense",
+      "name-zh": "TLS pinning",
+      "description-zh": "网络与工程防御技能，覆盖TLS pinning相关的防护机制、逆向对抗与工程加固。"
+    },
+    "consent-management": {
+      "category": "network-engineering-defense",
+      "name-zh": "授权同意 管理",
+      "description-zh": "网络与工程防御技能，覆盖授权同意 管理相关的防护机制、逆向对抗与工程加固。"
+    },
+    "privacy-by-design": {
+      "category": "network-engineering-defense",
+      "name-zh": "privacy design",
+      "description-zh": "网络与工程防御技能，覆盖privacy design相关的防护机制、逆向对抗与工程加固。"
+    },
+    "build-time-secrets": {
+      "category": "network-engineering-defense",
+      "name-zh": "build time 密钥",
+      "description-zh": "网络与工程防御技能，覆盖build time 密钥相关的防护机制、逆向对抗与工程加固。"
+    },
+    "secrets-management": {
+      "category": "network-engineering-defense",
+      "name-zh": "密钥管理",
+      "description-zh": "网络与工程防御技能，覆盖密钥管理相关的防护机制、逆向对抗与工程加固。"
+    },
+    "encrypted-databases": {
+      "category": "network-engineering-defense",
+      "name-zh": "encrypted databases",
+      "description-zh": "网络与工程防御技能，覆盖encrypted databases相关的防护机制、逆向对抗与工程加固。"
+    },
+    "keystore-keychain": {
+      "category": "network-engineering-defense",
+      "name-zh": "keystore keychain",
+      "description-zh": "网络与工程防御技能，覆盖keystore keychain相关的防护机制、逆向对抗与工程加固。"
+    },
+    "secure-storage": {
+      "category": "network-engineering-defense",
+      "name-zh": "secure 存储",
+      "description-zh": "网络与工程防御技能，覆盖secure 存储相关的防护机制、逆向对抗与工程加固。"
+    },
+    "dependency-scanning": {
+      "category": "network-engineering-defense",
+      "name-zh": "dependency 扫描",
+      "description-zh": "网络与工程防御技能，覆盖dependency 扫描相关的防护机制、逆向对抗与工程加固。"
+    },
+    "mobile-owasp-masvs": {
+      "category": "network-engineering-defense",
+      "name-zh": "移动 OWASP masvs",
+      "description-zh": "网络与工程防御技能，覆盖移动 OWASP masvs相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "Njones17/AI-agent-master-cyber-skills-list": {
+    "ai-agent-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "AI agent 安全",
+      "description-zh": "网络与工程防御技能，覆盖AI agent 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ai-red-teaming": {
+      "category": "network-engineering-defense",
+      "name-zh": "AI red teaming",
+      "description-zh": "网络与工程防御技能，覆盖AI red teaming相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ai-security-hardening": {
+      "category": "network-engineering-defense",
+      "name-zh": "AI 安全 加固",
+      "description-zh": "网络与工程防御技能，覆盖AI 安全 加固相关的防护机制、逆向对抗与工程加固。"
+    },
+    "burpsuite-project-parser": {
+      "category": "network-engineering-defense",
+      "name-zh": "Burp Suite project parser",
+      "description-zh": "网络与工程防御技能，覆盖Burp Suite project parser相关的防护机制、逆向对抗与工程加固。"
+    },
+    "codeql": {
+      "category": "network-engineering-defense",
+      "name-zh": "codeql",
+      "description-zh": "网络与工程防御技能，覆盖codeql相关的防护机制、逆向对抗与工程加固。"
+    },
+    "dast-scanning": {
+      "category": "network-engineering-defense",
+      "name-zh": "DAST 扫描",
+      "description-zh": "网络与工程防御技能，覆盖DAST 扫描相关的防护机制、逆向对抗与工程加固。"
+    },
+    "differential-review": {
+      "category": "network-engineering-defense",
+      "name-zh": "differential 审查",
+      "description-zh": "网络与工程防御技能，覆盖differential 审查相关的防护机制、逆向对抗与工程加固。"
+    },
+    "fastapi-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "fastapi 安全",
+      "description-zh": "网络与工程防御技能，覆盖fastapi 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ffuf-web-fuzzing": {
+      "category": "network-engineering-defense",
+      "name-zh": "ffuf Web 模糊测试",
+      "description-zh": "网络与工程防御技能，覆盖ffuf Web 模糊测试相关的防护机制、逆向对抗与工程加固。"
+    },
+    "firebase-apk-scanner": {
+      "category": "network-engineering-defense",
+      "name-zh": "firebase APK 扫描器",
+      "description-zh": "网络与工程防御技能，覆盖firebase APK 扫描器相关的防护机制、逆向对抗与工程加固。"
+    },
+    "firebase-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "firebase 安全",
+      "description-zh": "网络与工程防御技能，覆盖firebase 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "fp-check": {
+      "category": "network-engineering-defense",
+      "name-zh": "fp check",
+      "description-zh": "网络与工程防御技能，覆盖fp check相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ghost-proxy": {
+      "category": "network-engineering-defense",
+      "name-zh": "ghost proxy",
+      "description-zh": "网络与工程防御技能，覆盖ghost proxy相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ghost-repo-context": {
+      "category": "network-engineering-defense",
+      "name-zh": "ghost repo context",
+      "description-zh": "网络与工程防御技能，覆盖ghost repo context相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ghost-scan-code": {
+      "category": "network-engineering-defense",
+      "name-zh": "ghost 扫描 code",
+      "description-zh": "网络与工程防御技能，覆盖ghost 扫描 code相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ghost-scan-deps": {
+      "category": "network-engineering-defense",
+      "name-zh": "ghost 扫描 deps",
+      "description-zh": "网络与工程防御技能，覆盖ghost 扫描 deps相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ghost-scan-secrets": {
+      "category": "network-engineering-defense",
+      "name-zh": "ghost 扫描 密钥",
+      "description-zh": "网络与工程防御技能，覆盖ghost 扫描 密钥相关的防护机制、逆向对抗与工程加固。"
+    },
+    "ghost-validate": {
+      "category": "network-engineering-defense",
+      "name-zh": "ghost validate",
+      "description-zh": "网络与工程防御技能，覆盖ghost validate相关的防护机制、逆向对抗与工程加固。"
+    },
+    "graphql-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "GraphQL 安全",
+      "description-zh": "网络与工程防御技能，覆盖GraphQL 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-abuse-detection-with-rate-limiting": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API 滥用 检测 速率限制",
+      "description-zh": "网络与工程防御技能，覆盖落地 API 滥用 检测 速率限制相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-gateway-security-controls": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API gateway 安全控制",
+      "description-zh": "网络与工程防御技能，覆盖落地 API gateway 安全控制相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-key-security-controls": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API 密钥 安全控制",
+      "description-zh": "网络与工程防御技能，覆盖落地 API 密钥 安全控制相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-rate-limiting-and-throttling": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API 速率限制 throttling",
+      "description-zh": "网络与工程防御技能，覆盖落地 API 速率限制 throttling相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-schema-validation-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API schema validation 安全",
+      "description-zh": "网络与工程防御技能，覆盖落地 API schema validation 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-security-posture-management": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API 安全 态势 管理",
+      "description-zh": "网络与工程防御技能，覆盖落地 API 安全 态势 管理相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-security-testing-with-42crunch": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API 安全 测试 42crunch",
+      "description-zh": "网络与工程防御技能，覆盖落地 API 安全 测试 42crunch相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-api-threat-protection-with-apigee": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 API threat 防护 apigee",
+      "description-zh": "网络与工程防御技能，覆盖落地 API threat 防护 apigee相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-github-advanced-security-for-code-scanning": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 github advanced 安全 code 扫描",
+      "description-zh": "网络与工程防御技能，覆盖落地 github advanced 安全 code 扫描相关的防护机制、逆向对抗与工程加固。"
+    },
+    "implementing-semgrep-for-custom-sast-rules": {
+      "category": "network-engineering-defense",
+      "name-zh": "落地 Semgrep custom SAST 规则",
+      "description-zh": "网络与工程防御技能，覆盖落地 Semgrep custom SAST 规则相关的防护机制、逆向对抗与工程加固。"
+    },
+    "integrating-dast-with-owasp-zap-in-pipeline": {
+      "category": "network-engineering-defense",
+      "name-zh": "集成 DAST OWASP ZAP 流水线",
+      "description-zh": "网络与工程防御技能，覆盖集成 DAST OWASP ZAP 流水线相关的防护机制、逆向对抗与工程加固。"
+    },
+    "integrating-sast-into-github-actions-pipeline": {
+      "category": "network-engineering-defense",
+      "name-zh": "集成 SAST into github actions 流水线",
+      "description-zh": "网络与工程防御技能，覆盖集成 SAST into github actions 流水线相关的防护机制、逆向对抗与工程加固。"
+    },
+    "llm-app-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "LLM app 安全",
+      "description-zh": "网络与工程防御技能，覆盖LLM app 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "model-supply-chain-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "模型 供应链安全",
+      "description-zh": "网络与工程防御技能，覆盖模型 供应链安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "nextjs-security": {
+      "category": "network-engineering-defense",
+      "name-zh": "nextjs 安全",
+      "description-zh": "网络与工程防御技能，覆盖nextjs 安全相关的防护机制、逆向对抗与工程加固。"
+    },
+    "security-best-practices": {
+      "category": "network-engineering-defense",
+      "name-zh": "安全 best practices",
+      "description-zh": "网络与工程防御技能，覆盖安全 best practices相关的防护机制、逆向对抗与工程加固。"
+    },
+    "security-ownership-map": {
+      "category": "network-engineering-defense",
+      "name-zh": "安全 ownership map",
+      "description-zh": "网络与工程防御技能，覆盖安全 ownership map相关的防护机制、逆向对抗与工程加固。"
+    },
+    "security-threat-model": {
+      "category": "network-engineering-defense",
+      "name-zh": "安全 threat 模型",
+      "description-zh": "网络与工程防御技能，覆盖安全 threat 模型相关的防护机制、逆向对抗与工程加固。"
+    },
+    "performing-api-fuzzing-with-restler": {
+      "category": "network-engineering-defense",
+      "name-zh": "执行 API 模糊测试 RESTler",
+      "description-zh": "网络与工程防御技能，覆盖执行 API 模糊测试 RESTler相关的防护机制、逆向对抗与工程加固。"
+    },
+    "performing-api-rate-limiting-bypass": {
+      "category": "network-engineering-defense",
+      "name-zh": "执行 API 速率限制 绕过",
+      "description-zh": "网络与工程防御技能，覆盖执行 API 速率限制 绕过相关的防护机制、逆向对抗与工程加固。"
+    },
+    "performing-cryptographic-audit-of-application": {
+      "category": "network-engineering-defense",
+      "name-zh": "执行 cryptographic 审计 application",
+      "description-zh": "网络与工程防御技能，覆盖执行 cryptographic 审计 application相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "meltedinhex/analyst-ai-pack": {
+    "analyzing-android-dex-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 Android DEX 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 Android DEX 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-api-call-traces": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 API call traces",
+      "description-zh": "网络与工程防御技能，覆盖分析 API call traces相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-authenticode-signatures": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 authenticode 签名",
+      "description-zh": "网络与工程防御技能，覆盖分析 authenticode 签名相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-banking-trojan-webinjects": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 banking trojan webinjects",
+      "description-zh": "网络与工程防御技能，覆盖分析 banking trojan webinjects相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-compiled-python-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 compiled python 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 compiled python 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-cryptominer-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 cryptominer 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 cryptominer 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-dotnet-malware-internals": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 .NET 恶意软件 internals",
+      "description-zh": "网络与工程防御技能，覆盖分析 .NET 恶意软件 internals相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-elf-binaries-on-linux": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 ELF binaries Linux",
+      "description-zh": "网络与工程防御技能，覆盖分析 ELF binaries Linux相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-excel-4-macro-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 excel 4 宏 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 excel 4 宏 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-golang-malware-internals": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 golang 恶意软件 internals",
+      "description-zh": "网络与工程防御技能，覆盖分析 golang 恶意软件 internals相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-infostealer-credential-theft": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 infostealer 凭据 theft",
+      "description-zh": "网络与工程防御技能，覆盖分析 infostealer 凭据 theft相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-java-jar-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 java jar 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 java jar 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-loaders-and-droppers": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 loaders droppers",
+      "description-zh": "网络与工程防御技能，覆盖分析 loaders droppers相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-mach-o-binaries-on-macos": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 mach o binaries macOS",
+      "description-zh": "网络与工程防御技能，覆盖分析 mach o binaries macOS相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malicious-iso-and-container-files": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 malicious ISO 容器 files",
+      "description-zh": "网络与工程防御技能，覆盖分析 malicious ISO 容器 files相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malicious-lnk-files": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 malicious LNK files",
+      "description-zh": "网络与工程防御技能，覆盖分析 malicious LNK files相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malicious-office-macros": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 malicious Office macros",
+      "description-zh": "网络与工程防御技能，覆盖分析 malicious Office macros相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malicious-onenote-and-html-smuggling": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 malicious onenote html smuggling",
+      "description-zh": "网络与工程防御技能，覆盖分析 malicious onenote html smuggling相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malicious-pdfs": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 malicious pdfs",
+      "description-zh": "网络与工程防御技能，覆盖分析 malicious pdfs相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malicious-vbscript-and-wsf": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 malicious vbscript wsf",
+      "description-zh": "网络与工程防御技能，覆盖分析 malicious vbscript wsf相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-malware-in-memory-with-volatility3": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 恶意软件 内存 Volatility 3",
+      "description-zh": "网络与工程防御技能，覆盖分析 恶意软件 内存 Volatility 3相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-pe-imports-and-exports": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 PE imports exports",
+      "description-zh": "网络与工程防御技能，覆盖分析 PE imports exports相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-position-independent-code": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 position independent code",
+      "description-zh": "网络与工程防御技能，覆盖分析 position independent code相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-ransomware-encryption-behavior": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 勒索软件 加密 行为",
+      "description-zh": "网络与工程防御技能，覆盖分析 勒索软件 加密 行为相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-rat-command-and-control": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 rat C2",
+      "description-zh": "网络与工程防御技能，覆盖分析 rat C2相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-rich-header-and-compiler-artifacts": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 rich header compiler 痕迹",
+      "description-zh": "网络与工程防御技能，覆盖分析 rich header compiler 痕迹相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-rust-malware-internals": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 Rust 恶意软件 internals",
+      "description-zh": "网络与工程防御技能，覆盖分析 Rust 恶意软件 internals相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-webshells": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 webshells",
+      "description-zh": "网络与工程防御技能，覆盖分析 webshells相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-windows-driver-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 Windows driver 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 Windows driver 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "analyzing-wiper-malware": {
+      "category": "network-engineering-defense",
+      "name-zh": "分析 wiper 恶意软件",
+      "description-zh": "网络与工程防御技能，覆盖分析 wiper 恶意软件相关的防护机制、逆向对抗与工程加固。"
+    },
+    "automating-analysis-with-r2pipe": {
+      "category": "network-engineering-defense",
+      "name-zh": "automating 分析 r2pipe",
+      "description-zh": "网络与工程防御技能，覆盖automating 分析 r2pipe相关的防护机制、逆向对抗与工程加固。"
+    },
+    "building-a-sample-management-workflow": {
+      "category": "network-engineering-defense",
+      "name-zh": "构建 sample 管理 流程",
+      "description-zh": "网络与工程防御技能，覆盖构建 sample 管理 流程相关的防护机制、逆向对抗与工程加固。"
+    },
+    "building-a-threat-hunt-hypothesis": {
+      "category": "network-engineering-defense",
+      "name-zh": "构建 threat 排查 hypothesis",
+      "description-zh": "网络与工程防御技能，覆盖构建 threat 排查 hypothesis相关的防护机制、逆向对抗与工程加固。"
+    },
+    "building-config-extractors": {
+      "category": "network-engineering-defense",
+      "name-zh": "构建 配置 extractors",
+      "description-zh": "网络与工程防御技能，覆盖构建 配置 extractors相关的防护机制、逆向对抗与工程加固。"
+    },
+    "building-zeek-analytics-for-hunting": {
+      "category": "network-engineering-defense",
+      "name-zh": "构建 Zeek analytics hunting",
+      "description-zh": "网络与工程防御技能，覆盖构建 Zeek analytics hunting相关的防护机制、逆向对抗与工程加固。"
+    },
+    "bypassing-anti-vm-and-sandbox-checks": {
+      "category": "network-engineering-defense",
+      "name-zh": "绕过 anti 虚拟机 沙箱 checks",
+      "description-zh": "网络与工程防御技能，覆盖绕过 anti 虚拟机 沙箱 checks相关的防护机制、逆向对抗与工程加固。"
+    },
+    "capturing-and-analyzing-malware-network-traffic": {
+      "category": "network-engineering-defense",
+      "name-zh": "capturing analyzing 恶意软件 网络 traffic",
+      "description-zh": "网络与工程防御技能，覆盖capturing analyzing 恶意软件 网络 traffic相关的防护机制、逆向对抗与工程加固。"
+    },
+    "collecting-volatile-evidence-from-a-suspect-host": {
+      "category": "network-engineering-defense",
+      "name-zh": "收集 volatile evidence suspect host",
+      "description-zh": "网络与工程防御技能，覆盖收集 volatile evidence suspect host相关的防护机制、逆向对抗与工程加固。"
+    },
+    "debugging-malware-with-x64dbg": {
+      "category": "network-engineering-defense",
+      "name-zh": "debugging 恶意软件 x64dbg",
+      "description-zh": "网络与工程防御技能，覆盖debugging 恶意软件 x64dbg相关的防护机制、逆向对抗与工程加固。"
+    },
+    "decrypting-embedded-configuration": {
+      "category": "network-engineering-defense",
+      "name-zh": "decrypting embedded 配置",
+      "description-zh": "网络与工程防御技能，覆盖decrypting embedded 配置相关的防护机制、逆向对抗与工程加固。"
+    }
+  },
+  "ibrdot/swe-re-expert": {
+    "swe-re-expert": {
+      "category": "network-engineering-defense",
+      "name-zh": "swe re expert",
+      "description-zh": "网络与工程防御技能，覆盖swe re expert相关的防护机制、逆向对抗与工程加固。"
+    }
   }
 }

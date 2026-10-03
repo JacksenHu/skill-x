@@ -41,6 +41,7 @@ from resolve_members import load_index, resolve_pack  # noqa: E402
 
 CATEGORIES = {
     "reverse-engineering": "逆向工程",
+    "network-engineering-defense": "网络与工程防御",
     "pentest": "渗透测试",
     "malware": "样本分析",
     "forensics": "内存取证",
@@ -52,6 +53,7 @@ CATEGORIES = {
 }
 CATEGORIES_EN = {
     "reverse-engineering": "Reverse Engineering",
+    "network-engineering-defense": "Network & Engineering Defense",
     "pentest": "Penetration Testing",
     "malware": "Malware Analysis",
     "forensics": "Memory Forensics",
@@ -75,7 +77,7 @@ zero inline style/script · strict CSP · zero third-party deps
   --accent:#FF6B2C; --accent2:#FFA25C; --accent-deep:#E8551C;
   --signal:#54A8FF;
   --ok:#34D399; --warn:#FBBF24; --danger:#F87171;
-  --c-reverse-engineering:#FF6B2C; --c-pentest:#FF5B6E; --c-malware:#B06BFF; --c-forensics:#2AD4C9;
+  --c-reverse-engineering:#FF6B2C; --c-network-engineering-defense:#7DD3FC; --c-pentest:#FF5B6E; --c-malware:#B06BFF; --c-forensics:#2AD4C9;
   --c-engineering-hygiene:#54A8FF; --c-dev-workflow:#8B98A9; --c-web-frontend:#34D399; --c-data:#FBBF24;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   --mono:ui-monospace,SFMono-Regular,"JetBrains Mono","Cascadia Code",Consolas,monospace;
@@ -196,6 +198,7 @@ p{max-width:76ch}
 
 /* 分类色 */
 .cat-reverse-engineering{--cat:var(--c-reverse-engineering)}
+.cat-network-engineering-defense{--cat:var(--c-network-engineering-defense)}
 .cat-pentest{--cat:var(--c-pentest)}
 .cat-malware{--cat:var(--c-malware)}
 .cat-forensics{--cat:var(--c-forensics)}
@@ -2082,6 +2085,7 @@ def gitmcp_url(website_url: str) -> str:
 
 CAT_LABELS = {
     "reverse-engineering": "逆向工程",
+    "network-engineering-defense": "网络与工程防御",
     "pentest": "渗透测试",
     "malware": "样本分析",
     "forensics": "内存取证",
