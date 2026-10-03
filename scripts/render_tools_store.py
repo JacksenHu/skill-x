@@ -21,6 +21,7 @@ from svg_map import mmap_html  # noqa: E402
 CAT_COLORS = {
     "recon": "data", "vuln": "pentest", "lab": "dev-workflow",
     "tunnel": "malware", "defense": "forensics", "intel": "reverse-engineering",
+    "reverse-engineering": "reverse-engineering",
 }
 
 

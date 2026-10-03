@@ -1,12 +1,48 @@
 {
-  "platform": "security-tool-store",
-  "version": "1.0.0",
-  "categories": [
-    {"id": "recon", "name": "侦察测绘", "name_en": "Recon & Asset Discovery", "order": 1},
-    {"id": "vuln", "name": "漏洞扫描", "name_en": "Vulnerability Scanning", "order": 2},
-    {"id": "lab", "name": "靶场实验", "name_en": "Labs & Ranges", "order": 3},
-    {"id": "tunnel", "name": "内网与隧道", "name_en": "Intranet & Tunneling", "order": 4},
-    {"id": "defense", "name": "蜜罐与防守", "name_en": "Honeypot & Defense", "order": 5},
-    {"id": "intel", "name": "威胁情报", "name_en": "Threat Intelligence", "order": 6}
-  ]
+ "platform": "security-tool-store",
+ "version": "1.0.0",
+ "categories": [
+  {
+   "id": "reverse-engineering",
+   "name": "逆向工程",
+   "name_en": "Reverse Engineering",
+   "order": 0
+  },
+  {
+   "id": "recon",
+   "name": "侦察测绘",
+   "name_en": "Recon & Asset Discovery",
+   "order": 1
+  },
+  {
+   "id": "vuln",
+   "name": "漏洞扫描",
+   "name_en": "Vulnerability Scanning",
+   "order": 2
+  },
+  {
+   "id": "lab",
+   "name": "靶场实验",
+   "name_en": "Labs & Ranges",
+   "order": 3
+  },
+  {
+   "id": "tunnel",
+   "name": "内网与隧道",
+   "name_en": "Intranet & Tunneling",
+   "order": 4
+  },
+  {
+   "id": "defense",
+   "name": "蜜罐与防守",
+   "name_en": "Honeypot & Defense",
+   "order": 5
+  },
+  {
+   "id": "intel",
+   "name": "威胁情报",
+   "name_en": "Threat Intelligence",
+   "order": 6
+  }
+ ]
 }

@@ -1,13 +1,13 @@
 {
- "_ts": 1790943586.650421,
+ "_ts": 1791030254.4056344,
  "repos": {
   "addyosmani/agent-skills": {
-   "stars": 100436,
-   "forks": 10553,
-   "pushed": "2026-10-02"
+   "stars": 100671,
+   "forks": 10580,
+   "pushed": "2026-10-03"
   },
   "dhicoc/dsh-reverse-skill": {
-   "stars": 187,
+   "stars": 193,
    "forks": 24,
    "pushed": "2026-09-30"
   },
@@ -27,49 +27,104 @@
    "pushed": "2026-09-02"
   },
   "mukul975/Anthropic-Cybersecurity-Skills": {
-   "stars": 33707,
-   "forks": 4088,
+   "stars": 33731,
+   "forks": 4086,
    "pushed": "2026-08-31"
   },
   "zhaoxuya520/reverse-skill": {
-   "stars": 39314,
-   "forks": 5491,
+   "stars": 39465,
+   "forks": 5492,
    "pushed": "2026-09-22"
   },
   "elementalsouls/Claude-BugHunter": {
-   "stars": 4745,
-   "forks": 711,
-   "pushed": "2026-10-02"
+   "stars": 4757,
+   "forks": 715,
+   "pushed": "2026-10-03"
   },
   "SnailSploit/Claude-Red": {
-   "stars": 7183,
-   "forks": 944,
+   "stars": 7216,
+   "forks": 947,
    "pushed": "2026-09-19"
   },
   "ljagiello/ctf-skills": {
-   "stars": 3383,
-   "forks": 394,
+   "stars": 3385,
+   "forks": 393,
    "pushed": "2026-09-13"
   },
   "yaklang/hack-skills": {
-   "stars": 2349,
-   "forks": 315,
+   "stars": 2351,
+   "forks": 314,
    "pushed": "2026-09-13"
   },
   "newliver666/apk-reverse": {
-   "stars": 3157,
-   "forks": 643,
+   "stars": 3172,
+   "forks": 642,
    "pushed": "2026-09-24"
   },
   "rehan-remade/universal-modder": {
-   "stars": 1802,
-   "forks": 132,
+   "stars": 2376,
+   "forks": 185,
    "pushed": "2026-09-30"
   },
   "brucesongs/kali-claw": {
    "stars": 72,
    "forks": 19,
    "pushed": "2026-09-09"
+  },
+  "P4nda0s/reverse-skills": {
+   "stars": 2223,
+   "forks": 283,
+   "pushed": "2026-05-06"
+  },
+  "Masriyan/Claude-Code-CyberSecurity-Skill": {
+   "stars": 457,
+   "forks": 87,
+   "pushed": "2026-09-07"
+  },
+  "gl0bal01/malware-analysis-claude-skills": {
+   "stars": 49,
+   "forks": 3,
+   "pushed": "2026-09-05"
+  },
+  "incogbyte/android-reverse-engineering-claude-skill": {
+   "stars": 121,
+   "forks": 20,
+   "pushed": "2026-06-20"
+  },
+  "meirm/reverse-engineering-skill": {
+   "stars": 37,
+   "forks": 6,
+   "pushed": "2026-10-02"
+  },
+  "LichAmnesia/skill-lint": {
+   "stars": 11,
+   "forks": 2,
+   "pushed": "2026-04-19"
+  },
+  "highimpact-dev/skill-shield": {
+   "stars": 5,
+   "forks": 0,
+   "pushed": "2026-03-24"
+  },
+  "almasumdev/awesome-mobile-security-agent-skills": {
+   "stars": 2,
+   "forks": 0,
+   "pushed": "2026-04-19"
+  },
+  "Njones17/AI-agent-master-cyber-skills-list": {
+   "stars": 24,
+   "forks": 6,
+   "pushed": "2026-03-06"
+  },
+  "meltedinhex/analyst-ai-pack": {
+   "stars": 21,
+   "forks": 5,
+   "pushed": "2026-07-07"
+  },
+  "ibrdot/swe-re-expert": {
+   "stars": 2,
+   "forks": 0,
+   "pushed": "2026-08-25"
   }
  }
 }

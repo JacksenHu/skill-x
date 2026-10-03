@@ -50,6 +50,17 @@ CATEGORIES = {
     "web-frontend": "Web 前端",
     "ai-media": "AI 媒体",
 }
+CATEGORIES_EN = {
+    "reverse-engineering": "Reverse Engineering",
+    "pentest": "Penetration Testing",
+    "malware": "Malware Analysis",
+    "forensics": "Memory Forensics",
+    "engineering-hygiene": "Engineering Hygiene",
+    "dev-workflow": "Dev Workflow",
+    "data": "Data",
+    "web-frontend": "Web Frontend",
+    "ai-media": "AI Media",
+}
 CSS = """
 /*
 SKILL X · Instrument Console — v4 design system
@@ -1311,6 +1322,7 @@ def render_api(own, suites):
 <tr><td><code class="inl">/api/recommend</code></td><td>GET / POST</td><td data-zh="技能推荐:传入自然语言任务描述,返回适用技能排序(含匹配理由/安装命令)。GET 用 ?q=描述;POST 用 {{&quot;query&quot;:&quot;描述&quot;}}" data-en="Skill recommendation: pass a natural-language task; returns ranked skills with match reasons and install commands.">技能推荐:传入自然语言任务描述,返回适用技能排序(含匹配理由/安装命令)。GET 用 <code class="inl">?q=描述</code>;POST 用 <code class="inl">{{"query":"描述"}}</code></td></tr>
 <tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/安装命令/页面路径)" data-en="Full skill data (names, bilingual descriptions, categories, install commands, page paths)">全量技能数据(名称/双语简介/分类/安装命令/页面路径)</td></tr>
 <tr><td><code class="inl">/tools.json</code></td><td>GET</td><td data-zh="自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)" data-en="Bundled tools inventory (scripts, functions, argparse params)">自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)</td></tr>
+<tr><td><code class="inl">/categories.json</code></td><td>GET</td><td data-zh="分类清单静态文件(与 /v0/categories 同构,含中英文名/覆盖实体/各实体计数,机器可读)" data-en="Static category taxonomy (same shape as /v0/categories; zh/en names, covered entities, per-entity counts)">分类清单静态文件(与 <code class="inl">/v0/categories</code> 同构,含中英文名 / 覆盖实体 / 各实体计数,机器可读)</td></tr>
 <tr><td><code class="inl">/audit-report.json</code></td><td>GET</td><td data-zh="安全审计报告(各技能等级/评分/检查项明细,机器可读)" data-en="Security audit report (grades, scores, check details)">安全审计报告(各技能等级/评分/检查项明细,机器可读)</td></tr>
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
 <tr><td><code class="inl">/v0/servers</code></td><td>GET</td><td data-zh="MCP 服务列表(官方 Registry 兼容,游标分页 ?limit&cursor;只返回已过审条目)" data-en="MCP server list (official Registry-compatible, cursor-paginated; reviewed entries only)">MCP 服务列表(官方 Registry 兼容,游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目)</td></tr>
@@ -1324,6 +1336,8 @@ def render_api(own, suites):
 <tr><td><code class="inl">/api/pack/install</code></td><td>POST</td><td data-zh="记录一次专家团安装。Body: {{&quot;slug&quot;:&quot;&lt;slug&gt;&quot;}}" data-en="Record an expert pack install. Body: slug">记录一次专家团安装。Body: <code class="inl">{{&quot;slug&quot;:&quot;&lt;slug&gt;&quot;}}</code></td></tr>
 <tr><td><code class="inl">/v0/servers/&lt;ns/name&gt;/install</code></td><td>GET</td><td data-zh="MCP 接入描述:返回应用程序可直接用于安装/连接的结构化 JSON(config/requiredSecrets/clientSnippets 含 claude/cursor/codex/vscode 客户端片段)" data-en="MCP install descriptor: structured JSON for programmatic install/connect (config, requiredSecrets, clientSnippets for claude/cursor/codex/vscode)">MCP 接入描述:返回应用程序可直接用于安装/连接的结构化 JSON(config / requiredSecrets / clientSnippets 含 claude/cursor/codex/vscode 客户端片段)</td></tr>
 <tr><td><code class="inl">/api/mcp/connect</code></td><td>POST</td><td data-zh="代为连接:Body {{&quot;name&quot;,&quot;client&quot;,&quot;secrets&quot;}};校验必填密钥后返回填好密钥的客户端配置片段(密钥仅内存拼接返回,不落库)" data-en="Connect on behalf: body name/client/secrets; validates required secrets and returns the filled client config snippet (secrets assembled in memory only, never stored)">代为连接:Body <code class="inl">{{"name","client","secrets"}}</code>;校验必填密钥后返回填好密钥的客户端配置片段(密钥仅内存拼接返回,不落库)</td></tr>
+<tr><td><code class="inl">/v0/categories</code></td><td>GET</td><td data-zh="分类清单:全站分类体系(id/中英文名/覆盖实体/各实体计数),覆盖技能、MCP、专家团与工具商店" data-en="Category taxonomy: id, zh/en names, covered entity types and per-entity counts across skills, MCPs, packs and tools">分类清单:全站分类体系(id / 中英文名 / 覆盖实体 / 各实体计数),覆盖技能、MCP、专家团与工具商店</td></tr>
+<tr><td><code class="inl">/v0/categories/&lt;id&gt;</code></td><td>GET</td><td data-zh="分类详情:分类元信息 + 各实体成员清单(名称/页面路径;?limit 控制每类最多返回条数)" data-en="Category detail: metadata plus per-entity member lists (name/page; ?limit caps per-type size)">分类详情:分类元信息 + 各实体成员清单(名称 / 页面路径;<code class="inl">?limit</code> 控制每类最多返回条数)</td></tr>
 </table>
 <h2 class="h2-sm" data-zh="使用示例" data-en="Examples">使用示例</h2>
 <div class="cmd">curl -s https://skillx.yueliai.top/api/stats</div>
@@ -1335,7 +1349,9 @@ def render_api(own, suites):
 <div class="cmd">curl -s "https://skillx.yueliai.top/api/recommend?q=想给安卓apk脱壳"</div>
 <div class="cmd">curl -s -X POST -H "Content-Type: application/json" -d '{{"query":"测试集体变红怎么排查"}}' https://skillx.yueliai.top/api/recommend</div>
 <div class="cmd">curl -s https://skillx.yueliai.top/audit-report.json</div>
-<div class="cmd">curl -sO https://skillx.yueliai.top/dl/addyosmani/agent-skills/test-driven-development.tar.gz</div>'''
+<div class="cmd">curl -sO https://skillx.yueliai.top/dl/addyosmani/agent-skills/test-driven-development.tar.gz</div>
+<div class="cmd">curl -s https://skillx.yueliai.top/v0/categories</div>
+<div class="cmd">curl -s "https://skillx.yueliai.top/v0/categories/reverse-engineering?limit=20"</div>'''
     return page_shell("API 文档", "API Docs", "api", inner)
 
 
@@ -2410,6 +2426,42 @@ def main():
         "installDoc": "/install/pack-install.md",
         "detailApi": f"/v0/packs/{p['slug']}",
     } for p in packs]
+    # 分类体系(分类 API 数据源):主站分类 + 工具商店分类,含中英文名与覆盖实体
+    tool_cats_path = ROOT / "tools-store" / "categories.json"
+    tool_cats = []
+    if tool_cats_path.is_file():
+        try:
+            tool_cats = json.loads(tool_cats_path.read_text(encoding="utf-8")).get("categories", [])
+        except Exception as e:  # noqa: BLE001
+            print("[!] 读取工具分类失败:", e)
+    cat_meta = {}
+    for cid, cname in CATEGORIES.items():
+        cat_meta[cid] = {"id": cid, "name": cname, "nameEn": CATEGORIES_EN.get(cid, cid),
+                         "scope": ["skills", "mcps", "packs"]}
+    for c in tool_cats:
+        cid = c.get("id")
+        if not cid:
+            continue
+        if cid in cat_meta:
+            if "tools" not in cat_meta[cid]["scope"]:
+                cat_meta[cid]["scope"].append("tools")
+        else:
+            cat_meta[cid] = {"id": cid, "name": c.get("name", cid), "nameEn": c.get("name_en", cid),
+                             "scope": ["tools"]}
+    site_data["categoryMeta"] = list(cat_meta.values())
+    # 工具商店条目(分类 API 的 tools 计数与成员来源)
+    tools_payload_path = ROOT / "tools-store" / "api-import-payload.json"
+    if tools_payload_path.is_file():
+        try:
+            tp = json.loads(tools_payload_path.read_text(encoding="utf-8"))
+            site_data["tools"] = [{
+                "slug": t.get("slug"), "name": t.get("name"), "nameZh": t.get("name_zh", ""),
+                "category": t.get("category_id", ""), "form": t.get("form", ""),
+                "summary": t.get("summary", "") or t.get("description", ""),
+                "page": f"/tools/{t.get('slug')}.html",
+            } for t in tp.get("tools", []) if t.get("slug")]
+        except Exception as e:  # noqa: BLE001
+            print("[!] 工具数据并入 site-data 失败:", e)
     (DIST / "site-data.json").write_text(json.dumps(site_data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # 机器可读数据接口:工具清单 + 审计报告(供外部程序调用,nginx 静态提供)
@@ -2418,6 +2470,22 @@ def main():
                 "args": [{"flags": f, "help": h} for f, h in e["args"]]} for e in entries]
         for name, entries in tool_docs.items()}}
     (DIST / "tools.json").write_text(json.dumps(tools_data, ensure_ascii=False, indent=2), encoding="utf-8")
+    # 分类清单(静态机器可读,与 /v0/categories 同构;供不想调 API 的程序直接取)
+    cat_out = []
+    for m in site_data["categoryMeta"]:
+        cid = m["id"]
+        counts = {
+            "skills": sum(1 for x in site_data["skills"] if x.get("category") == cid),
+            "mcps": sum(1 for x in site_data["mcps"] if x.get("category") == cid),
+            "packs": sum(1 for x in site_data["packs"] if ((x.get("persona") or {}).get("scene") or x.get("category")) == cid),
+            "tools": sum(1 for x in site_data.get("tools", []) if x.get("category") == cid),
+        }
+        counts["total"] = sum(counts.values())
+        cat_out.append({"id": cid, "name": m["name"], "nameEn": m["nameEn"],
+                        "scope": m["scope"], "counts": counts})
+    (DIST / "categories.json").write_text(json.dumps(
+        {"generatedAt": time.strftime("%Y-%m-%d"), "categories": cat_out},
+        ensure_ascii=False, indent=2), encoding="utf-8")
     if AUDIT_PATH.is_file():
         (DIST / "audit-report.json").write_text(AUDIT_PATH.read_text(encoding="utf-8"), encoding="utf-8")
 

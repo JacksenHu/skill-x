@@ -7,6 +7,8 @@
   GET  /api/health            -> {"ok": true}
   GET  /dl/<ns>/<skill>.tar.gz -> 白名单(registry.json)代理上游 codeload:
                                   计数 + 重打包为 <skill>/ 根 + 磁盘缓存
+  GET  /v0/categories          -> 分类体系(id/中英文名/覆盖实体/各实体计数)
+  GET  /v0/categories/<id>     -> 分类详情(各实体成员清单,?limit 控制每类条数)
 
 安全:
 - 仅监听 127.0.0.1(由 nginx 反代暴露)
@@ -41,7 +43,7 @@ RATE_LIMIT = 60  # 次/分钟/IP
 UA = {"User-Agent": "skill-x-api/1.0"}
 _rate = {}
 
-VERSION = "2026-10-02.3"
+VERSION = "2026-10-03.1"
 VALID_KEY = re.compile(r"^[\w./-]{1,120}$")
 
 CAT_KW = {
@@ -84,6 +86,73 @@ def tokenize(s: str):
     zh = re.sub(r"[^\u4e00-\u9fa5]", "", s or "")
     toks.update(zh[i:i + 2] for i in range(len(zh) - 1))
     return toks
+
+
+def _load_site_data():
+    if not SITE_DATA.is_file():
+        return None
+    try:
+        return json.loads(SITE_DATA.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _pack_category(p):
+    return (p.get("persona") or {}).get("scene") or p.get("category") or ""
+
+
+def categories_list():
+    data = _load_site_data()
+    if data is None:
+        return None
+    skills = data.get("skills") or []
+    mcps = data.get("mcps") or []
+    packs = data.get("packs") or []
+    tools = data.get("tools") or []
+    out = []
+    for m in data.get("categoryMeta") or []:
+        cid = m.get("id")
+        counts = {
+            "skills": sum(1 for x in skills if x.get("category") == cid),
+            "mcps": sum(1 for x in mcps if x.get("category") == cid),
+            "packs": sum(1 for x in packs if _pack_category(x) == cid),
+            "tools": sum(1 for x in tools if x.get("category") == cid),
+        }
+        counts["total"] = sum(counts.values())
+        out.append({"id": cid, "name": m.get("name", ""), "nameEn": m.get("nameEn", ""),
+                    "scope": m.get("scope") or [], "counts": counts})
+    return {"categories": out, "metadata": {"count": len(out)}}
+
+
+def category_detail(cid, limit=100):
+    data = _load_site_data()
+    if data is None:
+        return None
+    meta = next((m for m in (data.get("categoryMeta") or []) if m.get("id") == cid), None)
+    if meta is None:
+        return None
+    sk = [x for x in (data.get("skills") or []) if x.get("category") == cid]
+    mc = [x for x in (data.get("mcps") or []) if x.get("category") == cid]
+    pk = [x for x in (data.get("packs") or []) if _pack_category(x) == cid]
+    tl = [x for x in (data.get("tools") or []) if x.get("category") == cid]
+    counts = {"skills": len(sk), "mcps": len(mc), "packs": len(pk), "tools": len(tl)}
+    counts["total"] = sum(counts.values())
+    members = {
+        "skills": [{"name": x.get("name"), "nameZh": x.get("name-zh") or x.get("name"),
+                    "kind": x.get("kind", ""), "page": x.get("page", "")} for x in sk[:limit]],
+        "mcps": [{"name": x.get("name"), "title": x.get("title", ""), "kind": x.get("kind", ""),
+                  "page": x.get("page", "")} for x in mc[:limit]],
+        "packs": [{"slug": x.get("slug"), "displayName": x.get("displayName", ""),
+                   "displayNameEn": x.get("displayNameEn", ""), "page": x.get("page", "")} for x in pk[:limit]],
+        "tools": [{"slug": x.get("slug"), "name": x.get("name"), "nameZh": x.get("nameZh", ""),
+                   "page": x.get("page", "")} for x in tl[:limit]],
+    }
+    truncated = {"skills": len(sk) > limit, "mcps": len(mc) > limit,
+                 "packs": len(pk) > limit, "tools": len(tl) > limit}
+    return {"category": {"id": cid, "name": meta.get("name", ""), "nameEn": meta.get("nameEn", ""),
+                         "scope": meta.get("scope") or [], "counts": counts},
+            "members": members,
+            "metadata": {"limit": limit, "truncated": truncated}}
 
 
 def recommend(query: str, top: int = 6):
@@ -564,6 +633,22 @@ class Handler(BaseHTTPRequestHandler):
                 nxt_pack = page_packs[-1].get("slug")
             return self._json({"packs": [pack_public(p) for p in page_packs],
                                "metadata": {"nextCursor": nxt_pack, "count": len(page_packs)}})
+        if path == "/v0/categories":
+            res = categories_list()
+            if res is None:
+                return self._json({"error": "site data unavailable"}, 503)
+            return self._json(res)
+        m_cat = re.fullmatch(r"/v0/categories/([a-z0-9-]{2,64})", path)
+        if m_cat:
+            qs_cat = urllib.parse.parse_qs(urlparse(self.path).query)
+            try:
+                limit = max(1, min(int(qs_cat.get("limit", ["100"])[0]), 1000))
+            except ValueError:
+                limit = 100
+            res = category_detail(m_cat.group(1), limit)
+            if res is None:
+                return self._json({"error": "category not found"}, 404)
+            return self._json(res)
         m_pack_md = re.fullmatch(r"/v0/packs/([a-z0-9-]{3,41})/install\.md", path)
         if m_pack_md:
             p = pack_find(m_pack_md.group(1))
