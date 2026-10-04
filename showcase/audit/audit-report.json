@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03",
+  "generatedAt": "2026-10-04",
   "skills": {
     "asm-analysis": {
       "grade": "A",
@@ -8205,6 +8205,391 @@
           "level": "info",
           "pass": true,
           "detail": "在线 | 检查于 2026-10-02"
+        }
+      ]
+    },
+    "P4nda0s/reverse-skills": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "P4nda0s/reverse-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "low",
+          "pass": false,
+          "detail": "UNKNOWN | 无 LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "Masriyan/Claude-Code-CyberSecurity-Skill": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "Masriyan/Claude-Code-CyberSecurity-Skill"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "gl0bal01/malware-analysis-claude-skills": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "gl0bal01/malware-analysis-claude-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "incogbyte/android-reverse-engineering-claude-skill": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "incogbyte/android-reverse-engineering-claude-skill"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "Unlicense | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "meirm/reverse-engineering-skill": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "meirm/reverse-engineering-skill"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "LichAmnesia/skill-lint": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "LichAmnesia/skill-lint"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "highimpact-dev/skill-shield": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "highimpact-dev/skill-shield"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "low",
+          "pass": false,
+          "detail": "UNKNOWN | 无 LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "almasumdev/awesome-mobile-security-agent-skills": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "almasumdev/awesome-mobile-security-agent-skills"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "NOASSERTION | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "Njones17/AI-agent-master-cyber-skills-list": {
+      "grade": "A-",
+      "score": 92,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "Njones17/AI-agent-master-cyber-skills-list"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "low",
+          "pass": false,
+          "detail": "UNKNOWN | 无 LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "meltedinhex/analyst-ai-pack": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "meltedinhex/analyst-ai-pack"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "Apache-2.0 | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
+        }
+      ]
+    },
+    "ibrdot/swe-re-expert": {
+      "grade": "A",
+      "score": 100,
+      "source": "ingestion-review",
+      "checks": [
+        {
+          "id": "ns",
+          "name": "命名空间",
+          "level": "info",
+          "pass": true,
+          "detail": "ibrdot/swe-re-expert"
+        },
+        {
+          "id": "license",
+          "name": "许可证核验",
+          "level": "info",
+          "pass": true,
+          "detail": "MIT | LICENSE 文件"
+        },
+        {
+          "id": "exec-review",
+          "name": "可执行面审查",
+          "level": "info",
+          "pass": true,
+          "detail": "0 个可执行文件,审查结论: passed (维护者 codex @ 2026-10-03)"
+        },
+        {
+          "id": "alive",
+          "name": "上游存活",
+          "level": "info",
+          "pass": true,
+          "detail": "在线 | 检查于 2026-10-03"
         }
       ]
     }
