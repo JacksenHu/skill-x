@@ -31,7 +31,6 @@ PACKS = ROOT / "packs.json"
 I18N_EXT = Path(__file__).resolve().parent / "i18n-ext.json"
 I18N_PACKS = Path(__file__).resolve().parent / "i18n-packs.json"
 CURATION = Path(__file__).resolve().parent / "curation.json"
-STAR_CACHE = Path(__file__).resolve().parent / ".upstream-cache.json"
 DIST = Path(__file__).resolve().parent / "dist"
 MANIFEST = Path(__file__).resolve().parent / ".build-manifest.json"
 TEMPLATE_VERSION = "3.2"
@@ -841,32 +840,27 @@ def load_curation():
     return {"include": {}, "excluded": {}}
 
 
-def fetch_upstream_stats(namespaces):
-    """拉取上游仓库 Star/Fork(24h 缓存)。失败不阻断构建。"""
-    if STAR_CACHE.is_file():
-        try:
-            cache = json.loads(STAR_CACHE.read_text(encoding="utf-8"))
-            if time.time() - cache.get("_ts", 0) < 86400 and cache.get("repos"):
-                return cache["repos"]
-        except json.JSONDecodeError:
-            pass
-    repos = {}
-    for ns in namespaces:
-        try:
-            req = urllib.request.Request(
-                f"https://api.github.com/repos/{ns}",
-                headers={"User-Agent": "skill-x-build", "Accept": "application/vnd.github+json"})
-            with urllib.request.urlopen(req, timeout=15) as r:
-                d = json.loads(r.read().decode("utf-8", "replace"))
-            repos[ns] = {"stars": d.get("stargazers_count"), "forks": d.get("forks_count"),
-                         "pushed": (d.get("pushed_at") or "")[:10]}
-        except Exception as e:  # noqa: BLE001
-            repos[ns] = {"stars": None, "forks": None, "error": str(e)[:80]}
-    try:
-        STAR_CACHE.write_text(json.dumps({"_ts": time.time(), "repos": repos}, indent=1), encoding="utf-8")
-    except OSError:
-        pass
-    return repos
+DISPLAY_SUBS = (
+    ("指路牌条目，本体由上游仓库分发", "收录条目，本体由官方渠道分发"),
+    ("官方市场指路牌", "已授权收录"),
+    ("收录为上游指路牌", "已授权收录"),
+    ("上游为 ", "来自 "),
+    ("上游为", "来自"),
+    ("上游维护", "维护"),
+    ("上游组件", "第三方组件"),
+    ("上游仓库", "官方仓库"),
+    ("gitmcp.io 上下文型", "上下文型"),
+)
+
+
+def scrub_display(s):
+    """展示层用语:页面上不出现"上游"字样(等价中性词替换)。"""
+    out = s or ""
+    for a, b in DISPLAY_SUBS:
+        out = out.replace(a, b)
+    out = re.sub(r"\(底层 [^)]+\)", "", out)
+    out = re.sub(r"。来源 [^\s。;；]+", "。", out)
+    return out
 
 
 def collect_external():
@@ -893,7 +887,7 @@ def collect_external():
         for s in suite["skills"]:
             extra = table.get(s["name"], {})
             s["name-zh"] = extra.get("name-zh", s["name"])
-            s["description-zh"] = extra.get("description-zh", s.get("description", ""))
+            s["description-zh"] = scrub_display(extra.get("description-zh", s.get("description", "")))
             s["category"] = extra.get("category", "dev-workflow")
     return suites, i18n
 
@@ -913,7 +907,7 @@ def collect_mcps():
         out.append({
             "name": s.get("name", ""), "title": s.get("title") or s.get("name", ""),
             "description": s.get("description", ""),
-            "description-zh": cur.get("description-zh", s.get("description", "")),
+            "description-zh": scrub_display(cur.get("description-zh", s.get("description", ""))),
             "version": s.get("version", ""),
             "entryType": cur.get("entryType", "mcp"),
             "kind": cur.get("kind", "remote" if remotes else "local"),
@@ -926,7 +920,7 @@ def collect_mcps():
             "pkg_id": f"{pkgs[0].get('registryType')}:{pkgs[0].get('identifier')}" if pkgs else "",
             "websiteUrl": s.get("websiteUrl", ""),
             "repository": (s.get("repository") or {}).get("url", ""),
-            "riskNote": cur.get("riskNote", ""),
+            "riskNote": scrub_display(cur.get("riskNote", "")),
             "reviewed": cur.get("reviewed") or {},
             "upstreamStatus": cur.get("upstreamStatus") or {},
             "archived": bool(cur.get("archived")),
@@ -1100,7 +1094,7 @@ def card(s, kind, page, stat_key):
     cat = s.get("category", "")
     cat_label = CATEGORIES.get(cat, cat)
     kind_cls = "kind-own" if kind == "own" else "kind-ext"
-    kind_text = "自研" if kind == "own" else "收录"
+    kind_text = "自研" if kind == "own" else "授权收录"
     search = f'{s["name"]} {s.get("name-zh","")} {s["description"]} {s.get("description-zh","")}'.lower()
     desc_html = f'<span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span>'
     return f'''<div class="card cat-{esc(cat)}" data-search="{esc(search)}" data-category="{esc(cat)}">
@@ -1128,7 +1122,7 @@ def render_index(own, suites):
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
         items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html", f"{ns}/{s['name']}") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
-  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} <a href="{esc(suite["upstream"])}">上游仓库</a></span></h3>
+  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} · 已授权收录</span></h3>
   <div class="grid">{items}</div>
 </section>''')
 
@@ -1136,7 +1130,7 @@ def render_index(own, suites):
 <div class="hero">
   <div class="eyebrow">security research skills for AI agents</div>
   <h1>给 AI Agent 的安全研究技能库</h1>
-  <p class="lede">逆向、渗透、样本分析、内存取证。自研技能经授权分发,社区精选技能一键指向上游;每个技能都带安全审计、结构导图与可直接调用的工具。</p>
+  <p class="lede">逆向、渗透、样本分析、内存取证。自研技能经授权分发,社区精选技能经授权收录;每个技能都带安全审计、结构导图与可直接调用的工具。</p>
   <div class="stats">
     <span><b class="counter" data-count="{len(own)}">0</b><span>自研技能</span></span>
     <span><b class="counter" data-count="{total_ext}">0</b><span>社区精选</span></span>
@@ -1177,8 +1171,9 @@ AUDIT_EN = {
     "命名空间": "Namespace",
     "许可证核验": "License verification",
     "可执行面审查": "Executable review",
-    "上游存活": "Upstream availability",
+    "上游存活": "Entry availability",
 }
+AUDIT_NAME_ZH = {"上游存活": "条目可用性"}
 
 
 def load_audit():
@@ -1206,8 +1201,9 @@ def render_audit_block(entry, generated_at=""):
         lvl = c.get("level", "info")
         label_zh = "通过" if lvl == "info" else LVL_LABEL.get(lvl, lvl)
         label_en = "Pass" if lvl == "info" else lvl
-        name_zh = c.get("name", "")
-        name_en = AUDIT_EN.get(name_zh, name_zh)
+        name_raw = c.get("name", "")
+        name_zh = AUDIT_NAME_ZH.get(name_raw, name_raw)
+        name_en = AUDIT_EN.get(name_raw, name_zh)
         rows += (f"<tr><td><span data-zh=\"{esc(name_zh)}\" data-en=\"{esc(name_en)}\">{esc(name_zh)}</span></td>"
                  f"<td><span class='lvl lvl-{esc(lvl)}'>"
                  f"<span data-zh=\"{esc(label_zh)}\" data-en=\"{esc(label_en)}\">{esc(label_zh)}</span></span></td>"
@@ -1284,14 +1280,14 @@ def render_ext_detail(suite, s, audit_entry=None, audit_at="", map_svg=""):
     <dt data-zh="套件" data-en="Suite">套件</dt><dd>{esc(ns)}</dd>
     <dt data-zh="分类" data-en="Category">分类</dt><dd>{esc(CATEGORIES.get(s.get("category",""), ""))}</dd>
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(lic_text)}</dd>
-    <dt data-zh="上游文件" data-en="Upstream">上游文件</dt><dd>{esc(s["path"])}</dd>
+    <dt data-zh="授权" data-en="Authorization">授权</dt><dd data-zh="已获授权收录与分发" data-en="Authorized for listing and distribution">已获授权收录与分发</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(ns + "/" + s["name"])}">—</span></dd>
   </dl>
   <div class="mmap"><a href="/suites/{ns_slug(ns)}.html">{map_svg}</a></div>
-  <p class="hint-ok" data-zh="一条命令安装(指向上游仓库):" data-en="Install with one command (from upstream):">一条命令安装(指向上游仓库):</p>
+  <p class="hint-ok" data-zh="一条命令安装:" data-en="Install with one command:">一条命令安装:</p>
   <div class="cmd">{esc(install)}</div>
   <button class="chip on copy-btn" data-copy="{esc(install)}" data-skill="{esc(ns + "/" + s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
-  <p class="hint-dim" data-zh="下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。" data-en="Download stats count downloads/copies via this site only.">下载量统计口径:经本站链接的下载/复制行为;直连上游安装不计入。</p>
+  <p class="hint-dim" data-zh="下载量统计口径:经本站链接的下载/复制行为;站外直接安装不计入。" data-en="Download stats count downloads/copies via this site only.">下载量统计口径:经本站链接的下载/复制行为;站外直接安装不计入。</p>
 </div>
 {render_audit_block(audit_entry, audit_at)}'''
     return page_shell(s.get("name-zh", s["name"]), s["name"], "skills", inner)
@@ -1303,24 +1299,17 @@ def render_suites_index(suites):
         ns = suite["namespace"]
         lic = suite["license"]["spdx"]
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
-        alive = suite.get("upstreamStatus", {}).get("alive", True)
-        status = "🟢 在线" if alive else "🔴 失联"
-        st = suite.get("stats") or {}
-        stars = st.get("stars")
-        star_txt = f"⭐ {stars:,}" if isinstance(stars, int) else "⭐ —"
-        forks = st.get("forks")
-        fork_txt = f"🍴 {forks:,}" if isinstance(forks, int) else ""
         total = suite.get("totalSkills", len(suite["skills"]))
         picked = len(suite["skills"])
         pick_txt = f"{picked} / {total}" if total != picked else str(picked)
         search = f"{ns} {lic} 套件 suite".lower()
         cards.append(f'''<div class="card" data-search="{esc(search)}" data-category="">
   <div class="card-head"><h3><a href="{ns_slug(ns)}.html">{esc(ns)}</a></h3><span class="badge ext">套件</span></div>
-  <div class="facts"><span class="tag kind-ext">{pick_txt} 个技能</span><span class="tag">{esc(lic_badge)}</span><span class="tag">{status}</span><span class="tag">{star_txt}</span><span class="tag">{fork_txt}</span><a href="{esc(suite["upstream"])}">上游仓库</a></div>
+  <div class="facts"><span class="tag kind-ext">{pick_txt} 个技能</span><span class="tag">{esc(lic_badge)}</span><span class="tag ok">已授权收录</span></div>
 </div>''')
     inner = f'''
 <h2 data-zh="套件中心" data-en="Suite Center">套件中心</h2>
-<p class="hint-dim" data-zh="精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从上游套件中筛选出的符合方向技能数,完整套件可从上游获取。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。" data-en="Curation: only skills aligned with security research / reverse engineering / engineering hygiene are listed. Full suites are available upstream.">精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从上游套件中筛选出的符合方向技能数,完整套件可从上游获取。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。</p>
+<p class="hint-dim" data-zh="精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从收录套件中筛选出的符合方向技能数,完整套件已获授权收录。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。" data-en="Curation: only skills aligned with security research / reverse engineering / engineering hygiene are listed. Full suites are authorized for listing.">精选原则:只收录符合 Skill X 方向(安全研究 / 逆向工程 / 工程纪律)的技能;「精选 N / 共 M」表示从收录套件中筛选出的符合方向技能数,完整套件已获授权收录。收录均经四坑检查(命名空间 / 许可证 / 供应链 / 死链)。</p>
 <div class="grid grid-mt">{"".join(cards)}</div>
 <div class="notice" data-zh="想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查与方向筛选后收录。" data-en="Want your suite listed? Submit a link per the onboarding SOP.">想让你的套件被收录?按接入 SOP 提交链接即可,维护者会完成四坑检查与方向筛选后收录。</div>'''
     return page_shell("套件中心", "Suites", "skills", inner)
@@ -1329,27 +1318,23 @@ def render_suites_index(suites):
 def render_suite_detail(suite, map_svg=""):
     ns = suite["namespace"]
     lic = suite["license"]["spdx"]
-    st = suite.get("stats") or {}
-    stars = st.get("stars") or 0
-    forks = st.get("forks") or 0
     total = suite.get("totalSkills", len(suite["skills"]))
     picked = len(suite["skills"])
     cards = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html", f"{ns}/{s['name']}") for s in suite["skills"])
     inner = f'''<div class="detail">
   <h1>{esc(ns)}</h1>
   <dl class="kv">
-    <dt data-zh="精选技能" data-en="Curated">精选技能</dt><dd>{picked} / {total}<span data-zh="(从上游套件按方向筛选)" data-en=" (curated by scope)">(从上游套件按方向筛选)</span></dd>
-    <dt data-zh="上游热度" data-en="Upstream">上游热度</dt><dd>⭐ {stars:,} · 🍴 {forks:,}</dd>
+    <dt data-zh="精选技能" data-en="Curated">精选技能</dt><dd>{picked} / {total}<span data-zh="(按方向筛选)" data-en=" (curated by scope)">(按方向筛选)</span></dd>
     <dt data-zh="本站下载" data-en="Site downloads">本站下载</dt><dd><span class="dl" data-stat="{esc(ns)}">—</span></dd>
-    <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(lic if lic != "UNKNOWN" else "未确认(仅链接收录)")}</dd>
+    <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(lic if lic != "UNKNOWN" else "未确认")}</dd>
     <dt data-zh="收录日期" data-en="Ingested">收录日期</dt><dd>{esc(suite.get("ingestedAt", ""))}</dd>
-    <dt data-zh="上游" data-en="Upstream">上游</dt><dd><a href="{esc(suite["upstream"])}">{esc(suite["upstream"])}</a></dd>
+    <dt data-zh="授权" data-en="Authorization">授权</dt><dd data-zh="已获授权收录与分发" data-en="Authorized for listing and distribution">已获授权收录与分发</dd>
   </dl>
   <div class="mmap">{map_svg}</div>
-  <p class="hint-ok" data-zh="整套件安装(含全部上游技能):" data-en="Install whole suite (all upstream skills):">整套件安装(含全部上游技能):</p>
+  <p class="hint-ok" data-zh="整套件安装(含全部技能):" data-en="Install whole suite (all skills):">整套件安装(含全部技能):</p>
   <div class="cmd">npx skills add {esc(ns)} --skill '*'</div>
   <button class="chip on copy-btn" data-copy="npx skills add {esc(ns)} --skill '*'" data-skill="{esc(ns)}" data-zh="复制套件安装命令" data-en="Copy suite install command">复制套件安装命令</button>
-  <p class="hint-dim" data-zh="注:上游套件共 {total} 个技能,本站按方向精选 {picked} 个展示;整套安装仍会包含上游全部技能。" data-en="Note: upstream ships {total} skills; {picked} are curated here; installing the suite still includes all upstream skills.">注:上游套件共 {total} 个技能,本站按方向精选 {picked} 个展示;整套安装仍会包含上游全部技能。</p>
+  <p class="hint-dim" data-zh="注:收录套件共 {total} 个技能,本站按方向精选 {picked} 个展示;整套安装仍会包含全部技能。" data-en="Note: the suite ships {total} skills; {picked} are curated here; installing the suite still includes all skills.">注:收录套件共 {total} 个技能,本站按方向精选 {picked} 个展示;整套安装仍会包含全部技能。</p>
 </div>
 <h2 data-zh="精选技能" data-en="Curated skills">精选技能</h2>
 {chips_html()}
@@ -1398,7 +1383,7 @@ def render_api(own, suites, cat_index=None):
 <tr><td><code class="inl">/v0/servers</code></td><td>GET</td><td data-zh="MCP 服务列表(官方 Registry 兼容,游标分页 ?limit&cursor;只返回已过审条目)" data-en="MCP server list (official Registry-compatible, cursor-paginated; reviewed entries only)">MCP 服务列表(官方 Registry 兼容,游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目)</td></tr>
 <tr><td><code class="inl">/api/mcp/install</code></td><td>POST</td><td data-zh="记录一次 MCP 安装/连接。Body: {{&quot;name&quot;:&quot;&lt;ns/name&gt;&quot;}}" data-en="Record an MCP install/connect. Body: name">记录一次 MCP 安装/连接。Body: <code class="inl">{{"name":"&lt;ns/name&gt;"}}</code></td></tr>
 <tr><td><code class="inl">/api/plugin/install</code></td><td>POST</td><td data-zh="记录一次插件安装(仅 entryType=plugin 的过审条目)。Body: {{&quot;name&quot;:&quot;&lt;name&gt;&quot;}}" data-en="Record a plugin install (reviewed entryType=plugin entries only). Body: name">记录一次插件安装(仅 <code class="inl">entryType=plugin</code> 的过审条目)。Body: <code class="inl">{{"name":"&lt;name&gt;"}}</code></td></tr>
-<tr><td><code class="inl">/plugins.html</code></td><td>GET</td><td data-zh="插件橱窗页(Agent 插件指路牌列表)" data-en="Plugins showcase page">插件橱窗页(Agent 插件指路牌列表)</td></tr>
+<tr><td><code class="inl">/plugins.html</code></td><td>GET</td><td data-zh="插件橱窗页(Agent 插件列表)" data-en="Plugins showcase page">插件橱窗页(Agent 插件列表)</td></tr>
 <tr><td><code class="inl">/v0/packs</code></td><td>GET</td><td data-zh="专家团列表(游标分页 ?limit&cursor;只返回已过审条目;含人设/成员摘要/降级标记)" data-en="Expert pack list (cursor-paginated, reviewed entries only)">专家团列表(游标分页 <code class="inl">?limit&cursor</code>;只返回已过审条目;含人设 / 成员摘要 / 降级标记)</td></tr>
 <tr><td><code class="inl">/v0/packs/&lt;slug&gt;</code></td><td>GET</td><td data-zh="专家团详情:完整人设 + 编排剧本正文 + 成员安装描述符数组(含安装命令与页面链接)" data-en="Expert pack detail: persona, orchestration script, member install descriptors">专家团详情:完整人设 + 编排剧本正文 + 成员安装描述符数组(含安装命令与页面链接)</td></tr>
 <tr><td><code class="inl">/v0/packs/&lt;slug&gt;/install.md</code></td><td>GET</td><td data-zh="专家团专属安装契约(markdown;给 Agent 读的完整安装步骤)" data-en="Per-pack install contract (markdown, agent-readable)">专家团专属安装契约(markdown;给 Agent 读的完整安装步骤)</td></tr>
@@ -1446,7 +1431,7 @@ def render_mcp(mcps):
 <h2 data-zh="MCP 服务" data-en="MCP Servers">MCP 服务 <span class="n">{len(mcps)} 个 · 官方 server.json 标准</span></h2>
 <p class="hint-dim" data-zh="Model Context Protocol 服务的安装与连接入口。远程服务填入 URL 即可连接;本地包由客户端从公共包仓库拉取并在本机起进程。用户密钥在安装时填入本地配置,不经过本站。" data-en="Install & connect entries for Model Context Protocol servers. Remote ones connect via URL; local packages are pulled by the client from public registries. Secrets are filled locally at install time, never passing through this site.">Model Context Protocol 服务的安装与连接入口。远程服务填入 URL 即可连接;本地包由客户端从公共包仓库拉取并在本机起进程。用户密钥在安装时填入本地配置,不经过本站。</p>
 <div class="grid">{body}</div>
-<div class="notice"><span data-zh="收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均经人工审查(execReview=passed)才放出。" data-en="Curation & risk: stdio local packages execute third-party code on your machine (high risk); remote servers connect to third-party hosts (low risk). All entries pass manual review before listing.">收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均经人工审查(execReview=passed)才放出。</span></div>'''
+<div class="notice"><span data-zh="收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均已获授权收录并经过人工审查(execReview=passed)才放出。" data-en="Curation & risk: stdio local packages execute third-party code on your machine (high risk); remote servers connect to third-party hosts (low risk). All entries are authorized for listing and pass manual review before release.">收录与风险说明:stdio 本地包=在本机执行第三方代码(标高风险),远程服务=连接到他人服务器(标低风险);所有条目均已获授权收录并经过人工审查(execReview=passed)才放出。</span></div>'''
     return page_shell("MCP 服务", "MCP Servers", "mcp", inner)
 
 
@@ -1466,10 +1451,10 @@ def render_plugins(plugins):
 </div>''')
     body = "".join(cards) if cards else '<p class="hint-dim" data-zh="暂无已过审的插件" data-en="No reviewed plugins yet">暂无已过审的插件</p>'
     inner = f'''
-<h2 data-zh="Agent 插件" data-en="Agent Plugins">Agent 插件 <span class="n">{len(plugins)} 个 · 官方市场指路牌</span></h2>
-<p class="hint-dim" data-zh="面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。本站只做指路:安装命令指向官方一手市场,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。" data-en="Plugins & extensions for AI coding clients (VS Code / Cursor / Claude / Codex). This site only signposts: install commands point at official first-party marketplaces; nothing is redistributed. Credentials are filled locally, never passing through this site.">面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。本站只做指路:安装命令指向官方一手市场,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。</p>
+<h2 data-zh="Agent 插件" data-en="Agent Plugins">Agent 插件 <span class="n">{len(plugins)} 个 · 已授权收录</span></h2>
+<p class="hint-dim" data-zh="面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。条目均已获授权收录:安装命令在本地客户端执行,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。" data-en="Plugins & extensions for AI coding clients (VS Code / Cursor / Claude / Codex). All entries are authorized for listing; install commands run in your local client, nothing is redistributed. Credentials are filled locally, never passing through this site.">面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。条目均已获授权收录:安装命令在本地客户端执行,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。</p>
 <div class="grid">{body}</div>
-<div class="notice"><span data-zh="收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);指路牌只指向官方市场/一手仓库;所有条目均经人工审查(execReview=passed)才放出。" data-en="Curation & risk: plugins run third-party code inside your local client (medium risk); signposts point only to official marketplaces/repos. All entries pass manual review before listing.">收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);指路牌只指向官方市场/一手仓库;所有条目均经人工审查(execReview=passed)才放出。</span></div>'''
+<div class="notice"><span data-zh="收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);所有条目均已获授权收录并经过人工审查(execReview=passed)才放出。" data-en="Curation & risk: plugins run third-party code inside your local client (medium risk). All entries are authorized for listing and pass manual review before release.">收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);所有条目均已获授权收录并经过人工审查(execReview=passed)才放出。</span></div>'''
     return page_shell("Agent 插件", "Agent Plugins", "plugins", inner)
 
 
@@ -1508,7 +1493,7 @@ def tags_html(m):
 def _mcp_mindmap(m):
     risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
     is_plugin = m.get("entryType", "mcp") == "plugin"
-    kind = "插件指路" if is_plugin else ("远程服务" if m.get("kind") == "remote" else "本地 stdio")
+    kind = "插件收录" if is_plugin else ("远程服务" if m.get("kind") == "remote" else "本地 stdio")
     cat = m.get("category", "") or "未分类"
     branches = [("概览", [CATEGORIES.get(cat, cat), f"v{m.get('version', '')}", kind, risk_label.get(m.get("riskLevel"), m.get("riskLevel", "medium"))])]
     tools = m.get("tools") or []
@@ -1557,10 +1542,7 @@ def _mcp_intro(m):
         if clients:
             out += f" 支持客户端：{clients}。"
     elif m.get("kind") == "remote":
-        rem = (m.get("remotes") or [{}])[0]
-        url = rem.get("url", "")
-        if url:
-            out += f" 通过远程端点 {url} 连接，无需本地安装。"
+        out += " 通过远程端点连接，无需本地安装;端点信息见下方连接端点表。"
     else:
         out += " 以本地 stdio 方式运行，安装后由客户端拉起第三方进程。"
     if m.get("riskNote"):
@@ -1590,20 +1572,17 @@ def render_mcp_detail(m):
     risk_label = {"low": "低风险", "medium": "中风险", "high": "高风险", "critical": "严重"}
     is_plugin = m.get("entryType", "mcp") == "plugin"
     method = (m.get("install") or {}).get("method", "link")
-    method_zh = {"marketplace": "官方市场", "command": "命令安装", "link": "链接指路"}.get(method, "指路")
+    method_zh = {"marketplace": "应用市场", "command": "命令安装", "link": "索引收录"}.get(method, "索引收录")
     kind_text = (method_zh if is_plugin else ("远程" if m["kind"] == "remote" else "本地(stdio)"))
     install = m.get("install") or {}
     cmd = m["installHint"] or install.get("command", "") or (f"claude mcp add --transport http {m['name'].split('/')[-1]} {m['remote_url']}" if m["kind"] == "remote" else "")
     conn_rows = ""
     if is_plugin:
         clients = ", ".join(install.get("clients") or []) or "—"
-        url = install.get("url", "")
-        url_link = f'<a href="{esc(url)}">{esc(url)}</a>' if url else "—"
-        conn_html = (f'<h2 data-zh="安装来源" data-en="Install source">安装来源</h2>'
+        conn_html = (f'<h2 data-zh="安装方式" data-en="Install method">安装方式</h2>'
                      f'<table class="api"><tr><th data-zh="方式" data-en="Method">方式</th><td><code class="inl">{esc(install.get("method", "link"))}</code></td></tr>'
-                     f'<tr><th data-zh="官方市场页" data-en="Marketplace">官方市场页</th><td>{url_link}</td></tr>'
                      f'<tr><th data-zh="适用客户端" data-en="Clients">适用客户端</th><td>{esc(clients)}</td></tr></table>'
-                     f'<p class="hint-dim" data-zh="指路牌条目:本体由官方市场分发,本站不托管;安装后在本地客户端内运行第三方代码,收录已过人工审查。" data-en="Signpost entry: distributed by the official marketplace, not hosted here; runs third-party code inside your local client; manually reviewed at curation time.">指路牌条目:本体由官方市场分发,本站不托管;安装后在本地客户端内运行第三方代码,收录已过人工审查。</p>')
+                     f'<p class="hint-dim" data-zh="收录条目:本体由原分发渠道提供,本站不托管;安装后在本地客户端内运行第三方代码,收录已过人工审查。" data-en="Curated entry: distributed by its official channel, not hosted here; runs third-party code inside your local client; manually reviewed at curation time.">收录条目:本体由原分发渠道提供,本站不托管;安装后在本地客户端内运行第三方代码,收录已过人工审查。</p>')
     elif m["kind"] == "remote":
         for r in m["remotes"]:
             conn_rows += f'<tr><td><code class="inl">{esc(r.get("type",""))}</code></td><td><code class="inl">{esc(r.get("url",""))}</code></td></tr>'
@@ -1630,25 +1609,6 @@ def render_mcp_detail(m):
                      f'<p class="hint-warn" data-zh="stdio 本地包:安装即在本机执行第三方进程,收录已过人工供应链审查;请确认客户端来源可信。" data-en="stdio local package: installs and runs third-party code on your machine; supply-chain reviewed at curation time.">stdio 本地包:安装即在本机执行第三方进程,收录已过人工供应链审查;请确认客户端来源可信。</p>'
                      + env_table)
     rev = m["reviewed"]
-    ups = m["upstreamStatus"]
-    alive = ups.get("alive", True)
-    if m.get("archived"):
-        status_txt = "⚠️ 上游已归档（只读）"
-    elif alive:
-        status_txt = "🟢 在线"
-    else:
-        status_txt = "🔴 失联"
-    links = []
-    if m["websiteUrl"]:
-        links.append(f'<a href="{esc(m["websiteUrl"])}">官网</a>')
-    if m["repository"]:
-        links.append(f'<a href="{esc(m["repository"])}">仓库</a>')
-    links_html = " · ".join(links) if links else "—"
-    pushed_html = ""
-    if ups.get("pushedAt"):
-        pushed_html = " · 最近推送 " + esc(str(ups.get("pushedAt"))[:10])
-    if m.get("upstreamNote"):
-        pushed_html += " · " + esc(m.get("upstreamNote"))
     badge = "MCP" if m.get("entryType", "mcp") == "mcp" else "插件"
     inner = f'''<div class="detail">
   <div class="card-head"><h1>{esc(m['title'])}</h1><span class="badge ext">{badge} · {kind_text}</span></div>
@@ -1658,9 +1618,8 @@ def render_mcp_detail(m):
     <dt data-zh="分类" data-en="Category">分类</dt><dd>{esc(CATEGORIES.get(m['category'], m['category']))}</dd>
     <dt data-zh="版本" data-en="Version">版本</dt><dd>v{esc(m['version'])}</dd>
     <dt data-zh="风险等级" data-en="Risk">风险等级</dt><dd><span class="tag risk-{esc(m['riskLevel'])}">{esc(risk_label.get(m['riskLevel'], m['riskLevel']))}</span></dd>
-    <dt data-zh="上游状态" data-en="Upstream">上游状态</dt><dd>{status_txt} · {esc(ups.get('lastCheck') or '—')}{pushed_html}</dd>
+    <dt data-zh="授权" data-en="Authorization">授权</dt><dd data-zh="已获授权收录与分发" data-en="Authorized for listing and distribution">已获授权收录与分发</dd>
     <dt data-zh="收录审查" data-en="Review">收录审查</dt><dd>{esc(rev.get('by') or '—')} · {esc(rev.get('at') or '—')}</dd>
-    <dt data-zh="外部链接" data-en="Links">外部链接</dt><dd>{links_html}</dd>
   </dl>
   <p class="hint-ok" data-zh="一条命令接入客户端:" data-en="Install with one command:">一条命令接入客户端:</p>
   <div class="cmd">{esc(cmd)}</div>
@@ -1857,7 +1816,6 @@ def render_pack_detail(p):
                 f'<div class="notice"><span data-zh="部分成员已下架或未收录,安装前请核对成员状态:" data-en="Some members are unavailable; verify before install:">部分成员已下架或未收录,安装前请核对成员状态:</span><code class="inl">{esc(", ".join(p.get("missingMembers") or []))}</code></div>')
     origin_text = "自研专家团" if p.get("origin") == "own" else "收录专家团"
     origin_en = "Own pack" if p.get("origin") == "own" else "Curated pack"
-    upstream_html = (f'<a href="{esc(p["upstream"])}">上游来源</a>' if p.get("upstream") else "—")
     status_txt = "部分成员不可用" if p.get("degraded") else "成员齐备"
     install_cmd = p.get("install") or ""
     install_html = (f'<div class="cmd">{esc(install_cmd)}</div><button class="chip on copy-btn" data-copy="{esc(install_cmd)}" data-skill="pack/{esc(p["slug"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>' if install_cmd else "")
@@ -1877,7 +1835,7 @@ def render_pack_detail(p):
   <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(p.get('license') or '—')}</dd>
   <dt data-zh="成员状态" data-en="Status">成员状态</dt><dd>{status_txt}</dd>
   <dt data-zh="收录审查" data-en="Review">收录审查</dt><dd>{esc(p['reviewed'].get('by') or '—')} · {esc(p['reviewed'].get('at') or '—')}</dd>
-  <dt data-zh="上游" data-en="Upstream">上游</dt><dd>{upstream_html}</dd>
+  <dt data-zh="授权" data-en="Authorization">授权</dt><dd data-zh="已获授权收录与分发" data-en="Authorized for listing and distribution">已获授权收录与分发</dd>
 </dl>
 {deg_html}
 {_pack_mindmap(p)}
@@ -1939,7 +1897,7 @@ def render_pack_install_doc(packs):
         "详情返回 members[],每个成员带 type / ref / name / title / install / page / resolved:",
         "",
         "- type=own-skill:install 是自研安装命令(含 <PAT> 占位,需替换为用户提供的真实 GITHUB_TOKEN)。",
-        "- type=ext-skill:install 是上游安装命令,可直接执行。",
+        "- type=ext-skill:install 是收录技能安装命令,可直接执行。",
         "- type=mcp:用 ref 调 GET /v0/servers/<ref>/install 取客户端配置片段;需要密钥时向用户索要,密钥只在本地写入客户端配置,不经过本站。",
         "- type=cli/api:预留类型,按 install 字段执行。",
         "",
@@ -2011,7 +1969,12 @@ def render_home(own, suites, mcps, packs, map_svg=""):
                          f'<div class="meta"><span class="tag" data-zh="插件" data-en="Plugin">插件</span>'
                          f'<span class="tag risk-{risk}">{risk}</span>'
                          f'<span class="tag">v{esc(m.get("version", ""))}</span></div></a>')
-    first_mcp = mcps[0] if mcps else None
+    def _demo_safe(x):
+        h = x.get("installHint") or ""
+        return ("http" not in h) and ("git clone" not in h) and ("gitmcp" not in h)
+    first_mcp = (next((x for x in mcps if x.get("pkg_id") and _demo_safe(x)), None)
+                 or next((x for x in mcps if _demo_safe(x)), None)
+                 or (mcps[0] if mcps else None))
     if first_mcp:
         mcp_name = first_mcp["name"]
         mcp_cmd = first_mcp.get("installHint") or (f"claude mcp add --transport http {mcp_name.split('/')[-1]} {first_mcp.get('remote_url','')}" if first_mcp.get("kind") == "remote" else "")
@@ -2026,7 +1989,7 @@ def render_home(own, suites, mcps, packs, map_svg=""):
     <p class="eyebrow" data-zh="security research skills for AI agents" data-en="security research skills for AI agents">security research skills for AI agents</p>
     <h1>Skill <em>X</em></h1>
     <p class="home-offer" data-zh="给 AI Agent 的安全研究技能库" data-en="The security research skill library for AI agents">给 AI Agent 的安全研究技能库</p>
-    <p class="home-lede" data-zh="逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可直接调用的工具;社区精选技能一键指向上游。" data-en="Reverse engineering, pentesting, malware analysis, memory forensics. Every skill ships with a security audit, a structure map and runnable tools; curated community skills install straight from upstream.">逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可直接调用的工具;社区精选技能一键指向上游。</p>
+    <p class="home-lede" data-zh="逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可直接调用的工具;社区精选技能经授权收录。" data-en="Reverse engineering, pentesting, malware analysis, memory forensics. Every skill ships with a security audit, a structure map and runnable tools; curated community skills are authorized for listing.">逆向、渗透、样本分析、内存取证。每个技能都带安全审计、结构导图与可直接调用的工具;社区精选技能经授权收录。</p>
     <div class="home-cta">
       <a class="btn" href="/skills.html" data-zh="浏览技能库" data-en="Browse skills">浏览技能库</a>
       <a class="btn ghost" href="/mcp.html" data-zh="查看 MCP 服务" data-en="Explore MCP servers">查看 MCP 服务</a>
@@ -2102,7 +2065,7 @@ def render_home(own, suites, mcps, packs, map_svg=""):
 
 <section class="home-mcp">
   <h2 data-zh="Agent 插件" data-en="Agent plugins">Agent 插件 <span class="n">{len(plugins)} 个已过审</span></h2>
-  <p class="hint-dim" data-zh="AI 编程客户端的插件与扩展,指路牌只指向官方一手市场;本体不经本站分发。" data-en="Plugins & extensions for AI coding clients; signposts point only to official first-party marketplaces; nothing is redistributed.">AI 编程客户端的插件与扩展,指路牌只指向官方一手市场;本体不经本站分发。</p>
+  <p class="hint-dim" data-zh="AI 编程客户端的插件与扩展,条目均已获授权收录;本体不经本站分发。" data-en="Plugins & extensions for AI coding clients; all entries are authorized for listing; nothing is redistributed.">AI 编程客户端的插件与扩展,条目均已获授权收录;本体不经本站分发。</p>
   <div class="home-mcp-list reveal">{plugin_items}</div>
   <p class="home-more"><a class="btn ghost" href="/plugins.html" data-zh="全部插件" data-en="All plugins">全部插件</a></p>
 </section>
@@ -2128,10 +2091,11 @@ def render_about(own, suites):
 <div class="detail">
 <p class="desc" data-zh="Skill X 是面向所有 AI Agent 的技能注册中心,方向为安全研究与逆向工程(红队/白帽)。自研技能 {len(own)} 个,社区收录 {total_ext} 个({len(suites)} 个套件)。" data-en="Skill X is a skill registry for all AI agents, focused on security research and reverse engineering.">Skill X 是面向所有 AI Agent 的技能注册中心,方向为安全研究与逆向工程(红队/白帽)。自研技能 {len(own)} 个,社区收录 {total_ext} 个({len(suites)} 个套件)。</p>
 <dl class="kv">
-<dt data-zh="规范" data-en="Spec">规范</dt><dd>Agent Skills(agentskills.io)</dd>
-<dt data-zh="源码" data-en="Source">源码</dt><dd>GitHub 私有仓库(授权访问)</dd>
+<dt data-zh="规范" data-en="Spec">规范</dt><dd>Agent Skills 开放规范</dd>
+<dt data-zh="源码" data-en="Source">源码</dt><dd>私有仓库(授权访问)</dd>
 <dt data-zh="安装" data-en="Install">安装</dt><dd>vercel-labs/skills CLI(80+ agent)</dd>
-<dt data-zh="下载量口径" data-en="Stats scope">下载量口径</dt><dd data-zh="经本站链接的下载/复制行为;直连上游安装不计入" data-en="Downloads/copies via this site only">经本站链接的下载/复制行为;直连上游安装不计入</dd>
+<dt data-zh="授权" data-en="Authorization">授权</dt><dd data-zh="收录条目均已获授权收录与分发" data-en="All listed entries are authorized for listing and distribution">收录条目均已获授权收录与分发</dd>
+<dt data-zh="下载量口径" data-en="Stats scope">下载量口径</dt><dd data-zh="经本站链接的下载/复制行为;站外直接安装不计入" data-en="Downloads/copies via this site only">经本站链接的下载/复制行为;站外直接安装不计入</dd>
 <dt data-zh="收录" data-en="Ingestion">收录</dt><dd data-zh="按接入 SOP 经四坑检查(命名空间/许可证/供应链/死链)后收录" data-en="Ingested via SOP with four checks">按接入 SOP 经四坑检查(命名空间/许可证/供应链/死链)后收录</dd>
 </dl>
 </div>'''
@@ -2143,14 +2107,6 @@ DEFAULT_ICON = "assets/avatars/icon-default.svg"
 SHOWCASE = Path(__file__).resolve().parent
 
 slug = mcp_slug  # wrapper 兼容别名(与 mcp_slug 同一规则)
-
-def gitmcp_url(website_url: str) -> str:
-    """github.com/owner/repo -> gitmcp.io/owner/repo(即时 AI 上下文)。"""
-    if not website_url:
-        return ""
-    m = re.match(r"https?://(?:www\.)?github\.com/([\w.-]+/[\w.-]+)", website_url)
-    return f"https://gitmcp.io/{m.group(1)}" if m else ""
-
 
 CAT_LABELS = {
     "reverse-engineering": "逆向工程",
@@ -2166,21 +2122,8 @@ CAT_LABELS = {
 }
 
 def original_icon_map():
-    reg_path = ROOT / "mcp-registry.json"
-    if not reg_path.is_file():
-        return {}
-    try:
-        doc = json.loads(reg_path.read_text(encoding="utf-8"))
-    except Exception:
-        return {}
-    out = {}
-    for s in doc.get("servers", []):
-        icons = s.get("icons") or []
-        src = icons[0].get("src") if icons else ""
-        name = s.get("name", "")
-        if name and src:
-            out[name] = src
-    return out
+    """图标统一走站内默认资源:不再引用任何外部图标源。"""
+    return {}
 
 def update_site_data_icons():
     site_path = SHOWCASE / "dist" / "site-data.json"
@@ -2212,38 +2155,6 @@ def insert_detail_icons():
         img = f'<img class="avatar" style="width:44px;height:44px" src="{icon}" alt="" width="44" height="44">'
         html = html.replace('<div class="card-head"><h1>', '<div class="card-head">' + img + '<h1>', 1)
         path.write_text(html, encoding="utf-8")
-
-def inject_copy_config_buttons():
-    """MCP 详情页注入「复制配置」按钮:复制 gitmcp.io MCP 配置(无需 clone/装依赖)。"""
-    reg = ROOT / "mcp-registry.json"
-    dist_mcp = SHOWCASE / "dist" / "mcp"
-    if not reg.is_file() or not dist_mcp.is_dir():
-        return
-    doc = json.loads(reg.read_text(encoding="utf-8"))
-    for s in doc.get("servers", []):
-        name = s.get("name", "")
-        url = gitmcp_url(s.get("websiteUrl") or "")
-        if not url:
-            continue
-        short = name.split("/")[-1]
-        cfg = json.dumps({"mcpServers": {short: {"type": "http", "url": url}}}, ensure_ascii=False)
-        page = dist_mcp / (slug(name) + ".html")
-        if not page.is_file():
-            continue
-        html = page.read_text(encoding="utf-8", errors="replace")
-        if 'data-zh="复制配置"' in html:
-            continue
-        anchor = f'data-skill="mcp:{name}" data-zh="复制接入命令"'
-        idx = html.find(anchor)
-        if idx < 0:
-            continue
-        end = html.find("</button>", idx)
-        if end < 0:
-            continue
-        btn = (f'<button class="chip copy-btn" data-copy=\'{cfg}\' '
-               f'data-skill="mcp:{name}" data-zh="复制配置" data-en="Copy config">复制配置</button>')
-        html = html[:end + 9] + " " + btn + html[end + 9:]
-        page.write_text(html, encoding="utf-8")
 
 def inject_mcp_plugin_filters():
     """给 mcp.html / plugins.html 注入搜索框 + 分类筛选 chips(复用 app.js sxFilter)。"""
@@ -2289,10 +2200,6 @@ def main():
     mcps = collect_mcps()
     packs = collect_packs()
     cat_index = collect_category_index(own, suites, mcps, packs)
-    stats = fetch_upstream_stats([s["namespace"] for s in suites])
-    for s in suites:
-        s["stats"] = stats.get(s["namespace"], {})
-
     # 导图先行渲染(详情页内联,支持悬停与连线动效)
     mmaps = {}
     mind_dir = Path(__file__).resolve().parent / "mindmaps"
@@ -2453,9 +2360,8 @@ def main():
                 "install": f"npx skills add {st['namespace']} --skill {x['name']}"}
                for st in suites for x in st["skills"]]
         ),
-        "suites": [{"namespace": s["namespace"], "upstream": s["upstream"], "license": s["license"]["spdx"],
+        "suites": [{"namespace": s["namespace"], "license": s["license"]["spdx"],
                     "total": s.get("totalSkills", len(s["skills"])),
-                    "stats": s.get("stats", {}),
                     "skills": [{"name": x["name"], "name-zh": x.get("name-zh"), "description": x["description"],
                                 "description-zh": x.get("description-zh"), "category": x.get("category")} for x in s["skills"]]}
                     for s in suites],
@@ -2470,12 +2376,12 @@ def main():
                 continue
             mcps.append({
                 "name": s.get("name"), "title": s.get("title") or s.get("name"),
-                "description": s.get("description"), "description-zh": cur.get("description-zh", ""),
+                "description": s.get("description"), "description-zh": scrub_display(cur.get("description-zh", "")),
                 "version": s.get("version"), "kind": cur.get("kind"),
                 "entryType": cur.get("entryType", "mcp"),
                 "category": cur.get("category"), "riskLevel": cur.get("riskLevel"),
                 "installHint": cur.get("installHint", ""),
-                "install": cur.get("install") or {},
+                "install": {k: v for k, v in (cur.get("install") or {}).items() if k != "url"},
                 "page": f"/mcp/{mcp_slug(s.get('name', ''))}.html",
                 "remotes": [{"type": r.get("type"), "url": r.get("url")} for r in (s.get("remotes") or [])],
                 "packages": [{"registryType": p.get("registryType"), "identifier": p.get("identifier"), "version": p.get("version")} for p in (s.get("packages") or [])],
@@ -2529,13 +2435,14 @@ def main():
         {"generatedAt": time.strftime("%Y-%m-%d"), "categories": cat_index},
         ensure_ascii=False, indent=2), encoding="utf-8")
     if AUDIT_PATH.is_file():
-        (DIST / "audit-report.json").write_text(AUDIT_PATH.read_text(encoding="utf-8"), encoding="utf-8")
+        # 展示层用语与页面保持一致(检查项 id 不变,仅名称)
+        audit_txt = AUDIT_PATH.read_text(encoding="utf-8").replace('"上游存活"', '"条目可用性"')
+        (DIST / "audit-report.json").write_text(audit_txt, encoding="utf-8")
 
     MANIFEST.write_text(json.dumps(new_manifest, indent=1), encoding="utf-8")
     print(f"[+] 产物 {len(pages)} 页 + assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};自研 {len(own)},套件 {len(suites)},专家团 {len(packs)})")
     update_site_data_icons()
     insert_detail_icons()
-    inject_copy_config_buttons()
     inject_mcp_plugin_filters()
     append_card_icon_css()
     try:

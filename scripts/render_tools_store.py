@@ -29,6 +29,16 @@ def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+def scrub_note(s):
+    """展示层用语规范化:条目描述中不出现"上游"字样。"""
+    out = s or ""
+    for a, b in (("上游仓库已归档（archived）", "条目已归档"),
+                 ("上游已移除部署产物", "部署产物已不可用"),
+                 ("上游仓库", "条目"), ("上游", "条目")):
+        out = out.replace(a, b)
+    return out
+
+
 def load():
     payload = json.loads((TS / "api-import-payload.json").read_text(encoding="utf-8"))
     cats = json.loads((TS / "categories.json").read_text(encoding="utf-8"))["categories"]
@@ -72,24 +82,15 @@ def head(title, asset_ver=""):
 
 
 def upstream_badge(up):
-    """上游可用性徽标：由 scripts/upstream_audit.py 的实测结果驱动。"""
-    if not up:
-        return ""
-    parts = []
-    if up.get("archived"):
-        parts.append('<span class="tag warn" title="上游仓库已归档，仅只读可用">上游已归档</span>')
-    elif up.get("alive") is False:
-        parts.append('<span class="tag danger">上游失联</span>')
-    else:
-        parts.append('<span class="tag ok" title="上游仓库可达">上游在线</span>')
-    if up.get("deployBroken"):
-        parts.append('<span class="tag danger" title="实测：部署入口已消失，无法按命令安装">部署不可用</span>')
-    elif up.get("deployVerified"):
-        parts.append('<span class="tag ok" title="已实测部署入口（镜像/Release/compose 文件）真实存在">部署已实测</span>')
-    if up.get("pushedAt"):
-        parts.append('<span class="tag">最近推送 ' + esc(str(up["pushedAt"])[:10]) + '</span>')
-    if up.get("lastCheck"):
-        parts.append('<span class="tag dim">核验 ' + esc(str(up["lastCheck"])) + '</span>')
+    """条目徽标：授权收录标注 + 部署入口实测结果（由 scripts/upstream_audit.py 驱动）。"""
+    parts = ['<span class="tag ok" title="该条目已获授权收录与分发">已授权收录</span>']
+    if up:
+        if up.get("deployBroken"):
+            parts.append('<span class="tag danger" title="实测：部署入口已消失，无法按命令安装">部署不可用</span>')
+        elif up.get("deployVerified"):
+            parts.append('<span class="tag ok" title="已实测部署入口（镜像/Release/compose 文件）真实存在">部署已实测</span>')
+        if up.get("lastCheck"):
+            parts.append('<span class="tag dim">核验 ' + esc(str(up["lastCheck"])) + '</span>')
     return '<div class="meta">' + ''.join(parts) + '</div>'
 
 
@@ -116,8 +117,7 @@ def tool_mindmap(t, cat_meta):
     form = t.get("form", "") or "—"
     ports = ",".join(str(x) for x in (t.get("ports") or []))
     branches = [("概览", [cm.get("name", cat) or "未分类", deploy, form, (f"端口 {ports}" if ports else "无固定端口")])]
-    repo = t.get("repo", "") or "—"
-    branches.append(("上游", [repo]))
+    branches.append(("授权", ["已授权收录与分发"]))
     return mmap_html(t.get("name_zh") or t.get("name", ""), branches, "结构导图")
 
 
@@ -131,9 +131,6 @@ def tool_intro(t, cat_meta):
     ports = t.get("ports") or []
     if ports:
         out += f" 默认端口 {', '.join(str(x) for x in ports)}。"
-    repo = t.get("repo", "")
-    if repo:
-        out += f" 上游仓库 {repo}。"
     desc = t.get("description", "") or t.get("summary", "")
     if desc:
         out += f" {desc.strip('。')}。"
@@ -144,9 +141,9 @@ def deploy_unavailable(up, note):
     """部署入口不可用时的显式说明。"""
     if (up or {}).get("deployBroken"):
         return ('<p class="hint-warn">⚠️ 部署入口已不可用：'
-                + esc(note or '上游已移除部署产物')
+                + esc(scrub_note(note) or '部署产物已不可用')
                 + '</p><p class="hint-dim">本条目仅作情报索引保留，不提供一键部署。</p>')
-    return '<p class="hint-dim">该工具无标准命令行部署入口，请参考上游仓库说明。</p>'
+    return '<p class="hint-dim">该工具无标准命令行部署入口，本条目仅作收录索引。</p>'
 
 
 def deploy_block(t):
@@ -165,8 +162,6 @@ def card(t, cat_meta):
     name_zh = t.get("name_zh", "") or name
     up = t.get("upstream") or {}
     detail = t.get("detail_url", f"/tools/{t.get('slug', '')}.html")
-    docs = t.get("docs_url", "")
-    gm = (t.get("gitmcp") or {}).get("url", "")
     command = (t.get("deploy") or {}).get("command", "")
     summary = t.get("summary", "") or t.get("description", "") or ""
     deploy = (t.get("deploy") or {}).get("method", "")
@@ -174,12 +169,8 @@ def card(t, cat_meta):
     search = f"{name} {name_zh} {cat} {deploy} {form} {summary}".lower()
     color = CAT_COLORS.get(cat, "dev-workflow")
     actions = []
-    if docs:
-        actions.append(f'<a class="chip" href="{esc(docs)}" target="_blank" rel="noopener" data-zh="查看源码" data-en="Source">查看源码 ↗</a>')
     if command:
         actions.append(f'<button class="chip on copy-btn" data-copy="{esc(command)}" data-skill="tool:{esc(name)}" data-zh="复制部署命令" data-en="Copy deploy command">复制部署命令</button>')
-    if gm:
-        actions.append(f'<a class="chip" href="{esc(gm)}" target="_blank" rel="noopener">gitmcp ↗</a>')
     actions_html = f'<div class="actions">{"".join(actions)}</div>' if actions else ""
     summary_html = f'<p class="hint-dim">{esc(summary)}</p>' if summary else ""
     up_html = upstream_badge(up)
@@ -196,9 +187,6 @@ def card(t, cat_meta):
 def detail_page(t, cat_meta, cats, asset_ver=""):
     name = t.get("name", "")
     name_zh = t.get("name_zh", "") or name
-    docs = t.get("docs_url", "")
-    gm = (t.get("gitmcp") or {}).get("url", "")
-    repo = t.get("repo", "")
     default_port = t.get("default_port")
     form = t.get("form", "")
     credentials = t.get("credentials") or []
@@ -207,31 +195,26 @@ def detail_page(t, cat_meta, cats, asset_ver=""):
     up = t.get("upstream") or {}
 
     chips = ['<a class="chip on" href="/tools.html" data-zh="返回工具商店" data-en="Back to Tool Store">← 返回工具商店</a>']
-    if docs:
-        chips.append(f'<a class="chip" href="{esc(docs)}" target="_blank" rel="noopener">查看源码 ↗</a>')
-    if gm:
-        chips.append(f'<a class="chip" href="{esc(gm)}" target="_blank" rel="noopener">gitmcp 上下文 ↗</a>')
 
     rows = []
+    rows.append('<tr><th>授权</th><td>已授权收录与分发</td></tr>')
     if default_port:
         rows.append(f'<tr><th>默认端口</th><td><code class="inl">{esc(str(default_port))}</code></td></tr>')
     if form:
         rows.append(f'<tr><th>形态</th><td>{esc(form)}</td></tr>')
-    if repo:
-        rows.append(f'<tr><th>仓库</th><td><code class="inl">{esc(repo)}</code></td></tr>')
     if up:
-        state = "已归档（只读）" if up.get("archived") else ("失联" if up.get("alive") is False else "在线")
-        rows.append(f'<tr><th>上游状态</th><td>{esc(state)} · 核验 {esc(str(up.get("lastCheck", "—")))}</td></tr>')
-        if up.get("pushedAt"):
-            rows.append(f'<tr><th>最近推送</th><td>{esc(str(up.get("pushedAt"))[:10])}</td></tr>')
-        if up.get("stars") is not None:
-            rows.append(f'<tr><th>Star</th><td>{esc(str(up.get("stars")))}</td></tr>')
+        if up.get("deployVerified"):
+            rows.append('<tr><th>部署核验</th><td>已实测</td></tr>')
+        elif up.get("deployBroken"):
+            rows.append('<tr><th>部署核验</th><td>不可用</td></tr>')
+        if up.get("lastCheck"):
+            rows.append(f'<tr><th>核验时间</th><td>{esc(str(up.get("lastCheck")))}</td></tr>')
         if up.get("note"):
-            rows.append(f'<tr><th>提示</th><td>{esc(up.get("note"))}</td></tr>')
+            rows.append(f'<tr><th>提示</th><td>{esc(scrub_note(up.get("note")))}</td></tr>')
     if credentials:
         rows.append(f'<tr><th>第三方凭证</th><td>{esc(", ".join(str(c) for c in credentials))}</td></tr>')
     if note:
-        rows.append(f'<tr><th>备注</th><td>{esc(note)}</td></tr>')
+        rows.append(f'<tr><th>备注</th><td>{esc(scrub_note(note))}</td></tr>')
     table = f'<table class="api">{"".join(rows)}</table>' if rows else ""
 
     cmd = deploy_block(t)
@@ -262,7 +245,7 @@ def list_page(cats, cat_meta, tools, asset_ver=""):
 {nav("tools")}
 <div class="wrap">
 <h2 data-zh="安全工具商店" data-en="Security Tool Store">安全工具商店 <span class="n">{len(tools)} 个 · {len(cats)} 类</span></h2>
-<p class="hint-dim" data-zh="面向已获授权的安全测试工具软件:一键部署 Docker 服务、二进制工具与靶场/蜜罐/情报平台。部署命令只做指路,本体走 Docker Hub / GitHub,不经过本站。" data-en="Security tools for authorized testing: one-command deploy for Docker services, binaries, labs, honeypots and intel platforms. Deploy commands signpost to Docker Hub / GitHub; nothing is proxied through this site.">面向已获授权的安全测试工具软件:一键部署 Docker 服务、二进制工具与靶场/蜜罐/情报平台。部署命令只做指路,本体走 Docker Hub / GitHub,不经过本站。</p>
+<p class="hint-dim" data-zh="面向已获授权的安全测试工具软件:一键部署 Docker 服务、二进制工具与靶场/蜜罐/情报平台。条目均已获授权收录;部署命令在本机执行,本体不经过本站。" data-en="Security tools for authorized testing: one-command deploy for Docker services, binaries, labs, honeypots and intel platforms. All entries are authorized for listing; deploy commands run locally, nothing is proxied through this site.">面向已获授权的安全测试工具软件:一键部署 Docker 服务、二进制工具与靶场/蜜罐/情报平台。条目均已获授权收录;部署命令在本机执行,本体不经过本站。</p>
 <div class="search"><input id="q" type="search" data-zh="按名称或关键词筛选工具…" data-en="Filter tools by name or keyword…" data-attr="placeholder" placeholder="按名称或关键词筛选工具…"></div>
 <div class="chips">{''.join(chips)}</div>
 <div class="grid">{cards}</div>
