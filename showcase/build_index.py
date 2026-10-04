@@ -1002,6 +1002,51 @@ def collect_packs():
     return out
 
 
+def collect_category_index(own, suites, mcps, packs):
+    """全站分类索引:主站分类 + 工具商店分类,含覆盖实体与各实体计数。
+
+    同一份结果同时供 API 文档页分类索引、site-data.categoryMeta 与静态
+    categories.json 使用,保证三处口径一致。
+    """
+    ts = ROOT / "tools-store"
+    tool_cats, tools = [], []
+    try:
+        tool_cats = json.loads((ts / "categories.json").read_text(encoding="utf-8")).get("categories", [])
+    except Exception as e:  # noqa: BLE001
+        print("[!] 读取工具分类失败:", e)
+    try:
+        tools = json.loads((ts / "api-import-payload.json").read_text(encoding="utf-8")).get("tools", [])
+    except Exception as e:  # noqa: BLE001
+        print("[!] 读取工具数据失败:", e)
+    meta = {}
+    for cid, cname in CATEGORIES.items():
+        meta[cid] = {"id": cid, "name": cname, "nameEn": CATEGORIES_EN.get(cid, cid),
+                     "scope": ["skills", "mcps", "packs"]}
+    for c in tool_cats:
+        cid = c.get("id")
+        if not cid:
+            continue
+        if cid in meta:
+            if "tools" not in meta[cid]["scope"]:
+                meta[cid]["scope"].append("tools")
+        else:
+            meta[cid] = {"id": cid, "name": c.get("name", cid), "nameEn": c.get("name_en", cid),
+                         "scope": ["tools"]}
+    out = []
+    for m in meta.values():
+        cid = m["id"]
+        counts = {
+            "skills": sum(1 for s in own if s.get("category") == cid)
+                      + sum(1 for st in suites for s in st["skills"] if s.get("category") == cid),
+            "mcps": sum(1 for x in mcps if x.get("category") == cid),
+            "packs": sum(1 for p in packs if ((p.get("persona") or {}).get("scene") or p.get("category")) == cid),
+            "tools": sum(1 for t in tools if t.get("slug") and t.get("category_id") == cid),
+        }
+        counts["total"] = sum(counts.values())
+        out.append({**m, "counts": counts})
+    return out
+
+
 def media_ver(rel: str) -> str:
     """静态媒体文件内容哈希(8 位),用于 URL 版本号破缓存。"""
     p = Path(__file__).resolve().parent / rel
@@ -1312,7 +1357,29 @@ def render_suite_detail(suite, map_svg=""):
     return page_shell(ns, ns, "skills", inner)
 
 
-def render_api(own, suites):
+def render_api(own, suites, cat_index=None):
+    cat_rows = []
+    for c in (cat_index or []):
+        cid = c.get("id", "")
+        cnt = c.get("counts") or {}
+        bits = [f"{label} {cnt.get(k, 0)}" for k, label in
+                (("skills", "技能"), ("mcps", "MCP/插件"), ("packs", "专家团"), ("tools", "工具商店"))
+                if (cnt.get(k) or 0) > 0]
+        counts_txt = " / ".join(bits) if bits else "—"
+        cat_rows.append(
+            '<tr><td><b>' + esc(c.get("name", "")) + '</b> <span class="hint-dim">' + esc(c.get("nameEn", "")) + '</span></td>'
+            '<td><code class="inl">' + esc(cid) + '</code></td>'
+            '<td>' + esc(" · ".join(c.get("scope") or [])) + '</td>'
+            '<td>' + esc(counts_txt) + '</td>'
+            '<td><a href="/v0/categories/' + esc(cid) + '">/v0/categories/' + esc(cid) + '</a></td></tr>')
+    cat_block = ""
+    if cat_rows:
+        cat_block = f'''<h2 class="h2-sm" data-zh="分类索引（含二级分类）" data-en="Category index (incl. sub-categories)">分类索引（含二级分类）</h2>
+<p class="hint-dim" data-zh="技能 / MCP / 插件 / 专家团共用主分类;工具商店另设二级分类「侦察测绘 / 漏洞扫描 / 靶场实验 / 内网与隧道 / 蜜罐与防守 / 威胁情报」。全部 {len(cat_rows)} 个分类均可直接下钻:/v0/categories/&lt;id&gt; 返回该分类下各实体成员清单,计数与 /v0/categories、/categories.json 一致。" data-en="Skills / MCPs / plugins / expert packs share the main taxonomy; the tool store adds its own sub-categories. All {len(cat_rows)} categories are drillable: /v0/categories/&lt;id&gt; returns per-entity member lists whose counts match /v0/categories and /categories.json.">技能 / MCP / 插件 / 专家团共用主分类;工具商店另设二级分类「侦察测绘 / 漏洞扫描 / 靶场实验 / 内网与隧道 / 蜜罐与防守 / 威胁情报」。全部 {len(cat_rows)} 个分类均可直接下钻:<code class="inl">/v0/categories/&lt;id&gt;</code> 返回该分类下各实体成员清单,计数与 <code class="inl">/v0/categories</code>、<code class="inl">/categories.json</code> 一致。</p>
+<table class="api">
+<tr><th data-zh="分类" data-en="Category">分类</th><th data-zh="分类 id" data-en="Category id">分类 id</th><th data-zh="覆盖实体" data-en="Scope">覆盖实体</th><th data-zh="条目计数" data-en="Counts">条目计数</th><th data-zh="详情接口" data-en="Detail API">详情接口</th></tr>
+{"".join(cat_rows)}
+</table>'''
     inner = f'''
 <h2 data-zh="API 文档" data-en="API Docs">API 文档</h2>
 <p class="hint-dim" data-zh="本页仅收录本站对外提供的网络接口;各技能自带的命令行工具(随技能安装、由 agent 本地调用)见对应技能详情页。" data-en="This page lists network APIs only. Bundled CLI tools (installed with each skill, invoked locally by the agent) are documented on each skill page.">本页仅收录本站对外提供的网络接口;各技能自带的命令行工具(随技能安装、由 agent 本地调用)见对应技能详情页。</p>
@@ -1342,6 +1409,7 @@ def render_api(own, suites):
 <tr><td><code class="inl">/v0/categories</code></td><td>GET</td><td data-zh="分类清单:全站分类体系(id/中英文名/覆盖实体/各实体计数),覆盖技能、MCP、专家团与工具商店" data-en="Category taxonomy: id, zh/en names, covered entity types and per-entity counts across skills, MCPs, packs and tools">分类清单:全站分类体系(id / 中英文名 / 覆盖实体 / 各实体计数),覆盖技能、MCP、专家团与工具商店</td></tr>
 <tr><td><code class="inl">/v0/categories/&lt;id&gt;</code></td><td>GET</td><td data-zh="分类详情:分类元信息 + 各实体成员清单(名称/页面路径;?limit 控制每类最多返回条数)" data-en="Category detail: metadata plus per-entity member lists (name/page; ?limit caps per-type size)">分类详情:分类元信息 + 各实体成员清单(名称 / 页面路径;<code class="inl">?limit</code> 控制每类最多返回条数)</td></tr>
 </table>
+{cat_block}
 <h2 class="h2-sm" data-zh="使用示例" data-en="Examples">使用示例</h2>
 <div class="cmd">curl -s https://skillx.yueliai.top/api/stats</div>
 <div class="cmd">curl -s "https://skillx.yueliai.top/v0/servers?limit=10"</div>
@@ -1354,7 +1422,8 @@ def render_api(own, suites):
 <div class="cmd">curl -s https://skillx.yueliai.top/audit-report.json</div>
 <div class="cmd">curl -sO https://skillx.yueliai.top/dl/addyosmani/agent-skills/test-driven-development.tar.gz</div>
 <div class="cmd">curl -s https://skillx.yueliai.top/v0/categories</div>
-<div class="cmd">curl -s "https://skillx.yueliai.top/v0/categories/reverse-engineering?limit=20"</div>'''
+<div class="cmd">curl -s "https://skillx.yueliai.top/v0/categories/reverse-engineering?limit=20"</div>
+<div class="cmd">curl -s "https://skillx.yueliai.top/v0/categories/recon?limit=5"</div>'''
     return page_shell("API 文档", "API Docs", "api", inner)
 
 
@@ -2219,6 +2288,7 @@ def main():
     suites, _ = collect_external()
     mcps = collect_mcps()
     packs = collect_packs()
+    cat_index = collect_category_index(own, suites, mcps, packs)
     stats = fetch_upstream_stats([s["namespace"] for s in suites])
     for s in suites:
         s["stats"] = stats.get(s["namespace"], {})
@@ -2263,7 +2333,7 @@ def main():
     stale_packs = [p["slug"] for p in packs if not p["contentFresh"]]
     if stale_packs:
         print(f"[!] 专家团编排剧本与 packs.json 缓存不一致(跑 scripts/pack_ingest.py --sync 可修复): {', '.join(stale_packs)}")
-    pages["api.html"] = render_api(own, suites)
+    pages["api.html"] = render_api(own, suites, cat_index)
     pages["about.html"] = render_about(own, suites)
 
     leak_assert(pages, bodies)
@@ -2430,29 +2500,9 @@ def main():
         "installDoc": "/install/pack-install.md",
         "detailApi": f"/v0/packs/{p['slug']}",
     } for p in packs]
-    # 分类体系(分类 API 数据源):主站分类 + 工具商店分类,含中英文名与覆盖实体
-    tool_cats_path = ROOT / "tools-store" / "categories.json"
-    tool_cats = []
-    if tool_cats_path.is_file():
-        try:
-            tool_cats = json.loads(tool_cats_path.read_text(encoding="utf-8")).get("categories", [])
-        except Exception as e:  # noqa: BLE001
-            print("[!] 读取工具分类失败:", e)
-    cat_meta = {}
-    for cid, cname in CATEGORIES.items():
-        cat_meta[cid] = {"id": cid, "name": cname, "nameEn": CATEGORIES_EN.get(cid, cid),
-                         "scope": ["skills", "mcps", "packs"]}
-    for c in tool_cats:
-        cid = c.get("id")
-        if not cid:
-            continue
-        if cid in cat_meta:
-            if "tools" not in cat_meta[cid]["scope"]:
-                cat_meta[cid]["scope"].append("tools")
-        else:
-            cat_meta[cid] = {"id": cid, "name": c.get("name", cid), "nameEn": c.get("name_en", cid),
-                             "scope": ["tools"]}
-    site_data["categoryMeta"] = list(cat_meta.values())
+    # 分类体系(分类 API 数据源):复用全站分类索引(与 API 文档页同源,避免计数漂移)
+    site_data["categoryMeta"] = [{"id": m["id"], "name": m["name"], "nameEn": m["nameEn"],
+                                  "scope": m["scope"]} for m in cat_index]
     # 工具商店条目(分类 API 的 tools 计数与成员来源)
     tools_payload_path = ROOT / "tools-store" / "api-import-payload.json"
     if tools_payload_path.is_file():
@@ -2475,20 +2525,8 @@ def main():
         for name, entries in tool_docs.items()}}
     (DIST / "tools.json").write_text(json.dumps(tools_data, ensure_ascii=False, indent=2), encoding="utf-8")
     # 分类清单(静态机器可读,与 /v0/categories 同构;供不想调 API 的程序直接取)
-    cat_out = []
-    for m in site_data["categoryMeta"]:
-        cid = m["id"]
-        counts = {
-            "skills": sum(1 for x in site_data["skills"] if x.get("category") == cid),
-            "mcps": sum(1 for x in site_data["mcps"] if x.get("category") == cid),
-            "packs": sum(1 for x in site_data["packs"] if ((x.get("persona") or {}).get("scene") or x.get("category")) == cid),
-            "tools": sum(1 for x in site_data.get("tools", []) if x.get("category") == cid),
-        }
-        counts["total"] = sum(counts.values())
-        cat_out.append({"id": cid, "name": m["name"], "nameEn": m["nameEn"],
-                        "scope": m["scope"], "counts": counts})
     (DIST / "categories.json").write_text(json.dumps(
-        {"generatedAt": time.strftime("%Y-%m-%d"), "categories": cat_out},
+        {"generatedAt": time.strftime("%Y-%m-%d"), "categories": cat_index},
         ensure_ascii=False, indent=2), encoding="utf-8")
     if AUDIT_PATH.is_file():
         (DIST / "audit-report.json").write_text(AUDIT_PATH.read_text(encoding="utf-8"), encoding="utf-8")
