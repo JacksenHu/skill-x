@@ -19,6 +19,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+import urllib.error
 from pathlib import Path
 
 PANEL = "http://124.156.167.163:8888"
@@ -56,8 +57,13 @@ def call(module, action, files=None, _timeout=60, **params):
         req = urllib.request.Request(url, data=b"".join(parts), headers={
             "User-Agent": "skill-x-deploy/1.0",
             "Content-Type": f"multipart/form-data; boundary={boundary}"})
-    with urllib.request.urlopen(req, timeout=_timeout) as r:
-        raw = r.read().decode("utf-8", "replace")
+    try:
+        with urllib.request.urlopen(req, timeout=_timeout) as r:
+            raw = r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        # 403 常见于面板 IP 白名单:带上响应体便于定位
+        body = e.read().decode("utf-8", "replace")
+        raise RuntimeError(f"面板 API HTTP {e.code} @ {url}: {body[:400]}") from None
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
