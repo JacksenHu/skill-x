@@ -16,13 +16,15 @@ import hashlib
 import json
 import os
 import sys
+import ssl
 import time
 import urllib.parse
 import urllib.request
 import urllib.error
 from pathlib import Path
 
-PANEL = "http://124.156.167.163:8888"
+# 面板地址可覆盖:面板开启 SSL 时用 https 访问(自签证书忽略校验)
+PANEL = os.environ.get("BT_PANEL_URL", "http://124.156.167.163:8888")
 SITE_DOMAIN = "skillx.yueliai.top"
 SITE_PATH = f"/www/wwwroot/{SITE_DOMAIN}"
 VHOST_CONF = f"/www/server/panel/vhost/nginx/{SITE_DOMAIN}.conf"
@@ -58,7 +60,8 @@ def call(module, action, files=None, _timeout=60, **params):
             "User-Agent": "skill-x-deploy/1.0",
             "Content-Type": f"multipart/form-data; boundary={boundary}"})
     try:
-        with urllib.request.urlopen(req, timeout=_timeout) as r:
+        ctx = ssl._create_unverified_context() if url.startswith("https") else None
+        with urllib.request.urlopen(req, timeout=_timeout, context=ctx) as r:
             raw = r.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
         # 403 常见于面板 IP 白名单:带上响应体便于定位

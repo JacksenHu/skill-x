@@ -21,6 +21,23 @@ jobs:
       - name: Show source revision
         run: git log -1 --oneline
 
+      - name: Probe panel (http vs https)
+        run: |
+          python - <<'PY'
+          import ssl, urllib.request, urllib.error
+          ctx = ssl._create_unverified_context()
+          for scheme in ("http", "https"):
+              url = f"{scheme}://124.156.167.163:8888/"
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  with urllib.request.urlopen(req, timeout=20, context=ctx) as r:
+                      print(scheme, "->", r.status, len(r.read()))
+              except urllib.error.HTTPError as e:
+                  print(scheme, "-> HTTP", e.code, e.read()[:160])
+              except Exception as e:
+                  print(scheme, "-> ERR", type(e).__name__, str(e)[:140])
+          PY
+
       - name: Build + deploy
         env:
           BT_API_SK: ${{ secrets.BT_API_SK }}
