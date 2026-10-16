@@ -1,0 +1,300 @@
+{
+ "at": "2026-10-16",
+ "added": [
+  {
+   "repo": "owasp-amass/amass",
+   "category": "recon",
+   "stars": 15361,
+   "license": "NOASSERTION"
+  },
+  {
+   "repo": "projectdiscovery/subfinder",
+   "category": "recon",
+   "stars": 14600,
+   "license": "MIT"
+  },
+  {
+   "repo": "mxrch/GHunt",
+   "category": "recon",
+   "stars": 19708,
+   "license": "NOASSERTION"
+  },
+  {
+   "repo": "sundowndev/phoneinfoga",
+   "category": "recon",
+   "stars": 18176,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "ivre/ivre",
+   "category": "recon",
+   "stars": 4176,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "netalertx/NetAlertX",
+   "category": "recon",
+   "stars": 7290,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "blechschmidt/massdns",
+   "category": "recon",
+   "stars": 3654,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "projectdiscovery/nuclei",
+   "category": "vuln",
+   "stars": 32057,
+   "license": "MIT"
+  },
+  {
+   "repo": "anchore/grype",
+   "category": "vuln",
+   "stars": 13030,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "future-architect/vuls",
+   "category": "vuln",
+   "stars": 12287,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "google/osv-scanner",
+   "category": "vuln",
+   "stars": 11189,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "google/tsunami-security-scanner",
+   "category": "vuln",
+   "stars": 8619,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "NVIDIA/garak",
+   "category": "vuln",
+   "stars": 9585,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "shadow1ng/fscan",
+   "category": "vuln",
+   "stars": 14682,
+   "license": "MIT"
+  },
+  {
+   "repo": "RhinoSecurityLabs/cloudgoat",
+   "category": "lab",
+   "stars": 3757,
+   "license": "BSD-3-Clause"
+  },
+  {
+   "repo": "splunk/attack_range",
+   "category": "lab",
+   "stars": 2570,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "GZTimeWalker/GZCTF",
+   "category": "lab",
+   "stars": 1613,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "webpwnized/mutillidae",
+   "category": "lab",
+   "stars": 1530,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "controlplaneio/simulator",
+   "category": "lab",
+   "stars": 1009,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "whgojp/JavaSecLab",
+   "category": "lab",
+   "stars": 885,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "nginx-proxy/nginx-proxy",
+   "category": "tunnel",
+   "stars": 19927,
+   "license": "MIT"
+  },
+  {
+   "repo": "oauth2-proxy/oauth2-proxy",
+   "category": "tunnel",
+   "stars": 15198,
+   "license": "MIT"
+  },
+  {
+   "repo": "rathole-org/rathole",
+   "category": "tunnel",
+   "stars": 14340,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "Shopify/toxiproxy",
+   "category": "tunnel",
+   "stars": 12420,
+   "license": "MIT"
+  },
+  {
+   "repo": "ekzhang/bore",
+   "category": "tunnel",
+   "stars": 11532,
+   "license": "MIT"
+  },
+  {
+   "repo": "nicocha30/ligolo-ng",
+   "category": "tunnel",
+   "stars": 5080,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "tobychui/zoraxy",
+   "category": "tunnel",
+   "stars": 5519,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "crowdsecurity/crowdsec",
+   "category": "defense",
+   "stars": 15191,
+   "license": "MIT"
+  },
+  {
+   "repo": "bunkerity/bunkerweb",
+   "category": "defense",
+   "stars": 11072,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "owasp-modsecurity/ModSecurity",
+   "category": "defense",
+   "stars": 9804,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "telekom-security/tpotce",
+   "category": "defense",
+   "stars": 9580,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "OISF/suricata",
+   "category": "defense",
+   "stars": 6733,
+   "license": "GPL-2.0"
+  },
+  {
+   "repo": "cowrie/cowrie",
+   "category": "defense",
+   "stars": 6600,
+   "license": "NOASSERTION"
+  },
+  {
+   "repo": "ossec/ossec-hids",
+   "category": "defense",
+   "stars": 5062,
+   "license": "GPL-2.0"
+  },
+  {
+   "repo": "hacklcx/HFish",
+   "category": "defense",
+   "stars": 4552,
+   "license": "UNKNOWN"
+  },
+  {
+   "repo": "OpenCTI-Platform/opencti",
+   "category": "intel",
+   "stars": 10152,
+   "license": "NOASSERTION"
+  },
+  {
+   "repo": "MISP/MISP",
+   "category": "intel",
+   "stars": 6598,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "intelowlproject/IntelOwl",
+   "category": "intel",
+   "stars": 4755,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "yeti-platform/yeti",
+   "category": "intel",
+   "stars": 2038,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "thalesgroup-cert/Watcher",
+   "category": "intel",
+   "stars": 1430,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "certtools/intelmq",
+   "category": "intel",
+   "stars": 1139,
+   "license": "AGPL-3.0"
+  },
+  {
+   "repo": "microsoft/msticpy",
+   "category": "intel",
+   "stars": 2015,
+   "license": "NOASSERTION"
+  },
+  {
+   "repo": "javascript-obfuscator/javascript-obfuscator",
+   "category": "network-engineering-defense",
+   "stars": 16308,
+   "license": "BSD-2-Clause"
+  },
+  {
+   "repo": "burrowers/garble",
+   "category": "network-engineering-defense",
+   "stars": 5773,
+   "license": "BSD-3-Clause"
+  },
+  {
+   "repo": "dashingsoft/pyarmor",
+   "category": "network-engineering-defense",
+   "stars": 5214,
+   "license": "NOASSERTION"
+  },
+  {
+   "repo": "x64dbg/ScyllaHide",
+   "category": "network-engineering-defense",
+   "stars": 4343,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "mandiant/flare-floss",
+   "category": "network-engineering-defense",
+   "stars": 4189,
+   "license": "Apache-2.0"
+  },
+  {
+   "repo": "HyperDbg/HyperDbg",
+   "category": "network-engineering-defense",
+   "stars": 4133,
+   "license": "GPL-3.0"
+  },
+  {
+   "repo": "Guardsquare/proguard",
+   "category": "network-engineering-defense",
+   "stars": 3676,
+   "license": "GPL-2.0"
+  }
+ ],
+ "skipped": []
+}

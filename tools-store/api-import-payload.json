@@ -2441,6 +2441,1814 @@
     "pushedAt": "2026-08-25T12:28:28Z",
     "license": "NOASSERTION"
    }
+  },
+  {
+   "slug": "amass",
+   "name": "amass",
+   "name_zh": "攻击面测绘",
+   "category_id": "recon",
+   "summary": "OWASP Amass:深入攻击面测绘与资产发现框架,聚合 DNS、证书、API 与网络爬取多源情报,枚举子域与关联资产。",
+   "description": "OWASP Amass:深入攻击面测绘与资产发现框架,聚合 DNS、证书、API 与网络爬取多源情报,枚举子域与关联资产。",
+   "detail_url": "/tools/amass.html",
+   "repo": "owasp-amass/amass",
+   "docs_url": "https://github.com/owasp-amass/amass",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/owasp-amass/amass && cd amass",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/owasp-amass/amass"
+   },
+   "labels": [
+    "recon",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 15361,
+    "pushedAt": "2026-07-19T05:16:40Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "subfinder",
+   "name": "subfinder",
+   "name_zh": "被动子域枚举",
+   "category_id": "recon",
+   "summary": "ProjectDiscovery Subfinder:快速被动子域枚举工具,聚合数十个公开数据源,输出可直接接入扫描流程的子域清单。",
+   "description": "ProjectDiscovery Subfinder:快速被动子域枚举工具,聚合数十个公开数据源,输出可直接接入扫描流程的子域清单。",
+   "detail_url": "/tools/subfinder.html",
+   "repo": "projectdiscovery/subfinder",
+   "docs_url": "https://github.com/projectdiscovery/subfinder",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/projectdiscovery/subfinder && cd subfinder",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/projectdiscovery/subfinder"
+   },
+   "labels": [
+    "recon",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 14600,
+    "pushedAt": "2026-10-14T20:46:37Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "ghunt",
+   "name": "GHunt",
+   "name_zh": "谷歌账号情报",
+   "category_id": "recon",
+   "summary": "GHunt:面向 Google 账号的开源情报框架,通过公开接口提取账号关联信息,用于授权范围内的侦察。",
+   "description": "GHunt:面向 Google 账号的开源情报框架,通过公开接口提取账号关联信息,用于授权范围内的侦察。",
+   "detail_url": "/tools/ghunt.html",
+   "repo": "mxrch/GHunt",
+   "docs_url": "https://github.com/mxrch/GHunt",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/mxrch/GHunt && cd GHunt",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/mxrch/GHunt"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 19708,
+    "pushedAt": "2026-04-10T02:29:16Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "phoneinfoga",
+   "name": "phoneinfoga",
+   "name_zh": "号码情报",
+   "category_id": "recon",
+   "summary": "PhoneInfoga:电话号码开源情报收集框架,聚合运营商、归属地与公开线索,支持批量查询。",
+   "description": "PhoneInfoga:电话号码开源情报收集框架,聚合运营商、归属地与公开线索,支持批量查询。",
+   "detail_url": "/tools/phoneinfoga.html",
+   "repo": "sundowndev/phoneinfoga",
+   "docs_url": "https://github.com/sundowndev/phoneinfoga",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/sundowndev/phoneinfoga && cd phoneinfoga",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/sundowndev/phoneinfoga"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 18176,
+    "pushedAt": "2026-08-25T07:42:10Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "ivre",
+   "name": "ivre",
+   "name_zh": "网络侦察框架",
+   "category_id": "recon",
+   "summary": "IVRE:自托管网络侦察框架,整合被动流量、主动扫描与指纹识别,构建可查询的网络资产地图。",
+   "description": "IVRE:自托管网络侦察框架,整合被动流量、主动扫描与指纹识别,构建可查询的网络资产地图。",
+   "detail_url": "/tools/ivre.html",
+   "repo": "ivre/ivre",
+   "docs_url": "https://github.com/ivre/ivre",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/ivre/ivre && cd ivre && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80,
+    443
+   ],
+   "default_port": 80,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ivre/ivre"
+   },
+   "labels": [
+    "recon",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 4176,
+    "pushedAt": "2026-10-01T17:46:08Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "netalertx",
+   "name": "NetAlertX",
+   "name_zh": "网络可见性",
+   "category_id": "recon",
+   "summary": "NetAlertX:局域网设备可见性与持续监控平台,发现接入设备、跟踪在线状态并对变更推送告警。",
+   "description": "NetAlertX:局域网设备可见性与持续监控平台,发现接入设备、跟踪在线状态并对变更推送告警。",
+   "detail_url": "/tools/netalertx.html",
+   "repo": "netalertx/NetAlertX",
+   "docs_url": "https://github.com/netalertx/NetAlertX",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/netalertx/NetAlertX && cd NetAlertX && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    20211
+   ],
+   "default_port": 20211,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/netalertx/NetAlertX"
+   },
+   "labels": [
+    "recon",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 7290,
+    "pushedAt": "2026-10-14T02:01:24Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "massdns",
+   "name": "massdns",
+   "name_zh": "DNS 批量解析",
+   "category_id": "recon",
+   "summary": "massdns:高性能 DNS 存根解析器,面向大规模子域解析与 DNS 数据集的批量查询。",
+   "description": "massdns:高性能 DNS 存根解析器,面向大规模子域解析与 DNS 数据集的批量查询。",
+   "detail_url": "/tools/massdns.html",
+   "repo": "blechschmidt/massdns",
+   "docs_url": "https://github.com/blechschmidt/massdns",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/blechschmidt/massdns && cd massdns",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/blechschmidt/massdns"
+   },
+   "labels": [
+    "recon",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 3654,
+    "pushedAt": "2026-09-27T18:50:59Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "nuclei",
+   "name": "nuclei",
+   "name_zh": "模板化漏扫",
+   "category_id": "vuln",
+   "summary": "Nuclei:基于 YAML 模板的快速漏洞扫描器,社区模板覆盖 CVE、错误配置与暴露面检测。",
+   "description": "Nuclei:基于 YAML 模板的快速漏洞扫描器,社区模板覆盖 CVE、错误配置与暴露面检测。",
+   "detail_url": "/tools/nuclei.html",
+   "repo": "projectdiscovery/nuclei",
+   "docs_url": "https://github.com/projectdiscovery/nuclei",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/projectdiscovery/nuclei && cd nuclei",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/projectdiscovery/nuclei"
+   },
+   "labels": [
+    "vuln",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 32057,
+    "pushedAt": "2026-10-15T08:58:37Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "grype",
+   "name": "grype",
+   "name_zh": "镜像漏洞扫描",
+   "category_id": "vuln",
+   "summary": "Grype:容器镜像与文件系统漏洞扫描器,对照 SBOM 与漏洞库定位已知 CVE。",
+   "description": "Grype:容器镜像与文件系统漏洞扫描器,对照 SBOM 与漏洞库定位已知 CVE。",
+   "detail_url": "/tools/grype.html",
+   "repo": "anchore/grype",
+   "docs_url": "https://github.com/anchore/grype",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/anchore/grype && cd grype",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/anchore/grype"
+   },
+   "labels": [
+    "vuln",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 13030,
+    "pushedAt": "2026-10-15T11:21:19Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "vuls",
+   "name": "vuls",
+   "name_zh": "主机漏扫",
+   "category_id": "vuln",
+   "summary": "Vuls:无 Agent 的漏洞扫描器,覆盖 Linux/FreeBSD/Windows 与容器,关联 CVE 与 OVAL 数据。",
+   "description": "Vuls:无 Agent 的漏洞扫描器,覆盖 Linux/FreeBSD/Windows 与容器,关联 CVE 与 OVAL 数据。",
+   "detail_url": "/tools/vuls.html",
+   "repo": "future-architect/vuls",
+   "docs_url": "https://github.com/future-architect/vuls",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/future-architect/vuls && cd vuls",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/future-architect/vuls"
+   },
+   "labels": [
+    "vuln",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 12287,
+    "pushedAt": "2026-10-16T00:11:15Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "osv-scanner",
+   "name": "osv-scanner",
+   "name_zh": "依赖漏洞扫描",
+   "category_id": "vuln",
+   "summary": "OSV-Scanner:Google 开源漏洞扫描器,基于 OSV 数据库检测项目依赖中的已知漏洞。",
+   "description": "OSV-Scanner:Google 开源漏洞扫描器,基于 OSV 数据库检测项目依赖中的已知漏洞。",
+   "detail_url": "/tools/osv-scanner.html",
+   "repo": "google/osv-scanner",
+   "docs_url": "https://github.com/google/osv-scanner",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/google/osv-scanner && cd osv-scanner",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/google/osv-scanner"
+   },
+   "labels": [
+    "vuln",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 11189,
+    "pushedAt": "2026-10-15T21:08:16Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "tsunami-security-scanner",
+   "name": "tsunami-security-scanner",
+   "name_zh": "网络漏扫引擎",
+   "category_id": "vuln",
+   "summary": "Tsunami:Google 通用网络安全扫描引擎,以插件化方式检测高危漏洞并显著降低误报。",
+   "description": "Tsunami:Google 通用网络安全扫描引擎,以插件化方式检测高危漏洞并显著降低误报。",
+   "detail_url": "/tools/tsunami-security-scanner.html",
+   "repo": "google/tsunami-security-scanner",
+   "docs_url": "https://github.com/google/tsunami-security-scanner",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/google/tsunami-security-scanner && cd tsunami-security-scanner && docker build -t tsunami-security-scanner . && docker run -d tsunami-security-scanner",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/google/tsunami-security-scanner"
+   },
+   "labels": [
+    "vuln",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 8619,
+    "pushedAt": "2026-10-06T07:37:14Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "garak",
+   "name": "garak",
+   "name_zh": "LLM 漏洞扫描",
+   "category_id": "vuln",
+   "summary": "garak:NVIDIA 的 LLM 漏洞扫描器,对生成式模型做红队式探测,覆盖提示注入、越狱与数据泄露。",
+   "description": "garak:NVIDIA 的 LLM 漏洞扫描器,对生成式模型做红队式探测,覆盖提示注入、越狱与数据泄露。",
+   "detail_url": "/tools/garak.html",
+   "repo": "NVIDIA/garak",
+   "docs_url": "https://github.com/NVIDIA/garak",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/NVIDIA/garak && cd garak",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/NVIDIA/garak"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 9585,
+    "pushedAt": "2026-10-15T23:40:04Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "fscan",
+   "name": "fscan",
+   "name_zh": "内网综合扫描",
+   "category_id": "vuln",
+   "summary": "fscan:内网综合扫描工具,集成主机存活、端口、服务、漏洞与弱口令探测,适合授权内网评估。",
+   "description": "fscan:内网综合扫描工具,集成主机存活、端口、服务、漏洞与弱口令探测,适合授权内网评估。",
+   "detail_url": "/tools/fscan.html",
+   "repo": "shadow1ng/fscan",
+   "docs_url": "https://github.com/shadow1ng/fscan",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/shadow1ng/fscan && cd fscan",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/shadow1ng/fscan"
+   },
+   "labels": [
+    "vuln",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 14682,
+    "pushedAt": "2026-10-01T06:07:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cloudgoat",
+   "name": "cloudgoat",
+   "name_zh": "云安全靶场",
+   "category_id": "lab",
+   "summary": "CloudGoat:Rhino Security Labs 的 AWS 漏洞靶场,以场景化方式演练云环境攻击路径。",
+   "description": "CloudGoat:Rhino Security Labs 的 AWS 漏洞靶场,以场景化方式演练云环境攻击路径。",
+   "detail_url": "/tools/cloudgoat.html",
+   "repo": "RhinoSecurityLabs/cloudgoat",
+   "docs_url": "https://github.com/RhinoSecurityLabs/cloudgoat",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/RhinoSecurityLabs/cloudgoat && cd cloudgoat",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/RhinoSecurityLabs/cloudgoat"
+   },
+   "labels": [
+    "lab",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 3757,
+    "pushedAt": "2026-10-14T20:57:46Z",
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "slug": "attack-range",
+   "name": "attack_range",
+   "name_zh": "攻击模拟靶场",
+   "category_id": "lab",
+   "summary": "Attack Range:可快速搭建的攻击模拟靶场,预置域控、终端与日志采集,用于检测规则验证。",
+   "description": "Attack Range:可快速搭建的攻击模拟靶场,预置域控、终端与日志采集,用于检测规则验证。",
+   "detail_url": "/tools/attack-range.html",
+   "repo": "splunk/attack_range",
+   "docs_url": "https://github.com/splunk/attack_range",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/splunk/attack_range && cd attack_range",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/splunk/attack_range"
+   },
+   "labels": [
+    "lab",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 2570,
+    "pushedAt": "2026-10-13T18:12:27Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "gzctf",
+   "name": "GZCTF",
+   "name_zh": "CTF 平台",
+   "category_id": "lab",
+   "summary": "GZCTF:开源 CTF 竞赛平台,支持动态计分、容器化题目与团队赛制。",
+   "description": "GZCTF:开源 CTF 竞赛平台,支持动态计分、容器化题目与团队赛制。",
+   "detail_url": "/tools/gzctf.html",
+   "repo": "GZTimeWalker/GZCTF",
+   "docs_url": "https://github.com/GZTimeWalker/GZCTF",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/GZTimeWalker/GZCTF && cd GZCTF && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80,
+    443
+   ],
+   "default_port": 80,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/GZTimeWalker/GZCTF"
+   },
+   "labels": [
+    "lab",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 1613,
+    "pushedAt": "2026-10-15T13:41:48Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "mutillidae",
+   "name": "mutillidae",
+   "name_zh": "OWASP 靶场",
+   "category_id": "lab",
+   "summary": "OWASP Mutillidae II:面向 Web 漏洞教学的免费靶场,覆盖 OWASP Top 10 常见缺陷。",
+   "description": "OWASP Mutillidae II:面向 Web 漏洞教学的免费靶场,覆盖 OWASP Top 10 常见缺陷。",
+   "detail_url": "/tools/mutillidae.html",
+   "repo": "webpwnized/mutillidae",
+   "docs_url": "https://github.com/webpwnized/mutillidae",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/webpwnized/mutillidae && cd mutillidae && docker build -t mutillidae . && docker run -d mutillidae",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80
+   ],
+   "default_port": 80,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/webpwnized/mutillidae"
+   },
+   "labels": [
+    "lab",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 1530,
+    "pushedAt": "2026-09-24T23:08:03Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "simulator",
+   "name": "simulator",
+   "name_zh": "K8s 安全训练",
+   "category_id": "lab",
+   "summary": "Kubernetes Simulator:聚焦 K8s 安全与攻防的训练平台,以 IaC 方式构建可复现靶场。",
+   "description": "Kubernetes Simulator:聚焦 K8s 安全与攻防的训练平台,以 IaC 方式构建可复现靶场。",
+   "detail_url": "/tools/simulator.html",
+   "repo": "controlplaneio/simulator",
+   "docs_url": "https://github.com/controlplaneio/simulator",
+   "deploy": {
+    "method": "iac",
+    "command": "git clone https://github.com/controlplaneio/simulator && cd simulator",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cloud",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/controlplaneio/simulator"
+   },
+   "labels": [
+    "lab",
+    "iac"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 1009,
+    "pushedAt": "2024-09-02T06:57:59Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "javaseclab",
+   "name": "JavaSecLab",
+   "name_zh": "Java 漏洞靶场",
+   "category_id": "lab",
+   "summary": "JavaSecLab:Java 漏洞靶场,系统覆盖反序列化、表达式注入、SSRF 等 Java 生态缺陷。",
+   "description": "JavaSecLab:Java 漏洞靶场,系统覆盖反序列化、表达式注入、SSRF 等 Java 生态缺陷。",
+   "detail_url": "/tools/javaseclab.html",
+   "repo": "whgojp/JavaSecLab",
+   "docs_url": "https://github.com/whgojp/JavaSecLab",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/whgojp/JavaSecLab && cd JavaSecLab && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/whgojp/JavaSecLab"
+   },
+   "labels": [
+    "lab",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 885,
+    "pushedAt": "2026-06-09T06:30:38Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "nginx-proxy",
+   "name": "nginx-proxy",
+   "name_zh": "Docker 反向代理",
+   "category_id": "tunnel",
+   "summary": "nginx-proxy:Docker 容器反向代理自动化,依据容器环境变量自动生成并热更新 Nginx 配置。",
+   "description": "nginx-proxy:Docker 容器反向代理自动化,依据容器环境变量自动生成并热更新 Nginx 配置。",
+   "detail_url": "/tools/nginx-proxy.html",
+   "repo": "nginx-proxy/nginx-proxy",
+   "docs_url": "https://github.com/nginx-proxy/nginx-proxy",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/nginx-proxy/nginx-proxy && cd nginx-proxy && docker build -t nginx-proxy . && docker run -d nginx-proxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80,
+    443
+   ],
+   "default_port": 80,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/nginx-proxy/nginx-proxy"
+   },
+   "labels": [
+    "tunnel",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 19927,
+    "pushedAt": "2026-10-07T22:23:40Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "oauth2-proxy",
+   "name": "oauth2-proxy",
+   "name_zh": "认证反向代理",
+   "category_id": "tunnel",
+   "summary": "OAuth2 Proxy:为内部服务前置认证的反向代理,对接 Google/GitHub/OIDC 等身份源。",
+   "description": "OAuth2 Proxy:为内部服务前置认证的反向代理,对接 Google/GitHub/OIDC 等身份源。",
+   "detail_url": "/tools/oauth2-proxy.html",
+   "repo": "oauth2-proxy/oauth2-proxy",
+   "docs_url": "https://github.com/oauth2-proxy/oauth2-proxy",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/oauth2-proxy/oauth2-proxy && cd oauth2-proxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    4180
+   ],
+   "default_port": 4180,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/oauth2-proxy/oauth2-proxy"
+   },
+   "labels": [
+    "tunnel",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 15198,
+    "pushedAt": "2026-10-16T00:38:29Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "rathole",
+   "name": "rathole",
+   "name_zh": "反向代理隧道",
+   "category_id": "tunnel",
+   "summary": "rathole:轻量高性能反向代理隧道,把内网服务安全暴露到公网,资源占用低。",
+   "description": "rathole:轻量高性能反向代理隧道,把内网服务安全暴露到公网,资源占用低。",
+   "detail_url": "/tools/rathole.html",
+   "repo": "rathole-org/rathole",
+   "docs_url": "https://github.com/rathole-org/rathole",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/rathole-org/rathole && cd rathole",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/rathole-org/rathole"
+   },
+   "labels": [
+    "tunnel",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 14340,
+    "pushedAt": "2026-08-23T15:38:44Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "toxiproxy",
+   "name": "toxiproxy",
+   "name_zh": "故障模拟代理",
+   "category_id": "tunnel",
+   "summary": "Toxiproxy:TCP 代理,用于模拟延迟、超时与断连等网络故障,验证系统韧性。",
+   "description": "Toxiproxy:TCP 代理,用于模拟延迟、超时与断连等网络故障,验证系统韧性。",
+   "detail_url": "/tools/toxiproxy.html",
+   "repo": "Shopify/toxiproxy",
+   "docs_url": "https://github.com/Shopify/toxiproxy",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/Shopify/toxiproxy && cd toxiproxy && docker build -t toxiproxy . && docker run -d toxiproxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8474
+   ],
+   "default_port": 8474,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Shopify/toxiproxy"
+   },
+   "labels": [
+    "tunnel",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 12420,
+    "pushedAt": "2026-10-14T19:10:14Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "bore",
+   "name": "bore",
+   "name_zh": "极简隧道",
+   "category_id": "tunnel",
+   "summary": "bore:极简 CLI 隧道工具,一行命令把本地端口暴露到远端,适合快速联调。",
+   "description": "bore:极简 CLI 隧道工具,一行命令把本地端口暴露到远端,适合快速联调。",
+   "detail_url": "/tools/bore.html",
+   "repo": "ekzhang/bore",
+   "docs_url": "https://github.com/ekzhang/bore",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/ekzhang/bore && cd bore",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ekzhang/bore"
+   },
+   "labels": [
+    "tunnel",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 11532,
+    "pushedAt": "2026-02-04T18:00:26Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "ligolo-ng",
+   "name": "ligolo-ng",
+   "name_zh": "隧道与横向",
+   "category_id": "tunnel",
+   "summary": "Ligolo-ng:隧道与横向移动工具,通过 TUN 接口把内网流量透明接入,配合代理链做授权渗透。",
+   "description": "Ligolo-ng:隧道与横向移动工具,通过 TUN 接口把内网流量透明接入,配合代理链做授权渗透。",
+   "detail_url": "/tools/ligolo-ng.html",
+   "repo": "nicocha30/ligolo-ng",
+   "docs_url": "https://github.com/nicocha30/ligolo-ng",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/nicocha30/ligolo-ng && cd ligolo-ng",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/nicocha30/ligolo-ng"
+   },
+   "labels": [
+    "tunnel",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 5080,
+    "pushedAt": "2026-09-26T08:02:50Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "zoraxy",
+   "name": "zoraxy",
+   "name_zh": "HTTP 反代管理器",
+   "category_id": "tunnel",
+   "summary": "Zoraxy:通用 HTTP 反向代理与转发管理器,带 Web 面板,便于自托管服务统一入口。",
+   "description": "Zoraxy:通用 HTTP 反向代理与转发管理器,带 Web 面板,便于自托管服务统一入口。",
+   "detail_url": "/tools/zoraxy.html",
+   "repo": "tobychui/zoraxy",
+   "docs_url": "https://github.com/tobychui/zoraxy",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/tobychui/zoraxy && cd zoraxy && docker build -t zoraxy . && docker run -d zoraxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/tobychui/zoraxy"
+   },
+   "labels": [
+    "tunnel",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 5519,
+    "pushedAt": "2026-10-13T11:17:12Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "crowdsec",
+   "name": "crowdsec",
+   "name_zh": "协同防护",
+   "category_id": "defense",
+   "summary": "CrowdSec:开源 IDS/IPS 与行为检测平台,基于社区共享的攻击签名做协同封禁。",
+   "description": "CrowdSec:开源 IDS/IPS 与行为检测平台,基于社区共享的攻击签名做协同封禁。",
+   "detail_url": "/tools/crowdsec.html",
+   "repo": "crowdsecurity/crowdsec",
+   "docs_url": "https://github.com/crowdsecurity/crowdsec",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/crowdsecurity/crowdsec && cd crowdsec && docker build -t crowdsec . && docker run -d crowdsec",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/crowdsecurity/crowdsec"
+   },
+   "labels": [
+    "defense",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 15191,
+    "pushedAt": "2026-10-15T12:00:34Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "bunkerweb",
+   "name": "bunkerweb",
+   "name_zh": "Web 应用防火墙",
+   "category_id": "defense",
+   "summary": "BunkerWeb:云原生 Web 应用防火墙,开箱集成 ModSecurity/CRS,支持容器与 K8s 部署。",
+   "description": "BunkerWeb:云原生 Web 应用防火墙,开箱集成 ModSecurity/CRS,支持容器与 K8s 部署。",
+   "detail_url": "/tools/bunkerweb.html",
+   "repo": "bunkerity/bunkerweb",
+   "docs_url": "https://github.com/bunkerity/bunkerweb",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/bunkerity/bunkerweb && cd bunkerweb && docker build -t bunkerweb . && docker run -d bunkerweb",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80,
+    443
+   ],
+   "default_port": 443,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/bunkerity/bunkerweb"
+   },
+   "labels": [
+    "defense",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 11072,
+    "pushedAt": "2026-10-15T09:27:23Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "modsecurity",
+   "name": "ModSecurity",
+   "name_zh": "WAF 引擎",
+   "category_id": "defense",
+   "summary": "ModSecurity:跨平台开源 Web 应用防火墙引擎,配合 OWASP CRS 拦截常见 Web 攻击。",
+   "description": "ModSecurity:跨平台开源 Web 应用防火墙引擎,配合 OWASP CRS 拦截常见 Web 攻击。",
+   "detail_url": "/tools/modsecurity.html",
+   "repo": "owasp-modsecurity/ModSecurity",
+   "docs_url": "https://github.com/owasp-modsecurity/ModSecurity",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/owasp-modsecurity/ModSecurity && cd ModSecurity",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/owasp-modsecurity/ModSecurity"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 9804,
+    "pushedAt": "2026-10-15T20:16:10Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "tpotce",
+   "name": "tpotce",
+   "name_zh": "多蜜罐平台",
+   "category_id": "defense",
+   "summary": "T-Pot:一体化多蜜罐平台,集成 20+ 蜜罐与可视化面板,用于攻击面诱捕与情报采集。",
+   "description": "T-Pot:一体化多蜜罐平台,集成 20+ 蜜罐与可视化面板,用于攻击面诱捕与情报采集。",
+   "detail_url": "/tools/tpotce.html",
+   "repo": "telekom-security/tpotce",
+   "docs_url": "https://github.com/telekom-security/tpotce",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/telekom-security/tpotce && cd tpotce && docker build -t tpotce . && docker run -d tpotce",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    64297,
+    443
+   ],
+   "default_port": 64297,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/telekom-security/tpotce"
+   },
+   "labels": [
+    "defense",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 9580,
+    "pushedAt": "2026-10-09T19:05:03Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "suricata",
+   "name": "suricata",
+   "name_zh": "网络 IDS",
+   "category_id": "defense",
+   "summary": "Suricata:高性能网络入侵检测与防御引擎,支持规则匹配、协议解析与流量日志。",
+   "description": "Suricata:高性能网络入侵检测与防御引擎,支持规则匹配、协议解析与流量日志。",
+   "detail_url": "/tools/suricata.html",
+   "repo": "OISF/suricata",
+   "docs_url": "https://github.com/OISF/suricata",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/OISF/suricata && cd suricata",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/OISF/suricata"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 6733,
+    "pushedAt": "2026-10-09T05:16:18Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "cowrie",
+   "name": "cowrie",
+   "name_zh": "SSH 蜜罐",
+   "category_id": "defense",
+   "summary": "Cowrie:中交互 SSH/Telnet 蜜罐,记录暴力破解与交互命令,用于攻击行为研究。",
+   "description": "Cowrie:中交互 SSH/Telnet 蜜罐,记录暴力破解与交互命令,用于攻击行为研究。",
+   "detail_url": "/tools/cowrie.html",
+   "repo": "cowrie/cowrie",
+   "docs_url": "https://github.com/cowrie/cowrie",
+   "deploy": {
+    "method": "docker",
+    "command": "git clone https://github.com/cowrie/cowrie && cd cowrie && docker build -t cowrie . && docker run -d cowrie",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    2222
+   ],
+   "default_port": 2222,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/cowrie/cowrie"
+   },
+   "labels": [
+    "defense",
+    "docker"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 6600,
+    "pushedAt": "2026-10-15T14:59:31Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "ossec-hids",
+   "name": "ossec-hids",
+   "name_zh": "主机 IDS",
+   "category_id": "defense",
+   "summary": "OSSEC:开源主机入侵检测系统,覆盖日志分析、文件完整性监控与主动响应。",
+   "description": "OSSEC:开源主机入侵检测系统,覆盖日志分析、文件完整性监控与主动响应。",
+   "detail_url": "/tools/ossec-hids.html",
+   "repo": "ossec/ossec-hids",
+   "docs_url": "https://github.com/ossec/ossec-hids",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ossec/ossec-hids && cd ossec-hids",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ossec/ossec-hids"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 5062,
+    "pushedAt": "2026-10-12T20:52:15Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "hfish",
+   "name": "HFish",
+   "name_zh": "企业蜜罐",
+   "category_id": "defense",
+   "summary": "HFish:企业级蜜罐平台,支持多协议诱捕与威胁感知,部署简单。",
+   "description": "HFish:企业级蜜罐平台,支持多协议诱捕与威胁感知,部署简单。",
+   "detail_url": "/tools/hfish.html",
+   "repo": "hacklcx/HFish",
+   "docs_url": "https://github.com/hacklcx/HFish",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/hacklcx/HFish && cd HFish && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    4433
+   ],
+   "default_port": 4433,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/hacklcx/HFish"
+   },
+   "labels": [
+    "defense",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 4552,
+    "pushedAt": "2026-03-13T02:45:42Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "opencti",
+   "name": "opencti",
+   "name_zh": "情报平台",
+   "category_id": "intel",
+   "summary": "OpenCTI:开源网络威胁情报平台,以 STIX 2.1 组织实体与关系,支撑情报关联分析。",
+   "description": "OpenCTI:开源网络威胁情报平台,以 STIX 2.1 组织实体与关系,支撑情报关联分析。",
+   "detail_url": "/tools/opencti.html",
+   "repo": "OpenCTI-Platform/opencti",
+   "docs_url": "https://github.com/OpenCTI-Platform/opencti",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/OpenCTI-Platform/opencti && cd opencti && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8080
+   ],
+   "default_port": 8080,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/OpenCTI-Platform/opencti"
+   },
+   "labels": [
+    "intel",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 10152,
+    "pushedAt": "2026-10-16T00:49:32Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "misp",
+   "name": "MISP",
+   "name_zh": "情报共享",
+   "category_id": "intel",
+   "summary": "MISP:开源威胁情报共享平台,标准化 IOC 存储与交换,广泛用于跨组织协同。",
+   "description": "MISP:开源威胁情报共享平台,标准化 IOC 存储与交换,广泛用于跨组织协同。",
+   "detail_url": "/tools/misp.html",
+   "repo": "MISP/MISP",
+   "docs_url": "https://github.com/MISP/MISP",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/MISP/MISP && cd MISP && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80,
+    443
+   ],
+   "default_port": 443,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/MISP/MISP"
+   },
+   "labels": [
+    "intel",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 6598,
+    "pushedAt": "2026-10-15T19:31:45Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "intelowl",
+   "name": "IntelOwl",
+   "name_zh": "情报聚合",
+   "category_id": "intel",
+   "summary": "IntelOwl:威胁情报聚合与分析平台,批量调用多源引擎对 IOC 做富化与研判。",
+   "description": "IntelOwl:威胁情报聚合与分析平台,批量调用多源引擎对 IOC 做富化与研判。",
+   "detail_url": "/tools/intelowl.html",
+   "repo": "intelowlproject/IntelOwl",
+   "docs_url": "https://github.com/intelowlproject/IntelOwl",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/intelowlproject/IntelOwl && cd IntelOwl && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    8000
+   ],
+   "default_port": 8000,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/intelowlproject/IntelOwl"
+   },
+   "labels": [
+    "intel",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 4755,
+    "pushedAt": "2026-10-15T14:02:34Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "yeti",
+   "name": "yeti",
+   "name_zh": "情报管理",
+   "category_id": "intel",
+   "summary": "YETI:面向日常研判的威胁情报库,统一管理观察对象、IOC 与关联关系。",
+   "description": "YETI:面向日常研判的威胁情报库,统一管理观察对象、IOC 与关联关系。",
+   "detail_url": "/tools/yeti.html",
+   "repo": "yeti-platform/yeti",
+   "docs_url": "https://github.com/yeti-platform/yeti",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/yeti-platform/yeti && cd yeti && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80
+   ],
+   "default_port": 80,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yeti-platform/yeti"
+   },
+   "labels": [
+    "intel",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 2038,
+    "pushedAt": "2026-10-09T13:15:19Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "watcher",
+   "name": "Watcher",
+   "name_zh": "情报监控",
+   "category_id": "intel",
+   "summary": "Watcher:AI 辅助的网络威胁情报监控平台,聚合情报源并对可疑活动告警。",
+   "description": "Watcher:AI 辅助的网络威胁情报监控平台,聚合情报源并对可疑活动告警。",
+   "detail_url": "/tools/watcher.html",
+   "repo": "thalesgroup-cert/Watcher",
+   "docs_url": "https://github.com/thalesgroup-cert/Watcher",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/thalesgroup-cert/Watcher && cd Watcher && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [
+    80
+   ],
+   "default_port": 80,
+   "form": "web",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/thalesgroup-cert/Watcher"
+   },
+   "labels": [
+    "intel",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 1430,
+    "pushedAt": "2026-10-02T15:23:30Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "intelmq",
+   "name": "intelmq",
+   "name_zh": "情报处理流水线",
+   "category_id": "intel",
+   "summary": "IntelMQ:面向 CERT 与安全团队的情报处理流水线,标准化采集、解析与分发。",
+   "description": "IntelMQ:面向 CERT 与安全团队的情报处理流水线,标准化采集、解析与分发。",
+   "detail_url": "/tools/intelmq.html",
+   "repo": "certtools/intelmq",
+   "docs_url": "https://github.com/certtools/intelmq",
+   "deploy": {
+    "method": "docker-compose",
+    "command": "git clone https://github.com/certtools/intelmq && cd intelmq && docker compose up -d",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "service",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/certtools/intelmq"
+   },
+   "labels": [
+    "intel",
+    "docker-compose"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 1139,
+    "pushedAt": "2026-04-28T19:55:15Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "msticpy",
+   "name": "msticpy",
+   "name_zh": "微软情报工具",
+   "category_id": "intel",
+   "summary": "msticpy:微软威胁情报安全工具库,用于日志、情报与调查数据的分析编排。",
+   "description": "msticpy:微软威胁情报安全工具库,用于日志、情报与调查数据的分析编排。",
+   "detail_url": "/tools/msticpy.html",
+   "repo": "microsoft/msticpy",
+   "docs_url": "https://github.com/microsoft/msticpy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/microsoft/msticpy && cd msticpy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/microsoft/msticpy"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 2015,
+    "pushedAt": "2026-10-15T15:38:32Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "javascript-obfuscator",
+   "name": "javascript-obfuscator",
+   "name_zh": "JS 混淆器",
+   "category_id": "network-engineering-defense",
+   "summary": "JavaScript Obfuscator:功能完整的 JS/Node 代码混淆器,提供控制流变换、字符串加密与死代码注入。",
+   "description": "JavaScript Obfuscator:功能完整的 JS/Node 代码混淆器,提供控制流变换、字符串加密与死代码注入。",
+   "detail_url": "/tools/javascript-obfuscator.html",
+   "repo": "javascript-obfuscator/javascript-obfuscator",
+   "docs_url": "https://github.com/javascript-obfuscator/javascript-obfuscator",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/javascript-obfuscator/javascript-obfuscator && cd javascript-obfuscator",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/javascript-obfuscator/javascript-obfuscator"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 16308,
+    "pushedAt": "2026-10-04T02:33:31Z",
+    "license": "BSD-2-Clause"
+   }
+  },
+  {
+   "slug": "garble",
+   "name": "garble",
+   "name_zh": "Go 混淆",
+   "category_id": "network-engineering-defense",
+   "summary": "garble:Go 构建混淆工具,重命名标识符、剥离调试信息并支持字面量加密。",
+   "description": "garble:Go 构建混淆工具,重命名标识符、剥离调试信息并支持字面量加密。",
+   "detail_url": "/tools/garble.html",
+   "repo": "burrowers/garble",
+   "docs_url": "https://github.com/burrowers/garble",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/burrowers/garble && cd garble",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/burrowers/garble"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 5773,
+    "pushedAt": "2026-10-14T17:14:47Z",
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "slug": "pyarmor",
+   "name": "pyarmor",
+   "name_zh": "Python 保护",
+   "category_id": "network-engineering-defense",
+   "summary": "PyArmor:Python 脚本混淆与加密工具,支持绑定机器与过期控制,保护商业代码。",
+   "description": "PyArmor:Python 脚本混淆与加密工具,支持绑定机器与过期控制,保护商业代码。",
+   "detail_url": "/tools/pyarmor.html",
+   "repo": "dashingsoft/pyarmor",
+   "docs_url": "https://github.com/dashingsoft/pyarmor",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/dashingsoft/pyarmor && cd pyarmor",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/dashingsoft/pyarmor"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 5214,
+    "pushedAt": "2026-10-05T04:21:49Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "scyllahide",
+   "name": "ScyllaHide",
+   "name_zh": "反反调试",
+   "category_id": "network-engineering-defense",
+   "summary": "ScyllaHide:用户态反反调试插件,绕过常见调试器检测,配合 x64dbg 做动态分析。",
+   "description": "ScyllaHide:用户态反反调试插件,绕过常见调试器检测,配合 x64dbg 做动态分析。",
+   "detail_url": "/tools/scyllahide.html",
+   "repo": "x64dbg/ScyllaHide",
+   "docs_url": "https://github.com/x64dbg/ScyllaHide",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/x64dbg/ScyllaHide && cd ScyllaHide",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/x64dbg/ScyllaHide"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 4343,
+    "pushedAt": "2024-06-04T22:02:14Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "flare-floss",
+   "name": "flare-floss",
+   "name_zh": "混淆字符串求解",
+   "category_id": "network-engineering-defense",
+   "summary": "FLOSS:Mandiant 的混淆字符串自动求解器,静态提取样本中被编码或加密的字符串。",
+   "description": "FLOSS:Mandiant 的混淆字符串自动求解器,静态提取样本中被编码或加密的字符串。",
+   "detail_url": "/tools/flare-floss.html",
+   "repo": "mandiant/flare-floss",
+   "docs_url": "https://github.com/mandiant/flare-floss",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/mandiant/flare-floss && cd flare-floss",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/mandiant/flare-floss"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 4189,
+    "pushedAt": "2026-10-15T14:58:21Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "hyperdbg",
+   "name": "HyperDbg",
+   "name_zh": "硬件调试器",
+   "category_id": "network-engineering-defense",
+   "summary": "HyperDbg:基于虚拟化的调试器,支持隐蔽断点与内核级追踪,用于深度分析。",
+   "description": "HyperDbg:基于虚拟化的调试器,支持隐蔽断点与内核级追踪,用于深度分析。",
+   "detail_url": "/tools/hyperdbg.html",
+   "repo": "HyperDbg/HyperDbg",
+   "docs_url": "https://github.com/HyperDbg/HyperDbg",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/HyperDbg/HyperDbg && cd HyperDbg",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/HyperDbg/HyperDbg"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 4133,
+    "pushedAt": "2026-10-07T13:44:41Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "proguard",
+   "name": "proguard",
+   "name_zh": "Java 混淆",
+   "category_id": "network-engineering-defense",
+   "summary": "ProGuard:Java 字节码优化与混淆器,压缩体积并重命名符号,是 Android 加固的基础环节。",
+   "description": "ProGuard:Java 字节码优化与混淆器,压缩体积并重命名符号,是 Android 加固的基础环节。",
+   "detail_url": "/tools/proguard.html",
+   "repo": "Guardsquare/proguard",
+   "docs_url": "https://github.com/Guardsquare/proguard",
+   "deploy": {
+    "method": "binary",
+    "command": "git clone https://github.com/Guardsquare/proguard && cd proguard",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Guardsquare/proguard"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "binary"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-16",
+    "alive": true,
+    "stars": 3676,
+    "pushedAt": "2026-08-24T13:48:45Z",
+    "license": "GPL-2.0"
+   }
   }
  ]
 }

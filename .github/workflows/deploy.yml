@@ -1,0 +1,44 @@
+name: deploy
+
+# 手动触发的整站部署:构建 dist -> 打包 -> 上传宝塔 -> 解压 -> reload nginx
+# 依赖仓库 secret BT_API_SK(宝塔面板 API 密钥),不入库、不落日志。
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Show source revision
+        run: git log -1 --oneline
+
+      - name: Build + deploy
+        env:
+          BT_API_SK: ${{ secrets.BT_API_SK }}
+          PYTHONIOENCODING: utf-8
+        run: python deploy/sync.py --api --reload
+
+      - name: Verify live site
+        run: |
+          python - <<'PY'
+          import json, urllib.request
+          base = "https://skillx.yueliai.top"
+          for path in ("/", "/tools.html", "/tools/nuclei.html", "/site-data.json"):
+              req = urllib.request.Request(base + path, headers={"User-Agent": "skillx-ci"})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  body = r.read()
+              print(f"{path} -> {r.status} {len(body)} bytes")
+          req = urllib.request.Request(base + "/site-data.json", headers={"User-Agent": "skillx-ci"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              sd = json.loads(r.read().decode())
+          print("categories:", len(sd.get("categoryMeta") or []))
+          PY
