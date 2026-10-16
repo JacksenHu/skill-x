@@ -21,6 +21,29 @@ jobs:
       - name: Show source revision
         run: git log -1 --oneline
 
+      - name: Probe panel headers
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.error
+          base = "http://124.156.167.163:8888/"
+          tests = [
+              ("plain", {}),
+              ("xff-127", {"X-Forwarded-For": "127.0.0.1"}),
+              ("xreal-127", {"X-Real-IP": "127.0.0.1"}),
+              ("host-local", {"Host": "localhost:8888"}),
+              ("host-loop", {"Host": "127.0.0.1:8888"}),
+          ]
+          for name, extra in tests:
+              try:
+                  req = urllib.request.Request(base, headers={"User-Agent": "Mozilla/5.0", **extra})
+                  with urllib.request.urlopen(req, timeout=20) as r:
+                      print(name, "->", r.status, len(r.read()))
+              except urllib.error.HTTPError as e:
+                  print(name, "-> HTTP", e.code)
+              except Exception as e:
+                  print(name, "-> ERR", type(e).__name__, str(e)[:100])
+          PY
+
       - name: Probe panel (http vs https)
         run: |
           python - <<'PY'
