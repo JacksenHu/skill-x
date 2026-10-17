@@ -43,6 +43,12 @@
    "name": "威胁情报",
    "name_en": "Threat Intelligence",
    "order": 6
+  },
+  {
+   "id": "memory-process",
+   "name": "双机内存与映像隐藏",
+   "name_en": "DMA Memory & Image Hiding",
+   "order": 7
   }
  ]
 }
