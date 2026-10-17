@@ -111,13 +111,34 @@ def meta_html(t, cat_meta):
 
 
 def tool_mindmap(t, cat_meta):
+    """五分支结构导图:概览 / 部署 / 能力 / 依赖与授权 / 适用场景。
+
+    收录新工具后必须保证此函数能产出非空分支,否则详情页导图会退化。
+    """
     cat = t.get("category_id", "")
     cm = cat_meta.get(cat, {})
-    deploy = (t.get("deploy") or {}).get("method", "") or "—"
-    form = t.get("form", "") or "—"
-    ports = ",".join(str(x) for x in (t.get("ports") or []))
-    branches = [("概览", [cm.get("name", cat) or "未分类", deploy, form, (f"端口 {ports}" if ports else "无固定端口")])]
-    branches.append(("授权", ["已授权收录与分发"]))
+    deploy = t.get("deploy") or {}
+    method = deploy.get("method") or "—"
+    form = t.get("form") or "—"
+    ports = [str(x) for x in (t.get("ports") or [])]
+    up = t.get("upstream") or {}
+    labels = [str(x) for x in (t.get("labels") or []) if x]
+
+    cmd = (deploy.get("command") or "").strip()
+    if len(cmd) > 52:
+        cmd = cmd[:51] + "…"
+
+    branches = [
+        ("概览", [cm.get("name", cat) or "未分类", f"形态 {form}", f"部署 {method}"]),
+        ("部署", [f"方式 {method}", cmd or "—", (f"端口 {','.join(ports)}" if ports else "无固定端口")]),
+        ("能力", (labels[:5] or ["通用安全工具"])),
+        ("依赖与授权", [f"许可证 {up.get('license') or '—'}",
+                         f"热度 {up.get('stars') or '—'} ★",
+                         "已授权收录与分发"]),
+        ("适用场景", [f"{form} 形态",
+                       ("本地部署" if method in ("source", "binary", "cli", "script", "iac") else "服务化部署"),
+                       "授权安全测试"]),
+    ]
     return mmap_html(t.get("name_zh") or t.get("name", ""), branches, "结构导图")
 
 

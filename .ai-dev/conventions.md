@@ -36,3 +36,14 @@
 - 长期规则写进 L2 文档(本文件 / architecture / project-brief / lessons);HANDOFF 只保留活跃工作记忆,超约 120 行先归档。
 - 增删/移动源码文件后同步刷新 `code-index.md`;项目文件即共享记忆,提交后立即 push。
 - 凭据(api_sk / PAT / token)只走会话环境变量:不落盘、不入库、不进 `.ai-dev`/memory。
+
+## 爬取与收录流程(强制)
+
+每次爬取/收录新条目后,必须按顺序完成,不得只改数据就收工:
+
+1. 写入数据源(`tools-store/api-import-payload.json` / `mcp-registry.json` / `external.json`),按 repo 名去重。
+2. 跑 `python showcase/build_index.py`,确认构建输出里目标条数正确。
+3. **导图必须多分支**:工具导图固定五支——概览 / 部署 / 能力 / 依赖与授权 / 适用场景;
+   技能与套件导图保持多分支(能力 / 工作流 / 场景等)。新增形态时先扩展渲染层,再入库。
+4. 部署后线上抽查至少 2 个新条目详情页:必须包含「结构导图」节点与内联 SVG,且分支节点非空。
+5. 更新 `.ai-dev/HANDOFF.md`(本次收录数量、分类分布、部署结果)。
