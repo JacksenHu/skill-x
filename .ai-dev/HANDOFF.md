@@ -141,3 +141,9 @@
 - 已上线:mcp.html 卡片 0 个 .cmd、5 copy-btn;plugins.html 0 个 .cmd、13 copy-btn。
 - **重大工作区冲突**:另一会话把 tracked `build_index.py`(1948 行完整源码)未提交重构成 113 行 wrapper(跑 `__pycache__/*.pyc` 字节码 + icon 后处理);本会话不能覆盖 → 改用 **git plumbing**(hash-object/commit-tree/update-ref + 临时 GIT_INDEX_FILE)把"HEAD 完整源码+卡片改动"提交为 `36addcb`,**完全不碰工作区文件**;期间因 git show 空输出误产空 commit,用 `reset --soft/--mixed` 回滚后基于 HEAD^ 重做成功。已推送。
 - 教训:①另一会话把源码换成 wrapper 后,源码改动只能走 plumbing 提交,不能 git add;②subprocess `input=` 不是 `inp=`;③提交前必须核对 blob 非空(e69de29=空文件哈希)。
+
+## 工具导图五分支 + 收录流程固化(2026-10-17)
+- 工具详情页导图由单分支扩为五分支:概览 / 部署 / 能力 / 依赖与授权 / 适用场景(`render_tools_store.py::tool_mindmap`);线上页面体积 5.3KB→9.7KB,SVG 文本节点 21 个。
+- 收录流程写入 `.ai-dev/conventions.md`「爬取与收录流程(强制)」:入库 → 构建 → 导图多分支 → 线上抽查 → 更新 HANDOFF。
+- 本轮补充收录 49 个成熟项目(工具 112→161,7 类);GitHub Actions 部署通道改走 SSH(私钥入 secret),run#6/#7/#8 均 success。
+- 提交:`5b13622`(CI 改 SSH)/ `d17a0ea`(49 条收录)/ `6b5d876`(五分支导图 + 流程)。
