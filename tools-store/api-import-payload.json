@@ -8533,6 +8533,842 @@
     "pushedAt": "2026-09-17T00:00:00Z",
     "license": "AGPL-3.0"
    }
+  },
+  {
+   "slug": "pcileech",
+   "name": "pcileech",
+   "name_zh": "DMA 内存访问",
+   "category_id": "memory-process",
+   "summary": "PCILeech:DMA 硬件直连内存读写框架,通过 PCIe 设备绕过操作系统直接访问物理内存,用于内存取证与底层分析。",
+   "description": "PCILeech:DMA 硬件直连内存读写框架,通过 PCIe 设备绕过操作系统直接访问物理内存,用于内存取证与底层分析。",
+   "detail_url": "/tools/pcileech.html",
+   "repo": "ufrisk/pcileech",
+   "docs_url": "https://github.com/ufrisk/pcileech",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ufrisk/pcileech && cd pcileech",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ufrisk/pcileech"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 7953,
+    "pushedAt": "2026-10-05T17:36:17Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "memprocfs",
+   "name": "MemProcFS",
+   "name_zh": "内存文件系统",
+   "category_id": "memory-process",
+   "summary": "MemProcFS:把物理内存映射为文件系统,支持进程/模块/句柄枚举与内存转储,DMA 场景下的核心分析组件。",
+   "description": "MemProcFS:把物理内存映射为文件系统,支持进程/模块/句柄枚举与内存转储,DMA 场景下的核心分析组件。",
+   "detail_url": "/tools/memprocfs.html",
+   "repo": "ufrisk/MemProcFS",
+   "docs_url": "https://github.com/ufrisk/MemProcFS",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ufrisk/MemProcFS && cd MemProcFS",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ufrisk/MemProcFS"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4374,
+    "pushedAt": "2026-10-05T18:12:04Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "pcileech-fpga",
+   "name": "pcileech-fpga",
+   "name_zh": "DMA FPGA 固件",
+   "category_id": "memory-process",
+   "summary": "PCILeech FPGA:配套 DMA 设备的 FPGA 固件模块集,覆盖多种板卡与接口形态。",
+   "description": "PCILeech FPGA:配套 DMA 设备的 FPGA 固件模块集,覆盖多种板卡与接口形态。",
+   "detail_url": "/tools/pcileech-fpga.html",
+   "repo": "ufrisk/pcileech-fpga",
+   "docs_url": "https://github.com/ufrisk/pcileech-fpga",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ufrisk/pcileech-fpga && cd pcileech-fpga",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ufrisk/pcileech-fpga"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1836,
+    "pushedAt": "2026-04-08T21:04:38Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "lovelymem",
+   "name": "LovelyMem",
+   "name_zh": "内存取证可视化",
+   "category_id": "memory-process",
+   "summary": "LovelyMem:基于 MemProcFS 与 Volatility 的可视化内存取证工具,图形化浏览进程、模块与转储结果。",
+   "description": "LovelyMem:基于 MemProcFS 与 Volatility 的可视化内存取证工具,图形化浏览进程、模块与转储结果。",
+   "detail_url": "/tools/lovelymem.html",
+   "repo": "Tokeii0/LovelyMem",
+   "docs_url": "https://github.com/Tokeii0/LovelyMem",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Tokeii0/LovelyMem && cd LovelyMem",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Tokeii0/LovelyMem"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1760,
+    "pushedAt": "2026-08-10T11:07:58Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "aceldr",
+   "name": "AceLdr",
+   "name_zh": "内存扫描规避",
+   "category_id": "memory-process",
+   "summary": "AceLdr:Cobalt Strike UDRL,针对内存扫描器做载荷布局与特征规避,研究内存检测对抗的参考实现。",
+   "description": "AceLdr:Cobalt Strike UDRL,针对内存扫描器做载荷布局与特征规避,研究内存检测对抗的参考实现。",
+   "detail_url": "/tools/aceldr.html",
+   "repo": "kyleavery/AceLdr",
+   "docs_url": "https://github.com/kyleavery/AceLdr",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/kyleavery/AceLdr && cd AceLdr",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/kyleavery/AceLdr"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1033,
+    "pushedAt": "2024-06-04T16:45:42Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "hyper-rev",
+   "name": "hyper-reV",
+   "name_zh": "内存自省虚拟机",
+   "category_id": "memory-process",
+   "summary": "hyper-reV:面向内存自省与逆向的 Hypervisor 项目,提供受控内存视图与断点能力。",
+   "description": "hyper-reV:面向内存自省与逆向的 Hypervisor 项目,提供受控内存视图与断点能力。",
+   "detail_url": "/tools/hyper-rev.html",
+   "repo": "noahware/hyper-reV",
+   "docs_url": "https://github.com/noahware/hyper-reV",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/noahware/hyper-reV && cd hyper-reV",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/noahware/hyper-reV"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 806,
+    "pushedAt": "2026-07-24T10:00:36Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "dmalibrary",
+   "name": "DMALibrary",
+   "name_zh": "DMA 开发库",
+   "category_id": "memory-process",
+   "summary": "DMALibrary:面向 DMA 开发者的 C 库,封装设备枚举、内存读写与进程模块解析。",
+   "description": "DMALibrary:面向 DMA 开发者的 C 库,封装设备枚举、内存读写与进程模块解析。",
+   "detail_url": "/tools/dmalibrary.html",
+   "repo": "Metick/DMALibrary",
+   "docs_url": "https://github.com/Metick/DMALibrary",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Metick/DMALibrary && cd DMALibrary",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Metick/DMALibrary"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 715,
+    "pushedAt": "2025-04-09T22:11:18Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cronos",
+   "name": "Cronos",
+   "name_zh": "睡眠混淆",
+   "category_id": "memory-process",
+   "summary": "Cronos:利用等待链与计时器实现的睡眠混淆技术 PoC,研究内存扫描窗口规避。",
+   "description": "Cronos:利用等待链与计时器实现的睡眠混淆技术 PoC,研究内存扫描窗口规避。",
+   "detail_url": "/tools/cronos.html",
+   "repo": "Idov31/Cronos",
+   "docs_url": "https://github.com/Idov31/Cronos",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Idov31/Cronos && cd Cronos",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Idov31/Cronos"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 629,
+    "pushedAt": "2023-09-26T18:06:10Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "umap",
+   "name": "umap",
+   "name_zh": "驱动手动映射",
+   "category_id": "memory-process",
+   "summary": "umap:UEFI Bootkit,在启动阶段完成驱动手动映射,绕过常规驱动加载校验。",
+   "description": "umap:UEFI Bootkit,在启动阶段完成驱动手动映射,绕过常规驱动加载校验。",
+   "detail_url": "/tools/umap.html",
+   "repo": "btbd/umap",
+   "docs_url": "https://github.com/btbd/umap",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/btbd/umap && cd umap",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/btbd/umap"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 606,
+    "pushedAt": "2024-01-01T01:32:30Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "simple-manual-map-injector",
+   "name": "Simple-Manual-Map-Injector",
+   "name_zh": "手动映射注入",
+   "category_id": "memory-process",
+   "summary": "Simple Manual Map Injector:x86/x64 DLL 手动映射注入器,不经过 LoadLibrary,演示映像自加载流程。",
+   "description": "Simple Manual Map Injector:x86/x64 DLL 手动映射注入器,不经过 LoadLibrary,演示映像自加载流程。",
+   "detail_url": "/tools/simple-manual-map-injector.html",
+   "repo": "TheCruZ/Simple-Manual-Map-Injector",
+   "docs_url": "https://github.com/TheCruZ/Simple-Manual-Map-Injector",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/TheCruZ/Simple-Manual-Map-Injector && cd Simple-Manual-Map-Injector",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/TheCruZ/Simple-Manual-Map-Injector"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 526,
+    "pushedAt": "2026-10-15T08:36:47Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "efi-driver-access",
+   "name": "EFI_Driver_Access",
+   "name_zh": "EFI 驱动加载",
+   "category_id": "memory-process",
+   "summary": "EFI Driver Access:通过 UEFI 运行时服务加载驱动的示例工程,研究启动期驱动加载路径。",
+   "description": "EFI Driver Access:通过 UEFI 运行时服务加载驱动的示例工程,研究启动期驱动加载路径。",
+   "detail_url": "/tools/efi-driver-access.html",
+   "repo": "TheCruZ/EFI_Driver_Access",
+   "docs_url": "https://github.com/TheCruZ/EFI_Driver_Access",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/TheCruZ/EFI_Driver_Access && cd EFI_Driver_Access",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/TheCruZ/EFI_Driver_Access"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 519,
+    "pushedAt": "2023-01-08T18:22:44Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "memhv",
+   "name": "memhv",
+   "name_zh": "AMD-V 内存自省",
+   "category_id": "memory-process",
+   "summary": "memhv:极简 AMD-V/SVM Hypervisor,提供内存自省能力,用于虚拟化层内存观察。",
+   "description": "memhv:极简 AMD-V/SVM Hypervisor,提供内存自省能力,用于虚拟化层内存观察。",
+   "detail_url": "/tools/memhv.html",
+   "repo": "SamuelTulach/memhv",
+   "docs_url": "https://github.com/SamuelTulach/memhv",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/SamuelTulach/memhv && cd memhv",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/SamuelTulach/memhv"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 437,
+    "pushedAt": "2025-02-26T20:12:39Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "pcileechgen",
+   "name": "PCILeechGen",
+   "name_zh": "DMA 固件生成",
+   "category_id": "memory-process",
+   "summary": "PCILeechGen:为 PCILeech 生成定制 FPGA 固件的工具链。",
+   "description": "PCILeechGen:为 PCILeech 生成定制 FPGA 固件的工具链。",
+   "detail_url": "/tools/pcileechgen.html",
+   "repo": "sercanarga/PCILeechGen",
+   "docs_url": "https://github.com/sercanarga/PCILeechGen",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/sercanarga/PCILeechGen && cd PCILeechGen",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/sercanarga/PCILeechGen"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 400,
+    "pushedAt": "2026-10-13T12:05:58Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "kernelbypasssharp",
+   "name": "KernelBypassSharp",
+   "name_zh": "内核读写驱动",
+   "category_id": "memory-process",
+   "summary": "KernelBypassSharp:C# 内核态驱动示例,演示跨进程内存读写与内核交互。",
+   "description": "KernelBypassSharp:C# 内核态驱动示例,演示跨进程内存读写与内核交互。",
+   "detail_url": "/tools/kernelbypasssharp.html",
+   "repo": "VollRagm/KernelBypassSharp",
+   "docs_url": "https://github.com/VollRagm/KernelBypassSharp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/VollRagm/KernelBypassSharp && cd KernelBypassSharp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/VollRagm/KernelBypassSharp"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 388,
+    "pushedAt": "2023-08-03T05:50:09Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "kernelmode-dll-injector",
+   "name": "Kernelmode-DLL-Injector",
+   "name_zh": "内核注入器",
+   "category_id": "memory-process",
+   "summary": "Kernelmode DLL Injector:内核态 DLL 注入器,支持手动映射,研究内核注入链路。",
+   "description": "Kernelmode DLL Injector:内核态 DLL 注入器,支持手动映射,研究内核注入链路。",
+   "detail_url": "/tools/kernelmode-dll-injector.html",
+   "repo": "YouNeverKnow00/Kernelmode-DLL-Injector",
+   "docs_url": "https://github.com/YouNeverKnow00/Kernelmode-DLL-Injector",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/YouNeverKnow00/Kernelmode-DLL-Injector && cd Kernelmode-DLL-Injector",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/YouNeverKnow00/Kernelmode-DLL-Injector"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 373,
+    "pushedAt": "2023-11-29T18:51:56Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "hypervisor",
+   "name": "hypervisor",
+   "name_zh": "VT-x EPT 监控",
+   "category_id": "memory-process",
+   "summary": "momo5502/hypervisor:Intel VT-x Type-2 Hypervisor,演示 EPT Hook 与内存访问监控。",
+   "description": "momo5502/hypervisor:Intel VT-x Type-2 Hypervisor,演示 EPT Hook 与内存访问监控。",
+   "detail_url": "/tools/hypervisor.html",
+   "repo": "momo5502/hypervisor",
+   "docs_url": "https://github.com/momo5502/hypervisor",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/momo5502/hypervisor && cd hypervisor",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/momo5502/hypervisor"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 364,
+    "pushedAt": "2026-09-01T09:45:21Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "rustdmacheat",
+   "name": "RustDMACheat",
+   "name_zh": "DMA 读写示例",
+   "category_id": "memory-process",
+   "summary": "RustDMACheat:Rust 实现的 DMA 内存读写示例,演示设备侧内存访问流程。",
+   "description": "RustDMACheat:Rust 实现的 DMA 内存读写示例,演示设备侧内存访问流程。",
+   "detail_url": "/tools/rustdmacheat.html",
+   "repo": "IntelSDM/RustDMACheat",
+   "docs_url": "https://github.com/IntelSDM/RustDMACheat",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/IntelSDM/RustDMACheat && cd RustDMACheat",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/IntelSDM/RustDMACheat"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 289,
+    "pushedAt": "2024-07-04T20:15:45Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "winprocesshide",
+   "name": "WinProcessHide",
+   "name_zh": "进程隐藏",
+   "category_id": "memory-process",
+   "summary": "WinProcessHide:Windows 10/11 应用与进程隐藏工具,无需注入 DLL,研究进程枚举对抗。",
+   "description": "WinProcessHide:Windows 10/11 应用与进程隐藏工具,无需注入 DLL,研究进程枚举对抗。",
+   "detail_url": "/tools/winprocesshide.html",
+   "repo": "JasonYANG170/WinProcessHide",
+   "docs_url": "https://github.com/JasonYANG170/WinProcessHide",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/JasonYANG170/WinProcessHide && cd WinProcessHide",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/JasonYANG170/WinProcessHide"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 255,
+    "pushedAt": "2026-10-02T13:35:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "pcileech-wifi",
+   "name": "pcileech-wifi",
+   "name_zh": "无线网卡 DMA",
+   "category_id": "memory-process",
+   "summary": "pcileech-wifi:在 PCILeech FPGA 上模拟无线网卡设备的固件工程。",
+   "description": "pcileech-wifi:在 PCILeech FPGA 上模拟无线网卡设备的固件工程。",
+   "detail_url": "/tools/pcileech-wifi.html",
+   "repo": "ekknod/pcileech-wifi",
+   "docs_url": "https://github.com/ekknod/pcileech-wifi",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ekknod/pcileech-wifi && cd pcileech-wifi",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ekknod/pcileech-wifi"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 794,
+    "pushedAt": "2024-05-28T06:31:30Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "s6-pcie-microblaze",
+   "name": "s6_pcie_microblaze",
+   "name_zh": "PCIe 硬件工具链",
+   "category_id": "memory-process",
+   "summary": "s6_pcie_microblaze:面向 Xilinx SP605 的 PCIe 硬件实验工具链,用于 DMA 设备开发。",
+   "description": "s6_pcie_microblaze:面向 Xilinx SP605 的 PCIe 硬件实验工具链,用于 DMA 设备开发。",
+   "detail_url": "/tools/s6-pcie-microblaze.html",
+   "repo": "Cr4sh/s6_pcie_microblaze",
+   "docs_url": "https://github.com/Cr4sh/s6_pcie_microblaze",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Cr4sh/s6_pcie_microblaze && cd s6_pcie_microblaze",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Cr4sh/s6_pcie_microblaze"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 891,
+    "pushedAt": "2026-03-07T11:51:16Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "memprocfs-analyzer",
+   "name": "MemProcFS-Analyzer",
+   "name_zh": "内存取证分析",
+   "category_id": "memory-process",
+   "summary": "MemProcFS-Analyzer:基于 MemProcFS 的自动化内存取证分析器,批量提取进程与痕迹。",
+   "description": "MemProcFS-Analyzer:基于 MemProcFS 的自动化内存取证分析器,批量提取进程与痕迹。",
+   "detail_url": "/tools/memprocfs-analyzer.html",
+   "repo": "LETHAL-FORENSICS/MemProcFS-Analyzer",
+   "docs_url": "https://github.com/LETHAL-FORENSICS/MemProcFS-Analyzer",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/LETHAL-FORENSICS/MemProcFS-Analyzer && cd MemProcFS-Analyzer",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/LETHAL-FORENSICS/MemProcFS-Analyzer"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 740,
+    "pushedAt": "2026-08-31T11:37:41Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "invtero-net",
+   "name": "inVtero.net",
+   "name_zh": "高速内存取证",
+   "category_id": "memory-process",
+   "summary": "inVtero.net:高速内存取证框架,支持物理内存解析与虚拟地址重建。",
+   "description": "inVtero.net:高速内存取证框架,支持物理内存解析与虚拟地址重建。",
+   "detail_url": "/tools/invtero-net.html",
+   "repo": "ShaneK2/inVtero.net",
+   "docs_url": "https://github.com/ShaneK2/inVtero.net",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ShaneK2/inVtero.net && cd inVtero.net",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ShaneK2/inVtero.net"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 296,
+    "pushedAt": "2023-09-30T08:02:20Z",
+    "license": "AGPL-3.0"
+   }
   }
  ]
 }
