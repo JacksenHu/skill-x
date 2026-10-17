@@ -11859,6 +11859,87 @@
    "name-zh": "SWE/RE 专家技能",
    "summary-zh": "SWE/RE 专家技能：面向 AI Agent 的专家级软件工程与逆向工程技能。",
    "category": "network-engineering-defense"
+  },
+  {
+   "name": "skills",
+   "repo": "trailofbits/skills",
+   "upstream": "https://github.com/trailofbits/skills",
+   "url": "https://github.com/trailofbits/skills",
+   "license": "CC-BY-SA-4.0",
+   "stars": 7610,
+   "pushed_at": "2026-10-15",
+   "kind": "plugin",
+   "category": "reverse-engineering",
+   "summary": "Trail of Bits 的 Claude Code 安全技能集,覆盖代码审计、漏洞研究与逆向分析。",
+   "name-zh": "Trail of Bits 安全技能集",
+   "status": "passed",
+   "reviewed": {
+    "by": "codex",
+    "at": "2026-10-17",
+    "execReview": "passed",
+    "note": "方向化爬取+核验:仓库与许可证已核验。"
+   },
+   "upstreamStatus": {
+    "source": "github",
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "failSince": null
+   },
+   "skills": []
+  },
+  {
+   "name": "android-reverse-engineering-skill",
+   "repo": "SimoneAvogadro/android-reverse-engineering-skill",
+   "upstream": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+   "url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+   "license": "Apache-2.0",
+   "stars": 8172,
+   "pushed_at": "2026-10-12",
+   "kind": "plugin",
+   "category": "reverse-engineering",
+   "summary": "Android 应用逆向的 Claude Code 技能:反编译、资源提取、流量与运行时分析流程。",
+   "name-zh": "Android 逆向技能",
+   "status": "passed",
+   "reviewed": {
+    "by": "codex",
+    "at": "2026-10-17",
+    "execReview": "passed",
+    "note": "方向化爬取+核验"
+   },
+   "upstreamStatus": {
+    "source": "github",
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "failSince": null
+   },
+   "skills": []
+  },
+  {
+   "name": "android-reverse-engineering-skill",
+   "repo": "CreditTone/android-reverse-engineering-skill",
+   "upstream": "https://github.com/CreditTone/android-reverse-engineering-skill",
+   "url": "https://github.com/CreditTone/android-reverse-engineering-skill",
+   "license": "Apache-2.0",
+   "stars": 549,
+   "pushed_at": "2026-05-07",
+   "kind": "plugin",
+   "category": "reverse-engineering",
+   "summary": "为 Codex 适配的 Android 逆向分析技能集,覆盖反编译、脱壳与 hook 流程。",
+   "name-zh": "Android 逆向技能(Codex 版)",
+   "status": "passed",
+   "reviewed": {
+    "by": "codex",
+    "at": "2026-10-17",
+    "execReview": "passed",
+    "note": "方向化爬取+核验"
+   },
+   "upstreamStatus": {
+    "source": "github",
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "failSince": null
+   },
+   "skills": []
   }
  ]
 }
