@@ -17,6 +17,7 @@ DETAIL_DIR = DIST / "tools"
 
 sys.path.insert(0, str(SHOWCASE))
 from svg_map import mmap_html  # noqa: E402
+from svg_map import mindmap_tree, render_svg  # noqa: E402
 
 CAT_COLORS = {
     "recon": "data", "vuln": "pentest", "lab": "dev-workflow",
@@ -140,6 +141,38 @@ def tool_mindmap(t, cat_meta):
                        "授权安全测试"]),
     ]
     return mmap_html(t.get("name_zh") or t.get("name", ""), branches, "结构导图")
+
+
+def _tool_branches(t, cat_meta):
+    """构造五分支(供内联导图与独立 SVG 导出共用)。"""
+    cat = t.get("category_id", "")
+    cm = cat_meta.get(cat, {})
+    deploy = t.get("deploy") or {}
+    method = deploy.get("method") or "—"
+    form = t.get("form") or "—"
+    ports = [str(x) for x in (t.get("ports") or [])]
+    up = t.get("upstream") or {}
+    labels = [str(x) for x in (t.get("labels") or []) if x]
+    cmd = (deploy.get("command") or "").strip()
+    if len(cmd) > 52:
+        cmd = cmd[:51] + "…"
+    return [
+        ("概览", [cm.get("name", cat) or "未分类", f"形态 {form}", f"部署 {method}"]),
+        ("部署", [f"方式 {method}", cmd or "—", (f"端口 {','.join(ports)}" if ports else "无固定端口")]),
+        ("能力", (labels[:5] or ["通用安全工具"])),
+        ("依赖与授权", [f"许可证 {up.get('license') or '—'}",
+                         f"热度 {up.get('stars') or '—'} ★",
+                         "已授权收录与分发"]),
+        ("适用场景", [f"{form} 形态",
+                       ("本地部署" if method in ("source", "binary", "cli", "script", "iac") else "服务化部署"),
+                       "授权安全测试"]),
+    ]
+
+
+def tool_mindmap_svg(t, cat_meta):
+    """导出独立 SVG(供 /mindmaps/tool-<slug>.svg 静态接口)。"""
+    name = t.get("name_zh") or t.get("name", "")
+    return render_svg(mindmap_tree(name, _tool_branches(t, cat_meta)), "结构导图")
 
 
 def tool_intro(t, cat_meta):
@@ -304,6 +337,8 @@ def main(asset_ver=""):
         if not slug:
             continue
         (DETAIL_DIR / f"{slug}.html").write_text(detail_page(t, cat_meta, cats, asset_ver), encoding="utf-8")
+        (DIST / "mindmaps").mkdir(parents=True, exist_ok=True)
+        (DIST / "mindmaps" / f"tool-{slug}.svg").write_text(tool_mindmap_svg(t, cat_meta), encoding="utf-8")
         n += 1
     (DIST / "tools.html").write_text(list_page(cats, cat_meta, tools, asset_ver), encoding="utf-8")
     inject_nav()
