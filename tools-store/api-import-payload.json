@@ -6013,6 +6013,1626 @@
     "pushedAt": "2025-05-08T00:00:00Z",
     "license": "GPL-3.0"
    }
+  },
+  {
+   "slug": "opencanary",
+   "name": "opencanary",
+   "name_zh": "opencanary",
+   "category_id": "defense",
+   "summary": "opencanary：Modular and decentralised honeypot",
+   "description": "opencanary：Modular and decentralised honeypot",
+   "detail_url": "/tools/opencanary.html",
+   "repo": "thinkst/opencanary",
+   "docs_url": "https://github.com/thinkst/opencanary",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/thinkst/opencanary && cd opencanary",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/thinkst/opencanary"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 3057,
+    "pushedAt": "2026-10-05T00:00:00Z",
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "slug": "openrasp",
+   "name": "openrasp",
+   "name_zh": "openrasp",
+   "category_id": "defense",
+   "summary": "openrasp：🔥Open source RASP solution",
+   "description": "openrasp：🔥Open source RASP solution",
+   "detail_url": "/tools/openrasp.html",
+   "repo": "baidu/openrasp",
+   "docs_url": "https://github.com/baidu/openrasp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/baidu/openrasp && cd openrasp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/baidu/openrasp"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2988,
+    "pushedAt": "2025-10-02T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "whatwaf",
+   "name": "WhatWaf",
+   "name_zh": "WhatWaf",
+   "category_id": "defense",
+   "summary": "WhatWaf：Detect and bypass web application firewalls and protection systems",
+   "description": "WhatWaf：Detect and bypass web application firewalls and protection systems",
+   "detail_url": "/tools/whatwaf.html",
+   "repo": "Ekultek/WhatWaf",
+   "docs_url": "https://github.com/Ekultek/WhatWaf",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Ekultek/WhatWaf && cd WhatWaf",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Ekultek/WhatWaf"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2931,
+    "pushedAt": "2024-08-11T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "source-engine",
+   "name": "source-engine",
+   "name_zh": "source-engine",
+   "category_id": "defense",
+   "summary": "source-engine：Modified source engine (2017) developed by valve and leaked in 2020. Not for commercial purporses",
+   "description": "source-engine：Modified source engine (2017) developed by valve and leaked in 2020. Not for commercial purporses",
+   "detail_url": "/tools/source-engine.html",
+   "repo": "nillerusr/source-engine",
+   "docs_url": "https://github.com/nillerusr/source-engine",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/nillerusr/source-engine && cd source-engine",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/nillerusr/source-engine"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2293,
+    "pushedAt": "2025-11-25T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "beelzebub",
+   "name": "beelzebub",
+   "name_zh": "beelzebub",
+   "category_id": "defense",
+   "summary": "beelzebub：A secure low code deception runtime framework, leveraging AI for System Virtualization.",
+   "description": "beelzebub：A secure low code deception runtime framework, leveraging AI for System Virtualization.",
+   "detail_url": "/tools/beelzebub.html",
+   "repo": "beelzebub-labs/beelzebub",
+   "docs_url": "https://github.com/beelzebub-labs/beelzebub",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/beelzebub-labs/beelzebub && cd beelzebub",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/beelzebub-labs/beelzebub"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2198,
+    "pushedAt": "2026-10-14T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "pyrdp",
+   "name": "pyrdp",
+   "name_zh": "pyrdp",
+   "category_id": "defense",
+   "summary": "pyrdp：RDP monster-in-the-middle (mitm) and library for Python with the ability to watch connections live or after the fact",
+   "description": "pyrdp：RDP monster-in-the-middle (mitm) and library for Python with the ability to watch connections live or after the fact",
+   "detail_url": "/tools/pyrdp.html",
+   "repo": "GoSecure/pyrdp",
+   "docs_url": "https://github.com/GoSecure/pyrdp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/GoSecure/pyrdp && cd pyrdp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/GoSecure/pyrdp"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1786,
+    "pushedAt": "2026-05-13T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "sshesame",
+   "name": "sshesame",
+   "name_zh": "sshesame",
+   "category_id": "defense",
+   "summary": "sshesame：An easy to set up and use SSH honeypot, a fake SSH server that lets anyone in and logs their activity",
+   "description": "sshesame：An easy to set up and use SSH honeypot, a fake SSH server that lets anyone in and logs their activity",
+   "detail_url": "/tools/sshesame.html",
+   "repo": "jaksi/sshesame",
+   "docs_url": "https://github.com/jaksi/sshesame",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/jaksi/sshesame && cd sshesame",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/jaksi/sshesame"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1743,
+    "pushedAt": "2024-10-21T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "laravel-honeypot",
+   "name": "laravel-honeypot",
+   "name_zh": "laravel-honeypot",
+   "category_id": "defense",
+   "summary": "laravel-honeypot：Preventing spam submitted through forms",
+   "description": "laravel-honeypot：Preventing spam submitted through forms",
+   "detail_url": "/tools/laravel-honeypot.html",
+   "repo": "spatie/laravel-honeypot",
+   "docs_url": "https://github.com/spatie/laravel-honeypot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/spatie/laravel-honeypot && cd laravel-honeypot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/spatie/laravel-honeypot"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1578,
+    "pushedAt": "2026-09-11T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "open-source-threat-intel-feeds",
+   "name": "Open-Source-Threat-Intel-Feeds",
+   "name_zh": "Open-Source-Threat-Intel-Feeds",
+   "category_id": "intel",
+   "summary": "Open-Source-Threat-Intel-Feeds：This repository contains Open Source freely usable Threat Intel feeds that can be used without additional requirements. Contains multiple types such as IP, URL, CVE and Hash.",
+   "description": "Open-Source-Threat-Intel-Feeds：This repository contains Open Source freely usable Threat Intel feeds that can be used without additional requirements. Contains multiple types such as IP, URL, CVE and Hash.",
+   "detail_url": "/tools/open-source-threat-intel-feeds.html",
+   "repo": "Bert-JanP/Open-Source-Threat-Intel-Feeds",
+   "docs_url": "https://github.com/Bert-JanP/Open-Source-Threat-Intel-Feeds",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Bert-JanP/Open-Source-Threat-Intel-Feeds && cd Open-Source-Threat-Intel-Feeds",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Bert-JanP/Open-Source-Threat-Intel-Feeds"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 959,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "slug": "osint-toolkit",
+   "name": "osint_toolkit",
+   "name_zh": "osint_toolkit",
+   "category_id": "intel",
+   "summary": "osint_toolkit：Open source platform for cyber security analysts with many features for threat intelligence and detection engineering.",
+   "description": "osint_toolkit：Open source platform for cyber security analysts with many features for threat intelligence and detection engineering.",
+   "detail_url": "/tools/osint-toolkit.html",
+   "repo": "dev-lu/osint_toolkit",
+   "docs_url": "https://github.com/dev-lu/osint_toolkit",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/dev-lu/osint_toolkit && cd osint_toolkit",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/dev-lu/osint_toolkit"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 951,
+    "pushedAt": "2026-04-28T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "threatingestor",
+   "name": "ThreatIngestor",
+   "name_zh": "ThreatIngestor",
+   "category_id": "intel",
+   "summary": "ThreatIngestor：Extract and aggregate threat intelligence.",
+   "description": "ThreatIngestor：Extract and aggregate threat intelligence.",
+   "detail_url": "/tools/threatingestor.html",
+   "repo": "pedramamini/ThreatIngestor",
+   "docs_url": "https://github.com/pedramamini/ThreatIngestor",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/pedramamini/ThreatIngestor && cd ThreatIngestor",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/pedramamini/ThreatIngestor"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 931,
+    "pushedAt": "2026-05-26T00:00:00Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "voidaccess",
+   "name": "voidaccess",
+   "name_zh": "voidaccess",
+   "category_id": "intel",
+   "summary": "voidaccess：Self-hosted dark web OSINT platform. Automated threat intelligence from query to graph in 13 steps. Free alternative to Recorded Future, DarkOwl, and Flare.",
+   "description": "voidaccess：Self-hosted dark web OSINT platform. Automated threat intelligence from query to graph in 13 steps. Free alternative to Recorded Future, DarkOwl, and Flare.",
+   "detail_url": "/tools/voidaccess.html",
+   "repo": "KatrielMoses/voidaccess",
+   "docs_url": "https://github.com/KatrielMoses/voidaccess",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/KatrielMoses/voidaccess && cd voidaccess",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/KatrielMoses/voidaccess"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 800,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "vulnerablecode",
+   "name": "vulnerablecode",
+   "name_zh": "vulnerablecode",
+   "category_id": "intel",
+   "summary": "vulnerablecode：A free and open vulnerabilities database and the packages they impact. And the tools to aggregate and correlate these vulnerabilities. Sponsored by NLnet https://nlnet.nl/project/v",
+   "description": "vulnerablecode：A free and open vulnerabilities database and the packages they impact. And the tools to aggregate and correlate these vulnerabilities. Sponsored by NLnet https://nlnet.nl/project/v",
+   "detail_url": "/tools/vulnerablecode.html",
+   "repo": "aboutcode-org/vulnerablecode",
+   "docs_url": "https://github.com/aboutcode-org/vulnerablecode",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/aboutcode-org/vulnerablecode && cd vulnerablecode",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/aboutcode-org/vulnerablecode"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 712,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "fakehttp",
+   "name": "FakeHTTP",
+   "name_zh": "FakeHTTP",
+   "category_id": "network-engineering-defense",
+   "summary": "FakeHTTP：Obfuscate all your TCP connections into HTTP protocol.",
+   "description": "FakeHTTP：Obfuscate all your TCP connections into HTTP protocol.",
+   "detail_url": "/tools/fakehttp.html",
+   "repo": "MikeWang000000/FakeHTTP",
+   "docs_url": "https://github.com/MikeWang000000/FakeHTTP",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/MikeWang000000/FakeHTTP && cd FakeHTTP",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/MikeWang000000/FakeHTTP"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1557,
+    "pushedAt": "2025-07-06T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "net-obfuscator",
+   "name": ".NET-Obfuscator",
+   "name_zh": ".NET-Obfuscator",
+   "category_id": "network-engineering-defense",
+   "summary": ".NET-Obfuscator：Lists of .NET Obfuscator (Free, Freemium, Paid and Open Source )",
+   "description": ".NET-Obfuscator：Lists of .NET Obfuscator (Free, Freemium, Paid and Open Source )",
+   "detail_url": "/tools/net-obfuscator.html",
+   "repo": "NotPrab/.NET-Obfuscator",
+   "docs_url": "https://github.com/NotPrab/.NET-Obfuscator",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/NotPrab/.NET-Obfuscator && cd .NET-Obfuscator",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/NotPrab/.NET-Obfuscator"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1502,
+    "pushedAt": "2025-02-01T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "obfuscate",
+   "name": "Obfuscate",
+   "name_zh": "Obfuscate",
+   "category_id": "network-engineering-defense",
+   "summary": "Obfuscate：Guaranteed compile-time string literal obfuscation header-only library for C++14",
+   "description": "Obfuscate：Guaranteed compile-time string literal obfuscation header-only library for C++14",
+   "detail_url": "/tools/obfuscate.html",
+   "repo": "adamyaxley/Obfuscate",
+   "docs_url": "https://github.com/adamyaxley/Obfuscate",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/adamyaxley/Obfuscate && cd Obfuscate",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/adamyaxley/Obfuscate"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1347,
+    "pushedAt": "2026-06-03T00:00:00Z",
+    "license": "Unlicense"
+   }
+  },
+  {
+   "slug": "arcjet-js",
+   "name": "arcjet-js",
+   "name_zh": "arcjet-js",
+   "category_id": "network-engineering-defense",
+   "summary": "arcjet-js：Runtime security for AI apps and agents: prompt injection detection, tool-call authorization, sensitive-data redaction, bot protection, and rate limiting. Drop it into your JS/TS c",
+   "description": "arcjet-js：Runtime security for AI apps and agents: prompt injection detection, tool-call authorization, sensitive-data redaction, bot protection, and rate limiting. Drop it into your JS/TS c",
+   "detail_url": "/tools/arcjet-js.html",
+   "repo": "arcjet/arcjet-js",
+   "docs_url": "https://github.com/arcjet/arcjet-js",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/arcjet/arcjet-js && cd arcjet-js",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/arcjet/arcjet-js"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 691,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "ac",
+   "name": "ac",
+   "name_zh": "ac",
+   "category_id": "network-engineering-defense",
+   "summary": "ac：kernel mode anti cheat",
+   "description": "ac：kernel mode anti cheat",
+   "detail_url": "/tools/ac.html",
+   "repo": "donnaskiez/ac",
+   "docs_url": "https://github.com/donnaskiez/ac",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/donnaskiez/ac && cd ac",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/donnaskiez/ac"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 688,
+    "pushedAt": "2024-08-04T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "godot-secure",
+   "name": "Godot-Secure",
+   "name_zh": "Godot-Secure",
+   "category_id": "network-engineering-defense",
+   "summary": "Godot-Secure：Godot Secure is a Simple Python Script That modify the Godot Source Code Automatically, to integrate Camellia-256 / AES-256 encryption with a unique security token system. This sol",
+   "description": "Godot-Secure：Godot Secure is a Simple Python Script That modify the Godot Source Code Automatically, to integrate Camellia-256 / AES-256 encryption with a unique security token system. This sol",
+   "detail_url": "/tools/godot-secure.html",
+   "repo": "KnifeXRage/Godot-Secure",
+   "docs_url": "https://github.com/KnifeXRage/Godot-Secure",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/KnifeXRage/Godot-Secure && cd Godot-Secure",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/KnifeXRage/Godot-Secure"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 661,
+    "pushedAt": "2026-09-06T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "ultimateanticheat",
+   "name": "UltimateAntiCheat",
+   "name_zh": "UltimateAntiCheat",
+   "category_id": "network-engineering-defense",
+   "summary": "UltimateAntiCheat：UltimateAnticheat is an open source usermode anti-cheat system made to detect and prevent common attack vectors in game cheating (C++, Windows)",
+   "description": "UltimateAntiCheat：UltimateAnticheat is an open source usermode anti-cheat system made to detect and prevent common attack vectors in game cheating (C++, Windows)",
+   "detail_url": "/tools/ultimateanticheat.html",
+   "repo": "AlSch092/UltimateAntiCheat",
+   "docs_url": "https://github.com/AlSch092/UltimateAntiCheat",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/AlSch092/UltimateAntiCheat && cd UltimateAntiCheat",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/AlSch092/UltimateAntiCheat"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 653,
+    "pushedAt": "2026-06-23T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "nomercy",
+   "name": "NoMercy",
+   "name_zh": "NoMercy",
+   "category_id": "network-engineering-defense",
+   "summary": "NoMercy：Open source anti cheat",
+   "description": "NoMercy：Open source anti cheat",
+   "detail_url": "/tools/nomercy.html",
+   "repo": "NoMercy-ac/NoMercy",
+   "docs_url": "https://github.com/NoMercy-ac/NoMercy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/NoMercy-ac/NoMercy && cd NoMercy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/NoMercy-ac/NoMercy"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 636,
+    "pushedAt": "2025-12-09T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "goofuzz",
+   "name": "GooFuzz",
+   "name_zh": "GooFuzz",
+   "category_id": "recon",
+   "summary": "GooFuzz：GooFuzz is a tool to perform fuzzing with an OSINT approach, managing to enumerate directories, files, subdomains or parameters without leaving evidence on the target's server and ",
+   "description": "GooFuzz：GooFuzz is a tool to perform fuzzing with an OSINT approach, managing to enumerate directories, files, subdomains or parameters without leaving evidence on the target's server and ",
+   "detail_url": "/tools/goofuzz.html",
+   "repo": "m3n0sd0n4ld/GooFuzz",
+   "docs_url": "https://github.com/m3n0sd0n4ld/GooFuzz",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/m3n0sd0n4ld/GooFuzz && cd GooFuzz",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/m3n0sd0n4ld/GooFuzz"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1590,
+    "pushedAt": "2025-12-21T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "anubis",
+   "name": "anubis",
+   "name_zh": "anubis",
+   "category_id": "recon",
+   "summary": "anubis：Subdomain enumeration tool",
+   "description": "anubis：Subdomain enumeration tool",
+   "detail_url": "/tools/anubis.html",
+   "repo": "jonluca/anubis",
+   "docs_url": "https://github.com/jonluca/anubis",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/jonluca/anubis && cd anubis",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/jonluca/anubis"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1381,
+    "pushedAt": "2026-08-03T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "webcopilot",
+   "name": "webcopilot",
+   "name_zh": "webcopilot",
+   "category_id": "recon",
+   "summary": "webcopilot：An automation tool that enumerates subdomains then filters out xss, sqli, open redirect, lfi, ssrf and rce parameters and then scans for vulnerabilities.",
+   "description": "webcopilot：An automation tool that enumerates subdomains then filters out xss, sqli, open redirect, lfi, ssrf and rce parameters and then scans for vulnerabilities.",
+   "detail_url": "/tools/webcopilot.html",
+   "repo": "h4r5h1t/webcopilot",
+   "docs_url": "https://github.com/h4r5h1t/webcopilot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/h4r5h1t/webcopilot && cd webcopilot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/h4r5h1t/webcopilot"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1294,
+    "pushedAt": "2024-07-18T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "scilla",
+   "name": "scilla",
+   "name_zh": "scilla",
+   "category_id": "recon",
+   "summary": "scilla：Information Gathering tool - DNS / Subdomains / Ports / Directories enumeration",
+   "description": "scilla：Information Gathering tool - DNS / Subdomains / Ports / Directories enumeration",
+   "detail_url": "/tools/scilla.html",
+   "repo": "edoardottt/scilla",
+   "docs_url": "https://github.com/edoardottt/scilla",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/edoardottt/scilla && cd scilla",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/edoardottt/scilla"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1272,
+    "pushedAt": "2026-10-02T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "ksubdomain",
+   "name": "ksubdomain",
+   "name_zh": "ksubdomain",
+   "category_id": "recon",
+   "summary": "ksubdomain：Subdomain enumeration tool, asynchronous dns packets, use pcap to scan 1600,000 subdomains in 1 second",
+   "description": "ksubdomain：Subdomain enumeration tool, asynchronous dns packets, use pcap to scan 1600,000 subdomains in 1 second",
+   "detail_url": "/tools/ksubdomain.html",
+   "repo": "boy-hack/ksubdomain",
+   "docs_url": "https://github.com/boy-hack/ksubdomain",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/boy-hack/ksubdomain && cd ksubdomain",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/boy-hack/ksubdomain"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1228,
+    "pushedAt": "2026-03-27T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "mantis",
+   "name": "mantis",
+   "name_zh": "mantis",
+   "category_id": "recon",
+   "summary": "mantis：Mantis is a security framework that automates the workflow of discovery, reconnaissance, and vulnerability scanning.",
+   "description": "mantis：Mantis is a security framework that automates the workflow of discovery, reconnaissance, and vulnerability scanning.",
+   "detail_url": "/tools/mantis.html",
+   "repo": "PhonePe/mantis",
+   "docs_url": "https://github.com/PhonePe/mantis",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/PhonePe/mantis && cd mantis",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/PhonePe/mantis"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1038,
+    "pushedAt": "2026-07-07T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "subscraper",
+   "name": "subscraper",
+   "name_zh": "subscraper",
+   "category_id": "recon",
+   "summary": "subscraper：Subdomain and target enumeration tool built for offensive security testing",
+   "description": "subscraper：Subdomain and target enumeration tool built for offensive security testing",
+   "detail_url": "/tools/subscraper.html",
+   "repo": "m8sec/subscraper",
+   "docs_url": "https://github.com/m8sec/subscraper",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/m8sec/subscraper && cd subscraper",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/m8sec/subscraper"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 977,
+    "pushedAt": "2024-06-19T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "urlfinder",
+   "name": "urlfinder",
+   "name_zh": "urlfinder",
+   "category_id": "recon",
+   "summary": "urlfinder：A high-speed tool for passively gathering URLs, optimized for efficient and comprehensive web asset discovery without active scanning.",
+   "description": "urlfinder：A high-speed tool for passively gathering URLs, optimized for efficient and comprehensive web asset discovery without active scanning.",
+   "detail_url": "/tools/urlfinder.html",
+   "repo": "projectdiscovery/urlfinder",
+   "docs_url": "https://github.com/projectdiscovery/urlfinder",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/projectdiscovery/urlfinder && cd urlfinder",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/projectdiscovery/urlfinder"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 918,
+    "pushedAt": "2026-09-14T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "yarp",
+   "name": "yarp",
+   "name_zh": "yarp",
+   "category_id": "tunnel",
+   "summary": "yarp：A toolkit for developing high-performance HTTP reverse proxy applications.",
+   "description": "yarp：A toolkit for developing high-performance HTTP reverse proxy applications.",
+   "detail_url": "/tools/yarp.html",
+   "repo": "dotnet/yarp",
+   "docs_url": "https://github.com/dotnet/yarp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/dotnet/yarp && cd yarp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/dotnet/yarp"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 9628,
+    "pushedAt": "2026-10-12T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cors-anywhere",
+   "name": "cors-anywhere",
+   "name_zh": "cors-anywhere",
+   "category_id": "tunnel",
+   "summary": "cors-anywhere：CORS Anywhere is a NodeJS reverse proxy which adds CORS headers to the proxied request.",
+   "description": "cors-anywhere：CORS Anywhere is a NodeJS reverse proxy which adds CORS headers to the proxied request.",
+   "detail_url": "/tools/cors-anywhere.html",
+   "repo": "Rob--W/cors-anywhere",
+   "docs_url": "https://github.com/Rob--W/cors-anywhere",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Rob--W/cors-anywhere && cd cors-anywhere",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Rob--W/cors-anywhere"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 9364,
+    "pushedAt": "2024-08-16T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "lamda",
+   "name": "lamda",
+   "name_zh": "lamda",
+   "category_id": "tunnel",
+   "summary": "lamda：Android Full-Stack Device Control Platform: WebRTC/H.264 remote desktop, UI/OCR/image-matching automation, one-click MITM, built-in Frida, proxy/VPN/frp/P2P networking, MCP/Agent, ",
+   "description": "lamda：Android Full-Stack Device Control Platform: WebRTC/H.264 remote desktop, UI/OCR/image-matching automation, one-click MITM, built-in Frida, proxy/VPN/frp/P2P networking, MCP/Agent, ",
+   "detail_url": "/tools/lamda.html",
+   "repo": "firerpa/lamda",
+   "docs_url": "https://github.com/firerpa/lamda",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/firerpa/lamda && cd lamda",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/firerpa/lamda"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 8610,
+    "pushedAt": "2026-09-27T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "trojan-go",
+   "name": "trojan-go",
+   "name_zh": "trojan-go",
+   "category_id": "tunnel",
+   "summary": "trojan-go：Go实现的Trojan代理，支持多路复用/路由功能/CDN中转/Shadowsocks混淆插件，多平台，无依赖。A Trojan proxy written in Go. An unidentifiable mechanism that helps you bypass GFW. https://p4gefau1t.github.io/trojan-go/",
+   "description": "trojan-go：Go实现的Trojan代理，支持多路复用/路由功能/CDN中转/Shadowsocks混淆插件，多平台，无依赖。A Trojan proxy written in Go. An unidentifiable mechanism that helps you bypass GFW. https://p4gefau1t.github.io/trojan-go/",
+   "detail_url": "/tools/trojan-go.html",
+   "repo": "p4gefau1t/trojan-go",
+   "docs_url": "https://github.com/p4gefau1t/trojan-go",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/p4gefau1t/trojan-go && cd trojan-go",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/p4gefau1t/trojan-go"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 8385,
+    "pushedAt": "2024-07-14T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "blocky",
+   "name": "blocky",
+   "name_zh": "blocky",
+   "category_id": "tunnel",
+   "summary": "blocky：Fast and lightweight DNS proxy as ad-blocker for local network with many features",
+   "description": "blocky：Fast and lightweight DNS proxy as ad-blocker for local network with many features",
+   "detail_url": "/tools/blocky.html",
+   "repo": "0xERR0R/blocky",
+   "docs_url": "https://github.com/0xERR0R/blocky",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/0xERR0R/blocky && cd blocky",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/0xERR0R/blocky"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 7028,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "clashmac",
+   "name": "ClashMac",
+   "name_zh": "ClashMac",
+   "category_id": "tunnel",
+   "summary": "ClashMac：Native Proxy Experience Built for macOS",
+   "description": "ClashMac：Native Proxy Experience Built for macOS",
+   "detail_url": "/tools/clashmac.html",
+   "repo": "666OS/ClashMac",
+   "docs_url": "https://github.com/666OS/ClashMac",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/666OS/ClashMac && cd ClashMac",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/666OS/ClashMac"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 6319,
+    "pushedAt": "2026-09-29T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "wireproxy",
+   "name": "wireproxy",
+   "name_zh": "wireproxy",
+   "category_id": "tunnel",
+   "summary": "wireproxy：Wireguard client that exposes itself as a socks5 proxy",
+   "description": "wireproxy：Wireguard client that exposes itself as a socks5 proxy",
+   "detail_url": "/tools/wireproxy.html",
+   "repo": "windtf/wireproxy",
+   "docs_url": "https://github.com/windtf/wireproxy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/windtf/wireproxy && cd wireproxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/windtf/wireproxy"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5842,
+    "pushedAt": "2026-10-12T00:00:00Z",
+    "license": "ISC"
+   }
+  },
+  {
+   "slug": "telemt",
+   "name": "telemt",
+   "name_zh": "telemt",
+   "category_id": "tunnel",
+   "summary": "telemt：MTProxy for Telegram on Rust + Tokio",
+   "description": "telemt：MTProxy for Telegram on Rust + Tokio",
+   "detail_url": "/tools/telemt.html",
+   "repo": "telemt/telemt",
+   "docs_url": "https://github.com/telemt/telemt",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/telemt/telemt && cd telemt",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/telemt/telemt"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5738,
+    "pushedAt": "2026-10-10T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "nodejsscan",
+   "name": "nodejsscan",
+   "name_zh": "nodejsscan",
+   "category_id": "vuln",
+   "summary": "nodejsscan：nodejsscan is a static security code scanner for Node.js applications.",
+   "description": "nodejsscan：nodejsscan is a static security code scanner for Node.js applications.",
+   "detail_url": "/tools/nodejsscan.html",
+   "repo": "ajinabraham/nodejsscan",
+   "docs_url": "https://github.com/ajinabraham/nodejsscan",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ajinabraham/nodejsscan && cd nodejsscan",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ajinabraham/nodejsscan"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2577,
+    "pushedAt": "2026-09-21T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "fossa-cli",
+   "name": "fossa-cli",
+   "name_zh": "fossa-cli",
+   "category_id": "vuln",
+   "summary": "fossa-cli：Fast, portable and reliable dependency analysis for any codebase.  Supports license & vulnerability scanning for large monoliths.  Language-agnostic; integrates with 20+ build syst",
+   "description": "fossa-cli：Fast, portable and reliable dependency analysis for any codebase.  Supports license & vulnerability scanning for large monoliths.  Language-agnostic; integrates with 20+ build syst",
+   "detail_url": "/tools/fossa-cli.html",
+   "repo": "fossas/fossa-cli",
+   "docs_url": "https://github.com/fossas/fossa-cli",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/fossas/fossa-cli && cd fossa-cli",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/fossas/fossa-cli"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1523,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "pip-audit",
+   "name": "pip-audit",
+   "name_zh": "pip-audit",
+   "category_id": "vuln",
+   "summary": "pip-audit：Audits Python environments, requirements files and dependency trees for known security vulnerabilities, and can automatically fix them",
+   "description": "pip-audit：Audits Python environments, requirements files and dependency trees for known security vulnerabilities, and can automatically fix them",
+   "detail_url": "/tools/pip-audit.html",
+   "repo": "pypa/pip-audit",
+   "docs_url": "https://github.com/pypa/pip-audit",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/pypa/pip-audit && cd pip-audit",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/pypa/pip-audit"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1381,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "horusec",
+   "name": "horusec",
+   "name_zh": "horusec",
+   "category_id": "vuln",
+   "summary": "horusec：Horusec is an open source tool that improves identification of vulnerabilities in your project with just one command.",
+   "description": "horusec：Horusec is an open source tool that improves identification of vulnerabilities in your project with just one command.",
+   "detail_url": "/tools/horusec.html",
+   "repo": "ZupIT/horusec",
+   "docs_url": "https://github.com/ZupIT/horusec",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ZupIT/horusec && cd horusec",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ZupIT/horusec"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1346,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "dependency-review-action",
+   "name": "dependency-review-action",
+   "name_zh": "dependency-review-action",
+   "category_id": "vuln",
+   "summary": "dependency-review-action：A GitHub Action for detecting vulnerable dependencies and invalid licenses in your PRs",
+   "description": "dependency-review-action：A GitHub Action for detecting vulnerable dependencies and invalid licenses in your PRs",
+   "detail_url": "/tools/dependency-review-action.html",
+   "repo": "actions/dependency-review-action",
+   "docs_url": "https://github.com/actions/dependency-review-action",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/actions/dependency-review-action && cd dependency-review-action",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/actions/dependency-review-action"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 906,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "skylos",
+   "name": "skylos",
+   "name_zh": "skylos",
+   "category_id": "vuln",
+   "summary": "skylos：Open source local-first PR scanner that finds dead code, security bugs, secrets, quality regressions, and AI-code mistakes before merge. For first timers refer to https://duriantac",
+   "description": "skylos：Open source local-first PR scanner that finds dead code, security bugs, secrets, quality regressions, and AI-code mistakes before merge. For first timers refer to https://duriantac",
+   "detail_url": "/tools/skylos.html",
+   "repo": "duriantaco/skylos",
+   "docs_url": "https://github.com/duriantaco/skylos",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/duriantaco/skylos && cd skylos",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/duriantaco/skylos"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 847,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "confused",
+   "name": "confused",
+   "name_zh": "confused",
+   "category_id": "vuln",
+   "summary": "confused：Tool to check for dependency confusion vulnerabilities in multiple package management systems",
+   "description": "confused：Tool to check for dependency confusion vulnerabilities in multiple package management systems",
+   "detail_url": "/tools/confused.html",
+   "repo": "visma-prodsec/confused",
+   "docs_url": "https://github.com/visma-prodsec/confused",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/visma-prodsec/confused && cd confused",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/visma-prodsec/confused"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 790,
+    "pushedAt": "2024-08-19T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cve-lite-cli",
+   "name": "cve-lite-cli",
+   "name_zh": "cve-lite-cli",
+   "category_id": "vuln",
+   "summary": "cve-lite-cli：Fast, developer-friendly JS/TS dependency vulnerability scanner with local lockfile scanning, OSV matching, direct vs transitive visibility, --fix, JSON output, and practical remed",
+   "description": "cve-lite-cli：Fast, developer-friendly JS/TS dependency vulnerability scanner with local lockfile scanning, OSV matching, direct vs transitive visibility, --fix, JSON output, and practical remed",
+   "detail_url": "/tools/cve-lite-cli.html",
+   "repo": "OWASP/cve-lite-cli",
+   "docs_url": "https://github.com/OWASP/cve-lite-cli",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/OWASP/cve-lite-cli && cd cve-lite-cli",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/OWASP/cve-lite-cli"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 769,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
   }
  ]
 }
