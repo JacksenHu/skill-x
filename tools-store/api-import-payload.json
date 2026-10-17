@@ -7633,6 +7633,906 @@
     "pushedAt": "2026-10-15T00:00:00Z",
     "license": "MIT"
    }
+  },
+  {
+   "slug": "conpot",
+   "name": "conpot",
+   "name_zh": "conpot",
+   "category_id": "defense",
+   "summary": "conpot：ICS/SCADA honeypot",
+   "description": "conpot：ICS/SCADA honeypot",
+   "detail_url": "/tools/conpot.html",
+   "repo": "mushorg/conpot",
+   "docs_url": "https://github.com/mushorg/conpot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/mushorg/conpot && cd conpot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/mushorg/conpot"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1531,
+    "pushedAt": "2026-10-12T00:00:00Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "acra",
+   "name": "acra",
+   "name_zh": "acra",
+   "category_id": "defense",
+   "summary": "acra：Database security suite. Database proxy with field-level encryption, search through encrypted data, SQL injections prevention, intrusion detection, honeypots. Supports client-side ",
+   "description": "acra：Database security suite. Database proxy with field-level encryption, search through encrypted data, SQL injections prevention, intrusion detection, honeypots. Supports client-side ",
+   "detail_url": "/tools/acra.html",
+   "repo": "cossacklabs/acra",
+   "docs_url": "https://github.com/cossacklabs/acra",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/cossacklabs/acra && cd acra",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/cossacklabs/acra"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1492,
+    "pushedAt": "2026-04-23T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "invisible-captcha",
+   "name": "invisible_captcha",
+   "name_zh": "invisible_captcha",
+   "category_id": "defense",
+   "summary": "invisible_captcha：🍯 Unobtrusive and flexible spam protection for Rails apps",
+   "description": "invisible_captcha：🍯 Unobtrusive and flexible spam protection for Rails apps",
+   "detail_url": "/tools/invisible-captcha.html",
+   "repo": "markets/invisible_captcha",
+   "docs_url": "https://github.com/markets/invisible_captcha",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/markets/invisible_captcha && cd invisible_captcha",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/markets/invisible_captcha"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1253,
+    "pushedAt": "2026-07-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "hellpot",
+   "name": "HellPot",
+   "name_zh": "HellPot",
+   "category_id": "defense",
+   "summary": "HellPot：HellPot is a cross-platform portal to endless suffering meant to punish unruly HTTP bots.",
+   "description": "HellPot：HellPot is a cross-platform portal to endless suffering meant to punish unruly HTTP bots.",
+   "detail_url": "/tools/hellpot.html",
+   "repo": "yunginnanet/HellPot",
+   "docs_url": "https://github.com/yunginnanet/HellPot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yunginnanet/HellPot && cd HellPot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yunginnanet/HellPot"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1159,
+    "pushedAt": "2025-12-19T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "ddos-rootsec",
+   "name": "DDOS-RootSec",
+   "name_zh": "DDOS-RootSec",
+   "category_id": "defense",
+   "summary": "DDOS-RootSec：Explore RootSec's DDOS Archive, featuring top-tier scanners, powerful botnets (Mirai & QBot) and other variants, high-impact exploits, advanced methods, and efficient sniffers. Ide",
+   "description": "DDOS-RootSec：Explore RootSec's DDOS Archive, featuring top-tier scanners, powerful botnets (Mirai & QBot) and other variants, high-impact exploits, advanced methods, and efficient sniffers. Ide",
+   "detail_url": "/tools/ddos-rootsec.html",
+   "repo": "R00tS3c/DDOS-RootSec",
+   "docs_url": "https://github.com/R00tS3c/DDOS-RootSec",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/R00tS3c/DDOS-RootSec && cd DDOS-RootSec",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/R00tS3c/DDOS-RootSec"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1065,
+    "pushedAt": "2024-10-03T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "honeypots",
+   "name": "honeypots",
+   "name_zh": "honeypots",
+   "category_id": "defense",
+   "summary": "honeypots：30 different honeypots in one package! (dhcp, dns, elastic, ftp, http proxy, https proxy, http, https, imap, ipp, irc, ldap, memcache, mssql, mysql, ntp, oracle, pjl, pop3, postgre",
+   "description": "honeypots：30 different honeypots in one package! (dhcp, dns, elastic, ftp, http proxy, https proxy, http, https, imap, ipp, irc, ldap, memcache, mssql, mysql, ntp, oracle, pjl, pop3, postgre",
+   "detail_url": "/tools/honeypots.html",
+   "repo": "qeeqbox/honeypots",
+   "docs_url": "https://github.com/qeeqbox/honeypots",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/qeeqbox/honeypots && cd honeypots",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/qeeqbox/honeypots"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 988,
+    "pushedAt": "2025-12-03T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "fastapi-guard",
+   "name": "fastapi-guard",
+   "name_zh": "fastapi-guard",
+   "category_id": "defense",
+   "summary": "fastapi-guard：A security library for FastAPI that provides middleware to control IPs, log requests, detect penetration attempts, honeypot setup, behavioural analysis, emergency mode lockdown, bl",
+   "description": "fastapi-guard：A security library for FastAPI that provides middleware to control IPs, log requests, detect penetration attempts, honeypot setup, behavioural analysis, emergency mode lockdown, bl",
+   "detail_url": "/tools/fastapi-guard.html",
+   "repo": "Guard-Core/fastapi-guard",
+   "docs_url": "https://github.com/Guard-Core/fastapi-guard",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Guard-Core/fastapi-guard && cd fastapi-guard",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Guard-Core/fastapi-guard"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 825,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "dionaea",
+   "name": "dionaea",
+   "name_zh": "dionaea",
+   "category_id": "defense",
+   "summary": "dionaea：Home of the dionaea honeypot",
+   "description": "dionaea：Home of the dionaea honeypot",
+   "detail_url": "/tools/dionaea.html",
+   "repo": "DinoTools/dionaea",
+   "docs_url": "https://github.com/DinoTools/dionaea",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/DinoTools/dionaea && cd dionaea",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/DinoTools/dionaea"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 817,
+    "pushedAt": "2024-08-01T00:00:00Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "ksword",
+   "name": "KSword",
+   "name_zh": "KSword",
+   "category_id": "network-engineering-defense",
+   "summary": "KSword：[Windows Anti-Rootkit] KSword 5.1 is an source-available Windows toolkit for ARK, kernel debugging, and system forensics.  KSword 5.1 是面向 Windows 的源码可见 ARK、内核调试与系统取证工具集。",
+   "description": "KSword：[Windows Anti-Rootkit] KSword 5.1 is an source-available Windows toolkit for ARK, kernel debugging, and system forensics.  KSword 5.1 是面向 Windows 的源码可见 ARK、内核调试与系统取证工具集。",
+   "detail_url": "/tools/ksword.html",
+   "repo": "KSwordDEV/KSword",
+   "docs_url": "https://github.com/KSwordDEV/KSword",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/KSwordDEV/KSword && cd KSword",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/KSwordDEV/KSword"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 541,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "js-confuser",
+   "name": "js-confuser",
+   "name_zh": "js-confuser",
+   "category_id": "network-engineering-defense",
+   "summary": "js-confuser：JS-Confuser is a JavaScript obfuscation tool to make your programs *impossible* to read.",
+   "description": "js-confuser：JS-Confuser is a JavaScript obfuscation tool to make your programs *impossible* to read.",
+   "detail_url": "/tools/js-confuser.html",
+   "repo": "MichaelXF/js-confuser",
+   "docs_url": "https://github.com/MichaelXF/js-confuser",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/MichaelXF/js-confuser && cd js-confuser",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/MichaelXF/js-confuser"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 525,
+    "pushedAt": "2026-08-14T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "areweanticheatyet",
+   "name": "AreWeAntiCheatYet",
+   "name_zh": "AreWeAntiCheatYet",
+   "category_id": "network-engineering-defense",
+   "summary": "AreWeAntiCheatYet：A comprehensive and crowd-sourced list of games using anti-cheats and their compatibility with GNU/Linux or Wine.",
+   "description": "AreWeAntiCheatYet：A comprehensive and crowd-sourced list of games using anti-cheats and their compatibility with GNU/Linux or Wine.",
+   "detail_url": "/tools/areweanticheatyet.html",
+   "repo": "AreWeAntiCheatYet/AreWeAntiCheatYet",
+   "docs_url": "https://github.com/AreWeAntiCheatYet/AreWeAntiCheatYet",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/AreWeAntiCheatYet/AreWeAntiCheatYet && cd AreWeAntiCheatYet",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/AreWeAntiCheatYet/AreWeAntiCheatYet"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 510,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "xingrin",
+   "name": "xingrin",
+   "name_zh": "xingrin",
+   "category_id": "recon",
+   "summary": "xingrin：Open-source attack surface management and authorized security automation platform for asset discovery, service probing, scan orchestration, and security result management.",
+   "description": "xingrin：Open-source attack surface management and authorized security automation platform for asset discovery, service probing, scan orchestration, and security result management.",
+   "detail_url": "/tools/xingrin.html",
+   "repo": "yyhuni/xingrin",
+   "docs_url": "https://github.com/yyhuni/xingrin",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yyhuni/xingrin && cd xingrin",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yyhuni/xingrin"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 668,
+    "pushedAt": "2026-09-21T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "gpt-vuln-analyzer",
+   "name": "GPT_Vuln-analyzer",
+   "name_zh": "GPT_Vuln-analyzer",
+   "category_id": "recon",
+   "summary": "GPT_Vuln-analyzer：Uses ChatGPT API, Bard API, and Llama2, Python-Nmap, DNS Recon, PCAP and JWT recon modules and uses the GPT3 model to create vulnerability reports based on Nmap scan data, and DNS ",
+   "description": "GPT_Vuln-analyzer：Uses ChatGPT API, Bard API, and Llama2, Python-Nmap, DNS Recon, PCAP and JWT recon modules and uses the GPT3 model to create vulnerability reports based on Nmap scan data, and DNS ",
+   "detail_url": "/tools/gpt-vuln-analyzer.html",
+   "repo": "morpheuslord/GPT_Vuln-analyzer",
+   "docs_url": "https://github.com/morpheuslord/GPT_Vuln-analyzer",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/morpheuslord/GPT_Vuln-analyzer && cd GPT_Vuln-analyzer",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/morpheuslord/GPT_Vuln-analyzer"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 598,
+    "pushedAt": "2026-09-25T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "modlishka",
+   "name": "Modlishka",
+   "name_zh": "Modlishka",
+   "category_id": "tunnel",
+   "summary": "Modlishka：Modlishka. Reverse Proxy.",
+   "description": "Modlishka：Modlishka. Reverse Proxy.",
+   "detail_url": "/tools/modlishka.html",
+   "repo": "drk1wi/Modlishka",
+   "docs_url": "https://github.com/drk1wi/Modlishka",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/drk1wi/Modlishka && cd Modlishka",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/drk1wi/Modlishka"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5428,
+    "pushedAt": "2026-08-14T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "udpspeeder",
+   "name": "UDPspeeder",
+   "name_zh": "UDPspeeder",
+   "category_id": "tunnel",
+   "summary": "UDPspeeder：A Tunnel which Improves your Network Quality on a High-latency Lossy Link by using Forward Error Correction, possible for All Traffics(TCP/UDP/ICMP)",
+   "description": "UDPspeeder：A Tunnel which Improves your Network Quality on a High-latency Lossy Link by using Forward Error Correction, possible for All Traffics(TCP/UDP/ICMP)",
+   "detail_url": "/tools/udpspeeder.html",
+   "repo": "wangyu-/UDPspeeder",
+   "docs_url": "https://github.com/wangyu-/UDPspeeder",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/wangyu-/UDPspeeder && cd UDPspeeder",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/wangyu-/UDPspeeder"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5183,
+    "pushedAt": "2026-07-31T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "port-killer",
+   "name": "port-killer",
+   "name_zh": "port-killer",
+   "category_id": "tunnel",
+   "summary": "port-killer：A powerful cross-platform port management tool for developers. Monitor ports, manage Kubernetes port forwards, integrate Cloudflare Tunnels, and kill processes with one click.",
+   "description": "port-killer：A powerful cross-platform port management tool for developers. Monitor ports, manage Kubernetes port forwards, integrate Cloudflare Tunnels, and kill processes with one click.",
+   "detail_url": "/tools/port-killer.html",
+   "repo": "productdevbook/port-killer",
+   "docs_url": "https://github.com/productdevbook/port-killer",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/productdevbook/port-killer && cd port-killer",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/productdevbook/port-killer"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5106,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "caddy-docker-proxy",
+   "name": "caddy-docker-proxy",
+   "name_zh": "caddy-docker-proxy",
+   "category_id": "tunnel",
+   "summary": "caddy-docker-proxy：Caddy as a reverse proxy for Docker",
+   "description": "caddy-docker-proxy：Caddy as a reverse proxy for Docker",
+   "detail_url": "/tools/caddy-docker-proxy.html",
+   "repo": "lucaslorentz/caddy-docker-proxy",
+   "docs_url": "https://github.com/lucaslorentz/caddy-docker-proxy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/lucaslorentz/caddy-docker-proxy && cd caddy-docker-proxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/lucaslorentz/caddy-docker-proxy"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4730,
+    "pushedAt": "2026-10-14T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "mosn",
+   "name": "mosn",
+   "name_zh": "mosn",
+   "category_id": "tunnel",
+   "summary": "mosn：The Cloud-Native Network Proxy Platform",
+   "description": "mosn：The Cloud-Native Network Proxy Platform",
+   "detail_url": "/tools/mosn.html",
+   "repo": "mosn/mosn",
+   "docs_url": "https://github.com/mosn/mosn",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/mosn/mosn && cd mosn",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/mosn/mosn"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4508,
+    "pushedAt": "2026-07-14T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "redbird",
+   "name": "redbird",
+   "name_zh": "redbird",
+   "category_id": "tunnel",
+   "summary": "redbird：A modern reverse proxy for node",
+   "description": "redbird：A modern reverse proxy for node",
+   "detail_url": "/tools/redbird.html",
+   "repo": "OptimalBits/redbird",
+   "docs_url": "https://github.com/OptimalBits/redbird",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/OptimalBits/redbird && cd redbird",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/OptimalBits/redbird"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4411,
+    "pushedAt": "2024-09-30T00:00:00Z",
+    "license": "BSD-2-Clause"
+   }
+  },
+  {
+   "slug": "godoxy",
+   "name": "godoxy",
+   "name_zh": "godoxy",
+   "category_id": "tunnel",
+   "summary": "godoxy：High-performance reverse proxy and container orchestrator for self-hosters",
+   "description": "godoxy：High-performance reverse proxy and container orchestrator for self-hosters",
+   "detail_url": "/tools/godoxy.html",
+   "repo": "yusing/godoxy",
+   "docs_url": "https://github.com/yusing/godoxy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yusing/godoxy && cd godoxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yusing/godoxy"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4161,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "sozu",
+   "name": "sozu",
+   "name_zh": "sozu",
+   "category_id": "tunnel",
+   "summary": "sozu：Sōzu HTTP reverse proxy, configurable at runtime, fast and safe, built in Rust. It is awesome!",
+   "description": "sozu：Sōzu HTTP reverse proxy, configurable at runtime, fast and safe, built in Rust. It is awesome!",
+   "detail_url": "/tools/sozu.html",
+   "repo": "sozu-proxy/sozu",
+   "docs_url": "https://github.com/sozu-proxy/sozu",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/sozu-proxy/sozu && cd sozu",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/sozu-proxy/sozu"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 3742,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "vulnhunter",
+   "name": "VulnHunter",
+   "name_zh": "VulnHunter",
+   "category_id": "vuln",
+   "summary": "VulnHunter：Agentic AI security scanner that hunts exploitable vulnerabilities like an adversary, proves them with executable PoCs, and fixes them test-first. A maintained fork of Capital One'",
+   "description": "VulnHunter：Agentic AI security scanner that hunts exploitable vulnerabilities like an adversary, proves them with executable PoCs, and fixes them test-first. A maintained fork of Capital One'",
+   "detail_url": "/tools/vulnhunter.html",
+   "repo": "nealbridges/VulnHunter",
+   "docs_url": "https://github.com/nealbridges/VulnHunter",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/nealbridges/VulnHunter && cd VulnHunter",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/nealbridges/VulnHunter"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 731,
+    "pushedAt": "2026-10-14T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "openqodex",
+   "name": "openqodex",
+   "name_zh": "openqodex",
+   "category_id": "vuln",
+   "summary": "openqodex：Open source code review that runs in your coding agent before you push. Scanners plus a separate AI reviewer, on your own login, no key.",
+   "description": "openqodex：Open source code review that runs in your coding agent before you push. Scanners plus a separate AI reviewer, on your own login, no key.",
+   "detail_url": "/tools/openqodex.html",
+   "repo": "openqodex/openqodex",
+   "docs_url": "https://github.com/openqodex/openqodex",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/openqodex/openqodex && cd openqodex",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/openqodex/openqodex"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 716,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "automated-security-helper",
+   "name": "automated-security-helper",
+   "name_zh": "automated-security-helper",
+   "category_id": "vuln",
+   "summary": "automated-security-helper：ASH is an extensible, open source SAST, SCA, and IaC security scanner orchestration engine.",
+   "description": "automated-security-helper：ASH is an extensible, open source SAST, SCA, and IaC security scanner orchestration engine.",
+   "detail_url": "/tools/automated-security-helper.html",
+   "repo": "awslabs/automated-security-helper",
+   "docs_url": "https://github.com/awslabs/automated-security-helper",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/awslabs/automated-security-helper && cd automated-security-helper",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/awslabs/automated-security-helper"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 704,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "packj",
+   "name": "packj",
+   "name_zh": "packj",
+   "category_id": "vuln",
+   "summary": "packj：Packj stops :zap: Solarwinds-, ESLint-, and PyTorch-like attacks by flagging malicious/vulnerable open-source dependencies (\"weak links\") in your software supply-chain",
+   "description": "packj：Packj stops :zap: Solarwinds-, ESLint-, and PyTorch-like attacks by flagging malicious/vulnerable open-source dependencies (\"weak links\") in your software supply-chain",
+   "detail_url": "/tools/packj.html",
+   "repo": "ossillate-inc/packj",
+   "docs_url": "https://github.com/ossillate-inc/packj",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ossillate-inc/packj && cd packj",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ossillate-inc/packj"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 694,
+    "pushedAt": "2026-09-17T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
   }
  ]
 }
