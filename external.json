@@ -1064,6 +1064,7 @@
   {
    "namespace": "Johell1NS/browser-search",
    "upstream": "https://github.com/Johell1NS/browser-search",
+   "branch": "master",
    "license": {
     "spdx": "MIT",
     "evidence": "LICENSE:L1",
