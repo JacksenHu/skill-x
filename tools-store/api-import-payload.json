@@ -6013,6 +6013,3362 @@
     "pushedAt": "2025-05-08T00:00:00Z",
     "license": "GPL-3.0"
    }
+  },
+  {
+   "slug": "opencanary",
+   "name": "opencanary",
+   "name_zh": "opencanary",
+   "category_id": "defense",
+   "summary": "opencanary：Modular and decentralised honeypot",
+   "description": "opencanary：Modular and decentralised honeypot",
+   "detail_url": "/tools/opencanary.html",
+   "repo": "thinkst/opencanary",
+   "docs_url": "https://github.com/thinkst/opencanary",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/thinkst/opencanary && cd opencanary",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/thinkst/opencanary"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 3057,
+    "pushedAt": "2026-10-05T00:00:00Z",
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "slug": "openrasp",
+   "name": "openrasp",
+   "name_zh": "openrasp",
+   "category_id": "defense",
+   "summary": "openrasp：🔥Open source RASP solution",
+   "description": "openrasp：🔥Open source RASP solution",
+   "detail_url": "/tools/openrasp.html",
+   "repo": "baidu/openrasp",
+   "docs_url": "https://github.com/baidu/openrasp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/baidu/openrasp && cd openrasp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/baidu/openrasp"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2988,
+    "pushedAt": "2025-10-02T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "whatwaf",
+   "name": "WhatWaf",
+   "name_zh": "WhatWaf",
+   "category_id": "defense",
+   "summary": "WhatWaf：Detect and bypass web application firewalls and protection systems",
+   "description": "WhatWaf：Detect and bypass web application firewalls and protection systems",
+   "detail_url": "/tools/whatwaf.html",
+   "repo": "Ekultek/WhatWaf",
+   "docs_url": "https://github.com/Ekultek/WhatWaf",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Ekultek/WhatWaf && cd WhatWaf",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Ekultek/WhatWaf"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2931,
+    "pushedAt": "2024-08-11T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "source-engine",
+   "name": "source-engine",
+   "name_zh": "source-engine",
+   "category_id": "defense",
+   "summary": "source-engine：Modified source engine (2017) developed by valve and leaked in 2020. Not for commercial purporses",
+   "description": "source-engine：Modified source engine (2017) developed by valve and leaked in 2020. Not for commercial purporses",
+   "detail_url": "/tools/source-engine.html",
+   "repo": "nillerusr/source-engine",
+   "docs_url": "https://github.com/nillerusr/source-engine",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/nillerusr/source-engine && cd source-engine",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/nillerusr/source-engine"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2293,
+    "pushedAt": "2025-11-25T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "beelzebub",
+   "name": "beelzebub",
+   "name_zh": "beelzebub",
+   "category_id": "defense",
+   "summary": "beelzebub：A secure low code deception runtime framework, leveraging AI for System Virtualization.",
+   "description": "beelzebub：A secure low code deception runtime framework, leveraging AI for System Virtualization.",
+   "detail_url": "/tools/beelzebub.html",
+   "repo": "beelzebub-labs/beelzebub",
+   "docs_url": "https://github.com/beelzebub-labs/beelzebub",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/beelzebub-labs/beelzebub && cd beelzebub",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/beelzebub-labs/beelzebub"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2198,
+    "pushedAt": "2026-10-14T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "pyrdp",
+   "name": "pyrdp",
+   "name_zh": "pyrdp",
+   "category_id": "defense",
+   "summary": "pyrdp：RDP monster-in-the-middle (mitm) and library for Python with the ability to watch connections live or after the fact",
+   "description": "pyrdp：RDP monster-in-the-middle (mitm) and library for Python with the ability to watch connections live or after the fact",
+   "detail_url": "/tools/pyrdp.html",
+   "repo": "GoSecure/pyrdp",
+   "docs_url": "https://github.com/GoSecure/pyrdp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/GoSecure/pyrdp && cd pyrdp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/GoSecure/pyrdp"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1786,
+    "pushedAt": "2026-05-13T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "sshesame",
+   "name": "sshesame",
+   "name_zh": "sshesame",
+   "category_id": "defense",
+   "summary": "sshesame：An easy to set up and use SSH honeypot, a fake SSH server that lets anyone in and logs their activity",
+   "description": "sshesame：An easy to set up and use SSH honeypot, a fake SSH server that lets anyone in and logs their activity",
+   "detail_url": "/tools/sshesame.html",
+   "repo": "jaksi/sshesame",
+   "docs_url": "https://github.com/jaksi/sshesame",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/jaksi/sshesame && cd sshesame",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/jaksi/sshesame"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1743,
+    "pushedAt": "2024-10-21T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "laravel-honeypot",
+   "name": "laravel-honeypot",
+   "name_zh": "laravel-honeypot",
+   "category_id": "defense",
+   "summary": "laravel-honeypot：Preventing spam submitted through forms",
+   "description": "laravel-honeypot：Preventing spam submitted through forms",
+   "detail_url": "/tools/laravel-honeypot.html",
+   "repo": "spatie/laravel-honeypot",
+   "docs_url": "https://github.com/spatie/laravel-honeypot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/spatie/laravel-honeypot && cd laravel-honeypot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/spatie/laravel-honeypot"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1578,
+    "pushedAt": "2026-09-11T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "open-source-threat-intel-feeds",
+   "name": "Open-Source-Threat-Intel-Feeds",
+   "name_zh": "Open-Source-Threat-Intel-Feeds",
+   "category_id": "intel",
+   "summary": "Open-Source-Threat-Intel-Feeds：This repository contains Open Source freely usable Threat Intel feeds that can be used without additional requirements. Contains multiple types such as IP, URL, CVE and Hash.",
+   "description": "Open-Source-Threat-Intel-Feeds：This repository contains Open Source freely usable Threat Intel feeds that can be used without additional requirements. Contains multiple types such as IP, URL, CVE and Hash.",
+   "detail_url": "/tools/open-source-threat-intel-feeds.html",
+   "repo": "Bert-JanP/Open-Source-Threat-Intel-Feeds",
+   "docs_url": "https://github.com/Bert-JanP/Open-Source-Threat-Intel-Feeds",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Bert-JanP/Open-Source-Threat-Intel-Feeds && cd Open-Source-Threat-Intel-Feeds",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Bert-JanP/Open-Source-Threat-Intel-Feeds"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 959,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "BSD-3-Clause"
+   }
+  },
+  {
+   "slug": "osint-toolkit",
+   "name": "osint_toolkit",
+   "name_zh": "osint_toolkit",
+   "category_id": "intel",
+   "summary": "osint_toolkit：Open source platform for cyber security analysts with many features for threat intelligence and detection engineering.",
+   "description": "osint_toolkit：Open source platform for cyber security analysts with many features for threat intelligence and detection engineering.",
+   "detail_url": "/tools/osint-toolkit.html",
+   "repo": "dev-lu/osint_toolkit",
+   "docs_url": "https://github.com/dev-lu/osint_toolkit",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/dev-lu/osint_toolkit && cd osint_toolkit",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/dev-lu/osint_toolkit"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 951,
+    "pushedAt": "2026-04-28T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "threatingestor",
+   "name": "ThreatIngestor",
+   "name_zh": "ThreatIngestor",
+   "category_id": "intel",
+   "summary": "ThreatIngestor：Extract and aggregate threat intelligence.",
+   "description": "ThreatIngestor：Extract and aggregate threat intelligence.",
+   "detail_url": "/tools/threatingestor.html",
+   "repo": "pedramamini/ThreatIngestor",
+   "docs_url": "https://github.com/pedramamini/ThreatIngestor",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/pedramamini/ThreatIngestor && cd ThreatIngestor",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/pedramamini/ThreatIngestor"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 931,
+    "pushedAt": "2026-05-26T00:00:00Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "voidaccess",
+   "name": "voidaccess",
+   "name_zh": "voidaccess",
+   "category_id": "intel",
+   "summary": "voidaccess：Self-hosted dark web OSINT platform. Automated threat intelligence from query to graph in 13 steps. Free alternative to Recorded Future, DarkOwl, and Flare.",
+   "description": "voidaccess：Self-hosted dark web OSINT platform. Automated threat intelligence from query to graph in 13 steps. Free alternative to Recorded Future, DarkOwl, and Flare.",
+   "detail_url": "/tools/voidaccess.html",
+   "repo": "KatrielMoses/voidaccess",
+   "docs_url": "https://github.com/KatrielMoses/voidaccess",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/KatrielMoses/voidaccess && cd voidaccess",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/KatrielMoses/voidaccess"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 800,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "vulnerablecode",
+   "name": "vulnerablecode",
+   "name_zh": "vulnerablecode",
+   "category_id": "intel",
+   "summary": "vulnerablecode：A free and open vulnerabilities database and the packages they impact. And the tools to aggregate and correlate these vulnerabilities. Sponsored by NLnet https://nlnet.nl/project/v",
+   "description": "vulnerablecode：A free and open vulnerabilities database and the packages they impact. And the tools to aggregate and correlate these vulnerabilities. Sponsored by NLnet https://nlnet.nl/project/v",
+   "detail_url": "/tools/vulnerablecode.html",
+   "repo": "aboutcode-org/vulnerablecode",
+   "docs_url": "https://github.com/aboutcode-org/vulnerablecode",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/aboutcode-org/vulnerablecode && cd vulnerablecode",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/aboutcode-org/vulnerablecode"
+   },
+   "labels": [
+    "intel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 712,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "fakehttp",
+   "name": "FakeHTTP",
+   "name_zh": "FakeHTTP",
+   "category_id": "network-engineering-defense",
+   "summary": "FakeHTTP：Obfuscate all your TCP connections into HTTP protocol.",
+   "description": "FakeHTTP：Obfuscate all your TCP connections into HTTP protocol.",
+   "detail_url": "/tools/fakehttp.html",
+   "repo": "MikeWang000000/FakeHTTP",
+   "docs_url": "https://github.com/MikeWang000000/FakeHTTP",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/MikeWang000000/FakeHTTP && cd FakeHTTP",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/MikeWang000000/FakeHTTP"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1557,
+    "pushedAt": "2025-07-06T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "net-obfuscator",
+   "name": ".NET-Obfuscator",
+   "name_zh": ".NET-Obfuscator",
+   "category_id": "network-engineering-defense",
+   "summary": ".NET-Obfuscator：Lists of .NET Obfuscator (Free, Freemium, Paid and Open Source )",
+   "description": ".NET-Obfuscator：Lists of .NET Obfuscator (Free, Freemium, Paid and Open Source )",
+   "detail_url": "/tools/net-obfuscator.html",
+   "repo": "NotPrab/.NET-Obfuscator",
+   "docs_url": "https://github.com/NotPrab/.NET-Obfuscator",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/NotPrab/.NET-Obfuscator && cd .NET-Obfuscator",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/NotPrab/.NET-Obfuscator"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1502,
+    "pushedAt": "2025-02-01T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "obfuscate",
+   "name": "Obfuscate",
+   "name_zh": "Obfuscate",
+   "category_id": "network-engineering-defense",
+   "summary": "Obfuscate：Guaranteed compile-time string literal obfuscation header-only library for C++14",
+   "description": "Obfuscate：Guaranteed compile-time string literal obfuscation header-only library for C++14",
+   "detail_url": "/tools/obfuscate.html",
+   "repo": "adamyaxley/Obfuscate",
+   "docs_url": "https://github.com/adamyaxley/Obfuscate",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/adamyaxley/Obfuscate && cd Obfuscate",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/adamyaxley/Obfuscate"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1347,
+    "pushedAt": "2026-06-03T00:00:00Z",
+    "license": "Unlicense"
+   }
+  },
+  {
+   "slug": "arcjet-js",
+   "name": "arcjet-js",
+   "name_zh": "arcjet-js",
+   "category_id": "network-engineering-defense",
+   "summary": "arcjet-js：Runtime security for AI apps and agents: prompt injection detection, tool-call authorization, sensitive-data redaction, bot protection, and rate limiting. Drop it into your JS/TS c",
+   "description": "arcjet-js：Runtime security for AI apps and agents: prompt injection detection, tool-call authorization, sensitive-data redaction, bot protection, and rate limiting. Drop it into your JS/TS c",
+   "detail_url": "/tools/arcjet-js.html",
+   "repo": "arcjet/arcjet-js",
+   "docs_url": "https://github.com/arcjet/arcjet-js",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/arcjet/arcjet-js && cd arcjet-js",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/arcjet/arcjet-js"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 691,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "ac",
+   "name": "ac",
+   "name_zh": "ac",
+   "category_id": "network-engineering-defense",
+   "summary": "ac：kernel mode anti cheat",
+   "description": "ac：kernel mode anti cheat",
+   "detail_url": "/tools/ac.html",
+   "repo": "donnaskiez/ac",
+   "docs_url": "https://github.com/donnaskiez/ac",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/donnaskiez/ac && cd ac",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/donnaskiez/ac"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 688,
+    "pushedAt": "2024-08-04T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "godot-secure",
+   "name": "Godot-Secure",
+   "name_zh": "Godot-Secure",
+   "category_id": "network-engineering-defense",
+   "summary": "Godot-Secure：Godot Secure is a Simple Python Script That modify the Godot Source Code Automatically, to integrate Camellia-256 / AES-256 encryption with a unique security token system. This sol",
+   "description": "Godot-Secure：Godot Secure is a Simple Python Script That modify the Godot Source Code Automatically, to integrate Camellia-256 / AES-256 encryption with a unique security token system. This sol",
+   "detail_url": "/tools/godot-secure.html",
+   "repo": "KnifeXRage/Godot-Secure",
+   "docs_url": "https://github.com/KnifeXRage/Godot-Secure",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/KnifeXRage/Godot-Secure && cd Godot-Secure",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/KnifeXRage/Godot-Secure"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 661,
+    "pushedAt": "2026-09-06T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "ultimateanticheat",
+   "name": "UltimateAntiCheat",
+   "name_zh": "UltimateAntiCheat",
+   "category_id": "network-engineering-defense",
+   "summary": "UltimateAntiCheat：UltimateAnticheat is an open source usermode anti-cheat system made to detect and prevent common attack vectors in game cheating (C++, Windows)",
+   "description": "UltimateAntiCheat：UltimateAnticheat is an open source usermode anti-cheat system made to detect and prevent common attack vectors in game cheating (C++, Windows)",
+   "detail_url": "/tools/ultimateanticheat.html",
+   "repo": "AlSch092/UltimateAntiCheat",
+   "docs_url": "https://github.com/AlSch092/UltimateAntiCheat",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/AlSch092/UltimateAntiCheat && cd UltimateAntiCheat",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/AlSch092/UltimateAntiCheat"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 653,
+    "pushedAt": "2026-06-23T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "nomercy",
+   "name": "NoMercy",
+   "name_zh": "NoMercy",
+   "category_id": "network-engineering-defense",
+   "summary": "NoMercy：Open source anti cheat",
+   "description": "NoMercy：Open source anti cheat",
+   "detail_url": "/tools/nomercy.html",
+   "repo": "NoMercy-ac/NoMercy",
+   "docs_url": "https://github.com/NoMercy-ac/NoMercy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/NoMercy-ac/NoMercy && cd NoMercy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/NoMercy-ac/NoMercy"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 636,
+    "pushedAt": "2025-12-09T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "goofuzz",
+   "name": "GooFuzz",
+   "name_zh": "GooFuzz",
+   "category_id": "recon",
+   "summary": "GooFuzz：GooFuzz is a tool to perform fuzzing with an OSINT approach, managing to enumerate directories, files, subdomains or parameters without leaving evidence on the target's server and ",
+   "description": "GooFuzz：GooFuzz is a tool to perform fuzzing with an OSINT approach, managing to enumerate directories, files, subdomains or parameters without leaving evidence on the target's server and ",
+   "detail_url": "/tools/goofuzz.html",
+   "repo": "m3n0sd0n4ld/GooFuzz",
+   "docs_url": "https://github.com/m3n0sd0n4ld/GooFuzz",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/m3n0sd0n4ld/GooFuzz && cd GooFuzz",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/m3n0sd0n4ld/GooFuzz"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1590,
+    "pushedAt": "2025-12-21T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "anubis",
+   "name": "anubis",
+   "name_zh": "anubis",
+   "category_id": "recon",
+   "summary": "anubis：Subdomain enumeration tool",
+   "description": "anubis：Subdomain enumeration tool",
+   "detail_url": "/tools/anubis.html",
+   "repo": "jonluca/anubis",
+   "docs_url": "https://github.com/jonluca/anubis",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/jonluca/anubis && cd anubis",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/jonluca/anubis"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1381,
+    "pushedAt": "2026-08-03T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "webcopilot",
+   "name": "webcopilot",
+   "name_zh": "webcopilot",
+   "category_id": "recon",
+   "summary": "webcopilot：An automation tool that enumerates subdomains then filters out xss, sqli, open redirect, lfi, ssrf and rce parameters and then scans for vulnerabilities.",
+   "description": "webcopilot：An automation tool that enumerates subdomains then filters out xss, sqli, open redirect, lfi, ssrf and rce parameters and then scans for vulnerabilities.",
+   "detail_url": "/tools/webcopilot.html",
+   "repo": "h4r5h1t/webcopilot",
+   "docs_url": "https://github.com/h4r5h1t/webcopilot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/h4r5h1t/webcopilot && cd webcopilot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/h4r5h1t/webcopilot"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1294,
+    "pushedAt": "2024-07-18T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "scilla",
+   "name": "scilla",
+   "name_zh": "scilla",
+   "category_id": "recon",
+   "summary": "scilla：Information Gathering tool - DNS / Subdomains / Ports / Directories enumeration",
+   "description": "scilla：Information Gathering tool - DNS / Subdomains / Ports / Directories enumeration",
+   "detail_url": "/tools/scilla.html",
+   "repo": "edoardottt/scilla",
+   "docs_url": "https://github.com/edoardottt/scilla",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/edoardottt/scilla && cd scilla",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/edoardottt/scilla"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1272,
+    "pushedAt": "2026-10-02T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "ksubdomain",
+   "name": "ksubdomain",
+   "name_zh": "ksubdomain",
+   "category_id": "recon",
+   "summary": "ksubdomain：Subdomain enumeration tool, asynchronous dns packets, use pcap to scan 1600,000 subdomains in 1 second",
+   "description": "ksubdomain：Subdomain enumeration tool, asynchronous dns packets, use pcap to scan 1600,000 subdomains in 1 second",
+   "detail_url": "/tools/ksubdomain.html",
+   "repo": "boy-hack/ksubdomain",
+   "docs_url": "https://github.com/boy-hack/ksubdomain",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/boy-hack/ksubdomain && cd ksubdomain",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/boy-hack/ksubdomain"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1228,
+    "pushedAt": "2026-03-27T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "mantis",
+   "name": "mantis",
+   "name_zh": "mantis",
+   "category_id": "recon",
+   "summary": "mantis：Mantis is a security framework that automates the workflow of discovery, reconnaissance, and vulnerability scanning.",
+   "description": "mantis：Mantis is a security framework that automates the workflow of discovery, reconnaissance, and vulnerability scanning.",
+   "detail_url": "/tools/mantis.html",
+   "repo": "PhonePe/mantis",
+   "docs_url": "https://github.com/PhonePe/mantis",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/PhonePe/mantis && cd mantis",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/PhonePe/mantis"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1038,
+    "pushedAt": "2026-07-07T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "subscraper",
+   "name": "subscraper",
+   "name_zh": "subscraper",
+   "category_id": "recon",
+   "summary": "subscraper：Subdomain and target enumeration tool built for offensive security testing",
+   "description": "subscraper：Subdomain and target enumeration tool built for offensive security testing",
+   "detail_url": "/tools/subscraper.html",
+   "repo": "m8sec/subscraper",
+   "docs_url": "https://github.com/m8sec/subscraper",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/m8sec/subscraper && cd subscraper",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/m8sec/subscraper"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 977,
+    "pushedAt": "2024-06-19T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "urlfinder",
+   "name": "urlfinder",
+   "name_zh": "urlfinder",
+   "category_id": "recon",
+   "summary": "urlfinder：A high-speed tool for passively gathering URLs, optimized for efficient and comprehensive web asset discovery without active scanning.",
+   "description": "urlfinder：A high-speed tool for passively gathering URLs, optimized for efficient and comprehensive web asset discovery without active scanning.",
+   "detail_url": "/tools/urlfinder.html",
+   "repo": "projectdiscovery/urlfinder",
+   "docs_url": "https://github.com/projectdiscovery/urlfinder",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/projectdiscovery/urlfinder && cd urlfinder",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/projectdiscovery/urlfinder"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 918,
+    "pushedAt": "2026-09-14T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "yarp",
+   "name": "yarp",
+   "name_zh": "yarp",
+   "category_id": "tunnel",
+   "summary": "yarp：A toolkit for developing high-performance HTTP reverse proxy applications.",
+   "description": "yarp：A toolkit for developing high-performance HTTP reverse proxy applications.",
+   "detail_url": "/tools/yarp.html",
+   "repo": "dotnet/yarp",
+   "docs_url": "https://github.com/dotnet/yarp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/dotnet/yarp && cd yarp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/dotnet/yarp"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 9628,
+    "pushedAt": "2026-10-12T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cors-anywhere",
+   "name": "cors-anywhere",
+   "name_zh": "cors-anywhere",
+   "category_id": "tunnel",
+   "summary": "cors-anywhere：CORS Anywhere is a NodeJS reverse proxy which adds CORS headers to the proxied request.",
+   "description": "cors-anywhere：CORS Anywhere is a NodeJS reverse proxy which adds CORS headers to the proxied request.",
+   "detail_url": "/tools/cors-anywhere.html",
+   "repo": "Rob--W/cors-anywhere",
+   "docs_url": "https://github.com/Rob--W/cors-anywhere",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Rob--W/cors-anywhere && cd cors-anywhere",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Rob--W/cors-anywhere"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 9364,
+    "pushedAt": "2024-08-16T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "lamda",
+   "name": "lamda",
+   "name_zh": "lamda",
+   "category_id": "tunnel",
+   "summary": "lamda：Android Full-Stack Device Control Platform: WebRTC/H.264 remote desktop, UI/OCR/image-matching automation, one-click MITM, built-in Frida, proxy/VPN/frp/P2P networking, MCP/Agent, ",
+   "description": "lamda：Android Full-Stack Device Control Platform: WebRTC/H.264 remote desktop, UI/OCR/image-matching automation, one-click MITM, built-in Frida, proxy/VPN/frp/P2P networking, MCP/Agent, ",
+   "detail_url": "/tools/lamda.html",
+   "repo": "firerpa/lamda",
+   "docs_url": "https://github.com/firerpa/lamda",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/firerpa/lamda && cd lamda",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/firerpa/lamda"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 8610,
+    "pushedAt": "2026-09-27T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "trojan-go",
+   "name": "trojan-go",
+   "name_zh": "trojan-go",
+   "category_id": "tunnel",
+   "summary": "trojan-go：Go实现的Trojan代理，支持多路复用/路由功能/CDN中转/Shadowsocks混淆插件，多平台，无依赖。A Trojan proxy written in Go. An unidentifiable mechanism that helps you bypass GFW. https://p4gefau1t.github.io/trojan-go/",
+   "description": "trojan-go：Go实现的Trojan代理，支持多路复用/路由功能/CDN中转/Shadowsocks混淆插件，多平台，无依赖。A Trojan proxy written in Go. An unidentifiable mechanism that helps you bypass GFW. https://p4gefau1t.github.io/trojan-go/",
+   "detail_url": "/tools/trojan-go.html",
+   "repo": "p4gefau1t/trojan-go",
+   "docs_url": "https://github.com/p4gefau1t/trojan-go",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/p4gefau1t/trojan-go && cd trojan-go",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/p4gefau1t/trojan-go"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 8385,
+    "pushedAt": "2024-07-14T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "blocky",
+   "name": "blocky",
+   "name_zh": "blocky",
+   "category_id": "tunnel",
+   "summary": "blocky：Fast and lightweight DNS proxy as ad-blocker for local network with many features",
+   "description": "blocky：Fast and lightweight DNS proxy as ad-blocker for local network with many features",
+   "detail_url": "/tools/blocky.html",
+   "repo": "0xERR0R/blocky",
+   "docs_url": "https://github.com/0xERR0R/blocky",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/0xERR0R/blocky && cd blocky",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/0xERR0R/blocky"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 7028,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "clashmac",
+   "name": "ClashMac",
+   "name_zh": "ClashMac",
+   "category_id": "tunnel",
+   "summary": "ClashMac：Native Proxy Experience Built for macOS",
+   "description": "ClashMac：Native Proxy Experience Built for macOS",
+   "detail_url": "/tools/clashmac.html",
+   "repo": "666OS/ClashMac",
+   "docs_url": "https://github.com/666OS/ClashMac",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/666OS/ClashMac && cd ClashMac",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/666OS/ClashMac"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 6319,
+    "pushedAt": "2026-09-29T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "wireproxy",
+   "name": "wireproxy",
+   "name_zh": "wireproxy",
+   "category_id": "tunnel",
+   "summary": "wireproxy：Wireguard client that exposes itself as a socks5 proxy",
+   "description": "wireproxy：Wireguard client that exposes itself as a socks5 proxy",
+   "detail_url": "/tools/wireproxy.html",
+   "repo": "windtf/wireproxy",
+   "docs_url": "https://github.com/windtf/wireproxy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/windtf/wireproxy && cd wireproxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/windtf/wireproxy"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5842,
+    "pushedAt": "2026-10-12T00:00:00Z",
+    "license": "ISC"
+   }
+  },
+  {
+   "slug": "telemt",
+   "name": "telemt",
+   "name_zh": "telemt",
+   "category_id": "tunnel",
+   "summary": "telemt：MTProxy for Telegram on Rust + Tokio",
+   "description": "telemt：MTProxy for Telegram on Rust + Tokio",
+   "detail_url": "/tools/telemt.html",
+   "repo": "telemt/telemt",
+   "docs_url": "https://github.com/telemt/telemt",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/telemt/telemt && cd telemt",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/telemt/telemt"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5738,
+    "pushedAt": "2026-10-10T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "nodejsscan",
+   "name": "nodejsscan",
+   "name_zh": "nodejsscan",
+   "category_id": "vuln",
+   "summary": "nodejsscan：nodejsscan is a static security code scanner for Node.js applications.",
+   "description": "nodejsscan：nodejsscan is a static security code scanner for Node.js applications.",
+   "detail_url": "/tools/nodejsscan.html",
+   "repo": "ajinabraham/nodejsscan",
+   "docs_url": "https://github.com/ajinabraham/nodejsscan",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ajinabraham/nodejsscan && cd nodejsscan",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ajinabraham/nodejsscan"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 2577,
+    "pushedAt": "2026-09-21T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "fossa-cli",
+   "name": "fossa-cli",
+   "name_zh": "fossa-cli",
+   "category_id": "vuln",
+   "summary": "fossa-cli：Fast, portable and reliable dependency analysis for any codebase.  Supports license & vulnerability scanning for large monoliths.  Language-agnostic; integrates with 20+ build syst",
+   "description": "fossa-cli：Fast, portable and reliable dependency analysis for any codebase.  Supports license & vulnerability scanning for large monoliths.  Language-agnostic; integrates with 20+ build syst",
+   "detail_url": "/tools/fossa-cli.html",
+   "repo": "fossas/fossa-cli",
+   "docs_url": "https://github.com/fossas/fossa-cli",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/fossas/fossa-cli && cd fossa-cli",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/fossas/fossa-cli"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1523,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "pip-audit",
+   "name": "pip-audit",
+   "name_zh": "pip-audit",
+   "category_id": "vuln",
+   "summary": "pip-audit：Audits Python environments, requirements files and dependency trees for known security vulnerabilities, and can automatically fix them",
+   "description": "pip-audit：Audits Python environments, requirements files and dependency trees for known security vulnerabilities, and can automatically fix them",
+   "detail_url": "/tools/pip-audit.html",
+   "repo": "pypa/pip-audit",
+   "docs_url": "https://github.com/pypa/pip-audit",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/pypa/pip-audit && cd pip-audit",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/pypa/pip-audit"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1381,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "horusec",
+   "name": "horusec",
+   "name_zh": "horusec",
+   "category_id": "vuln",
+   "summary": "horusec：Horusec is an open source tool that improves identification of vulnerabilities in your project with just one command.",
+   "description": "horusec：Horusec is an open source tool that improves identification of vulnerabilities in your project with just one command.",
+   "detail_url": "/tools/horusec.html",
+   "repo": "ZupIT/horusec",
+   "docs_url": "https://github.com/ZupIT/horusec",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ZupIT/horusec && cd horusec",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ZupIT/horusec"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1346,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "dependency-review-action",
+   "name": "dependency-review-action",
+   "name_zh": "dependency-review-action",
+   "category_id": "vuln",
+   "summary": "dependency-review-action：A GitHub Action for detecting vulnerable dependencies and invalid licenses in your PRs",
+   "description": "dependency-review-action：A GitHub Action for detecting vulnerable dependencies and invalid licenses in your PRs",
+   "detail_url": "/tools/dependency-review-action.html",
+   "repo": "actions/dependency-review-action",
+   "docs_url": "https://github.com/actions/dependency-review-action",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/actions/dependency-review-action && cd dependency-review-action",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/actions/dependency-review-action"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 906,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "skylos",
+   "name": "skylos",
+   "name_zh": "skylos",
+   "category_id": "vuln",
+   "summary": "skylos：Open source local-first PR scanner that finds dead code, security bugs, secrets, quality regressions, and AI-code mistakes before merge. For first timers refer to https://duriantac",
+   "description": "skylos：Open source local-first PR scanner that finds dead code, security bugs, secrets, quality regressions, and AI-code mistakes before merge. For first timers refer to https://duriantac",
+   "detail_url": "/tools/skylos.html",
+   "repo": "duriantaco/skylos",
+   "docs_url": "https://github.com/duriantaco/skylos",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/duriantaco/skylos && cd skylos",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/duriantaco/skylos"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 847,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "confused",
+   "name": "confused",
+   "name_zh": "confused",
+   "category_id": "vuln",
+   "summary": "confused：Tool to check for dependency confusion vulnerabilities in multiple package management systems",
+   "description": "confused：Tool to check for dependency confusion vulnerabilities in multiple package management systems",
+   "detail_url": "/tools/confused.html",
+   "repo": "visma-prodsec/confused",
+   "docs_url": "https://github.com/visma-prodsec/confused",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/visma-prodsec/confused && cd confused",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/visma-prodsec/confused"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 790,
+    "pushedAt": "2024-08-19T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cve-lite-cli",
+   "name": "cve-lite-cli",
+   "name_zh": "cve-lite-cli",
+   "category_id": "vuln",
+   "summary": "cve-lite-cli：Fast, developer-friendly JS/TS dependency vulnerability scanner with local lockfile scanning, OSV matching, direct vs transitive visibility, --fix, JSON output, and practical remed",
+   "description": "cve-lite-cli：Fast, developer-friendly JS/TS dependency vulnerability scanner with local lockfile scanning, OSV matching, direct vs transitive visibility, --fix, JSON output, and practical remed",
+   "detail_url": "/tools/cve-lite-cli.html",
+   "repo": "OWASP/cve-lite-cli",
+   "docs_url": "https://github.com/OWASP/cve-lite-cli",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/OWASP/cve-lite-cli && cd cve-lite-cli",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/OWASP/cve-lite-cli"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 769,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "conpot",
+   "name": "conpot",
+   "name_zh": "conpot",
+   "category_id": "defense",
+   "summary": "conpot：ICS/SCADA honeypot",
+   "description": "conpot：ICS/SCADA honeypot",
+   "detail_url": "/tools/conpot.html",
+   "repo": "mushorg/conpot",
+   "docs_url": "https://github.com/mushorg/conpot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/mushorg/conpot && cd conpot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/mushorg/conpot"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1531,
+    "pushedAt": "2026-10-12T00:00:00Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "acra",
+   "name": "acra",
+   "name_zh": "acra",
+   "category_id": "defense",
+   "summary": "acra：Database security suite. Database proxy with field-level encryption, search through encrypted data, SQL injections prevention, intrusion detection, honeypots. Supports client-side ",
+   "description": "acra：Database security suite. Database proxy with field-level encryption, search through encrypted data, SQL injections prevention, intrusion detection, honeypots. Supports client-side ",
+   "detail_url": "/tools/acra.html",
+   "repo": "cossacklabs/acra",
+   "docs_url": "https://github.com/cossacklabs/acra",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/cossacklabs/acra && cd acra",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/cossacklabs/acra"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1492,
+    "pushedAt": "2026-04-23T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "invisible-captcha",
+   "name": "invisible_captcha",
+   "name_zh": "invisible_captcha",
+   "category_id": "defense",
+   "summary": "invisible_captcha：🍯 Unobtrusive and flexible spam protection for Rails apps",
+   "description": "invisible_captcha：🍯 Unobtrusive and flexible spam protection for Rails apps",
+   "detail_url": "/tools/invisible-captcha.html",
+   "repo": "markets/invisible_captcha",
+   "docs_url": "https://github.com/markets/invisible_captcha",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/markets/invisible_captcha && cd invisible_captcha",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/markets/invisible_captcha"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1253,
+    "pushedAt": "2026-07-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "hellpot",
+   "name": "HellPot",
+   "name_zh": "HellPot",
+   "category_id": "defense",
+   "summary": "HellPot：HellPot is a cross-platform portal to endless suffering meant to punish unruly HTTP bots.",
+   "description": "HellPot：HellPot is a cross-platform portal to endless suffering meant to punish unruly HTTP bots.",
+   "detail_url": "/tools/hellpot.html",
+   "repo": "yunginnanet/HellPot",
+   "docs_url": "https://github.com/yunginnanet/HellPot",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yunginnanet/HellPot && cd HellPot",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yunginnanet/HellPot"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1159,
+    "pushedAt": "2025-12-19T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "ddos-rootsec",
+   "name": "DDOS-RootSec",
+   "name_zh": "DDOS-RootSec",
+   "category_id": "defense",
+   "summary": "DDOS-RootSec：Explore RootSec's DDOS Archive, featuring top-tier scanners, powerful botnets (Mirai & QBot) and other variants, high-impact exploits, advanced methods, and efficient sniffers. Ide",
+   "description": "DDOS-RootSec：Explore RootSec's DDOS Archive, featuring top-tier scanners, powerful botnets (Mirai & QBot) and other variants, high-impact exploits, advanced methods, and efficient sniffers. Ide",
+   "detail_url": "/tools/ddos-rootsec.html",
+   "repo": "R00tS3c/DDOS-RootSec",
+   "docs_url": "https://github.com/R00tS3c/DDOS-RootSec",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/R00tS3c/DDOS-RootSec && cd DDOS-RootSec",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/R00tS3c/DDOS-RootSec"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1065,
+    "pushedAt": "2024-10-03T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "honeypots",
+   "name": "honeypots",
+   "name_zh": "honeypots",
+   "category_id": "defense",
+   "summary": "honeypots：30 different honeypots in one package! (dhcp, dns, elastic, ftp, http proxy, https proxy, http, https, imap, ipp, irc, ldap, memcache, mssql, mysql, ntp, oracle, pjl, pop3, postgre",
+   "description": "honeypots：30 different honeypots in one package! (dhcp, dns, elastic, ftp, http proxy, https proxy, http, https, imap, ipp, irc, ldap, memcache, mssql, mysql, ntp, oracle, pjl, pop3, postgre",
+   "detail_url": "/tools/honeypots.html",
+   "repo": "qeeqbox/honeypots",
+   "docs_url": "https://github.com/qeeqbox/honeypots",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/qeeqbox/honeypots && cd honeypots",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/qeeqbox/honeypots"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 988,
+    "pushedAt": "2025-12-03T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "fastapi-guard",
+   "name": "fastapi-guard",
+   "name_zh": "fastapi-guard",
+   "category_id": "defense",
+   "summary": "fastapi-guard：A security library for FastAPI that provides middleware to control IPs, log requests, detect penetration attempts, honeypot setup, behavioural analysis, emergency mode lockdown, bl",
+   "description": "fastapi-guard：A security library for FastAPI that provides middleware to control IPs, log requests, detect penetration attempts, honeypot setup, behavioural analysis, emergency mode lockdown, bl",
+   "detail_url": "/tools/fastapi-guard.html",
+   "repo": "Guard-Core/fastapi-guard",
+   "docs_url": "https://github.com/Guard-Core/fastapi-guard",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Guard-Core/fastapi-guard && cd fastapi-guard",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Guard-Core/fastapi-guard"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 825,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "dionaea",
+   "name": "dionaea",
+   "name_zh": "dionaea",
+   "category_id": "defense",
+   "summary": "dionaea：Home of the dionaea honeypot",
+   "description": "dionaea：Home of the dionaea honeypot",
+   "detail_url": "/tools/dionaea.html",
+   "repo": "DinoTools/dionaea",
+   "docs_url": "https://github.com/DinoTools/dionaea",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/DinoTools/dionaea && cd dionaea",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/DinoTools/dionaea"
+   },
+   "labels": [
+    "defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 817,
+    "pushedAt": "2024-08-01T00:00:00Z",
+    "license": "GPL-2.0"
+   }
+  },
+  {
+   "slug": "ksword",
+   "name": "KSword",
+   "name_zh": "KSword",
+   "category_id": "network-engineering-defense",
+   "summary": "KSword：[Windows Anti-Rootkit] KSword 5.1 is an source-available Windows toolkit for ARK, kernel debugging, and system forensics.  KSword 5.1 是面向 Windows 的源码可见 ARK、内核调试与系统取证工具集。",
+   "description": "KSword：[Windows Anti-Rootkit] KSword 5.1 is an source-available Windows toolkit for ARK, kernel debugging, and system forensics.  KSword 5.1 是面向 Windows 的源码可见 ARK、内核调试与系统取证工具集。",
+   "detail_url": "/tools/ksword.html",
+   "repo": "KSwordDEV/KSword",
+   "docs_url": "https://github.com/KSwordDEV/KSword",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/KSwordDEV/KSword && cd KSword",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/KSwordDEV/KSword"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 541,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "js-confuser",
+   "name": "js-confuser",
+   "name_zh": "js-confuser",
+   "category_id": "network-engineering-defense",
+   "summary": "js-confuser：JS-Confuser is a JavaScript obfuscation tool to make your programs *impossible* to read.",
+   "description": "js-confuser：JS-Confuser is a JavaScript obfuscation tool to make your programs *impossible* to read.",
+   "detail_url": "/tools/js-confuser.html",
+   "repo": "MichaelXF/js-confuser",
+   "docs_url": "https://github.com/MichaelXF/js-confuser",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/MichaelXF/js-confuser && cd js-confuser",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/MichaelXF/js-confuser"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 525,
+    "pushedAt": "2026-08-14T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "areweanticheatyet",
+   "name": "AreWeAntiCheatYet",
+   "name_zh": "AreWeAntiCheatYet",
+   "category_id": "network-engineering-defense",
+   "summary": "AreWeAntiCheatYet：A comprehensive and crowd-sourced list of games using anti-cheats and their compatibility with GNU/Linux or Wine.",
+   "description": "AreWeAntiCheatYet：A comprehensive and crowd-sourced list of games using anti-cheats and their compatibility with GNU/Linux or Wine.",
+   "detail_url": "/tools/areweanticheatyet.html",
+   "repo": "AreWeAntiCheatYet/AreWeAntiCheatYet",
+   "docs_url": "https://github.com/AreWeAntiCheatYet/AreWeAntiCheatYet",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/AreWeAntiCheatYet/AreWeAntiCheatYet && cd AreWeAntiCheatYet",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/AreWeAntiCheatYet/AreWeAntiCheatYet"
+   },
+   "labels": [
+    "network-engineering-defense",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 510,
+    "pushedAt": "2026-10-13T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "xingrin",
+   "name": "xingrin",
+   "name_zh": "xingrin",
+   "category_id": "recon",
+   "summary": "xingrin：Open-source attack surface management and authorized security automation platform for asset discovery, service probing, scan orchestration, and security result management.",
+   "description": "xingrin：Open-source attack surface management and authorized security automation platform for asset discovery, service probing, scan orchestration, and security result management.",
+   "detail_url": "/tools/xingrin.html",
+   "repo": "yyhuni/xingrin",
+   "docs_url": "https://github.com/yyhuni/xingrin",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yyhuni/xingrin && cd xingrin",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yyhuni/xingrin"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 668,
+    "pushedAt": "2026-09-21T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "gpt-vuln-analyzer",
+   "name": "GPT_Vuln-analyzer",
+   "name_zh": "GPT_Vuln-analyzer",
+   "category_id": "recon",
+   "summary": "GPT_Vuln-analyzer：Uses ChatGPT API, Bard API, and Llama2, Python-Nmap, DNS Recon, PCAP and JWT recon modules and uses the GPT3 model to create vulnerability reports based on Nmap scan data, and DNS ",
+   "description": "GPT_Vuln-analyzer：Uses ChatGPT API, Bard API, and Llama2, Python-Nmap, DNS Recon, PCAP and JWT recon modules and uses the GPT3 model to create vulnerability reports based on Nmap scan data, and DNS ",
+   "detail_url": "/tools/gpt-vuln-analyzer.html",
+   "repo": "morpheuslord/GPT_Vuln-analyzer",
+   "docs_url": "https://github.com/morpheuslord/GPT_Vuln-analyzer",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/morpheuslord/GPT_Vuln-analyzer && cd GPT_Vuln-analyzer",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/morpheuslord/GPT_Vuln-analyzer"
+   },
+   "labels": [
+    "recon",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 598,
+    "pushedAt": "2026-09-25T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "modlishka",
+   "name": "Modlishka",
+   "name_zh": "Modlishka",
+   "category_id": "tunnel",
+   "summary": "Modlishka：Modlishka. Reverse Proxy.",
+   "description": "Modlishka：Modlishka. Reverse Proxy.",
+   "detail_url": "/tools/modlishka.html",
+   "repo": "drk1wi/Modlishka",
+   "docs_url": "https://github.com/drk1wi/Modlishka",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/drk1wi/Modlishka && cd Modlishka",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/drk1wi/Modlishka"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5428,
+    "pushedAt": "2026-08-14T00:00:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "udpspeeder",
+   "name": "UDPspeeder",
+   "name_zh": "UDPspeeder",
+   "category_id": "tunnel",
+   "summary": "UDPspeeder：A Tunnel which Improves your Network Quality on a High-latency Lossy Link by using Forward Error Correction, possible for All Traffics(TCP/UDP/ICMP)",
+   "description": "UDPspeeder：A Tunnel which Improves your Network Quality on a High-latency Lossy Link by using Forward Error Correction, possible for All Traffics(TCP/UDP/ICMP)",
+   "detail_url": "/tools/udpspeeder.html",
+   "repo": "wangyu-/UDPspeeder",
+   "docs_url": "https://github.com/wangyu-/UDPspeeder",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/wangyu-/UDPspeeder && cd UDPspeeder",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/wangyu-/UDPspeeder"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5183,
+    "pushedAt": "2026-07-31T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "port-killer",
+   "name": "port-killer",
+   "name_zh": "port-killer",
+   "category_id": "tunnel",
+   "summary": "port-killer：A powerful cross-platform port management tool for developers. Monitor ports, manage Kubernetes port forwards, integrate Cloudflare Tunnels, and kill processes with one click.",
+   "description": "port-killer：A powerful cross-platform port management tool for developers. Monitor ports, manage Kubernetes port forwards, integrate Cloudflare Tunnels, and kill processes with one click.",
+   "detail_url": "/tools/port-killer.html",
+   "repo": "productdevbook/port-killer",
+   "docs_url": "https://github.com/productdevbook/port-killer",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/productdevbook/port-killer && cd port-killer",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/productdevbook/port-killer"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 5106,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "caddy-docker-proxy",
+   "name": "caddy-docker-proxy",
+   "name_zh": "caddy-docker-proxy",
+   "category_id": "tunnel",
+   "summary": "caddy-docker-proxy：Caddy as a reverse proxy for Docker",
+   "description": "caddy-docker-proxy：Caddy as a reverse proxy for Docker",
+   "detail_url": "/tools/caddy-docker-proxy.html",
+   "repo": "lucaslorentz/caddy-docker-proxy",
+   "docs_url": "https://github.com/lucaslorentz/caddy-docker-proxy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/lucaslorentz/caddy-docker-proxy && cd caddy-docker-proxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/lucaslorentz/caddy-docker-proxy"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4730,
+    "pushedAt": "2026-10-14T00:00:00Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "mosn",
+   "name": "mosn",
+   "name_zh": "mosn",
+   "category_id": "tunnel",
+   "summary": "mosn：The Cloud-Native Network Proxy Platform",
+   "description": "mosn：The Cloud-Native Network Proxy Platform",
+   "detail_url": "/tools/mosn.html",
+   "repo": "mosn/mosn",
+   "docs_url": "https://github.com/mosn/mosn",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/mosn/mosn && cd mosn",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/mosn/mosn"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4508,
+    "pushedAt": "2026-07-14T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "redbird",
+   "name": "redbird",
+   "name_zh": "redbird",
+   "category_id": "tunnel",
+   "summary": "redbird：A modern reverse proxy for node",
+   "description": "redbird：A modern reverse proxy for node",
+   "detail_url": "/tools/redbird.html",
+   "repo": "OptimalBits/redbird",
+   "docs_url": "https://github.com/OptimalBits/redbird",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/OptimalBits/redbird && cd redbird",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/OptimalBits/redbird"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4411,
+    "pushedAt": "2024-09-30T00:00:00Z",
+    "license": "BSD-2-Clause"
+   }
+  },
+  {
+   "slug": "godoxy",
+   "name": "godoxy",
+   "name_zh": "godoxy",
+   "category_id": "tunnel",
+   "summary": "godoxy：High-performance reverse proxy and container orchestrator for self-hosters",
+   "description": "godoxy：High-performance reverse proxy and container orchestrator for self-hosters",
+   "detail_url": "/tools/godoxy.html",
+   "repo": "yusing/godoxy",
+   "docs_url": "https://github.com/yusing/godoxy",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/yusing/godoxy && cd godoxy",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/yusing/godoxy"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4161,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "sozu",
+   "name": "sozu",
+   "name_zh": "sozu",
+   "category_id": "tunnel",
+   "summary": "sozu：Sōzu HTTP reverse proxy, configurable at runtime, fast and safe, built in Rust. It is awesome!",
+   "description": "sozu：Sōzu HTTP reverse proxy, configurable at runtime, fast and safe, built in Rust. It is awesome!",
+   "detail_url": "/tools/sozu.html",
+   "repo": "sozu-proxy/sozu",
+   "docs_url": "https://github.com/sozu-proxy/sozu",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/sozu-proxy/sozu && cd sozu",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/sozu-proxy/sozu"
+   },
+   "labels": [
+    "tunnel",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 3742,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "vulnhunter",
+   "name": "VulnHunter",
+   "name_zh": "VulnHunter",
+   "category_id": "vuln",
+   "summary": "VulnHunter：Agentic AI security scanner that hunts exploitable vulnerabilities like an adversary, proves them with executable PoCs, and fixes them test-first. A maintained fork of Capital One'",
+   "description": "VulnHunter：Agentic AI security scanner that hunts exploitable vulnerabilities like an adversary, proves them with executable PoCs, and fixes them test-first. A maintained fork of Capital One'",
+   "detail_url": "/tools/vulnhunter.html",
+   "repo": "nealbridges/VulnHunter",
+   "docs_url": "https://github.com/nealbridges/VulnHunter",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/nealbridges/VulnHunter && cd VulnHunter",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/nealbridges/VulnHunter"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 731,
+    "pushedAt": "2026-10-14T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "openqodex",
+   "name": "openqodex",
+   "name_zh": "openqodex",
+   "category_id": "vuln",
+   "summary": "openqodex：Open source code review that runs in your coding agent before you push. Scanners plus a separate AI reviewer, on your own login, no key.",
+   "description": "openqodex：Open source code review that runs in your coding agent before you push. Scanners plus a separate AI reviewer, on your own login, no key.",
+   "detail_url": "/tools/openqodex.html",
+   "repo": "openqodex/openqodex",
+   "docs_url": "https://github.com/openqodex/openqodex",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/openqodex/openqodex && cd openqodex",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/openqodex/openqodex"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 716,
+    "pushedAt": "2026-10-15T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "automated-security-helper",
+   "name": "automated-security-helper",
+   "name_zh": "automated-security-helper",
+   "category_id": "vuln",
+   "summary": "automated-security-helper：ASH is an extensible, open source SAST, SCA, and IaC security scanner orchestration engine.",
+   "description": "automated-security-helper：ASH is an extensible, open source SAST, SCA, and IaC security scanner orchestration engine.",
+   "detail_url": "/tools/automated-security-helper.html",
+   "repo": "awslabs/automated-security-helper",
+   "docs_url": "https://github.com/awslabs/automated-security-helper",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/awslabs/automated-security-helper && cd automated-security-helper",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/awslabs/automated-security-helper"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 704,
+    "pushedAt": "2026-10-16T00:00:00Z",
+    "license": "Apache-2.0"
+   }
+  },
+  {
+   "slug": "packj",
+   "name": "packj",
+   "name_zh": "packj",
+   "category_id": "vuln",
+   "summary": "packj：Packj stops :zap: Solarwinds-, ESLint-, and PyTorch-like attacks by flagging malicious/vulnerable open-source dependencies (\"weak links\") in your software supply-chain",
+   "description": "packj：Packj stops :zap: Solarwinds-, ESLint-, and PyTorch-like attacks by flagging malicious/vulnerable open-source dependencies (\"weak links\") in your software supply-chain",
+   "detail_url": "/tools/packj.html",
+   "repo": "ossillate-inc/packj",
+   "docs_url": "https://github.com/ossillate-inc/packj",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ossillate-inc/packj && cd packj",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ossillate-inc/packj"
+   },
+   "labels": [
+    "vuln",
+    "source"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 694,
+    "pushedAt": "2026-09-17T00:00:00Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "pcileech",
+   "name": "pcileech",
+   "name_zh": "DMA 内存访问",
+   "category_id": "memory-process",
+   "summary": "PCILeech:DMA 硬件直连内存读写框架,通过 PCIe 设备绕过操作系统直接访问物理内存,用于内存取证与底层分析。",
+   "description": "PCILeech:DMA 硬件直连内存读写框架,通过 PCIe 设备绕过操作系统直接访问物理内存,用于内存取证与底层分析。",
+   "detail_url": "/tools/pcileech.html",
+   "repo": "ufrisk/pcileech",
+   "docs_url": "https://github.com/ufrisk/pcileech",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ufrisk/pcileech && cd pcileech",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ufrisk/pcileech"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 7953,
+    "pushedAt": "2026-10-05T17:36:17Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "memprocfs",
+   "name": "MemProcFS",
+   "name_zh": "内存文件系统",
+   "category_id": "memory-process",
+   "summary": "MemProcFS:把物理内存映射为文件系统,支持进程/模块/句柄枚举与内存转储,DMA 场景下的核心分析组件。",
+   "description": "MemProcFS:把物理内存映射为文件系统,支持进程/模块/句柄枚举与内存转储,DMA 场景下的核心分析组件。",
+   "detail_url": "/tools/memprocfs.html",
+   "repo": "ufrisk/MemProcFS",
+   "docs_url": "https://github.com/ufrisk/MemProcFS",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ufrisk/MemProcFS && cd MemProcFS",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ufrisk/MemProcFS"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 4374,
+    "pushedAt": "2026-10-05T18:12:04Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "pcileech-fpga",
+   "name": "pcileech-fpga",
+   "name_zh": "DMA FPGA 固件",
+   "category_id": "memory-process",
+   "summary": "PCILeech FPGA:配套 DMA 设备的 FPGA 固件模块集,覆盖多种板卡与接口形态。",
+   "description": "PCILeech FPGA:配套 DMA 设备的 FPGA 固件模块集,覆盖多种板卡与接口形态。",
+   "detail_url": "/tools/pcileech-fpga.html",
+   "repo": "ufrisk/pcileech-fpga",
+   "docs_url": "https://github.com/ufrisk/pcileech-fpga",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ufrisk/pcileech-fpga && cd pcileech-fpga",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ufrisk/pcileech-fpga"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1836,
+    "pushedAt": "2026-04-08T21:04:38Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "lovelymem",
+   "name": "LovelyMem",
+   "name_zh": "内存取证可视化",
+   "category_id": "memory-process",
+   "summary": "LovelyMem:基于 MemProcFS 与 Volatility 的可视化内存取证工具,图形化浏览进程、模块与转储结果。",
+   "description": "LovelyMem:基于 MemProcFS 与 Volatility 的可视化内存取证工具,图形化浏览进程、模块与转储结果。",
+   "detail_url": "/tools/lovelymem.html",
+   "repo": "Tokeii0/LovelyMem",
+   "docs_url": "https://github.com/Tokeii0/LovelyMem",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Tokeii0/LovelyMem && cd LovelyMem",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Tokeii0/LovelyMem"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1760,
+    "pushedAt": "2026-08-10T11:07:58Z",
+    "license": "AGPL-3.0"
+   }
+  },
+  {
+   "slug": "aceldr",
+   "name": "AceLdr",
+   "name_zh": "内存扫描规避",
+   "category_id": "memory-process",
+   "summary": "AceLdr:Cobalt Strike UDRL,针对内存扫描器做载荷布局与特征规避,研究内存检测对抗的参考实现。",
+   "description": "AceLdr:Cobalt Strike UDRL,针对内存扫描器做载荷布局与特征规避,研究内存检测对抗的参考实现。",
+   "detail_url": "/tools/aceldr.html",
+   "repo": "kyleavery/AceLdr",
+   "docs_url": "https://github.com/kyleavery/AceLdr",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/kyleavery/AceLdr && cd AceLdr",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/kyleavery/AceLdr"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 1033,
+    "pushedAt": "2024-06-04T16:45:42Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "hyper-rev",
+   "name": "hyper-reV",
+   "name_zh": "内存自省虚拟机",
+   "category_id": "memory-process",
+   "summary": "hyper-reV:面向内存自省与逆向的 Hypervisor 项目,提供受控内存视图与断点能力。",
+   "description": "hyper-reV:面向内存自省与逆向的 Hypervisor 项目,提供受控内存视图与断点能力。",
+   "detail_url": "/tools/hyper-rev.html",
+   "repo": "noahware/hyper-reV",
+   "docs_url": "https://github.com/noahware/hyper-reV",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/noahware/hyper-reV && cd hyper-reV",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/noahware/hyper-reV"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 806,
+    "pushedAt": "2026-07-24T10:00:36Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "dmalibrary",
+   "name": "DMALibrary",
+   "name_zh": "DMA 开发库",
+   "category_id": "memory-process",
+   "summary": "DMALibrary:面向 DMA 开发者的 C 库,封装设备枚举、内存读写与进程模块解析。",
+   "description": "DMALibrary:面向 DMA 开发者的 C 库,封装设备枚举、内存读写与进程模块解析。",
+   "detail_url": "/tools/dmalibrary.html",
+   "repo": "Metick/DMALibrary",
+   "docs_url": "https://github.com/Metick/DMALibrary",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Metick/DMALibrary && cd DMALibrary",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Metick/DMALibrary"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 715,
+    "pushedAt": "2025-04-09T22:11:18Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "cronos",
+   "name": "Cronos",
+   "name_zh": "睡眠混淆",
+   "category_id": "memory-process",
+   "summary": "Cronos:利用等待链与计时器实现的睡眠混淆技术 PoC,研究内存扫描窗口规避。",
+   "description": "Cronos:利用等待链与计时器实现的睡眠混淆技术 PoC,研究内存扫描窗口规避。",
+   "detail_url": "/tools/cronos.html",
+   "repo": "Idov31/Cronos",
+   "docs_url": "https://github.com/Idov31/Cronos",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Idov31/Cronos && cd Cronos",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Idov31/Cronos"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 629,
+    "pushedAt": "2023-09-26T18:06:10Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "umap",
+   "name": "umap",
+   "name_zh": "驱动手动映射",
+   "category_id": "memory-process",
+   "summary": "umap:UEFI Bootkit,在启动阶段完成驱动手动映射,绕过常规驱动加载校验。",
+   "description": "umap:UEFI Bootkit,在启动阶段完成驱动手动映射,绕过常规驱动加载校验。",
+   "detail_url": "/tools/umap.html",
+   "repo": "btbd/umap",
+   "docs_url": "https://github.com/btbd/umap",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/btbd/umap && cd umap",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/btbd/umap"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 606,
+    "pushedAt": "2024-01-01T01:32:30Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "simple-manual-map-injector",
+   "name": "Simple-Manual-Map-Injector",
+   "name_zh": "手动映射注入",
+   "category_id": "memory-process",
+   "summary": "Simple Manual Map Injector:x86/x64 DLL 手动映射注入器,不经过 LoadLibrary,演示映像自加载流程。",
+   "description": "Simple Manual Map Injector:x86/x64 DLL 手动映射注入器,不经过 LoadLibrary,演示映像自加载流程。",
+   "detail_url": "/tools/simple-manual-map-injector.html",
+   "repo": "TheCruZ/Simple-Manual-Map-Injector",
+   "docs_url": "https://github.com/TheCruZ/Simple-Manual-Map-Injector",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/TheCruZ/Simple-Manual-Map-Injector && cd Simple-Manual-Map-Injector",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/TheCruZ/Simple-Manual-Map-Injector"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 526,
+    "pushedAt": "2026-10-15T08:36:47Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "efi-driver-access",
+   "name": "EFI_Driver_Access",
+   "name_zh": "EFI 驱动加载",
+   "category_id": "memory-process",
+   "summary": "EFI Driver Access:通过 UEFI 运行时服务加载驱动的示例工程,研究启动期驱动加载路径。",
+   "description": "EFI Driver Access:通过 UEFI 运行时服务加载驱动的示例工程,研究启动期驱动加载路径。",
+   "detail_url": "/tools/efi-driver-access.html",
+   "repo": "TheCruZ/EFI_Driver_Access",
+   "docs_url": "https://github.com/TheCruZ/EFI_Driver_Access",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/TheCruZ/EFI_Driver_Access && cd EFI_Driver_Access",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/TheCruZ/EFI_Driver_Access"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 519,
+    "pushedAt": "2023-01-08T18:22:44Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "memhv",
+   "name": "memhv",
+   "name_zh": "AMD-V 内存自省",
+   "category_id": "memory-process",
+   "summary": "memhv:极简 AMD-V/SVM Hypervisor,提供内存自省能力,用于虚拟化层内存观察。",
+   "description": "memhv:极简 AMD-V/SVM Hypervisor,提供内存自省能力,用于虚拟化层内存观察。",
+   "detail_url": "/tools/memhv.html",
+   "repo": "SamuelTulach/memhv",
+   "docs_url": "https://github.com/SamuelTulach/memhv",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/SamuelTulach/memhv && cd memhv",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/SamuelTulach/memhv"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 437,
+    "pushedAt": "2025-02-26T20:12:39Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "pcileechgen",
+   "name": "PCILeechGen",
+   "name_zh": "DMA 固件生成",
+   "category_id": "memory-process",
+   "summary": "PCILeechGen:为 PCILeech 生成定制 FPGA 固件的工具链。",
+   "description": "PCILeechGen:为 PCILeech 生成定制 FPGA 固件的工具链。",
+   "detail_url": "/tools/pcileechgen.html",
+   "repo": "sercanarga/PCILeechGen",
+   "docs_url": "https://github.com/sercanarga/PCILeechGen",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/sercanarga/PCILeechGen && cd PCILeechGen",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/sercanarga/PCILeechGen"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 400,
+    "pushedAt": "2026-10-13T12:05:58Z",
+    "license": "NOASSERTION"
+   }
+  },
+  {
+   "slug": "kernelbypasssharp",
+   "name": "KernelBypassSharp",
+   "name_zh": "内核读写驱动",
+   "category_id": "memory-process",
+   "summary": "KernelBypassSharp:C# 内核态驱动示例,演示跨进程内存读写与内核交互。",
+   "description": "KernelBypassSharp:C# 内核态驱动示例,演示跨进程内存读写与内核交互。",
+   "detail_url": "/tools/kernelbypasssharp.html",
+   "repo": "VollRagm/KernelBypassSharp",
+   "docs_url": "https://github.com/VollRagm/KernelBypassSharp",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/VollRagm/KernelBypassSharp && cd KernelBypassSharp",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/VollRagm/KernelBypassSharp"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 388,
+    "pushedAt": "2023-08-03T05:50:09Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "kernelmode-dll-injector",
+   "name": "Kernelmode-DLL-Injector",
+   "name_zh": "内核注入器",
+   "category_id": "memory-process",
+   "summary": "Kernelmode DLL Injector:内核态 DLL 注入器,支持手动映射,研究内核注入链路。",
+   "description": "Kernelmode DLL Injector:内核态 DLL 注入器,支持手动映射,研究内核注入链路。",
+   "detail_url": "/tools/kernelmode-dll-injector.html",
+   "repo": "YouNeverKnow00/Kernelmode-DLL-Injector",
+   "docs_url": "https://github.com/YouNeverKnow00/Kernelmode-DLL-Injector",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/YouNeverKnow00/Kernelmode-DLL-Injector && cd Kernelmode-DLL-Injector",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/YouNeverKnow00/Kernelmode-DLL-Injector"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 373,
+    "pushedAt": "2023-11-29T18:51:56Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "hypervisor",
+   "name": "hypervisor",
+   "name_zh": "VT-x EPT 监控",
+   "category_id": "memory-process",
+   "summary": "momo5502/hypervisor:Intel VT-x Type-2 Hypervisor,演示 EPT Hook 与内存访问监控。",
+   "description": "momo5502/hypervisor:Intel VT-x Type-2 Hypervisor,演示 EPT Hook 与内存访问监控。",
+   "detail_url": "/tools/hypervisor.html",
+   "repo": "momo5502/hypervisor",
+   "docs_url": "https://github.com/momo5502/hypervisor",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/momo5502/hypervisor && cd hypervisor",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/momo5502/hypervisor"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 364,
+    "pushedAt": "2026-09-01T09:45:21Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "rustdmacheat",
+   "name": "RustDMACheat",
+   "name_zh": "DMA 读写示例",
+   "category_id": "memory-process",
+   "summary": "RustDMACheat:Rust 实现的 DMA 内存读写示例,演示设备侧内存访问流程。",
+   "description": "RustDMACheat:Rust 实现的 DMA 内存读写示例,演示设备侧内存访问流程。",
+   "detail_url": "/tools/rustdmacheat.html",
+   "repo": "IntelSDM/RustDMACheat",
+   "docs_url": "https://github.com/IntelSDM/RustDMACheat",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/IntelSDM/RustDMACheat && cd RustDMACheat",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/IntelSDM/RustDMACheat"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 289,
+    "pushedAt": "2024-07-04T20:15:45Z",
+    "license": "MIT"
+   }
+  },
+  {
+   "slug": "winprocesshide",
+   "name": "WinProcessHide",
+   "name_zh": "进程隐藏",
+   "category_id": "memory-process",
+   "summary": "WinProcessHide:Windows 10/11 应用与进程隐藏工具,无需注入 DLL,研究进程枚举对抗。",
+   "description": "WinProcessHide:Windows 10/11 应用与进程隐藏工具,无需注入 DLL,研究进程枚举对抗。",
+   "detail_url": "/tools/winprocesshide.html",
+   "repo": "JasonYANG170/WinProcessHide",
+   "docs_url": "https://github.com/JasonYANG170/WinProcessHide",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/JasonYANG170/WinProcessHide && cd WinProcessHide",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/JasonYANG170/WinProcessHide"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 255,
+    "pushedAt": "2026-10-02T13:35:00Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "pcileech-wifi",
+   "name": "pcileech-wifi",
+   "name_zh": "无线网卡 DMA",
+   "category_id": "memory-process",
+   "summary": "pcileech-wifi:在 PCILeech FPGA 上模拟无线网卡设备的固件工程。",
+   "description": "pcileech-wifi:在 PCILeech FPGA 上模拟无线网卡设备的固件工程。",
+   "detail_url": "/tools/pcileech-wifi.html",
+   "repo": "ekknod/pcileech-wifi",
+   "docs_url": "https://github.com/ekknod/pcileech-wifi",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ekknod/pcileech-wifi && cd pcileech-wifi",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ekknod/pcileech-wifi"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 794,
+    "pushedAt": "2024-05-28T06:31:30Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "s6-pcie-microblaze",
+   "name": "s6_pcie_microblaze",
+   "name_zh": "PCIe 硬件工具链",
+   "category_id": "memory-process",
+   "summary": "s6_pcie_microblaze:面向 Xilinx SP605 的 PCIe 硬件实验工具链,用于 DMA 设备开发。",
+   "description": "s6_pcie_microblaze:面向 Xilinx SP605 的 PCIe 硬件实验工具链,用于 DMA 设备开发。",
+   "detail_url": "/tools/s6-pcie-microblaze.html",
+   "repo": "Cr4sh/s6_pcie_microblaze",
+   "docs_url": "https://github.com/Cr4sh/s6_pcie_microblaze",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/Cr4sh/s6_pcie_microblaze && cd s6_pcie_microblaze",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/Cr4sh/s6_pcie_microblaze"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 891,
+    "pushedAt": "2026-03-07T11:51:16Z",
+    "license": "UNKNOWN"
+   }
+  },
+  {
+   "slug": "memprocfs-analyzer",
+   "name": "MemProcFS-Analyzer",
+   "name_zh": "内存取证分析",
+   "category_id": "memory-process",
+   "summary": "MemProcFS-Analyzer:基于 MemProcFS 的自动化内存取证分析器,批量提取进程与痕迹。",
+   "description": "MemProcFS-Analyzer:基于 MemProcFS 的自动化内存取证分析器,批量提取进程与痕迹。",
+   "detail_url": "/tools/memprocfs-analyzer.html",
+   "repo": "LETHAL-FORENSICS/MemProcFS-Analyzer",
+   "docs_url": "https://github.com/LETHAL-FORENSICS/MemProcFS-Analyzer",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/LETHAL-FORENSICS/MemProcFS-Analyzer && cd MemProcFS-Analyzer",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/LETHAL-FORENSICS/MemProcFS-Analyzer"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 740,
+    "pushedAt": "2026-08-31T11:37:41Z",
+    "license": "GPL-3.0"
+   }
+  },
+  {
+   "slug": "invtero-net",
+   "name": "inVtero.net",
+   "name_zh": "高速内存取证",
+   "category_id": "memory-process",
+   "summary": "inVtero.net:高速内存取证框架,支持物理内存解析与虚拟地址重建。",
+   "description": "inVtero.net:高速内存取证框架,支持物理内存解析与虚拟地址重建。",
+   "detail_url": "/tools/invtero-net.html",
+   "repo": "ShaneK2/inVtero.net",
+   "docs_url": "https://github.com/ShaneK2/inVtero.net",
+   "deploy": {
+    "method": "source",
+    "command": "git clone https://github.com/ShaneK2/inVtero.net && cd inVtero.net",
+    "compose_file": null,
+    "image": null
+   },
+   "ports": [],
+   "default_port": null,
+   "form": "cli",
+   "credentials": [],
+   "gitmcp": {
+    "enabled": true,
+    "url": "https://gitmcp.io/ShaneK2/inVtero.net"
+   },
+   "labels": [
+    "memory-process",
+    "dma",
+    "memory",
+    "hiding"
+   ],
+   "upstream": {
+    "lastCheck": "2026-10-17",
+    "alive": true,
+    "stars": 296,
+    "pushedAt": "2023-09-30T08:02:20Z",
+    "license": "AGPL-3.0"
+   }
   }
  ]
 }

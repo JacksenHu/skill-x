@@ -23,6 +23,7 @@ CAT_COLORS = {
     "recon": "data", "vuln": "pentest", "lab": "dev-workflow",
     "tunnel": "malware", "defense": "forensics", "intel": "reverse-engineering",
     "network-engineering-defense": "network-engineering-defense",
+    "memory-process": "malware",
 }
 
 

@@ -4037,6 +4037,129 @@
      }
     }
    }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.mrexodia/ida-pro-mcp",
+   "title": "IDA Pro MCP",
+   "description": "AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/mrexodia/ida-pro-mcp",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "mrexodia/ida-pro-mcp 许可证 MIT;指路牌条目,本体由上游仓库分发。",
+     "description-zh": "IDA Pro 的 MCP 服务:让 Agent 直接调用 IDA 反汇编/反编译、函数重命名与交叉引用分析。",
+     "installHint": "git clone https://github.com/mrexodia/ida-pro-mcp.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/mrexodia/ida-pro-mcp",
+      "command": "git clone https://github.com/mrexodia/ida-pro-mcp.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-17",
+      "execReview": "passed",
+      "note": "方向化爬取+核验"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-17",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.credittone/hooker",
+   "title": "Hooker",
+   "description": "🔥🔥 hooker is a Frida-based reverse engineering toolkit for Android. It offers a user-friendly CLI, universal scripts, auto hook generation, memory roaming to detect activities/services, one-click SOCK",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/CreditTone/hooker",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "CreditTone/hooker 许可证 UNKNOWN;指路牌条目,本体由上游仓库分发。",
+     "description-zh": "基于 Frida 的逆向工程工具箱,提供 hook、内存读写与运行时插桩能力。",
+     "installHint": "git clone https://github.com/CreditTone/hooker.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/CreditTone/hooker",
+      "command": "git clone https://github.com/CreditTone/hooker.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-17",
+      "execReview": "passed",
+      "note": "方向化爬取+核验"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-17",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
+  },
+  {
+   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+   "name": "io.github.miscusi-peek/cheatengine-mcp-bridge",
+   "title": "Cheat Engine MCP",
+   "description": "Connect your favorite AI agents directly to Cheat Engine via MCP. Automate reverse engineering, pointer scanning, and memory analysis using natural language.",
+   "version": "1.0.0",
+   "websiteUrl": "https://github.com/miscusi-peek/cheatengine-mcp-bridge",
+   "_meta": {
+    "top.skillx/curated": {
+     "entryType": "mcp",
+     "category": "reverse-engineering",
+     "kind": "link",
+     "riskLevel": "medium",
+     "riskNote": "miscusi-peek/cheatengine-mcp-bridge 许可证 MIT;指路牌条目,本体由上游仓库分发。",
+     "description-zh": "把 Cheat Engine 的内存扫描与读写能力桥接为 MCP,供 Agent 做进程内存分析。",
+     "installHint": "git clone https://github.com/miscusi-peek/cheatengine-mcp-bridge.git",
+     "install": {
+      "method": "link",
+      "url": "https://github.com/miscusi-peek/cheatengine-mcp-bridge",
+      "command": "git clone https://github.com/miscusi-peek/cheatengine-mcp-bridge.git",
+      "clients": [
+       "claude",
+       "cursor",
+       "codex"
+      ]
+     },
+     "reviewed": {
+      "by": "codex",
+      "at": "2026-10-17",
+      "execReview": "passed",
+      "note": "方向化爬取+核验"
+     },
+     "upstreamStatus": {
+      "source": "github",
+      "lastCheck": "2026-10-17",
+      "alive": true,
+      "failSince": null
+     }
+    }
+   }
   }
  ]
 }
