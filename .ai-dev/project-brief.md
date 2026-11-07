@@ -2,7 +2,7 @@
 
 ## 一句话定位
 
-Skill X(skillhub)是面向所有 AI Agent 的**安全研究与逆向工程**技能注册中心:技能源托管 GitHub 私有仓库,公开站点 https://skillx.yueliai.top 负责展示、检索、推荐、安全审计与下载统计。
+Skill X(skillhub)是面向所有 AI Agent 的**安全研究与逆向工程**技能注册中心:技能源托管 GitHub 公开仓库,公开站点 https://skillx.yueliai.top 负责展示、检索、推荐、安全审计与下载统计。
 
 ## 用户与核心场景
 
@@ -24,7 +24,7 @@ Skill X(skillhub)是面向所有 AI Agent 的**安全研究与逆向工程**技�
 
 ## 顶层目录结构
 
-- `skills/` — 自研技能源(每目录一个 SKILL.md + 可选 scripts/)
+- `skills/` — 本站技能源(每目录一个 SKILL.md + 可选 scripts/)
 - `showcase/` — 生成器与数据:build_index.py / svg_map.py / apidocs.py / i18n-*.json / curation.json / mindmaps/ / dist/
 - `api/` — 后端:server.py、registry.json(/dl/ 白名单)、cache/、stats.db
 - `deploy/` — bt_deploy.py、sync.py、nginx/(vhost 与备份)
@@ -38,7 +38,7 @@ Skill X(skillhub)是面向所有 AI Agent 的**安全研究与逆向工程**技�
 python showcase/build_index.py                 # 构建(增量)
 BT_API_SK=<sk> python deploy/sync.py           # 构建+部署;--skip-build 只部署;--api 连后端
 python scripts/audit_skill.py                  # 安全审计;--check 漂移检测(CI 用)
-python scripts/validate.py                     # 自研 SKILL.md 合规校验
+python scripts/validate.py                     # 本站 SKILL.md 合规校验
 python scripts/ingest.py <url>                 # 收录套件
 python scripts/link_check.py                   # 上游死链探活
 ```
@@ -47,7 +47,7 @@ python scripts/link_check.py                   # 上游死链探活
 
 - 环境变量 `BT_API_SK`(宝塔 api_sk,**会话内使用,不落盘不入库**)。
 - 外部服务:宝塔面板 API(部署)、GitHub(源码/上游)、api.github.com(构建期拉 Star/Fork,24h 缓存)。
-- 密钥:宝塔面板 → 设置 → API 接口 生成;自研分发用 GitHub PAT(仅授权协作者)。
+- 密钥:宝塔面板 → 设置 → API 接口 生成;仓库公开,分发不需要 PAT。
 - **宝塔 API 有 IP 白名单**;本机出口 IP 是动态池,建议白名单填段(如 219.132.*)。
 
 ## 当前里程碑 / 边界

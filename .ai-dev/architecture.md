@@ -15,7 +15,7 @@ audit-report.json ────────────────────�
 
 | 模块 | 职责 | 关键文件 |
 | -- | -- | -- |
-| 技能源 | 自研技能(方法论 + 可选 scripts 工具) | skills/<name>/SKILL.md、skills/<name>/scripts/*.py |
+| 技能源 | 本站技能(方法论 + 可选 scripts 工具) | skills/<name>/SKILL.md、skills/<name>/scripts/*.py |
 | 生成器 | 渲染全部页面/导图/数据接口,增量构建 | showcase/build_index.py |
 | 导图 | 受限 YAML → SVG(树形布局、分支配色) | showcase/svg_map.py、showcase/mindmaps/*.yaml |
 | 文档提取 | AST 提取 argparse 参数与 docstring | showcase/apidocs.py |
@@ -47,4 +47,4 @@ audit-report.json ────────────────────�
 2. **增量构建**:产物哈希写在 showcase/.build-manifest.json;改了 svg_map.py / apidocs.py 之类生成器代码,要把它的内容纳入 key,否则不会重渲染。
 3. **部署用纯净重放**(删站目录→重建→解压):tar 解压不删旧文件,否则下架页会残留。
 4. **技能规范**:只用 Agent Skills 基础 frontmatter(name/description/license/metadata);禁用 allowed-tools、context: fork、Hooks。
-5. 自研 SKILL.md 正文**绝不进任何页面产物**(构建期有泄露断言)。
+5. SKILL.md 正文**绝不进任何页面产物**(构建期有泄露断言)。

@@ -6,7 +6,7 @@
 人工排查(CLI)。
 
 成员类型与 ref 约定:
-  own-skill   ref = "<skill-name>"                     自研技能(skills/<name>/)
+  own-skill   ref = "<skill-name>"                     本站技能库(skills/<name>/)
   ext-skill   ref = "<owner>/<repo>/<skill-name>"      收录套件中的精选技能(末段为技能名)
   mcp         ref = "<ns/name>"                        mcp-registry.json 中已过审条目(含 plugin)
   cli / api   ref = "<任意稳定标识>"                    第一期预留:须在 pack 定义内联
@@ -84,7 +84,7 @@ def load_index(root: Path = ROOT) -> dict:
             "description": top.get("description", ""),
             "category": meta.get("category", "engineering-hygiene"),
             "page": f"/skills/own-{name}.html",
-            "install": f"GITHUB_TOKEN=<PAT> npx skills add {PACK_OWN_REPO} --skill {name}",
+            "install": f"npx skills add {PACK_OWN_REPO} --skill {name}",
         }
 
     external = _read_json(root / "external.json", {"suites": []})

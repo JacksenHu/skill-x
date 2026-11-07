@@ -34,7 +34,7 @@
           "description": "Deep reverse engineering for PE, ELF, Mach-O, firmware, drivers, APK/DEX, .NET, Go, Rust, Unity IL2CPP, Unreal, packed binaries, custom VMs, and undocumented protocols. Use when the workspace contains a binary, disassembly, pseudocode, crash artifact, native library, game artifact, firmware image, or obfuscated application, or the task needs IDA/Ghidra/Frida/angr/Unicorn automation, algorithm recovery, unpacking, patching, or protocol reconstruction. 逆向、逆向工程、反编译、脱壳、hook 时使用。",
           "category": "reverse-engineering",
           "page": "/skills/own-binary-reverse-engineering.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill binary-reverse-engineering",
+          "install": "npx skills add JacksenHu/skill-x --skill binary-reverse-engineering",
           "resolved": true
         },
         {
@@ -46,7 +46,7 @@
           "description": "跑验证/回归时保住结果可信度的操作纪律。当出现以下任一情况时使用：一批探针/测试突然集体判红而\"我改的代码看着没问题\"；想知道哪些失败是真回归、哪些是运行被污染；测试需要造临时目录/文件/符号链接；测试要在临时目录里 rmtree 一棵树；某个\"看起来完美解释\"的原因可能只是数值吻合；同一套回归要反复跑很多轮；环境有\"批量删除确认\"\"safe-delete\"之类的守卫；删不掉目录报 WinError 145 / 目录不是空的 / 拒绝访问；报错行的关键字段被 grep|tail 截断；测试会在用户 home 或共享目录里建文件再删。覆盖：验收期间禁写、真红/假红的判别流程、按签名分诊\"是谁在拒绝我\"、只读文件与 rmtree 的危险组合、结构化验错消息不许截断、测试自造破坏面必须自收、符号链接与 rmtree 的危险组合、先量后改、回归结果的可归档性。",
           "category": "engineering-hygiene",
           "page": "/skills/own-verification-run-hygiene.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
+          "install": "npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
           "resolved": true
         }
       ],
@@ -54,7 +54,7 @@
         "by": "jacksen",
         "at": "2026-09-28",
         "execReview": "passed",
-        "note": "自研专家团:人设文案与编排剧本人工确认"
+        "note": "本站专家团:人设文案与编排剧本人工确认"
       },
       "upstreamStatus": {
         "source": "own",
@@ -63,7 +63,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-abyss-deep-reverse",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-abyss-deep-reverse",
       "content": "---\nname: pack-abyss-deep-reverse\ndescription: >-\n  Deep reverse-engineering expert pack (meta-skill). Orchestrates the\n  binary-reverse-engineering and verification-run-hygiene skills into one\n  workflow: scope and triage, unpacking, static structure recovery, protocol\n  and algorithm reconstruction, then evidence-verified reporting. Use when a\n  task needs end-to-end reverse engineering of an unknown binary, firmware\n  image, or protected artifact, or when the user asks for the Abyss / 深潜\n  expert pack.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills require Python 3 (stdlib only); analysis tooling (IDA/Ghidra/radare2/Frida) is used when available on the host.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 深潜\n  aliases:\n    - 深潜\n    - 深潜专家团\n    - 深度逆向专家团\n    - Abyss\n    - pack-abyss-deep-reverse\n  name-zh: 深潜 · 深度逆向专家团\n  description-zh: 把不透明的二进制摸清边界、拆开结构、验证每一步结论的端到端逆向工作流:识别与脱壳、静态拆解、协议重建、验证收尾。\n  category: reverse-engineering\norchestration:\n  children:\n    - binary-reverse-engineering\n    - verification-run-hygiene\n---\n# 深度逆向工作流（深潜）\n\n你现在要完成一项深度逆向任务。你已安装以下技能，请按步骤串联使用：\n\n- **binary-reverse-engineering**：二进制的识别、脱壳、静态拆解、算法与协议重建\n- **verification-run-hygiene**：让每一步结论可复现、可归档，区分真信号与噪声\n\n## 工作原则\n\n先摸边界，再拆结构，最后验证。任何\"看起来像\"的结论都要落成证据：\n偏移、哈希、命令与输出必须能原地复现。跑不通的结论打回重做。\n\n## 步骤 1：边界与识别（获取层）\n\n使用 **Binary Reverse Engineering** 完成：\n\n- 对样本做哈希登记，复制到独立工作目录，**保留原始文件不动**\n- 用 `scripts/triage_binary.py` 完成首轮分诊：格式、架构、编译器/运行时线索、保护特征、导入表、字符串\n- 明确目标边界：要回答什么问题（后门逻辑 / 授权算法 / 协议格式 / 崩溃根因）\n\n输出：样本指纹 + 首轮分诊结论 + 本次逆向的目标问题清单。\n\n## 步骤 2：脱壳与反混淆（获取层）\n\n使用 **Binary Reverse Engineering** 的脱壳路线：\n\n- 识别壳/虚拟机/控制流平坦化特征，选择静态或动态脱壳路线\n- 产出可分析的镜像，记录脱壳过程与工具链版本\n- 若无法脱壳，记录卡点与已排除的路线，转入黑盒行为分析\n\n输出：可分析镜像（或替代路线说明）+ 脱壳过程记录。\n\n## 步骤 3：静态拆解与结构重建（分析层）\n\n使用 **Binary Reverse Engineering** 完成：\n\n- 按入口路径建立地址/函数/结构映射，边分析边落图\n- 恢复关键数据结构、调度逻辑与边界检查\n- 对可疑算法（加密、校验、授权）做定点还原\n\n输出：结构地图 + 关键函数清单 + 初步结论注释。\n\n## 步骤 4：协议与算法重建（分析层）\n\n使用 **Binary Reverse Engineering** 完成：\n\n- 对网络/进程间通信样本做协议重建：消息边界、字段、状态机\n- 对算法做等价实现验证：用已知输入对比原始输出\n- 记录所有推断的置信度与反例\n\n输出：协议格式文档 + 等价实现 + 对比验证记录。\n\n## 步骤 5：验证收尾（输出层）\n\n使用 **Verification Run Hygiene** 完成：\n\n- 把每个关键结论写成可复现验证：命令、输入、预期输出、实际输出\n- 区分真信号与假红/噪声，标注未闭环的假设\n- 归档最终产物：报告、恢复的产物、验证脚本\n\n输出：验证报告 + 可复现命令清单 + 未闭环假设列表。\n\n## 最终输出\n\n将以上步骤整合为一份深度逆向交付包：\n\n1. **样本指纹与分诊结论**：哈希、格式、保护特征、目标问题清单\n2. **逆向过程记录**：脱壳路线、结构地图、关键函数与数据结构\n3. **重建产物**：协议文档、等价算法实现、补丁或分析脚本\n4. **验证报告**：每条结论的复现命令与实测输出，未闭环项单独列出\n"
     },
     {
@@ -99,7 +99,7 @@
           "description": "Evidence-driven penetration testing and attack-surface engineering for web applications, APIs, networks, identity systems, Active Directory, cloud, containers, Kubernetes, authentication flows, and source-assisted assessments. Use when the task supplies a URL, host, request/response, API schema, JavaScript bundle, network inventory, cloud configuration, or identity graph, or needs recon, endpoint extraction, hypothesis ranking, precise validation, finding reproduction, attack-path analysis, remediation, or retest automation. 渗透、渗透测试、渗透工程、红队、攻防演练、越权、IDOR、未授权访问 时使用。",
           "category": "pentest",
           "page": "/skills/own-pentest-methodology.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pentest-methodology",
+          "install": "npx skills add JacksenHu/skill-x --skill pentest-methodology",
           "resolved": true
         },
         {
@@ -111,7 +111,7 @@
           "description": "跑验证/回归时保住结果可信度的操作纪律。当出现以下任一情况时使用：一批探针/测试突然集体判红而\"我改的代码看着没问题\"；想知道哪些失败是真回归、哪些是运行被污染；测试需要造临时目录/文件/符号链接；测试要在临时目录里 rmtree 一棵树；某个\"看起来完美解释\"的原因可能只是数值吻合；同一套回归要反复跑很多轮；环境有\"批量删除确认\"\"safe-delete\"之类的守卫；删不掉目录报 WinError 145 / 目录不是空的 / 拒绝访问；报错行的关键字段被 grep|tail 截断；测试会在用户 home 或共享目录里建文件再删。覆盖：验收期间禁写、真红/假红的判别流程、按签名分诊\"是谁在拒绝我\"、只读文件与 rmtree 的危险组合、结构化验错消息不许截断、测试自造破坏面必须自收、符号链接与 rmtree 的危险组合、先量后改、回归结果的可归档性。",
           "category": "engineering-hygiene",
           "page": "/skills/own-verification-run-hygiene.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
+          "install": "npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
           "resolved": true
         },
         {
@@ -133,7 +133,7 @@
         "by": "jacksen",
         "at": "2026-09-28",
         "execReview": "passed",
-        "note": "自研专家团:人设文案与编排剧本人工确认"
+        "note": "本站专家团:人设文案与编排剧本人工确认"
       },
       "upstreamStatus": {
         "source": "own",
@@ -142,7 +142,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-rift-pentest",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-rift-pentest",
       "content": "---\nname: pack-rift-pentest\ndescription: >-\n  Evidence-driven penetration testing expert pack (meta-skill). Orchestrates\n  the pentest-methodology, verification-run-hygiene, and\n  addyosmani/agent-skills security-and-hardening skills into one workflow:\n  scope and rules of engagement, attack-surface enumeration, hypothesis\n  ranking, precise validation, evidence chain, and remediation with retest\n  criteria. Use when the user asks for a web/API/network penetration test\n  workflow, or when the user asks for the Rift / 裂空 expert pack.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills require a shell and Python 3; the curated security-and-hardening skill is installed from its upstream MIT-licensed repository.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 裂空\n  aliases:\n    - 裂空\n    - 裂空专家团\n    - 渗透测试专家团\n    - Rift\n    - pack-rift-pentest\n  name-zh: 裂空 · 渗透测试专家团\n  description-zh: 证据驱动的渗透测试工作流:请求矩阵与攻击面枚举、假设排序、精确验证、证据链固化、修复复测标准,全程只做能复现的结论。\n  category: pentest\norchestration:\n  children:\n    - pentest-methodology\n    - verification-run-hygiene\n    - addyosmani/agent-skills/security-and-hardening\n---\n# 证据驱动渗透工作流（裂空）\n\n你现在要完成一次授权范围内的渗透测试任务。你已安装以下技能，请按步骤串联使用：\n\n- **pentest-methodology**：范围界定、攻击面枚举、请求矩阵、假设排序与验证\n- **verification-run-hygiene**：让每条发现可复现、可归档，排除环境噪声\n- **security-and-hardening**（社区精选）：修复建议与加固视角，用于收尾阶段\n\n## 工作原则\n\n不靠扫描器的噪声，靠一条条能复现的请求把边界撬开。\n只测授权范围内目标；越过授权边界的验证一律不做。\n\n## 步骤 1：范围与规则（获取层）\n\n使用 **Pentest Methodology** 完成：\n\n- 固化授权范围：域名/主机/账号/时间窗/禁止项，写成清单\n- 明确目标资产的业务语境与预期行为\n- 建立证据目录结构与命名约定\n\n输出：授权范围清单 + 证据目录结构。\n\n## 步骤 2：攻击面枚举（获取层）\n\n使用 **Pentest Methodology** 完成：\n\n- 资产发现：子域、端口、接口、前端资源、历史请求\n- 枚举认证与授权模型、参数注入面、文件与上传面\n- 产出请求矩阵：端点 × 方法 × 参数 × 鉴权要求\n\n输出：攻击面清单 + 请求矩阵。\n\n## 步骤 3：假设排序（分析层）\n\n使用 **Pentest Methodology** 完成：\n\n- 按影响 × 可达性 × 验证成本对假设排序\n- 标记需要写操作的验证（越权改数据等），优先只读验证\n- 排除已被证据否定的方向，记录原因\n\n输出：假设优先级列表 + 验证方案。\n\n## 步骤 4：精确验证（分析层）\n\n使用 **Pentest Methodology** 完成：\n\n- 逐条验证：最小请求集 + 预期响应 + 实际响应\n- 越权类发现要拿到\"同资源、异身份\"的对照证据\n- 遇到 WAF/限速时记录绕过尝试与结果，不做压测\n\n输出：可复现的发现清单（含原始请求/响应）。\n\n## 步骤 5：证据链与复测（输出层）\n\n使用 **Verification Run Hygiene** + **Security and Hardening** 完成：\n\n- 每条发现固化证据：时间、命令、请求、响应、影响面\n- 按严重级整理修复建议（含加固视角：不只是补丁，还有结构性缓解）\n- 为每条发现写复测标准：修复后用什么请求验证通过\n\n输出：渗透测试报告 + 证据包 + 复测清单。\n\n## 最终输出\n\n将以上步骤整合为一份渗透测试交付包：\n\n1. **范围与规则**：授权边界、时间窗、禁止项\n2. **攻击面与矩阵**：资产、端点、鉴权模型、请求矩阵\n3. **发现清单**：按严重级排序，每条含原始证据与影响分析\n4. **修复与复测**：加固建议 + 复测标准 + 未闭环项\n"
     },
     {
@@ -178,7 +178,7 @@
           "description": "Malware analysis and threat intelligence — unpacking, configuration extraction, behavior profiling, C2 protocol decoding, IOC extraction, YARA/Sigma rule authoring, and detection engineering. Use when the workspace contains a suspicious sample, a memory dump with injected code, or PCAP with C2 traffic, or the task involves sandbox triage, family classification, TTP mapping, or detection rule development. 处理恶意软件、恶意样本、样本分析、木马分析、病毒分析、C2分析、脱壳分析、威胁分析、IOC、YARA、应急响应时使用。",
           "category": "malware",
           "page": "/skills/own-malware-analysis.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill malware-analysis",
+          "install": "npx skills add JacksenHu/skill-x --skill malware-analysis",
           "resolved": true
         },
         {
@@ -190,7 +190,7 @@
           "description": "Cross-platform process memory, dump, runtime, heap, pointer-chain, signature, structure, and memory-forensics analysis for Windows, Linux, Android, Unity IL2CPP, Unreal, native applications, crash dumps, and raw memory images. Use when the task involves a PID, process name, memory dump, module offset, AOB pattern, pointer chain, runtime address, crash dump, Volatility artifact, or Frida target, or needs ReadProcessMemory/process_vm_readv code, map/module discovery, structure reconstruction, memory diffing, hooks, watchpoints, or rollback-safe patch tooling. 内存分析、内存取证、内存扫描、堆分析、指针链、AOB 扫描、转储分析时使用。",
           "category": "forensics",
           "page": "/skills/own-memory-forensics.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill memory-forensics",
+          "install": "npx skills add JacksenHu/skill-x --skill memory-forensics",
           "resolved": true
         }
       ],
@@ -198,7 +198,7 @@
         "by": "jacksen",
         "at": "2026-09-28",
         "execReview": "passed",
-        "note": "自研专家团:人设文案与编排剧本人工确认"
+        "note": "本站专家团:人设文案与编排剧本人工确认"
       },
       "upstreamStatus": {
         "source": "own",
@@ -207,7 +207,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-trace-malware",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-trace-malware",
       "content": "---\nname: pack-trace-malware\ndescription: >-\n  Malware sample analysis expert pack (meta-skill). Orchestrates the\n  malware-analysis and memory-forensics skills into one workflow: intake and\n  quarantine, static triage, unpacking, configuration extraction, C2 protocol\n  decoding, memory-side evidence, and IOC / YARA / Sigma deliverables. Use when\n  the user asks for a malware sample analysis workflow, or when the user asks\n  for the Trace / 溯源 expert pack.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills require a shell, Python 3 (stdlib only), and a disposable analysis environment; memory forensics needs a dump image when relevant.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 溯源\n  aliases:\n    - 溯源\n    - 溯源专家团\n    - 样本分析专家团\n    - Trace\n    - pack-trace-malware\n  name-zh: 溯源 · 样本分析专家团\n  description-zh: 恶意样本分析工作流:受控环境接样、静态分诊、脱壳与配置提取、C2 协议解码、内存侧证据,产出 IOC/YARA/Sigma 与可复现报告。\n  category: malware\norchestration:\n  children:\n    - malware-analysis\n    - memory-forensics\n---\n# 样本分析工作流（溯源）\n\n你现在要完成一项恶意样本分析任务。你已安装以下技能，请按步骤串联使用：\n\n- **malware-analysis**：接样、脱壳、配置提取、C2 协议解码、检测规则产出\n- **memory-forensics**：内存侧证据（转储、进程、注入痕迹、配置偏移）\n\n## 工作原则\n\n样本不会说谎，只是把真相藏在壳里。全程在受控、可丢弃的环境里分析；\n原始样本只读，派生文件单独落盘，外联行为只在受控网络内观测。\n\n## 步骤 1：接样与静态分诊（获取层）\n\n使用 **Malware Analysis** 完成：\n\n- 样本登记：哈希（含 imphash/ssdeep）、来源、收集时间\n- 首轮静态分诊：格式、壳特征、导入表、字符串、资源\n- 划定分析目标：家族判定 / 配置提取 / C2 解码 / 检测规则\n\n输出：样本登记表 + 分诊结论 + 目标清单。\n\n## 步骤 2：脱壳与行为观测（获取层）\n\n使用 **Malware Analysis** 完成：\n\n- 识别壳与反分析特征，在受控环境内做动态观测\n- 捕获文件、进程、注册表与服务行为，网络侧只记录不外联真实 C2\n- 无法脱壳时转入黑盒行为路线并记录卡点\n\n输出：行为观测记录 + 可分析的脱壳产物（或替代路线说明）。\n\n## 步骤 3：配置提取与 C2 解码（分析层）\n\n使用 **Malware Analysis** 完成：\n\n- 定位配置结构与解密例程，提取 C2 地址、密钥、互斥体等\n- 对通信协议做解码：消息边界、字段、心跳与指令格式\n- 用沙箱观测对照解码结果，修正推断\n\n输出：配置清单 + C2 协议文档 + 解码脚本。\n\n## 步骤 4：内存侧证据（分析层，按需）\n\n使用 **Memory Forensics** 完成：\n\n- 对内存转储做进程/模块/句柄清点，定位注入与隐藏痕迹\n- 在转储中恢复运行时配置与解密后的字符串\n- 与静态提取结果做交叉验证\n\n输出：内存证据清单 + 交叉验证结论（无转储时跳过此步并说明）。\n\n## 步骤 5：检测产出与报告（输出层）\n\n使用 **Malware Analysis** 完成：\n\n- 产出 IOC 清单（网络、主机、文件）\n- 编写 YARA（样本侧）与 Sigma（行为侧）规则并自测\n- 汇总分析报告：时间线、行为链、TTP 映射、未闭环项\n\n输出：IOC/YARA/Sigma 交付物 + 分析报告。\n\n## 最终输出\n\n将以上步骤整合为一份样本分析交付包：\n\n1. **样本登记与分诊**：指纹、壳特征、分析目标\n2. **行为与配置**：行为时间线、配置清单、C2 协议文档\n3. **内存证据**：转储分析结论与交叉验证（如有）\n4. **检测交付物**：IOC 清单、YARA/Sigma 规则及自测结果、未闭环项列表\n"
     },
     {
@@ -243,7 +243,7 @@
           "description": "Deep reverse engineering for PE, ELF, Mach-O, firmware, drivers, APK/DEX, .NET, Go, Rust, Unity IL2CPP, Unreal, packed binaries, custom VMs, and undocumented protocols. Use when the workspace contains a binary, disassembly, pseudocode, crash artifact, native library, game artifact, firmware image, or obfuscated application, or the task needs IDA/Ghidra/Frida/angr/Unicorn automation, algorithm recovery, unpacking, patching, or protocol reconstruction. 逆向、逆向工程、反编译、脱壳、hook 时使用。",
           "category": "reverse-engineering",
           "page": "/skills/own-binary-reverse-engineering.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill binary-reverse-engineering",
+          "install": "npx skills add JacksenHu/skill-x --skill binary-reverse-engineering",
           "resolved": true
         },
         {
@@ -327,7 +327,7 @@
           "description": "跑验证/回归时保住结果可信度的操作纪律。当出现以下任一情况时使用：一批探针/测试突然集体判红而\"我改的代码看着没问题\"；想知道哪些失败是真回归、哪些是运行被污染；测试需要造临时目录/文件/符号链接；测试要在临时目录里 rmtree 一棵树；某个\"看起来完美解释\"的原因可能只是数值吻合；同一套回归要反复跑很多轮；环境有\"批量删除确认\"\"safe-delete\"之类的守卫；删不掉目录报 WinError 145 / 目录不是空的 / 拒绝访问；报错行的关键字段被 grep|tail 截断；测试会在用户 home 或共享目录里建文件再删。覆盖：验收期间禁写、真红/假红的判别流程、按签名分诊\"是谁在拒绝我\"、只读文件与 rmtree 的危险组合、结构化验错消息不许截断、测试自造破坏面必须自收、符号链接与 rmtree 的危险组合、先量后改、回归结果的可归档性。",
           "category": "engineering-hygiene",
           "page": "/skills/own-verification-run-hygiene.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
+          "install": "npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
           "resolved": true
         }
       ],
@@ -336,7 +336,7 @@
         "by": "codex",
         "at": "2026-09-28",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本人工确认"
+        "note": "本站专家团:人设与编排剧本人工确认"
       },
       "upstreamStatus": {
         "source": "own",
@@ -345,7 +345,7 @@
         "failSince": null
       },
       "missingMembers": [],
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-cipher-unpack",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-cipher-unpack",
       "content": "---\nname: pack-cipher-unpack\ndescription: >-\n  Cryptography, unpacking and reverse engineering expert pack (meta-skill).\n  Orchestrates binary-reverse-engineering, IDA/Ghidra/radare2 reverse skills,\n  CyberChef MCP and verification-run-hygiene into a single workflow: triage,\n  unpacking, algorithm recovery, crypto decoding and evidence-verified delivery.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills require Python 3 and the relevant analysis tools; CyberChef MCP installs via npx.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 密枢\n  aliases:\n    - 密枢\n    - 密枢专家团\n    - 加密解密专家团\n    - Cipher\n    - pack-cipher-unpack\n  name-zh: 密枢 · 加密解密与脱壳专家团\n  description-zh: 把加壳、混淆与加密产物拆开并验证:样本分诊、脱壳、算法还原、CyberChef 编解码、证据收尾。\n  category: reverse-engineering\norchestration:\n  children:\n    - binary-reverse-engineering\n    - dhicoc/dsh-reverse-skill/ida-reverse\n    - dhicoc/dsh-reverse-skill/ghidra-reverse\n    - dhicoc/dsh-reverse-skill/radare2\n    - dhicoc/dsh-reverse-skill/js-reverse\n    - io.github.noor202401938-netizen/cyber-chef-mcp\n    - verification-run-hygiene\n---\n# 加密解密与脱壳工作流（密枢）\n\n你现在要处理一个加壳、混淆或加密过的目标。你已安装以下技能，请按步骤串联使用：\n\n- **binary-reverse-engineering**：识别格式、脱壳、静态拆解与算法还原\n- **IDA / Ghidra / radare2**：在不同工具链上定位关键函数、结构与数据\n- **js-reverse**：处理 JavaScript 混淆、签名与前端加密逻辑\n- **CyberChef MCP**：对 Base64、Hex、XOR、ROT13、JWT、熵和常见编码做确定性验证\n- **verification-run-hygiene**：把每条结论落到可复现证据，区分真信号与噪声\n\n## 工作原则\n\n先确认边界，再拆壳，再还原算法。任何“看起来能解”的结论都要用 CyberChef 或等价脚本复算一遍。原始样本只读，派生文件单独落盘。\n\n## 步骤 1：分诊与登记\n\n使用 **binary-reverse-engineering** 完成：\n\n- 哈希登记，复制到独立工作目录，保留原始样本\n- 判断壳、混淆、编译器/运行时特征，列出保护面\n- 明确要回答的问题：配置提取 / 算法还原 / 协议格式 / 授权逻辑\n\n输出：样本指纹、保护面清单、目标问题清单。\n\n## 步骤 2：脱壳与去混淆\n\n使用 **binary-reverse-engineering** + 对应的 **IDA / Ghidra / radare2** 技能完成：\n\n- 选择静态或动态脱壳路线，记录工具版本和步骤\n- 对 JavaScript 使用 **js-reverse** 做混淆识别与还原\n- 无法脱壳时记录卡点，转入黑盒行为路线\n\n输出：可分析镜像或替代路线说明、脱壳过程记录。\n\n## 步骤 3：算法与密钥定位\n\n使用 **binary-reverse-engineering** 和反编译器技能完成：\n\n- 定位加密、解密、校验、签名相关函数和常量\n- 还原算法输入输出、密钥来源和状态机\n- 对可疑编码使用 **CyberChef MCP** 做快速验证，避免手工算错\n\n输出：算法描述、关键函数清单、密钥/常量位置。\n\n## 步骤 4：确定性验证\n\n使用 **CyberChef MCP** + **verification-run-hygiene** 完成：\n\n- 用已知输入跑通 Base64 / Hex / XOR / JWT / 哈希等操作\n- 把每步结果记录为命令、输入、预期输出、实际输出\n- 对不确定项标注置信度与反例\n\n输出：验证记录、可复现命令、未闭环项。\n\n## 最终输出\n\n整合为一份加密解密与脱壳交付包：\n\n1. **样本指纹与保护面**\n2. **脱壳过程与工具链记录**\n3. **算法/密钥还原结论**\n4. **CyberChef 与脚本验证记录**、未闭环假设\n"
     },
     {
@@ -499,7 +499,7 @@
           "description": "跑验证/回归时保住结果可信度的操作纪律。当出现以下任一情况时使用：一批探针/测试突然集体判红而\"我改的代码看着没问题\"；想知道哪些失败是真回归、哪些是运行被污染；测试需要造临时目录/文件/符号链接；测试要在临时目录里 rmtree 一棵树；某个\"看起来完美解释\"的原因可能只是数值吻合；同一套回归要反复跑很多轮；环境有\"批量删除确认\"\"safe-delete\"之类的守卫；删不掉目录报 WinError 145 / 目录不是空的 / 拒绝访问；报错行的关键字段被 grep|tail 截断；测试会在用户 home 或共享目录里建文件再删。覆盖：验收期间禁写、真红/假红的判别流程、按签名分诊\"是谁在拒绝我\"、只读文件与 rmtree 的危险组合、结构化验错消息不许截断、测试自造破坏面必须自收、符号链接与 rmtree 的危险组合、先量后改、回归结果的可归档性。",
           "category": "engineering-hygiene",
           "page": "/skills/own-verification-run-hygiene.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
+          "install": "npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
           "resolved": true
         }
       ],
@@ -508,7 +508,7 @@
         "by": "codex",
         "at": "2026-09-28",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本人工确认"
+        "note": "本站专家团:人设与编排剧本人工确认"
       },
       "upstreamStatus": {
         "source": "own",
@@ -517,7 +517,7 @@
         "failSince": null
       },
       "missingMembers": [],
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-webcrawler",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-webcrawler",
       "content": "---\nname: pack-webcrawler\ndescription: >-\n  Web crawling and data extraction expert pack (meta-skill). Orchestrates\n  scraping playbooks, anti-bot handling, Firecrawl/Playwright/Browser Use MCP\n  servers and verification-run-hygiene into one workflow: target scoping, legal\n  checks, extraction, anti-bot fallback, cleaning, persistence and evidence.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Requires Python 3 and Node.js 18+; Firecrawl needs an API key for cloud use.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 蛛网\n  aliases:\n    - 蛛网\n    - 蛛网专家团\n    - 爬虫专家团\n    - Webcrawler\n    - pack-webcrawler\n  name-zh: 蛛网 · 网页爬虫与数据抽取专家团\n  description-zh: 从授权边界出发做网页抓取、渲染、反爬回退、清洗与入库,全程保留证据并控制频率。\n  category: data\norchestration:\n  children:\n    - thirdwatch-dev/scraping-skills/web-scraping-playbook\n    - thirdwatch-dev/scraping-skills/anti-bot-scraping\n    - Nimbleway/agent-skills/nimble-web-expert\n    - Nimbleway/agent-skills/competitor-intel\n    - Johell1NS/browser-search/browser-search\n    - io.github.firecrawl/firecrawl-mcp-server\n    - io.github.microsoft/playwright-mcp\n    - com.browser-use/browser-use\n    - verification-run-hygiene\n---\n# 网页爬虫与数据抽取工作流（蛛网）\n\n你现在要完成一个网页爬取或数据抽取任务。你已安装以下技能和服务，请按步骤串联使用：\n\n- **web-scraping-playbook**：通用抓取与站点分析流程\n- **anti-bot-scraping**：识别反爬、降速与回退策略\n- **nimble-web-expert / competitor-intel**：实时搜索、抓取与结构化情报\n- **browser-search**：自托管搜索与浏览器访问\n- **Firecrawl / Playwright / Browser Use MCP**：静态抓取、渲染型抓取和浏览器自动化\n- **verification-run-hygiene**：保证结果可复现、可归档\n\n## 工作原则\n\n只采集授权范围内、允许访问的数据。先看 `robots.txt`、服务条款和频率限制，再动手；渲染失败时用降级路线，不靠无脑重试压目标。原始响应与清洗结果分开保存。\n\n## 步骤 1：范围与合规\n\n使用 **web-scraping-playbook** 完成：\n\n- 固化目标 URL、字段、数量和用途\n- 检查 `robots.txt`、服务条款、登录/权限要求\n- 记录访问频率上限和必须规避的路径\n\n输出：范围清单、合规结论、访问策略。\n\n## 步骤 2：站点侦察\n\n使用 **web-scraping-playbook** + **nimble-web-expert** 完成：\n\n- 识别数据来源是静态 HTML、API 还是渲染型页面\n- 检查分页、搜索、过滤和反爬迹象\n- 用 **browser-search** 或 Firecrawl 搜索确认结构\n\n输出：数据来源类型、目标端点/选择器、反爬风险。\n\n## 步骤 3：实现抽取\n\n使用 **Firecrawl MCP** 处理静态/API 型页面，**Playwright MCP** 或 **Browser Use MCP** 处理渲染型页面：\n\n- 先做最小样本抽取，验证字段完整\n- 遇到验证码/封禁时切换到 **anti-bot-scraping** 的回退策略\n- 保持低并发、随机化与退避，不压测目标\n\n输出：可运行抽取脚本、样本数据、反爬回退记录。\n\n## 步骤 4：清洗与入库\n\n使用 **web-scraping-playbook** + **verification-run-hygiene** 完成：\n\n- 去重、归一化、字段校验和异常行处理\n- 记录来源 URL、抓取时间、页码和原始响应摘要\n- 落盘前校验数量、字段完整性和抽样正确性\n\n输出：清洗后数据集、质量报告、可复现命令。\n\n## 最终输出\n\n整合为一份爬虫交付包：\n\n1. **授权范围与合规记录**\n2. **站点侦察与数据来源结论**\n3. **抽取实现与反爬回退**\n4. **清洗结果与质量验证**、未闭环项\n"
     },
     {
@@ -553,7 +553,7 @@
           "description": "Evidence-driven penetration testing and attack-surface engineering for web applications, APIs, networks, identity systems, Active Directory, cloud, containers, Kubernetes, authentication flows, and source-assisted assessments. Use when the task supplies a URL, host, request/response, API schema, JavaScript bundle, network inventory, cloud configuration, or identity graph, or needs recon, endpoint extraction, hypothesis ranking, precise validation, finding reproduction, attack-path analysis, remediation, or retest automation. 渗透、渗透测试、渗透工程、红队、攻防演练、越权、IDOR、未授权访问 时使用。",
           "category": "pentest",
           "page": "/skills/own-pentest-methodology.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pentest-methodology",
+          "install": "npx skills add JacksenHu/skill-x --skill pentest-methodology",
           "resolved": true
         },
         {
@@ -649,7 +649,7 @@
           "description": "跑验证/回归时保住结果可信度的操作纪律。当出现以下任一情况时使用：一批探针/测试突然集体判红而\"我改的代码看着没问题\"；想知道哪些失败是真回归、哪些是运行被污染；测试需要造临时目录/文件/符号链接；测试要在临时目录里 rmtree 一棵树；某个\"看起来完美解释\"的原因可能只是数值吻合；同一套回归要反复跑很多轮；环境有\"批量删除确认\"\"safe-delete\"之类的守卫；删不掉目录报 WinError 145 / 目录不是空的 / 拒绝访问；报错行的关键字段被 grep|tail 截断；测试会在用户 home 或共享目录里建文件再删。覆盖：验收期间禁写、真红/假红的判别流程、按签名分诊\"是谁在拒绝我\"、只读文件与 rmtree 的危险组合、结构化验错消息不许截断、测试自造破坏面必须自收、符号链接与 rmtree 的危险组合、先量后改、回归结果的可归档性。",
           "category": "engineering-hygiene",
           "page": "/skills/own-verification-run-hygiene.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
+          "install": "npx skills add JacksenHu/skill-x --skill verification-run-hygiene",
           "resolved": true
         }
       ],
@@ -658,7 +658,7 @@
         "by": "codex",
         "at": "2026-09-28",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本人工确认"
+        "note": "本站专家团:人设与编排剧本人工确认"
       },
       "upstreamStatus": {
         "source": "own",
@@ -666,7 +666,7 @@
         "alive": true,
         "failSince": null
       },
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-attack-surface",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-attack-surface",
       "content": "---\nname: pack-attack-surface\ndescription: >-\n  Attack-surface mapping and security review expert pack (meta-skill).\n  Orchestrates pentest-methodology, API/cloud/supply-chain security skills,\n  security-and-hardening and verification-run-hygiene into one workflow: scope,\n  enumeration, hypothesis ranking, precise validation and remediation.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Requires Python 3; target access must be authorized.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 猎界\n  aliases:\n    - 猎界\n    - 猎界专家团\n    - 攻击面专家团\n    - AttackSurface\n    - pack-attack-surface\n  name-zh: 猎界 · 攻击面测绘与安全加固专家团\n  description-zh: 从授权范围出发测绘 Web/API/云/供应链攻击面,按影响排序假设、精确验证并给出可复测的修复建议。\n  category: pentest\norchestration:\n  children:\n    - pentest-methodology\n    - dhicoc/dsh-reverse-skill/api-security\n    - dhicoc/dsh-reverse-skill/pentest-tools\n    - dhicoc/dsh-reverse-skill/src-hunter\n    - dhicoc/dsh-reverse-skill/cloud-k8s\n    - dhicoc/dsh-reverse-skill/supply-chain-security\n    - addyosmani/agent-skills/security-and-hardening\n    - verification-run-hygiene\n---\n# 攻击面测绘与安全加固工作流（猎界）\n\n你现在要完成一次授权范围内的攻击面测绘与安全审查。你已安装以下技能，请按步骤串联使用：\n\n- **pentest-methodology**：范围固化、资产清点、请求矩阵、假设排序与验证\n- **api-security / pentest-tools / src-hunter**：API、工具链与 SRC 场景的漏洞定位\n- **cloud-k8s / supply-chain-security**：云原生与供应链攻击面\n- **security-and-hardening**：把发现转成结构性修复建议\n- **verification-run-hygiene**：让每条发现可复现、可复测\n\n## 工作原则\n\n先圈定授权边界，再枚举攻击面，再按影响排序。验证只用最小请求集，越权类发现必须拿到“同资源、异身份”的对照证据。越过授权边界的操作不做。\n\n## 步骤 1：范围与规则\n\n使用 **pentest-methodology** 完成：\n\n- 固化授权范围、时间窗、禁止项和证据目录\n- 明确目标资产与业务预期行为\n- 建立端点、方法、参数与鉴权要求清单\n\n输出：授权范围清单、证据目录结构、初步资产表。\n\n## 步骤 2：攻击面枚举\n\n使用 **pentest-methodology** + **api-security** + **src-hunter** 完成：\n\n- 枚举子域、端口、接口、前端资源、第三方依赖\n- 梳理 API 鉴权模型、参数注入面、文件/上传面\n- 使用 **cloud-k8s** 与 **supply-chain-security** 检查云配置和依赖风险\n\n输出：攻击面清单、请求矩阵、风险候选列表。\n\n## 步骤 3：假设排序与精确验证\n\n使用 **pentest-methodology** + **pentest-tools** 完成：\n\n- 按影响 × 可达性 × 验证成本排序\n- 只读验证优先；越权必须做异身份对照\n- 记录 WAF/限速/绕过尝试，但不压测\n\n输出：假设优先级列表、逐条可复现发现与证据。\n\n## 步骤 4：修复与复测\n\n使用 **security-and-hardening** + **verification-run-hygiene** 完成：\n\n- 每条发现给出修复建议与结构性缓解\n- 定义复测标准：修复后用什么最小请求验证通过\n- 整理报告与证据包，未闭环项单列\n\n输出：安全审查报告、证据包、复测清单。\n\n## 最终输出\n\n整合为一份攻击面测绘交付包：\n\n1. **授权范围与规则**\n2. **攻击面与请求矩阵**\n3. **发现清单与证据**\n4. **修复建议与复测标准**、未闭环项\n"
     },
     {
@@ -786,7 +786,7 @@
         "by": "codex",
         "at": "2026-10-01",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本机审"
+        "note": "本站专家团:人设与编排剧本机审"
       },
       "upstreamStatus": {
         "source": "own",
@@ -795,7 +795,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-bug-hunter",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-bug-hunter",
       "content": "---\nname: pack-bug-hunter\ndescription: >-\n  Bug bounty workflow: methodology, recon, bug identification, evidence hygiene, reporting. Members: Claude-BugHunter core, Claude-Red bug identification, Burp/Nuclei MCP.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills/MCP are installed or connected on demand.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 寻隙\n  aliases:\n    - 寻隙\n    - Bug Hunter\n    - pack-bug-hunter\n  name-zh: 寻隙 · 漏洞赏金猎人\n  description-zh: 漏洞赏金专家团:攻击面测绘、漏洞识别、证据固化与可复现报告,成员覆盖方法论、红队技巧与 Burp/Nuclei 工具链。\n  category: pentest\norchestration:\n  children:\n    - elementalsouls/Claude-BugHunter/bug-bounty\n    - elementalsouls/Claude-BugHunter/bb-methodology\n    - SnailSploit/Claude-Red/offensive-bug-identification\n    - elementalsouls/Claude-BugHunter/evidence-hygiene\n    - io.github.Cy-S3c/BurpMCP-Ultra\n    - io.github.FuzzingLabs/mcp-security-hub\n---\n# 寻隙（Bug Hunter）\n\n寻隙不扫热闹,只追根因。先锁定攻击面与边界,再按漏洞类别逐个验证,拿到可复现的请求与响应证据后,才写进报告。\n\n## 工作原则\n\n先定边界,再取证,最后成报。任何结论都落到可复现证据,不写“看起来像”。\n\n## 步骤 1:定边界与目标\n\n- 明确本次要回答的问题(漏洞 / 解题 / 情报结论)\n- 确认目标与授权范围;涉及攻击面的只做授权内动作\n\n## 步骤 2:调度成员\n\n按任务类型调用 `orchestration.children` 中的对应技能或 MCP:\n- 漏洞赏金 → bug-bounty / bb-methodology / offensive-bug-identification / Burp / Nuclei\n- CTF → ctf-reverse / ctf-pwn / ctf-crypto / radare2 / frida\n- 威胁情报 → cve-mcp-server / shodan / virustotal / osint\n\n## 步骤 3:执行与验证\n\n- 每一步记录输入、命令、输出\n- 证据可复现,区分真信号与噪声\n\n## 步骤 4:交付\n\n- 漏洞:PoC + 请求/响应 + 影响评估 + 修复建议\n- CTF:flag + 解题过程 + 标准 writeup\n- 威胁情报:定级 + 关联链 + 来源 + 建议动作\n"
     },
     {
@@ -915,7 +915,7 @@
         "by": "codex",
         "at": "2026-10-01",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本机审"
+        "note": "本站专家团:人设与编排剧本机审"
       },
       "upstreamStatus": {
         "source": "own",
@@ -924,7 +924,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-ctf",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-ctf",
       "content": "---\nname: pack-ctf\ndescription: >-\n  CTF solving workflow: classification, reverse/pwn/crypto, solving, writeup. Members: CTF skill set + radare2/frida MCP.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills/MCP are installed or connected on demand.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 破阵\n  aliases:\n    - 破阵\n    - CTF\n    - pack-ctf\n  name-zh: 破阵 · CTF 解题员\n  description-zh: CTF 战队专家团:按题分类调度逆向、PWN、密码与取证技能,结合 radare2/frida 动态分析,输出标准复盘。\n  category: reverse-engineering\norchestration:\n  children:\n    - ljagiello/ctf-skills/ctf-reverse\n    - ljagiello/ctf-skills/ctf-pwn\n    - ljagiello/ctf-skills/ctf-crypto\n    - ljagiello/ctf-skills/solve-challenge\n    - io.github.radareorg/radare2-mcp\n    - io.github.dnakov/frida-mcp\n---\n# 破阵（CTF）\n\n破阵先给题目分类,再调度对应技能与工具:二进制交给 radare2/frida,密码交给现成攻击套路,解完按标准格式写复盘。\n\n## 工作原则\n\n先定边界,再取证,最后成报。任何结论都落到可复现证据,不写“看起来像”。\n\n## 步骤 1:定边界与目标\n\n- 明确本次要回答的问题(漏洞 / 解题 / 情报结论)\n- 确认目标与授权范围;涉及攻击面的只做授权内动作\n\n## 步骤 2:调度成员\n\n按任务类型调用 `orchestration.children` 中的对应技能或 MCP:\n- 漏洞赏金 → bug-bounty / bb-methodology / offensive-bug-identification / Burp / Nuclei\n- CTF → ctf-reverse / ctf-pwn / ctf-crypto / radare2 / frida\n- 威胁情报 → cve-mcp-server / shodan / virustotal / osint\n\n## 步骤 3:执行与验证\n\n- 每一步记录输入、命令、输出\n- 证据可复现,区分真信号与噪声\n\n## 步骤 4:交付\n\n- 漏洞:PoC + 请求/响应 + 影响评估 + 修复建议\n- CTF:flag + 解题过程 + 标准 writeup\n- 威胁情报:定级 + 关联链 + 来源 + 建议动作\n"
     },
     {
@@ -1020,7 +1020,7 @@
         "by": "codex",
         "at": "2026-10-01",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本机审"
+        "note": "本站专家团:人设与编排剧本机审"
       },
       "upstreamStatus": {
         "source": "own",
@@ -1029,7 +1029,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-threat-intel",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-threat-intel",
       "content": "---\nname: pack-threat-intel\ndescription: >-\n  Threat intelligence workflow: lead, scoring, pivoting, correlation, reporting. Members: CVE/Shodan/VirusTotal/OSINT MCP.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills/MCP are installed or connected on demand.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 烛照\n  aliases:\n    - 烛照\n    - Threat Intel\n    - pack-threat-intel\n  name-zh: 烛照 · 威胁情报分析师\n  description-zh: 威胁情报专家团:从 CVE 定级、资产测绘、样本判定到开源情报关联,输出带来源的威胁情报。\n  category: malware\norchestration:\n  children:\n    - io.github.mukul975/cve-mcp-server\n    - io.github.w0h1v/mcp-shodan\n    - io.github.w0h1v/mcp-virustotal\n    - io.github.badchars/osint-mcp-server\n---\n# 烛照（Threat Intel）\n\n烛照从一条 IOC 或 CVE 出发,用 CVE/EPSS/KEV 定级,用 Shodan/VirusTotal/OSINT 扩线,再落成带来源的情报结论。\n\n## 工作原则\n\n先定边界,再取证,最后成报。任何结论都落到可复现证据,不写“看起来像”。\n\n## 步骤 1:定边界与目标\n\n- 明确本次要回答的问题(漏洞 / 解题 / 情报结论)\n- 确认目标与授权范围;涉及攻击面的只做授权内动作\n\n## 步骤 2:调度成员\n\n按任务类型调用 `orchestration.children` 中的对应技能或 MCP:\n- 漏洞赏金 → bug-bounty / bb-methodology / offensive-bug-identification / Burp / Nuclei\n- CTF → ctf-reverse / ctf-pwn / ctf-crypto / radare2 / frida\n- 威胁情报 → cve-mcp-server / shodan / virustotal / osint\n\n## 步骤 3:执行与验证\n\n- 每一步记录输入、命令、输出\n- 证据可复现,区分真信号与噪声\n\n## 步骤 4:交付\n\n- 漏洞:PoC + 请求/响应 + 影响评估 + 修复建议\n- CTF:flag + 解题过程 + 标准 writeup\n- 威胁情报:定级 + 关联链 + 来源 + 建议动作\n"
     },
     {
@@ -1065,7 +1065,7 @@
           "description": "游戏辅助开发全链路助手——覆盖内存读写、协议分析、反编译、Hook 技术、驱动级隐藏、自动化脚本。 支持 C/C++、Python、x86/x64 汇编、DirectX/OpenGL。适用于 PC 端游、Android/iOS 手游、主机游戏。 当用户提到以下任何关键词时必须触发：游戏外挂、游戏辅助、内存修改、CE教程、游戏Hook、 协议分析、反编译、驱动隐藏、游戏脚本、按键精灵、游戏逆向、内存扫描、指针追踪、DLL注入、 游戏破解、脱壳、抓包分析、Frida、Xposed、il2cpp、Unity逆向、UE4逆向、DirectX Hook、 OpenGL Hook、游戏自动化、坐标识别、模板匹配、游戏安全测试。",
           "category": "reverse-engineering",
           "page": "/skills/own-game-hacking.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill game-hacking",
+          "install": "npx skills add JacksenHu/skill-x --skill game-hacking",
           "resolved": true
         },
         {
@@ -1077,7 +1077,7 @@
           "description": "自动全链路处理外挂、修改器、Trainer、作弊机制与反作弊验证任务。适用于离线、自有、开源或专用测试靶场中的引擎与信任边界建模、样本分析、可控复现、JSON toy trainer 制作、遥测、检测加固和回归交付。",
           "category": "reverse-engineering",
           "page": "/skills/own-eni-game-cheat-lab-workflow.html",
-          "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill eni-game-cheat-lab-workflow",
+          "install": "npx skills add JacksenHu/skill-x --skill eni-game-cheat-lab-workflow",
           "resolved": true
         },
         {
@@ -1161,7 +1161,7 @@
         "by": "codex",
         "at": "2026-10-01",
         "execReview": "passed",
-        "note": "自研专家团:人设与编排剧本机审"
+        "note": "本站专家团:人设与编排剧本机审"
       },
       "upstreamStatus": {
         "source": "own",
@@ -1170,7 +1170,7 @@
         "failSince": null
       },
       "degraded": false,
-      "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-game-security",
+      "install": "npx skills add JacksenHu/skill-x --skill pack-game-security",
       "content": "---\nname: pack-game-security\ndescription: >-\n  Game security / anti-cheat workflow: recon, reverse, inject/mod, verify, defend. Members: game reverse & modding skills + Cheat Engine / Android reverse MCP.\nlicense: MIT\ncompatibility: Meta-skill orchestration. Member skills/MCP are installed or connected on demand.\nmetadata:\n  author: skillhub\n  version: \"1.0.0\"\n  package_type: meta-skill\n  display_name: 猎游\n  aliases:\n    - 猎游\n    - Game Security\n    - pack-game-security\n  name-zh: 猎游 · 游戏安全研究员\n  description-zh: 游戏安全与反作弊专家团:游戏侦察、引擎/资产逆向、注入与 Mod 验证,输出可复现结论与反作弊建议。\n  category: reverse-engineering\norchestration:\n  children:\n    - game-hacking\n    - eni-game-cheat-lab-workflow\n    - rehan-remade/universal-modder/game-recon\n    - rehan-remade/universal-modder/reverse-engineering\n    - io.github.bethington/cheat-engine-server-python\n    - io.github.c4x64/droid-re-chain\n    - io.github.Diphome/UnityRift\n---\n# 猎游（Game Security）\n\n猎游不信盲改。先侦察目标游戏(引擎/资产/存档),再逆向关键逻辑,用注入与外挂工具链验证,最后落到可复现的结论与外挂防护建议。\n\n## 工作原则\n\n先侦察边界,再逆向,再注入验证;每条结论落到可复现证据,不做无授权的内存读写。\n\n## 步骤 1:侦察与边界\n\n- 确认目标游戏与授权范围\n- 用 game-recon 摸清引擎、资产、存档、可 Hook 点\n\n## 步骤 2:逆向关键逻辑\n\n- 用游戏逆向技能(.NET/IL2CPP/原生)还原关键函数与数据结构\n- 用 Cheat Engine / Droid Re-Chain MCP 做内存/动态验证\n\n## 步骤 3:注入与验证\n\n- 用 game-hacking / 外挂实验室工作流实现注入与 Mod\n- 每步记录命令、输入、输出,保留证据\n\n## 步骤 4:防护与交付\n\n- 输出可复现结论 + 反作弊/防篡改建议\n- 归档:证据、脚本、报告\n"
     }
   ]

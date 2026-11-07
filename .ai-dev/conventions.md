@@ -28,7 +28,7 @@
 
 ## 命名
 
-- 自研页 `skills/own-<name>.html`;收录页 `skills/ext-<ns-slug>--<name>.html`;套件页 `suites/<ns-slug>.html`;导图 `mindmaps/<skill>.svg`、套件导图 `mindmaps/suite-<ns-slug>.svg`。
+- 本站页 `skills/own-<name>.html`;收录页 `skills/ext-<ns-slug>--<name>.html`;套件页 `suites/<ns-slug>.html`;导图 `mindmaps/<skill>.svg`、套件导图 `mindmaps/suite-<ns-slug>.svg`。
 
 ## 上下文与协作(devctx)
 

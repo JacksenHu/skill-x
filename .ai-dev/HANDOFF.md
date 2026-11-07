@@ -41,7 +41,7 @@
 ## 约束(别违反)
 
 - 页面零内联 style / 零内联脚本(严格 CSP)。
-- 自研 SKILL.md 正文不得进任何页面产物。
+- SKILL.md 正文不得进任何页面产物。
 - api_sk / PAT 不落盘、不入库、不进 memory/.ai-dev(只记"已提供/在用")。
 - 部署走 `deploy/sync.py`(纯净重放),不要手工解压覆盖。
 - 未过人工审查(execReview=passed)的 MCP 条目不进对外产物(橱窗+/v0/servers)。

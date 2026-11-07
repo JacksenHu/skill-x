@@ -98,7 +98,7 @@ MCP / 插件同步同理:`python scripts/mcp_ingest.py <...>` 后补 `descriptio
 |---|---|---|
 | skill 套件 | `external.json` 的 `suites[].upstream` | 手动重跑 `ingest.py` |
 | MCP/插件 | `mcp-registry.json` 的 `servers[].websiteUrl` | 手动重跑 `mcp_ingest.py` |
-| 专家团 | `packs.json`(自研 origin=own) | `pack_ingest.py --sync` |
+| 专家团 | `packs.json`(本站 origin=own) | `pack_ingest.py --sync` |
 | 死链探活 | 全部 upstream | CI 每日 `link_check.py` |
 
 一句话:**上游更新 ≠ 本站自动更新**;目前只有「死链探活」自动,「内容同步」靠手动重抓,且重抓会重置过审状态、需要补中文。要真正自动化,优先做方案 A 或 C。

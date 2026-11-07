@@ -2,32 +2,32 @@
 
 面向所有 AI Agent 的安全研究与逆向工程技能库(红队/白帽方向),遵循 [Agent Skills 开放规范](https://agentskills.io)。
 
-- **私有分发**:本仓库为私有仓库,授权用户通过 `GITHUB_TOKEN` 安装
+- **公开分发**:仓库公开,任何人可直接通过 `npx skills add` 安装,无需凭据
 - **全 Agent 兼容**:skill 只使用规范基础字段,可被 Claude Code、Codex、Cursor、Copilot 等 80+ agent 加载
 - **橱窗站**:技能介绍与外部套件收录,多页+搜索 → **https://3f3301ac5aa14f998efefa8913125d01.sg.agentos-app.run**(长期固定链接;内容更新后重新发布即刷新,链接不变)
 - **社区收录**:已收录 2 个外部套件共 34 个 skill(见 `external.json`,收录管线见 [接入 SOP](docs/onboarding-pipeline.md))
 - **第三方应用接入**:MCP 服务与 Agent 插件统一条目注册表(`mcp-registry.json`,官方 server.json 标准 + `entryType` 区分);插件指路牌只指向官方一手市场(见 [插件收录 SOP](docs/plugin-onboarding-pipeline.md))
-- **专家团**:带人设的编排层(自研 + 收录双轨),成员可跨 自研/收录/MCP;安装走《安装契约文档》与 `/v0/packs` API,Agent 读文档即会装(见 [专家团收录 SOP](docs/pack-onboarding-pipeline.md))
+- **专家团**:带人设的编排层(本站 + 收录双轨),成员可跨 本站/收录/MCP;安装走《安装契约文档》与 `/v0/packs` API,Agent 读文档即会装(见 [专家团收录 SOP](docs/pack-onboarding-pipeline.md))
 
-## 安装(授权用户)
+## 安装
 
 ```bash
 # 列出库内全部 skill
-GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --list
+npx skills add JacksenHu/skill-x --list
 
 # 安装指定 skill(自动检测本机 agent:claude-code / cursor / codex ...)
-GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene
+npx skills add JacksenHu/skill-x --skill verification-run-hygiene
 
 # 安装到指定 agent
-GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill verification-run-hygiene -a claude-code
+npx skills add JacksenHu/skill-x --skill verification-run-hygiene -a claude-code
 ```
 
-凭据配置(任一即可):`GITHUB_TOKEN` / `GH_TOKEN` 环境变量、`gh auth login`、或已配置的 git/SSH 凭据。Token 仅需 `Contents: read` 权限。详见 [授权与安装管理](docs/access-management.md)。
+仓库公开,安装不需要任何凭据。详见 [安装说明](docs/access-management.md)。
 
 ## 目录结构
 
 ```
-skills/<skill-name>/     # 自研技能(每个含 SKILL.md,可选 scripts/ references/ assets/)
+skills/<skill-name>/     # 本站技能库(每个含 SKILL.md,可选 scripts/ references/ assets/)
 docs/                    # 编写规范、接入 SOP(skill/MCP/插件)、授权管理
 scripts/                 # 仓库工具(validate / ingest / mcp_ingest / link_check)
 showcase/                # 橱窗站构建器与产物(build_index.py -> dist/)

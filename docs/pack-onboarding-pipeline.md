@@ -6,12 +6,13 @@
 
 ## 定位:带人设的编排层
 
-图标硬要求:所有专家团必须提供 persona.avatar,且风格与 ssets/avatars/abyss-deep-reverse.svg / ift-pentest.svg / 	race-malware.svg 一致;自研专家团必须创建专属头像,不允许所有新专家团共用同一个占位图。
+图标硬要求:所有专家团必须提供 persona.avatar,且风格与 ssets/avatars/abyss-deep-reverse.svg / 
+ift-pentest.svg / 	race-malware.svg 一致;本站专家团必须创建专属头像,不允许所有新专家团共用同一个占位图。
 
 专家团 = **人设(名称/头像/角色文案) + 跨类型成员编队 + 一份可直接执行的协作剧本(meta-skill)**。
 
-- 成员类型:`own-skill`(自研技能)/ `ext-skill`(社区精选技能)/ `mcp`(MCP 服务)/ `cli` / `api`(后两类为预留,须在 pack 定义内联 `name` + `install` 才视为已解析)。
-- 自研专家团的编排剧本源文件在 `skills/pack-<slug>/SKILL.md`(meta-skill,`metadata.package_type=meta-skill` + `orchestration.children`),`packs.json` 的 `content` 字段由 `--sync` 保持同步。
+- 成员类型:`own-skill`(本站技能库)/ `ext-skill`(社区精选技能)/ `mcp`(MCP 服务)/ `cli` / `api`(后两类为预留,须在 pack 定义内联 `name` + `install` 才视为已解析)。
+- 本站专家团的编排剧本源文件在 `skills/pack-<slug>/SKILL.md`(meta-skill,`metadata.package_type=meta-skill` + `orchestration.children`),`packs.json` 的 `content` 字段由 `--sync` 保持同步。
 - 外部专家团只存"人设 + 成员清单 + 安装指引",本体留上游;许可证允许时可缓存正文。
 
 ## 数据结构(packs.json)
@@ -30,7 +31,7 @@
   "source": "skills/pack-abyss-deep-reverse/SKILL.md",
   "license": {"spdx": "MIT"},
   "members": [{"type": "own-skill", "ref": "binary-reverse-engineering"}],
-  "install": "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-abyss-deep-reverse",
+  "install": "npx skills add JacksenHu/skill-x --skill pack-abyss-deep-reverse",
   "content": "<编排剧本全文,由 --sync 同步>",
   "degraded": false,
   "reviewed": {"by": "jacksen", "at": "YYYY-MM-DD", "execReview": "passed"},
@@ -38,7 +39,7 @@
 }
 ```
 
-成员 ref 约定:自研 = `<skill-name>`(在 `skills/<name>/`);收录 = `<owner>/<repo>/<skill-name>`(末段为技能名);MCP = 官方 `name`(如 `ac.inference.sh/mcp`)。
+成员 ref 约定:本站 = `<skill-name>`(在 `skills/<name>/`);收录 = `<owner>/<repo>/<skill-name>`(末段为技能名);MCP = 官方 `name`(如 `ac.inference.sh/mcp`)。
 
 ## 收录流程
 
@@ -74,7 +75,7 @@ python scripts/pack_ingest.py --check   # CI/提交前:漂移则 exit=1
 | 坑 | 专家团版含义 |
 |---|---|
 | 命名空间 | slug 与成员 ref 不撞名;外部专家团一律以 slug 隔离 |
-| 许可证 | 自研为 MIT;外部看上游 LICENSE,不在白名单只做元数据+指引 |
+| 许可证 | 本站为 MIT;外部看上游 LICENSE,不在白名单只做元数据+指引 |
 | 供应链 | 成员必须是站内已过审条目;外部专家团本体不镜像(除许可允许的正文) |
 | 死链 | 外部 `upstream` 定期探活,结果记入 `upstreamStatus` |
 

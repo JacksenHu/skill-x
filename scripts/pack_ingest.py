@@ -11,7 +11,7 @@
 - 脚本不自动置 verified;人工审查后回填 reviewed.execReview=passed 才会进对外产物。
 - 成员完整性:所有非 optional 成员必须能解析(own-skill / ext-skill / mcp),
   否则拒绝收录;--sync 阶段成员若已下架则标 degraded,不阻断。
-- 自研 pack 的编排剧本源文件是 skills/pack-<slug>/SKILL.md,content 字段由 --sync 保持同步。
+- 本站 pack 的编排剧本源文件是 skills/pack-<slug>/SKILL.md,content 字段由 --sync 保持同步。
 """
 import json
 import re
@@ -38,7 +38,7 @@ def read_json(path: Path, default):
 
 
 def own_install(skill: str) -> str:
-    return f"GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {skill}"
+    return f"npx skills add JacksenHu/skill-x --skill {skill}"
 
 
 def sync_pack(pack: dict, index: dict) -> dict:
@@ -85,7 +85,7 @@ def validate_external(pack: dict, index: dict) -> list:
     if persona.get("scene") and persona["scene"] not in SCENES:
         errs.append(f"persona.scene 非法: {persona['scene']}(可选 {sorted(SCENES)})")
     if pack.get("origin") != "external":
-        errs.append("收录输入必须 origin=external(自研 pack 请直接维护 packs.json)")
+        errs.append("收录输入必须 origin=external(本站 pack 请直接维护 packs.json)")
     if not pack.get("upstream"):
         errs.append("外部专家团必须填 upstream(git/zip/local 来源)")
     if not pack.get("install"):
@@ -212,3 +212,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

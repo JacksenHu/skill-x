@@ -453,7 +453,7 @@ def pack_install_md(p) -> str:
          "", "## 专家团", "",
          f"- 角色:{persona.get('role', '')}",
          f"- 简介:{p.get('summary', '')}",
-         "- 成员:{n} 个(自研 {own} / 收录 {ext} / MCP {mcp})".format(
+         "- 成员:{n} 个(本站 {own} / 收录 {ext} / MCP {mcp})".format(
              n=len(members), own=counts.get("own-skill", 0), ext=counts.get("ext-skill", 0), mcp=counts.get("mcp", 0)),
          ]
     if p.get("degraded"):
@@ -487,7 +487,7 @@ def pack_install_md(p) -> str:
           "## 失败与回退", "",
           "- 单个成员失败:记录原因,继续安装其余成员,最后汇总。",
           "- API 不可达:改用橱窗页人工指引。",
-          "- 自研成员无 GITHUB_TOKEN:跳过自研成员,只装收录成员,并向用户说明。", "",
+          "- 成员安装失败时记录原因、继续其余成员,最后汇总。", "",
           "## 验收", "",
           "安装完成后逐项报告:已装成员(名称/类型/安装方式)、未装成员及原因、专家团 meta-skill 是否可被 Agent 加载。", ""]
     return "\n".join(L) + "\n"
@@ -511,26 +511,53 @@ def find_suite(ns: str):
     return None
 
 
+def _pick_skill_prefix(members, suite, skill: str):
+    """Locate SKILL.md for one skill inside the upstream tarball.
+
+    Upstream layouts are not uniform: skills/<name>/, repo root, .github/skills/...,
+    plugins/..., test/fixtures/...  registry.json records the repo-relative path per
+    skill (see scripts/sync_api_registry.py); keep the old layouts as fallback.
+    """
+    files = [m.name for m in members if m.isfile()]
+    root = ""
+    for m in members:
+        if "/" in m.name:
+            root = m.name.split("/", 1)[0] + "/"
+            break
+    rel = ((suite.get("paths") or {}).get(skill) or "").replace("\\", "/").lstrip("./")
+    candidates = []
+    if rel:
+        candidates.append(rel)
+    candidates += [f"skills/{skill}/SKILL.md", f"{skill}/SKILL.md", "SKILL.md"]
+    for cand in candidates:
+        full = root + cand
+        if full in files:
+            return full[: -len("SKILL.md")]
+    for cand in candidates:
+        if cand == "SKILL.md":
+            continue
+        suffix = "/" + cand
+        for name in files:
+            if name.endswith(suffix):
+                return name[: -len("SKILL.md")]
+    return None
+
+
 def fetch_repack(suite, skill: str) -> bytes:
-    """下载上游 tarball,抽出 skills/<skill>/,重打包为 <skill>/ 根。"""
+    """Fetch the upstream tarball, extract this skill, repack with <skill>/ as root."""
     owner, repo = suite["namespace"].split("/", 1)
     branch = suite.get("branch", "main")
     url = f"https://codeload.github.com/{owner}/{repo}/tar.gz/refs/heads/{branch}"
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=60) as r:
         data = r.read()
-    prefix = None
-    want_suffix = f"skills/{skill}/SKILL.md"
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf_probe:
-        for m in tf_probe.getmembers():
-            if m.isfile() and m.name.endswith(want_suffix):
-                prefix = m.name[: -len("SKILL.md")]
-                break
+        prefix = _pick_skill_prefix(tf_probe.getmembers(), suite, skill)
+    if not prefix:
+        raise FileNotFoundError(f"skill {skill} not found in upstream tarball")
     out = io.BytesIO()
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tf_in, \
          tarfile.open(fileobj=out, mode="w:gz") as tf_out:
-        if not prefix:
-            raise FileNotFoundError(f"skill {skill} not found in upstream tarball")
         for m in tf_in.getmembers():
             if not m.name.startswith(prefix):
                 continue

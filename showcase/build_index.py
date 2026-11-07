@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """Skill X 橱窗站构建器 v3:双语 / 分类 / 套件中心 / 外置 assets / 增量构建。
 
 数据源:
-- 自研:skills/<name>/SKILL.md(frontmatter + metadata.name-zh/description-zh/category)
+- 本站技能库:skills/<name>/SKILL.md(frontmatter + metadata.name-zh/description-zh/category)
 - 收录:external.json + showcase/i18n-ext.json(中文增补)
 
 产物:dist/(index.html, suites/index.html, suites/<ns>.html, skills/*.html,
 api.html, about.html, assets/{style.css,app.js}, site-data.json, mindmaps/ 预留)
 
-红线:自研 SKILL.md 正文绝不进任何产物;构建期对全部 HTML 做泄露断言。
+红线:SKILL.md 正文绝不进任何产物;构建期对全部 HTML 做泄露断言。
 增量:.build-manifest.json 记录每页输入哈希,未变页面跳过重写。
 """
 import hashlib
@@ -572,7 +573,7 @@ APP_JS = """
     if (!list || !list.length){ box.innerHTML=''; empty?.classList.remove('hidden'); return; }
     empty?.classList.add('hidden');
     box.innerHTML = list.map(function(r){
-      const kind = r.kind === 'own' ? '<span class="badge auth">自研·需授权</span>' : (r.kind === 'pack' ? '<span class="badge auth">专家团</span>' : '<span class="badge ext">社区精选</span>');
+      const kind = r.kind === 'own' ? '<span class="badge ext">本站收录</span>' : (r.kind === 'pack' ? '<span class="badge auth">专家团</span>' : '<span class="badge ext">社区精选</span>');
       const cmd = r.install || '';
       const why = (r.matched || []).join(' · ');
       return '<div class="card"><div class="card-head"><h3><a href="'+r.page+'">'+((r['name-zh'])||r.name)+'</a></h3>'+kind+'</div>'+
@@ -1055,7 +1056,7 @@ def leak_assert(pages: dict, bodies):
             for s in [ln.strip() for ln in body.splitlines() if len(ln.strip()) >= 40][:5]:
                 if s in text or esc(s) in text:
                     raise SystemExit(f"[FAIL] 泄露断言命中 {path}: {s[:60]}...")
-    print(f"[+] 泄露断言通过({len(pages)} 页 x {len(bodies)} 个自研正文)")
+    print(f"[+] 泄露断言通过({len(pages)} 页 x {len(bodies)} 个技能正文)")
 
 
 def nav(active="home"):
@@ -1094,7 +1095,7 @@ def card(s, kind, page, stat_key):
     cat = s.get("category", "")
     cat_label = CATEGORIES.get(cat, cat)
     kind_cls = "kind-own" if kind == "own" else "kind-ext"
-    kind_text = "自研" if kind == "own" else "授权收录"
+    kind_text = "本站收录" if kind == "own" else "社区收录"
     search = f'{s["name"]} {s.get("name-zh","")} {s["description"]} {s.get("description-zh","")}'.lower()
     desc_html = f'<span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"][:300])}">{esc(s.get("description-zh",""))}</span>'
     return f'''<div class="card cat-{esc(cat)}" data-search="{esc(search)}" data-category="{esc(cat)}">
@@ -1122,7 +1123,7 @@ def render_index(own, suites):
         lic_badge = lic if lic != "UNKNOWN" else "许可证未确认"
         items = "\n".join(card(s, "ext", f"skills/ext-{ns_slug(ns)}--{skill_slug(s['name'])}.html", f"{ns}/{s['name']}") for s in suite["skills"])
         suite_sections.append(f'''<section class="suite">
-  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} · 已授权收录</span></h3>
+  <h3><a href="suites/{ns_slug(ns)}.html">{esc(ns)}</a> <span class="suite-meta">{len(suite["skills"])} 个技能 {esc(lic_badge)} · 已收录</span></h3>
   <div class="grid">{items}</div>
 </section>''')
 
@@ -1130,9 +1131,9 @@ def render_index(own, suites):
 <div class="hero">
   <div class="eyebrow">security research skills for AI agents</div>
   <h1>给 AI Agent 的安全研究技能库</h1>
-  <p class="lede">逆向、渗透、样本分析、内存取证。自研技能经授权分发,社区精选技能经授权收录;每个技能都带安全审计、结构导图与可直接调用的工具。</p>
+  <p class="lede">逆向、渗透、样本分析、内存取证。本站技能库与社区精选统一收录;每个技能都带安全审计、结构导图与可直接调用的工具。</p>
   <div class="stats">
-    <span><b class="counter" data-count="{len(own)}">0</b><span>自研技能</span></span>
+    <span><b class="counter" data-count="{len(own)}">0</b><span>本站收录</span></span>
     <span><b class="counter" data-count="{total_ext}">0</b><span>社区精选</span></span>
     <span><b class="counter" data-count="{len(suites)}">0</b><span>收录套件</span></span>
   </div>
@@ -1149,9 +1150,9 @@ def render_index(own, suites):
 <div class="search"><input id="q" type="search" data-zh="按名称或关键词筛选技能…" data-en="Filter skills by name or keyword…" data-attr="placeholder" placeholder="按名称或关键词筛选技能…"></div>
 {chips_html()}
 <div id="empty" class="empty hidden" data-zh="没有匹配的技能" data-en="No matching skills">没有匹配的技能</div>
-<h2 data-zh="自研技能" data-en="Own skills">自研技能 <span class="n">{len(own)} 个 · 私有授权分发</span></h2>
+<h2 data-zh="技能库" data-en="Skills">技能库 <span class="n">{len(own)} 个 · 直接安装</span></h2>
 <div class="grid" id="library">{own_cards}</div>
-<div class="notice"><span data-zh="自研技能经私有仓库授权分发。获得授权的协作者:" data-en="Own skills are distributed via a private repo. Authorized collaborators:">自研技能经私有仓库授权分发。获得授权的协作者:</span><code class="inl">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill &lt;name&gt;</code></div>
+<div class="notice"><span data-zh="全部技能直接安装,无需凭据:" data-en="Install any skill directly, no credentials:">全部技能直接安装,无需凭据:</span><code class="inl">npx skills add JacksenHu/skill-x --skill &lt;name&gt;</code></div>
 <h2 data-zh="社区精选" data-en="Curated">社区精选 <span class="n">{total_ext} 个 · 已过四坑检查 · <a href="/suites/">套件中心</a></span></h2>
 {"".join(suite_sections) if suite_sections else "<p>暂无收录</p>"}'''
     return page_shell("技能库", "Skills", "skills", inner)
@@ -1247,20 +1248,20 @@ def render_own_detail(s, tool_entries=None, audit_entry=None, audit_at="", map_s
                       f"<p class='hint-dim' data-zh='本技能为方法论/纪律型,无附带脚本。' data-en='Methodology-only skill; no bundled scripts.'>"
                       f"本技能为方法论/纪律型,无附带脚本。</p>")
     inner = f'''<div class="detail">
-  <div class="card-head"><h1>{esc(s.get("name-zh", s["name"]))}</h1><span class="badge auth">安装需授权</span></div>
+  <div class="card-head"><h1>{esc(s.get("name-zh", s["name"]))}</h1><span class="badge ext">直接安装</span></div>
   <div class="en-name">{esc(s["name"])}</div>
   <p class="desc"><span data-zh="{esc(s.get("description-zh",""))}" data-en="{esc(s["description"])}">{esc(s.get("description-zh",""))}</span></p>
   <dl class="kv">
-    <dt data-zh="类型" data-en="Type">类型</dt><dd data-zh="自研(私有分发)" data-en="Own (private distribution)">自研(私有分发)</dd>
+    <dt data-zh="类型" data-en="Type">类型</dt><dd data-zh="本站收录" data-en="Skill X library">本站收录</dd>
     <dt data-zh="分类" data-en="Category">分类</dt><dd>{esc(cat_label)}</dd>
     <dt data-zh="版本" data-en="Version">版本</dt><dd>v{esc(s.get("version") or "1.0.0")}</dd>
     <dt data-zh="许可证" data-en="License">许可证</dt><dd>{esc(s.get("license") or "MIT")}</dd>
     <dt data-zh="下载量" data-en="Downloads">下载量</dt><dd><span class="dl" data-stat="{esc(s["name"])}">—</span></dd>
   </dl>
   <div class="mmap">{map_svg}</div>
-  <p class="hint-warn" data-zh="获得授权的协作者可安装:" data-en="Authorized collaborators can install:">获得授权的协作者可安装:</p>
-  <div class="cmd">GITHUB_TOKEN=&lt;PAT&gt; npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
-  <button class="chip on copy-btn" data-copy="GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {esc(s["name"])}" data-skill="{esc(s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
+  <p class="hint-ok" data-zh="一条命令安装:" data-en="Install with one command:">一条命令安装:</p>
+  <div class="cmd">npx skills add JacksenHu/skill-x --skill {esc(s["name"])}</div>
+  <button class="chip on copy-btn" data-copy="npx skills add JacksenHu/skill-x --skill {esc(s["name"])}" data-skill="{esc(s["name"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>
 </div>
 {tools_html}
 {render_audit_block(audit_entry, audit_at)}'''
@@ -1376,7 +1377,7 @@ def render_api(own, suites, cat_index=None):
 <tr><td><code class="inl">/dl/&lt;ns&gt;/&lt;skill&gt;.tar.gz</code></td><td>GET</td><td data-zh="经本站代理下载收录技能(计数生效);白名单内套件可用" data-en="Proxied download of listed skills (counted); whitelist only">经本站代理下载收录技能(计数生效);白名单内套件可用</td></tr>
 <tr><td><code class="inl">/api/recommend</code></td><td>GET / POST</td><td data-zh="技能推荐:传入自然语言任务描述,返回适用技能排序(含匹配理由/安装命令)。GET 用 ?q=描述;POST 用 {{&quot;query&quot;:&quot;描述&quot;}}" data-en="Skill recommendation: pass a natural-language task; returns ranked skills with match reasons and install commands.">技能推荐:传入自然语言任务描述,返回适用技能排序(含匹配理由/安装命令)。GET 用 <code class="inl">?q=描述</code>;POST 用 <code class="inl">{{"query":"描述"}}</code></td></tr>
 <tr><td><code class="inl">/site-data.json</code></td><td>GET</td><td data-zh="全量技能数据(名称/双语简介/分类/安装命令/页面路径)" data-en="Full skill data (names, bilingual descriptions, categories, install commands, page paths)">全量技能数据(名称/双语简介/分类/安装命令/页面路径)</td></tr>
-<tr><td><code class="inl">/tools.json</code></td><td>GET</td><td data-zh="自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)" data-en="Bundled tools inventory (scripts, functions, argparse params)">自研技能自带工具清单(脚本/功能/argparse 参数,机器可读)</td></tr>
+<tr><td><code class="inl">/tools.json</code></td><td>GET</td><td data-zh="本站技能自带工具清单(脚本/功能/argparse 参数,机器可读)" data-en="Bundled tools inventory (scripts, functions, argparse params)">本站技能自带工具清单(脚本/功能/argparse 参数,机器可读)</td></tr>
 <tr><td><code class="inl">/categories.json</code></td><td>GET</td><td data-zh="分类清单静态文件(与 /v0/categories 同构,含中英文名/覆盖实体/各实体计数,机器可读)" data-en="Static category taxonomy (same shape as /v0/categories; zh/en names, covered entities, per-entity counts)">分类清单静态文件(与 <code class="inl">/v0/categories</code> 同构,含中英文名 / 覆盖实体 / 各实体计数,机器可读)</td></tr>
 <tr><td><code class="inl">/audit-report.json</code></td><td>GET</td><td data-zh="安全审计报告(各技能等级/评分/检查项明细,机器可读)" data-en="Security audit report (grades, scores, check details)">安全审计报告(各技能等级/评分/检查项明细,机器可读)</td></tr>
 <tr><td><code class="inl">/mindmaps/&lt;skill&gt;.svg</code></td><td>GET</td><td data-zh="思维导图 SVG,已开 CORS,可外部引用" data-en="Mind map SVGs, CORS-enabled">思维导图 SVG,已开 CORS,可外部引用</td></tr>
@@ -1452,7 +1453,7 @@ def render_plugins(plugins):
 </div>''')
     body = "".join(cards) if cards else '<p class="hint-dim" data-zh="暂无已过审的插件" data-en="No reviewed plugins yet">暂无已过审的插件</p>'
     inner = f'''
-<h2 data-zh="Agent 插件" data-en="Agent Plugins">Agent 插件 <span class="n">{len(plugins)} 个 · 已授权收录</span></h2>
+<h2 data-zh="Agent 插件" data-en="Agent Plugins">Agent 插件 <span class="n">{len(plugins)} 个 · 已收录</span></h2>
 <p class="hint-dim" data-zh="面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。条目均已获授权收录:安装命令在本地客户端执行,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。" data-en="Plugins & extensions for AI coding clients (VS Code / Cursor / Claude / Codex). All entries are authorized for listing; install commands run in your local client, nothing is redistributed. Credentials are filled locally, never passing through this site.">面向 AI 编程客户端(VS Code / Cursor / Claude / Codex 等)的插件与扩展入口。条目均已获授权收录:安装命令在本地客户端执行,本体不经本站分发。凭据在安装时填入本地客户端,不经过本站。</p>
 <div class="grid">{body}</div>
 <div class="notice"><span data-zh="收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);所有条目均已获授权收录并经过人工审查(execReview=passed)才放出。" data-en="Curation & risk: plugins run third-party code inside your local client (medium risk). All entries are authorized for listing and pass manual review before release.">收录与风险说明:插件=安装后在本机客户端内运行第三方代码(标中风险);所有条目均已获授权收录并经过人工审查(execReview=passed)才放出。</span></div>'''
@@ -1637,7 +1638,7 @@ def render_mcp_detail(m):
 
 
 MEMBER_TYPE_LABEL = {
-    "own-skill": ("自研技能", "Own skill", "kind-own"),
+    "own-skill": ("本站收录", "Skill X", "kind-own"),
     "ext-skill": ("社区精选", "Curated", "kind-ext"),
     "mcp": ("MCP 服务", "MCP server", "kind-mcp"),
     "cli": ("CLI 工具", "CLI tool", "kind-preview"),
@@ -1739,7 +1740,7 @@ def pack_card(p):
     pers = p["persona"]
     scene = pers.get("scene", "")
     avatar = pers.get("avatar") or "assets/avatars/pack-default.svg"
-    origin_badge = ('<span class="tag kind-own" data-zh="自研" data-en="Own">自研</span>'
+    origin_badge = ('<span class="tag kind-own" data-zh="本站" data-en="Skill X">本站</span>'
                     if p.get("origin") == "own" else
                     '<span class="tag kind-ext" data-zh="收录" data-en="Curated">收录</span>')
     deg = ('<span class="tag risk-medium" data-zh="成员降级" data-en="Degraded">成员降级</span>'
@@ -1766,7 +1767,7 @@ def render_packs(packs):
     body = cards if cards else ('<p class="hint-dim" data-zh="专家团正在收录中。" data-en="Expert packs are being curated.">专家团正在收录中。</p>')
     inner = f'''
 <h2 data-zh="专家团" data-en="Expert Packs">专家团 <span class="n">{len(packs)} 个 · 人设 + 编排剧本 + 一键安装</span></h2>
-<p class="hint-dim" data-zh="专家团 = 带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队,配一份可直接执行的协作剧本。支持自研与收录两种来源;安装走安装契约文档,Agent 读文档即会安装,第三方应用也可直接调 API。" data-en="An expert pack is a persona-driven orchestration layer: own skills, curated skills and MCP servers grouped by scenario, with an executable collaboration script. Own and curated packs are both supported; installs follow the install contract doc, and third-party apps can call the API directly.">专家团 = 带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队,配一份可直接执行的协作剧本。支持自研与收录两种来源;安装走安装契约文档,Agent 读文档即会安装,第三方应用也可直接调 API。</p>
+<p class="hint-dim" data-zh="专家团 = 带完整人设的编排层:把本站技能库、社区精选与 MCP 服务按场景组队,配一份可直接执行的协作剧本。支持本站与收录两种来源;安装走安装契约文档,Agent 读文档即会安装,第三方应用也可直接调 API。" data-en="An expert pack is a persona-driven orchestration layer: Skill X library, curated skills and MCP servers grouped by scenario, with an executable collaboration script. Skill X and curated packs are both supported; installs follow the install contract doc, and third-party apps can call the API directly.">专家团 = 带完整人设的编排层:把本站技能库、社区精选与 MCP 服务按场景组队,配一份可直接执行的协作剧本。支持本站与收录两种来源;安装走安装契约文档,Agent 读文档即会安装,第三方应用也可直接调 API。</p>
 <div class="search"><input id="q" type="search" data-zh="按名称或关键词筛选专家团…" data-en="Filter expert packs…" data-attr="placeholder" placeholder="按名称或关键词筛选专家团…"></div>
 {chips_html()}
 <div class="grid grid-mt">{body}</div>
@@ -1815,8 +1816,8 @@ def render_pack_detail(p):
     prompt = pack_install_prompt(p)
     deg_html = ("" if not p.get("degraded") else
                 f'<div class="notice"><span data-zh="部分成员已下架或未收录,安装前请核对成员状态:" data-en="Some members are unavailable; verify before install:">部分成员已下架或未收录,安装前请核对成员状态:</span><code class="inl">{esc(", ".join(p.get("missingMembers") or []))}</code></div>')
-    origin_text = "自研专家团" if p.get("origin") == "own" else "收录专家团"
-    origin_en = "Own pack" if p.get("origin") == "own" else "Curated pack"
+    origin_text = "本站专家团" if p.get("origin") == "own" else "收录专家团"
+    origin_en = "Skill X pack" if p.get("origin") == "own" else "Curated pack"
     status_txt = "部分成员不可用" if p.get("degraded") else "成员齐备"
     install_cmd = p.get("install") or ""
     install_html = (f'<div class="cmd">{esc(install_cmd)}</div><button class="chip on copy-btn" data-copy="{esc(install_cmd)}" data-skill="pack/{esc(p["slug"])}" data-zh="复制安装命令" data-en="Copy install command">复制安装命令</button>' if install_cmd else "")
@@ -1874,7 +1875,7 @@ def render_pack_install_doc(packs):
         "",
         "- 站点与 API 基址:`https://skillx.yueliai.top`(本机需可联网访问)。",
         "- 安装成员需要能执行 `npx skills`(vercel-labs/skills CLI,支持 80+ agent)。",
-        "- 自研成员来自私有仓库,需要用户提供 `GITHUB_TOKEN`(PAT,Contents: read)。没有凭据时:跳过自研成员,只装收录成员,并向用户说明。",
+        "- 全部技能均为公开安装,无需任何凭据;直接执行成员 install 字段中的命令。",
         "",
         "## 二、浏览专家团(可选)",
         "",
@@ -1897,7 +1898,7 @@ def render_pack_install_doc(packs):
         "",
         "详情返回 members[],每个成员带 type / ref / name / title / install / page / resolved:",
         "",
-        "- type=own-skill:install 是自研安装命令(含 <PAT> 占位,需替换为用户提供的真实 GITHUB_TOKEN)。",
+        "- type=own-skill:install 是本站技能库安装命令,可直接执行。",
         "- type=ext-skill:install 是收录技能安装命令,可直接执行。",
         "- type=mcp:用 ref 调 GET /v0/servers/<ref>/install 取客户端配置片段;需要密钥时向用户索要,密钥只在本地写入客户端配置,不经过本站。",
         "- type=cli/api:预留类型,按 install 字段执行。",
@@ -1907,7 +1908,7 @@ def render_pack_install_doc(packs):
         "专家团本身是一个 meta-skill(详情 install 字段给出命令),安装后 Agent 获得完整协作剧本:",
         "",
         "```bash",
-        "GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill pack-<slug>",
+        "npx skills add JacksenHu/skill-x --skill pack-<slug>",
         "```",
         "",
         "### 第 3 步:按顺序安装成员",
@@ -1996,7 +1997,7 @@ def render_home(own, suites, mcps, packs, map_svg=""):
       <a class="btn ghost" href="/mcp.html" data-zh="查看 MCP 服务" data-en="Explore MCP servers">查看 MCP 服务</a>
     </div>
     <dl class="home-stats">
-      <div><dt data-zh="自研技能" data-en="Own skills">自研技能</dt><dd><span class="counter" data-count="{len(own)}">0</span></dd></div>
+      <div><dt data-zh="本站收录" data-en="Skill X">本站收录</dt><dd><span class="counter" data-count="{len(own)}">0</span></dd></div>
       <div><dt data-zh="社区精选" data-en="Curated">社区精选</dt><dd><span class="counter" data-count="{total_ext}">0</span></dd></div>
       <div><dt data-zh="MCP 服务" data-en="MCP servers">MCP 服务</dt><dd><span class="counter" data-count="{len(mcps)}">0</span></dd></div>
       <div><dt data-zh="安全审计项" data-en="Audit checks">安全审计项</dt><dd><span class="counter" data-count="8">0</span></dd></div>
@@ -2046,13 +2047,13 @@ def render_home(own, suites, mcps, packs, map_svg=""):
 </section>
 
 <section class="home-featured">
-  <h2 data-zh="技能精选" data-en="Featured skills">技能精选 <span class="n">{len(own)} 个自研 · {total_ext} 个社区精选</span></h2>
+  <h2 data-zh="技能精选" data-en="Featured skills">技能精选 <span class="n">{len(own)} 个本站收录 · {total_ext} 个社区精选</span></h2>
   <div class="grid reveal">{featured}</div>
 </section>
 
 <section class="home-mcp">
   <h2 data-zh="专家团" data-en="Expert packs">专家团 <span class="n">{len(packs)} 个已过审 · 人设 + 编排剧本</span></h2>
-  <p class="hint-dim" data-zh="带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队。安装走安装契约文档,Agent 读文档即会安装。" data-en="Persona-driven orchestration: own skills, curated skills and MCP servers grouped by scenario. Installs follow the contract doc that agents can read directly.">带完整人设的编排层:把自研技能、社区精选与 MCP 服务按场景组队。安装走安装契约文档,Agent 读文档即会安装。</p>
+  <p class="hint-dim" data-zh="带完整人设的编排层:把本站技能库、社区精选与 MCP 服务按场景组队。安装走安装契约文档,Agent 读文档即会安装。" data-en="Persona-driven orchestration: Skill X library, curated skills and MCP servers grouped by scenario. Installs follow the contract doc that agents can read directly.">带完整人设的编排层:把本站技能库、社区精选与 MCP 服务按场景组队。安装走安装契约文档,Agent 读文档即会安装。</p>
   <div class="grid reveal">{packs_html}</div>
   <p class="home-more"><a class="btn ghost" href="/packages.html" data-zh="全部专家团" data-en="All expert packs">全部专家团</a></p>
 </section>
@@ -2090,10 +2091,10 @@ def render_about(own, suites):
     inner = f'''
 <h2 data-zh="关于 Skill X" data-en="About Skill X">关于 Skill X</h2>
 <div class="detail">
-<p class="desc" data-zh="Skill X 是面向所有 AI Agent 的技能注册中心,方向为安全研究与逆向工程(红队/白帽)。自研技能 {len(own)} 个,社区收录 {total_ext} 个({len(suites)} 个套件)。" data-en="Skill X is a skill registry for all AI agents, focused on security research and reverse engineering.">Skill X 是面向所有 AI Agent 的技能注册中心,方向为安全研究与逆向工程(红队/白帽)。自研技能 {len(own)} 个,社区收录 {total_ext} 个({len(suites)} 个套件)。</p>
+<p class="desc" data-zh="Skill X 是面向所有 AI Agent 的技能注册中心,方向为安全研究与逆向工程(红队/白帽)。本站技能库 {len(own)} 个,社区收录 {total_ext} 个({len(suites)} 个套件)。" data-en="Skill X is a skill registry for all AI agents, focused on security research and reverse engineering.">Skill X 是面向所有 AI Agent 的技能注册中心,方向为安全研究与逆向工程(红队/白帽)。本站技能库 {len(own)} 个,社区收录 {total_ext} 个({len(suites)} 个套件)。</p>
 <dl class="kv">
 <dt data-zh="规范" data-en="Spec">规范</dt><dd>Agent Skills 开放规范</dd>
-<dt data-zh="源码" data-en="Source">源码</dt><dd>私有仓库(授权访问)</dd>
+<dt data-zh="源码" data-en="Source">源码</dt><dd><a href="https://github.com/JacksenHu/skill-x">github.com/JacksenHu/skill-x</a>(公开)</dd>
 <dt data-zh="安装" data-en="Install">安装</dt><dd>vercel-labs/skills CLI(80+ agent)</dd>
 <dt data-zh="授权" data-en="Authorization">授权</dt><dd data-zh="收录条目均已获授权收录与分发" data-en="All listed entries are authorized for listing and distribution">收录条目均已获授权收录与分发</dd>
 <dt data-zh="下载量口径" data-en="Stats scope">下载量口径</dt><dd data-zh="经本站链接的下载/复制行为;站外直接安装不计入" data-en="Downloads/copies via this site only">经本站链接的下载/复制行为;站外直接安装不计入</dd>
@@ -2352,7 +2353,7 @@ def main():
             [{"name": s["name"], "name-zh": s.get("name-zh", s["name"]),
               "description": s["description"], "description-zh": s.get("description-zh", ""),
               "category": s.get("category", ""), "kind": "own",
-              "page": "/" + s["page"], "install": f"GITHUB_TOKEN=<PAT> npx skills add JacksenHu/skill-x --skill {s['name']}"}
+              "page": "/" + s["page"], "install": f"npx skills add JacksenHu/skill-x --skill {s['name']}"}
              for s in own]
             + [{"name": x["name"], "name-zh": x.get("name-zh", x["name"]),
                 "description": x["description"], "description-zh": x.get("description-zh", ""),
@@ -2441,7 +2442,7 @@ def main():
         (DIST / "audit-report.json").write_text(audit_txt, encoding="utf-8")
 
     MANIFEST.write_text(json.dumps(new_manifest, indent=1), encoding="utf-8")
-    print(f"[+] 产物 {len(pages)} 页 + assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};自研 {len(own)},套件 {len(suites)},专家团 {len(packs)})")
+    print(f"[+] 产物 {len(pages)} 页 + assets + {mmap_count} 导图 -> {DIST}(写入 {written},跳过 {skipped},清理 {removed};本站 {len(own)},套件 {len(suites)},专家团 {len(packs)})")
     update_site_data_icons()
     insert_detail_icons()
     inject_mcp_plugin_filters()

@@ -50,7 +50,7 @@ def extract_docstring(py_path: Path) -> str:
 
 
 def collect():
-    """全部自研 skill 的脚本参数文档(含中文摘要增补)。"""
+    """全部本站 skill 的脚本参数文档(含中文摘要增补)。"""
     i18n = json.loads(I18N_TOOLS.read_text(encoding="utf-8")) if I18N_TOOLS.is_file() else {}
     docs = {}
     for skill_dir in sorted(SKILLS_DIR.iterdir()):

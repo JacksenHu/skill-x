@@ -1,7 +1,7 @@
 # 上传 / 发布前检查清单（发布门禁）
 
 > 目的：把「一次收录到真正上线」的每一步固化下来，避免再出现「上架了但名称/介绍还是英文、没有思维导图」这类漏项。
-> 本清单适用于 skill（自研/收录）、MCP/插件、专家团（pack）三类条目。**任何一类不满足，不得构建、不得部署。**
+> 本清单适用于 skill（本站/收录）、MCP/插件、专家团（pack）三类条目。**任何一类不满足，不得构建、不得部署。**
 
 ---
 
@@ -22,10 +22,10 @@
 
 ## 1. 内容层：先有合规的条目本体
 
-### 1.1 自研 skill
+### 1.1 本站 skill
 - 目录 `skills/<name>/SKILL.md`，`name` 与目录名一致。
 - frontmatter 只用规范基础字段（`name/description/license/compatibility/metadata`）；禁用 `allowed-tools / context: fork / Hooks`。
-- 自研 `metadata` 必填 `name-zh / description-zh / category`。
+- 本站 `metadata` 必填 `name-zh / description-zh / category`。
 - `description` 三段式（做什么 + 何时用 + 触发关键词），中英文关键词都列。
 - 正文 ≤500 行；无 API key / 个人路径 / 私有地址 / 对抗性指令。
 - 跑 `python scripts/validate.py`。
@@ -42,7 +42,7 @@
 ### 1.4 专家团 pack
 - `python scripts/pack_ingest.py ./pack.json` 入库 `packs.json`。
 - 成员完整性：所有非 optional 成员必须已收录且过审。
-- 自研专家团必须原创头像（SVG）。
+- 本站专家团必须原创头像（SVG）。
 
 ---
 
@@ -52,7 +52,7 @@
 
 ### 2.1 中文名 + 中文介绍 + 分类
 
-- 自研 skill：写在 `SKILL.md` 的 `metadata`（`name-zh / description-zh / category`）。
+- 本站 skill：写在 `SKILL.md` 的 `metadata`（`name-zh / description-zh / category`）。
 - 外部套件：写在 `showcase/i18n-ext.json`，按 `namespace → skill 名` 索引：
 
 ```json
@@ -89,7 +89,7 @@
 ### 3.1 四坑检查（逐项出结论）
 | 坑 | 检查点 |
 |---|---|
-| 命名空间 | `owner/name` 前缀、与自研/已收录查重 |
+| 命名空间 | `owner/name` 前缀、与本站/已收录查重 |
 | 许可证 | 白名单 MIT/Apache-2.0/BSD-2/BSD-3/ISC/CC-BY-4.0；不在白名单只收元数据+链接 |
 | 供应链 | 可执行面逐个审查：未声明外联 / 凭证读取外传 / 混淆 / `curl|sh` → 拒收 |
 | 死链 | upstream 探活，连续 7 天失联下架 |
@@ -151,3 +151,4 @@ python deploy/sync.py --skip-build --api --reload
 - 思维导图批量生成：`python scripts/gen_mindmaps.py`（写 YAML 并调 `svg_map.py` 出 SVG）。
 
 > 注意：批量生成的中文名/介绍/导图是「可上线兜底」，关键/热门的技能仍需维护者人工润色后再过审。
+
